@@ -39,7 +39,7 @@ class NeuronMap {
             const b = this.#map.getBounds();
             const dx = b._northEast.lng - b._southWest.lng;
             const dy = b._northEast.lat - b._southWest.lat;
-            
+
             const l = [
                 new NeuronMapPoint(b._southWest.lat +     dy / 4, b._southWest.lng +     dx / 4),
                 new NeuronMapPoint(b._southWest.lat + 3 * dy / 4, b._southWest.lng +     dx / 4),
@@ -50,7 +50,7 @@ class NeuronMap {
             this.#map_items.push(p);
             // const features = p.get_features();
             // const group = new this.#leaflet.featureGroup(features);
-    
+
             // this.add_features(features);
             //this.zoom_to(group);
         }
@@ -76,7 +76,7 @@ class NeuronMap {
             //Set an initial zoom
             this.set_location(new NeuronMapPoint(-27.4771033, 153.0301422), 11);
 		} else {
-			//Already have a map, so just force a re-render	
+			//Already have a map, so just force a re-render
 			this.#map.invalidateSize();
 		}
 	}
