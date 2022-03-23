@@ -153,7 +153,7 @@ class NeuronMapPolygon {
     }
 
     update_polygon() {
-        if(this.#corners.length) {
+        if(this.#corners.length > 1) {
             let corners = [];
 
             for(const c of this.#corners) {
@@ -172,8 +172,15 @@ class NeuronMapPolygon {
                     this.#polygon.addTo(this.#map);
             }
         } else {
+            for(const c of this.#corners) {
+                c.remove();
+            }
+            this.#corners = [];
+
             this.#polygon?.remove();
             this.#polygon = null;
+
+            //TODO: Trigger an update to remove this feature all together
         }
     }
 
