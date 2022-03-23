@@ -1,0 +1,19 @@
+{
+    "configurations": [
+    {
+        "type": "firefox",
+        "request": "launch",
+        "reAttach": true,
+        "name": "Launch index.html",
+        "file": "${workspaceFolder}/index.html",
+        "reloadOnChange": {
+            "watch": [
+                "${workspaceFolder}/index.html",
+                "${workspaceFolder}/js/**/*",
+                "${workspaceFolder}/img/**/*",
+                "${workspaceFolder}/css/**/*"
+            ]
+        }
+    }
+    ]
+}
