@@ -103,3 +103,16 @@ body {
     border-radius: 0;
 }
 */
+
+
+@media only screen and (orientation: landscape) {
+    /* For mobile phones: */
+    #fp-map {
+      flex-direction: row;
+      height: auto;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    /*TODO: Switch text for icons, also add icons normally*/
+}
