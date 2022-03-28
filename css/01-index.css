@@ -104,6 +104,9 @@ body {
 }
 */
 
+.fp-long-name {
+    margin-left: 0.5em;
+}
 
 @media only screen and (orientation: landscape) {
     /* For mobile phones: */
@@ -114,5 +117,7 @@ body {
 }
 
 @media only screen and (max-width: 620px) {
-    /*TODO: Switch text for icons, also add icons normally*/
+    .fp-long-name {
+        display: none;
+    }
 }

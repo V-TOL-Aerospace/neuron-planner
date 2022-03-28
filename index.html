@@ -63,12 +63,12 @@
 
 <body>
     <div id="fp-manage" class="fp-user-buttons-frame">
-        <button type="button" id="fp-manage-create-plan" class="fp-user-buttons">Create Flight Plan</button>
-        <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" disabled>Upload Flight Plan</button>
-        <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" onclick="window.neuron_adv_mode.toggle_visible()">Toggle Advanced</button>
-        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons" disabled>Save Flight Plan</button>
-        <button type="button" id="fp-manage-load-plan" class="fp-user-buttons" disabled>Load Flight Plan</button>
-        <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons">Clear Flight Plan</button>
+        <button type="button" id="fp-manage-create-plan" class="fp-user-buttons" title="Create Flight Plan"><i class="fas fa-plus-square"></i><span class="fp-long-name">Create Flight Plan</span></button>
+        <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="Upload Flight Plan" disabled><i class="fas fa-up-from-line"></i><span class="fp-long-name"></span>Upload Flight Plan</span></button>
+        <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" onclick="window.neuron_adv_mode.toggle_visible()" title="Toggle Advanced"><i class="fas fa-cog"></i><span class="fp-long-name">Toggle Advanced</span></button>
+        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons" title="Save Flight Plan" disabled><i class="fas fa-file-export"></i><span class="fp-long-name">Save Flight Plan</span></button>
+        <button type="button" id="fp-manage-load-plan" class="fp-user-buttons" title="Load Flight Plan" disabled><i class="fas fa-file-import"></i><span class="fp-long-name">Load Flight Plan</span></button>
+        <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Flight Plan</span></button>
     </div>
     <div id="fp-main">
         <div id="fp-map">
@@ -81,12 +81,12 @@
         </div>
     </div>
     <div id="fp-draw" class="fp-user-buttons-frame">
-        <button type="button" id="fp-draw-new-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()">Insert Polygon</button>
-        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons">Create Survey</button>
-        <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled>Create Geofence</button>
-        <button type="button" id="fp-draw-save-polygon" class="fp-user-buttons" disabled>Save Polygon</button>
-        <button type="button" id="fp-draw-load-polygon" class="fp-user-buttons" disabled>Load Polygon</button>
-        <button type="button" id="fp-draw-clear-polygon" class="fp-user-buttons">Clear Polygon</button>
+        <button type="button" id="fp-draw-new-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Insert Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Insert Polygon</span></button>
+        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" title="Create Survey"><i class="fas fa-layer-plus"></i><span class="fp-long-name">Create Survey</span></button>
+        <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-xmarks-line"></i><span class="fp-long-name">Create Geofence</span></button>
+        <button type="button" id="fp-draw-save-polygon" class="fp-user-buttons" disabled title="Save Polygon"><i class="fas fa-arrow-up-from-square"></i><span class="fp-long-name">Save Polygon</span></button>
+        <button type="button" id="fp-draw-load-polygon" class="fp-user-buttons" disabled title="Load Polygon"><i class="fas fa-arrow-down-from-square"></i><span class="fp-long-name">Load Polygon</span></button>
+        <button type="button" id="fp-draw-clear-polygon" class="fp-user-buttons" title="Clear Polygon"><i class="fas fa-sqaure-xmark"></i><span class="fp-long-name">Clear Polygon</span></button>
     </div>
 </body>
 </html>
