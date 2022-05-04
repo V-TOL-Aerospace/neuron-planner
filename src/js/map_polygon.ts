@@ -1,6 +1,5 @@
 import { NeuronMapPoint } from "./map_point";
-import * as L from "leaflet";
-import { LeafletContextMenuContextItem } from "./leaflet_contextmenu_interfaces";
+import { L, LeafletContextMenuContextItem } from "./leaflet_interface";
 
 export class NeuronMapPolygon {
     #corners:L.Marker[];
