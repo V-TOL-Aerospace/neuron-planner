@@ -1,7 +1,7 @@
-class NeuronAdvMode {
-    #element;
-    
-    constructor(element_name) {
+export class NeuronAdvMode {
+    #element: HTMLElement;
+
+    constructor(element_name:string) {
         this.#element = document.getElementById(element_name);
         this.#element.style.display = 'none';
     }

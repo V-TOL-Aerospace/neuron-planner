@@ -1,52 +1,57 @@
-class NeuronMap {
-    #map;
-    #leaflet;
-    #element_name;
-    #map_items;
+import {NeuronMapPolygon} from "./map_polygon";
+import {NeuronMapPoint} from "./map_point";
 
-    constructor(map_element_name) {
+import * as L from "leaflet";
+
+export class NeuronMap {
+    #map:L.Map;
+    #element_name:string;
+    #map_items:NeuronMapPolygon[];
+
+    constructor(map_element_name:string) {
         this.#map = null;
-        this.#leaflet = null;
         this.#element_name = map_element_name;
         this.#map_items = []
     }
 
-    set_location(location, zoom=13) {
+    set_location(location:NeuronMapPoint, zoom=13) {
         if(this.#map) {
             this.#map.setView([location.latitude, location.longitude], zoom);
         }
     }
 
-    zoom_to(feature_group) {
+    zoom_to(feature_group:L.FeatureGroup) {
         if(this.#map) {
             this.#map.fitBounds(feature_group.getBounds());
         }
     }
 
-    add_feature(feature) {
+    add_feature(feature:L.Layer) {
         if(this.#map) {
             feature.addTo(this.#map);
         }
     }
 
-    add_features(features) {
+    add_features(features:L.Layer[]) {
         for(const f of features)
             this.add_feature(f);
     }
 
     create_polygon_in_view() {
-        if(this.#leaflet && this.#map) {
+        if(this.#map) {
             const b = this.#map.getBounds();
-            const dx = b._northEast.lng - b._southWest.lng;
-            const dy = b._northEast.lat - b._southWest.lat;
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
 
             const l = [
-                new NeuronMapPoint(b._southWest.lat +     dy / 4, b._southWest.lng +     dx / 4),
-                new NeuronMapPoint(b._southWest.lat + 3 * dy / 4, b._southWest.lng +     dx / 4),
-                new NeuronMapPoint(b._southWest.lat + 3 * dy / 4, b._southWest.lng + 3 * dx / 4),
-                new NeuronMapPoint(b._southWest.lat +     dy / 4, b._southWest.lng + 3 * dx / 4)
+                new NeuronMapPoint(sw.lat +     dy / 4, sw.lng +     dx / 4),
+                new NeuronMapPoint(sw.lat + 3 * dy / 4, sw.lng +     dx / 4),
+                new NeuronMapPoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
+                new NeuronMapPoint(sw.lat +     dy / 4, sw.lng + 3 * dx / 4)
             ];
-            const p = new NeuronMapPolygon(this.#leaflet, this.#map, l);
+            const p = new NeuronMapPolygon(this.#map, l);
             this.#map_items.push(p);
             // const features = p.get_features();
             // const group = new this.#leaflet.featureGroup(features);
@@ -57,13 +62,9 @@ class NeuronMap {
     }
 
 	reset() {
-        //Lazy-load our library interface
-		if(!this.#leaflet)
-			this.#leaflet = L;	//eslint-disable-line no-undef
-
 		if(!this.#map) {
-			this.#map = this.#leaflet.map(this.#element_name);
-			const ref = this.#leaflet.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+			this.#map = L.map(this.#element_name);
+			const ref = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 				maxZoom: 18,
 				id: 'mapbox/streets-v11',

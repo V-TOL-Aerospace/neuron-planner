@@ -1,12 +1,13 @@
-class NeuronMapPolygon {
-    #corners;
-    #polygon;
-    #map;
-    #leaflet;
+import { NeuronMapPoint } from "./map_point";
+import * as L from "leaflet";
+import { LeafletContextMenuContextItem } from "./leaflet_contextmenu_interfaces";
 
-    //Corners is a list of NeuronMapPoints
-    constructor(leaflet=L, map=null, corners=[]) {
-        this.#leaflet = leaflet;
+export class NeuronMapPolygon {
+    #corners:L.Marker[];
+    #polygon:L.Polygon;
+    #map:L.Map;
+
+    constructor(map:L.Map, corners:NeuronMapPoint[]=[]) {
         this.#map = map;
 
         this.#corners = [];
@@ -18,7 +19,7 @@ class NeuronMapPolygon {
         }
     }
 
-    #array_move(arr, old_index, new_index) {
+    #array_move(arr:any[], old_index:number, new_index:number) {
         if (new_index >= arr.length) {
             var k = new_index - arr.length + 1;
             while (k--) {
@@ -29,7 +30,7 @@ class NeuronMapPolygon {
         // return arr; // for testing
     }
 
-    #array_move_cyclic(arr, old_index, diff) {
+    #array_move_cyclic(arr:any[], old_index:number, diff:number) {
         let new_index = (old_index + diff) % arr.length;
         if(new_index < 0) {
             new_index += arr.length;
@@ -37,15 +38,15 @@ class NeuronMapPolygon {
         this.#array_move(this.#corners, old_index, new_index);
     }
 
-    move_corner_forwards_by_context(context) {
+    move_corner_forwards_by_context(context:LeafletContextMenuContextItem) {
         this.move_corner_forwards(context.relatedTarget);
     }
 
-    move_corner_backwards_by_context(context) {
+    move_corner_backwards_by_context(context:LeafletContextMenuContextItem) {
         this.move_corner_backwards(context.relatedTarget);
     }
 
-    move_corner_forwards(corner) {
+    move_corner_forwards(corner:L.Marker) {
         const ind = this.#corners.indexOf(corner);
 
         if(ind >= 0) {
@@ -56,7 +57,7 @@ class NeuronMapPolygon {
         }
     }
 
-    move_corner_backwards(corner) {
+    move_corner_backwards(corner:L.Marker) {
         const ind = this.#corners.indexOf(corner);
         if(ind >= 0) {
             this.#array_move_cyclic(this.#corners, ind, 1);
@@ -66,11 +67,12 @@ class NeuronMapPolygon {
         }
     }
 
-    add_corners(corners=[]) {
+    add_corners(corners:NeuronMapPoint[]=[]) {
         for(const c of corners) {
-            let m = this.#leaflet.marker([c.latitude, c.longitude],{
+            let m = L.marker([c.latitude, c.longitude],{
                 draggable: true,
                 autoPan: true,
+                // @ts-ignore
                 contextmenu: true,
                 contextmenuWidth: 140,
                 contextmenuItems: [{
@@ -110,26 +112,26 @@ class NeuronMapPolygon {
         this.update_polygon();
     }
 
-    remove_point_by_context(context) {
+    remove_point_by_context(context:LeafletContextMenuContextItem) {
         this.remove_point_by_corner(context.relatedTarget);
     }
 
-    remove_point_by_event(event) {
+    remove_point_by_event(event:L.LocationEvent) {
         this.remove_point_by_corner(event.target);
     }
 
-    remove_point_by_corner(corner) {
+    remove_point_by_corner(corner:L.Marker) {
         const ind = this.#corners.indexOf(corner);
         if(ind >= 0) {
             corner.remove();                //Remove from map
-            this.#corners.splice(ind, 1); //Remove from list
+            this.#corners.splice(ind, 1);   //Remove from list
             this.update_polygon();          //Redraw
         } else {
             console.warn("Provided corner is not part of this polygon!");
         }
     }
 
-    add_point_at_event(event) {
+    add_point_at_event(event:L.LocationEvent) {
         if(this.#polygon) {
             // const c = this.#polygon.getCenter();
             // const dx = b._northEast.lng - b._southWest.lng;
@@ -144,9 +146,11 @@ class NeuronMapPolygon {
     add_point_at_location() {
         if(this.#polygon) {
             const b = this.#polygon.getBounds();
-            const dx = b._northEast.lng - b._southWest.lng;
-            const dy = b._northEast.lat - b._southWest.lat;
-            const p = new NeuronMapPoint(b._southWest.lat + dy / 2, b._southWest.lng + dx / 2);
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+            const p = new NeuronMapPoint(sw.lat + dy / 2, sw.lng + dx / 2);
 
             this.add_corners([p]);
         }
@@ -166,7 +170,7 @@ class NeuronMapPolygon {
                 this.#polygon.setLatLngs(corners);
             } else{
                 //Create a new polygon
-                this.#polygon = this.#leaflet.polygon(corners, {color: 'red'});
+                this.#polygon = L.polygon(corners, {color: 'red'});
                 this.#polygon.on("click", this.add_point_at_event.bind(this));
                 if(this.#map)
                     this.#polygon.addTo(this.#map);
@@ -185,7 +189,7 @@ class NeuronMapPolygon {
     }
 
     get_features() {
-        let l = [];
+        let l:L.Layer[] = [];
         if(this.#polygon) {
             l.push(this.#polygon);
         }
