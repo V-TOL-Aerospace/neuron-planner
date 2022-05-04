@@ -2,6 +2,7 @@ import {NeuronMapPolygon} from "./map_polygon";
 import {NeuronMapPoint} from "./map_point";
 
 import * as L from "leaflet";
+import 'leaflet/dist/leaflet.css';
 
 export class NeuronMap {
     #map:L.Map;

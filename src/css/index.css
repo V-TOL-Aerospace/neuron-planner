@@ -31,7 +31,7 @@ body {
 /*          Main View         */
 /* ========================== */
 
-#fp-main { 
+#fp-main {
     display: flex;
     flex-direction: row;
     flex: 1 0 0;

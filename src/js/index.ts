@@ -2,8 +2,11 @@ import { NeuronMap } from './map';
 import { NeuronMapPoint } from './map_point';
 import {NeuronAdvMode} from './adv_mode';
 
+import "../css/theme.css";
+import "../css/index.css";
+
 /// <reference types="webpack/module" />
-console.log(import.meta.webpack); // without reference declared above, TypeScript will throw an error
+console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
 
 let neuron_map = new NeuronMap('fp-map-interactive');
 let neuron_adv_mode = new NeuronAdvMode('fp-map-advanced');
