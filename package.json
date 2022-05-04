@@ -9,12 +9,15 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "deploy": "./deploy.sh dist"
+    "deploy": "run-script-os",
+    "deploy:darwin:linux": "./deploy.sh dist",
+    "deploy:win32": "./deploy.ps1 dist"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.16.4",
     "copy-webpack-plugin": "^10.2.4",
     "css-loader": "^6.7.1",
+    "run-script-os": "^1.1.6",
     "style-loader": "^3.3.1",
     "ts-loader": "^9.3.0",
     "typescript": "^4.6.4",
