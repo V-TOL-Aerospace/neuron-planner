@@ -1,2 +1,2 @@
-# vtol-neuron.github.io
+# Neuron Planner
 An online mission planning and flight management software
