@@ -103,3 +103,21 @@ body {
     border-radius: 0;
 }
 */
+
+.fp-long-name {
+    margin-left: 0.5em;
+}
+
+@media only screen and (orientation: landscape) {
+    /* For mobile phones: */
+    #fp-map {
+      flex-direction: row;
+      height: auto;
+    }
+}
+
+@media only screen and (max-width: 620px) {
+    .fp-long-name {
+        display: none;
+    }
+}
