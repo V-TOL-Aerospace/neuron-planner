@@ -8,7 +8,8 @@
   "private": true,
   "scripts": {
    "test": "echo \"Error: no test specified\" && exit 1",
-   "build": "webpack"
+   "build": "webpack",
+   "deploy": "./deploy.sh dist"
   },
   "devDependencies": {
     "@types/webpack-env": "^1.16.4",
