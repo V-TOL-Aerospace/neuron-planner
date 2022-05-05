@@ -1,16 +1,18 @@
 {
     "configurations": [
-    {
-        "type": "firefox",
-        "request": "launch",
-        "reAttach": true,
-        "name": "Launch index.html",
-        "file": "${workspaceFolder}/dist/index.html",
-        "reloadOnChange": {
-            "watch": [
-                "${workspaceFolder}/dist/**/*",
+        {
+            "type": "firefox",
+            "request": "launch",
+            "reAttach": true,
+            "name": "Launch index.html",
+            "url": "http://localhost:9000/index.html",
+            "webRoot": "${workspaceFolder}",
+            "pathMappings": [
+                {
+                    "url": "webpack://vtol-neuron/src",
+                    "path": "${workspaceFolder}/src"
+                }
             ]
         }
-    }
     ]
 }

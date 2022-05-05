@@ -5,10 +5,12 @@ import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_i
 export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #corners:L.Marker[];
     #polygon:L.Polygon;
+    #selected_corner:number;
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
         super(map, on_remove, on_change);
 
+        this.#selected_corner = 0;
         this.#corners = [];
         if(corners.length) {
             if(corners.length == 1)
@@ -61,26 +63,27 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
     }
 
+    select_corner(corner:L.Marker) {
+        const ind = this.#corners.indexOf(corner);
+
+        if(ind >= 0) {
+            this.#selected_corner = ind;
+        } else {
+            console.warn("Provided corner is not part of this polygon!");
+        }
+    }
+
+    #select_corner_by_event(event:L.LeafletEvent) {
+        this.select_corner(event.target);
+    }
+
     add_corner(corner:NeuronInterfacePoint, update_polygon=true) {
+        if(this.#selected_corner < 0 || this.#selected_corner >= this.#corners.length)
+            this.#selected_corner = Math.min(this.#corners.length - 1, 0)
+
         let m = L.marker([corner.latitude, corner.longitude], {
             draggable: true,
             autoPan: true,
-            // @ts-ignore
-            // contextmenu: true,
-            // contextmenuWidth: 140,
-            // contextmenuItems: [{
-            //     text: 'Move forward',
-            //     callback: this.#move_corner_forwards_by_context.bind(this)
-            // }, {
-            //     text: 'Move backwards',
-            //     callback: this.#move_corner_backwards_by_context.bind(this)
-            // },
-            // '-',
-            // {
-            //     text: 'Delete',
-            //     icon: 'img/v_icons/v_exit_icon.png',
-            //     callback: this.#remove_point_by_context.bind(this)
-            // }]
         })
 
         const menu_items = [
@@ -93,19 +96,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
         //TODO: review: Could also use "dragend"?
         m.on("drag", this.update_polygon.bind(this));
+        m.on("click", this.#select_corner_by_event.bind(this));
         m.on("dblclick", this.#remove_point_by_event.bind(this));
-        // m.on("contextmenu", this.remove_point_by_event.bind(this));
 
-        /*
-        function(e) {
-            this.update_polygon();
-            // var marker = e.target;
-            // var position = marker.getLatLng();
-            // map.panTo(new L.LatLng(position.lat, position.lng));
-        });
-        */
-
-        this.#corners.push(m);
+        this.#corners.splice(this.#selected_corner, 0, m);
         this._add_feature_to_map(m);
 
         if(update_polygon)
@@ -120,7 +114,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.update_polygon();
     }
 
-    #remove_point_by_event(event:L.LocationEvent) {
+    #remove_point_by_event(event:L.LeafletEvent) {
         this.remove_point_by_corner(event.target);
     }
 
@@ -135,7 +129,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
     }
 
-    #add_point_at_event(event:L.LeafletMouseEvent) {
+    #add_point_at_mouseevent(event:L.LeafletMouseEvent) {
         if(this.#polygon) {
             // const c = this.#polygon.getCenter();
             // const dx = b._northEast.lng - b._southWest.lng;
@@ -187,7 +181,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             } else{
                 //Create a new polygon
                 this.#polygon = L.polygon(corners, {color: 'red'});
-                this.#polygon.on("click", this.#add_point_at_event.bind(this));
+                this.#polygon.on("click", this.#add_point_at_mouseevent.bind(this));
                 this._add_feature_to_map(this.#polygon);
             }
         } else {

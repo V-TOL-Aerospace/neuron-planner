@@ -23,6 +23,10 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         }
     }
 
+    #remove_point_by_event(event:L.LeafletEvent) {
+        this.remove_point_by_context(event.target);
+    }
+
     remove_feature() {
         if(this.#marker)
             this.#marker.remove();
@@ -39,25 +43,16 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             this.#marker = L.marker(point.to_leaflet(),{
                 draggable: true,
                 autoPan: true,
-                // @ts-ignore
-                // contextmenu: true,
-                // contextmenuWidth: 140,
-                // contextmenuItems: [{
-                //     text: 'Delete',
-                //     icon: 'img/v_icons/v_exit_icon.png',
-                //     callback: this.remove_point_by_context.bind(this)
-                // }]
             })
+
+            //TODO: review: Could also use "dragend"?
+            this.#marker.on("drag", this.#update_position_from_event.bind(this));
+            this.#marker.on("dblclick", this.#remove_point_by_event.bind(this));
 
             const menu_items = [
                 new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
             ]
             this.#marker.bindPopup(create_popup_context_dom("Waypoint", menu_items, this.#marker));
-
-            //TODO: review: Could also use "dragend"?
-            this.#marker.on("drag", this.#update_position_from_event.bind(this));
-            // m.on("dblclick", this.remove_point_by_event.bind(this));
-            // m.on("contextmenu", this.remove_point_by_event.bind(this));
 
             this._add_feature_to_map(this.#marker);
         } else {

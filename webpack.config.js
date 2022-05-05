@@ -4,7 +4,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 module.exports = {
   mode: 'development',
   entry: './src/js/index.ts',
-  devtool: 'inline-source-map',
+  devtool: 'source-map',
+  devServer: {
+    static: {
+      directory: path.join(__dirname, 'public'),
+    },
+    compress: true,
+    port: 9000,
+  },
   module: {
     rules: [
       {
