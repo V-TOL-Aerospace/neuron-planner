@@ -6,9 +6,11 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #corners:L.Marker[];
     #polygon:L.Polygon;
     #selected_corner:number;
+    #on_change_internal:CallableFunction;
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
         super(map, on_remove, on_change);
+        this.#on_change_internal = null;
 
         this.#selected_corner = 0;
         this.#corners = [];
@@ -21,6 +23,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         } else {
             this.update_polygon();
         }
+    }
+
+    _set_on_change_internal(on_change:CallableFunction=null) {
+        this.#on_change_internal = on_change;
     }
 
     #array_move(arr:any[], old_index:number, new_index:number) {
@@ -77,6 +83,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.select_corner(event.target);
     }
 
+    get_polygon() {
+        return this.#polygon;
+    }
+
     add_corner(corner:NeuronInterfacePoint, update_polygon=true) {
         if(this.#selected_corner < 0 || this.#selected_corner >= this.#corners.length)
             this.#selected_corner = Math.min(this.#corners.length - 1, 0)
@@ -112,6 +122,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
         //Do this manually at the end
         this.update_polygon();
+    }
+
+    get_corners() {
+        return this.#corners;
     }
 
     #remove_point_by_event(event:L.LeafletEvent) {
@@ -188,6 +202,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             this.remove_feature();
         }
 
+        if(this.#on_change_internal)
+            this.#on_change_internal();
         this._trigger_on_changed();
     }
 }

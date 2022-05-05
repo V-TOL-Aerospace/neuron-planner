@@ -6,6 +6,7 @@ import { NeuronPlanner } from "./neuron_planner";
 
 import {NeuronInterfacePoint} from "./neuron_interface_point";
 import { L } from "./leaflet_interface";
+import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 
 
 export class NeuronMap {
@@ -57,7 +58,20 @@ export class NeuronMap {
         // }
     }
 
-    create_polygon_in_view() {
+    create_waypoint_in_view() {
+        if(this.#map) {
+            const b = this.#map.getBounds();
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+
+            const p = new NeuronFeaturePoint(this.#map, new NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2));
+            this.#planner.add_mission_item(p);
+        }
+    }
+
+    create_survey_in_view() {
         if(this.#map) {
             const b = this.#map.getBounds();
             const ne = b.getNorthEast();
@@ -71,13 +85,8 @@ export class NeuronMap {
                 new NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
                 new NeuronInterfacePoint(sw.lat +     dy / 4, sw.lng + 3 * dx / 4)
             ];
-            const p = new NeuronFeaturePolygon(this.#map, l);
+            const p = new NeuronFeatureSurvey(this.#map, l);
             this.#planner.add_mission_item(p);
-            // const features = p.get_features();
-            // const group = new this.#leaflet.featureGroup(features);
-
-            // this.add_features(features);
-            //this.zoom_to(group);
         }
     }
 
