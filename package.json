@@ -9,9 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
-    "deploy": "run-script-os",
-    "deploy:darwin:linux": "./deploy.sh dist",
-    "deploy:win32": "./deploy.ps1 dist"
+    "deploy": "git subtree push --prefix dist origin gh-pages"
   },
   "devDependencies": {
     "@fortawesome/fontawesome-free": "^6.1.1",
