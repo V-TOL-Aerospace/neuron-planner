@@ -1,0 +1,39 @@
+.neuron-marker-popup {
+    display: flex;
+    flex-direction: column;
+}
+
+.neuron-marker-popup-title {
+    flex: auto;
+    justify-content: center;
+    display: flex;
+
+    font-weight: bold;
+    text-decoration: underline;
+    padding: 0.5em;
+}
+
+.neuron-marker-popup-item {
+    flex: auto;
+    padding: 0.5em;
+}
+
+.neuron-marker-popup-item:hover {
+    background-color: #b0b0fd;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.neuron-marker-popup-icon {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.neuron-marker-popup-item-text {
+    margin-left: 0.2em;
+    margin-right: 0.2em;
+}
+
+.neuron-marker-popup-break {
+    width: 100%;
+}

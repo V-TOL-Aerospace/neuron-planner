@@ -1,9 +1,15 @@
-import { NeuronMap } from './map';
-import { NeuronMapPoint } from './map_point';
+import { NeuronMap } from './neuron_map';
+import { NeuronInterfacePoint } from './neuron_interface_point';
 import {NeuronAdvMode} from './adv_mode';
+
+import '@fortawesome/fontawesome-free/js/fontawesome'
+import '@fortawesome/fontawesome-free/js/solid'
+import '@fortawesome/fontawesome-free/js/regular'
+import '@fortawesome/fontawesome-free/js/brands'
 
 import "../css/theme.css";
 import "../css/index.css";
+import "../css/map.css";
 
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
@@ -23,7 +29,7 @@ let load_app_data = async () => {
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {
-        window.neuron_map.set_location(new NeuronMapPoint(location.coords.latitude, location.coords.longitude));
+        window.neuron_map.set_location(new NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
     });
 }
 
