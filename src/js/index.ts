@@ -10,18 +10,21 @@ import '@fortawesome/fontawesome-free/js/brands'
 import "../css/theme.css";
 import "../css/index.css";
 import "../css/map.css";
+import { NeuronPlanner } from './neuron_planner';
 
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
 
 declare global {
     interface Window {
+        neuron_planner: NeuronPlanner;
         neuron_map: NeuronMap;
         neuron_adv_mode: NeuronAdvMode;
     }
 }
 
-window.neuron_map = new NeuronMap('fp-map-interactive');
+window.neuron_planner = new NeuronPlanner('fp-plan', 'fp-stats');
+window.neuron_map = new NeuronMap('fp-map-interactive', window.neuron_planner);
 window.neuron_adv_mode = new NeuronAdvMode('fp-map-advanced');
 
 let load_app_data = async () => {

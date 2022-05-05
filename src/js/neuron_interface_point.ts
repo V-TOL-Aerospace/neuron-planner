@@ -1,5 +1,10 @@
 import { L } from "./leaflet_interface";
 
+export interface NeuronInterfacePointHaversine {
+    lat:number;
+    lng:number;
+}
+
 export class NeuronInterfacePoint {
     latitude: number;
     longitude: number;
@@ -15,5 +20,13 @@ export class NeuronInterfacePoint {
 
     static from_leaflet(latlng:L.LatLng) {
         return new NeuronInterfacePoint(latlng.lat, latlng.lng);
+    }
+
+    to_haversine() {
+        const h:NeuronInterfacePointHaversine = {
+            lat: this.latitude,
+            lng: this.longitude
+        }
+        return h;
     }
 }

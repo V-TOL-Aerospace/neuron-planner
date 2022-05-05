@@ -4,11 +4,13 @@ import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_i
 
 export class NeuronFeaturePoint extends NeuronFeatureBase {
     #marker:L.Marker;
+    #point:NeuronInterfacePoint;
 
-    constructor(map:L.Map, point:NeuronInterfacePoint=null, on_remove:CallableFunction=null) {
-        super(map, on_remove);
+    constructor(map:L.Map, point:NeuronInterfacePoint=null, on_remove:CallableFunction=null, on_change:CallableFunction=null) {
+        super(map, on_remove, on_change);
 
         this.#marker = null;
+        this.#point = null;
         if(point)
             this.set_point(point);
     }
@@ -28,13 +30,13 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         super.remove_feature();
     }
 
-    #update_position_from_event() {
-        //XXX: Nothing needed?
+    #update_position_from_event(event:L.LeafletEvent) {
+        this.#internal_set_point(NeuronInterfacePoint.from_leaflet(event.target.getLatLng()));
     }
 
     set_point(point:NeuronInterfacePoint) {
         if(!this.#marker) {
-            this.#marker = L.marker([point.latitude, point.longitude],{
+            this.#marker = L.marker(point.to_leaflet(),{
                 draggable: true,
                 autoPan: true,
                 // @ts-ignore
@@ -59,7 +61,18 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
             this._add_feature_to_map(this.#marker);
         } else {
-            this.#marker.setLatLng([point.latitude, point.longitude]);
+            this.#marker.setLatLng(point.to_leaflet());
         }
+
+        this.#internal_set_point(point);
+    }
+
+    #internal_set_point(point:NeuronInterfacePoint) {
+        this.#point = point;
+        this._trigger_on_changed();
+    }
+
+    get_path_coords() {
+        return this.#point ? [this.#point] : [];
     }
 }

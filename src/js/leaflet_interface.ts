@@ -1,7 +1,7 @@
 import * as L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 // @ts-ignore
-import * as ContextMenu from "leaflet-contextmenu";
+//import * as ContextMenu from "leaflet-contextmenu";
 import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
 
 // delete L.Icon.Default.prototype._getIconUrl;
@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
 //require('leaflet/dist/images/layers.png')
 //require('leaflet/dist/images/layers-2x.png')
 
-const cm = ContextMenu;
+//const cm = ContextMenu;
 
 export { L };
 

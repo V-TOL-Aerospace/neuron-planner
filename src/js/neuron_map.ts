@@ -2,19 +2,24 @@ import {NeuronFeatureBase} from "./neuron_feature_base";
 import {NeuronFeaturePoint} from "./neuron_feature_point";
 import {NeuronFeaturePolygon} from "./neuron_feature_polygon";
 
+import { NeuronPlanner } from "./neuron_planner";
+
 import {NeuronInterfacePoint} from "./neuron_interface_point";
 import { L } from "./leaflet_interface";
 
 
 export class NeuronMap {
+    #planner:NeuronPlanner
     #map:L.Map;
+    #path:L.Polyline;
     #element_name:string;
-    #mission_items:NeuronFeatureBase[];
 
-    constructor(map_element_name:string) {
+    constructor(map_element_name:string, planner:NeuronPlanner) {
+        this.#planner = planner;
         this.#map = null;
         this.#element_name = map_element_name;
-        this.#mission_items = []
+
+        this.#planner.on_mission_change(this.update_path.bind(this));
     }
 
     set_location(location:NeuronInterfacePoint, zoom=13) {
@@ -47,8 +52,8 @@ export class NeuronMap {
             //...
         // } else {
             const l = NeuronInterfacePoint.from_leaflet(event.latlng);
-            const p = new NeuronFeaturePoint(this.#map, l, this.#mission_item_removed.bind(this));
-            this.#mission_items.push(p);
+            const p = new NeuronFeaturePoint(this.#map, l);
+            this.#planner.add_mission_item(p);
         // }
     }
 
@@ -66,8 +71,8 @@ export class NeuronMap {
                 new NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
                 new NeuronInterfacePoint(sw.lat +     dy / 4, sw.lng + 3 * dx / 4)
             ];
-            const p = new NeuronFeaturePolygon(this.#map, l, this.#mission_item_removed.bind(this));
-            this.#mission_items.push(p);
+            const p = new NeuronFeaturePolygon(this.#map, l);
+            this.#planner.add_mission_item(p);
             // const features = p.get_features();
             // const group = new this.#leaflet.featureGroup(features);
 
@@ -76,11 +81,10 @@ export class NeuronMap {
         }
     }
 
-    #mission_item_removed(item:NeuronFeatureBase) {
-        // console.log(`Mission item removed: ${item}`);
-        let index = this.#mission_items.indexOf(item);
-        if(index !== -1) {
-            this.#mission_items.splice(index, 1);
+    update_path() {
+        if(this.#path) {
+            const path_points = this.#planner.get_mission_coords().map(x => x.to_leaflet());
+            this.#path.setLatLngs(path_points);
         }
     }
 
@@ -106,5 +110,9 @@ export class NeuronMap {
 			//Already have a map, so just force a re-render
 			this.#map.invalidateSize();
 		}
+
+        if(!this.#path) {
+            this.#path = L.polyline([], {color: 'orange'}).addTo(this.#map);
+        }
 	}
 }

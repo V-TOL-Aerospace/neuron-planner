@@ -6,8 +6,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #corners:L.Marker[];
     #polygon:L.Polygon;
 
-    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null) {
-        super(map, on_remove);
+    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
+        super(map, on_remove, on_change);
 
         this.#corners = [];
         if(corners.length) {
@@ -193,5 +193,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         } else {
             this.remove_feature();
         }
+
+        this._trigger_on_changed();
     }
 }
