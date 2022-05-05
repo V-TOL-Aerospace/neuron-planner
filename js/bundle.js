@@ -20962,7 +20962,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePoint_instances, _NeuronFeaturePoint_marker, _NeuronFeaturePoint_point, _NeuronFeaturePoint_update_position_from_event, _NeuronFeaturePoint_internal_set_point;
+var _NeuronFeaturePoint_instances, _NeuronFeaturePoint_marker, _NeuronFeaturePoint_point, _NeuronFeaturePoint_remove_point_by_event, _NeuronFeaturePoint_update_position_from_event, _NeuronFeaturePoint_internal_set_point;
 
 
 
@@ -20996,13 +20996,13 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
                 draggable: true,
                 autoPan: true,
             }), "f");
+            //TODO: review: Could also use "dragend"?
+            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("drag", __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_position_from_event).bind(this));
+            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("dblclick", __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_remove_point_by_event).bind(this));
             const menu_items = [
                 new _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
             ];
             __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Waypoint", menu_items, __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f")));
-            //TODO: review: Could also use "dragend"?
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("drag", __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_position_from_event).bind(this));
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("dblclick", this.remove_point_by_context.bind(this));
             this._add_feature_to_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
         }
         else {
@@ -21014,7 +21014,9 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
         return __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? [__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f")] : [];
     }
 }
-_NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new WeakMap(), _NeuronFeaturePoint_instances = new WeakSet(), _NeuronFeaturePoint_update_position_from_event = function _NeuronFeaturePoint_update_position_from_event(event) {
+_NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new WeakMap(), _NeuronFeaturePoint_instances = new WeakSet(), _NeuronFeaturePoint_remove_point_by_event = function _NeuronFeaturePoint_remove_point_by_event(event) {
+    this.remove_point_by_context(event.target);
+}, _NeuronFeaturePoint_update_position_from_event = function _NeuronFeaturePoint_update_position_from_event(event) {
     __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.target.getLatLng()));
 }, _NeuronFeaturePoint_internal_set_point = function _NeuronFeaturePoint_internal_set_point(point) {
     __classPrivateFieldSet(this, _NeuronFeaturePoint_point, point, "f");
@@ -21049,7 +21051,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_event;
+var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent;
 
 
 
@@ -21059,6 +21061,8 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         _NeuronFeaturePolygon_instances.add(this);
         _NeuronFeaturePolygon_corners.set(this, void 0);
         _NeuronFeaturePolygon_polygon.set(this, void 0);
+        _NeuronFeaturePolygon_selected_corner.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
             if (corners.length == 1)
@@ -21090,7 +21094,18 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             console.warn("Provided corner is not part of this polygon!");
         }
     }
+    select_corner(corner) {
+        const ind = __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").indexOf(corner);
+        if (ind >= 0) {
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, ind, "f");
+        }
+        else {
+            console.warn("Provided corner is not part of this polygon!");
+        }
+    }
     add_corner(corner, update_polygon = true) {
+        if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f") < 0 || __classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f") >= __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length)
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, Math.min(__classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length - 1, 0), "f");
         let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker([corner.latitude, corner.longitude], {
             draggable: true,
             autoPan: true,
@@ -21104,8 +21119,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         m.bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Polygon Corner", menu_items, m));
         //TODO: review: Could also use "dragend"?
         m.on("drag", this.update_polygon.bind(this));
+        m.on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_select_corner_by_event).bind(this));
         m.on("dblclick", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_remove_point_by_event).bind(this));
-        __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").push(m);
+        __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").splice(__classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f"), 0, m);
         this._add_feature_to_map(m);
         if (update_polygon)
             this.update_polygon();
@@ -21162,7 +21178,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             else {
                 //Create a new polygon
                 __classPrivateFieldSet(this, _NeuronFeaturePolygon_polygon, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.polygon(corners, { color: 'red' }), "f");
-                __classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f").on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_add_point_at_event).bind(this));
+                __classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f").on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_add_point_at_mouseevent).bind(this));
                 this._add_feature_to_map(__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f"));
             }
         }
@@ -21172,7 +21188,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         this._trigger_on_changed();
     }
 }
-_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
+_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
         var k = new_index - arr.length + 1;
         while (k--) {
@@ -21187,9 +21203,11 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         new_index += arr.length;
     }
     __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_array_move).call(this, __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f"), old_index, new_index);
+}, _NeuronFeaturePolygon_select_corner_by_event = function _NeuronFeaturePolygon_select_corner_by_event(event) {
+    this.select_corner(event.target);
 }, _NeuronFeaturePolygon_remove_point_by_event = function _NeuronFeaturePolygon_remove_point_by_event(event) {
     this.remove_point_by_corner(event.target);
-}, _NeuronFeaturePolygon_add_point_at_event = function _NeuronFeaturePolygon_add_point_at_event(event) {
+}, _NeuronFeaturePolygon_add_point_at_mouseevent = function _NeuronFeaturePolygon_add_point_at_mouseevent(event) {
     if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f")) {
         // const c = this.#polygon.getCenter();
         // const dx = b._northEast.lng - b._southWest.lng;
