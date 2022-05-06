@@ -30,6 +30,7 @@
     "haversine-distance": "^1.2.1",
     "leaflet": "^1.8.0",
     "leaflet-contextmenu": "^1.4.0",
-    "leaflet-filelayer": "^1.2.0"
+    "leaflet-filelayer": "^1.2.0",
+    "utm-latlng": "^1.0.6"
   }
 }
