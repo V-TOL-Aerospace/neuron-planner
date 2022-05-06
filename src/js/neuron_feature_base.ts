@@ -1,5 +1,5 @@
 import { L } from "./leaflet_interface";
-import { NeuronInterfacePoint } from "./neuron_interface_point";
+import { NeuronInterfacePoint } from "./neuron_interfaces";
 
 export class NeuronFeatureBase {
     #map:L.Map;

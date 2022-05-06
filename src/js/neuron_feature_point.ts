@@ -1,5 +1,5 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint } from "./neuron_interface_point";
+import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
 
 export class NeuronFeaturePoint extends NeuronFeatureBase {

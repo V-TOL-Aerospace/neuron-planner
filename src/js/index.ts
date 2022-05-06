@@ -1,5 +1,5 @@
 import { NeuronMap } from './neuron_map';
-import { NeuronInterfacePoint } from './neuron_interface_point';
+import { NeuronInterfacePoint } from './neuron_interfaces';
 import {NeuronAdvMode} from './adv_mode';
 
 import '@fortawesome/fontawesome-free/js/fontawesome'
