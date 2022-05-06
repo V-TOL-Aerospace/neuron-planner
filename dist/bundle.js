@@ -5732,7 +5732,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\r\n    height: 100%;\r\n}\r\n\r\nbody {\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-bg);\r\n}\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-map-interactive {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-advanced {\r\n    flex: 1 1 0;\r\n}\r\n\r\n#fp-summary {\r\n    flex: 0 1 1;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-stats {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n@media only screen and (orientation: landscape) {\r\n    /* For mobile phones: */\r\n    #fp-map {\r\n      flex-direction: row;\r\n      height: auto;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 620px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB;MACE,mBAAmB;MACnB,YAAY;IACd;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\r\n    height: 100%;\r\n}\r\n\r\nbody {\r\n    height: 100%;\r\n    width: 100%;\r\n    margin: 0;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-bg);\r\n}\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-map-interactive {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-advanced {\r\n    flex: 1 1 0;\r\n}\r\n\r\n#fp-summary {\r\n    flex: 0 1 1;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-stats {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n@media only screen and (orientation: landscape) {\r\n    /* For mobile phones: */\r\n    #fp-map {\r\n      flex-direction: row;\r\n      height: auto;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 620px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: 0 1 1;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n      flex-direction: row;\n      height: auto;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;AACf;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB;MACE,mBAAmB;MACnB,YAAY;IACd;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: 0 1 1;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n      flex-direction: row;\n      height: auto;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5759,7 +5759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5786,7 +5786,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --theme-bg: #FFFFFF;\r\n    --theme-bg-border: #505050;\r\n}", "",{"version":3,"sources":["webpack://./src/css/theme.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,0BAA0B;AAC9B","sourcesContent":[":root {\r\n    --theme-bg: #FFFFFF;\r\n    --theme-bg-border: #505050;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --theme-bg: #FFFFFF;\n    --theme-bg-border: #505050;\n}", "",{"version":3,"sources":["webpack://./src/css/theme.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,0BAA0B;AAC9B","sourcesContent":[":root {\n    --theme-bg: #FFFFFF;\n    --theme-bg-border: #505050;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -21051,7 +21051,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent;
+var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent;
 
 
 
@@ -21062,6 +21062,8 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         _NeuronFeaturePolygon_corners.set(this, void 0);
         _NeuronFeaturePolygon_polygon.set(this, void 0);
         _NeuronFeaturePolygon_selected_corner.set(this, void 0);
+        _NeuronFeaturePolygon_on_change_internal.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_on_change_internal, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
@@ -21073,6 +21075,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         else {
             this.update_polygon();
         }
+    }
+    _set_on_change_internal(on_change = null) {
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_on_change_internal, on_change, "f");
     }
     move_corner_forwards(corner) {
         const ind = __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").indexOf(corner);
@@ -21103,6 +21108,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             console.warn("Provided corner is not part of this polygon!");
         }
     }
+    get_polygon() {
+        return __classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f");
+    }
     add_corner(corner, update_polygon = true) {
         if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f") < 0 || __classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f") >= __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length)
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, Math.min(__classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length - 1, 0), "f");
@@ -21131,6 +21139,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             this.add_corner(c, false);
         //Do this manually at the end
         this.update_polygon();
+    }
+    get_corners() {
+        return __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f");
     }
     remove_point_by_corner(corner) {
         const ind = __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").indexOf(corner);
@@ -21185,10 +21196,12 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         else {
             this.remove_feature();
         }
+        if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_on_change_internal, "f"))
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_on_change_internal, "f").call(this);
         this._trigger_on_changed();
     }
 }
-_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
+_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
         var k = new_index - arr.length + 1;
         while (k--) {
@@ -21216,6 +21229,92 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         const p = _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
         this.add_corner(p);
     }
+};
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_feature_survey.ts":
+/*!*****************************************!*\
+  !*** ./src/js/neuron_feature_survey.ts ***!
+  \*****************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronFeatureSurvey": () => (/* binding */ NeuronFeatureSurvey)
+/* harmony export */ });
+/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
+/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_clean_waypoints;
+
+
+
+class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePolygon {
+    constructor(map, corners = [], on_remove = null, on_change = null) {
+        super(map, corners, on_remove, on_change);
+        _NeuronFeatureSurvey_instances.add(this);
+        _NeuronFeatureSurvey_waypoints.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
+        this._set_on_change_internal(this.update_survey.bind(this));
+        this.update_survey();
+    }
+    update_survey() {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_clean_waypoints).call(this);
+        const polygon = this.get_polygon();
+        if (polygon) {
+            let count = 1;
+            const b = polygon.getBounds();
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+            const point = new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2);
+            let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker([point.latitude, point.longitude], {
+                // draggable: true,
+                autoPan: true,
+            });
+            // const menu_items = [
+            //     new LeafletContextMenuItem("Move forward", "fa-arrow-left", this.move_corner_forwards.bind(this)),
+            //     new LeafletContextMenuItem("Move backward", "fa-arrow-right", this.move_corner_backwards.bind(this)),
+            //     null,
+            //     new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_corner.bind(this)),
+            // ]
+            m.bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)(`Survey Waypoint (#${count})`, [], m));
+            //TODO: review: Could also use "dragend"?
+            // m.on("drag", this.update_polygon.bind(this));
+            // m.on("click", this.#select_corner_by_event.bind(this));
+            // m.on("dblclick", this.#remove_point_by_event.bind(this));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").push(m);
+            this._add_feature_to_map(m);
+        }
+    }
+    remove_feature() {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_clean_waypoints).call(this);
+        super.remove_feature();
+    }
+    get_path_coords() {
+        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").map(x => _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(x.getLatLng()));
+    }
+}
+_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_clean_waypoints = function _NeuronFeatureSurvey_clean_waypoints() {
+    for (const wp of __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f")) {
+        wp.remove();
+    }
+    __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
 };
 
 
@@ -21269,9 +21368,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronMap": () => (/* binding */ NeuronMap)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
-/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
-/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -21324,12 +21423,23 @@ class NeuronMap {
         // if(event.originalEvent.ctrlKey) {
         //...
         // } else {
-        const l = _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint.from_leaflet(event.latlng);
+        const l = _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
         const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         // }
     }
-    create_polygon_in_view() {
+    create_waypoint_in_view() {
+        if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
+            const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2));
+            __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
+        }
+    }
+    create_survey_in_view() {
         if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
             const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
             const ne = b.getNorthEast();
@@ -21337,17 +21447,13 @@ class NeuronMap {
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
             const l = [
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
+                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
+                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
+                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
+                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
             ];
-            const p = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
+            const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
-            // const features = p.get_features();
-            // const group = new this.#leaflet.featureGroup(features);
-            // this.add_features(features);
-            //this.zoom_to(group);
         }
     }
     update_path() {
@@ -21358,10 +21464,10 @@ class NeuronMap {
     }
     reset() {
         if (!__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
-            __classPrivateFieldSet(this, _NeuronMap_map, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.map(__classPrivateFieldGet(this, _NeuronMap_element_name, "f"), {
+            __classPrivateFieldSet(this, _NeuronMap_map, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.map(__classPrivateFieldGet(this, _NeuronMap_element_name, "f"), {
                 doubleClickZoom: false,
             }), "f");
-            const ref = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            const ref = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                 //attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox/streets-v11',
@@ -21372,14 +21478,14 @@ class NeuronMap {
             ref.addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")); //TODO: Lock this token to the generate a new token for Neuron
             __classPrivateFieldGet(this, _NeuronMap_map, "f").on("dblclick", this.on_double_click.bind(this));
             //Set an initial zoom
-            this.set_location(new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
+            this.set_location(new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
         }
         else {
             //Already have a map, so just force a re-render
             __classPrivateFieldGet(this, _NeuronMap_map, "f").invalidateSize();
         }
         if (!__classPrivateFieldGet(this, _NeuronMap_path, "f")) {
-            __classPrivateFieldSet(this, _NeuronMap_path, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.polyline([], { color: 'orange' }).addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")), "f");
+            __classPrivateFieldSet(this, _NeuronMap_path, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.polyline([], { color: 'orange' }).addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")), "f");
         }
     }
 }
@@ -21490,6 +21596,9 @@ class NeuronPlanner {
         const s2 = document.createElement('div');
         s2.appendChild(document.createTextNode(`Total distance: ${(total_distance / 1000).toFixed(2)} km`));
         __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s2);
+    }
+    reset() {
+        this.update();
     }
     update() {
         this.update_mission_plan();
@@ -21670,7 +21779,7 @@ module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
 /******/ 		// or pass an empty string ("") and set the __webpack_public_path__ variable from your code to use your own logic.
 /******/ 		if (!scriptUrl) throw new Error("Automatic publicPath is not supported in this browser");
 /******/ 		scriptUrl = scriptUrl.replace(/#.*$/, "").replace(/\?.*$/, "").replace(/\/[^\/]+$/, "/");
-/******/ 		__webpack_require__.p = scriptUrl + "../";
+/******/ 		__webpack_require__.p = scriptUrl;
 /******/ 	})();
 /******/ 	
 /******/ 	/* webpack/runtime/jsonp chunk loading */
@@ -21749,6 +21858,7 @@ window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_10__.Neuron
 window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_0__.NeuronMap('fp-map-interactive', window.neuron_planner);
 window.neuron_adv_mode = new _adv_mode__WEBPACK_IMPORTED_MODULE_2__.NeuronAdvMode('fp-map-advanced');
 let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
+    window.neuron_planner.reset();
     window.neuron_map.reset();
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {

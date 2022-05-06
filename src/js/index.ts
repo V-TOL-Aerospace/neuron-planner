@@ -28,6 +28,7 @@ window.neuron_map = new NeuronMap('fp-map-interactive', window.neuron_planner);
 window.neuron_adv_mode = new NeuronAdvMode('fp-map-advanced');
 
 let load_app_data = async () => {
+    window.neuron_planner.reset();
     window.neuron_map.reset();
 
     //Update the map location if we can get the user's current location

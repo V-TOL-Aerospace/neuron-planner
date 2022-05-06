@@ -56,7 +56,7 @@
     <script defer type="text/javascript" src="js/map.js"></script>
     <script defer type="text/javascript" src="js/adv_mode.js"></script>
     <script defer type="text/javascript" src="js/index.js"></script> -->
-    <script defer type="text/javascript" src="js/bundle.js"></script>
+    <script defer type="text/javascript" src="bundle.js"></script>
 	<script>
 	  /*to prevent Firefox FOUC, this must be here*/
 	  let FF_FOUC_FIX;
@@ -82,8 +82,8 @@
         </div>
     </div>
     <div id="fp-draw" class="fp-user-buttons-frame">
-        <button type="button" id="fp-draw-new-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Insert Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Insert Polygon</span></button>
-        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" title="Create Survey"><i class="fas fa-layer-group"></i><span class="fp-long-name">Create Survey</span></button>
+        <button type="button" id="fp-draw-create-waypoint" class="fp-user-buttons" onclick="window.neuron_map.create_waypoint_in_view()" title="Insert Waypoint"><i class="fas fa-location-dot"></i><span class="fp-long-name">Create Waypoint</span></button>
+        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="Create Survey"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Create Survey</span></button>
         <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button>
         <button type="button" id="fp-draw-load-polygon" class="fp-user-buttons" disabled title="Load Polygon"><i class="fas fa-file-import"></i><span class="fp-long-name">Load Polygon</span></button>
         <button type="button" id="fp-draw-save-polygon" class="fp-user-buttons" disabled title="Save Polygon"><i class="fas fa-file-export"></i><span class="fp-long-name">Save Polygon</span></button>

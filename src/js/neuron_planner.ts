@@ -112,6 +112,10 @@ export class NeuronPlanner {
         this.#stats_element.appendChild(s2);
     }
 
+    reset() {
+        this.update();
+    }
+
     update() {
         this.update_mission_plan();
         this.update_mission_stats();
