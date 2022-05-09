@@ -9,12 +9,14 @@ export class UTMPos {
     y:number;
     zone:number;
     zone_letter:string;
+    tag:string;
 
-    constructor(x:number=0.0, y:number=0.0, zone:number=0.0, zone_letter:string="") {
+    constructor(x:number=0.0, y:number=0.0, zone:number=0.0, zone_letter:string="", tag:string="") {
         this.x = x;
         this.y = y;
         this.zone = zone;
         this.zone_letter = zone_letter;
+        this.tag = tag;
     }
 
     static getPolyMinMax(utmpos:UTMPos[]) {

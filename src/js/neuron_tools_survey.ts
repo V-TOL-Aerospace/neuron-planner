@@ -10,6 +10,13 @@ enum StartPosition
     Point = 5
 }
 
+
+function remove_item_from_array(array:any[], item:any) {
+    const index = array.indexOf(item);
+    if (index > -1)
+        array.splice(index, 1);
+}
+
 export function CreateGrid(
     polygon:NeuronInterfacePoint[],
     altitude:number,
@@ -197,19 +204,21 @@ export function CreateGrid(
             let line = grid[a];
             remove.push(line);
 
-            while (matchs.Count > 1)
+            while (matchs.length > 1)
             {
-                let newline = new UTMLine();
+                closestpoint = findClosestPoint(closestpoint, matchs);
+                const p1 = closestpoint;
+                remove_item_from_array(matchs, closestpoint);
 
                 closestpoint = findClosestPoint(closestpoint, matchs);
-                newline.p1 = closestpoint;
-                matchs.Remove(closestpoint);
+                const p2 = closestpoint;
+                remove_item_from_array(matchs, closestpoint);
 
-                closestpoint = findClosestPoint(closestpoint, matchs);
-                newline.p2 = closestpoint;
-                matchs.Remove(closestpoint);
-
-                newline.basepnt = line.basepnt;
+                let newline = new UTMLine(
+                    p1,
+                    p2,
+                    line.basepnt.copy()
+                );
 
                 grid.push(newline);
             }
@@ -218,9 +227,7 @@ export function CreateGrid(
 
     // cleanup and keep only lines that pass though our polygon
     for(const line of remove)
-    {
-        grid.Remove(line);
-    }
+        remove_item_from_array(grid, line);
 
     // debug
     // for (const line of grid)
@@ -262,9 +269,9 @@ export function CreateGrid(
     startposutm = findClosestPoint(startposutm, utmpositions);
 
     // find closest line point to startpos
-    UTMLine closest = findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
+    let closest = findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
 
-    utmpos lastpnt;
+    let lastpnt = new UTMPos();
 
     // get the closes point from the line we picked
     if (closest.p1.GetDistance(startposutm) < closest.p2.GetDistance(startposutm))
@@ -281,7 +288,7 @@ export function CreateGrid(
     // ME = middle end
     // SM = start middle
 
-    while (grid.Count > 0)
+    while (grid.length > 0)
     {
         // for each line, check which end of the line is the next closest
         if (closest.p1.GetDistance(lastpnt) < closest.p2.GetDistance(lastpnt))
@@ -289,19 +296,19 @@ export function CreateGrid(
             utmpos newstart = newpos(closest.p1, angle, -leadin);
             newstart.Tag = "S";
             //UTMLine(newstart, "S");
-            ans.Add(newstart);
+            ans.push(newstart);
 
             if (leadin < 0)
             {
                 var p2 = new utmpos(newstart) { Tag = "SM" };
                 //UTMLine(p2, "SM");
-                ans.Add(p2);
+                ans.push(p2);
             }
             else
             {
                 closest.p1.Tag = "SM";
                 //UTMLine(closest.p1, "SM");
-                ans.Add(closest.p1);
+                ans.push(closest.p1);
             }
 
             if (spacing > 0)
@@ -310,39 +317,36 @@ export function CreateGrid(
                     d < (closest.p1.GetDistance(closest.p2));
                     d += spacing)
                 {
-                    double ax = closest.p1.x;
-                    double ay = closest.p1.y;
-
-                    newpos(ref ax, ref ay, angle, d);
-                    var utmpos1 = new utmpos(ax, ay, utmzone) { Tag = "M" };
+                    // newpos(ref ax, ref ay, angle, d);
+                    let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utmzone, "", "M");
                     //UTMLine(utmpos1, "M");
-                    ans.Add(utmpos1);
+                    ans.push(utmpos1);
                 }
             }
 
-            utmpos newend = newpos(closest.p2, angle, overshoot1);
+            let newend:UTMPos = newpos(closest.p2, angle, overshoot1);
 
             if (overshoot1 < 0)
             {
                 var p2 = new utmpos(newend) { Tag = "ME" };
                 //UTMLine(p2, "ME");
-                ans.Add(p2);
+                ans.push(p2);
             }
             else
             {
                 closest.p2.Tag = "ME";
                 //UTMLine(closest.p2, "ME");
-                ans.Add(closest.p2);
+                ans.push(closest.p2);
             }
 
             newend.Tag = "E";
             //UTMLine(newend, "E");
-            ans.Add(newend);
+            ans.push(newend);
 
             lastpnt = closest.p2;
 
             grid.Remove(closest);
-            if (grid.Count == 0)
+            if (grid.length == 0)
                 break;
 
             closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
@@ -352,19 +356,19 @@ export function CreateGrid(
             utmpos newstart = newpos(closest.p2, angle, leadin);
             newstart.Tag = "S";
             //UTMLine(newstart, "S");
-            ans.Add(newstart);
+            ans.push(newstart);
 
             if (leadin < 0)
             {
                 var p2 = new utmpos(newstart) { Tag = "SM" };
                 //UTMLine(p2, "SM");
-                ans.Add(p2);
+                ans.push(p2);
             }
             else
             {
                 closest.p2.Tag = "SM";
                 //UTMLine(closest.p2, "SM");
-                ans.Add(closest.p2);
+                ans.push(closest.p2);
             }
 
             if (spacing > 0)
@@ -379,7 +383,7 @@ export function CreateGrid(
                     newpos(ref ax, ref ay, angle, -d);
                     var utmpos2 = new utmpos(ax, ay, utmzone) { Tag = "M" };
                     //UTMLine(utmpos2, "M");
-                    ans.Add(utmpos2);
+                    ans.push(utmpos2);
                 }
             }
 
@@ -389,23 +393,23 @@ export function CreateGrid(
             {
                 var p2 = new utmpos(newend) { Tag = "ME" };
                 //UTMLine(p2, "ME");
-                ans.Add(p2);
+                ans.push(p2);
             }
             else
             {
                 closest.p1.Tag = "ME";
                 //UTMLine(closest.p1, "ME");
-                ans.Add(closest.p1);
+                ans.push(closest.p1);
             }
 
             newend.Tag = "E";
             //UTMLine(newend, "E");
-            ans.Add(newend);
+            ans.push(newend);
 
             lastpnt = closest.p1;
 
             grid.Remove(closest);
-            if (grid.Count == 0)
+            if (grid.length == 0)
                 break;
             closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
         }
