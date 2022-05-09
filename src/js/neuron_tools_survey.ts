@@ -293,14 +293,16 @@ export function CreateGrid(
         // for each line, check which end of the line is the next closest
         if (closest.p1.GetDistance(lastpnt) < closest.p2.GetDistance(lastpnt))
         {
-            utmpos newstart = newpos(closest.p1, angle, -leadin);
+            let newstart = closest.relative_point_from_dist_bearing(angle, -leadin);
+
             newstart.Tag = "S";
             //UTMLine(newstart, "S");
             ans.push(newstart);
 
             if (leadin < 0)
             {
-                var p2 = new utmpos(newstart) { Tag = "SM" };
+                var p2 = newstart.copy();
+                p2.Tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
             }
@@ -313,7 +315,7 @@ export function CreateGrid(
 
             if (spacing > 0)
             {
-                for (double d = (spacing - ((closest.basepnt.GetDistance(closest.p1)) % spacing));
+                for (let d = (spacing - ((closest.basepnt.GetDistance(closest.p1)) % spacing));
                     d < (closest.p1.GetDistance(closest.p2));
                     d += spacing)
                 {
@@ -324,11 +326,12 @@ export function CreateGrid(
                 }
             }
 
-            let newend:UTMPos = newpos(closest.p2, angle, overshoot1);
+            let newend = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
 
             if (overshoot1 < 0)
             {
-                var p2 = new utmpos(newend) { Tag = "ME" };
+                var p2 = newend.copy()
+                p.Tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
             }
@@ -345,7 +348,7 @@ export function CreateGrid(
 
             lastpnt = closest.p2;
 
-            grid.Remove(closest);
+            remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
 
@@ -353,14 +356,15 @@ export function CreateGrid(
         }
         else
         {
-            utmpos newstart = newpos(closest.p2, angle, leadin);
+            let newstart = closest.p2.relative_point_from_dist_bearing(angle, leadin);
             newstart.Tag = "S";
             //UTMLine(newstart, "S");
             ans.push(newstart);
 
             if (leadin < 0)
             {
-                var p2 = new utmpos(newstart) { Tag = "SM" };
+                var p2 = newstart.copy()
+                p2.Tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
             }
@@ -373,25 +377,28 @@ export function CreateGrid(
 
             if (spacing > 0)
             {
-                for (double d = ((closest.basepnt.GetDistance(closest.p2)) % spacing);
+                for (let d = ((closest.basepnt.GetDistance(closest.p2)) % spacing);
                     d < (closest.p1.GetDistance(closest.p2));
                     d += spacing)
                 {
-                    double ax = closest.p2.x;
-                    double ay = closest.p2.y;
+                    // let ax = closest.p2.x;
+                    // let ay = closest.p2.y;
+                    let a = closest.p2.relative_point_from_dist_bearing(angle, -d);
 
-                    newpos(ref ax, ref ay, angle, -d);
-                    var utmpos2 = new utmpos(ax, ay, utmzone) { Tag = "M" };
+                    // newpos(ref ax, ref ay, angle, -d);
+                    var utmpos2 = new UTMPos(a.x, a.y, utmzone, "", "M");
                     //UTMLine(utmpos2, "M");
-                    ans.push(utmpos2);
+                    ans.push(NeuronInterfacePoint.from_UTM(utmpos2));
                 }
             }
 
-            utmpos newend = newpos(closest.p1, angle, -overshoot2);
+            let newend = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2);
+            // utmpos newend = newpos(closest.p1, angle, -overshoot2);
 
             if (overshoot2 < 0)
             {
-                var p2 = new utmpos(newend) { Tag = "ME" };
+                var p2 = newend.copy()
+                p2.Tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
             }
@@ -408,7 +415,8 @@ export function CreateGrid(
 
             lastpnt = closest.p1;
 
-            grid.Remove(closest);
+            // grid.Remove(closest);
+            remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
             closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
@@ -416,7 +424,8 @@ export function CreateGrid(
     }
 
     // set the altitude on all points
-    ans.ForEach(plla => { plla.Alt = altitude; });
+    for(let p of ans)
+        p.altitude = altitude;
 
     return ans;
 }
