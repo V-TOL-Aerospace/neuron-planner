@@ -42,11 +42,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         //TODO: Calculate spacing or? distance from sidelap
         const altitude = 100;
-        const distance = 20;
-        const spacing = 20;
+        const distance = 50;
+        const spacing = 0;
         const angle = 0.0;
-        const overshoot1 = 70.0;
-        const overshoot2 = 70.0;
+        const overshoot1 = 0.0;
+        const overshoot2 = 0.0;
         const startpos = StartPosition.TopLeft;
         const minLaneSeparation = 1;
         const leadin = 0.0;
