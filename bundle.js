@@ -20949,7 +20949,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronFeaturePoint": () => (/* binding */ NeuronFeaturePoint)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
@@ -21017,7 +21017,7 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
 _NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new WeakMap(), _NeuronFeaturePoint_instances = new WeakSet(), _NeuronFeaturePoint_remove_point_by_event = function _NeuronFeaturePoint_remove_point_by_event(event) {
     this.remove_point_by_context(event.target);
 }, _NeuronFeaturePoint_update_position_from_event = function _NeuronFeaturePoint_update_position_from_event(event) {
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.target.getLatLng()));
+    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.target.getLatLng()));
 }, _NeuronFeaturePoint_internal_set_point = function _NeuronFeaturePoint_internal_set_point(point) {
     __classPrivateFieldSet(this, _NeuronFeaturePoint_point, point, "f");
     this._trigger_on_changed();
@@ -21038,7 +21038,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronFeaturePolygon": () => (/* binding */ NeuronFeaturePolygon)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
@@ -21161,7 +21161,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             const sw = b.getSouthWest();
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
-            const p = new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2);
+            const p = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2);
             this.add_corner(p);
         }
     }
@@ -21226,7 +21226,7 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         // const dx = b._northEast.lng - b._southWest.lng;
         // const dy = b._northEast.lat - b._southWest.lat;
         // const p = new NeuronMapPoint(b._southWest.lat + dy / 2, b._southWest.lng + dx / 2);
-        const p = _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
+        const p = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
         this.add_corner(p);
     }
 };
@@ -21246,7 +21246,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronFeatureSurvey": () => (/* binding */ NeuronFeatureSurvey)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
@@ -21282,7 +21282,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             const sw = b.getSouthWest();
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
-            const point = new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2);
+            const point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2);
             let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker([point.latitude, point.longitude], {
                 // draggable: true,
                 autoPan: true,
@@ -21307,7 +21307,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         super.remove_feature();
     }
     get_path_coords() {
-        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").map(x => _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(x.getLatLng()));
+        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").map(x => _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(x.getLatLng()));
     }
 }
 _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_clean_waypoints = function _NeuronFeatureSurvey_clean_waypoints() {
@@ -21320,23 +21320,228 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_instances =
 
 /***/ }),
 
-/***/ "./src/js/neuron_interface_point.ts":
-/*!******************************************!*\
-  !*** ./src/js/neuron_interface_point.ts ***!
-  \******************************************/
+/***/ "./src/js/neuron_interfaces.ts":
+/*!*************************************!*\
+  !*** ./src/js/neuron_interfaces.ts ***!
+  \*************************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NeuronInterfacePoint": () => (/* binding */ NeuronInterfacePoint)
+/* harmony export */   "NeuronInterfacePoint": () => (/* binding */ NeuronInterfacePoint),
+/* harmony export */   "Rect": () => (/* binding */ Rect),
+/* harmony export */   "UTMLine": () => (/* binding */ UTMLine),
+/* harmony export */   "UTMPos": () => (/* binding */ UTMPos)
 /* harmony export */ });
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var utm_latlng__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! utm-latlng */ "./node_modules/utm-latlng/UTMLatLng.js");
+/* harmony import */ var utm_latlng__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(utm_latlng__WEBPACK_IMPORTED_MODULE_1__);
 
+// @ts-ignore
+
+// Add an angle while normalizing output in the range 0...360
+function AddAngle(angle, degrees) {
+    angle += degrees;
+    angle = angle % 360;
+    if (angle < 0)
+        angle += 360;
+    return angle;
+}
+const utm_converter = new utm_latlng__WEBPACK_IMPORTED_MODULE_1__.utmObj('WGS 84');
+class UTMPos {
+    constructor(x = 0.0, y = 0.0, zone = 0.0, zone_letter = "", tag = "") {
+        this.x = x;
+        this.y = y;
+        this.zone = zone;
+        this.zone_letter = zone_letter;
+        this.tag = tag;
+    }
+    static getPolyMinMax(utmpos) {
+        if (utmpos.length == 0)
+            return new Rect();
+        let minx, miny, maxx, maxy = 0.0;
+        minx = maxx = utmpos[0].x;
+        miny = maxy = utmpos[0].y;
+        for (const pnt of utmpos) {
+            minx = Math.min(minx, pnt.x);
+            maxx = Math.max(maxx, pnt.x);
+            miny = Math.min(miny, pnt.y);
+            maxy = Math.max(maxy, pnt.y);
+        }
+        return new Rect(minx, maxy, maxx - minx, miny - maxy);
+    }
+    equals(other) {
+        return (this.x == other.x) || (this.y == other.y) || (this.zone == other.zone) || (this.zone_letter == other.zone_letter);
+    }
+    copy() {
+        return new UTMPos(this.x, this.y, this.zone, this.zone_letter);
+    }
+    relative_point_from_dist_bearing(bearing, distance) {
+        let degN = 90 - bearing;
+        if (degN < 0)
+            degN += 360;
+        const deg2rad = Math.PI / 180.0;
+        return new UTMPos(this.x + distance * Math.cos(degN * deg2rad), this.y + distance * Math.sin(degN * deg2rad), this.zone, this.zone_letter);
+    }
+    GetDistance(b) {
+        return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
+    }
+    static FindLineIntersection(start1, end1, start2, end2) {
+        let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
+        //  AB & CD are parallel
+        if (denom == 0)
+            return new UTMPos();
+        let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+        let r = numer / denom;
+        let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+        let s = numer2 / denom;
+        if ((r < 0 || r > 1) || (s < 0 || s > 1))
+            return new UTMPos();
+        // Find intersection point
+        return new UTMPos(start1.x + (r * (end1.x - start1.x)), start1.y + (r * (end1.y - start1.y)), start1.zone);
+    }
+    static PointInPolygon(p, poly) {
+        let p1 = new UTMPos();
+        let p2 = new UTMPos();
+        let inside = false;
+        if (poly.length < 3) {
+            return inside;
+        }
+        let oldPoint = poly[poly.length - 1].copy();
+        for (let i = 0; i < poly.length; i++) {
+            let newPoint = poly[i].copy();
+            if (newPoint.y > oldPoint.y) {
+                p1 = oldPoint;
+                p2 = newPoint;
+            }
+            else {
+                p1 = newPoint;
+                p2 = oldPoint;
+            }
+            if ((newPoint.y < p.y) == (p.y <= oldPoint.y)
+                && (p.x - p1.x) * (p2.y - p1.y)
+                    < (p2.x - p1.x) * (p.y - p1.y)) {
+                inside = !inside;
+            }
+            oldPoint = newPoint;
+        }
+        return inside;
+    }
+    static FindLineIntersectionExtension(start1, end1, start2, end2) {
+        let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
+        //  AB & CD are parallel
+        if (denom == 0)
+            return new UTMPos();
+        let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+        let r = numer / denom;
+        let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+        let s = numer2 / denom;
+        if ((r < 0 || r > 1) || (s < 0 || s > 1)) {
+            // line intersection is outside our lines.
+        }
+        // Find intersection point
+        let result = new UTMPos(start1.x + (r * (end1.x - start1.x)), start1.y + (r * (end1.y - start1.y)), start1.zone);
+        return result;
+    }
+    static findClosestPoint(start, list) {
+        let answer = new UTMPos();
+        let currentbest = Number.MAX_VALUE;
+        for (const pnt of list) {
+            const dist1 = start.GetDistance(pnt);
+            if (dist1 < currentbest) {
+                answer = pnt;
+                currentbest = dist1;
+            }
+        }
+        return answer;
+    }
+    static findClosestLine(start, list, minDistance, angle) {
+        if (minDistance != 0) {
+            // By now, just add 5.000 km to our lines so they are long enough to allow intersection
+            let METERS_TO_EXTEND = 5000;
+            let perperndicularOrientation = AddAngle(angle, 90);
+            // Calculation of a perpendicular line to the grid lines containing the "start" point
+            /*
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  -------------------------------------start---------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            */
+            let start_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, -METERS_TO_EXTEND);
+            let stop_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, METERS_TO_EXTEND);
+            // Store one intersection point per grid line
+            let intersectedPoints = new Map();
+            // lets order distances from every intersected point per line with the "start" point
+            let ordered_min_to_max = new Map();
+            for (const line of list) {
+                // Calculate intersection point
+                let p = UTMPos.FindLineIntersectionExtension(line.p1, line.p2, start_perpendicular_line, stop_perpendicular_line);
+                // Store it
+                intersectedPoints.set(p, line);
+                // Calculate distances between interesected point and "start" (i.e. line and start)
+                let distance_p = start.GetDistance(p);
+                if (!ordered_min_to_max.has(distance_p))
+                    ordered_min_to_max.set(distance_p, p);
+            }
+            // Acquire keys and sort them.
+            let ordered_keys = Array.from(ordered_min_to_max.keys());
+            ordered_keys.sort(function (a, b) {
+                return a - b;
+            });
+            // Lets select a line that is the closest to "start" point but "mindistance" away at least.
+            // If we have only one line, return that line whatever the minDistance says
+            let key = Number.MAX_VALUE;
+            let i = 0;
+            while (key == Number.MAX_VALUE && i < ordered_keys.length) {
+                if (ordered_keys[i] >= minDistance)
+                    key = ordered_keys[i];
+                i++;
+            }
+            // If no line is selected (because all of them are closer than minDistance, then get the farest one
+            if (key == Number.MAX_VALUE)
+                key = ordered_keys[ordered_keys.length - 1];
+            let filteredmap = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance(start) >= key);
+            let filteredlines = filteredmap.map(a => a[1]);
+            return UTMPos.findClosestLine(start, filteredlines, 0, angle);
+        }
+        else {
+            let answer = list[0];
+            let shortest = Number.MAX_VALUE;
+            for (const line of list) {
+                let ans1 = start.GetDistance(line.p1);
+                let ans2 = start.GetDistance(line.p2);
+                let shorterpnt = ans1 < ans2 ? line.p1 : line.p2;
+                if (shortest > start.GetDistance(shorterpnt)) {
+                    answer = line;
+                    shortest = start.GetDistance(shorterpnt);
+                }
+            }
+            return answer;
+        }
+    }
+}
+class UTMLine {
+    constructor(p1, p2, basepnt) {
+        this.p1 = p1;
+        this.p2 = p2;
+        this.basepnt = basepnt;
+    }
+}
 class NeuronInterfacePoint {
-    constructor(latitude = 0.0, longitude = 0.0) {
+    constructor(latitude = 0.0, longitude = 0.0, altitude = 0.0) {
         this.latitude = latitude;
         this.longitude = longitude;
+        this.altitude = altitude;
+    }
+    equals(other) {
+        return this.latitude == other.latitude &&
+            this.longitude == other.longitude &&
+            this.altitude == other.altitude;
     }
     to_leaflet() {
         return _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__.L.latLng([this.latitude, this.longitude]);
@@ -21350,6 +21555,42 @@ class NeuronInterfacePoint {
             lng: this.longitude
         };
         return h;
+    }
+    to_UTM() {
+        const precision = 12;
+        const u = utm_converter.convertLatLngToUtm(this.latitude, this.longitude, precision);
+        return new UTMPos(u.Easting, u.Northing, u.ZoneNumber, u.ZoneLetter);
+    }
+    static from_UTM(utm) {
+        const l = utm_converter.convertUtmToLatLng(utm.x, utm.y, utm.zone, utm.zone_letter);
+        return new NeuronInterfacePoint(l.lat, l.lang);
+    }
+    static from_UTMs(utms) {
+        return utms.map(p => NeuronInterfacePoint.from_UTM(p));
+    }
+}
+class Rect {
+    constructor(Left = 0.0, Top = 0.0, Width = 0.0, Height = 0.0) {
+        this.Left = Left;
+        this.Top = Top;
+        this.Right = Left + Width;
+        this.Bottom = Top + Height;
+    }
+    Width() {
+        return this.Right - this.Left;
+    }
+    Height() {
+        return this.Top - this.Bottom;
+    }
+    MidWidth() {
+        return ((this.Right - this.Left) / 2) + this.Left;
+    }
+    MidHeight() {
+        return ((this.Top - this.Bottom) / 2) + this.Bottom;
+    }
+    DiagDistance() {
+        // Pythagoras
+        return Math.sqrt(Math.pow(this.Width(), 2) + Math.pow(this.Height(), 2));
     }
 }
 
@@ -21368,7 +21609,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronMap": () => (/* binding */ NeuronMap)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
@@ -21423,7 +21664,7 @@ class NeuronMap {
         // if(event.originalEvent.ctrlKey) {
         //...
         // } else {
-        const l = _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
+        const l = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
         const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         // }
@@ -21435,7 +21676,7 @@ class NeuronMap {
             const sw = b.getSouthWest();
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
-            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2));
+            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2));
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
@@ -21447,10 +21688,10 @@ class NeuronMap {
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
             const l = [
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
-                new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
+                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
+                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
+                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
+                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
             ];
             const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
@@ -21478,7 +21719,7 @@ class NeuronMap {
             ref.addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")); //TODO: Lock this token to the generate a new token for Neuron
             __classPrivateFieldGet(this, _NeuronMap_map, "f").on("dblclick", this.on_double_click.bind(this));
             //Set an initial zoom
-            this.set_location(new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
+            this.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
         }
         else {
             //Already have a map, so just force a re-render
@@ -21621,6 +21862,337 @@ _NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_stats_element = new 
 }, _NeuronPlanner_mission_item_changed = function _NeuronPlanner_mission_item_changed(item) {
     __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
 };
+
+
+/***/ }),
+
+/***/ "./node_modules/utm-latlng/UTMLatLng.js":
+/*!**********************************************!*\
+  !*** ./node_modules/utm-latlng/UTMLatLng.js ***!
+  \**********************************************/
+/***/ ((module) => {
+
+/* global UTMLatLng */
+var method = UTMLatLng.prototype;
+
+var datumName = "WGS 84";
+var a;
+var eccSquared;
+var status = false;
+function UTMLatLng(datumNameIn) {
+    if (datumNameIn !== undefined)
+    {
+        datumName = datumNameIn;
+    }
+    this.setEllipsoid(datumName);
+}
+
+method.convertLatLngToUtm = function (latitude, longitude,precision)
+{
+    if (this.status)
+    {
+        return 'No ecclipsoid data associated with unknown datum: ' + datumName;
+    }
+
+    if(!Number.isInteger(precision))
+    {
+        return 'Precision is not integer number.';
+    }
+
+    latitude = parseFloat(latitude);
+    longitude = parseFloat(longitude);
+
+    var LongTemp = longitude;
+    var LatRad = this.toRadians(latitude);
+    var LongRad = this.toRadians(LongTemp);
+
+    if (LongTemp >= 8 && LongTemp <= 13 && latitude > 54.5 && latitude < 58) {
+        ZoneNumber = 32;
+    } else if (latitude >= 56.0 && latitude < 64.0 && LongTemp >= 3.0 && LongTemp < 12.0) {
+        ZoneNumber = 32;
+    } else {
+        ZoneNumber = ((LongTemp + 180) / 6) + 1;
+
+        if (latitude >= 72.0 && latitude < 84.0) {
+            if (LongTemp >= 0.0 && LongTemp < 9.0) {
+                ZoneNumber = 31;
+            } else if (LongTemp >= 9.0 && LongTemp < 21.0) {
+                ZoneNumber = 33;
+            } else if (LongTemp >= 21.0 && LongTemp < 33.0) {
+                ZoneNumber = 35;
+            } else if (LongTemp >= 33.0 && LongTemp < 42.0) {
+                ZoneNumber = 37;
+            }
+        }
+    }
+    ZoneNumber = parseInt(ZoneNumber);
+
+    var LongOrigin = (ZoneNumber - 1) * 6 - 180 + 3;  //+3 puts origin in middle of zone
+    var LongOriginRad = this.toRadians(LongOrigin);
+
+    var UTMZone = this.getUtmLetterDesignator(latitude);
+
+    var eccPrimeSquared = (this.eccSquared) / (1 - this.eccSquared);
+
+    var N = this.a / Math.sqrt(1 - this.eccSquared * Math.sin(LatRad) * Math.sin(LatRad));
+    var T = Math.tan(LatRad) * Math.tan(LatRad);
+    var C = eccPrimeSquared * Math.cos(LatRad) * Math.cos(LatRad);
+    var A = Math.cos(LatRad) * (LongRad - LongOriginRad);
+
+    var M = this.a * ((1 - this.eccSquared / 4 - 3 * this.eccSquared * this.eccSquared / 64 - 5 * this.eccSquared * this.eccSquared * this.eccSquared / 256) * LatRad
+        - (3 * this.eccSquared / 8 + 3 * this.eccSquared * this.eccSquared / 32 + 45 * this.eccSquared * this.eccSquared * this.eccSquared / 1024) * Math.sin(2 * LatRad)
+        + (15 * this.eccSquared * this.eccSquared / 256 + 45 * this.eccSquared * this.eccSquared * this.eccSquared / 1024) * Math.sin(4 * LatRad)
+        - (35 * this.eccSquared * this.eccSquared * this.eccSquared / 3072) * Math.sin(6 * LatRad));
+
+    var UTMEasting = parseFloat(0.9996 * N * (A + (1 - T + C) * A * A * A / 6
+        + (5 - 18 * T + T * T + 72 * C - 58 * eccPrimeSquared) * A * A * A * A * A / 120)
+    + 500000.0);
+
+    var UTMNorthing = parseFloat(0.9996 * (M + N * Math.tan(LatRad) * (A * A / 2 + (5 - T + 9 * C + 4 * C * C) * A * A * A * A / 24
+        + (61 - 58 * T + T * T + 600 * C - 330 * eccPrimeSquared) * A * A * A * A * A * A / 720)));
+
+    if (latitude < 0)
+        UTMNorthing += 10000000.0;
+    UTMNorthing = precisionRound(UTMNorthing,precision);
+    UTMEasting = precisionRound(UTMEasting,precision);
+    return {Easting: UTMEasting, Northing: UTMNorthing, ZoneNumber: parseInt(ZoneNumber), ZoneLetter: UTMZone};
+
+
+};
+
+
+method.convertUtmToLatLng = function (UTMEasting, UTMNorthing, UTMZoneNumber, UTMZoneLetter)
+{
+    var e1 = (1 - Math.sqrt(1 - this.eccSquared)) / (1 + Math.sqrt(1 - this.eccSquared));
+    var x = UTMEasting - 500000.0; //remove 500,000 meter offset for longitude
+    var y = UTMNorthing;
+    var ZoneNumber = UTMZoneNumber;
+    var ZoneLetter = UTMZoneLetter;
+    var NorthernHemisphere;
+    if(UTMEasting===undefined)
+    {
+        return "Please pass the UTMEasting!";
+    }
+    if(UTMNorthing===undefined)
+    {
+        return "Please pass the UTMNorthing!";
+    }
+    if(UTMZoneNumber===undefined)
+    {
+        return "Please pass the UTMZoneNumber!";
+    }
+    if(UTMZoneLetter===undefined)
+    {
+        return "Please pass the UTMZoneLetter!";
+    }
+
+    if (['N', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'].indexOf(ZoneLetter) !== -1) {
+        NorthernHemisphere = 1;
+    } else {
+        NorthernHemisphere = 0;
+        y -= 10000000.0;
+    }
+
+    var LongOrigin = (ZoneNumber - 1) * 6 - 180 + 3;  
+
+    var eccPrimeSquared = (this.eccSquared) / (1 - this.eccSquared);
+
+    var M = y / 0.9996;
+    var mu = M / (this.a * (1 - this.eccSquared / 4 - 3 * this.eccSquared * this.eccSquared / 64 - 5 * this.eccSquared * this.eccSquared * this.eccSquared / 256));
+
+    var phi1Rad = mu + (3 * e1 / 2 - 27 * e1 * e1 * e1 / 32) * Math.sin(2 * mu)
+    + (21 * e1 * e1 / 16 - 55 * e1 * e1 * e1 * e1 / 32) * Math.sin(4 * mu)
+    + (151 * e1 * e1 * e1 / 96) * Math.sin(6 * mu);
+    var phi1 = this.toDegrees(phi1Rad);
+
+    var N1 = this.a / Math.sqrt(1 - this.eccSquared * Math.sin(phi1Rad) * Math.sin(phi1Rad));
+    var T1 = Math.tan(phi1Rad) * Math.tan(phi1Rad);
+    var C1 = eccPrimeSquared * Math.cos(phi1Rad) * Math.cos(phi1Rad);
+    var R1 = this.a * (1 - this.eccSquared) / Math.pow(1 - this.eccSquared * Math.sin(phi1Rad) * Math.sin(phi1Rad), 1.5);
+    var D = x / (N1 * 0.9996);
+
+    var Lat = phi1Rad - (N1 * Math.tan(phi1Rad) / R1) * (D * D / 2 - (5 + 3 * T1 + 10 * C1 - 4 * C1 * C1 - 9 * eccPrimeSquared) * D * D * D * D / 24
+        + (61 + 90 * T1 + 298 * C1 + 45 * T1 * T1 - 252 * eccPrimeSquared - 3 * C1 * C1) * D * D * D * D * D * D / 720);
+    Lat = this.toDegrees(Lat);
+
+    var Long = (D - (1 + 2 * T1 + C1) * D * D * D / 6 + (5 - 2 * C1 + 28 * T1 - 3 * C1 * C1 + 8 * eccPrimeSquared + 24 * T1 * T1)
+        * D * D * D * D * D / 120) / Math.cos(phi1Rad);
+    Long = LongOrigin + this.toDegrees(Long);
+    return {lat: Lat, lng: Long};
+};
+
+
+method.getUtmLetterDesignator = function (latitude) {
+    latitude = parseFloat(latitude);
+    if ((84 >= latitude) && (latitude >= 72))
+        return 'X';
+    else if ((72 > latitude) && (latitude >= 64))
+        return 'W';
+    else if ((64 > latitude) && (latitude >= 56))
+        return 'V';
+    else if ((56 > latitude) && (latitude >= 48))
+        return 'U';
+    else if ((48 > latitude) && (latitude >= 40))
+        return 'T';
+    else if ((40 > latitude) && (latitude >= 32))
+        return 'S';
+    else if ((32 > latitude) && (latitude >= 24))
+        return 'R';
+    else if ((24 > latitude) && (latitude >= 16))
+        return 'Q';
+    else if ((16 > latitude) && (latitude >= 8))
+        return 'P';
+    else if ((8 > latitude) && (latitude >= 0))
+        return 'N';
+    else if ((0 > latitude) && (latitude >= -8))
+        return 'M';
+    else if ((-8 > latitude) && (latitude >= -16))
+        return 'L';
+    else if ((-16 > latitude) && (latitude >= -24))
+        return 'K';
+    else if ((-24 > latitude) && (latitude >= -32))
+        return 'J';
+    else if ((-32 > latitude) && (latitude >= -40))
+        return 'H';
+    else if ((-40 > latitude) && (latitude >= -48))
+        return 'G';
+    else if ((-48 > latitude) && (latitude >= -56))
+        return 'F';
+    else if ((-56 > latitude) && (latitude >= -64))
+        return 'E';
+    else if ((-64 > latitude) && (latitude >= -72))
+        return 'D';
+    else if ((-72 > latitude) && (latitude >= -80))
+        return 'C';
+    else
+        return 'Z';
+
+};
+
+method.setEllipsoid = function (name)
+{
+    switch (name) {
+        case 'Airy':
+        this.a = 6377563;
+        this.eccSquared = 0.00667054;
+        break;
+        case 'Australian National':
+        this.a = 6378160;
+        this.eccSquared = 0.006694542;
+        break;
+        case 'Bessel 1841':
+        this.a = 6377397;
+        this.eccSquared = 0.006674372;
+        break;
+        case 'Bessel 1841 Nambia':
+        this.a = 6377484;
+        this.eccSquared = 0.006674372;
+        break;
+        case 'Clarke 1866':
+        this.a = 6378206;
+        this.eccSquared = 0.006768658;
+        break;
+        case 'Clarke 1880':
+        this.a = 6378249;
+        this.eccSquared = 0.006803511;
+        break;
+        case 'Everest':
+        this.a = 6377276;
+        this.eccSquared = 0.006637847;
+        break;
+        case 'Fischer 1960 Mercury':
+        this.a = 6378166;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'Fischer 1968':
+        this.a = 6378150;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'GRS 1967':
+        this.a = 6378160;
+        this.eccSquared = 0.006694605;
+        break;
+        case 'GRS 1980':
+        this.a = 6378137;
+        this.eccSquared = 0.00669438;
+        break;
+        case 'Helmert 1906':
+        this.a = 6378200;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'Hough':
+        this.a = 6378270;
+        this.eccSquared = 0.00672267;
+        break;
+        case 'International':
+        this.a = 6378388;
+        this.eccSquared = 0.00672267;
+        break;
+        case 'Krassovsky':
+        this.a = 6378245;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'Modified Airy':
+        this.a = 6377340;
+        this.eccSquared = 0.00667054;
+        break;
+        case 'Modified Everest':
+        this.a = 6377304;
+        this.eccSquared = 0.006637847;
+        break;
+        case 'Modified Fischer 1960':
+        this.a = 6378155;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'South American 1969':
+        this.a = 6378160;
+        this.eccSquared = 0.006694542;
+        break;
+        case 'WGS 60':
+        this.a = 6378165;
+        this.eccSquared = 0.006693422;
+        break;
+        case 'WGS 66':
+        this.a = 6378145;
+        this.eccSquared = 0.006694542;
+        break;
+        case 'WGS 72':
+        this.a = 6378135;
+        this.eccSquared = 0.006694318;
+        break;
+        case 'ED50':
+        this.a = 6378388;
+        this.eccSquared = 0.00672267;
+            break; // International Ellipsoid
+            case 'WGS 84':
+        case 'EUREF89': // Max deviation from WGS 84 is 40 cm/km see http://ocq.dk/euref89 (in danish)
+        case 'ETRS89': // Same as EUREF89 
+        this.a = 6378137;
+        this.eccSquared = 0.00669438;
+        break;
+        default:
+        this.status = true;
+            //   new Error('No ecclipsoid data associated with unknown datum: '.name);
+
+        }
+    };
+
+    method.toDegrees = function (rad) {
+
+        return rad / Math.PI * 180;
+    };
+
+    method.toRadians = function (deg) {
+
+        return deg * Math.PI / 180;
+    };
+
+
+    function precisionRound(number, precision) {
+      var factor = Math.pow(10, precision);
+      return Math.round(number * factor) / factor;
+  }
+  module.exports = UTMLatLng;
 
 
 /***/ }),
@@ -21818,7 +22390,7 @@ var __webpack_exports__ = {};
   \*************************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_map__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_map */ "./src/js/neuron_map.ts");
-/* harmony import */ var _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interface_point */ "./src/js/neuron_interface_point.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _adv_mode__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./adv_mode */ "./src/js/adv_mode.ts");
 /* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
 /* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3__);
@@ -21862,7 +22434,7 @@ let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_map.reset();
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {
-        window.neuron_map.set_location(new _neuron_interface_point__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
+        window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
     }));
 });
 document.addEventListener('DOMContentLoaded', load_app_data, false);
