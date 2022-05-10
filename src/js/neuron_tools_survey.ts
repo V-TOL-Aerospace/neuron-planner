@@ -1,22 +1,31 @@
 import { NeuronInterfacePoint, UTMPos, UTMLine } from "./neuron_interfaces";
 
-enum StartPosition
-{
-    Home = 0,
+export enum StartPosition {
+    // Home = 0,
     BottomLeft = 1,
     TopLeft = 2,
     BottomRight = 3,
     TopRight = 4,
-    Point = 5
+    // Point = 5
 }
-
 
 function remove_item_from_array(array:any[], item:any) {
     const index = array.indexOf(item);
     if (index > -1)
         array.splice(index, 1);
 }
-
+/**
+ * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
+ * @param  {number} altitude altitude to map to thhe final points
+ * @param  {number} distance distance between lines? TODO:
+ * @param  {number} spacing spacing between lines?  TODO:
+ * @param  {number} angle angle of the survey pattern to follow (lane angle)
+ * @param  {number} overshoot1 overshoot distance at the first "end" of the survey pattern
+ * @param  {number} overshoot2 overshoot distance at the second "end" of the survey pattern
+ * @param  {StartPosition} startpos selector for where the starting position should be
+ * @param  {number} minLaneSeparation minimum lane separation/skip parameter (causes the lanes to alternate)
+ * @param  {number} leadin additional lead-in to assist with mission planning for planes (allows more time for the plane to complete the turn before entering the survey stretch)
+ */
 export function CreateGrid(
     polygon:NeuronInterfacePoint[],
     altitude:number,
@@ -26,12 +35,11 @@ export function CreateGrid(
     overshoot1:number,
     overshoot2:number,
     startpos:StartPosition,
-    shutter:boolean,
+    // shutter:boolean,
     minLaneSeparation:number,
     leadin:number,
-    HomeLocation:NeuronInterfacePoint)
-{
-    let ans:NeuronInterfacePoint[] = [];
+    // HomeLocation:NeuronInterfacePoint
+    ) {
 
     if (spacing < 0.1 && spacing != 0)
         spacing = 0.1;
@@ -40,7 +48,7 @@ export function CreateGrid(
         distance = 0.1;
 
     if (polygon.length == 0)
-        return ans;
+        return [];
 
 
     // Make a non round number in case of corner cases
@@ -96,15 +104,15 @@ export function CreateGrid(
     ////UTMLine(left, "left");
 
     // get right extent
-    // double xb2 = x;
-    // double yb2 = y;
-    // // to the right
-    // newpos(ref xb2, ref yb2, angle + 90, diagdist / 2 + distance);
-    // // backwards
-    // newpos(ref xb2, ref yb2, angle + 180, diagdist / 2 + distance);
+    // // double xb2 = x;
+    // // double yb2 = y;
+    // // // to the right
+    // // newpos(ref xb2, ref yb2, angle + 90, diagdist / 2 + distance);
+    // // // backwards
+    // // newpos(ref xb2, ref yb2, angle + 180, diagdist / 2 + distance);
 
-    // utmpos right = new utmpos(xb2, yb2, utmzone);
-    let right = startp.relative_point_from_dist_bearing(angle + 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
+    // // utmpos right = new utmpos(xb2, yb2, utmzone);
+    // let right = startp.relative_point_from_dist_bearing(angle + 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
 
     ////UTMLine(right, "right");
 
@@ -158,7 +166,7 @@ export function CreateGrid(
         let b = -1;
         let crosses = 0;
         let newutmpos = new UTMPos();
-        for (const pnt in utmpositions) {
+        for (const pnt of utmpositions) {
             b++;
             if (b == 0)
                 continue;
@@ -206,11 +214,11 @@ export function CreateGrid(
 
             while (matchs.length > 1)
             {
-                closestpoint = findClosestPoint(closestpoint, matchs);
+                closestpoint = UTMPos.findClosestPoint(closestpoint, matchs);
                 const p1 = closestpoint;
                 remove_item_from_array(matchs, closestpoint);
 
-                closestpoint = findClosestPoint(closestpoint, matchs);
+                closestpoint = UTMPos.findClosestPoint(closestpoint, matchs);
                 const p2 = closestpoint;
                 remove_item_from_array(matchs, closestpoint);
 
@@ -236,7 +244,7 @@ export function CreateGrid(
     // }
 
     if (grid.length == 0)
-        return ans;
+        return [];
 
     // pick start positon based on initial point rectangle
     let startposutm:UTMPos = null;
@@ -244,9 +252,9 @@ export function CreateGrid(
     switch (startpos)
     {
         default:
-        case StartPosition.Home:
-            startposutm = HomeLocation.to_UTM();
-            break;
+        // case StartPosition.Home:
+        //     startposutm = HomeLocation.to_UTM();
+        //     break;
         case StartPosition.BottomLeft:
             startposutm = new UTMPos(area.Left, area.Bottom, utmzone);
             break;
@@ -259,17 +267,17 @@ export function CreateGrid(
         case StartPosition.TopRight:
             startposutm = new UTMPos(area.Right, area.Top, utmzone);
             break;
-        case StartPosition.Point:
-            startposutm = new UTMPos();
-            startposutm.zone = utmzone;
-            break;
+        // case StartPosition.Point:
+        //     startposutm = new UTMPos();
+        //     startposutm.zone = utmzone;
+        //     break;
     }
 
     // find the closes polygon point based from our startpos selection
-    startposutm = findClosestPoint(startposutm, utmpositions);
+    startposutm = UTMPos.findClosestPoint(startposutm, utmpositions);
 
     // find closest line point to startpos
-    let closest = findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
+    let closest = UTMPos.findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
 
     let lastpnt = new UTMPos();
 
@@ -283,42 +291,37 @@ export function CreateGrid(
         lastpnt = closest.p2;
     }
 
-    // S =  start
-    // E = end
-    // ME = middle end
-    // SM = start middle
+    let ans:UTMPos[] = [];
+    // Tags:
+    //   S =  start
+    //   E = end
+    //   ME = middle end
+    //   SM = start middle
 
-    while (grid.length > 0)
-    {
+    while (grid.length > 0) {
         // for each line, check which end of the line is the next closest
         if (closest.p1.GetDistance(lastpnt) < closest.p2.GetDistance(lastpnt))
         {
-            let newstart = closest.relative_point_from_dist_bearing(angle, -leadin);
-
-            newstart.Tag = "S";
+            let newstart = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
+            newstart.tag = "S";
             //UTMLine(newstart, "S");
             ans.push(newstart);
 
-            if (leadin < 0)
-            {
+            if (leadin < 0) {
                 var p2 = newstart.copy();
-                p2.Tag = "SM";
+                p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
-            }
-            else
-            {
-                closest.p1.Tag = "SM";
+            } else {
+                closest.p1.tag = "SM";
                 //UTMLine(closest.p1, "SM");
                 ans.push(closest.p1);
             }
 
-            if (spacing > 0)
-            {
+            if (spacing > 0) {
                 for (let d = (spacing - ((closest.basepnt.GetDistance(closest.p1)) % spacing));
                     d < (closest.p1.GetDistance(closest.p2));
-                    d += spacing)
-                {
+                    d += spacing) {
                     // newpos(ref ax, ref ay, angle, d);
                     let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utmzone, "", "M");
                     //UTMLine(utmpos1, "M");
@@ -328,21 +331,18 @@ export function CreateGrid(
 
             let newend = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
 
-            if (overshoot1 < 0)
-            {
+            if (overshoot1 < 0) {
                 var p2 = newend.copy()
-                p.Tag = "ME";
+                p2.tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
-            }
-            else
-            {
-                closest.p2.Tag = "ME";
+            } else {
+                closest.p2.tag = "ME";
                 //UTMLine(closest.p2, "ME");
                 ans.push(closest.p2);
             }
 
-            newend.Tag = "E";
+            newend.tag = "E";
             //UTMLine(newend, "E");
             ans.push(newend);
 
@@ -352,35 +352,28 @@ export function CreateGrid(
             if (grid.length == 0)
                 break;
 
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
-        }
-        else
-        {
+            closest = UTMPos.findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+        } else {
             let newstart = closest.p2.relative_point_from_dist_bearing(angle, leadin);
-            newstart.Tag = "S";
+            newstart.tag = "S";
             //UTMLine(newstart, "S");
             ans.push(newstart);
 
-            if (leadin < 0)
-            {
+            if (leadin < 0) {
                 var p2 = newstart.copy()
-                p2.Tag = "SM";
+                p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
-            }
-            else
-            {
-                closest.p2.Tag = "SM";
+            } else {
+                closest.p2.tag = "SM";
                 //UTMLine(closest.p2, "SM");
                 ans.push(closest.p2);
             }
 
-            if (spacing > 0)
-            {
+            if (spacing > 0) {
                 for (let d = ((closest.basepnt.GetDistance(closest.p2)) % spacing);
                     d < (closest.p1.GetDistance(closest.p2));
-                    d += spacing)
-                {
+                    d += spacing) {
                     // let ax = closest.p2.x;
                     // let ay = closest.p2.y;
                     let a = closest.p2.relative_point_from_dist_bearing(angle, -d);
@@ -388,28 +381,25 @@ export function CreateGrid(
                     // newpos(ref ax, ref ay, angle, -d);
                     var utmpos2 = new UTMPos(a.x, a.y, utmzone, "", "M");
                     //UTMLine(utmpos2, "M");
-                    ans.push(NeuronInterfacePoint.from_UTM(utmpos2));
+                    ans.push(utmpos2);
                 }
             }
 
             let newend = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2);
             // utmpos newend = newpos(closest.p1, angle, -overshoot2);
 
-            if (overshoot2 < 0)
-            {
+            if (overshoot2 < 0) {
                 var p2 = newend.copy()
-                p2.Tag = "ME";
+                p2.tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
-            }
-            else
-            {
-                closest.p1.Tag = "ME";
+            } else {
+                closest.p1.tag = "ME";
                 //UTMLine(closest.p1, "ME");
                 ans.push(closest.p1);
             }
 
-            newend.Tag = "E";
+            newend.tag = "E";
             //UTMLine(newend, "E");
             ans.push(newend);
 
@@ -419,13 +409,15 @@ export function CreateGrid(
             remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+            closest = UTMPos.findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
         }
     }
 
+    const points = NeuronInterfacePoint.from_UTMs(ans);
+
     // set the altitude on all points
-    for(let p of ans)
+    for(let p of points)
         p.altitude = altitude;
 
-    return ans;
+    return points;
 }

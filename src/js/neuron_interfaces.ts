@@ -16,7 +16,7 @@ function AddAngle(angle:number, degrees:number) {
     return angle;
 }
 
-const utm_converter = new UTMConverter.utmObj('WGS 84');
+const utm_converter = new UTMConverter('WGS 84');
 export class UTMPos {
     x:number;
     y:number;
@@ -75,8 +75,7 @@ export class UTMPos {
         );
     }
 
-    GetDistance(b:UTMPos)
-    {
+    GetDistance(b:UTMPos) {
         return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
     }
 
@@ -138,6 +137,29 @@ export class UTMPos {
         return inside;
     }
 
+    static FindLineIntersectionExtension(start1:UTMPos, end1:UTMPos, start2:UTMPos, end2:UTMPos) {
+        let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
+        //  AB & CD are parallel
+        if (denom == 0)
+            return new UTMPos();
+        let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+        let r = numer / denom;
+        let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+        let s = numer2 / denom;
+        if ((r < 0 || r > 1) || (s < 0 || s > 1)) {
+            // line intersection is outside our lines.
+        }
+
+        // Find intersection point
+        let result = new UTMPos(
+            start1.x + (r * (end1.x - start1.x)),
+            start1.y + (r * (end1.y - start1.y)),
+            start1.zone
+        );
+
+        return result;
+    }
+
     static findClosestPoint(start:UTMPos, list:UTMPos[])
     {
         let answer = new UTMPos();
@@ -155,19 +177,79 @@ export class UTMPos {
         return answer;
     }
 
-    static findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle:number)
-    {
-        if (minDistance == 0) {
+    static findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle:number):UTMLine {
+        if (minDistance != 0) {
+            // By now, just add 5.000 km to our lines so they are long enough to allow intersection
+            let METERS_TO_EXTEND = 5000;
+            let perperndicularOrientation = AddAngle(angle, 90);
+
+            // Calculation of a perpendicular line to the grid lines containing the "start" point
+            /*
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  -------------------------------------start---------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            *  --------------------------------------|------------------------------------------
+            */
+            let start_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, -METERS_TO_EXTEND);
+            let stop_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, METERS_TO_EXTEND);
+
+            // Store one intersection point per grid line
+            let intersectedPoints:Map<UTMPos,UTMLine> = new Map();
+            // lets order distances from every intersected point per line with the "start" point
+            let ordered_min_to_max:Map<number,UTMPos> = new Map();
+
+            for(const line of list) {
+                // Calculate intersection point
+                let p = UTMPos.FindLineIntersectionExtension(line.p1, line.p2, start_perpendicular_line, stop_perpendicular_line);
+
+                // Store it
+                intersectedPoints.set(p, line);
+
+                // Calculate distances between interesected point and "start" (i.e. line and start)
+                let distance_p = start.GetDistance(p);
+
+                if (!ordered_min_to_max.has(distance_p))
+                    ordered_min_to_max.set(distance_p, p);
+            }
+
+            // Acquire keys and sort them.
+            let ordered_keys = Array.from(ordered_min_to_max.keys());
+            ordered_keys.sort(function(a, b) {
+                return a - b;
+            });
+
+            // Lets select a line that is the closest to "start" point but "mindistance" away at least.
+            // If we have only one line, return that line whatever the minDistance says
+            let key = Number.MAX_VALUE;
+            let i = 0;
+            while (key == Number.MAX_VALUE && i < ordered_keys.length) {
+                if (ordered_keys[i] >= minDistance)
+                    key = ordered_keys[i];
+                i++;
+            }
+
+            // If no line is selected (because all of them are closer than minDistance, then get the farest one
+            if (key == Number.MAX_VALUE)
+                key = ordered_keys[ordered_keys.length - 1];
+
+            let filteredmap = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance(start) >= key);
+            let filteredlines = filteredmap.map(a => a[1]);
+
+            return UTMPos.findClosestLine(start, filteredlines, 0, angle);
+        } else {
             let answer = list[0];
             let shortest = Number.MAX_VALUE;
 
             for(const line of list) {
                 let ans1 = start.GetDistance(line.p1);
                 let ans2 = start.GetDistance(line.p2);
-                utmpos shorterpnt = ans1 < ans2 ? line.p1 : line.p2;
+                let shorterpnt = ans1 < ans2 ? line.p1 : line.p2;
 
-                if (shortest > start.GetDistance(shorterpnt))
-                {
+                if (shortest > start.GetDistance(shorterpnt)) {
                     answer = line;
                     shortest = start.GetDistance(shorterpnt);
                 }
@@ -175,69 +257,6 @@ export class UTMPos {
 
             return answer;
         }
-
-
-        // By now, just add 5.000 km to our lines so they are long enough to allow intersection
-        double METERS_TO_EXTEND = 5000;
-
-        double perperndicularOrientation = AddAngle(angle, 90);
-
-        // Calculation of a perpendicular line to the grid lines containing the "start" point
-        /*
-         *  --------------------------------------|------------------------------------------
-         *  --------------------------------------|------------------------------------------
-         *  -------------------------------------start---------------------------------------
-         *  --------------------------------------|------------------------------------------
-         *  --------------------------------------|------------------------------------------
-         *  --------------------------------------|------------------------------------------
-         *  --------------------------------------|------------------------------------------
-         *  --------------------------------------|------------------------------------------
-         */
-        utmpos start_perpendicular_line = newpos(start, perperndicularOrientation, -METERS_TO_EXTEND);
-        utmpos stop_perpendicular_line = newpos(start, perperndicularOrientation, METERS_TO_EXTEND);
-
-        // Store one intersection point per grid line
-        Dictionary<utmpos, linelatlng> intersectedPoints = new Dictionary<utmpos, linelatlng>();
-        // lets order distances from every intersected point per line with the "start" point
-        Dictionary<double, utmpos> ordered_min_to_max = new Dictionary<double, utmpos>();
-
-        foreach (linelatlng line in list)
-        {
-            // Calculate intersection point
-            utmpos p = FindLineIntersectionExtension(line.p1, line.p2, start_perpendicular_line, stop_perpendicular_line);
-
-            // Store it
-            intersectedPoints[p] = line;
-
-            // Calculate distances between interesected point and "start" (i.e. line and start)
-            double distance_p = start.GetDistance(p);
-
-            if (!ordered_min_to_max.ContainsKey(distance_p))
-                ordered_min_to_max.Add(distance_p, p);
-        }
-
-        // Acquire keys and sort them.
-        List<double> ordered_keys = ordered_min_to_max.Keys.ToList();
-        ordered_keys.Sort();
-
-        // Lets select a line that is the closest to "start" point but "mindistance" away at least.
-        // If we have only one line, return that line whatever the minDistance says
-        double key = double.MaxValue;
-        int i = 0;
-        while (key == double.MaxValue && i < ordered_keys.Count)
-        {
-            if (ordered_keys[i] >= minDistance)
-                key = ordered_keys[i];
-            i++;
-        }
-
-        // If no line is selected (because all of them are closer than minDistance, then get the farest one
-        if (key == double.MaxValue)
-            key = ordered_keys[ordered_keys.Count - 1];
-
-        var filteredlist = intersectedPoints.Where(a => a.Key.GetDistance(start) >= key);
-
-        return findClosestLine(start, filteredlist.Select(a => a.Value).ToList(), 0, angle);
     }
 }
 
@@ -295,13 +314,18 @@ export class NeuronInterfacePoint {
     }
 
     to_UTM() {
-        const u = utm_converter.convertLatLngToUtm(this.latitude, this.longitude, 12);
+        const precision = 12;
+        const u = utm_converter.convertLatLngToUtm(this.latitude, this.longitude, precision);
         return new UTMPos(u.Easting, u.Northing, u.ZoneNumber, u.ZoneLetter);
     }
 
     static from_UTM(utm:UTMPos) {
         const l = utm_converter.convertUtmToLatLng(utm.x, utm.y, utm.zone, utm.zone_letter);
         return new NeuronInterfacePoint(l.lat, l.lang);
+    }
+
+    static from_UTMs(utms:UTMPos[]) {
+        return utms.map(p => NeuronInterfacePoint.from_UTM(p));
     }
 
 

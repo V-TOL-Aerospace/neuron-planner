@@ -128,6 +128,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         return this.#corners;
     }
 
+    get_corners_as_points() {
+        return this.#corners.map(p => NeuronInterfacePoint.from_leaflet(p.getLatLng()));
+    }
+
     #remove_point_by_event(event:L.LeafletEvent) {
         this.remove_point_by_corner(event.target);
     }
