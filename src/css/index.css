@@ -111,7 +111,8 @@ body {
         height: auto;
     }
 }
-@media screen and (orientation: portrait) {    #fp-main {
+@media (orientation: portrait) {
+    #fp-main {
         flex-direction: column;
     }
 

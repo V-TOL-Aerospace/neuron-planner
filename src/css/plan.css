@@ -5,6 +5,7 @@
     flex-direction: column;
     padding: 0.5em;
     /* overflow: scroll; */
+    border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
 
@@ -76,5 +77,5 @@
 
 .mission-feature-content-value {
     flex: auto;
-    max-width: 5em;
+    max-width: 10em;
 }
