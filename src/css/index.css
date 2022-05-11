@@ -108,8 +108,19 @@ body {
 @media only screen and (orientation: landscape) {
     /* For mobile phones: */
     #fp-map {
-      flex-direction: row;
-      height: auto;
+        height: auto;
+    }
+}
+@media screen and (orientation: portrait) {    #fp-main {
+        flex-direction: column;
+    }
+
+    #fp-map {
+        max-height: 50%;
+    }
+
+    #fp-summary {
+        max-height: 50%;
     }
 }
 
