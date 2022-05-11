@@ -2,7 +2,9 @@ import * as L from "leaflet";
 import 'leaflet/dist/leaflet.css';
 // @ts-ignore
 //import * as ContextMenu from "leaflet-contextmenu";
-import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';
+// import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';\
+// @ts-ignore
+import * as FileLoader from 'leaflet-filelayer'
 
 // delete L.Icon.Default.prototype._getIconUrl;
 //XXX: Fix the image paths loaded by leaflet
@@ -16,6 +18,7 @@ L.Icon.Default.mergeOptions({
 //require('leaflet/dist/images/layers-2x.png')
 
 //const cm = ContextMenu;
+const fl = FileLoader;
 
 export { L };
 

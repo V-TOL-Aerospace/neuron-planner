@@ -5649,33 +5649,6 @@
 
 /***/ }),
 
-/***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css":
-/*!*************************************************************************************************************!*\
-  !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css ***!
-  \*************************************************************************************************************/
-/***/ ((module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
-/* harmony import */ var _css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
-/* harmony import */ var _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
-// Imports
-
-
-var ___CSS_LOADER_EXPORT___ = _css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
-// Module
-___CSS_LOADER_EXPORT___.push([module.id, ".leaflet-contextmenu {\n    display: none;\n    box-shadow: 0 1px 7px rgba(0,0,0,0.4);\n    -webkit-border-radius: 4px;\n    border-radius: 4px;\n    padding: 4px 0;\n    background-color: #fff;\n    cursor: default;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    user-select: none;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item {\n    display: block;\n    color: #222;\n    font-size: 12px;\n    line-height: 20px;\n    text-decoration: none;\n    padding: 0 12px;\n    border-top: 1px solid transparent;\n    border-bottom: 1px solid transparent;\n    cursor: default;\n    outline: none;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item-disabled {\n    opacity: 0.5;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item.over {\n    background-color: #f4f4f4;\n    border-top: 1px solid #f0f0f0;\n    border-bottom: 1px solid #f0f0f0;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item-disabled.over {\n    background-color: inherit;\n    border-top: 1px solid transparent;\n    border-bottom: 1px solid transparent;\n}\n\n.leaflet-contextmenu-icon {\n    margin: 2px 8px 0 0;\n    width: 16px;\n    height: 16px;\n    float: left;\n    border: 0;\n}\n\n.leaflet-contextmenu-separator {\n    border-bottom: 1px solid #ccc;\n    margin: 5px 0;\n}\n", "",{"version":3,"sources":["webpack://./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,qCAAqC;IACrC,0BAA0B;IAC1B,kBAAkB;IAClB,cAAc;IACd,sBAAsB;IACtB,eAAe;IACf,yBAAyB;IACzB,sBAAsB;IACtB,iBAAiB;AACrB;;AAEA;IACI,cAAc;IACd,WAAW;IACX,eAAe;IACf,iBAAiB;IACjB,qBAAqB;IACrB,eAAe;IACf,iCAAiC;IACjC,oCAAoC;IACpC,eAAe;IACf,aAAa;AACjB;;AAEA;IACI,YAAY;AAChB;;AAEA;IACI,yBAAyB;IACzB,6BAA6B;IAC7B,gCAAgC;AACpC;;AAEA;IACI,yBAAyB;IACzB,iCAAiC;IACjC,oCAAoC;AACxC;;AAEA;IACI,mBAAmB;IACnB,WAAW;IACX,YAAY;IACZ,WAAW;IACX,SAAS;AACb;;AAEA;IACI,6BAA6B;IAC7B,aAAa;AACjB","sourcesContent":[".leaflet-contextmenu {\n    display: none;\n    box-shadow: 0 1px 7px rgba(0,0,0,0.4);\n    -webkit-border-radius: 4px;\n    border-radius: 4px;\n    padding: 4px 0;\n    background-color: #fff;\n    cursor: default;\n    -webkit-user-select: none;\n    -moz-user-select: none;\n    user-select: none;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item {\n    display: block;\n    color: #222;\n    font-size: 12px;\n    line-height: 20px;\n    text-decoration: none;\n    padding: 0 12px;\n    border-top: 1px solid transparent;\n    border-bottom: 1px solid transparent;\n    cursor: default;\n    outline: none;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item-disabled {\n    opacity: 0.5;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item.over {\n    background-color: #f4f4f4;\n    border-top: 1px solid #f0f0f0;\n    border-bottom: 1px solid #f0f0f0;\n}\n\n.leaflet-contextmenu a.leaflet-contextmenu-item-disabled.over {\n    background-color: inherit;\n    border-top: 1px solid transparent;\n    border-bottom: 1px solid transparent;\n}\n\n.leaflet-contextmenu-icon {\n    margin: 2px 8px 0 0;\n    width: 16px;\n    height: 16px;\n    float: left;\n    border: 0;\n}\n\n.leaflet-contextmenu-separator {\n    border-bottom: 1px solid #ccc;\n    margin: 5px 0;\n}\n"],"sourceRoot":""}]);
-// Exports
-/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
-
-
-/***/ }),
-
 /***/ "./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet/dist/leaflet.css":
 /*!*************************************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet/dist/leaflet.css ***!
@@ -6000,6 +5973,359 @@ module.exports = function (item) {
 
   return [content].join("\n");
 };
+
+/***/ }),
+
+/***/ "./node_modules/leaflet-filelayer/src/leaflet.filelayer.js":
+/*!*****************************************************************!*\
+  !*** ./node_modules/leaflet-filelayer/src/leaflet.filelayer.js ***!
+  \*****************************************************************/
+/***/ ((module, exports, __webpack_require__) => {
+
+var __WEBPACK_AMD_DEFINE_ARRAY__, __WEBPACK_AMD_DEFINE_RESULT__;/*
+ * Load files *locally* (GeoJSON, KML, GPX) into the map
+ * using the HTML5 File API.
+ *
+ * Requires Mapbox's togeojson.js to be in global scope
+ * https://github.com/mapbox/togeojson
+ */
+
+(function (factory, window) {
+    // define an AMD module that relies on 'leaflet'
+    if ( true && window.toGeoJSON) {
+        !(__WEBPACK_AMD_DEFINE_ARRAY__ = [__webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js")], __WEBPACK_AMD_DEFINE_RESULT__ = (function (L) {
+            factory(L, window.toGeoJSON);
+        }).apply(exports, __WEBPACK_AMD_DEFINE_ARRAY__),
+		__WEBPACK_AMD_DEFINE_RESULT__ !== undefined && (module.exports = __WEBPACK_AMD_DEFINE_RESULT__));
+    } else if ( true && module.exports) {
+        // require('LIBRARY') returns a factory that requires window to
+        // build a LIBRARY instance, we normalize how we use modules
+        // that require this pattern but the window provided is a noop
+        // if it's defined
+        module.exports = function (root, L, toGeoJSON) {
+            if (L === undefined) {
+                if (typeof window !== 'undefined') {
+                    L = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
+                } else {
+                    L = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js")(root);
+                }
+            }
+            if (toGeoJSON === undefined) {
+                if (typeof window !== 'undefined') {
+                    toGeoJSON = __webpack_require__(/*! togeojson */ "./node_modules/togeojson/togeojson.js");
+                } else {
+                    toGeoJSON = __webpack_require__(/*! togeojson */ "./node_modules/togeojson/togeojson.js")(root);
+                }
+            }
+            factory(L, toGeoJSON);
+            return L;
+        };
+    } else if (typeof window !== 'undefined' && window.L && window.toGeoJSON) {
+        factory(window.L, window.toGeoJSON);
+    }
+}(function fileLoaderFactory(L, toGeoJSON) {
+    var FileLoader = L.Layer.extend({
+        options: {
+            layer: L.geoJson,
+            layerOptions: {},
+            fileSizeLimit: 1024
+        },
+
+        initialize: function (map, options) {
+            this._map = map;
+            L.Util.setOptions(this, options);
+
+            this._parsers = {
+                geojson: this._loadGeoJSON,
+                json: this._loadGeoJSON,
+                gpx: this._convertToGeoJSON,
+                kml: this._convertToGeoJSON
+            };
+        },
+
+        load: function (file, ext) {
+            var parser,
+                reader;
+
+            // Check file is defined
+            if (this._isParameterMissing(file, 'file')) {
+                return false;
+            }
+
+            // Check file size
+            if (!this._isFileSizeOk(file.size)) {
+                return false;
+            }
+
+            // Get parser for this data type
+            parser = this._getParser(file.name, ext);
+            if (!parser) {
+                return false;
+            }
+
+            // Read selected file using HTML5 File API
+            reader = new FileReader();
+            reader.onload = L.Util.bind(function (e) {
+                var layer;
+                try {
+                    this.fire('data:loading', { filename: file.name, format: parser.ext });
+                    layer = parser.processor.call(this, e.target.result, parser.ext);
+                    this.fire('data:loaded', {
+                        layer: layer,
+                        filename: file.name,
+                        format: parser.ext
+                    });
+                } catch (err) {
+                    this.fire('data:error', { error: err });
+                }
+            }, this);
+            // Testing trick: tests don't pass a real file,
+            // but an object with file.testing set to true.
+            // This object cannot be read by reader, just skip it.
+            if (!file.testing) {
+                reader.readAsText(file);
+            }
+            // We return this to ease testing
+            return reader;
+        },
+
+        loadMultiple: function (files, ext) {
+            var readers = [];
+            if (files[0]) {
+              files = Array.prototype.slice.apply(files);
+              while (files.length > 0) {
+                readers.push(this.load(files.shift(), ext));
+              }
+            }
+            // return first reader (or false if no file),
+            // which is also used for subsequent loadings
+            return readers;
+        },
+
+        loadData: function (data, name, ext) {
+            var parser;
+            var layer;
+
+            // Check required parameters
+            if ((this._isParameterMissing(data, 'data'))
+              || (this._isParameterMissing(name, 'name'))) {
+                return;
+            }
+
+            // Check file size
+            if (!this._isFileSizeOk(data.length)) {
+                return;
+            }
+
+            // Get parser for this data type
+            parser = this._getParser(name, ext);
+            if (!parser) {
+                return;
+            }
+
+            // Process data
+            try {
+                this.fire('data:loading', { filename: name, format: parser.ext });
+                layer = parser.processor.call(this, data, parser.ext);
+                this.fire('data:loaded', {
+                    layer: layer,
+                    filename: name,
+                    format: parser.ext
+                });
+            } catch (err) {
+                this.fire('data:error', { error: err });
+            }
+        },
+
+        _isParameterMissing: function (v, vname) {
+            if (typeof v === 'undefined') {
+                this.fire('data:error', {
+                    error: new Error('Missing parameter: ' + vname)
+                });
+                return true;
+            }
+            return false;
+        },
+
+        _getParser: function (name, ext) {
+            var parser;
+            ext = ext || name.split('.').pop();
+            parser = this._parsers[ext];
+            if (!parser) {
+                this.fire('data:error', {
+                    error: new Error('Unsupported file type (' + ext + ')')
+                });
+                return undefined;
+            }
+            return {
+                processor: parser,
+                ext: ext
+            };
+        },
+
+        _isFileSizeOk: function (size) {
+            var fileSize = (size / 1024).toFixed(4);
+            if (fileSize > this.options.fileSizeLimit) {
+                this.fire('data:error', {
+                    error: new Error(
+                        'File size exceeds limit (' +
+                        fileSize + ' > ' +
+                        this.options.fileSizeLimit + 'kb)'
+                    )
+                });
+                return false;
+            }
+            return true;
+        },
+
+        _loadGeoJSON: function _loadGeoJSON(content) {
+            var layer;
+            if (typeof content === 'string') {
+                content = JSON.parse(content);
+            }
+            layer = this.options.layer(content, this.options.layerOptions);
+
+            if (layer.getLayers().length === 0) {
+                throw new Error('GeoJSON has no valid layers.');
+            }
+
+            if (this.options.addToMap) {
+                layer.addTo(this._map);
+            }
+            return layer;
+        },
+
+        _convertToGeoJSON: function _convertToGeoJSON(content, format) {
+            var geojson;
+            // Format is either 'gpx' or 'kml'
+            if (typeof content === 'string') {
+                content = (new window.DOMParser()).parseFromString(content, 'text/xml');
+            }
+            geojson = toGeoJSON[format](content);
+            return this._loadGeoJSON(geojson);
+        }
+    });
+
+    var FileLayerLoad = L.Control.extend({
+        statics: {
+            TITLE: 'Load local file (GPX, KML, GeoJSON)',
+            LABEL: '&#8965;'
+        },
+        options: {
+            position: 'topleft',
+            fitBounds: true,
+            layerOptions: {},
+            addToMap: true,
+            fileSizeLimit: 1024
+        },
+
+        initialize: function (options) {
+            L.Util.setOptions(this, options);
+            this.loader = null;
+        },
+
+        onAdd: function (map) {
+            this.loader = L.FileLayer.fileLoader(map, this.options);
+
+            this.loader.on('data:loaded', function (e) {
+                // Fit bounds after loading
+                if (this.options.fitBounds) {
+                    window.setTimeout(function () {
+                        map.fitBounds(e.layer.getBounds());
+                    }, 500);
+                }
+            }, this);
+
+            // Initialize Drag-and-drop
+            this._initDragAndDrop(map);
+
+            // Initialize map control
+            return this._initContainer();
+        },
+
+        _initDragAndDrop: function (map) {
+            var callbackName;
+            var thisLoader = this.loader;
+            var dropbox = map._container;
+
+            var callbacks = {
+                dragenter: function () {
+                    map.scrollWheelZoom.disable();
+                },
+                dragleave: function () {
+                    map.scrollWheelZoom.enable();
+                },
+                dragover: function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+                },
+                drop: function (e) {
+                    e.stopPropagation();
+                    e.preventDefault();
+
+                    thisLoader.loadMultiple(e.dataTransfer.files);
+                    map.scrollWheelZoom.enable();
+                }
+            };
+            for (callbackName in callbacks) {
+                if (callbacks.hasOwnProperty(callbackName)) {
+                    dropbox.addEventListener(callbackName, callbacks[callbackName], false);
+                }
+            }
+        },
+
+        _initContainer: function () {
+            var thisLoader = this.loader;
+
+            // Create a button, and bind click on hidden file input
+            var fileInput;
+            var zoomName = 'leaflet-control-filelayer leaflet-control-zoom';
+            var barName = 'leaflet-bar';
+            var partName = barName + '-part';
+            var container = L.DomUtil.create('div', zoomName + ' ' + barName);
+            var link = L.DomUtil.create('a', zoomName + '-in ' + partName, container);
+            link.innerHTML = L.Control.FileLayerLoad.LABEL;
+            link.href = '#';
+            link.title = L.Control.FileLayerLoad.TITLE;
+
+            // Create an invisible file input
+            fileInput = L.DomUtil.create('input', 'hidden', container);
+            fileInput.type = 'file';
+            fileInput.multiple = 'multiple';
+            if (!this.options.formats) {
+                fileInput.accept = '.gpx,.kml,.json,.geojson';
+            } else {
+                fileInput.accept = this.options.formats.join(',');
+            }
+            fileInput.style.display = 'none';
+            // Load on file change
+            fileInput.addEventListener('change', function () {
+                thisLoader.loadMultiple(this.files);
+                // reset so that the user can upload the same file again if they want to
+                this.value = '';
+            }, false);
+
+            L.DomEvent.disableClickPropagation(link);
+            L.DomEvent.on(link, 'click', function (e) {
+                fileInput.click();
+                e.preventDefault();
+            });
+            return container;
+        }
+    });
+
+    L.FileLayer = {};
+    L.FileLayer.FileLoader = FileLoader;
+    L.FileLayer.fileLoader = function (map, options) {
+        return new L.FileLayer.FileLoader(map, options);
+    };
+
+    L.Control.FileLayerLoad = FileLayerLoad;
+    L.Control.fileLayerLoad = function (options) {
+        return new L.Control.FileLayerLoad(options);
+    };
+}, window));
+
 
 /***/ }),
 
@@ -28873,61 +29199,6 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css":
-/*!***********************************************************************!*\
-  !*** ./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css ***!
-  \***********************************************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
-/* harmony export */ });
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
-/* harmony import */ var _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
-/* harmony import */ var _style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
-/* harmony import */ var _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
-/* harmony import */ var _style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
-/* harmony import */ var _style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
-/* harmony import */ var _style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _css_loader_dist_cjs_js_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../css-loader/dist/cjs.js!./leaflet.contextmenu.css */ "./node_modules/css-loader/dist/cjs.js!./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css");
-
-      
-      
-      
-      
-      
-      
-      
-      
-      
-
-var options = {};
-
-options.styleTagTransform = (_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
-options.setAttributes = (_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
-
-      options.insert = _style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
-    
-options.domAPI = (_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
-options.insertStyleElement = (_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
-
-var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_css_loader_dist_cjs_js_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
-
-
-
-
-       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_css_loader_dist_cjs_js_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _css_loader_dist_cjs_js_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _css_loader_dist_cjs_js_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
-
-
-/***/ }),
-
 /***/ "./node_modules/leaflet/dist/leaflet.css":
 /*!***********************************************!*\
   !*** ./node_modules/leaflet/dist/leaflet.css ***!
@@ -29515,6 +29786,422 @@ module.exports = styleTagTransform;
 
 /***/ }),
 
+/***/ "./node_modules/togeojson/togeojson.js":
+/*!*********************************************!*\
+  !*** ./node_modules/togeojson/togeojson.js ***!
+  \*********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+var toGeoJSON = (function() {
+    'use strict';
+
+    var removeSpace = /\s*/g,
+        trimSpace = /^\s*|\s*$/g,
+        splitSpace = /\s+/;
+    // generate a short, numeric hash of a string
+    function okhash(x) {
+        if (!x || !x.length) return 0;
+        for (var i = 0, h = 0; i < x.length; i++) {
+            h = ((h << 5) - h) + x.charCodeAt(i) | 0;
+        } return h;
+    }
+    // all Y children of X
+    function get(x, y) { return x.getElementsByTagName(y); }
+    function attr(x, y) { return x.getAttribute(y); }
+    function attrf(x, y) { return parseFloat(attr(x, y)); }
+    // one Y child of X, if any, otherwise null
+    function get1(x, y) { var n = get(x, y); return n.length ? n[0] : null; }
+    // https://developer.mozilla.org/en-US/docs/Web/API/Node.normalize
+    function norm(el) { if (el.normalize) { el.normalize(); } return el; }
+    // cast array x into numbers
+    function numarray(x) {
+        for (var j = 0, o = []; j < x.length; j++) { o[j] = parseFloat(x[j]); }
+        return o;
+    }
+    // get the content of a text node, if any
+    function nodeVal(x) {
+        if (x) { norm(x); }
+        return (x && x.textContent) || '';
+    }
+    // get the contents of multiple text nodes, if present
+    function getMulti(x, ys) {
+        var o = {}, n, k;
+        for (k = 0; k < ys.length; k++) {
+            n = get1(x, ys[k]);
+            if (n) o[ys[k]] = nodeVal(n);
+        }
+        return o;
+    }
+    // add properties of Y to X, overwriting if present in both
+    function extend(x, y) { for (var k in y) x[k] = y[k]; }
+    // get one coordinate from a coordinate array, if any
+    function coord1(v) { return numarray(v.replace(removeSpace, '').split(',')); }
+    // get all coordinates from a coordinate array as [[],[]]
+    function coord(v) {
+        var coords = v.replace(trimSpace, '').split(splitSpace),
+            o = [];
+        for (var i = 0; i < coords.length; i++) {
+            o.push(coord1(coords[i]));
+        }
+        return o;
+    }
+    function coordPair(x) {
+        var ll = [attrf(x, 'lon'), attrf(x, 'lat')],
+            ele = get1(x, 'ele'),
+            // handle namespaced attribute in browser
+            heartRate = get1(x, 'gpxtpx:hr') || get1(x, 'hr'),
+            time = get1(x, 'time'),
+            e;
+        if (ele) {
+            e = parseFloat(nodeVal(ele));
+            if (!isNaN(e)) {
+                ll.push(e);
+            }
+        }
+        return {
+            coordinates: ll,
+            time: time ? nodeVal(time) : null,
+            heartRate: heartRate ? parseFloat(nodeVal(heartRate)) : null
+        };
+    }
+
+    // create a new feature collection parent object
+    function fc() {
+        return {
+            type: 'FeatureCollection',
+            features: []
+        };
+    }
+
+    var serializer;
+    if (typeof XMLSerializer !== 'undefined') {
+        /* istanbul ignore next */
+        serializer = new XMLSerializer();
+    // only require xmldom in a node environment
+    } else if ( true && typeof process === 'object' && !process.browser) {
+        serializer = new ((__webpack_require__(/*! xmldom */ "?494f").XMLSerializer))();
+    }
+    function xml2str(str) {
+        // IE9 will create a new XMLSerializer but it'll crash immediately.
+        // This line is ignored because we don't run coverage tests in IE9
+        /* istanbul ignore next */
+        if (str.xml !== undefined) return str.xml;
+        return serializer.serializeToString(str);
+    }
+
+    var t = {
+        kml: function(doc) {
+
+            var gj = fc(),
+                // styleindex keeps track of hashed styles in order to match features
+                styleIndex = {}, styleByHash = {},
+                // stylemapindex keeps track of style maps to expose in properties
+                styleMapIndex = {},
+                // atomic geospatial types supported by KML - MultiGeometry is
+                // handled separately
+                geotypes = ['Polygon', 'LineString', 'Point', 'Track', 'gx:Track'],
+                // all root placemarks in the file
+                placemarks = get(doc, 'Placemark'),
+                styles = get(doc, 'Style'),
+                styleMaps = get(doc, 'StyleMap');
+
+            for (var k = 0; k < styles.length; k++) {
+                var hash = okhash(xml2str(styles[k])).toString(16);
+                styleIndex['#' + attr(styles[k], 'id')] = hash;
+                styleByHash[hash] = styles[k];
+            }
+            for (var l = 0; l < styleMaps.length; l++) {
+                styleIndex['#' + attr(styleMaps[l], 'id')] = okhash(xml2str(styleMaps[l])).toString(16);
+                var pairs = get(styleMaps[l], 'Pair');
+                var pairsMap = {};
+                for (var m = 0; m < pairs.length; m++) {
+                    pairsMap[nodeVal(get1(pairs[m], 'key'))] = nodeVal(get1(pairs[m], 'styleUrl'));
+                }
+                styleMapIndex['#' + attr(styleMaps[l], 'id')] = pairsMap;
+
+            }
+            for (var j = 0; j < placemarks.length; j++) {
+                gj.features = gj.features.concat(getPlacemark(placemarks[j]));
+            }
+            function kmlColor(v) {
+                var color, opacity;
+                v = v || '';
+                if (v.substr(0, 1) === '#') { v = v.substr(1); }
+                if (v.length === 6 || v.length === 3) { color = v; }
+                if (v.length === 8) {
+                    opacity = parseInt(v.substr(0, 2), 16) / 255;
+                    color = '#' + v.substr(6, 2) +
+                        v.substr(4, 2) +
+                        v.substr(2, 2);
+                }
+                return [color, isNaN(opacity) ? undefined : opacity];
+            }
+            function gxCoord(v) { return numarray(v.split(' ')); }
+            function gxCoords(root) {
+                var elems = get(root, 'coord', 'gx'), coords = [], times = [];
+                if (elems.length === 0) elems = get(root, 'gx:coord');
+                for (var i = 0; i < elems.length; i++) coords.push(gxCoord(nodeVal(elems[i])));
+                var timeElems = get(root, 'when');
+                for (var j = 0; j < timeElems.length; j++) times.push(nodeVal(timeElems[j]));
+                return {
+                    coords: coords,
+                    times: times
+                };
+            }
+            function getGeometry(root) {
+                var geomNode, geomNodes, i, j, k, geoms = [], coordTimes = [];
+                if (get1(root, 'MultiGeometry')) { return getGeometry(get1(root, 'MultiGeometry')); }
+                if (get1(root, 'MultiTrack')) { return getGeometry(get1(root, 'MultiTrack')); }
+                if (get1(root, 'gx:MultiTrack')) { return getGeometry(get1(root, 'gx:MultiTrack')); }
+                for (i = 0; i < geotypes.length; i++) {
+                    geomNodes = get(root, geotypes[i]);
+                    if (geomNodes) {
+                        for (j = 0; j < geomNodes.length; j++) {
+                            geomNode = geomNodes[j];
+                            if (geotypes[i] === 'Point') {
+                                geoms.push({
+                                    type: 'Point',
+                                    coordinates: coord1(nodeVal(get1(geomNode, 'coordinates')))
+                                });
+                            } else if (geotypes[i] === 'LineString') {
+                                geoms.push({
+                                    type: 'LineString',
+                                    coordinates: coord(nodeVal(get1(geomNode, 'coordinates')))
+                                });
+                            } else if (geotypes[i] === 'Polygon') {
+                                var rings = get(geomNode, 'LinearRing'),
+                                    coords = [];
+                                for (k = 0; k < rings.length; k++) {
+                                    coords.push(coord(nodeVal(get1(rings[k], 'coordinates'))));
+                                }
+                                geoms.push({
+                                    type: 'Polygon',
+                                    coordinates: coords
+                                });
+                            } else if (geotypes[i] === 'Track' ||
+                                geotypes[i] === 'gx:Track') {
+                                var track = gxCoords(geomNode);
+                                geoms.push({
+                                    type: 'LineString',
+                                    coordinates: track.coords
+                                });
+                                if (track.times.length) coordTimes.push(track.times);
+                            }
+                        }
+                    }
+                }
+                return {
+                    geoms: geoms,
+                    coordTimes: coordTimes
+                };
+            }
+            function getPlacemark(root) {
+                var geomsAndTimes = getGeometry(root), i, properties = {},
+                    name = nodeVal(get1(root, 'name')),
+                    styleUrl = nodeVal(get1(root, 'styleUrl')),
+                    description = nodeVal(get1(root, 'description')),
+                    timeSpan = get1(root, 'TimeSpan'),
+                    timeStamp = get1(root, 'TimeStamp'),
+                    extendedData = get1(root, 'ExtendedData'),
+                    lineStyle = get1(root, 'LineStyle'),
+                    polyStyle = get1(root, 'PolyStyle'),
+                    visibility = get1(root, 'visibility');
+
+                if (!geomsAndTimes.geoms.length) return [];
+                if (name) properties.name = name;
+                if (styleUrl) {
+                    if (styleUrl[0] !== '#') {
+                        styleUrl = '#' + styleUrl;
+                    }
+
+                    properties.styleUrl = styleUrl;
+                    if (styleIndex[styleUrl]) {
+                        properties.styleHash = styleIndex[styleUrl];
+                    }
+                    if (styleMapIndex[styleUrl]) {
+                        properties.styleMapHash = styleMapIndex[styleUrl];
+                        properties.styleHash = styleIndex[styleMapIndex[styleUrl].normal];
+                    }
+                    // Try to populate the lineStyle or polyStyle since we got the style hash
+                    var style = styleByHash[properties.styleHash];
+                    if (style) {
+                        if (!lineStyle) lineStyle = get1(style, 'LineStyle');
+                        if (!polyStyle) polyStyle = get1(style, 'PolyStyle');
+                    }
+                }
+                if (description) properties.description = description;
+                if (timeSpan) {
+                    var begin = nodeVal(get1(timeSpan, 'begin'));
+                    var end = nodeVal(get1(timeSpan, 'end'));
+                    properties.timespan = { begin: begin, end: end };
+                }
+                if (timeStamp) {
+                    properties.timestamp = nodeVal(get1(timeStamp, 'when'));
+                }
+                if (lineStyle) {
+                    var linestyles = kmlColor(nodeVal(get1(lineStyle, 'color'))),
+                        color = linestyles[0],
+                        opacity = linestyles[1],
+                        width = parseFloat(nodeVal(get1(lineStyle, 'width')));
+                    if (color) properties.stroke = color;
+                    if (!isNaN(opacity)) properties['stroke-opacity'] = opacity;
+                    if (!isNaN(width)) properties['stroke-width'] = width;
+                }
+                if (polyStyle) {
+                    var polystyles = kmlColor(nodeVal(get1(polyStyle, 'color'))),
+                        pcolor = polystyles[0],
+                        popacity = polystyles[1],
+                        fill = nodeVal(get1(polyStyle, 'fill')),
+                        outline = nodeVal(get1(polyStyle, 'outline'));
+                    if (pcolor) properties.fill = pcolor;
+                    if (!isNaN(popacity)) properties['fill-opacity'] = popacity;
+                    if (fill) properties['fill-opacity'] = fill === '1' ? properties['fill-opacity'] || 1 : 0;
+                    if (outline) properties['stroke-opacity'] = outline === '1' ? properties['stroke-opacity'] || 1 : 0;
+                }
+                if (extendedData) {
+                    var datas = get(extendedData, 'Data'),
+                        simpleDatas = get(extendedData, 'SimpleData');
+
+                    for (i = 0; i < datas.length; i++) {
+                        properties[datas[i].getAttribute('name')] = nodeVal(get1(datas[i], 'value'));
+                    }
+                    for (i = 0; i < simpleDatas.length; i++) {
+                        properties[simpleDatas[i].getAttribute('name')] = nodeVal(simpleDatas[i]);
+                    }
+                }
+                if (visibility) {
+                    properties.visibility = nodeVal(visibility);
+                }
+                if (geomsAndTimes.coordTimes.length) {
+                    properties.coordTimes = (geomsAndTimes.coordTimes.length === 1) ?
+                        geomsAndTimes.coordTimes[0] : geomsAndTimes.coordTimes;
+                }
+                var feature = {
+                    type: 'Feature',
+                    geometry: (geomsAndTimes.geoms.length === 1) ? geomsAndTimes.geoms[0] : {
+                        type: 'GeometryCollection',
+                        geometries: geomsAndTimes.geoms
+                    },
+                    properties: properties
+                };
+                if (attr(root, 'id')) feature.id = attr(root, 'id');
+                return [feature];
+            }
+            return gj;
+        },
+        gpx: function(doc) {
+            var i,
+                tracks = get(doc, 'trk'),
+                routes = get(doc, 'rte'),
+                waypoints = get(doc, 'wpt'),
+                // a feature collection
+                gj = fc(),
+                feature;
+            for (i = 0; i < tracks.length; i++) {
+                feature = getTrack(tracks[i]);
+                if (feature) gj.features.push(feature);
+            }
+            for (i = 0; i < routes.length; i++) {
+                feature = getRoute(routes[i]);
+                if (feature) gj.features.push(feature);
+            }
+            for (i = 0; i < waypoints.length; i++) {
+                gj.features.push(getPoint(waypoints[i]));
+            }
+            function getPoints(node, pointname) {
+                var pts = get(node, pointname),
+                    line = [],
+                    times = [],
+                    heartRates = [],
+                    l = pts.length;
+                if (l < 2) return {};  // Invalid line in GeoJSON
+                for (var i = 0; i < l; i++) {
+                    var c = coordPair(pts[i]);
+                    line.push(c.coordinates);
+                    if (c.time) times.push(c.time);
+                    if (c.heartRate) heartRates.push(c.heartRate);
+                }
+                return {
+                    line: line,
+                    times: times,
+                    heartRates: heartRates
+                };
+            }
+            function getTrack(node) {
+                var segments = get(node, 'trkseg'),
+                    track = [],
+                    times = [],
+                    heartRates = [],
+                    line;
+                for (var i = 0; i < segments.length; i++) {
+                    line = getPoints(segments[i], 'trkpt');
+                    if (line) {
+                        if (line.line) track.push(line.line);
+                        if (line.times && line.times.length) times.push(line.times);
+                        if (line.heartRates && line.heartRates.length) heartRates.push(line.heartRates);
+                    }
+                }
+                if (track.length === 0) return;
+                var properties = getProperties(node);
+                if (times.length) properties.coordTimes = track.length === 1 ? times[0] : times;
+                if (heartRates.length) properties.heartRates = track.length === 1 ? heartRates[0] : heartRates;
+                return {
+                    type: 'Feature',
+                    properties: properties,
+                    geometry: {
+                        type: track.length === 1 ? 'LineString' : 'MultiLineString',
+                        coordinates: track.length === 1 ? track[0] : track
+                    }
+                };
+            }
+            function getRoute(node) {
+                var line = getPoints(node, 'rtept');
+                if (!line.line) return;
+                var routeObj = {
+                    type: 'Feature',
+                    properties: getProperties(node),
+                    geometry: {
+                        type: 'LineString',
+                        coordinates: line.line
+                    }
+                };
+                return routeObj;
+            }
+            function getPoint(node) {
+                var prop = getProperties(node);
+                extend(prop, getMulti(node, ['sym', 'type']));
+                return {
+                    type: 'Feature',
+                    properties: prop,
+                    geometry: {
+                        type: 'Point',
+                        coordinates: coordPair(node).coordinates
+                    }
+                };
+            }
+            function getProperties(node) {
+                var prop, links;
+                prop = getMulti(node, ['name', 'cmt', 'desc', 'time', 'keywords']);
+                links = get(node, 'link');
+                if (links.length) prop.links = [];
+                for (var i = 0, link; i < links.length; i++) {
+                    link = { href: attr(links[i], 'href') };
+                    extend(link, getMulti(links[i], ['text', 'type']));
+                    prop.links.push(link);
+                }
+                return prop;
+            }
+            return gj;
+        }
+    };
+    return t;
+})();
+
+if (true) module.exports = toGeoJSON;
+
+
+/***/ }),
+
 /***/ "./src/js/adv_mode.ts":
 /*!****************************!*\
   !*** ./src/js/adv_mode.ts ***!
@@ -29571,11 +30258,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! leaflet */ "./node_modules/leaflet/dist/leaflet-src.js");
 /* harmony import */ var leaflet__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(leaflet__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var leaflet_dist_leaflet_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! leaflet/dist/leaflet.css */ "./node_modules/leaflet/dist/leaflet.css");
-/* harmony import */ var leaflet_contextmenu_dist_leaflet_contextmenu_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet-contextmenu/dist/leaflet.contextmenu.css */ "./node_modules/leaflet-contextmenu/dist/leaflet.contextmenu.css");
+/* harmony import */ var leaflet_filelayer__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! leaflet-filelayer */ "./node_modules/leaflet-filelayer/src/leaflet.filelayer.js");
+/* harmony import */ var leaflet_filelayer__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(leaflet_filelayer__WEBPACK_IMPORTED_MODULE_2__);
 
 
 // @ts-ignore
 //import * as ContextMenu from "leaflet-contextmenu";
+// import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';\
+// @ts-ignore
 
 // delete L.Icon.Default.prototype._getIconUrl;
 //XXX: Fix the image paths loaded by leaflet
@@ -29587,6 +30277,7 @@ leaflet__WEBPACK_IMPORTED_MODULE_0__.Icon.Default.mergeOptions({
 //require('leaflet/dist/images/layers.png')
 //require('leaflet/dist/images/layers-2x.png')
 //const cm = ContextMenu;
+const fl = leaflet_filelayer__WEBPACK_IMPORTED_MODULE_2__;
 
 class LeafletContextMenuItem {
     constructor(text = "", fa_icon = "", callback = null) {
@@ -29747,6 +30438,22 @@ class NeuronFeatureBase {
             dom.appendChild(input);
             dom.appendChild(l);
         }
+        return dom;
+    }
+    _create_dom_input_file(on_change, accepts = null) {
+        let dom = document.createElement("input");
+        dom.type = "file";
+        if (accepts != null)
+            dom.accept = accepts;
+        dom.className = 'mission-feature-content-value';
+        dom.onchange = on_change;
+        return dom;
+    }
+    _create_dom_input_button(text, on_change) {
+        let dom = document.createElement("button");
+        dom.className = 'mission-feature-content-value';
+        dom.onclick = on_change;
+        dom.appendChild(document.createTextNode(text));
         return dom;
     }
     _create_dom_input_number(value, on_change, min = null, max = null) {
@@ -29993,7 +30700,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom;
+var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_dom_load_kml, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom, _NeuronFeaturePolygon_load_from_kml_dom;
 
 
 
@@ -30007,9 +30714,11 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         _NeuronFeaturePolygon_on_change_internal.set(this, void 0);
         _NeuronFeaturePolygon_dom.set(this, void 0);
         _NeuronFeaturePolygon_dom_corner_count.set(this, void 0);
+        _NeuronFeaturePolygon_dom_load_kml.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_on_change_internal, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_corner_count, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_load_kml, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
@@ -30160,12 +30869,14 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").className = 'mission-feature-content-item';
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f"));
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_load_kml, this._create_dom_input_button("Browse...", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_load_from_kml_dom).bind(this)), "f");
+            c.appendChild(this._create_dom_labelled_input("Load KML:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_load_kml, "f")));
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom, "f");
     }
 }
-_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
+_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_dom_load_kml = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
         var k = new_index - arr.length + 1;
         while (k--) {
@@ -30198,6 +30909,30 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").innerHTML = '';
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").appendChild(document.createTextNode(`Corners: ${__classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length}`));
     }
+}, _NeuronFeaturePolygon_load_from_kml_dom = function _NeuronFeaturePolygon_load_from_kml_dom() {
+    // const files = this.#dom_load_kml.files;
+    // if(files.length) {
+    //     const file = files[0];
+    // }
+    // @ts-ignore
+    const feature = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.Control.fileLayerLoad({
+        // Allows you to use a customized version of L.geoJson.
+        // For example if you are using the Proj4Leaflet leaflet plugin,
+        // you can pass L.Proj.geoJson and load the files into the
+        // L.Proj.GeoJson instead of the L.geoJson.
+        // layer: L.geoJson,
+        // See http://leafletjs.com/reference.html#geojson-options
+        layerOptions: { style: { color: 'red' } },
+        // Add to map after loading (default: true) ?
+        // addToMap: true,
+        // File size limit in kb (default: 1024) ?
+        fileSizeLimit: 1024,
+        // Restrict accepted file formats (default: .geojson, .json, .kml, and .gpx) ?
+        formats: [
+            '.geojson',
+            '.kml'
+        ]
+    });
 };
 
 
@@ -30588,9 +31323,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronMap": () => (/* binding */ NeuronMap)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
-/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
-/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
-/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
+/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30602,13 +31338,15 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronMap_planner, _NeuronMap_map, _NeuronMap_path, _NeuronMap_element_name;
+var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_path, _NeuronMap_element_name, _NeuronMap_get_poly_bounds_from_view;
+
 
 
 
 
 class NeuronMap {
     constructor(map_element_name, planner) {
+        _NeuronMap_instances.add(this);
         _NeuronMap_planner.set(this, void 0);
         _NeuronMap_map.set(this, void 0);
         _NeuronMap_path.set(this, void 0);
@@ -30643,7 +31381,7 @@ class NeuronMap {
         // if(event.originalEvent.ctrlKey) {
         //...
         // } else {
-        const l = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.latlng);
+        const l = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint.from_leaflet(event.latlng);
         l.altitude = __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude();
         const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
@@ -30656,24 +31394,21 @@ class NeuronMap {
             const sw = b.getSouthWest();
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
-            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2, __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude()));
+            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2, __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude()));
+            __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
+        }
+    }
+    create_polygon_in_view() {
+        const bounds = __classPrivateFieldGet(this, _NeuronMap_instances, "m", _NeuronMap_get_poly_bounds_from_view).call(this);
+        if (__classPrivateFieldGet(this, _NeuronMap_map, "f") && bounds.length) {
+            const p = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronMap_map, "f"), bounds);
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
     create_survey_in_view() {
-        if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
-            const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
-            const ne = b.getNorthEast();
-            const sw = b.getSouthWest();
-            const dx = ne.lng - sw.lng;
-            const dy = ne.lat - sw.lat;
-            const l = [
-                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
-                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
-                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
-                new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
-            ];
-            const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
+        const bounds = __classPrivateFieldGet(this, _NeuronMap_instances, "m", _NeuronMap_get_poly_bounds_from_view).call(this);
+        if (__classPrivateFieldGet(this, _NeuronMap_map, "f") && bounds.length) {
+            const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), bounds);
             p.update_altitude(__classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude());
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
@@ -30686,10 +31421,10 @@ class NeuronMap {
     }
     reset() {
         if (!__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
-            __classPrivateFieldSet(this, _NeuronMap_map, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.map(__classPrivateFieldGet(this, _NeuronMap_element_name, "f"), {
+            __classPrivateFieldSet(this, _NeuronMap_map, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.map(__classPrivateFieldGet(this, _NeuronMap_element_name, "f"), {
                 doubleClickZoom: false,
             }), "f");
-            const ref = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+            const ref = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                 //attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
                 maxZoom: 18,
                 id: 'mapbox/streets-v11',
@@ -30700,18 +31435,34 @@ class NeuronMap {
             ref.addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")); //TODO: Lock this token to the generate a new token for Neuron
             __classPrivateFieldGet(this, _NeuronMap_map, "f").on("dblclick", this.on_double_click.bind(this));
             //Set an initial zoom
-            this.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
+            this.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
         }
         else {
             //Already have a map, so just force a re-render
             __classPrivateFieldGet(this, _NeuronMap_map, "f").invalidateSize();
         }
         if (!__classPrivateFieldGet(this, _NeuronMap_path, "f")) {
-            __classPrivateFieldSet(this, _NeuronMap_path, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.polyline([], { color: 'orange' }).addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")), "f");
+            __classPrivateFieldSet(this, _NeuronMap_path, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.polyline([], { color: 'orange' }).addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f")), "f");
         }
     }
 }
-_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_element_name = new WeakMap();
+_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_element_name = new WeakMap(), _NeuronMap_instances = new WeakSet(), _NeuronMap_get_poly_bounds_from_view = function _NeuronMap_get_poly_bounds_from_view() {
+    let bounds = [];
+    if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
+        const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
+        const ne = b.getNorthEast();
+        const sw = b.getSouthWest();
+        const dx = ne.lng - sw.lng;
+        const dy = ne.lat - sw.lat;
+        bounds = [
+            new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + dx / 4),
+            new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + dx / 4),
+            new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
+            new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 4, sw.lng + 3 * dx / 4)
+        ];
+    }
+    return bounds;
+};
 
 
 /***/ }),
@@ -32113,6 +32864,16 @@ module.exports = __webpack_require__.p + "img/2b3e1faf89f94a483539.png";
 
 "use strict";
 module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
+
+/***/ }),
+
+/***/ "?494f":
+/*!************************!*\
+  !*** xmldom (ignored) ***!
+  \************************/
+/***/ (() => {
+
+/* (ignored) */
 
 /***/ })
 

@@ -80,7 +80,7 @@ export class NeuronFeatureBase {
     }
 
 
-    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement), label_first:boolean=true) {
+    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true) {
         let dom = document.createElement("div");
         dom.className = 'mission-feature-content-item';
 
@@ -99,6 +99,24 @@ export class NeuronFeatureBase {
             dom.appendChild(input);
             dom.appendChild(l);
         }
+        return dom;
+    }
+
+    _create_dom_input_file(on_change:any, accepts:string = null) {
+        let dom = document.createElement("input");
+        dom.type = "file";
+        if(accepts != null)
+            dom.accept = accepts;
+        dom.className = 'mission-feature-content-value';
+        dom.onchange = on_change;
+        return dom;
+    }
+
+    _create_dom_input_button(text:string, on_change:any) {
+        let dom = document.createElement("button");
+        dom.className = 'mission-feature-content-value';
+        dom.onclick = on_change;
+        dom.appendChild(document.createTextNode(text));
         return dom;
     }
 

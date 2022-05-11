@@ -76,7 +76,8 @@ export class NeuronMap {
         }
     }
 
-    create_survey_in_view() {
+    #get_poly_bounds_from_view() {
+        let bounds:NeuronInterfacePoint[] = [];
         if(this.#map) {
             const b = this.#map.getBounds();
             const ne = b.getNorthEast();
@@ -84,13 +85,31 @@ export class NeuronMap {
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
 
-            const l = [
+            bounds = [
                 new NeuronInterfacePoint(sw.lat +     dy / 4, sw.lng +     dx / 4),
                 new NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng +     dx / 4),
                 new NeuronInterfacePoint(sw.lat + 3 * dy / 4, sw.lng + 3 * dx / 4),
                 new NeuronInterfacePoint(sw.lat +     dy / 4, sw.lng + 3 * dx / 4)
             ];
-            const p = new NeuronFeatureSurvey(this.#map, l);
+        }
+
+        return bounds;
+    }
+
+    create_polygon_in_view() {
+        const bounds = this.#get_poly_bounds_from_view();
+
+        if(this.#map && bounds.length) {
+            const p = new NeuronFeaturePolygon(this.#map, bounds);
+            this.#planner.add_mission_item(p);
+        }
+    }
+
+    create_survey_in_view() {
+        const bounds = this.#get_poly_bounds_from_view();
+
+        if(this.#map && bounds.length) {
+            const p = new NeuronFeatureSurvey(this.#map, bounds);
             p.update_altitude(this.#planner.get_last_item_altitude());
             this.#planner.add_mission_item(p);
         }

@@ -9,12 +9,14 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #on_change_internal:CallableFunction;
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLDivElement;
+    #dom_load_kml:HTMLButtonElement;
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
         super(map, on_remove, on_change);
         this.#on_change_internal = null;
         this.#dom = null;
         this.#dom_corner_count = null;
+        this.#dom_load_kml = null;
 
         this.#selected_corner = 0;
         this.#corners = [];
@@ -212,6 +214,54 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
     }
 
+    // load_from_file(kml:string) {
+    //     L.Control.fileLayerLoad({
+    //         // Allows you to use a customized version of L.geoJson.
+    //         // For example if you are using the Proj4Leaflet leaflet plugin,
+    //         // you can pass L.Proj.geoJson and load the files into the
+    //         // L.Proj.GeoJson instead of the L.geoJson.
+    //         layer: L.geoJson,
+    //         // See http://leafletjs.com/reference.html#geojson-options
+    //         layerOptions: {style: {color:'red'}},
+    //         // Add to map after loading (default: true) ?
+    //         addToMap: true,
+    //         // File size limit in kb (default: 1024) ?
+    //         fileSizeLimit: 1024,
+    //         // Restrict accepted file formats (default: .geojson, .json, .kml, and .gpx) ?
+    //         formats: [
+    //             '.geojson',
+    //             '.kml'
+    //         ]
+    //     })
+    // }
+
+    #load_from_kml_dom() {
+        // const files = this.#dom_load_kml.files;
+        // if(files.length) {
+        //     const file = files[0];
+        // }
+
+        // @ts-ignore
+        const feature = L.Control.fileLayerLoad({
+            // Allows you to use a customized version of L.geoJson.
+            // For example if you are using the Proj4Leaflet leaflet plugin,
+            // you can pass L.Proj.geoJson and load the files into the
+            // L.Proj.GeoJson instead of the L.geoJson.
+            // layer: L.geoJson,
+            // See http://leafletjs.com/reference.html#geojson-options
+            layerOptions: {style: {color:'red'}},
+            // Add to map after loading (default: true) ?
+            // addToMap: true,
+            // File size limit in kb (default: 1024) ?
+            fileSizeLimit: 1024,
+            // Restrict accepted file formats (default: .geojson, .json, .kml, and .gpx) ?
+            formats: [
+                '.geojson',
+                '.kml'
+            ]
+        });
+    }
+
     override remove_feature() {
         for(const c of this.#corners) {
             c.remove();
@@ -237,6 +287,9 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             this.#dom_corner_count.className = 'mission-feature-content-item';
             this.#try_update_dom();
             c.appendChild(this.#dom_corner_count);
+
+            this.#dom_load_kml = this._create_dom_input_button("Browse...", this.#load_from_kml_dom.bind(this));
+            c.appendChild(this._create_dom_labelled_input("Load KML:", this.#dom_load_kml));
 
             this.#dom.append(c);
         }
