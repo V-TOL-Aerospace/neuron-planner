@@ -42,9 +42,36 @@ export class NeuronPlanner {
         this.#run_on_mission_change();
     }
 
+    #array_move(arr:any[], old_index:number, new_index:number) {
+        if (new_index >= arr.length) {
+            var k = new_index - arr.length + 1;
+            while (k--) {
+                arr.push(undefined);
+            }
+        }
+        arr.splice(new_index, 0, arr.splice(old_index, 1)[0]);
+        return arr; // for testing
+    };
+
+    #move_mission_item(item:NeuronFeatureBase, direction:number) {
+        let ind = this.#mission_items.indexOf(item);
+        if(ind >= 0) {
+            //Move index and clamp to array size
+            let new_ind = ind + (direction > 0 ? 1 : -1)
+            new_ind = Math.max(Math.min(new_ind, (this.#mission_items.length - 1)), 0);
+            this.#array_move(this.#mission_items, ind, new_ind);
+
+            this.update();
+            this.#run_on_mission_change();
+        } else {
+            console.warn("Unknown mission item, cannot move");
+        }
+    }
+
     add_mission_item(item:NeuronFeatureBase) {
         item.set_remove_callback(this.remove_mission_item.bind(this));
         item.set_change_callback(this.#mission_item_changed.bind(this));
+        item.set_move_callback(this.#move_mission_item.bind(this));
         this.#mission_items.push(item);
 
         this.update();

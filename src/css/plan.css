@@ -43,6 +43,17 @@
 }
 
 .mission-feature-title {
+    flex: auto;
+    display: flex;
+    flex-direction: row;
+}
+
+.mission-feature-title-button {
+    flex: auto;
+    flex-grow: 0;
+}
+
+.mission-feature-title-text {
     font-weight: bold;
     flex: auto;
 }

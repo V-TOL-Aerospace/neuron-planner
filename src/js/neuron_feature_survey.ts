@@ -26,6 +26,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_distance:HTMLInputElement;
     #dom_spacing:HTMLInputElement;
     #dom_angle:HTMLInputElement;
+    #dom_angle_slider:HTMLInputElement;
     #dom_overshoot1:HTMLInputElement;
     #dom_overshoot2:HTMLInputElement;
     #dom_startpos:HTMLSelectElement;
@@ -50,6 +51,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom_distance = null;
         this.#dom_spacing = null;
         this.#dom_angle = null;
+        this.#dom_angle_slider = null;
         this.#dom_overshoot1 = null;
         this.#dom_overshoot2 = null;
         this.#dom_startpos = null;
@@ -64,7 +66,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#overshoot1 = 0.0;
         this.#overshoot2 = 0.0;
         this.#startpos = StartPosition.TopLeft;
-        this.#minLaneSeparation = 1;
+        this.#minLaneSeparation = 0;
         this.#leadin = 0.0;
 
         this._set_on_change_internal(this.update_survey.bind(this));
@@ -275,7 +277,15 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #update_angle_from_dom() {
+        const val = this.#dom_angle.valueAsNumber;
+        this.#dom_angle_slider.value = val.toString();
         this.update_angle(this.#dom_angle.valueAsNumber,false);
+    }
+
+    #update_angle_slider_from_dom() {
+        const val = this.#dom_angle_slider.valueAsNumber;
+        this.#dom_angle.value = val.toString();
+        this.update_angle(val,false);
     }
 
     #update_overshoot1_from_dom() {
@@ -335,18 +345,21 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_labelled_input("Altitude:", this.#dom_altitude));
 
             this.#dom_distance = this._create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0);
-            c.appendChild(this._create_dom_labelled_input("Distance:", this.#dom_distance));
+            c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_distance));
 
-            this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
-            c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
+            // this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
+            // c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
 
             this.#dom_angle = this._create_dom_input_number(this.#angle, this.#update_angle_from_dom.bind(this), -180, 180);
             c.appendChild(this._create_dom_labelled_input("Angle:", this.#dom_angle));
 
-            this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this), 0);
+            this.#dom_angle_slider = this._create_dom_input_range(this.#angle, this.#update_angle_slider_from_dom.bind(this), -180, 180, 5);
+            c.appendChild(this._create_dom_labelled_input("", this.#dom_angle_slider));
+
+            this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this));
             c.appendChild(this._create_dom_labelled_input("Overshoot A:", this.#dom_overshoot1));
 
-            this.#dom_overshoot2 = this._create_dom_input_number(this.#overshoot2, this.#update_overshoot2_from_dom.bind(this), 0);
+            this.#dom_overshoot2 = this._create_dom_input_number(this.#overshoot2, this.#update_overshoot2_from_dom.bind(this));
             c.appendChild(this._create_dom_labelled_input("Overshoot B:", this.#dom_overshoot2));
 
             this.#dom_startpos = this._create_dom_input_select(
@@ -364,9 +377,9 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
                 ],
                 this.#update_startpos_from_dom.bind(this),
                 this.#startpos.toString());
-            c.appendChild(this._create_dom_labelled_input("Start Pos.:", this.#dom_startpos));
+            c.appendChild(this._create_dom_labelled_input("Entry:", this.#dom_startpos));
 
-            this.#dom_minLaneSeparation = this._create_dom_input_number(this.#minLaneSeparation, this.#update_minLaneSeparation_from_dom.bind(this), 1);
+            this.#dom_minLaneSeparation = this._create_dom_input_number(this.#minLaneSeparation, this.#update_minLaneSeparation_from_dom.bind(this), 0);
             c.appendChild(this._create_dom_labelled_input("Lane Skip:", this.#dom_minLaneSeparation));
 
             this.#dom_leadin = this._create_dom_input_number(this.#leadin, this.#update_leadin_from_dom.bind(this), 0);
