@@ -55,16 +55,6 @@ body {
     flex: 0 1 1;
 }
 
-#fp-plan {
-    display: flex;
-    flex-direction: column;
-}
-
-#fp-stats {
-    display: flex;
-    flex-direction: column;
-}
-
 #fp-advanced {
     display: flex;
     flex-direction: column;

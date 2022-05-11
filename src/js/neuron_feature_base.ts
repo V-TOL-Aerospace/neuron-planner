@@ -14,14 +14,6 @@ export class NeuronFeatureBase {
         this.set_change_callback(on_change);
     }
 
-    set_remove_callback(on_remove:CallableFunction) {
-        this.#on_remove = on_remove;
-    }
-
-    set_change_callback(on_change:CallableFunction) {
-        this.#on_change = on_change;
-    }
-
     _trigger_on_changed() {
         if(this.#on_change)
             this.#on_change(this);
@@ -44,19 +36,47 @@ export class NeuronFeatureBase {
         }
     }
 
-    remove_feature() {
-        //Handle remove callback
-        if(this.#on_remove)
-            this.#on_remove(this);
+    _get_dom(title:string="Mission Feature") {
+        let dom = document.createElement("div");
+        dom.className = 'mission-feature';
+
+        let t = document.createElement("div");
+        t.className = 'mission-feature-title';
+        t.appendChild(document.createTextNode(title));
+
+        //TODO: Movement controls and remove buttons
+
+        dom.appendChild(t);
+
+        return dom;
+    }
+
+    set_remove_callback(on_remove:CallableFunction) {
+        this.#on_remove = on_remove;
+    }
+
+    set_change_callback(on_change:CallableFunction) {
+        this.#on_change = on_change;
     }
 
     get_features() {
         return this.#features;
     }
 
+    remove_feature() {
+        //XXX: Implement this per inherited feature
+        if(this.#on_remove)
+            this.#on_remove(this);
+    }
+
     get_path_coords() {
         //XXX: Implement this per inherited feature
         const coords:NeuronInterfacePoint[] = [];
         return coords;
+    }
+
+    get_dom() {
+        //XXX: Implement this per inherited feature
+        return this._get_dom();
     }
 }

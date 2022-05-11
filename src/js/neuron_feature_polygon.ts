@@ -7,10 +7,14 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #polygon:L.Polygon;
     #selected_corner:number;
     #on_change_internal:CallableFunction;
+    #dom:HTMLDivElement;
+    #dom_corner_count:HTMLDivElement;
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
         super(map, on_remove, on_change);
         this.#on_change_internal = null;
+        this.#dom = null;
+        this.#dom_corner_count = null;
 
         this.#selected_corner = 0;
         this.#corners = [];
@@ -172,18 +176,6 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
     }
 
-    remove_feature() {
-        for(const c of this.#corners) {
-            c.remove();
-        }
-        this.#corners = [];
-
-        this.#polygon?.remove();
-        this.#polygon = null;
-
-        super.remove_feature();
-    }
-
     update_polygon() {
         if(this.#corners.length > 1) {
             let corners = [];
@@ -209,5 +201,46 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         if(this.#on_change_internal)
             this.#on_change_internal();
         this._trigger_on_changed();
+
+        this.#try_update_dom();
+    }
+
+    #try_update_dom() {
+        if(this.#dom_corner_count) {
+            this.#dom_corner_count.innerHTML = '';
+            this.#dom_corner_count.appendChild(document.createTextNode(`Corners: ${this.#corners.length}`));
+        }
+    }
+
+    override remove_feature() {
+        for(const c of this.#corners) {
+            c.remove();
+        }
+        this.#corners = [];
+
+        this.#polygon?.remove();
+        this.#polygon = null;
+
+        super.remove_feature();
+    }
+
+    //override get_path_coords() {} //XXX: No paths provided by this feature, use base return
+
+    override get_dom() {
+        if(!this.#dom) {
+            this.#dom = this._get_dom("Polygon");
+
+            let c = document.createElement("div");
+            c.className = 'mission-feature-content';
+
+            this.#dom_corner_count = document.createElement("div");
+            this.#dom_corner_count.className = 'mission-feature-content-item';
+            this.#try_update_dom();
+            c.appendChild(this.#dom_corner_count);
+
+            this.#dom.append(c);
+        }
+
+        return this.#dom;
     }
 }

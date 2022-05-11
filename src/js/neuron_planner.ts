@@ -1,8 +1,6 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 
-import * as HaversineDistance from 'haversine-distance';
-
 export class NeuronPlanner {
     #plan_element:HTMLElement;
     #stats_element:HTMLElement;
@@ -23,6 +21,8 @@ export class NeuronPlanner {
     #run_on_mission_change(){
         for(const cb of this.#on_change_callbacks.values())
             cb();
+
+        this.update_mission_stats();
     }
 
     on_mission_change(cb:CallableFunction): CallableFunction {
@@ -78,14 +78,14 @@ export class NeuronPlanner {
     update_mission_plan() {
         this.#plan_element.innerHTML = '';
 
-        let count = 0;
+        // let count = 0;
         for(const i of this.#mission_items) {
-            count++;
+            // count++;
 
-            const dom = document.createElement('div');
-            dom.appendChild(document.createTextNode(`Step #${count}: ${i.constructor.name}`));
+            // const dom = document.createElement('div');
+            // dom.appendChild(document.createTextNode(`Step #${count}: ${i.constructor.name}`));
 
-            this.#plan_element.appendChild(dom);
+            this.#plan_element.appendChild(i.get_dom());
         }
     }
 
@@ -98,7 +98,9 @@ export class NeuronPlanner {
         //      do it properly in the future
         let total_distance = 0.0;
         for (var i = 0; i < coords.length - 1; i++) {
-            total_distance += HaversineDistance(coords[i].to_haversine(), coords[i+1].to_haversine());
+            const u1 = coords[i].to_UTM();
+            const u2 = coords[i+1].to_UTM(u1.zone);
+            total_distance += u1.GetDistance(u2);
         }
 
         this.#stats_element.innerHTML = '';

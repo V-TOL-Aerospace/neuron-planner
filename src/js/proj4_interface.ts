@@ -35,7 +35,6 @@ export class UTMPos {
     x:number;
     y:number;
     zone:number;
-    zone_letter:string;
     tag:string;
 
     constructor(x:number=0.0, y:number=0.0, zone:number=0.0, tag:string="") {
@@ -46,7 +45,7 @@ export class UTMPos {
     }
 
     equals(other:UTMPos, match_tag:boolean = false) {
-        return (this.x == other.x) && (this.y == other.y) && (this.zone == other.zone) && (!match_tag || (this.zone_letter == other.zone_letter));
+        return (this.x == other.x) && (this.y == other.y) && (this.zone == other.zone) && (!match_tag || (this.tag == other.tag));
     }
 
     copy(tag:string=null) {

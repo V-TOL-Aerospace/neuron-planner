@@ -10,6 +10,7 @@ import '@fortawesome/fontawesome-free/js/brands'
 import "../css/theme.css";
 import "../css/index.css";
 import "../css/map.css";
+import "../css/plan.css";
 import { NeuronPlanner } from './neuron_planner';
 
 /// <reference types="webpack/module" />

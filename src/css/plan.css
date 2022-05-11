@@ -1,0 +1,36 @@
+#fp-plan {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+#fp-stats {
+    display: flex;
+    flex-direction: column;
+    padding: 0.5em;
+}
+
+.mission-feature {
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-feature-title {
+    font-weight: bold;
+    flex: auto;
+}
+
+.mission-feature-content {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.mission-feature-content-item {
+    flex: auto;
+    max-width: 100%;
+}
+
+.mission-feature-content-value {
+    max-width: 50%;
+}
