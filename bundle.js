@@ -30738,11 +30738,16 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronPlanner_instances, _NeuronPlanner_plan_element, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item;
+var _NeuronPlanner_instances, _NeuronPlanner_plan_element, _NeuronPlanner_option_elements, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item;
+var NeuronPlannerOptionKeys;
+(function (NeuronPlannerOptionKeys) {
+    NeuronPlannerOptionKeys["MISSION_SPEED"] = "fp-stats-options-speed";
+})(NeuronPlannerOptionKeys || (NeuronPlannerOptionKeys = {}));
 class NeuronPlanner {
     constructor(plan_element_name, stats_element_name) {
         _NeuronPlanner_instances.add(this);
         _NeuronPlanner_plan_element.set(this, void 0);
+        _NeuronPlanner_option_elements.set(this, void 0);
         _NeuronPlanner_stats_element.set(this, void 0);
         _NeuronPlanner_mission_items.set(this, void 0);
         _NeuronPlanner_on_change_callbacks.set(this, void 0);
@@ -30751,11 +30756,23 @@ class NeuronPlanner {
         _NeuronPlanner_last_mission_altitude.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronPlanner_plan_element, document.getElementById(plan_element_name), "f");
         __classPrivateFieldSet(this, _NeuronPlanner_stats_element, document.getElementById(stats_element_name), "f");
+        __classPrivateFieldSet(this, _NeuronPlanner_option_elements, new Map(), "f");
+        let option_element_names = [
+            NeuronPlannerOptionKeys.MISSION_SPEED,
+        ];
+        for (const n of option_element_names) {
+            const e = document.getElementById(n);
+            e.onchange = this.update_mission_stats.bind(this);
+            __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").set(n, e);
+        }
         __classPrivateFieldSet(this, _NeuronPlanner_mission_items, [], "f");
         __classPrivateFieldSet(this, _NeuronPlanner_on_change_callbacks, new Map(), "f");
         __classPrivateFieldSet(this, _NeuronPlanner_last_callback_id, 0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_clearing_mission, false, "f");
+    }
+    get_option(key) {
+        return __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").has(key) ? __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").get(key).value : null;
     }
     on_mission_change(cb) {
         var _a, _b;
@@ -30816,17 +30833,27 @@ class NeuronPlanner {
         //      do it properly in the future
         let total_distance = 0.0;
         for (var i = 0; i < coords.length - 1; i++) {
-            const u1 = coords[i].to_UTM();
-            const u2 = coords[i + 1].to_UTM(u1.zone);
-            total_distance += u1.GetDistance(u2);
+            const p1 = coords[i];
+            const p2 = coords[i + 1];
+            const u1 = p1.to_UTM();
+            const u2 = p2.to_UTM(u1.zone);
+            const d = u1.GetDistance(u2);
+            //Do some sneaky stuff to support altitude as well
+            const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
+            total_distance += Math.sqrt(Math.pow(d, 2) + altd);
         }
+        const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
+        const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
         __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").innerHTML = '';
         const s1 = document.createElement('div');
         s1.appendChild(document.createTextNode(`Waypoints: ${coords.length}`));
         __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s1);
         const s2 = document.createElement('div');
-        s2.appendChild(document.createTextNode(`Total distance: ${(total_distance / 1000).toFixed(2)} km`));
+        s2.appendChild(document.createTextNode(`Distance: ${(total_distance / 1000).toFixed(2)} km`));
         __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s2);
+        const s3 = document.createElement('div');
+        s3.appendChild(document.createTextNode(`Time: ${(total_distance / flight_speed / 60).toFixed(2)} min`));
+        __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s3);
     }
     reset() {
         this.update();
@@ -30842,7 +30869,7 @@ class NeuronPlanner {
         return coords;
     }
 }
-_NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_stats_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_run_on_mission_change = function _NeuronPlanner_run_on_mission_change() {
+_NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_option_elements = new WeakMap(), _NeuronPlanner_stats_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_run_on_mission_change = function _NeuronPlanner_run_on_mission_change() {
     for (const cb of __classPrivateFieldGet(this, _NeuronPlanner_on_change_callbacks, "f").values())
         cb();
     this.update_mission_stats();
@@ -31470,6 +31497,7 @@ class UTMPos {
         const deg2rad = Math.PI / 180.0;
         return new UTMPos(this.x + distance * Math.cos(degN * deg2rad), this.y + distance * Math.sin(degN * deg2rad), this.zone, tag);
     }
+    //TODO: Handle altitude changes!
     GetDistance(b) {
         return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
     }
