@@ -53,6 +53,7 @@ export class NeuronMap {
             //...
         // } else {
             const l = NeuronInterfacePoint.from_leaflet(event.latlng);
+            l.altitude = this.#planner.get_last_item_altitude();
             const p = new NeuronFeaturePoint(this.#map, l);
             this.#planner.add_mission_item(p);
         // }
@@ -66,7 +67,11 @@ export class NeuronMap {
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
 
-            const p = new NeuronFeaturePoint(this.#map, new NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2));
+            const p = new NeuronFeaturePoint(this.#map, new NeuronInterfacePoint(
+                sw.lat + dy / 2,
+                sw.lng + dx / 2,
+                this.#planner.get_last_item_altitude()
+            ));
             this.#planner.add_mission_item(p);
         }
     }
@@ -86,6 +91,7 @@ export class NeuronMap {
                 new NeuronInterfacePoint(sw.lat +     dy / 4, sw.lng + 3 * dx / 4)
             ];
             const p = new NeuronFeatureSurvey(this.#map, l);
+            p.update_altitude(this.#planner.get_last_item_altitude());
             this.#planner.add_mission_item(p);
         }
     }

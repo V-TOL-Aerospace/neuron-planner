@@ -8,6 +8,7 @@ export class NeuronPlanner {
     #on_change_callbacks:Map<number,CallableFunction>;
     #last_callback_id:number;
     #clearing_mission:boolean;
+    #last_mission_altitude:number;
 
     constructor(plan_element_name:string, stats_element_name:string) {
         this.#plan_element = document.getElementById(plan_element_name);
@@ -15,6 +16,7 @@ export class NeuronPlanner {
         this.#mission_items = [];
         this.#on_change_callbacks = new Map();
         this.#last_callback_id = 0;
+        this.#last_mission_altitude = 0.0;
         this.#clearing_mission = false;
     }
 
@@ -68,6 +70,10 @@ export class NeuronPlanner {
         }
     }
 
+    get_last_item_altitude() {
+        return this.#last_mission_altitude;
+    }
+
     add_mission_item(item:NeuronFeatureBase) {
         item.set_remove_callback(this.remove_mission_item.bind(this));
         item.set_change_callback(this.#mission_item_changed.bind(this));
@@ -118,6 +124,9 @@ export class NeuronPlanner {
 
     update_mission_stats() {
         const coords = this.get_mission_coords();
+        this.#last_mission_altitude = coords.length ?
+            coords[coords.length - 1].altitude :
+            0.0;
 
         //XXX:  Total distance calculated with the haversine method
         //      This is a shortcut and is probably ok for small distances
