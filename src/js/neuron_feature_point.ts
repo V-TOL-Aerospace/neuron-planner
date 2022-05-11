@@ -122,46 +122,14 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
 
-            let input_lat_label = document.createElement("div");
-            input_lat_label.className = 'mission-feature-content-item';
-            input_lat_label.appendChild(document.createTextNode("Latitude:"));
-            c.appendChild(input_lat_label);
+            this.#dom_lat = this._create_dom_input_number(this.#point ? this.#point.latitude : 0.0, this.#update_latitude_from_dom.bind(this), -90, 90);
+            c.appendChild(this._create_dom_labelled_input("Latitude:", this.#dom_lat));
 
-            this.#dom_lat = document.createElement("input");
-            this.#dom_lat.type = "number";
-            this.#dom_lat.min = "-90";
-            this.#dom_lat.max = "90";
-            this.#dom_lat.value = (this.#point ? this.#point.latitude : 0.0).toString();
-            this.#dom_lat.className = 'mission-feature-content-item';
-            this.#dom_lat.onchange = this.#update_latitude_from_dom.bind(this);
-            c.appendChild(this.#dom_lat);
+            this.#dom_lon = this._create_dom_input_number(this.#point ? this.#point.longitude : 0.0, this.#update_longitude_from_dom.bind(this), -180, 180);
+            c.appendChild(this._create_dom_labelled_input("Longitude:", this.#dom_lon));
 
-            let input_lon_label = document.createElement("div");
-            input_lon_label.className = 'mission-feature-content-item';
-            input_lon_label.appendChild(document.createTextNode("Longitude:"));
-            c.appendChild(input_lon_label);
-
-            this.#dom_lon = document.createElement("input");
-            this.#dom_lon.type = "number";
-            this.#dom_lon.min = "-90";
-            this.#dom_lon.max = "90";
-            this.#dom_lon.value = (this.#point ? this.#point.longitude : 0.0).toString();
-            this.#dom_lon.className = 'mission-feature-content-item';
-            this.#dom_lon.onchange = this.#update_longitude_from_dom.bind(this);
-            c.appendChild(this.#dom_lon);
-
-            let input_alt_label = document.createElement("div");
-            input_alt_label.className = 'mission-feature-content-item';
-            input_alt_label.appendChild(document.createTextNode("Altitude:"));
-            c.appendChild(input_alt_label);
-
-            this.#dom_alt = document.createElement("input");
-            this.#dom_alt.type = "number";
-            this.#dom_alt.min = "0";
-            this.#dom_alt.value = (this.#point ? this.#point.altitude : 0.0).toString();
-            this.#dom_alt.className = 'mission-feature-content-item';
-            this.#dom_alt.onchange = this.#update_altitude_from_dom.bind(this);
-            c.appendChild(this.#dom_alt);
+            this.#dom_alt = this._create_dom_input_number(this.#point ? this.#point.altitude : 0.0, this.#update_altitude_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Altitude:", this.#dom_alt));
 
             this.#dom.append(c);
         }

@@ -258,61 +258,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
     }
 
-    #create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement), label_first:boolean=true) {
-        let dom = document.createElement("label");
-        dom.className = 'mission-feature-content-item';
-        if(label_first) {
-            dom.appendChild(document.createTextNode(text));
-            dom.appendChild(input);
-        } else {
-            dom.appendChild(input);
-            dom.appendChild(document.createTextNode(text));
-        }
-        return dom;
-    }
-
-    #create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null) {
-        let dom = document.createElement("input");
-        dom.type = "number";
-        if(min)
-            dom.min = min.toString();
-        if(max)
-            dom.max = max.toString();
-        dom.value = value.toString();
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    #create_dom_input_checkbox(checked:boolean, on_change:any) {
-        let dom = document.createElement("input");
-        dom.type = "checkbox";
-        dom.checked = checked;
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    #create_dom_input_select(options:string[], labels:string[], on_change:any, selected_option:string=null) {
-        let dom = document.createElement("select");
-
-        if(options.length != labels.length)
-            throw new Error(`Options list does not match labels list (${options.length} != ${labels.length})`);
-
-        //Create and append the options
-        for (let i = 0; i < options.length; i++) {
-            let option = document.createElement("option");
-            option.value = options[i];
-            option.text = labels[i];
-            if(selected_option && selected_option==options[i])
-                option.selected = true;
-            dom.appendChild(option);
-        }
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
     #update_show_waypoints_from_dom() {
         this.update_show_waypoints(this.#dom_show_waypoints.checked,false);
     }
@@ -383,39 +328,49 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_waypoint_count.className = 'mission-feature-content-item';
             c.appendChild(this.#dom_waypoint_count);
 
-            this.#dom_show_waypoints = this.#create_dom_input_checkbox(this.#show_waypoints, this.#update_show_waypoints_from_dom.bind(this));
-            c.appendChild(this.#create_dom_labelled_input("Show waypoints", this.#dom_show_waypoints));
+            this.#dom_show_waypoints = this._create_dom_input_checkbox(this.#show_waypoints, this.#update_show_waypoints_from_dom.bind(this));
+            c.appendChild(this._create_dom_labelled_input("Show waypoints", this.#dom_show_waypoints, false));
 
-            this.#dom_altitude = this.#create_dom_input_number(this.#altitude, this.#update_altitude_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Altitude:", this.#dom_altitude));
+            this.#dom_altitude = this._create_dom_input_number(this.#altitude, this.#update_altitude_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Altitude:", this.#dom_altitude));
 
-            this.#dom_distance = this.#create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Distance:", this.#dom_distance));
+            this.#dom_distance = this._create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Distance:", this.#dom_distance));
 
-            this.#dom_spacing = this.#create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Spacing:", this.#dom_spacing));
+            this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
 
-            this.#dom_angle = this.#create_dom_input_number(this.#angle, this.#update_angle_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Angle:", this.#dom_angle));
+            this.#dom_angle = this._create_dom_input_number(this.#angle, this.#update_angle_from_dom.bind(this), -180, 180);
+            c.appendChild(this._create_dom_labelled_input("Angle:", this.#dom_angle));
 
-            this.#dom_overshoot1 = this.#create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Overshoot top:", this.#dom_overshoot1));
+            this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Overshoot A:", this.#dom_overshoot1));
 
-            this.#dom_overshoot2 = this.#create_dom_input_number(this.#overshoot2, this.#update_overshoot2_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Overshoot bottom:", this.#dom_overshoot2));
+            this.#dom_overshoot2 = this._create_dom_input_number(this.#overshoot2, this.#update_overshoot2_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Overshoot B:", this.#dom_overshoot2));
 
-            this.#dom_startpos = this.#create_dom_input_select(
-                Object.values(StartPosition).map(x => x.toString()),
-                Object.keys(StartPosition).map(x => x.toString()),
+            this.#dom_startpos = this._create_dom_input_select(
+                [
+                    StartPosition.TopLeft,
+                    StartPosition.TopRight,
+                    StartPosition.BottomLeft,
+                    StartPosition.BottomRight
+                ].map(x => x.toString()),
+                [
+                    "Top left",
+                    "Top right",
+                    "Bottom left",
+                    "Bottom right"
+                ],
                 this.#update_startpos_from_dom.bind(this),
                 this.#startpos.toString());
-            c.appendChild(this.#create_dom_labelled_input("Start Position:", this.#dom_startpos));
+            c.appendChild(this._create_dom_labelled_input("Start Pos.:", this.#dom_startpos));
 
-            this.#dom_minLaneSeparation = this.#create_dom_input_number(this.#minLaneSeparation, this.#update_minLaneSeparation_from_dom.bind(this), 1);
-            c.appendChild(this.#create_dom_labelled_input("MinLaneSeparation:", this.#dom_minLaneSeparation));
+            this.#dom_minLaneSeparation = this._create_dom_input_number(this.#minLaneSeparation, this.#update_minLaneSeparation_from_dom.bind(this), 1);
+            c.appendChild(this._create_dom_labelled_input("Lane Skip:", this.#dom_minLaneSeparation));
 
-            this.#dom_leadin = this.#create_dom_input_number(this.#leadin, this.#update_leadin_from_dom.bind(this), 0);
-            c.appendChild(this.#create_dom_labelled_input("Leadin:", this.#dom_leadin));
+            this.#dom_leadin = this._create_dom_input_number(this.#leadin, this.#update_leadin_from_dom.bind(this), 0);
+            c.appendChild(this._create_dom_labelled_input("Lead-in:", this.#dom_leadin));
 
 
             this.#try_update_dom();

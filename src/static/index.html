@@ -64,12 +64,12 @@
 
 <body>
     <div id="fp-manage" class="fp-user-buttons-frame">
-        <button type="button" id="fp-manage-create-plan" class="fp-user-buttons" title="Create Flight Plan"><i class="fas fa-file"></i><span class="fp-long-name">Create Flight Plan</span></button>
+        <button type="button" id="fp-manage-create-plan" class="fp-user-buttons" title="Create Flight Plan" disabled><i class="fas fa-file"></i><span class="fp-long-name">Create Flight Plan</span></button>
         <button type="button" id="fp-manage-load-plan" class="fp-user-buttons" title="Load Flight Plan" disabled><i class="fas fa-folder-open"></i><span class="fp-long-name">Load Flight Plan</span></button>
         <button type="button" id="fp-manage-save-plan" class="fp-user-buttons" title="Save Flight Plan" disabled><i class="fas fa-save"></i><span class="fp-long-name">Save Flight Plan</span></button>
         <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" onclick="window.neuron_planner.clear_mission();" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Flight Plan</span></button>
         <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="Upload Flight Plan" disabled><i class="fas fa-upload"></i><span class="fp-long-name">Upload Flight Plan</span></button>
-        <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" onclick="window.neuron_adv_mode.toggle_visible(); window.neuron_map.reset()" title="Toggle Advanced"><i class="fas fa-cog"></i><span class="fp-long-name">Toggle Advanced</span></button>
+        <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" disabled onclick="window.neuron_adv_mode.toggle_visible(); window.neuron_map.reset()" title="Toggle Advanced"><i class="fas fa-cog"></i><span class="fp-long-name">Toggle Advanced</span></button>
     </div>
     <div id="fp-main">
         <div id="fp-map">
@@ -77,8 +77,14 @@
             <div id="fp-map-advanced"></div>
         </div>
         <div id="fp-summary">
-            <div id="fp-plan"></div>
-            <div id="fp-stats"></div>
+            <div id="fp-stats-container">
+                <div id="fp-plan-title">Statistics</div>
+                <div id="fp-stats"></div>
+            </div>
+            <div id="fp-plan-container">
+                <div id="fp-plan-title">Mission Plan</div>
+                <div id="fp-plan"></div>
+            </div>
         </div>
     </div>
     <div id="fp-draw" class="fp-user-buttons-frame">
@@ -87,7 +93,7 @@
         <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button>
         <button type="button" id="fp-draw-load-polygon" class="fp-user-buttons" disabled title="Load Polygon"><i class="fas fa-file-import"></i><span class="fp-long-name">Load Polygon</span></button>
         <button type="button" id="fp-draw-save-polygon" class="fp-user-buttons" disabled title="Save Polygon"><i class="fas fa-file-export"></i><span class="fp-long-name">Save Polygon</span></button>
-        <button type="button" id="fp-draw-clear-polygon" class="fp-user-buttons" title="Clear Polygon"><i class="fas fa-times-circle"></i><span class="fp-long-name">Clear Polygon</span></button>
+        <button type="button" id="fp-draw-clear-polygon" class="fp-user-buttons" disabled title="Clear Polygon"><i class="fas fa-times-circle"></i><span class="fp-long-name">Clear Polygon</span></button>
     </div>
 </body>
 </html>

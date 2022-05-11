@@ -35,6 +35,7 @@ body {
     display: flex;
     flex-direction: row;
     flex: 1 0 0;
+    overflow: hidden;
 }
 
 #fp-map {
@@ -52,7 +53,10 @@ body {
 }
 
 #fp-summary {
-    flex: 0 1 1;
+    flex: auto;
+    flex-grow: 0;
+    display: flex;
+    flex-direction: column;
 }
 
 #fp-advanced {

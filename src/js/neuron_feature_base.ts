@@ -1,5 +1,5 @@
 import { L } from "./leaflet_interface";
-import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronInterfacePoint, NeuronUUID} from "./neuron_interfaces";
 
 export class NeuronFeatureBase {
     #map:L.Map;
@@ -50,6 +50,72 @@ export class NeuronFeatureBase {
 
         return dom;
     }
+
+
+    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement), label_first:boolean=true) {
+        let dom = document.createElement("div");
+        dom.className = 'mission-feature-content-item';
+
+        if (!input.id)
+            input.id = NeuronUUID();
+
+        let l = document.createElement("label");
+        l.className = 'mission-feature-content-label';
+        l.htmlFor = input.id;
+        l.appendChild(document.createTextNode(text));
+
+        if(label_first) {
+            dom.appendChild(l);
+            dom.appendChild(input);
+        } else {
+            dom.appendChild(input);
+            dom.appendChild(l);
+        }
+        return dom;
+    }
+
+    _create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null) {
+        let dom = document.createElement("input");
+        dom.type = "number";
+        if(min)
+            dom.min = min.toString();
+        if(max)
+            dom.max = max.toString();
+        dom.value = value.toString();
+        dom.className = 'mission-feature-content-value';
+        dom.onchange = on_change;
+        return dom;
+    }
+
+    _create_dom_input_checkbox(checked:boolean, on_change:any) {
+        let dom = document.createElement("input");
+        dom.type = "checkbox";
+        dom.checked = checked;
+        dom.className = 'mission-feature-content-value';
+        dom.onchange = on_change;
+        return dom;
+    }
+
+    _create_dom_input_select(options:string[], labels:string[], on_change:any, selected_option:string=null) {
+        let dom = document.createElement("select");
+
+        if(options.length != labels.length)
+            throw new Error(`Options list does not match labels list (${options.length} != ${labels.length})`);
+
+        //Create and append the options
+        for (let i = 0; i < options.length; i++) {
+            let option = document.createElement("option");
+            option.value = options[i];
+            option.text = labels[i];
+            if(selected_option && selected_option==options[i])
+                option.selected = true;
+            dom.appendChild(option);
+        }
+        dom.className = 'mission-feature-content-value';
+        dom.onchange = on_change;
+        return dom;
+    }
+
 
     set_remove_callback(on_remove:CallableFunction) {
         this.#on_remove = on_remove;

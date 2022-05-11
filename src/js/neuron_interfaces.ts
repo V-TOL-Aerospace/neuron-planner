@@ -4,9 +4,10 @@ import { UTMPos } from "./proj4_interface";
 // @ts-ignore
 // import * as UTMConverter from "utm-latlng";
 
-export interface NeuronInterfacePointHaversine {
-    lat:number;
-    lng:number;
+let lastId = 0;
+export function NeuronUUID(prefix='nuuid-') {
+    lastId++;
+    return `${prefix}${lastId}`;
 }
 
 export class NeuronInterfacePoint {
@@ -36,14 +37,6 @@ export class NeuronInterfacePoint {
 
     static from_leaflet(latlng:L.LatLng) {
         return new NeuronInterfacePoint(latlng.lat, latlng.lng);
-    }
-
-    to_haversine() {
-        const h:NeuronInterfacePointHaversine = {
-            lat: this.latitude,
-            lng: this.longitude
-        }
-        return h;
     }
 
     to_UTM(zone:number = null, tag:string = "") {
