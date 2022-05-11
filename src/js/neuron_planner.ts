@@ -1,23 +1,44 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 
+enum NeuronPlannerOptionKeys {
+    MISSION_SPEED = 'fp-stats-options-speed',
+}
+
 export class NeuronPlanner {
     #plan_element:HTMLElement;
+    #option_elements:Map<string,HTMLInputElement>;
     #stats_element:HTMLElement;
     #mission_items:NeuronFeatureBase[];
     #on_change_callbacks:Map<number,CallableFunction>;
     #last_callback_id:number;
     #clearing_mission:boolean;
+
     #last_mission_altitude:number;
 
     constructor(plan_element_name:string, stats_element_name:string) {
         this.#plan_element = document.getElementById(plan_element_name);
         this.#stats_element = document.getElementById(stats_element_name);
+        this.#option_elements = new Map();
+
+        let option_element_names = [
+            NeuronPlannerOptionKeys.MISSION_SPEED,
+        ]
+        for(const n of option_element_names) {
+            const e = <HTMLInputElement>document.getElementById(n);
+            e.onchange = this.update_mission_stats.bind(this);
+            this.#option_elements.set(n, e);
+        }
+
         this.#mission_items = [];
         this.#on_change_callbacks = new Map();
         this.#last_callback_id = 0;
         this.#last_mission_altitude = 0.0;
         this.#clearing_mission = false;
+    }
+
+    get_option(key:NeuronPlannerOptionKeys) {
+        return this.#option_elements.has(key) ? this.#option_elements.get(key).value : null;
     }
 
     #run_on_mission_change(){
@@ -134,10 +155,18 @@ export class NeuronPlanner {
         //      do it properly in the future
         let total_distance = 0.0;
         for (var i = 0; i < coords.length - 1; i++) {
-            const u1 = coords[i].to_UTM();
-            const u2 = coords[i+1].to_UTM(u1.zone);
-            total_distance += u1.GetDistance(u2);
+            const p1 = coords[i];
+            const p2 = coords[i+1];
+            const u1 = p1.to_UTM();
+            const u2 = p2.to_UTM(u1.zone);
+            const d = u1.GetDistance(u2);
+            //Do some sneaky stuff to support altitude as well
+            const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
+            total_distance += Math.sqrt(Math.pow(d,2) + altd);
         }
+
+        const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
+        const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
 
         this.#stats_element.innerHTML = '';
 
@@ -146,8 +175,12 @@ export class NeuronPlanner {
         this.#stats_element.appendChild(s1);
 
         const s2 = document.createElement('div');
-        s2.appendChild(document.createTextNode(`Total distance: ${(total_distance/1000).toFixed(2)} km`));
+        s2.appendChild(document.createTextNode(`Distance: ${(total_distance/1000).toFixed(2)} km`));
         this.#stats_element.appendChild(s2);
+
+        const s3 = document.createElement('div');
+        s3.appendChild(document.createTextNode(`Time: ${(total_distance/flight_speed/60).toFixed(2)} min`));
+        this.#stats_element.appendChild(s3);
     }
 
     reset() {
