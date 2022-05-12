@@ -102,120 +102,137 @@ export async function kml_extract_features(kml_plain_text:string) {
     return ret;
 }
 
-/*
-//TODO: For KMZ download
-// use a BlobWriter to store with a ZipWriter the zip into a Blob object
-const blobWriter = new zip.BlobWriter("application/zip");
-const writer = new zip.ZipWriter(blobWriter);
+function get_filename(ext:string) {
+    return `neuron-planner${Date.now()}.${ext}`;
+}
 
-// use a TextReader to read the String to add
-await writer.add("filename.txt", new zip.TextReader("test!"));
-
-// close the ZipReader
-await writer.close();
-
-// get the zip file as a Blob
-const blob = blobWriter.getData();
-*/
-
-export class KMLExporter  {
-    xmlDocument: XMLDocument;
-
-    constructor(coordinates:NeuronInterfacePoint[] = null, create_as_polygon=false) {
-        if(coordinates) {
-            if(create_as_polygon) {
-                this.createPolygonAndDownloadKML(coordinates);
-            } else {
-                this.createAndDownloadKML(coordinates);
-            }
+export async function kml_download_from_points(coordinates:NeuronInterfacePoint[]) {
+    const textXML = await kml_data_from_coordinates(coordinates);
+    const file = new Blob(
+        [textXML],
+        {
+            type: type_kml
         }
+    );
+    // `data:${data_type}${is_text ? ';charset=utf-8' : ''},` + encodeURIComponent(data)
+    download_file(get_filename('kml'), file);
+}
+
+export async function kml_download_from_polygon(coordinates:NeuronInterfacePoint[]) {
+    const textXML = await kml_data_from_polygon(coordinates);
+    const file = new Blob(
+        [textXML],
+        {
+            type: type_kml
+        }
+    );
+    download_file(get_filename('kml'), file);
+}
+
+export async function kmz_download_from_points(coordinates:NeuronInterfacePoint[]) {
+    const textXML = await kml_data_from_coordinates(coordinates);
+    const kmz = await get_kmz_from_kml_data(textXML);
+    download_file(get_filename('kmz'), kmz);
+}
+
+export async function kmz_download_from_polygon(coordinates:NeuronInterfacePoint[]) {
+    const textXML = await kml_data_from_polygon(coordinates);
+    const kmz = await get_kmz_from_kml_data(textXML);
+    download_file(get_filename('kmz'), kmz);
+}
+
+async function get_kmz_from_kml_data(data:string) {
+    // use a BlobWriter to store with a ZipWriter the zip into a Blob object
+    const blobWriter = new zip.BlobWriter(type_kmz);
+    const writer = new zip.ZipWriter(blobWriter);
+
+    // use a TextReader to read the String to add
+    await writer.add("doc.kml", new zip.TextReader(data));
+
+    // close the ZipReader
+    await writer.close();
+
+    // get the zip file as a Blob
+    return blobWriter.getData();
+}
+
+async function download_file(filename:string, data:Blob) {
+    var element = document.createElement('a');
+    const burl = URL.createObjectURL(data);
+    element.setAttribute('href', burl);
+    element.setAttribute('download', filename);
+
+    element.style.display = 'none';
+    document.body.appendChild(element);
+
+    element.click();
+
+    document.body.removeChild(element);
+}
+
+export async function kml_data_from_coordinates(coordinates:NeuronInterfacePoint[]) {
+    let xmlDocument = document.implementation.createDocument("", "", null);
+    const kmlNode = xmlDocument.createElement('kml');
+    kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
+    const  documentNode = xmlDocument.createElement('Document');
+    kmlNode.appendChild(documentNode);
+    xmlDocument.appendChild(kmlNode);
+    for(let i=0; i<coordinates.length; i++) {
+        documentNode.appendChild(
+            kml_create_point_node(xmlDocument, i.toString(), coordinates[i].latitude, coordinates[i].longitude)
+        );
     }
 
-    createAndDownloadKML(coordinates:NeuronInterfacePoint[]) {
-        const textXML = this.createKMLFileFromCoordinates(coordinates);
-        this.download(`neuron-planner${Date.now()}.kml`, textXML);
-    }
+    return kml_document_to_string(xmlDocument);
+}
 
-    createPolygonAndDownloadKML(coordinates:NeuronInterfacePoint[]) {
-        const textXML = this.createKMLFileFromPolygon(coordinates);
-        this.download(`neuron-planner${Date.now()}.kml`, textXML);
-    }
+export async function kml_data_from_polygon(coordinates:NeuronInterfacePoint[]) {
+    let xmlDocument = document.implementation.createDocument("", "", null);
+    const kmlNode = xmlDocument.createElement('kml');
+    kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
+    const documentNode = xmlDocument.createElement('Document');
+    kmlNode.appendChild(documentNode);
+    xmlDocument.appendChild(kmlNode);
+    documentNode.appendChild(kml_create_polygon_node(xmlDocument, "path", coordinates));
+    return kml_document_to_string(xmlDocument);
+}
 
-    download(filename:string, xmlDocument:string): void {
-      var element = document.createElement('a');
-      element.setAttribute('href', `data:${type_kml};charset=utf-8,` + encodeURIComponent(xmlDocument));
-      element.setAttribute('download', filename);
+export function kml_document_to_string(xmlDocument: XMLDocument) {
+    let textXML = new XMLSerializer().serializeToString(xmlDocument);
+    return '<?xml version="1.0" encoding="UTF-8"?>' + textXML;
+}
 
-      element.style.display = 'none';
-      document.body.appendChild(element);
+function kml_create_point_node(xmlDocument: XMLDocument, name:string, lat:number, lng:number) {
+    const placemarkNode = xmlDocument.createElement('Placemark');
+    const nameNode = xmlDocument.createElement('name');
+    nameNode.innerHTML = name;
+    const descriptionNode = xmlDocument.createElement('description');
+    const pointNode = xmlDocument.createElement('Point');
+    const coordinatesNode = xmlDocument.createElement('coordinates');
+    coordinatesNode.innerHTML = `${lng},${lat}`;
+    placemarkNode.appendChild(nameNode);
+    placemarkNode.appendChild(descriptionNode);
+    placemarkNode.appendChild(pointNode);
+    pointNode.appendChild(coordinatesNode);
+    return placemarkNode;
+}
 
-      element.click();
-
-      document.body.removeChild(element);
-    }
-
-    createKMLFileFromCoordinates(coordinates:NeuronInterfacePoint[]): string {
-      this.xmlDocument = document.implementation.createDocument("", "", null);
-      const kmlNode = this.xmlDocument.createElement('kml');
-      kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
-      const documentNode = this.xmlDocument.createElement('Document');
-      kmlNode.appendChild(documentNode);
-      this.xmlDocument.appendChild(kmlNode);
-      coordinates.forEach((coord, i) => {
-        documentNode.appendChild(this.createPointNode(i.toString(), coord.latitude, coord.longitude));
-      });
-      return this.xmlDocumentToString(this.xmlDocument);
-    }
-
-    createKMLFileFromPolygon(coordinates:NeuronInterfacePoint[]): string {
-      this.xmlDocument = document.implementation.createDocument("", "", null);
-      const kmlNode = this.xmlDocument.createElement('kml');
-      kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
-      const documentNode = this.xmlDocument.createElement('Document');
-      kmlNode.appendChild(documentNode);
-      this.xmlDocument.appendChild(kmlNode);
-      documentNode.appendChild(this.createPolygonNode("path", coordinates));
-      return this.xmlDocumentToString(this.xmlDocument);
-    }
-
-    xmlDocumentToString(xmlDocument: XMLDocument): string {
-      let textXML = new XMLSerializer().serializeToString(xmlDocument);
-      textXML = '<?xml version="1.0" encoding="UTF-8"?>' + textXML;
-      return textXML;
-    }
-
-    createPointNode(name:string, lat:number, lng:number): HTMLElement {
-      const placemarkNode = this.xmlDocument.createElement('Placemark');
-      const nameNode = this.xmlDocument.createElement('name');
-      nameNode.innerHTML = name;
-      const descriptionNode = this.xmlDocument.createElement('description');
-      const pointNode = this.xmlDocument.createElement('Point');
-      const coordinatesNode = this.xmlDocument.createElement('coordinates');
-      coordinatesNode.innerHTML = `${lng},${lat}`;
-      placemarkNode.appendChild(nameNode);
-      placemarkNode.appendChild(descriptionNode);
-      placemarkNode.appendChild(pointNode);
-      pointNode.appendChild(coordinatesNode);
-      return placemarkNode;
-    }
-
-    createPolygonNode(name:string, coordinates:NeuronInterfacePoint[]): HTMLElement {
-      const placemarkNode = this.xmlDocument.createElement('Placemark');
-      const nameNode = this.xmlDocument.createElement('name');
-      nameNode.innerHTML = name;
-      const descriptionNode = this.xmlDocument.createElement('description');
-      const polygonNode = this.xmlDocument.createElement('Polygon');
-      const boundaryNode = this.xmlDocument.createElement('outerBoundaryIs');
-      const ringNode = this.xmlDocument.createElement('LinearRing');
-      const coordinatesNode = this.xmlDocument.createElement('coordinates');
-      const plist = coordinates.map(x => `${x.longitude},${x.latitude}`);
-      coordinatesNode.innerHTML = plist.join(' ');
-      placemarkNode.appendChild(nameNode);
-      placemarkNode.appendChild(descriptionNode);
-      placemarkNode.appendChild(polygonNode);
-      polygonNode.appendChild(boundaryNode);
-      boundaryNode.appendChild(ringNode);
-      ringNode.appendChild(coordinatesNode);
-      return placemarkNode;
-    }
-  }
+function kml_create_polygon_node(xmlDocument: XMLDocument, name:string, coordinates:NeuronInterfacePoint[]) {
+    const placemarkNode = xmlDocument.createElement('Placemark');
+    const nameNode = xmlDocument.createElement('name');
+    nameNode.innerHTML = name;
+    const descriptionNode = xmlDocument.createElement('description');
+    const polygonNode = xmlDocument.createElement('Polygon');
+    const boundaryNode = xmlDocument.createElement('outerBoundaryIs');
+    const ringNode = xmlDocument.createElement('LinearRing');
+    const coordinatesNode = xmlDocument.createElement('coordinates');
+    const plist = coordinates.map(x => `${x.longitude},${x.latitude}`);
+    coordinatesNode.innerHTML = plist.join(' ');
+    placemarkNode.appendChild(nameNode);
+    placemarkNode.appendChild(descriptionNode);
+    placemarkNode.appendChild(polygonNode);
+    polygonNode.appendChild(boundaryNode);
+    boundaryNode.appendChild(ringNode);
+    ringNode.appendChild(coordinatesNode);
+    return placemarkNode;
+}

@@ -4,7 +4,7 @@ import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { NeuronMap } from "./neuron_map";
-import { KMLExporter, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
+import { kml_download_from_points, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
 
 const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
@@ -49,12 +49,12 @@ export class NeuronPlanner {
         this.#clearing_mission = false;
     }
 
-    export_mission() {
-        //TODO
-    }
+    // export_mission() {
+    //
+    // }
 
     export_mission_kml() {
-        const k = new KMLExporter(this.get_mission_coords());
+        kml_download_from_points(this.get_mission_coords());
     }
 
     set_map(map:NeuronMap) {

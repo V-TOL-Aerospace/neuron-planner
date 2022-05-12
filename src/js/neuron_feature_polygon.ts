@@ -1,7 +1,7 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
-import { KMLExporter } from "./neuron_tools_kml";
+import { kml_download_from_polygon, kmz_download_from_polygon } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 
@@ -230,10 +230,11 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #export_as_kml() {
-        const k = new KMLExporter(this.get_corners_as_points(), true);
+        kml_download_from_polygon(this.get_corners_as_points());
     }
 
     #export_as_kmz() {
+        kmz_download_from_polygon(this.get_corners_as_points());
     }
 
     override remove_feature() {
