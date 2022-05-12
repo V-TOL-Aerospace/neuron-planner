@@ -49,6 +49,14 @@ export class NeuronPlanner {
         this.#clearing_mission = false;
     }
 
+    save_mission_file() {
+        //TODO
+    }
+
+    load_mission_file(file:Blob) {
+        //TODO
+    }
+
     // export_mission() {
     //
     // }
