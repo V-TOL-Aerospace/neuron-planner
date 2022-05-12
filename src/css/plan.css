@@ -16,6 +16,21 @@
     flex-direction: column;
 }
 
+#fp-stats-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+#fp-stats-options {
+    display: flex;
+    margin: 0.1em;
+}
+
+.stats-option-value {
+    flex: auto;
+    max-width: 10em;
+}
+
 #fp-plan-container {
     flex: auto;
     overflow: scroll;
@@ -52,6 +67,8 @@
 .mission-feature-title-button {
     flex: auto;
     flex-grow: 0;
+    margin-left: 0.2em;
+    margin-right: 0.2em;
 }
 
 .mission-feature-title-text {

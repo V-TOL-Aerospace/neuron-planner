@@ -2,6 +2,7 @@ import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { CreateGrid, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
+import { NeuronPlanner } from "./neuron_planner";
 
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #waypoints:NeuronInterfacePoint[];
@@ -36,8 +37,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #update_timer:any;
     #update_interval:number;
 
-    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null, show_waypoints=false) {
-        super(map, corners, on_remove, on_change);
+    constructor(map:L.Map, planner:NeuronPlanner, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null, show_waypoints=false) {
+        super(map, planner, corners, on_remove, on_change);
         this.#waypoints = [];
         this.#mappoints = [];
         this.#update_timer = null;
@@ -354,7 +355,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_labelled_input("Angle:", this.#dom_angle));
 
             this.#dom_angle_slider = this._create_dom_input_range(this.#angle, this.#update_angle_slider_from_dom.bind(this), -180, 180, 5);
-            c.appendChild(this._create_dom_labelled_input("", this.#dom_angle_slider));
+            c.appendChild(this._create_dom_labelled_input("Angle:", this.#dom_angle_slider, true, true));
 
             this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this));
             c.appendChild(this._create_dom_labelled_input("Overshoot A:", this.#dom_overshoot1));

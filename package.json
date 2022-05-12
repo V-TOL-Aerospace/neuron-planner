@@ -28,10 +28,10 @@
   },
   "dependencies": {
     "@types/leaflet": "^1.7.9",
+    "@zip.js/zip.js": "^2.4.11",
     "fontawesome-free": "^1.0.4",
     "leaflet": "^1.8.0",
     "leaflet-contextmenu": "^1.4.0",
-    "leaflet-filelayer": "^1.2.0",
     "proj4": "^2.8.0"
   }
 }

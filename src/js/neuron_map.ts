@@ -12,15 +12,21 @@ import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 export class NeuronMap {
     #planner:NeuronPlanner
     #map:L.Map;
+    #map_layer_control:L.Control.Layers;
     #path:L.Polyline;
     #element_name:string;
 
     constructor(map_element_name:string, planner:NeuronPlanner) {
         this.#planner = planner;
         this.#map = null;
+        this.#map_layer_control = null;
         this.#element_name = map_element_name;
 
         this.#planner.on_mission_change(this.update_path.bind(this));
+    }
+
+    get_leaflet_map() {
+        return this.#map;
     }
 
     set_location(location:NeuronInterfacePoint, zoom=13) {
@@ -100,7 +106,7 @@ export class NeuronMap {
         const bounds = this.#get_poly_bounds_from_view();
 
         if(this.#map && bounds.length) {
-            const p = new NeuronFeaturePolygon(this.#map, bounds);
+            const p = new NeuronFeaturePolygon(this.#map, this.#planner, bounds);
             this.#planner.add_mission_item(p);
         }
     }
@@ -109,7 +115,7 @@ export class NeuronMap {
         const bounds = this.#get_poly_bounds_from_view();
 
         if(this.#map && bounds.length) {
-            const p = new NeuronFeatureSurvey(this.#map, bounds);
+            const p = new NeuronFeatureSurvey(this.#map, this.#planner, bounds);
             p.update_altitude(this.#planner.get_last_item_altitude());
             this.#planner.add_mission_item(p);
         }
@@ -124,18 +130,37 @@ export class NeuronMap {
 
 	reset() {
 		if(!this.#map) {
-			this.#map = L.map(this.#element_name, {
-                doubleClickZoom: false,
-            });
-			const ref = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-				//attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+			const tiles_grey = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
 				maxZoom: 18,
 				id: 'mapbox/streets-v11',
 				tileSize: 512,
 				zoomOffset: -1,
-				accessToken: 'pk.eyJ1Ijoia3llbW9ydG9uIiwiYSI6ImNreXBlczMxaTA5angyem55cnRwZno1enMifQ.ddD6u3a-KBq39DYMi8o_hw'
+				accessToken: 'pk.eyJ1Ijoia3llbW9ydG9uIiwiYSI6ImNsMzJneXAybDAzcWwzY3BhNjB4OHJqMnoifQ.fue3o8Y3wWH4y_Wi50oUXw'
 			});
-			ref.addTo(this.#map);	//TODO: Lock this token to the generate a new token for Neuron
+			const tiles_satellite = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+				maxZoom: 18,
+				id: 'mapbox/satellite-v9',
+				tileSize: 512,
+				zoomOffset: -1,
+				accessToken: 'pk.eyJ1Ijoia3llbW9ydG9uIiwiYSI6ImNsMzJneXAybDAzcWwzY3BhNjB4OHJqMnoifQ.fue3o8Y3wWH4y_Wi50oUXw'
+			});
+
+            const layers = {
+                "Street": tiles_grey,
+                "Satellite": tiles_satellite
+            };
+
+			this.#map = L.map(this.#element_name, {
+                doubleClickZoom: false,
+                layers: [
+                    tiles_grey,
+                    tiles_satellite
+                ]
+            });
+            this.#map_layer_control = L.control.layers(layers); //, otherLayers...
+            this.#map_layer_control.addTo(this.#map);
             this.#map.on("dblclick", this.on_double_click.bind(this));
 
             //Set an initial zoom

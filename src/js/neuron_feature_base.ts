@@ -50,8 +50,18 @@ export class NeuronFeatureBase {
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
 
+        let b0 = document.createElement("button");
+        b0.className = 'mission-feature-title-button';
+        b0.title = "Zoom to feature";
+        b0.onclick = this.zoom_to_feature.bind(this);
+        let b0i = document.createElement("i");
+        b0i.className = 'fas fa-location-crosshairs';
+        b0.appendChild(b0i);
+        title.appendChild(b0);
+
         let b1 = document.createElement("button");
         b1.className = 'mission-feature-title-button';
+        b1.title = "Move up";
         b1.onclick = this.#request_move.bind(this, -1);
         let b1i = document.createElement("i");
         b1i.className = 'fas fa-arrow-up';
@@ -60,6 +70,7 @@ export class NeuronFeatureBase {
 
         let b2 = document.createElement("button");
         b2.className = 'mission-feature-title-button';
+        b2.title = "Move down";
         b2.onclick = this.#request_move.bind(this, 1);
         let b2i = document.createElement("i");
         b2i.className = 'fas fa-arrow-down';
@@ -68,6 +79,7 @@ export class NeuronFeatureBase {
 
         let b3 = document.createElement("button");
         b3.className = 'mission-feature-title-button';
+        b3.title = "Remove";
         b3.onclick = this.remove_feature.bind(this);
         let b3i = document.createElement("i");
         b3i.className = 'fas fa-close';
@@ -80,7 +92,7 @@ export class NeuronFeatureBase {
     }
 
 
-    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true) {
+    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true, hide_label:boolean=false) {
         let dom = document.createElement("div");
         dom.className = 'mission-feature-content-item';
 
@@ -91,6 +103,8 @@ export class NeuronFeatureBase {
         l.className = 'mission-feature-content-label';
         l.htmlFor = input.id;
         l.appendChild(document.createTextNode(text));
+        if(hide_label)
+            l.style.visibility = 'hidden';
 
         if(label_first) {
             dom.appendChild(l);
@@ -196,6 +210,13 @@ export class NeuronFeatureBase {
 
     get_features() {
         return this.#features;
+    }
+
+    zoom_to_feature() {
+        const group = L.featureGroup(this.#features);
+        this.#map.fitBounds(group.getBounds(), {
+            padding: [20, 20]
+        });
     }
 
     remove_feature() {

@@ -1,11 +1,20 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
+import { NeuronFeaturePoint } from "./neuron_feature_point";
+import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
+import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronMap } from "./neuron_map";
+import { KMLExporter, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
+
+const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
 enum NeuronPlannerOptionKeys {
     MISSION_SPEED = 'fp-stats-options-speed',
 }
 
 export class NeuronPlanner {
+    #map:NeuronMap;
+
     #plan_element:HTMLElement;
     #option_elements:Map<string,HTMLInputElement>;
     #stats_element:HTMLElement;
@@ -16,7 +25,10 @@ export class NeuronPlanner {
 
     #last_mission_altitude:number;
 
-    constructor(plan_element_name:string, stats_element_name:string) {
+
+    constructor(plan_element_name:string, stats_element_name:string, map:NeuronMap = null) {
+        this.#map = map;
+
         this.#plan_element = document.getElementById(plan_element_name);
         this.#stats_element = document.getElementById(stats_element_name);
         this.#option_elements = new Map();
@@ -35,6 +47,18 @@ export class NeuronPlanner {
         this.#last_callback_id = 0;
         this.#last_mission_altitude = 0.0;
         this.#clearing_mission = false;
+    }
+
+    export_mission() {
+        //TODO
+    }
+
+    export_mission_kml() {
+        const k = new KMLExporter(this.get_mission_coords());
+    }
+
+    set_map(map:NeuronMap) {
+        this.#map = map;
     }
 
     get_option(key:NeuronPlannerOptionKeys) {
@@ -95,11 +119,15 @@ export class NeuronPlanner {
         return this.#last_mission_altitude;
     }
 
-    add_mission_item(item:NeuronFeatureBase) {
+    add_mission_item(item:NeuronFeatureBase, index:number = -1) {
         item.set_remove_callback(this.remove_mission_item.bind(this));
         item.set_change_callback(this.#mission_item_changed.bind(this));
         item.set_move_callback(this.#move_mission_item.bind(this));
-        this.#mission_items.push(item);
+        if(index < 0 || index >= this.#mission_items.length) {
+            this.#mission_items.push(item);
+        } else {
+            this.#mission_items.splice(index, 0, item);
+        }
 
         this.update();
         this.#run_on_mission_change();
@@ -108,8 +136,10 @@ export class NeuronPlanner {
     remove_mission_item(item:NeuronFeatureBase) {
         // console.log(`Mission item removed: ${item}`);
         let index = this.#mission_items.indexOf(item);
-        if(index !== -1) {
+        if(index >= 0) {
             this.#mission_items.splice(index, 1);
+        } else {
+            console.warn("Unknown mission item, cannot remove!")
         }
 
         if(!this.#clearing_mission) {
@@ -143,6 +173,38 @@ export class NeuronPlanner {
         }
     }
 
+    #kml_loaded(result:NeuronKMLData) {
+        // console.log("Got file result:");
+        // console.log(result);
+        for(const p of result.markers) {
+            p.altitude = this.get_last_item_altitude();
+            const f = new NeuronFeaturePoint(this.#map.get_leaflet_map(), p);
+            this.add_mission_item(f);
+        }
+
+        for(const p of result.polygons) {
+            const f = new NeuronFeaturePolygon(this.#map.get_leaflet_map(), this, p);
+            this.add_mission_item(f);
+        }
+    }
+
+    replace_polygon_with_survey(old_item:NeuronFeaturePolygon) {
+        const ind = this.#mission_items.indexOf(old_item);
+        if(ind >= 0) {
+            const survey = new NeuronFeatureSurvey(this.#map.get_leaflet_map(), this, old_item.get_corners_as_points());
+            old_item.remove_feature();
+            this.add_mission_item(survey, ind);
+        } else {
+            console.warn("Unknown mission feature, cannot replace");
+        }
+    }
+
+    import_features_from_files(files:Blob[]) {
+        for(const file of files) {
+            kml_load_file(file, this.#kml_loaded.bind(this));
+        }
+    }
+
     update_mission_stats() {
         const coords = this.get_mission_coords();
         this.#last_mission_altitude = coords.length ?
@@ -165,8 +227,16 @@ export class NeuronPlanner {
             total_distance += Math.sqrt(Math.pow(d,2) + altd);
         }
 
+        const dist_km = total_distance / 1000;
+
+        //Get the flight speed and lock it to at least 0.1m/s
         const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
         const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
+
+        const total_time = total_distance/flight_speed;
+        const t_h = Math.floor(total_time / 3600);
+        const t_m = Math.floor(total_time % 3600 / 60);
+        const t_s = Math.floor(total_time % 3600 % 60);
 
         this.#stats_element.innerHTML = '';
 
@@ -175,11 +245,11 @@ export class NeuronPlanner {
         this.#stats_element.appendChild(s1);
 
         const s2 = document.createElement('div');
-        s2.appendChild(document.createTextNode(`Distance: ${(total_distance/1000).toFixed(2)} km`));
+        s2.appendChild(document.createTextNode(`Distance: ${(dist_km).toFixed(2)} km`));
         this.#stats_element.appendChild(s2);
 
         const s3 = document.createElement('div');
-        s3.appendChild(document.createTextNode(`Time: ${(total_distance/flight_speed/60).toFixed(2)} min`));
+        s3.appendChild(document.createTextNode(`Time: ${zeroPad(t_h,2)}:${zeroPad(t_m,2)}:${zeroPad(t_s,2)}`));
         this.#stats_element.appendChild(s3);
     }
 

@@ -26,6 +26,7 @@ declare global {
 
 window.neuron_planner = new NeuronPlanner('fp-plan', 'fp-stats');
 window.neuron_map = new NeuronMap('fp-map-interactive', window.neuron_planner);
+window.neuron_planner.set_map(window.neuron_map);
 window.neuron_adv_mode = new NeuronAdvMode('fp-map-advanced');
 
 let load_app_data = async () => {

@@ -1,22 +1,33 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
+import { KMLExporter } from "./neuron_tools_kml";
+import { NeuronPlanner } from "./neuron_planner";
+import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 
 export class NeuronFeaturePolygon extends NeuronFeatureBase {
+    #map:L.Map;
     #corners:L.Marker[];
     #polygon:L.Polygon;
+    #planner:NeuronPlanner;
     #selected_corner:number;
     #on_change_internal:CallableFunction;
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLDivElement;
-    #dom_load_kml:HTMLButtonElement;
+    #dom_convert_survey:HTMLButtonElement;
+    #dom_export_kml:HTMLButtonElement;
+    #dom_export_kmz:HTMLButtonElement;
 
-    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
+    constructor(map:L.Map, planner:NeuronPlanner, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
         super(map, on_remove, on_change);
+        this.#map = map;
         this.#on_change_internal = null;
+        this.#planner = planner
         this.#dom = null;
         this.#dom_corner_count = null;
-        this.#dom_load_kml = null;
+        this.#dom_convert_survey = null;
+        this.#dom_export_kml = null;
+        this.#dom_export_kmz = null;
 
         this.#selected_corner = 0;
         this.#corners = [];
@@ -214,52 +225,15 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
     }
 
-    // load_from_file(kml:string) {
-    //     L.Control.fileLayerLoad({
-    //         // Allows you to use a customized version of L.geoJson.
-    //         // For example if you are using the Proj4Leaflet leaflet plugin,
-    //         // you can pass L.Proj.geoJson and load the files into the
-    //         // L.Proj.GeoJson instead of the L.geoJson.
-    //         layer: L.geoJson,
-    //         // See http://leafletjs.com/reference.html#geojson-options
-    //         layerOptions: {style: {color:'red'}},
-    //         // Add to map after loading (default: true) ?
-    //         addToMap: true,
-    //         // File size limit in kb (default: 1024) ?
-    //         fileSizeLimit: 1024,
-    //         // Restrict accepted file formats (default: .geojson, .json, .kml, and .gpx) ?
-    //         formats: [
-    //             '.geojson',
-    //             '.kml'
-    //         ]
-    //     })
-    // }
+    #convert_to_survey() {
+        this.#planner.replace_polygon_with_survey(this)
+    }
 
-    #load_from_kml_dom() {
-        // const files = this.#dom_load_kml.files;
-        // if(files.length) {
-        //     const file = files[0];
-        // }
+    #export_as_kml() {
+        const k = new KMLExporter(this.get_corners_as_points(), true);
+    }
 
-        // @ts-ignore
-        const feature = L.Control.fileLayerLoad({
-            // Allows you to use a customized version of L.geoJson.
-            // For example if you are using the Proj4Leaflet leaflet plugin,
-            // you can pass L.Proj.geoJson and load the files into the
-            // L.Proj.GeoJson instead of the L.geoJson.
-            // layer: L.geoJson,
-            // See http://leafletjs.com/reference.html#geojson-options
-            layerOptions: {style: {color:'red'}},
-            // Add to map after loading (default: true) ?
-            // addToMap: true,
-            // File size limit in kb (default: 1024) ?
-            fileSizeLimit: 1024,
-            // Restrict accepted file formats (default: .geojson, .json, .kml, and .gpx) ?
-            formats: [
-                '.geojson',
-                '.kml'
-            ]
-        });
+    #export_as_kmz() {
     }
 
     override remove_feature() {
@@ -288,8 +262,14 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             this.#try_update_dom();
             c.appendChild(this.#dom_corner_count);
 
-            this.#dom_load_kml = this._create_dom_input_button("Browse...", this.#load_from_kml_dom.bind(this));
-            c.appendChild(this._create_dom_labelled_input("Load KML:", this.#dom_load_kml));
+            this.#dom_convert_survey = this._create_dom_input_button("Survey", this.#convert_to_survey.bind(this));
+            c.appendChild(this._create_dom_labelled_input("Convert to:", this.#dom_convert_survey));
+
+            this.#dom_export_kml = this._create_dom_input_button("KML", this.#export_as_kml.bind(this));
+            this.#dom_export_kmz = this._create_dom_input_button("KMZ", this.#export_as_kmz.bind(this));
+            c.appendChild(this._create_dom_labelled_input("Export as:", this.#dom_export_kml));
+            c.appendChild(this._create_dom_labelled_input("Export as:", this.#dom_export_kmz, true, true));
+            // c.appendChild(this._create_dom_labelled_input("", this.#dom_export_shape.bind(this)));
 
             this.#dom.append(c);
         }
