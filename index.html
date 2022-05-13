@@ -66,9 +66,9 @@
     <div id="fp-manage" class="fp-user-buttons-frame">
         <button type="button" id="fp-manage-create-plan" class="fp-user-buttons" title="Create Flight Plan" disabled><i class="fas fa-file"></i><span class="fp-long-name">Create Flight Plan</span></button>
         <button type="button" id="fp-manage-load-plan" class="fp-user-buttons"  onclick="document.getElementById('fp-manage-load-plan-sub').click();" title="Load Flight Plan"><i class="fas fa-folder-open"></i><span class="fp-long-name">Load Flight Plan</span></button>
-        <input type="file" style="display:none;" id="fp-manage-load-plan-sub" onchange="window.neuron_planner.load_mission_file(this.files)" accept="application/json, .json"/>
-        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons"  onclick="document.getElementById('fp-manage-load-save-sub').click();" title="Save Flight Plan"><i class="fas fa-save"></i><span class="fp-long-name">Save Flight Plan</span></button>
-        <input type="file" style="display:none;" id="fp-manage-save-plan-sub" onchange="window.neuron_planner.save_mission_file()" accept="application/json, .json"/>
+        <input type="file" style="display:none;" id="fp-manage-load-plan-sub" onchange="window.neuron_planner.load_mission_file(this.files[0])" accept="application/json, .json"/>
+        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons"  onclick="window.neuron_planner.save_mission_file()" title="Save Flight Plan"><i class="fas fa-save"></i><span class="fp-long-name">Save Flight Plan</span></button>
+        <!-- <input type="file" style="display:none;" id="fp-manage-save-plan-sub" onchange="window.neuron_planner.save_mission_file()" accept="application/json, .json"/> -->
         <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" onclick="window.neuron_planner.clear_mission();" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Flight Plan</span></button>
         <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="Upload Flight Plan" disabled><i class="fas fa-upload"></i><span class="fp-long-name">Upload Flight Plan</span></button>
         <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" disabled onclick="window.neuron_adv_mode.toggle_visible(); window.neuron_map.reset()" title="Toggle Advanced"><i class="fas fa-cog"></i><span class="fp-long-name">Toggle Advanced</span></button>
@@ -82,7 +82,7 @@
             <div id="fp-stats-container">
                 <div id="fp-stats-title">Statistics</div>
                 <div id="fp-stats-options">
-                    <label for="fp-stats-options-speed">Speed (m/s):</label>
+                    <label for="fp-stats-options-speed" class="stats-option-label">Speed (m/s):</label>
                     <input id="fp-stats-options-speed" class="stats-option-value" type="number" value="5.0" min="0.1">
                 </div>
                 <div id="fp-stats"></div>

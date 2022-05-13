@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB;QACI,YAAY;IAChB;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,eAAe;IACnB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB;QACI,YAAY;IAChB;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,eAAe;QACf,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5759,7 +5759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    /* overflow: scroll; */\n    border-top: 2px solid black;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 10em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,sBAAsB;IACtB,2BAA2B;IAC3B,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,eAAe;AACnB;;AAEA;IACI,UAAU;IACV,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,eAAe;AACnB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    /* overflow: scroll; */\n    border-top: 2px solid black;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 10em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,eAAe;AACnB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29586,7 +29586,7 @@ var _NeuronFeatureBase_instances, _NeuronFeatureBase_map, _NeuronFeatureBase_fea
 
 
 class NeuronFeatureBase {
-    constructor(map, on_remove = null, on_change = null, on_move = null) {
+    constructor(map) {
         _NeuronFeatureBase_instances.add(this);
         _NeuronFeatureBase_map.set(this, void 0);
         _NeuronFeatureBase_features.set(this, void 0);
@@ -29595,9 +29595,9 @@ class NeuronFeatureBase {
         _NeuronFeatureBase_on_move.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronFeatureBase_features, [], "f");
         __classPrivateFieldSet(this, _NeuronFeatureBase_map, map, "f");
-        this.set_remove_callback(on_remove);
-        this.set_change_callback(on_change);
-        this.set_move_callback(on_move);
+        this.set_remove_callback(null);
+        this.set_change_callback(null);
+        this.set_move_callback(null);
     }
     _trigger_on_changed() {
         if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_change, "f"))
@@ -29667,7 +29667,7 @@ class NeuronFeatureBase {
         let dom = document.createElement("div");
         dom.className = 'mission-feature-content-item';
         if (!input.id)
-            input.id = (0,_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronUUID)();
+            input.id = (0,_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronUID)();
         let l = document.createElement("label");
         l.className = 'mission-feature-content-label';
         l.htmlFor = input.id;
@@ -29700,13 +29700,15 @@ class NeuronFeatureBase {
         dom.appendChild(document.createTextNode(text));
         return dom;
     }
-    _create_dom_input_number(value, on_change, min = null, max = null) {
+    _create_dom_input_number(value, on_change, min = null, max = null, step = null) {
         let dom = document.createElement("input");
         dom.type = "number";
         if (min != null)
             dom.min = min.toString();
         if (max != null)
             dom.max = max.toString();
+        if (step != null)
+            dom.step = step.toString();
         dom.value = value.toString();
         dom.className = 'mission-feature-content-value';
         dom.onchange = on_change;
@@ -29782,11 +29784,32 @@ class NeuronFeatureBase {
         //XXX: Implement this per inherited feature
         return this._get_dom();
     }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronFeatureBase.TYPE) ||
+            (object.version == NeuronFeatureBase.VERSION);
+        return is_valid;
+    }
+    static from_json(j, map) {
+        //XXX: Implement this per inherited feature
+        if (!NeuronFeatureBase.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeatureBase`);
+        return new NeuronFeatureBase(map);
+    }
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return {
+            version: NeuronFeatureBase.VERSION,
+            type: NeuronFeatureBase.TYPE
+        };
+    }
 }
 _NeuronFeatureBase_map = new WeakMap(), _NeuronFeatureBase_features = new WeakMap(), _NeuronFeatureBase_on_remove = new WeakMap(), _NeuronFeatureBase_on_change = new WeakMap(), _NeuronFeatureBase_on_move = new WeakMap(), _NeuronFeatureBase_instances = new WeakSet(), _NeuronFeatureBase_request_move = function _NeuronFeatureBase_request_move(direction = 0) {
     if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f") && direction != 0)
         __classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f").call(this, this, direction);
 };
+//XXX: Override this in any inherited classes
+NeuronFeatureBase.TYPE = "NeuronFeatureBase";
+NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 
 
 /***/ }),
@@ -29821,8 +29844,8 @@ var _NeuronFeaturePoint_instances, _NeuronFeaturePoint_marker, _NeuronFeaturePoi
 
 
 class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
-    constructor(map, point = null, on_remove = null, on_change = null) {
-        super(map, on_remove, on_change);
+    constructor(map, point = null) {
+        super(map);
         _NeuronFeaturePoint_instances.add(this);
         _NeuronFeaturePoint_marker.set(this, void 0);
         _NeuronFeaturePoint_point.set(this, void 0);
@@ -29861,9 +29884,6 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
             __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Waypoint", menu_items, __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f")));
             this._add_feature_to_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
         }
-        else {
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").setLatLng(point.to_leaflet());
-        }
         __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, point);
     }
     remove_feature() {
@@ -29879,15 +29899,35 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom, this._get_dom("Waypoint"), "f");
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lat, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_latitude_from_dom).bind(this), -90, 90), "f");
+            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lat, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_latitude_from_dom).bind(this), -90, 90, 0.0002), "f");
             c.appendChild(this._create_dom_labelled_input("Latitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f")));
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lon, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_longitude_from_dom).bind(this), -180, 180), "f");
+            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lon, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_longitude_from_dom).bind(this), -180, 180, 0.0002), "f");
             c.appendChild(this._create_dom_labelled_input("Longitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f")));
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_alt, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_altitude_from_dom).bind(this), 0), "f");
             c.appendChild(this._create_dom_labelled_input("Altitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f")));
             __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f");
+    }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronFeaturePoint.TYPE) ||
+            (object.version == NeuronFeaturePoint.VERSION);
+        return is_valid;
+    }
+    static from_json(j, map) {
+        //XXX: Implement this per inherited feature
+        if (!NeuronFeaturePoint.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
+        const point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(j.point);
+        return new NeuronFeaturePoint(map, point);
+    }
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return {
+            version: NeuronFeaturePoint.VERSION,
+            type: NeuronFeaturePoint.TYPE,
+            point: __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").to_json()
+        };
     }
 }
 _NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new WeakMap(), _NeuronFeaturePoint_dom = new WeakMap(), _NeuronFeaturePoint_dom_lat = new WeakMap(), _NeuronFeaturePoint_dom_lon = new WeakMap(), _NeuronFeaturePoint_dom_alt = new WeakMap(), _NeuronFeaturePoint_instances = new WeakSet(), _NeuronFeaturePoint_remove_point_by_event = function _NeuronFeaturePoint_remove_point_by_event(event) {
@@ -29897,8 +29937,10 @@ _NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new Weak
     if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
         point.altitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude;
     __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, point);
-}, _NeuronFeaturePoint_internal_set_point = function _NeuronFeaturePoint_internal_set_point(point, update_dom = true) {
+}, _NeuronFeaturePoint_internal_set_point = function _NeuronFeaturePoint_internal_set_point(point, update_marker = true, update_dom = true) {
     __classPrivateFieldSet(this, _NeuronFeaturePoint_point, point, "f");
+    if (update_marker && __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"))
+        __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").setLatLng(point.to_leaflet());
     if (update_dom) {
         if (__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"))
             __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").value = point.latitude.toString();
@@ -29911,16 +29953,18 @@ _NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new Weak
 }, _NeuronFeaturePoint_update_latitude_from_dom = function _NeuronFeaturePoint_update_latitude_from_dom() {
     if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
         __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").valueAsNumber;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), false);
+    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
 }, _NeuronFeaturePoint_update_longitude_from_dom = function _NeuronFeaturePoint_update_longitude_from_dom() {
     if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
         __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f").valueAsNumber;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), false);
+    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
 }, _NeuronFeaturePoint_update_altitude_from_dom = function _NeuronFeaturePoint_update_altitude_from_dom() {
     if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
         __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").valueAsNumber;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), false);
+    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
 };
+NeuronFeaturePoint.TYPE = "NeuronFeaturePoint";
+NeuronFeaturePoint.VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
 
 
 /***/ }),
@@ -29951,16 +29995,15 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_map, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_planner, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_dom_convert_survey, _NeuronFeaturePolygon_dom_export_kml, _NeuronFeaturePolygon_dom_export_kmz, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom, _NeuronFeaturePolygon_convert_to_survey, _NeuronFeaturePolygon_export_as_kml, _NeuronFeaturePolygon_export_as_kmz;
+var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_planner, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_dom_convert_survey, _NeuronFeaturePolygon_dom_export_kml, _NeuronFeaturePolygon_dom_export_kmz, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom, _NeuronFeaturePolygon_convert_to_survey, _NeuronFeaturePolygon_export_as_kml, _NeuronFeaturePolygon_export_as_kmz;
 
 
 
 
 class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
-    constructor(map, planner, corners = [], on_remove = null, on_change = null) {
-        super(map, on_remove, on_change);
+    constructor(map, corners = [], planner = null) {
+        super(map);
         _NeuronFeaturePolygon_instances.add(this);
-        _NeuronFeaturePolygon_map.set(this, void 0);
         _NeuronFeaturePolygon_corners.set(this, void 0);
         _NeuronFeaturePolygon_polygon.set(this, void 0);
         _NeuronFeaturePolygon_planner.set(this, void 0);
@@ -29971,14 +30014,13 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         _NeuronFeaturePolygon_dom_convert_survey.set(this, void 0);
         _NeuronFeaturePolygon_dom_export_kml.set(this, void 0);
         _NeuronFeaturePolygon_dom_export_kmz.set(this, void 0);
-        __classPrivateFieldSet(this, _NeuronFeaturePolygon_map, map, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_on_change_internal, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeaturePolygon_planner, planner, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_corner_count, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_convert_survey, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kml, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kmz, null, "f");
+        this.set_planner(planner);
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
@@ -29990,6 +30032,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         else {
             this.update_polygon();
         }
+    }
+    set_planner(planner) {
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_planner, planner, "f");
     }
     _set_on_change_internal(on_change = null) {
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_on_change_internal, on_change, "f");
@@ -30140,8 +30185,28 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         }
         return __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom, "f");
     }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronFeaturePolygon.TYPE) ||
+            (object.version == NeuronFeaturePolygon.VERSION);
+        return is_valid;
+    }
+    static from_json(j, map) {
+        //XXX: Implement this per inherited feature
+        if (!NeuronFeaturePolygon.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeaturePolygon`);
+        const corners = j.corners.map(x => _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(x));
+        return new NeuronFeaturePolygon(map, corners);
+    }
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return {
+            version: NeuronFeaturePolygon.VERSION,
+            type: NeuronFeaturePolygon.TYPE,
+            corners: this.get_corners_as_points().map(x => x.to_json())
+        };
+    }
 }
-_NeuronFeaturePolygon_map = new WeakMap(), _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_planner = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_dom_convert_survey = new WeakMap(), _NeuronFeaturePolygon_dom_export_kml = new WeakMap(), _NeuronFeaturePolygon_dom_export_kmz = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
+_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_planner = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_dom_convert_survey = new WeakMap(), _NeuronFeaturePolygon_dom_export_kml = new WeakMap(), _NeuronFeaturePolygon_dom_export_kmz = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
         var k = new_index - arr.length + 1;
         while (k--) {
@@ -30175,12 +30240,19 @@ _NeuronFeaturePolygon_map = new WeakMap(), _NeuronFeaturePolygon_corners = new W
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").appendChild(document.createTextNode(`Corners: ${__classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length}`));
     }
 }, _NeuronFeaturePolygon_convert_to_survey = function _NeuronFeaturePolygon_convert_to_survey() {
-    __classPrivateFieldGet(this, _NeuronFeaturePolygon_planner, "f").replace_polygon_with_survey(this);
+    if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_planner, "f")) {
+        __classPrivateFieldGet(this, _NeuronFeaturePolygon_planner, "f").replace_polygon_with_survey(this);
+    }
+    else {
+        console.warn("Planner not set, cannot convert polygon feature!");
+    }
 }, _NeuronFeaturePolygon_export_as_kml = function _NeuronFeaturePolygon_export_as_kml() {
     (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kml_download_from_polygon)(this.get_corners_as_points());
 }, _NeuronFeaturePolygon_export_as_kmz = function _NeuronFeaturePolygon_export_as_kmz() {
     (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_polygon)(this.get_corners_as_points());
 };
+NeuronFeaturePolygon.TYPE = "NeuronFeaturePolygon";
+NeuronFeaturePolygon.VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
 
 
 /***/ }),
@@ -30197,8 +30269,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronFeatureSurvey": () => (/* binding */ NeuronFeatureSurvey)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
-/* harmony import */ var _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_tools_survey */ "./src/js/neuron_tools_survey.ts");
-/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_tools_survey */ "./src/js/neuron_tools_survey.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30210,17 +30283,17 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom;
+var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom;
+
 
 
 
 class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePolygon {
-    constructor(map, planner, corners = [], on_remove = null, on_change = null, show_waypoints = false) {
-        super(map, planner, corners, on_remove, on_change);
+    constructor(map, corners = [], show_waypoints = false) {
+        super(map, corners);
         _NeuronFeatureSurvey_instances.add(this);
         _NeuronFeatureSurvey_waypoints.set(this, void 0);
         _NeuronFeatureSurvey_mappoints.set(this, void 0);
-        _NeuronFeatureSurvey_show_waypoints.set(this, void 0);
         _NeuronFeatureSurvey_altitude.set(this, void 0);
         _NeuronFeatureSurvey_distance.set(this, void 0);
         _NeuronFeatureSurvey_spacing.set(this, void 0);
@@ -30230,6 +30303,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_startpos.set(this, void 0);
         _NeuronFeatureSurvey_minLaneSeparation.set(this, void 0);
         _NeuronFeatureSurvey_leadin.set(this, void 0);
+        _NeuronFeatureSurvey_show_waypoints.set(this, void 0);
         _NeuronFeatureSurvey_dom.set(this, void 0);
         _NeuronFeatureSurvey_dom_corner_count.set(this, void 0);
         _NeuronFeatureSurvey_dom_waypoint_count.set(this, void 0);
@@ -30271,7 +30345,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_angle, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_overshoot1, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_overshoot2, 0.0, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_startpos, _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition.TopLeft, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_startpos, _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopLeft, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_minLaneSeparation, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_leadin, 0.0, "f");
         this._set_on_change_internal(this.update_survey.bind(this));
@@ -30377,7 +30451,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             c.appendChild(this._create_dom_labelled_input("Show waypoints", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"), false));
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_altitude_from_dom).bind(this), 0), "f");
             c.appendChild(this._create_dom_labelled_input("Altitude:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f")));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_distance, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_distance, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_distance_from_dom).bind(this), 0), "f");
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_distance, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_distance, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_distance_from_dom).bind(this), 0.5), "f");
             c.appendChild(this._create_dom_labelled_input("Spacing:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f")));
             // this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
             // c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
@@ -30390,10 +30464,10 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overshoot2, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot2, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_overshoot2_from_dom).bind(this)), "f");
             c.appendChild(this._create_dom_labelled_input("Overshoot B:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f")));
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_startpos, this._create_dom_input_select([
-                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition.TopLeft,
-                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition.TopRight,
-                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition.BottomLeft,
-                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition.BottomRight
+                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopLeft,
+                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopRight,
+                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.BottomLeft,
+                _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.BottomRight
             ].map(x => x.toString()), [
                 "Top left",
                 "Top right",
@@ -30410,10 +30484,49 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         }
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f");
     }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronFeatureSurvey.TYPE) ||
+            (object.version == NeuronFeatureSurvey.VERSION);
+        return is_valid;
+    }
+    static from_json(j, map) {
+        //XXX: Implement this per inherited feature
+        if (!NeuronFeatureSurvey.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeatureSurvey`);
+        const corners = j.corners.map(x => _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(x));
+        let s = new NeuronFeatureSurvey(map, corners);
+        s.update_altitude(j.altitude);
+        s.update_distance(j.distance);
+        s.update_spacing(j.spacing);
+        s.update_angle(j.angle);
+        s.update_overshoot1(j.overshoot1);
+        s.update_overshoot2(j.overshoot2);
+        s.update_startpos(j.startpos);
+        s.update_minLaneSeparation(j.minLaneSeparation);
+        s.update_leadin(j.leadin);
+        return s;
+    }
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return {
+            version: NeuronFeatureSurvey.VERSION,
+            type: NeuronFeatureSurvey.TYPE,
+            corners: this.get_corners_as_points().map(x => x.to_json()),
+            altitude: this.get_altitude(),
+            distance: this.get_distance(),
+            spacing: this.get_spacing(),
+            angle: this.get_angle(),
+            overshoot1: this.get_overshoot1(),
+            overshoot2: this.get_overshoot2(),
+            startpos: this.get_startpos(),
+            minLaneSeparation: this.get_minLaneSeparation(),
+            leadin: this.get_leadin(),
+        };
+    }
 }
-_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
+_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_show_waypoints, "f")) {
-        let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker([point.latitude, point.longitude], {
+        let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.marker([point.latitude, point.longitude], {
             // draggable: true,
             autoPan: true,
         });
@@ -30423,7 +30536,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         //     null,
         //     new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_corner.bind(this)),
         // ]
-        m.bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)(name, [], m));
+        m.bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.create_popup_context_dom)(name, [], m));
         //TODO: review: Could also use "dragend"?
         // m.on("drag", this.update_polygon.bind(this));
         // m.on("click", this.#select_corner_by_event.bind(this));
@@ -30444,7 +30557,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         //There's only a line, so go end-to-end
         corners :
         //There is an actual polygon, so do a survey grid
-        (0,_neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.CreateGrid)(this.get_corners_as_points(), __classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_distance, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_spacing, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot1, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot2, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_startpos, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_minLaneSeparation, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_leadin, "f"));
+        (0,_neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.CreateGrid)(this.get_corners_as_points(), __classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_distance, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_spacing, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot1, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot2, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_startpos, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_minLaneSeparation, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_leadin, "f"));
     for (let i = 0; i < waypoints.length; i++)
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_add_waypoint).call(this, waypoints[i], `Survey Waypoint (#${i})`);
     if (update_dom)
@@ -30488,7 +30601,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
     this.update_overshoot2(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f").valueAsNumber, false);
 }, _NeuronFeatureSurvey_update_startpos_from_dom = function _NeuronFeatureSurvey_update_startpos_from_dom() {
     const v = Number.parseInt(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f").value);
-    const values = Object.values(_neuron_tools_survey__WEBPACK_IMPORTED_MODULE_1__.StartPosition);
+    const values = Object.values(_neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition);
     if (!values.includes(v))
         throw new Error(`Selected value (${v}) is not a StartingPosition`);
     this.update_startpos(v, false);
@@ -30497,6 +30610,8 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 }, _NeuronFeatureSurvey_update_leadin_from_dom = function _NeuronFeatureSurvey_update_leadin_from_dom() {
     this.update_leadin(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f").valueAsNumber, false);
 };
+NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
+NeuronFeatureSurvey.VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
 
 
 /***/ }),
@@ -30511,7 +30626,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NeuronInterfacePoint": () => (/* binding */ NeuronInterfacePoint),
-/* harmony export */   "NeuronUUID": () => (/* binding */ NeuronUUID)
+/* harmony export */   "NeuronUID": () => (/* binding */ NeuronUID)
 /* harmony export */ });
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _proj4_interface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./proj4_interface */ "./src/js/proj4_interface.ts");
@@ -30520,7 +30635,7 @@ __webpack_require__.r(__webpack_exports__);
 // @ts-ignore
 // import * as UTMConverter from "utm-latlng";
 let lastId = 0;
-function NeuronUUID(prefix = 'nuuid-') {
+function NeuronUID(prefix = 'nuid-') {
     lastId++;
     return `${prefix}${lastId}`;
 }
@@ -30552,6 +30667,24 @@ class NeuronInterfacePoint {
     }
     static from_UTMs(utms) {
         return utms.map(p => p.to_NeuronInterfacePoint());
+    }
+    static isObjectOfDataType(object) {
+        let is_valid = Number.isFinite(object.latitude) ||
+            Number.isFinite(object.longitude) ||
+            Number.isFinite(object.altitude);
+        return is_valid;
+    }
+    static from_json(j) {
+        if (!NeuronInterfacePoint.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronInterfacePoint`);
+        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude);
+    }
+    to_json() {
+        return {
+            latitude: this.latitude,
+            longitude: this.longitude,
+            altitude: this.altitude,
+        };
     }
 }
 
@@ -30653,14 +30786,15 @@ class NeuronMap {
     create_polygon_in_view() {
         const bounds = __classPrivateFieldGet(this, _NeuronMap_instances, "m", _NeuronMap_get_poly_bounds_from_view).call(this);
         if (__classPrivateFieldGet(this, _NeuronMap_map, "f") && bounds.length) {
-            const p = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronMap_map, "f"), __classPrivateFieldGet(this, _NeuronMap_planner, "f"), bounds);
+            const p = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronMap_map, "f"), bounds);
+            p.set_planner(__classPrivateFieldGet(this, _NeuronMap_planner, "f"));
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
     create_survey_in_view() {
         const bounds = __classPrivateFieldGet(this, _NeuronMap_instances, "m", _NeuronMap_get_poly_bounds_from_view).call(this);
         if (__classPrivateFieldGet(this, _NeuronMap_map, "f") && bounds.length) {
-            const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), __classPrivateFieldGet(this, _NeuronMap_planner, "f"), bounds);
+            const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), bounds);
             p.update_altitude(__classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude());
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
@@ -30747,10 +30881,22 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NeuronPlanner": () => (/* binding */ NeuronPlanner)
 /* harmony export */ });
-/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
-/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
-/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
-/* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
+/* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
+/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
+/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
+/* harmony import */ var _neuron_tools_files__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./neuron_tools_files */ "./src/js/neuron_tools_files.ts");
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30762,7 +30908,10 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_option_elements, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_kml_loaded;
+var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_option_elements, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_kml_loaded;
+
+
+
 
 
 
@@ -30802,11 +30951,54 @@ class NeuronPlanner {
         __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_clearing_mission, false, "f");
     }
+    get_mission_as_json() {
+        let mission_data = [];
+        for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f"))
+            mission_data.push(item.to_json());
+        return mission_data;
+    }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronPlanner.TYPE) ||
+            (object.version == NeuronPlanner.VERSION);
+        return is_valid;
+    }
+    set_mission_from_json(j) {
+        if (!NeuronPlanner.isObjectOfDataType(j))
+            throw new Error("Invalid version during import of NeuronPlannerMissionData");
+        if (j.mission_items && j.mission_items.length) {
+            __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_add_mission_features_from_json).call(this, j.mission_items);
+        }
+        else if (j.waypoints && j.waypoints.length) {
+            console.warn("No mission items found, importing waypoints instead!");
+            __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_add_waypoint_features_from_json).call(this, j.waypoints);
+        }
+    }
+    save_mission_file() {
+        return __awaiter(this, void 0, void 0, function* () {
+            let j = {
+                version: NeuronPlanner.VERSION,
+                type: NeuronPlanner.TYPE,
+                mission_items: this.get_mission_as_json(),
+                waypoints: this.get_mission_coords().map(x => x.to_json())
+            };
+            const file = new Blob([JSON.stringify(j, null, 4)], {
+                type: 'application/json'
+            });
+            const filename = (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_6__.get_filename)('json');
+            yield (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_6__.download_file)(filename, file);
+        });
+    }
+    load_mission_file(file) {
+        return __awaiter(this, void 0, void 0, function* () {
+            const j = JSON.parse(yield file.text());
+            this.set_mission_from_json(j);
+        });
+    }
     // export_mission() {
     //
     // }
     export_mission_kml() {
-        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kml_download_from_points)(this.get_mission_coords());
+        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_points)(this.get_mission_coords());
     }
     set_map(map) {
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
@@ -30825,17 +31017,19 @@ class NeuronPlanner {
         return __classPrivateFieldGet(this, _NeuronPlanner_last_mission_altitude, "f");
     }
     add_mission_item(item, index = -1) {
-        item.set_remove_callback(this.remove_mission_item.bind(this));
-        item.set_change_callback(__classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_mission_item_changed).bind(this));
-        item.set_move_callback(__classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_move_mission_item).bind(this));
-        if (index < 0 || index >= __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").length) {
-            __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").push(item);
+        __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_add_mission_item).call(this, item, index);
+    }
+    add_mission_items(items, index = -1) {
+        let count = 0;
+        for (const item of items) {
+            const new_ind = index == -1 ?
+                -1 : //add to end
+                index + count;
+            __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_add_mission_item).call(this, item, new_ind, false);
+            count++;
         }
-        else {
-            __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").splice(index, 0, item);
-        }
-        this.update();
-        __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
+        if (items.length)
+            __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_on_add_mission_item_updates).call(this);
     }
     remove_mission_item(item) {
         // console.log(`Mission item removed: ${item}`);
@@ -30873,7 +31067,7 @@ class NeuronPlanner {
     replace_polygon_with_survey(old_item) {
         const ind = __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").indexOf(old_item);
         if (ind >= 0) {
-            const survey = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_2__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), this, old_item.get_corners_as_points());
+            const survey = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), old_item.get_corners_as_points());
             old_item.remove_feature();
             this.add_mission_item(survey, ind);
         }
@@ -30883,7 +31077,7 @@ class NeuronPlanner {
     }
     import_features_from_files(files) {
         for (const file of files) {
-            (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kml_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
+            (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
         }
     }
     update_mission_stats() {
@@ -30939,7 +31133,49 @@ class NeuronPlanner {
         return coords;
     }
 }
-_NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_option_elements = new WeakMap(), _NeuronPlanner_stats_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_run_on_mission_change = function _NeuronPlanner_run_on_mission_change() {
+_NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_option_elements = new WeakMap(), _NeuronPlanner_stats_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_add_mission_features_from_json = function _NeuronPlanner_add_mission_features_from_json(mission_items) {
+    let features = [];
+    for (const item of mission_items) {
+        let feature = null;
+        if (_neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase.isObjectOfDataType(item)) {
+            feature = _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
+        }
+        else if (_neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.isObjectOfDataType(item)) {
+            feature = _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
+        }
+        else if (_neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon.isObjectOfDataType(item)) {
+            let p = _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
+            p.set_planner(this);
+            feature = p;
+        }
+        else if (_neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey.isObjectOfDataType(item)) {
+            feature = _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
+        }
+        else {
+            console.warn("Unable to import mission item");
+            console.warn(item);
+        }
+        if (feature)
+            features.push(feature);
+    }
+    this.add_mission_items(features);
+}, _NeuronPlanner_add_waypoint_features_from_json = function _NeuronPlanner_add_waypoint_features_from_json(waypoints) {
+    let features = [];
+    for (const item of waypoints) {
+        let feature = null;
+        if (_neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint.isObjectOfDataType(item)) {
+            const point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint.from_json(item);
+            feature = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), point);
+        }
+        else {
+            console.warn("Unable to import waypoint item");
+            console.warn(item);
+        }
+        if (feature)
+            features.push(feature);
+    }
+    this.add_mission_items(features);
+}, _NeuronPlanner_run_on_mission_change = function _NeuronPlanner_run_on_mission_change() {
     for (const cb of __classPrivateFieldGet(this, _NeuronPlanner_on_change_callbacks, "f").values())
         cb();
     this.update_mission_stats();
@@ -30971,19 +31207,80 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
     else {
         console.warn("Unknown mission item, cannot move");
     }
+}, _NeuronPlanner_on_add_mission_item_updates = function _NeuronPlanner_on_add_mission_item_updates() {
+    this.update();
+    __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
+}, _NeuronPlanner_add_mission_item = function _NeuronPlanner_add_mission_item(item, index = -1, run_update = true) {
+    item.set_remove_callback(this.remove_mission_item.bind(this));
+    item.set_change_callback(__classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_mission_item_changed).bind(this));
+    item.set_move_callback(__classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_move_mission_item).bind(this));
+    if (index < 0 || index >= __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").length) {
+        __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").push(item);
+    }
+    else {
+        __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").splice(index, 0, item);
+    }
+    if (run_update) {
+        __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_on_add_mission_item_updates).call(this);
+    }
 }, _NeuronPlanner_kml_loaded = function _NeuronPlanner_kml_loaded(result) {
     // console.log("Got file result:");
     // console.log(result);
+    let features = [];
     for (const p of result.markers) {
         p.altitude = this.get_last_item_altitude();
-        const f = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), p);
-        this.add_mission_item(f);
+        const f = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), p);
+        features.push(f);
     }
     for (const p of result.polygons) {
-        const f = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), this, p);
-        this.add_mission_item(f);
+        const f = new _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), p);
+        f.set_planner(this); //XXX: Enable functions for upscaling polygon
+        features.push(f);
     }
+    this.add_mission_items(features);
 };
+NeuronPlanner.TYPE = 'NeuronPlanner';
+NeuronPlanner.VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_tools_files.ts":
+/*!**************************************!*\
+  !*** ./src/js/neuron_tools_files.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "download_file": () => (/* binding */ download_file),
+/* harmony export */   "get_filename": () => (/* binding */ get_filename)
+/* harmony export */ });
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+function get_filename(ext) {
+    return `neuron-planner${Date.now()}.${ext}`;
+}
+function download_file(filename, data) {
+    return __awaiter(this, void 0, void 0, function* () {
+        var element = document.createElement('a');
+        const burl = URL.createObjectURL(data);
+        element.setAttribute('href', burl);
+        element.setAttribute('download', filename);
+        element.style.display = 'none';
+        document.body.appendChild(element);
+        element.click();
+        document.body.removeChild(element);
+    });
+}
 
 
 /***/ }),
@@ -31008,7 +31305,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "kmz_download_from_polygon": () => (/* binding */ kmz_download_from_polygon)
 /* harmony export */ });
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
-/* harmony import */ var _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @zip.js/zip.js */ "./node_modules/@zip.js/zip.js/index.js");
+/* harmony import */ var _neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_tools_files */ "./src/js/neuron_tools_files.ts");
+/* harmony import */ var _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @zip.js/zip.js */ "./node_modules/@zip.js/zip.js/index.js");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -31018,6 +31316,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 const type_kml = "application/vnd.google-earth.kml+xml";
@@ -31033,13 +31332,13 @@ function kml_load_file(file, cb_file_loaded) {
                 break;
             }
             case type_kmz: {
-                const reader = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.ZipReader(new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.BlobReader(file));
+                const reader = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.ZipReader(new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.BlobReader(file));
                 const entries = yield reader.getEntries();
                 let got_data = false;
                 let markers = [];
                 let polygons = [];
                 for (const e of entries) {
-                    const text = yield e.getData(new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.TextWriter());
+                    const text = yield e.getData(new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.TextWriter());
                     const r = yield kml_extract_features(text);
                     if (r.markers.length || r.polygons.length) {
                         got_data = true;
@@ -31099,9 +31398,6 @@ function kml_extract_features(kml_plain_text) {
         return ret;
     });
 }
-function get_filename(ext) {
-    return `neuron-planner${Date.now()}.${ext}`;
-}
 function kml_download_from_points(coordinates) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_coordinates(coordinates);
@@ -31109,7 +31405,7 @@ function kml_download_from_points(coordinates) {
             type: type_kml
         });
         // `data:${data_type}${is_text ? ';charset=utf-8' : ''},` + encodeURIComponent(data)
-        download_file(get_filename('kml'), file);
+        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kml'), file);
     });
 }
 function kml_download_from_polygon(coordinates) {
@@ -31118,46 +31414,34 @@ function kml_download_from_polygon(coordinates) {
         const file = new Blob([textXML], {
             type: type_kml
         });
-        download_file(get_filename('kml'), file);
+        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kml'), file);
     });
 }
 function kmz_download_from_points(coordinates) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_coordinates(coordinates);
         const kmz = yield get_kmz_from_kml_data(textXML);
-        download_file(get_filename('kmz'), kmz);
+        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kmz'), kmz);
     });
 }
 function kmz_download_from_polygon(coordinates) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_polygon(coordinates);
         const kmz = yield get_kmz_from_kml_data(textXML);
-        download_file(get_filename('kmz'), kmz);
+        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kmz'), kmz);
     });
 }
 function get_kmz_from_kml_data(data) {
     return __awaiter(this, void 0, void 0, function* () {
         // use a BlobWriter to store with a ZipWriter the zip into a Blob object
-        const blobWriter = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.BlobWriter(type_kmz);
-        const writer = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.ZipWriter(blobWriter);
+        const blobWriter = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.BlobWriter(type_kmz);
+        const writer = new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.ZipWriter(blobWriter);
         // use a TextReader to read the String to add
-        yield writer.add("doc.kml", new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_1__.TextReader(data));
+        yield writer.add("doc.kml", new _zip_js_zip_js__WEBPACK_IMPORTED_MODULE_2__.TextReader(data));
         // close the ZipReader
         yield writer.close();
         // get the zip file as a Blob
         return blobWriter.getData();
-    });
-}
-function download_file(filename, data) {
-    return __awaiter(this, void 0, void 0, function* () {
-        var element = document.createElement('a');
-        const burl = URL.createObjectURL(data);
-        element.setAttribute('href', burl);
-        element.setAttribute('download', filename);
-        element.style.display = 'none';
-        document.body.appendChild(element);
-        element.click();
-        document.body.removeChild(element);
     });
 }
 function kml_data_from_coordinates(coordinates) {
@@ -42890,7 +43174,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let baseURL;
 try {
-	baseURL = "file:///home/pryre/Workspace/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
+	baseURL = "file:///home/pryre/Workspace/github/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
 } catch (error) {
 	// ignored
 }
