@@ -59,7 +59,6 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
                 autoPan: true,
             })
 
-            //TODO: review: Could also use "dragend"?
             this.#marker.on("drag", this.#update_position_from_event.bind(this));
             this.#marker.on("dblclick", this.#remove_point_by_event.bind(this));
 

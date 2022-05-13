@@ -10,8 +10,6 @@ export function NeuronUID(prefix='nuid-') {
     return `${prefix}${lastId}`;
 }
 
-const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
-
 export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;
@@ -89,7 +87,7 @@ export class NeuronInterfacePoint {
         const min = 0 | (((dd += 1e-9) % 1) * 60);
         const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
 
-        return `${zeroPad(deg,2)}° ${zeroPad(min,2)}' ${zeroPad(sec,2)}" ${dir}`;
+        return `${deg.toFixed(2)}° ${min.toFixed(2)}' ${sec.toFixed(2)}" ${dir}`;
       }
 
     toString() {

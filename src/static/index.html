@@ -71,12 +71,42 @@
         <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" onclick="window.neuron_planner.clear_mission();" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Flight Plan</span></button>
         <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="Upload Flight Plan" disabled><i class="fas fa-upload"></i><span class="fp-long-name">Upload Flight Plan</span></button>
         <button type="button" id="fp-manage-create-brief" class="fp-user-buttons" title="Create Flight Brief" onclick="print();"><i class="fas fa-file"></i><span class="fp-long-name">Create Flight Brief</span></button>
-        <button type="button" id="fp-manage-toggle-advanced" class="fp-user-buttons" disabled onclick="window.neuron_adv_mode.toggle_visible(); window.neuron_map.reset()" title="Toggle Advanced"><i class="fas fa-cog"></i><span class="fp-long-name">Toggle Advanced</span></button>
+        <button type="button" id="fp-manage-toggle-help" class="fp-user-buttons" onclick="window.neuron_map.toggle_map_help()" title="Toggle Help/Map"><i class="fas fa-question-circle"></i><span class="fp-long-name">Toggle Help/Map</span></button>
     </div>
     <div id="fp-main">
         <div id="fp-map">
-            <div id="fp-map-interactive"></div>
-            <div id="fp-map-advanced"></div>
+            <div id="fp-map-interactive" class="fp-map-sub"></div>
+            <div id="fp-map-help" class="fp-map-sub">
+                <article>
+                    <header>
+                        <h1>Neuron Planner Help</h1>
+                        <p>Welcome to the Neuron Planner help page. Please see below for details on how to use this application.</p>
+                    </header>
+                    <section>
+                        <h2>Management Interface</h2>
+                        <p>Top row buttons...</p>
+                    </section>
+                    <section>
+                        <h2>Drawing Interface</h2>
+                        <p>Bottom row buttons...</p>
+                    <section>
+                        <h2>Interactive Map</h2>
+                        <p>Map in page...</p>
+                    </section>
+                    <section>
+                        <h2>Mission Statistics</h2>
+                        <p>Statistics bar...</p>
+                    </section>
+                    <section>
+                        <h2>Mission Statistics</h2>
+                        <p>Statistics bar...</p>
+                    </section>
+                    <section>
+                        <h2>Mission Plan</h2>
+                        <p>Mission plan list...</p>
+                    </section>
+                </article>
+            </div>
         </div>
         <div id="fp-summary">
             <div id="fp-stats-container">
@@ -94,13 +124,13 @@
         </div>
     </div>
     <div id="fp-draw" class="fp-user-buttons-frame">
+        <button type="button" id="fp-draw-fit-mission" class="fp-user-buttons" onclick="window.neuron_planner.fit_mission_on_map()" title="Zoom To Fit"><i class="fas fa-minimize"></i><span class="fp-long-name">Zoom To Fit</span></button>
         <button type="button" id="fp-draw-create-waypoint" class="fp-user-buttons" onclick="window.neuron_map.create_waypoint_in_view()" title="Insert Waypoint"><i class="fas fa-location-dot"></i><span class="fp-long-name">Create Waypoint</span></button>
         <button type="button" id="fp-draw-create-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Create Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Create Polygon</span></button>
         <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="Create Survey"><i class="fas fa-hashtag"></i><span class="fp-long-name">Create Survey</span></button>
         <!-- <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button> -->
         <button type="button" id="fp-draw-load-file" class="fp-user-buttons"  onclick="document.getElementById('fp-draw-load-file-sub').click();" title="Load From File"><i class="fas fa-file-import"></i><span class="fp-long-name">Load From File</span></button>
         <input type="file" style="display:none;" id="fp-draw-load-file-sub" onchange="window.neuron_planner.import_features_from_files(this.files)" multiple accept="application/vnd.google-earth.kml+xml, application/vnd.google-earth.kmz, .kml, .kmz"/>
-        <button type="button" id="fp-draw-save-mission" class="fp-user-buttons" disabled onclick="window.neuron_planner.export_mission()" title="Save To File"><i class="fas fa-save"></i><span class="fp-long-name">Save To File</span></button>
         <button type="button" id="fp-draw-export-mission" class="fp-user-buttons" onclick="window.neuron_planner.export_mission_kml()" title="Export Mission"><i class="fas fa-file-export"></i><span class="fp-long-name">Export KML</span></button>
     </div>
     <div id="print-section">

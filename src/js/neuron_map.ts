@@ -14,15 +14,31 @@ export class NeuronMap {
     #map:L.Map;
     #map_layer_control:L.Control.Layers;
     #path:L.Polyline;
-    #element_name:string;
+    #map_element_name:string;
+    #help_element_name:string;
 
-    constructor(map_element_name:string, planner:NeuronPlanner) {
+    constructor(map_element_name:string, help_element_name:string, planner:NeuronPlanner) {
         this.#planner = planner;
         this.#map = null;
         this.#map_layer_control = null;
-        this.#element_name = map_element_name;
+        this.#map_element_name = map_element_name;
+        this.#help_element_name = help_element_name;
 
         this.#planner.on_mission_change(this.update_path.bind(this));
+    }
+
+    toggle_map_help() {
+        const map = document.getElementById(this.#map_element_name);
+        const help = document.getElementById(this.#help_element_name);
+
+        if(map.style.display != 'none') {
+            map.style.display = 'none';
+            help.style.display = 'block';
+        } else {
+            map.style.display = 'block';
+            help.style.display = 'none';
+            this.reset();
+        }
     }
 
     get_leaflet_map() {
@@ -153,7 +169,7 @@ export class NeuronMap {
                 "Satellite": tiles_satellite
             };
 
-			this.#map = L.map(this.#element_name, {
+			this.#map = L.map(this.#map_element_name, {
                 doubleClickZoom: false,
                 layers: [
                     tiles_grey,

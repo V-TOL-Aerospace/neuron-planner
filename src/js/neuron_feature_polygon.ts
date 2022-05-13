@@ -133,7 +133,6 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         ]
         m.bindPopup(create_popup_context_dom("Polygon Corner", menu_items, m));
 
-        //TODO: review: Could also use "dragend"?
         m.on("drag", this.update_polygon.bind(this));
         m.on("click", this.#select_corner_by_event.bind(this));
         m.on("dblclick", this.#remove_point_by_event.bind(this));

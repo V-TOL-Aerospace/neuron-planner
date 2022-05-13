@@ -99,3 +99,22 @@
     flex: auto;
     max-width: 10em;
 }
+
+.brief-table {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+    font-size: x-small;
+}
+
+.brief-table-entry {
+    display: grid;
+    grid-template-columns: auto auto auto auto auto auto;
+}
+
+.brief-table-entry-header {
+    font-weight: bold;
+}
+
+.brief-table-entry-right {
+    text-align: right;
+}

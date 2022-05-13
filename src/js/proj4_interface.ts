@@ -67,8 +67,7 @@ export class UTMPos {
         );
     }
 
-    //TODO: Handle altitude changes!
-    GetDistance(b:UTMPos) {
+    GetDistance2D(b:UTMPos) {
         return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
     }
 

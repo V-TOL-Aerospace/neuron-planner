@@ -90,7 +90,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#leadin = 0.0;
 
         this._set_on_change_internal(this.update_survey.bind(this));
-        this.#_update_survey(false, false);
+        this.#_update_survey(false);
     }
 
     #add_waypoint(point:NeuronInterfacePoint, name:string = "Survey Waypoint") {
@@ -108,8 +108,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             // ]
             m.bindPopup(create_popup_context_dom(name, [], m));
 
-
-            //TODO: review: Could also use "dragend"?
             // m.on("drag", this.update_polygon.bind(this));
             // m.on("click", this.#select_corner_by_event.bind(this));
             // m.on("dblclick", this.#remove_point_by_event.bind(this));
@@ -120,54 +118,54 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#waypoints.push(point);
     }
 
-    update_show_waypoints(show_waypoints:boolean, update_dom:boolean = true) {
+    update_show_waypoints(show_waypoints:boolean) {
         this.#show_waypoints = show_waypoints;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_altitude(altitude:number, update_dom:boolean = true) {
+    update_altitude(altitude:number) {
         this.#altitude = altitude;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_distance(distance:number, update_dom:boolean = true) {
+    update_distance(distance:number) {
         this.#distance = distance;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_spacing(spacing:number, update_dom:boolean = true) {
+    update_spacing(spacing:number) {
         this.#spacing = spacing;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_angle(angle:number, update_dom:boolean = true) {
+    update_angle(angle:number) {
         this.#angle = angle;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_overshoot1(overshoot1:number, update_dom:boolean = true) {
+    update_overshoot1(overshoot1:number) {
         this.#overshoot1 = overshoot1;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_overshoot2(overshoot2:number, update_dom:boolean = true) {
+    update_overshoot2(overshoot2:number) {
         this.#overshoot2 = overshoot2;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_startpos(startpos:StartPosition, update_dom:boolean = true) {
+    update_startpos(startpos:StartPosition) {
         this.#startpos = startpos;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_minLaneSeparation(minLaneSeparation:number, update_dom:boolean = true) {
+    update_minLaneSeparation(minLaneSeparation:number) {
         this.#minLaneSeparation = minLaneSeparation;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
-    update_leadin(leadin:number, update_dom:boolean = true) {
+    update_leadin(leadin:number) {
         this.#leadin = leadin;
-        this.update_survey(update_dom);
+        this.update_survey();
     }
 
     get_show_waypoints() {
@@ -211,7 +209,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
 
-    update_survey(update_dom:boolean = true) {
+    update_survey() {
         //Clear any queued updates
         this.#clear_update_timer();
 
@@ -219,7 +217,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#clean_waypoints();
 
         //Update survey with slight delay for processing
-        this.#update_timer = setTimeout(this.#_update_survey.bind(this, update_dom, true), this.#update_interval);
+        this.#update_timer = setTimeout(this.#_update_survey.bind(this, true), this.#update_interval);
     }
 
     #clear_update_timer() {
@@ -229,7 +227,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
     }
 
-    #_update_survey(update_dom:boolean = true, fire_on_change:boolean = true) {
+    #_update_survey(fire_on_change:boolean = true) {
         this.#clean_waypoints();
 
         const corners = this.get_corners_as_points();
@@ -253,8 +251,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         for(let i = 0; i < waypoints.length; i++)
             this.#add_waypoint(waypoints[i], `Survey Waypoint (#${i})`);
 
-        if(update_dom)
-            this.#try_update_dom();
+        this.#try_update_dom_stats();
 
         if(fire_on_change)
             this._trigger_on_changed();
@@ -268,7 +265,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#waypoints = [];
     }
 
-    #try_update_dom() {
+    #try_update_dom_stats() {
         if(this.#dom_corner_count) {
             this.#dom_corner_count.innerHTML = '';
             this.#dom_corner_count.appendChild(document.createTextNode(`Corners: ${this.get_corners().length}`));
@@ -281,39 +278,39 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #update_show_waypoints_from_dom() {
-        this.update_show_waypoints(this.#dom_show_waypoints.checked,false);
+        this.update_show_waypoints(this.#dom_show_waypoints.checked);
     }
 
     #update_altitude_from_dom() {
-        this.update_altitude(this.#dom_altitude.valueAsNumber,false);
+        this.update_altitude(this.#dom_altitude.valueAsNumber);
     }
 
     #update_distance_from_dom() {
-        this.update_distance(this.#dom_distance.valueAsNumber,false);
+        this.update_distance(this.#dom_distance.valueAsNumber);
     }
 
     #update_spacing_from_dom() {
-        this.update_spacing(this.#dom_spacing.valueAsNumber,false);
+        this.update_spacing(this.#dom_spacing.valueAsNumber);
     }
 
     #update_angle_from_dom() {
         const val = this.#dom_angle.valueAsNumber;
         this.#dom_angle_slider.value = val.toString();
-        this.update_angle(this.#dom_angle.valueAsNumber,false);
+        this.update_angle(this.#dom_angle.valueAsNumber);
     }
 
     #update_angle_slider_from_dom() {
         const val = this.#dom_angle_slider.valueAsNumber;
         this.#dom_angle.value = val.toString();
-        this.update_angle(val,false);
+        this.update_angle(val);
     }
 
     #update_overshoot1_from_dom() {
-        this.update_overshoot1(this.#dom_overshoot1.valueAsNumber,false);
+        this.update_overshoot1(this.#dom_overshoot1.valueAsNumber);
     }
 
     #update_overshoot2_from_dom() {
-        this.update_overshoot2(this.#dom_overshoot2.valueAsNumber,false);
+        this.update_overshoot2(this.#dom_overshoot2.valueAsNumber);
     }
 
     #update_startpos_from_dom() {
@@ -322,15 +319,15 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         if (!values.includes(v))
             throw new Error(`Selected value (${v}) is not a StartingPosition`);
 
-        this.update_startpos(v, false);
+        this.update_startpos(v);
     }
 
     #update_minLaneSeparation_from_dom() {
-        this.update_minLaneSeparation(this.#dom_minLaneSeparation.valueAsNumber,false);
+        this.update_minLaneSeparation(this.#dom_minLaneSeparation.valueAsNumber);
     }
 
     #update_leadin_from_dom() {
-        this.update_leadin(this.#dom_leadin.valueAsNumber,false);
+        this.update_leadin(this.#dom_leadin.valueAsNumber);
     }
 
     override remove_feature() {
@@ -357,6 +354,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_waypoint_count = document.createElement("div");
             this.#dom_waypoint_count.className = 'mission-feature-content-item';
             c.appendChild(this.#dom_waypoint_count);
+
+            this.#try_update_dom_stats();
 
             this.#dom_show_waypoints = this._create_dom_input_checkbox(this.#show_waypoints, this.#update_show_waypoints_from_dom.bind(this));
             c.appendChild(this._create_dom_labelled_input("Show waypoints", this.#dom_show_waypoints, false));
@@ -404,9 +403,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
             this.#dom_leadin = this._create_dom_input_number(this.#leadin, this.#update_leadin_from_dom.bind(this), 0);
             c.appendChild(this._create_dom_labelled_input("Lead-in:", this.#dom_leadin));
-
-
-            this.#try_update_dom();
 
             this.#dom.append(c);
         }
