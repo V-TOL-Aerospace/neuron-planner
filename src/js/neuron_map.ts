@@ -124,7 +124,7 @@ export class NeuronMap {
 
     update_path() {
         if(this.#path) {
-            const path_points = this.#planner.get_mission_coords().map(x => x.to_leaflet());
+            const path_points = this.#planner.get_mission_as_points().map(x => x.to_leaflet());
             this.#path.setLatLngs(path_points);
         }
     }

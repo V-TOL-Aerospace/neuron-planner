@@ -10,6 +10,8 @@ export function NeuronUID(prefix='nuid-') {
     return `${prefix}${lastId}`;
 }
 
+const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
+
 export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;
@@ -80,4 +82,17 @@ export class NeuronInterfacePoint {
             altitude:this.altitude,
         }
     }
+
+    #value_as_DMS(dd:number, is_lng:boolean) {
+        const dir = dd < 0 ? (is_lng ? "W" : "S") : is_lng ? "E" : "N";
+        const deg = 0 | (dd < 0 ? (dd = -dd) : dd);
+        const min = 0 | (((dd += 1e-9) % 1) * 60);
+        const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
+
+        return `${zeroPad(deg,2)}° ${zeroPad(min,2)}' ${zeroPad(sec,2)}" ${dir}`;
+      }
+
+    toString() {
+         return `[${this.#value_as_DMS(this.latitude, false)}, ${this.#value_as_DMS(this.longitude, false)}, ${this.altitude.toFixed(2)}m]`;
+     }
 }

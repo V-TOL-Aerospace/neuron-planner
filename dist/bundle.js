@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,uBAAuB;IACvB;QACI,YAAY;IAChB;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,eAAe;QACf,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media print {\n    /* body > * {\n        display: none;\n    } */\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI;;OAEG;IACH;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI,uBAAuB;IACvB;QACI,YAAY;IAChB;AACJ;AACA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,eAAe;QACf,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-map-interactive {\n    flex: 1 0 0;\n}\n\n#fp-map-advanced {\n    flex: 1 1 0;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media print {\n    /* body > * {\n        display: none;\n    } */\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n@media (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29808,6 +29808,7 @@ _NeuronFeatureBase_map = new WeakMap(), _NeuronFeatureBase_features = new WeakMa
         __classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f").call(this, this, direction);
 };
 //XXX: Override this in any inherited classes
+NeuronFeatureBase.NAME = "[BASE FEATURE]";
 NeuronFeatureBase.TYPE = "NeuronFeatureBase";
 NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 
@@ -29963,6 +29964,7 @@ _NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new Weak
         __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").valueAsNumber;
     __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
 };
+NeuronFeaturePoint.NAME = "Waypoint";
 NeuronFeaturePoint.TYPE = "NeuronFeaturePoint";
 NeuronFeaturePoint.VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
 
@@ -30251,6 +30253,7 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
 }, _NeuronFeaturePolygon_export_as_kmz = function _NeuronFeaturePolygon_export_as_kmz() {
     (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_polygon)(this.get_corners_as_points());
 };
+NeuronFeaturePolygon.NAME = "[POLYGON FEATURE]";
 NeuronFeaturePolygon.TYPE = "NeuronFeaturePolygon";
 NeuronFeaturePolygon.VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
 
@@ -30610,6 +30613,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 }, _NeuronFeatureSurvey_update_leadin_from_dom = function _NeuronFeatureSurvey_update_leadin_from_dom() {
     this.update_leadin(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f").valueAsNumber, false);
 };
+NeuronFeatureSurvey.NAME = "Survey";
 NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
 NeuronFeatureSurvey.VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
 
@@ -30630,6 +30634,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _proj4_interface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./proj4_interface */ "./src/js/proj4_interface.ts");
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronInterfacePoint_instances, _NeuronInterfacePoint_value_as_DMS;
 
 
 // @ts-ignore
@@ -30639,8 +30649,10 @@ function NeuronUID(prefix = 'nuid-') {
     lastId++;
     return `${prefix}${lastId}`;
 }
+const zeroPad = (num, places) => String(num).padStart(places, '0');
 class NeuronInterfacePoint {
     constructor(latitude = 0.0, longitude = 0.0, altitude = 0.0) {
+        _NeuronInterfacePoint_instances.add(this);
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -30686,7 +30698,17 @@ class NeuronInterfacePoint {
             altitude: this.altitude,
         };
     }
+    toString() {
+        return `[${__classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.latitude, false)}, ${__classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.longitude, false)}, ${this.altitude.toFixed(2)}m]`;
+    }
 }
+_NeuronInterfacePoint_instances = new WeakSet(), _NeuronInterfacePoint_value_as_DMS = function _NeuronInterfacePoint_value_as_DMS(dd, is_lng) {
+    const dir = dd < 0 ? (is_lng ? "W" : "S") : is_lng ? "E" : "N";
+    const deg = 0 | (dd < 0 ? (dd = -dd) : dd);
+    const min = 0 | (((dd += 1e-9) % 1) * 60);
+    const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
+    return `${zeroPad(deg, 2)}° ${zeroPad(min, 2)}' ${zeroPad(sec, 2)}" ${dir}`;
+};
 
 
 /***/ }),
@@ -30801,7 +30823,7 @@ class NeuronMap {
     }
     update_path() {
         if (__classPrivateFieldGet(this, _NeuronMap_path, "f")) {
-            const path_points = __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_mission_coords().map(x => x.to_leaflet());
+            const path_points = __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_mission_as_points().map(x => x.to_leaflet());
             __classPrivateFieldGet(this, _NeuronMap_path, "f").setLatLngs(path_points);
         }
     }
@@ -30888,6 +30910,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
 /* harmony import */ var _neuron_tools_files__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./neuron_tools_files */ "./src/js/neuron_tools_files.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -30909,6 +30932,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_option_elements, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_kml_loaded;
+
 
 
 
@@ -30979,7 +31003,7 @@ class NeuronPlanner {
                 version: NeuronPlanner.VERSION,
                 type: NeuronPlanner.TYPE,
                 mission_items: this.get_mission_as_json(),
-                waypoints: this.get_mission_coords().map(x => x.to_json())
+                waypoints: this.get_mission_as_points().map(x => x.to_json())
             };
             const file = new Blob([JSON.stringify(j, null, 4)], {
                 type: 'application/json'
@@ -30994,11 +31018,122 @@ class NeuronPlanner {
             this.set_mission_from_json(j);
         });
     }
-    // export_mission() {
-    //
-    // }
+    fit_mission_on_map() {
+        //Try to fit all the features on screen
+        if (__classPrivateFieldGet(this, _NeuronPlanner_map, "f")) {
+            let m = __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map();
+            if (m) {
+                let features = [];
+                for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f"))
+                    features.push(...item.get_features());
+                let fg = _leaflet_interface__WEBPACK_IMPORTED_MODULE_7__.L.featureGroup(features);
+                m.fitBounds(fg.getBounds());
+            }
+        }
+    }
+    update_mission_brief() {
+        const brief = this.get_mission_brief();
+        // var tab = window.open('about:blank', '_blank');
+        // // tab.document.write(html); // where 'html' is a variable containing your HTML
+        // tab.document.head.title = "Neuron Planner Mission Brief";
+        // let title = tab.document.createElement('h1');
+        // title.appendChild(tab.document.createTextNode("Mission Brief"));
+        let dprint = document.getElementById("print-section");
+        dprint.innerHTML = '';
+        let title = document.createElement('h1');
+        title.appendChild(document.createTextNode("Mission Brief"));
+        dprint.appendChild(title);
+        const headings = [
+            "Step #",
+            "Type",
+            "Description",
+            "Features",
+            "Time from last",
+            "Time on feature",
+        ];
+        let table = document.createElement('table');
+        let tr0 = document.createElement('tr');
+        for (const h of headings) {
+            let th = document.createElement('th');
+            th.appendChild(document.createTextNode(h));
+            tr0.appendChild(th);
+        }
+        table.appendChild(tr0);
+        let count = 0;
+        for (const item of brief) {
+            count++;
+            const content = [
+                count.toString(),
+                item.type,
+                item.description,
+                item.components.length ? item.components[0] : "---",
+                "---",
+                "---",
+            ];
+            let tr = document.createElement('tr');
+            for (const h of content) {
+                let td = document.createElement('td');
+                td.appendChild(document.createTextNode(h));
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+        dprint.appendChild(table);
+    }
+    get_mission_brief() {
+        let brief = [];
+        const steps = this.get_mission_as_points();
+        if (steps.length) {
+            let step0 = {
+                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
+                description: "Take-off at location",
+                components: [steps[0].toString()]
+            };
+            brief.push(step0);
+            for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f")) {
+                let step = null;
+                //XXX: Ignore mission items with no points
+                // if(item instanceof NeuronFeatureBase) {
+                // } else
+                if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint) {
+                    let path = item.get_path_coords();
+                    if (path.length) {
+                        step = {
+                            type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
+                            description: "Fly to location",
+                            components: path.map(x => x.toString())
+                        };
+                    }
+                    // } else if(item instanceof NeuronFeaturePolygon) {
+                }
+                else if (item instanceof _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey) {
+                    let path = item.get_corners_as_points();
+                    if (path.length) {
+                        step = {
+                            type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
+                            description: "Survey area with bounds",
+                            components: path.map(x => x.toString())
+                        };
+                    }
+                }
+                else {
+                    console.warn("Unable to add mission item to brief");
+                    console.warn(item);
+                }
+                if (step)
+                    brief.push(step);
+            }
+            let stepn = {
+                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
+                description: "Land at location",
+                components: [steps[steps.length - 1].toString()]
+            };
+            brief.push(stepn);
+        }
+        return brief;
+    }
     export_mission_kml() {
-        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_points)(this.get_mission_coords());
+        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_points)(this.get_mission_as_points());
     }
     set_map(map) {
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
@@ -31081,7 +31216,7 @@ class NeuronPlanner {
         }
     }
     update_mission_stats() {
-        const coords = this.get_mission_coords();
+        const coords = this.get_mission_as_points();
         __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, coords.length ?
             coords[coords.length - 1].altitude :
             0.0, "f");
@@ -31125,8 +31260,10 @@ class NeuronPlanner {
     update() {
         this.update_mission_plan();
         this.update_mission_stats();
+        this.update_mission_brief();
+        //TODO: Add "fit mission on map" button to stats block
     }
-    get_mission_coords() {
+    get_mission_as_points() {
         let coords = [];
         for (const i of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f"))
             coords = coords.concat(i.get_path_coords());
@@ -43378,6 +43515,9 @@ let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     }));
 });
 document.addEventListener('DOMContentLoaded', load_app_data, false);
+// window.addEventListener('beforeprint', (event) => {
+//     window.neuron_planner.run_pre_print_tasks();
+// });
 
 })();
 

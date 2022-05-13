@@ -266,6 +266,7 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
     }
 }
 
+//TODO: This is creating too many waypoints for some reason!
 /**
  * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
  * @param  {number} altitude altitude to map to thhe final points

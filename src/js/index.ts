@@ -40,3 +40,7 @@ let load_app_data = async () => {
 }
 
 document.addEventListener('DOMContentLoaded', load_app_data, false);
+// window.addEventListener('beforeprint', (event) => {
+//     window.neuron_planner.run_pre_print_tasks();
+// });
+

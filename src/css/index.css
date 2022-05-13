@@ -106,6 +106,28 @@ body {
     margin-left: 0.5em;
 }
 
+#print-section {
+    display: none;
+}
+
+@media print {
+    /* body > * {
+        display: none;
+    } */
+    #fp-manage {
+        display: none;
+    }
+    #fp-summary {
+        display: none;
+    }
+    #fp-draw {
+        display: none;
+    }
+    #print-section {
+        display: block;
+    }
+}
+
 @media only screen and (orientation: landscape) {
     /* For mobile phones: */
     #fp-map {

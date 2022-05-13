@@ -8,6 +8,7 @@ export interface NeuronFeatureBaseData {
 
 export class NeuronFeatureBase {
     //XXX: Override this in any inherited classes
+    static NAME = "[BASE FEATURE]";
     static TYPE = "NeuronFeatureBase";
     static VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 

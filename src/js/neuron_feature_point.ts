@@ -9,6 +9,7 @@ export interface NeuronFeaturePointData {
 }
 
 export class NeuronFeaturePoint extends NeuronFeatureBase {
+    static override NAME = "Waypoint";
     static override TYPE = "NeuronFeaturePoint";
     static override VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
 

@@ -6,6 +6,7 @@ import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfa
 import { NeuronMap } from "./neuron_map";
 import { kml_download_from_points, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
+import { L } from "./leaflet_interface"
 
 const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
@@ -20,12 +21,12 @@ type MissionFeatureData = (
     NeuronFeatureSurveyData
 );
 
-// type MissionFeature = (
-//     NeuronFeatureBase |
-//     NeuronFeaturePoint |
-//     NeuronFeaturePolygon |
-//     NeuronFeatureSurvey
-// );
+type MissionFeature = (
+    NeuronFeatureBase |
+    NeuronFeaturePoint |
+    NeuronFeaturePolygon |
+    NeuronFeatureSurvey
+);
 
 export interface NeuronPlannerMissionData {
     version:string,
@@ -34,15 +35,22 @@ export interface NeuronPlannerMissionData {
     waypoints: NeuronInterfacePointData[]
 }
 
+export interface MissionBiref {
+    type:string,
+    description:string,
+    components:string[]
+}
+
 export class NeuronPlanner {
     static TYPE = 'NeuronPlanner';
     static VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';
+
     #map:NeuronMap;
 
     #plan_element:HTMLElement;
     #option_elements:Map<string,HTMLInputElement>;
     #stats_element:HTMLElement;
-    #mission_items:NeuronFeatureBase[];
+    #mission_items:MissionFeature[];
     #on_change_callbacks:Map<number,CallableFunction>;
     #last_callback_id:number;
     #clearing_mission:boolean;
@@ -155,7 +163,7 @@ export class NeuronPlanner {
             version: NeuronPlanner.VERSION,
             type: NeuronPlanner.TYPE,
             mission_items: this.get_mission_as_json(),
-            waypoints: this.get_mission_coords().map(x => x.to_json())
+            waypoints: this.get_mission_as_points().map(x => x.to_json())
         }
 
         const file = new Blob(
@@ -174,12 +182,135 @@ export class NeuronPlanner {
         this.set_mission_from_json(j);
     }
 
-    // export_mission() {
-    //
-    // }
+    fit_mission_on_map() {
+        //Try to fit all the features on screen
+        if(this.#map) {
+            let m = this.#map.get_leaflet_map();
+            if(m) {
+                let features:L.Layer[] = [];
+                for(const item of this.#mission_items)
+                    features.push(...item.get_features());
+                let fg = L.featureGroup(features);
+                m.fitBounds(fg.getBounds());
+            }
+        }
+    }
+
+    update_mission_brief() {
+        const brief = this.get_mission_brief();
+
+        // var tab = window.open('about:blank', '_blank');
+        // // tab.document.write(html); // where 'html' is a variable containing your HTML
+        // tab.document.head.title = "Neuron Planner Mission Brief";
+        // let title = tab.document.createElement('h1');
+        // title.appendChild(tab.document.createTextNode("Mission Brief"));
+        let dprint = document.getElementById("print-section");
+        dprint.innerHTML = '';
+        let title = document.createElement('h1');
+        title.appendChild(document.createTextNode("Mission Brief"));
+        dprint.appendChild(title);
+
+        const headings = [
+            "Step #",
+            "Type",
+            "Description",
+            "Features",
+            "Time from last",
+            "Time on feature",
+        ]
+
+        let table = document.createElement('table');
+        let tr0 = document.createElement('tr');
+        for(const h of headings) {
+            let th = document.createElement('th');
+            th.appendChild(document.createTextNode(h));
+            tr0.appendChild(th);
+        }
+        table.appendChild(tr0);
+
+        let count = 0;
+        for(const item of brief) {
+            count++;
+
+            const content = [
+                count.toString(),
+                item.type,
+                item.description,
+                item.components.length ? item.components[0] : "---",
+                "---",
+                "---",
+            ]
+
+            let tr = document.createElement('tr');
+            for(const h of content) {
+                let td = document.createElement('td');
+                td.appendChild(document.createTextNode(h));
+                tr.appendChild(td);
+            }
+            table.appendChild(tr);
+        }
+
+        dprint.appendChild(table);
+    }
+
+    get_mission_brief() {
+        let brief:MissionBiref[] = [];
+        const steps = this.get_mission_as_points();
+        if(steps.length) {
+            let step0:MissionBiref = {
+                type: NeuronFeaturePoint.NAME,
+                description: "Take-off at location",
+                components: [steps[0].toString()]
+            };
+
+            brief.push(step0);
+
+            for(const item of this.#mission_items) {
+                let step:MissionBiref = null;
+                //XXX: Ignore mission items with no points
+                // if(item instanceof NeuronFeatureBase) {
+                // } else
+                if(item instanceof NeuronFeaturePoint) {
+                    let path = item.get_path_coords();
+                    if(path.length) {
+                        step = {
+                            type: NeuronFeaturePoint.NAME,
+                            description: "Fly to location",
+                            components: path.map(x => x.toString())
+                        };
+                    }
+                // } else if(item instanceof NeuronFeaturePolygon) {
+                } else if(item instanceof NeuronFeatureSurvey) {
+                    let path = item.get_corners_as_points();
+                    if(path.length) {
+                        step = {
+                            type: NeuronFeaturePoint.NAME,
+                            description: "Survey area with bounds",
+                            components: path.map(x => x.toString())
+                        };
+                    }
+                } else {
+                    console.warn("Unable to add mission item to brief");
+                    console.warn(item);
+                }
+
+                if(step)
+                    brief.push(step);
+            }
+
+            let stepn:MissionBiref = {
+                type: NeuronFeaturePoint.NAME,
+                description: "Land at location",
+                components: [steps[steps.length-1].toString()]
+            };
+            brief.push(stepn);
+        }
+
+        return brief;
+    }
 
     export_mission_kml() {
-        kml_download_from_points(this.get_mission_coords());
+        kml_download_from_points(this.get_mission_as_points());
     }
 
     set_map(map:NeuronMap) {
@@ -360,7 +491,7 @@ export class NeuronPlanner {
     }
 
     update_mission_stats() {
-        const coords = this.get_mission_coords();
+        const coords = this.get_mission_as_points();
         this.#last_mission_altitude = coords.length ?
             coords[coords.length - 1].altitude :
             0.0;
@@ -414,9 +545,11 @@ export class NeuronPlanner {
     update() {
         this.update_mission_plan();
         this.update_mission_stats();
+        this.update_mission_brief();
+        //TODO: Add "fit mission on map" button to stats block
     }
 
-    get_mission_coords() {
+    get_mission_as_points() {
         let coords:NeuronInterfacePoint[] = [];
 
         for(const i of this.#mission_items)
