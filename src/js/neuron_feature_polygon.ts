@@ -1,12 +1,19 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
 import { kml_download_from_polygon, kmz_download_from_polygon } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
-import { NeuronFeatureSurvey } from "./neuron_feature_survey";
+
+export interface NeuronFeaturePolygonData {
+    version:string,
+    type:string,
+    corners:NeuronInterfacePointData[]
+}
 
 export class NeuronFeaturePolygon extends NeuronFeatureBase {
-    #map:L.Map;
+    static override TYPE = "NeuronFeaturePolygon";
+    static override VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
+
     #corners:L.Marker[];
     #polygon:L.Polygon;
     #planner:NeuronPlanner;
@@ -18,16 +25,16 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #dom_export_kml:HTMLButtonElement;
     #dom_export_kmz:HTMLButtonElement;
 
-    constructor(map:L.Map, planner:NeuronPlanner, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null) {
-        super(map, on_remove, on_change);
-        this.#map = map;
+    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], planner:NeuronPlanner = null) {
+        super(map);
         this.#on_change_internal = null;
-        this.#planner = planner
         this.#dom = null;
         this.#dom_corner_count = null;
         this.#dom_convert_survey = null;
         this.#dom_export_kml = null;
         this.#dom_export_kmz = null;
+
+        this.set_planner(planner);
 
         this.#selected_corner = 0;
         this.#corners = [];
@@ -40,6 +47,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         } else {
             this.update_polygon();
         }
+    }
+
+    set_planner(planner:NeuronPlanner) {
+        this.#planner = planner;
     }
 
     _set_on_change_internal(on_change:CallableFunction=null) {
@@ -226,7 +237,11 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #convert_to_survey() {
-        this.#planner.replace_polygon_with_survey(this)
+        if(this.#planner) {
+            this.#planner.replace_polygon_with_survey(this);
+        } else {
+            console.warn("Planner not set, cannot convert polygon feature!");
+        }
     }
 
     #export_as_kml() {
@@ -276,5 +291,31 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
 
         return this.#dom;
+    }
+
+    static override isObjectOfDataType(object: any): object is NeuronFeaturePolygonData {
+        let is_valid =
+            (object.type == NeuronFeaturePolygon.TYPE) ||
+            (object.version == NeuronFeaturePolygon.VERSION);
+
+        return is_valid;
+    }
+
+    static from_json(j:NeuronFeaturePolygonData, map:L.Map) {
+        //XXX: Implement this per inherited feature
+        if(!NeuronFeaturePolygon.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeaturePolygon`);
+
+        const corners = j.corners.map(x => NeuronInterfacePoint.from_json(x));
+        return new NeuronFeaturePolygon(map, corners);
+    }
+
+    override to_json() {
+        //XXX: Implement this per inherited feature
+        return <NeuronFeaturePolygonData>{
+            version: NeuronFeaturePolygon.VERSION,
+            type: NeuronFeaturePolygon.TYPE,
+            corners: this.get_corners_as_points().map(x => x.to_json())
+        }
     }
 }

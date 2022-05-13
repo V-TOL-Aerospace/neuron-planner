@@ -1,19 +1,28 @@
 import { L } from "./leaflet_interface";
-import { NeuronInterfacePoint, NeuronUUID} from "./neuron_interfaces";
+import { NeuronInterfacePoint, NeuronUID} from "./neuron_interfaces";
+
+export interface NeuronFeatureBaseData {
+    version:string,
+    type:string
+}
 
 export class NeuronFeatureBase {
+    //XXX: Override this in any inherited classes
+    static TYPE = "NeuronFeatureBase";
+    static VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
+
     #map:L.Map;
     #features:L.Layer[];
     #on_remove:CallableFunction;
     #on_change:CallableFunction;
     #on_move:CallableFunction;
 
-    constructor(map:L.Map, on_remove:CallableFunction=null, on_change:CallableFunction=null, on_move:CallableFunction=null) {
+    constructor(map:L.Map) {
         this.#features = [];
         this.#map = map;
-        this.set_remove_callback(on_remove);
-        this.set_change_callback(on_change);
-        this.set_move_callback(on_move);
+        this.set_remove_callback(null);
+        this.set_change_callback(null);
+        this.set_move_callback(null);
     }
 
     _trigger_on_changed() {
@@ -97,7 +106,7 @@ export class NeuronFeatureBase {
         dom.className = 'mission-feature-content-item';
 
         if (!input.id)
-            input.id = NeuronUUID();
+            input.id = NeuronUID();
 
         let l = document.createElement("label");
         l.className = 'mission-feature-content-label';
@@ -134,13 +143,15 @@ export class NeuronFeatureBase {
         return dom;
     }
 
-    _create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null) {
+    _create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null, step:number=null) {
         let dom = document.createElement("input");
         dom.type = "number";
         if(min != null)
             dom.min = min.toString();
         if(max != null)
             dom.max = max.toString();
+        if(step != null)
+            dom.step = step.toString();
         dom.value = value.toString();
         dom.className = 'mission-feature-content-value';
         dom.onchange = on_change;
@@ -234,5 +245,29 @@ export class NeuronFeatureBase {
     get_dom() {
         //XXX: Implement this per inherited feature
         return this._get_dom();
+    }
+
+    static isObjectOfDataType(object: any): object is NeuronFeatureBaseData {
+        let is_valid =
+            (object.type == NeuronFeatureBase.TYPE) ||
+            (object.version == NeuronFeatureBase.VERSION);
+
+        return is_valid;
+    }
+
+    static from_json(j:NeuronFeatureBaseData, map:L.Map) {
+        //XXX: Implement this per inherited feature
+        if(!NeuronFeatureBase.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeatureBase`);
+
+        return new NeuronFeatureBase(map);
+    }
+
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return <NeuronFeatureBaseData>{
+            version: NeuronFeatureBase.VERSION,
+            type: NeuronFeatureBase.TYPE
+        }
     }
 }

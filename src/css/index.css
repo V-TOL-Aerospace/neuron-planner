@@ -57,6 +57,7 @@ body {
     flex-grow: 0;
     display: flex;
     flex-direction: column;
+    border-left: 2px solid black;
 }
 
 #fp-advanced {
@@ -122,6 +123,8 @@ body {
 
     #fp-summary {
         max-height: 50%;
+        border-left: 0px;
+        border-top: 2px solid black;
     }
 }
 

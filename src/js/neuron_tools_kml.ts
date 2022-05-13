@@ -1,4 +1,5 @@
-import { NeuronInterfacePoint, NeuronUUID } from "./neuron_interfaces";
+import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { download_file, get_filename } from "./neuron_tools_files"
 import * as zip from "@zip.js/zip.js";
 
 const type_kml = "application/vnd.google-earth.kml+xml";
@@ -102,10 +103,6 @@ export async function kml_extract_features(kml_plain_text:string) {
     return ret;
 }
 
-function get_filename(ext:string) {
-    return `neuron-planner${Date.now()}.${ext}`;
-}
-
 export async function kml_download_from_points(coordinates:NeuronInterfacePoint[]) {
     const textXML = await kml_data_from_coordinates(coordinates);
     const file = new Blob(
@@ -154,20 +151,6 @@ async function get_kmz_from_kml_data(data:string) {
 
     // get the zip file as a Blob
     return blobWriter.getData();
-}
-
-async function download_file(filename:string, data:Blob) {
-    var element = document.createElement('a');
-    const burl = URL.createObjectURL(data);
-    element.setAttribute('href', burl);
-    element.setAttribute('download', filename);
-
-    element.style.display = 'none';
-    document.body.appendChild(element);
-
-    element.click();
-
-    document.body.removeChild(element);
 }
 
 export async function kml_data_from_coordinates(coordinates:NeuronInterfacePoint[]) {

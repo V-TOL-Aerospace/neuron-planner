@@ -4,8 +4,6 @@
     display: flex;
     flex-direction: column;
     padding: 0.5em;
-    /* overflow: scroll; */
-    border-top: 2px solid black;
     border-bottom: 2px solid black;
 }
 
@@ -26,9 +24,13 @@
     margin: 0.1em;
 }
 
+.stats-option-label {
+    flex: auto;
+}
+
 .stats-option-value {
     flex: auto;
-    max-width: 10em;
+    max-width: 5em;
 }
 
 #fp-plan-container {
@@ -56,6 +58,7 @@
     margin-left: 0.5em;
     margin-right: 0.5em;
     padding: 0.2em;
+    box-shadow: 4px 4px 4px #888888;
 }
 
 .mission-feature-title {

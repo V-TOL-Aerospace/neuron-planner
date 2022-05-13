@@ -9,6 +9,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack",
+    "uuid": "node -e \"let uuid = require('uuid'); console.log(uuid.v1());\"",
     "serve": "webpack serve",
     "deploy": "git subtree push --prefix dist origin gh-pages"
   },
@@ -32,6 +33,7 @@
     "fontawesome-free": "^1.0.4",
     "leaflet": "^1.8.0",
     "leaflet-contextmenu": "^1.4.0",
-    "proj4": "^2.8.0"
+    "proj4": "^2.8.0",
+    "uuid": "^8.3.2"
   }
 }

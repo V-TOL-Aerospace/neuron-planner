@@ -1,8 +1,17 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
 
+export interface NeuronFeaturePointData {
+    version:string,
+    type:string,
+    point:NeuronInterfacePointData
+}
+
 export class NeuronFeaturePoint extends NeuronFeatureBase {
+    static override TYPE = "NeuronFeaturePoint";
+    static override VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
+
     #marker:L.Marker;
     #point:NeuronInterfacePoint;
     #dom:HTMLDivElement;
@@ -10,8 +19,8 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
     #dom_lon:HTMLInputElement;
     #dom_alt:HTMLInputElement;
 
-    constructor(map:L.Map, point:NeuronInterfacePoint=null, on_remove:CallableFunction=null, on_change:CallableFunction=null) {
-        super(map, on_remove, on_change);
+    constructor(map:L.Map, point:NeuronInterfacePoint=null) {
+        super(map);
 
         this.#marker = null;
         this.#point = null;
@@ -59,15 +68,16 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             this.#marker.bindPopup(create_popup_context_dom("Waypoint", menu_items, this.#marker));
 
             this._add_feature_to_map(this.#marker);
-        } else {
-            this.#marker.setLatLng(point.to_leaflet());
         }
 
         this.#internal_set_point(point);
     }
 
-    #internal_set_point(point:NeuronInterfacePoint, update_dom:boolean=true) {
+    #internal_set_point(point:NeuronInterfacePoint, update_marker:boolean = true, update_dom:boolean=true) {
         this.#point = point;
+
+        if(update_marker && this.#marker)
+            this.#marker.setLatLng(point.to_leaflet());
 
         if(update_dom) {
             if(this.#dom_lat)
@@ -87,21 +97,21 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         if(this.#point)
             this.#point.latitude = this.#dom_lat.valueAsNumber;
 
-        this.#internal_set_point(this.#point, false);
+        this.#internal_set_point(this.#point, true, false);
     }
 
     #update_longitude_from_dom() {
         if(this.#point)
             this.#point.longitude = this.#dom_lon.valueAsNumber;
 
-        this.#internal_set_point(this.#point, false);
+        this.#internal_set_point(this.#point, true, false);
     }
 
     #update_altitude_from_dom() {
         if(this.#point)
             this.#point.altitude = this.#dom_alt.valueAsNumber;
 
-        this.#internal_set_point(this.#point, false);
+        this.#internal_set_point(this.#point, true, false);
     }
 
     override remove_feature() {
@@ -122,10 +132,10 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
 
-            this.#dom_lat = this._create_dom_input_number(this.#point ? this.#point.latitude : 0.0, this.#update_latitude_from_dom.bind(this), -90, 90);
+            this.#dom_lat = this._create_dom_input_number(this.#point ? this.#point.latitude : 0.0, this.#update_latitude_from_dom.bind(this), -90, 90, 0.0002);
             c.appendChild(this._create_dom_labelled_input("Latitude:", this.#dom_lat));
 
-            this.#dom_lon = this._create_dom_input_number(this.#point ? this.#point.longitude : 0.0, this.#update_longitude_from_dom.bind(this), -180, 180);
+            this.#dom_lon = this._create_dom_input_number(this.#point ? this.#point.longitude : 0.0, this.#update_longitude_from_dom.bind(this), -180, 180, 0.0002);
             c.appendChild(this._create_dom_labelled_input("Longitude:", this.#dom_lon));
 
             this.#dom_alt = this._create_dom_input_number(this.#point ? this.#point.altitude : 0.0, this.#update_altitude_from_dom.bind(this), 0);
@@ -135,5 +145,31 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         }
 
         return this.#dom;
+    }
+
+    static override isObjectOfDataType(object: any): object is NeuronFeaturePointData {
+        let is_valid =
+            (object.type == NeuronFeaturePoint.TYPE) ||
+            (object.version == NeuronFeaturePoint.VERSION);
+
+        return is_valid;
+    }
+
+    static override from_json(j:NeuronFeaturePointData, map:L.Map) {
+        //XXX: Implement this per inherited feature
+        if(!NeuronFeaturePoint.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
+
+        const point = NeuronInterfacePoint.from_json(j.point);
+        return new NeuronFeaturePoint(map, point);
+    }
+
+    override to_json() {
+        //XXX: Implement this per inherited feature
+        return <NeuronFeaturePointData>{
+            version: NeuronFeaturePoint.VERSION,
+            type: NeuronFeaturePoint.TYPE,
+            point: this.#point.to_json()
+        }
     }
 }

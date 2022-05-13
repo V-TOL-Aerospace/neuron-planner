@@ -106,7 +106,8 @@ export class NeuronMap {
         const bounds = this.#get_poly_bounds_from_view();
 
         if(this.#map && bounds.length) {
-            const p = new NeuronFeaturePolygon(this.#map, this.#planner, bounds);
+            const p = new NeuronFeaturePolygon(this.#map, bounds);
+            p.set_planner(this.#planner);
             this.#planner.add_mission_item(p);
         }
     }
@@ -115,7 +116,7 @@ export class NeuronMap {
         const bounds = this.#get_poly_bounds_from_view();
 
         if(this.#map && bounds.length) {
-            const p = new NeuronFeatureSurvey(this.#map, this.#planner, bounds);
+            const p = new NeuronFeatureSurvey(this.#map, bounds);
             p.update_altitude(this.#planner.get_last_item_altitude());
             this.#planner.add_mission_item(p);
         }

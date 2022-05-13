@@ -1,10 +1,11 @@
-import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronFeaturePoint } from "./neuron_feature_point";
-import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
-import { NeuronFeatureSurvey } from "./neuron_feature_survey";
-import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronFeatureBase, NeuronFeatureBaseData } from "./neuron_feature_base";
+import { NeuronFeaturePoint, NeuronFeaturePointData } from "./neuron_feature_point";
+import { NeuronFeaturePolygon, NeuronFeaturePolygonData } from "./neuron_feature_polygon";
+import { NeuronFeatureSurvey, NeuronFeatureSurveyData } from "./neuron_feature_survey";
+import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { NeuronMap } from "./neuron_map";
 import { kml_download_from_points, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
+import { download_file, get_filename } from "./neuron_tools_files"
 
 const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
@@ -12,7 +13,30 @@ enum NeuronPlannerOptionKeys {
     MISSION_SPEED = 'fp-stats-options-speed',
 }
 
+type MissionFeatureData = (
+    NeuronFeatureBaseData |
+    NeuronFeaturePointData |
+    NeuronFeaturePolygonData |
+    NeuronFeatureSurveyData
+);
+
+// type MissionFeature = (
+//     NeuronFeatureBase |
+//     NeuronFeaturePoint |
+//     NeuronFeaturePolygon |
+//     NeuronFeatureSurvey
+// );
+
+export interface NeuronPlannerMissionData {
+    version:string,
+    type:string,
+    mission_items:MissionFeatureData[]  //
+    waypoints: NeuronInterfacePointData[]
+}
+
 export class NeuronPlanner {
+    static TYPE = 'NeuronPlanner';
+    static VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';
     #map:NeuronMap;
 
     #plan_element:HTMLElement;
@@ -49,12 +73,105 @@ export class NeuronPlanner {
         this.#clearing_mission = false;
     }
 
-    save_mission_file() {
-        //TODO
+    get_mission_as_json() {
+        let mission_data:MissionFeatureData[] = [];
+        for(const item of this.#mission_items)
+            mission_data.push(item.to_json());
+
+        return mission_data;
     }
 
-    load_mission_file(file:Blob) {
-        //TODO
+    static isObjectOfDataType(object: any): object is NeuronPlannerMissionData {
+        let is_valid =
+            (object.type == NeuronPlanner.TYPE) ||
+            (object.version == NeuronPlanner.VERSION);
+
+        return is_valid;
+    }
+
+    set_mission_from_json(j:NeuronPlannerMissionData) {
+        if(!NeuronPlanner.isObjectOfDataType(j))
+            throw new Error("Invalid version during import of NeuronPlannerMissionData");
+
+        if(j.mission_items && j.mission_items.length) {
+            this.#add_mission_features_from_json(j.mission_items);
+        } else if(j.waypoints && j.waypoints.length) {
+            console.warn("No mission items found, importing waypoints instead!");
+            this.#add_waypoint_features_from_json(j.waypoints);
+        }
+    }
+
+    #add_mission_features_from_json(mission_items:MissionFeatureData[]) {
+        let features:NeuronFeatureBase[] = [];
+
+        for(const item of mission_items) {
+            let feature:NeuronFeatureBase = null;
+
+            if(NeuronFeatureBase.isObjectOfDataType(item)) {
+                feature = NeuronFeatureBase.from_json(item, this.#map.get_leaflet_map());
+            } else if(NeuronFeaturePoint.isObjectOfDataType(item)) {
+                feature = NeuronFeaturePoint.from_json(item, this.#map.get_leaflet_map());
+            } else if(NeuronFeaturePolygon.isObjectOfDataType(item)) {
+                let p = NeuronFeaturePolygon.from_json(item, this.#map.get_leaflet_map());
+                p.set_planner(this);
+                feature = p;
+            } else if(NeuronFeatureSurvey.isObjectOfDataType(item)) {
+                feature = NeuronFeatureSurvey.from_json(item, this.#map.get_leaflet_map());
+            } else {
+                console.warn("Unable to import mission item");
+                console.warn(item);
+            }
+
+            if(feature)
+                features.push(feature);
+        }
+
+        this.add_mission_items(features);
+    }
+
+    #add_waypoint_features_from_json(waypoints:NeuronInterfacePointData[]) {
+        let features:NeuronFeatureBase[] = [];
+
+        for(const item of waypoints) {
+            let feature:NeuronFeatureBase = null;
+
+            if(NeuronInterfacePoint.isObjectOfDataType(item)) {
+                const point = NeuronInterfacePoint.from_json(item);
+                feature = new NeuronFeaturePoint(this.#map.get_leaflet_map(), point);
+            } else {
+                console.warn("Unable to import waypoint item");
+                console.warn(item);
+            }
+
+            if(feature)
+                features.push(feature);
+        }
+
+        this.add_mission_items(features);
+    }
+
+    async save_mission_file() {
+        let j:NeuronPlannerMissionData = {
+            version: NeuronPlanner.VERSION,
+            type: NeuronPlanner.TYPE,
+            mission_items: this.get_mission_as_json(),
+            waypoints: this.get_mission_coords().map(x => x.to_json())
+        }
+
+        const file = new Blob(
+            [JSON.stringify(j, null, 4)],
+            {
+                type: 'application/json'
+            }
+        );
+
+        const filename = get_filename('json');
+        await download_file(filename, file);
+    }
+
+    async load_mission_file(file:Blob) {
+        const j = <NeuronPlannerMissionData>JSON.parse(await file.text());
+        this.set_mission_from_json(j);
     }
 
     // export_mission() {
@@ -127,7 +244,12 @@ export class NeuronPlanner {
         return this.#last_mission_altitude;
     }
 
-    add_mission_item(item:NeuronFeatureBase, index:number = -1) {
+    #on_add_mission_item_updates() {
+        this.update();
+        this.#run_on_mission_change();
+    }
+
+    #add_mission_item(item:NeuronFeatureBase, index:number = -1, run_update:boolean = true) {
         item.set_remove_callback(this.remove_mission_item.bind(this));
         item.set_change_callback(this.#mission_item_changed.bind(this));
         item.set_move_callback(this.#move_mission_item.bind(this));
@@ -137,8 +259,27 @@ export class NeuronPlanner {
             this.#mission_items.splice(index, 0, item);
         }
 
-        this.update();
-        this.#run_on_mission_change();
+        if(run_update) {
+            this.#on_add_mission_item_updates();
+        }
+    }
+
+    add_mission_item(item:NeuronFeatureBase, index:number = -1) {
+        this.#add_mission_item(item, index)
+    }
+
+    add_mission_items(items:NeuronFeatureBase[], index:number = -1) {
+        let count = 0;
+        for(const item of items) {
+            const new_ind = index == -1 ?
+                -1 :    //add to end
+                index + count;
+            this.#add_mission_item(item, new_ind, false);
+            count ++;
+        }
+
+        if(items.length)
+            this.#on_add_mission_item_updates();
     }
 
     remove_mission_item(item:NeuronFeatureBase) {
@@ -184,22 +325,27 @@ export class NeuronPlanner {
     #kml_loaded(result:NeuronKMLData) {
         // console.log("Got file result:");
         // console.log(result);
+        let features:NeuronFeatureBase[] = [];
+
         for(const p of result.markers) {
             p.altitude = this.get_last_item_altitude();
             const f = new NeuronFeaturePoint(this.#map.get_leaflet_map(), p);
-            this.add_mission_item(f);
+            features.push(f);
         }
 
         for(const p of result.polygons) {
-            const f = new NeuronFeaturePolygon(this.#map.get_leaflet_map(), this, p);
-            this.add_mission_item(f);
+            const f = new NeuronFeaturePolygon(this.#map.get_leaflet_map(), p);
+            f.set_planner(this);    //XXX: Enable functions for upscaling polygon
+            features.push(f);
         }
+
+        this.add_mission_items(features);
     }
 
     replace_polygon_with_survey(old_item:NeuronFeaturePolygon) {
         const ind = this.#mission_items.indexOf(old_item);
         if(ind >= 0) {
-            const survey = new NeuronFeatureSurvey(this.#map.get_leaflet_map(), this, old_item.get_corners_as_points());
+            const survey = new NeuronFeatureSurvey(this.#map.get_leaflet_map(), old_item.get_corners_as_points());
             old_item.remove_feature();
             this.add_mission_item(survey, ind);
         } else {

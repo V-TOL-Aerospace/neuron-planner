@@ -5,9 +5,15 @@ import { UTMPos } from "./proj4_interface";
 // import * as UTMConverter from "utm-latlng";
 
 let lastId = 0;
-export function NeuronUUID(prefix='nuuid-') {
+export function NeuronUID(prefix='nuid-') {
     lastId++;
     return `${prefix}${lastId}`;
+}
+
+export interface NeuronInterfacePointData {
+    latitude: number;
+    longitude: number;
+    altitude:number;
 }
 
 export class NeuronInterfacePoint {
@@ -15,7 +21,7 @@ export class NeuronInterfacePoint {
     longitude: number;
     altitude:number;
 
-    constructor(latitude=0.0, longitude=0.0, altitude=0.0) {
+    constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0) {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
@@ -49,5 +55,29 @@ export class NeuronInterfacePoint {
 
     static from_UTMs(utms:UTMPos[]) {
         return utms.map(p => p.to_NeuronInterfacePoint());
+    }
+
+    static isObjectOfDataType(object: any): object is NeuronInterfacePointData {
+        let is_valid =
+            Number.isFinite(object.latitude) ||
+            Number.isFinite(object.longitude) ||
+            Number.isFinite(object.altitude);
+
+        return is_valid;
+    }
+
+    static from_json(j:NeuronInterfacePointData) {
+        if(!NeuronInterfacePoint.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronInterfacePoint`);
+
+        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude);
+    }
+
+    to_json() {
+        return <NeuronInterfacePointData>{
+            latitude: this.latitude,
+            longitude: this.longitude,
+            altitude:this.altitude,
+        }
     }
 }

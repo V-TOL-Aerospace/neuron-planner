@@ -1,13 +1,29 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
-import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { CreateGrid, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
-import { NeuronPlanner } from "./neuron_planner";
+
+export interface NeuronFeatureSurveyData {
+    version:string,
+    type:string,
+    corners:NeuronInterfacePointData[],
+    altitude:number,
+    distance:number,
+    spacing:number,
+    angle:number,
+    overshoot1:number,
+    overshoot2:number,
+    startpos:number,
+    minLaneSeparation:number,
+    leadin:number
+}
 
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
+    static override TYPE = "NeuronFeatureSurvey";
+    static override VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
+
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
-    #show_waypoints;
 
     #altitude;
     #distance;
@@ -18,6 +34,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #startpos;
     #minLaneSeparation;
     #leadin;
+
+    #show_waypoints;
 
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLDivElement;
@@ -34,11 +52,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_minLaneSeparation:HTMLInputElement;
     #dom_leadin:HTMLInputElement;
 
-    #update_timer:any;
+    #update_timer:NodeJS.Timeout;
     #update_interval:number;
 
-    constructor(map:L.Map, planner:NeuronPlanner, corners:NeuronInterfacePoint[]=[], on_remove:CallableFunction=null, on_change:CallableFunction=null, show_waypoints=false) {
-        super(map, planner, corners, on_remove, on_change);
+    constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], show_waypoints=false) {
+        super(map, corners);
         this.#waypoints = [];
         this.#mappoints = [];
         this.#update_timer = null;
@@ -345,7 +363,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_altitude = this._create_dom_input_number(this.#altitude, this.#update_altitude_from_dom.bind(this), 0);
             c.appendChild(this._create_dom_labelled_input("Altitude:", this.#dom_altitude));
 
-            this.#dom_distance = this._create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0);
+            this.#dom_distance = this._create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0.5);
             c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_distance));
 
             // this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
@@ -393,5 +411,52 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
 
         return this.#dom;
+    }
+
+    static override isObjectOfDataType(object: any): object is NeuronFeatureSurveyData {
+        let is_valid =
+            (object.type == NeuronFeatureSurvey.TYPE) ||
+            (object.version == NeuronFeatureSurvey.VERSION);
+
+        return is_valid;
+    }
+
+    static from_json(j:NeuronFeatureSurveyData, map:L.Map) {
+        //XXX: Implement this per inherited feature
+        if(!NeuronFeatureSurvey.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeatureSurvey`);
+
+        const corners = j.corners.map(x => NeuronInterfacePoint.from_json(x));
+        let s = new NeuronFeatureSurvey(map, corners);
+
+        s.update_altitude(j.altitude);
+        s.update_distance(j.distance);
+        s.update_spacing(j.spacing);
+        s.update_angle(j.angle);
+        s.update_overshoot1(j.overshoot1);
+        s.update_overshoot2(j.overshoot2);
+        s.update_startpos(j.startpos);
+        s.update_minLaneSeparation(j.minLaneSeparation);
+        s.update_leadin(j.leadin);
+
+        return s;
+    }
+
+    override to_json() {
+        //XXX: Implement this per inherited feature
+        return <NeuronFeatureSurveyData>{
+            version: NeuronFeatureSurvey.VERSION,
+            type: NeuronFeatureSurvey.TYPE,
+            corners: this.get_corners_as_points().map(x => x.to_json()),
+            altitude: this.get_altitude(),
+            distance: this.get_distance(),
+            spacing: this.get_spacing(),
+            angle: this.get_angle(),
+            overshoot1: this.get_overshoot1(),
+            overshoot2: this.get_overshoot2(),
+            startpos: this.get_startpos(),
+            minLaneSeparation: this.get_minLaneSeparation(),
+            leadin: this.get_leadin(),
+        }
     }
 }
