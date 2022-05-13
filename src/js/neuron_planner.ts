@@ -355,8 +355,8 @@ export class NeuronPlanner {
                         };
                     }
                 } else {
-                    console.warn("Unable to add mission item to brief");
-                    console.warn(item);
+                    // console.warn("Unable to add mission item to brief");
+                    // console.warn(item);
                 }
 
                 if(path.length)
