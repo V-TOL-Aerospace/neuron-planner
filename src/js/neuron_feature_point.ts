@@ -132,14 +132,23 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
 
+            const t0 = "Latitude location for the waypoint in decimal degrees";
             this.#dom_lat = this._create_dom_input_number(this.#point ? this.#point.latitude : 0.0, this.#update_latitude_from_dom.bind(this), -90, 90, 0.0002);
-            c.appendChild(this._create_dom_labelled_input("Latitude:", this.#dom_lat));
+            this.#dom_lat.title = t0;
+            c.appendChild(this._create_dom_label("Latitude:", this.#dom_lat, t0));
+            c.appendChild(this.#dom_lat);
 
+            const t1 = "Longitude location for the waypoint in decimal degrees";
             this.#dom_lon = this._create_dom_input_number(this.#point ? this.#point.longitude : 0.0, this.#update_longitude_from_dom.bind(this), -180, 180, 0.0002);
-            c.appendChild(this._create_dom_labelled_input("Longitude:", this.#dom_lon));
+            this.#dom_lon.title = t1;
+            c.appendChild(this._create_dom_label("Longitude:", this.#dom_lon, t1));
+            c.appendChild(this.#dom_lon);
 
-            this.#dom_alt = this._create_dom_input_number(this.#point ? this.#point.altitude : 0.0, this.#update_altitude_from_dom.bind(this), 0);
-            c.appendChild(this._create_dom_labelled_input("Altitude:", this.#dom_alt));
+            const t2 = "Altitude for the waypoint in meters relative to take-off location ground level";
+            this.#dom_alt = this._create_dom_input_number(this.#point ? this.#point.altitude : 0.0, this.#update_altitude_from_dom.bind(this));
+            this.#dom_alt.title = t2;
+            c.appendChild(this._create_dom_label("Altitude:", this.#dom_alt, t2));
+            c.appendChild(this.#dom_alt);
 
             this.#dom.append(c);
         }

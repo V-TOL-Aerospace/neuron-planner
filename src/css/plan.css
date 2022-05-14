@@ -19,9 +19,27 @@
     font-weight: bold;
 }
 
-#fp-stats-options {
-    display: flex;
-    margin: 0.1em;
+#fp-stats-options, #fp-stats-results {
+    flex: auto;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: 50% 50%;
+    padding: 0.5em;
+    overflow: scroll;
+}
+
+.fp-stats-options-label, .fp-stats-options-value,
+.fp-stats-content-label, .fp-stats-content-value {
+    display: block;
+    margin-top: 0.2em;
+}
+
+.fp-stats-options-value-center, .fp-stats-content-value-center {
+    text-align: center;
+}
+
+.fp-stats-options-value-right, .fp-stats-content-value-right {
+    text-align: right;
 }
 
 .stats-option-label {
@@ -36,6 +54,8 @@
 #fp-plan-container {
     flex: auto;
     overflow: scroll;
+    padding-top: 0.25em;
+    padding-bottom: 0.25em;
 }
 
 #fp-plan {
@@ -46,6 +66,7 @@
 #fp-plan-title {
     text-align: center;
     font-weight: bold;
+    box-shadow: 0px 4px 4px #888888;
 }
 
 .mission-feature {
@@ -57,7 +78,7 @@
     margin-bottom: 0.25em;
     margin-left: 0.5em;
     margin-right: 0.5em;
-    padding: 0.2em;
+    padding: 0.5em;
     box-shadow: 4px 4px 4px #888888;
 }
 
@@ -70,8 +91,8 @@
 .mission-feature-title-button {
     flex: auto;
     flex-grow: 0;
-    margin-left: 0.2em;
-    margin-right: 0.2em;
+    margin-left: 0.1em;
+    margin-right: 0.1em;
 }
 
 .mission-feature-title-text {
@@ -81,23 +102,23 @@
 
 .mission-feature-content {
     flex: auto;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    /* flex-direction: column; */
+    grid-template-columns: 50% 50%;
+    overflow: scroll;
 }
 
-.mission-feature-content-item {
-    flex: auto;
-    display: flex;
-    margin: 0.1em;
+.mission-feature-content-label, .mission-feature-content-value {
+    display: block;
+    margin-top: 0.2em;
 }
 
-.mission-feature-content-label {
-    flex: auto;
+.mission-feature-content-value-center {
+    text-align: center;
 }
 
-.mission-feature-content-value {
-    flex: auto;
-    max-width: 10em;
+.mission-feature-content-value-right {
+    text-align: right;
 }
 
 .brief-table {

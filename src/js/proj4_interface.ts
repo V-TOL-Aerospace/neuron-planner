@@ -1,14 +1,13 @@
 import proj4 from 'proj4';
 import { NeuronInterfacePoint } from "./neuron_interfaces";
-
-const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
+import { zero_pad } from "./neuron_tools_common";
 
 function EPSG_code_from_utm_zone(zone:number, is_south:boolean) {
     const zf = Math.floor(zone);
     if (zf <= 0 || zf > 60)
         throw new Error(`Zone out of range (${zone}|${zf})`);
 
-    return `EPSG:326${zeroPad(zf, 2)}${is_south ? 'S' : 'N'}`;
+    return `EPSG:326${zero_pad(zf, 2)}${is_south ? 'S' : 'N'}`;
 }
 
 //Predefine all of our zones

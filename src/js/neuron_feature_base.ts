@@ -1,12 +1,13 @@
 import { L } from "./leaflet_interface";
-import { NeuronInterfacePoint, NeuronUID} from "./neuron_interfaces";
+import { NeuronDOMFactory } from "./neuron_dom_factory";
+import { NeuronInterfacePoint} from "./neuron_interfaces";
 
 export interface NeuronFeatureBaseData {
     version:string,
     type:string
 }
 
-export class NeuronFeatureBase {
+export class NeuronFeatureBase extends NeuronDOMFactory {
     //XXX: Override this in any inherited classes
     static NAME = "[BASE FEATURE]";
     static TYPE = "NeuronFeatureBase";
@@ -19,6 +20,8 @@ export class NeuronFeatureBase {
     #on_move:CallableFunction;
 
     constructor(map:L.Map) {
+        super('mission-feature');
+
         this.#features = [];
         this.#map = map;
         this.set_remove_callback(null);
@@ -102,105 +105,29 @@ export class NeuronFeatureBase {
     }
 
 
-    _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true, hide_label:boolean=false) {
-        let dom = document.createElement("div");
-        dom.className = 'mission-feature-content-item';
+    // _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true, hide_label:boolean=false) {
+    //     let dom = document.createElement("div");
+    //     dom.className = 'mission-feature-content-item';
 
-        if (!input.id)
-            input.id = NeuronUID();
+    //     if (!input.id)
+    //         input.id = NeuronUID();
 
-        let l = document.createElement("label");
-        l.className = 'mission-feature-content-label';
-        l.htmlFor = input.id;
-        l.appendChild(document.createTextNode(text));
-        if(hide_label)
-            l.style.visibility = 'hidden';
+    //     let l = document.createElement("label");
+    //     l.className = 'mission-feature-content-label';
+    //     l.htmlFor = input.id;
+    //     l.appendChild(document.createTextNode(text));
+    //     if(hide_label)
+    //         l.style.visibility = 'hidden';
 
-        if(label_first) {
-            dom.appendChild(l);
-            dom.appendChild(input);
-        } else {
-            dom.appendChild(input);
-            dom.appendChild(l);
-        }
-        return dom;
-    }
-
-    _create_dom_input_file(on_change:any, accepts:string = null) {
-        let dom = document.createElement("input");
-        dom.type = "file";
-        if(accepts != null)
-            dom.accept = accepts;
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    _create_dom_input_button(text:string, on_change:any) {
-        let dom = document.createElement("button");
-        dom.className = 'mission-feature-content-value';
-        dom.onclick = on_change;
-        dom.appendChild(document.createTextNode(text));
-        return dom;
-    }
-
-    _create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null, step:number=null) {
-        let dom = document.createElement("input");
-        dom.type = "number";
-        if(min != null)
-            dom.min = min.toString();
-        if(max != null)
-            dom.max = max.toString();
-        if(step != null)
-            dom.step = step.toString();
-        dom.value = value.toString();
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    _create_dom_input_range(value:number, on_change:any, min:number, max:number, step:number=null) {
-        let dom = document.createElement("input");
-        dom.type = "range";
-        dom.min = min.toString();
-        dom.max = max.toString();
-        if(step == null)
-            step = (max - min) / 100;
-        dom.step = step.toString();
-        dom.value = value.toString();
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    _create_dom_input_checkbox(checked:boolean, on_change:any) {
-        let dom = document.createElement("input");
-        dom.type = "checkbox";
-        dom.checked = checked;
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-
-    _create_dom_input_select(options:string[], labels:string[], on_change:any, selected_option:string=null) {
-        let dom = document.createElement("select");
-
-        if(options.length != labels.length)
-            throw new Error(`Options list does not match labels list (${options.length} != ${labels.length})`);
-
-        //Create and append the options
-        for (let i = 0; i < options.length; i++) {
-            let option = document.createElement("option");
-            option.value = options[i];
-            option.text = labels[i];
-            if(selected_option && selected_option==options[i])
-                option.selected = true;
-            dom.appendChild(option);
-        }
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
+    //     if(label_first) {
+    //         dom.appendChild(l);
+    //         dom.appendChild(input);
+    //     } else {
+    //         dom.appendChild(input);
+    //         dom.appendChild(l);
+    //     }
+    //     return dom;
+    // }
 
     #request_move(direction:number = 0) {
         if(this.#on_move && direction != 0)

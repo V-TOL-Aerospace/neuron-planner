@@ -4,12 +4,6 @@ import { UTMPos } from "./proj4_interface";
 // @ts-ignore
 // import * as UTMConverter from "utm-latlng";
 
-let lastId = 0;
-export function NeuronUID(prefix='nuid-') {
-    lastId++;
-    return `${prefix}${lastId}`;
-}
-
 export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;

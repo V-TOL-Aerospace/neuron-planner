@@ -109,16 +109,17 @@
             </div>
         </div>
         <div id="fp-summary">
-            <div id="fp-stats-container">
-                <div id="fp-stats-title">Statistics</div>
+            <div id="fp-stats">
+                <div id="fp-stats-title">Options</div>
                 <div id="fp-stats-options">
-                    <label for="fp-stats-options-speed" class="stats-option-label">Speed (m/s):</label>
-                    <input id="fp-stats-options-speed" class="stats-option-value" type="number" value="5.0" min="0.1">
+                    <!-- <label for="fp-stats-options-speed" class="fp-stats-option-label">Speed (m/s):</label>
+                    <input id="fp-stats-options-speed" class="fp-stats-option-value fp-stats-options-value-right" type="number" value="5.0" min="0.1"> -->
                 </div>
-                <div id="fp-stats"></div>
+                <div id="fp-stats-title">Statistics</div>
+                <div id="fp-stats-results"></div>
             </div>
+            <div id="fp-plan-title">Mission Plan</div>
             <div id="fp-plan-container">
-                <div id="fp-plan-title">Mission Plan</div>
                 <div id="fp-plan"></div>
             </div>
         </div>
@@ -129,7 +130,7 @@
         <button type="button" id="fp-draw-create-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Create Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Create Polygon</span></button>
         <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="Create Survey"><i class="fas fa-hashtag"></i><span class="fp-long-name">Create Survey</span></button>
         <!-- <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button> -->
-        <button type="button" id="fp-draw-load-file" class="fp-user-buttons"  onclick="document.getElementById('fp-draw-load-file-sub').click();" title="Load From File"><i class="fas fa-file-import"></i><span class="fp-long-name">Load From File</span></button>
+        <button type="button" id="fp-draw-load-file" class="fp-user-buttons"  onclick="document.getElementById('fp-draw-load-file-sub').click();" title="Import File"><i class="fas fa-file-import"></i><span class="fp-long-name">Import File</span></button>
         <input type="file" style="display:none;" id="fp-draw-load-file-sub" onchange="window.neuron_planner.import_features_from_files(this.files)" multiple accept="application/vnd.google-earth.kml+xml, application/vnd.google-earth.kmz, .kml, .kmz"/>
         <button type="button" id="fp-draw-export-mission" class="fp-user-buttons" onclick="window.neuron_planner.export_mission_kml()" title="Export Mission"><i class="fas fa-file-export"></i><span class="fp-long-name">Export KML</span></button>
     </div>

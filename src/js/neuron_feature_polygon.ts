@@ -21,7 +21,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #selected_corner:number;
     #on_change_internal:CallableFunction;
     #dom:HTMLDivElement;
-    #dom_corner_count:HTMLDivElement;
+    #dom_corner_count:HTMLOutputElement;
     #dom_convert_survey:HTMLButtonElement;
     #dom_export_kml:HTMLButtonElement;
     #dom_export_kmz:HTMLButtonElement;
@@ -230,10 +230,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #try_update_dom() {
-        if(this.#dom_corner_count) {
-            this.#dom_corner_count.innerHTML = '';
-            this.#dom_corner_count.appendChild(document.createTextNode(`Corners: ${this.#corners.length}`));
-        }
+        if(this.#dom_corner_count)
+            this.#dom_corner_count.value = this.#corners.length.toFixed(0);
     }
 
     #convert_to_survey() {
@@ -273,19 +271,37 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
 
-            this.#dom_corner_count = document.createElement("div");
-            this.#dom_corner_count.className = 'mission-feature-content-item';
-            this.#try_update_dom();
+            //Output items
+            const t4 = "Number of corners that define this polygon's boundaries";
+            this.#dom_corner_count = this._create_dom_output();
+            this.#dom_corner_count.title = t4;
+            c.appendChild(this._create_dom_label("Corners:", this.#dom_corner_count, t4));
             c.appendChild(this.#dom_corner_count);
 
-            this.#dom_convert_survey = this._create_dom_input_button("Survey", this.#convert_to_survey.bind(this));
-            c.appendChild(this._create_dom_labelled_input("Convert to:", this.#dom_convert_survey));
+            this.#try_update_dom();
 
+            //Input Items
+            const t0 = "Convert this polygon to a survey feature";
+            this.#dom_convert_survey = this._create_dom_input_button("Survey", this.#convert_to_survey.bind(this));
+            this.#dom_convert_survey.title = t0;
+            c.appendChild(this._create_dom_label("Convert to:", this.#dom_convert_survey, t0));
+            c.appendChild(this.#dom_convert_survey);
+
+            const t1 = "Export this polygon to a drawing document";
+            const t11 = "Export this polygon to a KML document";
+            const t12 = "Export this polygon to a KMZ document";
             this.#dom_export_kml = this._create_dom_input_button("KML", this.#export_as_kml.bind(this));
+            this.#dom_export_kml.title = t11;
+            c.appendChild(this._create_dom_label("Export as:", this.#dom_export_kml, t1));
+            c.appendChild(this.#dom_export_kml);
+
             this.#dom_export_kmz = this._create_dom_input_button("KMZ", this.#export_as_kmz.bind(this));
-            c.appendChild(this._create_dom_labelled_input("Export as:", this.#dom_export_kml));
-            c.appendChild(this._create_dom_labelled_input("Export as:", this.#dom_export_kmz, true, true));
+            this.#dom_export_kmz.title = t12;
+            c.appendChild(this._create_dom_label("Export as:", this.#dom_export_kmz, t1, true));
+            c.appendChild(this.#dom_export_kmz);
+
             // c.appendChild(this._create_dom_labelled_input("", this.#dom_export_shape.bind(this)));
+
 
             this.#dom.append(c);
         }

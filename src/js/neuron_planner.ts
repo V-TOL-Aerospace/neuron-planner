@@ -7,21 +7,17 @@ import { NeuronMap } from "./neuron_map";
 import { kml_download_from_points, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
+import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
+import { NeuronStatistics } from "./neuron_statistics";
 
-const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
-
-enum NeuronPlannerOptionKeys {
-    MISSION_SPEED = 'fp-stats-options-speed',
-}
-
-type MissionFeatureData = (
+export type MissionFeatureData = (
     NeuronFeatureBaseData |
     NeuronFeaturePointData |
     NeuronFeaturePolygonData |
     NeuronFeatureSurveyData
 );
 
-type MissionFeature = (
+export type MissionFeature = (
     NeuronFeatureBase |
     NeuronFeaturePoint |
     NeuronFeaturePolygon |
@@ -50,8 +46,6 @@ export class NeuronPlanner {
     #map:NeuronMap;
 
     #plan_element:HTMLElement;
-    #option_elements:Map<string,HTMLInputElement>;
-    #stats_element:HTMLElement;
     #mission_items:MissionFeature[];
     #on_change_callbacks:Map<number,CallableFunction>;
     #last_callback_id:number;
@@ -59,28 +53,23 @@ export class NeuronPlanner {
 
     #last_mission_altitude:number;
 
+    #plan_element_name:string;
 
-    constructor(plan_element_name:string, stats_element_name:string, map:NeuronMap = null) {
+    constructor(plan_element_name:string, map:NeuronMap = null) {
         this.#map = map;
 
-        this.#plan_element = document.getElementById(plan_element_name);
-        this.#stats_element = document.getElementById(stats_element_name);
-        this.#option_elements = new Map();
-
-        let option_element_names = [
-            NeuronPlannerOptionKeys.MISSION_SPEED,
-        ]
-        for(const n of option_element_names) {
-            const e = <HTMLInputElement>document.getElementById(n);
-            e.onchange = this.update_mission_stats.bind(this);
-            this.#option_elements.set(n, e);
-        }
+        this.#plan_element = null;
+        this.#plan_element_name = plan_element_name;
 
         this.#mission_items = [];
         this.#on_change_callbacks = new Map();
         this.#last_callback_id = 0;
         this.#last_mission_altitude = 0.0;
         this.#clearing_mission = false;
+    }
+
+    get_mission_items() {
+        return this.#mission_items;
     }
 
     get_mission_as_json() {
@@ -186,218 +175,53 @@ export class NeuronPlanner {
         this.set_mission_from_json(j);
     }
 
-    fit_mission_on_map() {
-        //Try to fit all the features on screen
-        if(this.#map) {
-            let m = this.#map.get_leaflet_map();
-            if(m) {
-                let features:L.Layer[] = [];
-                for(const item of this.#mission_items)
-                    features.push(...item.get_features());
-                if(features.length) {
-                    let fg = L.featureGroup(features);
-                    m.fitBounds(fg.getBounds(), {
-                        padding: [20, 20]
-                    });
-                }
-            }
-        }
-    }
+    async fit_mission_on_map(allow_animate:boolean=true, pad_left:number=50,pad_top:number=50,pad_right:number=50,pad_bottom:number=50) {
+        return new Promise(resolve => {
+            //Try to fit all the features on screen
+            if(this.#map) {
+                let m = this.#map.get_leaflet_map();
+                if(m) {
+                    let features:L.Layer[] = [];
+                    for(const item of this.#mission_items)
+                        features.push(...item.get_features());
 
-    update_mission_brief() {
-        const brief = this.get_mission_brief();
+                    if(features.length) {
+                        let fg = L.featureGroup(features);
+                        // let fbounds = fg.getBounds();
+                        // if(!m.getBounds().contains(fbounds) || m.getBounds().intersects(fbounds)) {
+                        const old_snap = m.options.zoomSnap;
+                        m.options.zoomSnap = 0;
+                        let cb = (ev:L.LayerEvent) => {
+                            // console.log(`Zoom ended at ${m.getZoom()}, disabling thingo~`);
+                            m.options.zoomSnap = old_snap;
+                            m.off('moveend', cb);
+                            resolve(true);
+                        }
+                        //XXX:  we use moveend here because the map always moves to
+                        //      fit bounds, but it doesn't always zoom to fit bounds
+                        m.on('moveend', cb);
+                        m.fitBounds(fg.getBounds(), {
+                            paddingTopLeft: [pad_left, pad_top],
+                            paddingBottomRight: [pad_right, pad_bottom],
+                            animate: allow_animate,
+                            // duration: 0.001
+                        });
 
-        // var tab = window.open('about:blank', '_blank');
-        // // tab.document.write(html); // where 'html' is a variable containing your HTML
-        // tab.document.head.title = "Neuron Planner Mission Brief";
-        // let title = tab.document.createElement('h1');
-        // title.appendChild(tab.document.createTextNode("Mission Brief"));
-        let dprint = document.getElementById("print-section");
-        dprint.innerHTML = '';
-        let title = document.createElement('h1');
-        title.appendChild(document.createTextNode("Mission Brief"));
-        dprint.appendChild(title);
-
-        const headings = [
-            "Step",
-            "Type",
-            "Description",
-            "Features",
-            "Transit",
-            "Duration",
-        ]
-
-        let table = document.createElement('div');
-        table.className = 'brief-table';
-        for(const h of headings) {
-            let th = document.createElement('div');
-            th.className = 'brief-table-entry brief-table-entry-header';
-            th.appendChild(document.createTextNode(h));
-            table.appendChild(th);
-        }
-
-        // for(let j = 0; j < row_step; j++) {
-        //     if(i + j >= rows.length)
-        //         break;
-
-        //     table.appendChild(rows[i + j]);
-        // }
-
-
-        let count = 0;
-        for(const item of brief) {
-            count++;
-            //XXX: Check item.type for special cases of bold tallies
-            const content = [
-                item.type ? count.toString() : "",
-                item.type,
-                item.description,
-                item.components.length ? item.components[0] : "---",
-                item.time_transit,
-                item.time_duration
-            ]
-
-            for(const h of content) {
-                let td = document.createElement('div');
-                td.appendChild(document.createTextNode(h));
-                td.className = 'brief-table-entry' + (item.type ? "" : " brief-table-entry-header");
-                table.appendChild(td);
-            }
-
-            //Handle case of multiple components (skipped if one or less)
-            for(let i = 1; i<item.components.length; i++) {
-                const content = [
-                    "",
-                    "",
-                    "",
-                    item.components[i],
-                    "",
-                    ""
-                ]
-
-                for(const h of content) {
-                    let td = document.createElement('div');
-                    td.appendChild(document.createTextNode(h));
-                    td.className = 'brief-table-entry';
-                    table.appendChild(td);
-                }
-            }
-        }
-
-        dprint.appendChild(table);
-    }
-
-    get_mission_brief() {
-        let brief:MissionBiref[] = [];
-        const steps = this.get_mission_as_points();
-        if(steps.length) {
-            //Get the flight speed and lock it to at least 0.1m/s
-            const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
-            const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
-
-            let time_takeoff = "---";
-            let takeoff_point = steps[0];
-            if(takeoff_point.altitude != 0) {
-                takeoff_point = new NeuronInterfacePoint(steps[0].latitude, steps[0].longitude, 0.0);
-                const takeoff_coords = [takeoff_point, steps[0]];
-                const takeoff_distance = NeuronPlanner.flight_distance_from_coords(takeoff_coords);
-                time_takeoff = "+" + NeuronPlanner.flight_time_from_duration(takeoff_distance/flight_speed);
-            }
-
-            let step0:MissionBiref = {
-                type: NeuronFeaturePoint.NAME,
-                description: "Take-off at location",
-                components: [takeoff_point.toString()],
-                time_duration: time_takeoff,
-                time_transit: "---",
-            };
-
-            brief.push(step0);
-
-            let point_last = null;
-            for(const item of this.#mission_items) {
-                let path = item.get_path_coords();
-
-                let time_transit = "---";
-                if(path.length && point_last) {
-                    const transit_coords = [point_last, path[0]];
-                    const transit_distance = NeuronPlanner.flight_distance_from_coords(transit_coords);
-                    time_transit = "+" + NeuronPlanner.flight_time_from_duration(transit_distance/flight_speed);
-                }
-
-                let step:MissionBiref = null;
-                //XXX: Ignore mission items with no points
-                // if(item instanceof NeuronFeatureBase) {
-                // } else
-                if(item instanceof NeuronFeaturePoint) {
-                    if(path.length) {
-                        step = {
-                            type: NeuronFeaturePoint.NAME,
-                            description: "Fly to location",
-                            components: path.map(x => x.toString()),
-                            time_duration: "---",
-                            time_transit: time_transit
-                        };
-                    }
-                // } else if(item instanceof NeuronFeaturePolygon) {
-                } else if(item instanceof NeuronFeatureSurvey) {
-                    let corners = item.get_corners_as_points();
-                    if(path.length) {
-
-                        const step_distance = NeuronPlanner.flight_distance_from_coords(path);
-                        const step_duration = "+" + NeuronPlanner.flight_time_from_duration(step_distance/flight_speed);
-                        step = {
-                            type: NeuronFeatureSurvey.NAME,
-                            description: "Survey area with bounds",
-                            components: corners.map(x => x.toString()),
-                            time_duration: step_duration,
-                            time_transit: time_transit,
-                        };
+                        // } else {
+                        //     console.log("Zoom not needed!");
+                        //     resolve(true);
+                        // }
+                    } else {
+                        // console.log("No objects to zoom too!");
+                        resolve(true);
                     }
                 } else {
-                    // console.warn("Unable to add mission item to brief");
-                    // console.warn(item);
+                    resolve(false);
                 }
-
-                if(path.length)
-                    point_last = path[path.length - 1];
-
-                if(step)
-                    brief.push(step);
+            } else {
+                resolve(false);
             }
-
-            let time_land = "---";
-            let land_point = point_last;
-            if(land_point && land_point.altitude != 0) {
-                land_point = new NeuronInterfacePoint(point_last.latitude, point_last.longitude, 0.0);
-                const land_coords = [point_last, land_point];
-                const land_distance = NeuronPlanner.flight_distance_from_coords(land_coords);
-                time_land = "+" + NeuronPlanner.flight_time_from_duration(land_distance/flight_speed);
-            }
-
-            let stepn:MissionBiref = {
-                type: NeuronFeaturePoint.NAME,
-                description: "Land at location",
-                components: [land_point ? land_point.toString() : "---"],
-                time_duration: time_land,
-                time_transit: "---"
-            };
-            brief.push(stepn);
-
-            const total_distance = NeuronPlanner.flight_distance_from_coords(steps);
-            const total_time = NeuronPlanner.flight_time_from_duration(total_distance/flight_speed);
-
-            let step_total_time:MissionBiref= {
-                type: "",
-                description: "",
-                components: [""],
-                time_transit: "Total:",
-                time_duration: total_time
-            };
-            brief.push(step_total_time);
-        }
-
-        return brief;
+        });
     }
 
     export_mission_kml() {
@@ -408,15 +232,14 @@ export class NeuronPlanner {
         this.#map = map;
     }
 
-    get_option(key:NeuronPlannerOptionKeys) {
-        return this.#option_elements.has(key) ? this.#option_elements.get(key).value : null;
-    }
-
     #run_on_mission_change(){
+        const coords = this.get_mission_as_points();
+        this.#last_mission_altitude = coords.length ?
+            coords[coords.length - 1].altitude :
+            0.0;
+
         for(const cb of this.#on_change_callbacks.values())
             cb();
-
-        this.update_mission_stats();
     }
 
     on_mission_change(cb:CallableFunction): CallableFunction {
@@ -530,7 +353,7 @@ export class NeuronPlanner {
         this.#run_on_mission_change();
     }
 
-    update_mission_plan() {
+    update() {
         this.#plan_element.innerHTML = '';
 
         // let count = 0;
@@ -582,72 +405,13 @@ export class NeuronPlanner {
         }
     }
 
-    update_mission_stats() {
-        const coords = this.get_mission_as_points();
-        this.#last_mission_altitude = coords.length ?
-            coords[coords.length - 1].altitude :
-            0.0;
-
-        let total_distance = NeuronPlanner.flight_distance_from_coords(coords);
-        const dist_km = total_distance / 1000;
-
-        //Get the flight speed and lock it to at least 0.1m/s
-        const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
-        const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
-        const total_time = total_distance/flight_speed;
-
-        this.#stats_element.innerHTML = '';
-
-        const s1 = document.createElement('div');
-        s1.appendChild(document.createTextNode(`Waypoints: ${coords.length}`));
-        this.#stats_element.appendChild(s1);
-
-        const s2 = document.createElement('div');
-        s2.appendChild(document.createTextNode(`Distance: ${(dist_km).toFixed(2)} km`));
-        this.#stats_element.appendChild(s2);
-
-        const s3 = document.createElement('div');
-        s3.appendChild(document.createTextNode(`Time: ${NeuronPlanner.flight_time_from_duration(total_time)}`));
-        this.#stats_element.appendChild(s3);
-    }
-
-    static flight_distance_from_coords(coords:NeuronInterfacePoint[]) {
-        //XXX:  Total distance calculated with the haversine method
-        //      This is a shortcut and is probably ok for small distances
-        //      but we should definitely look at a propper earth model to
-        //      do it properly in the future
-
-        let total_distance = 0.0;
-        for (var i = 0; i < coords.length - 1; i++) {
-            const p1 = coords[i];
-            const p2 = coords[i+1];
-            const u1 = p1.to_UTM();
-            const u2 = p2.to_UTM(u1.zone);
-            const d = u1.GetDistance2D(u2);
-            //Do some sneaky stuff to support altitude as well
-            const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
-            total_distance += Math.sqrt(Math.pow(d,2) + altd);
-        }
-
-        return total_distance;
-    }
-
-    static flight_time_from_duration(duration:number) {
-        const t_h = Math.floor(duration / 3600);
-        const t_m = Math.floor(duration % 3600 / 60);
-        const t_s = Math.floor(duration % 3600 % 60);
-
-        return `${zeroPad(t_h,2)}:${zeroPad(t_m,2)}:${zeroPad(t_s,2)}`;
-    }
-
     reset() {
-        this.update();
-    }
+        //Collect our DOM elements
+        this.#plan_element = document.getElementById(this.#plan_element_name);
 
-    update() {
-        this.update_mission_plan();
-        this.update_mission_stats();
-        // this.update_mission_brief();
+        //Update the planner
+        this.update();
+        this.#run_on_mission_change();
     }
 
     get_mission_as_points() {

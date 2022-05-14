@@ -8,37 +8,50 @@ import {NeuronInterfacePoint} from "./neuron_interfaces";
 import { L } from "./leaflet_interface";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 
+interface NeuronMapLayers {
+    [id: string]: L.TileLayer;
+}
 
 export class NeuronMap {
     #planner:NeuronPlanner
     #map:L.Map;
     #map_layer_control:L.Control.Layers;
+    #map_zoom_control:L.Control.Zoom;
     #path:L.Polyline;
     #map_element_name:string;
     #help_element_name:string;
+    #map_element:HTMLElement;
+    #help_element:HTMLElement;
+    #map_layers:NeuronMapLayers;
 
     constructor(map_element_name:string, help_element_name:string, planner:NeuronPlanner) {
         this.#planner = planner;
         this.#map = null;
         this.#map_layer_control = null;
+        this.#map_zoom_control = null;
+        this.#map_layers = null;
+        this.#map_element = null;
+        this.#help_element = null;
         this.#map_element_name = map_element_name;
         this.#help_element_name = help_element_name;
 
         this.#planner.on_mission_change(this.update_path.bind(this));
     }
 
-    toggle_map_help() {
-        const map = document.getElementById(this.#map_element_name);
-        const help = document.getElementById(this.#help_element_name);
+    show_map_help(show:boolean) {
 
-        if(map.style.display != 'none') {
-            map.style.display = 'none';
-            help.style.display = 'block';
+        if(show) {
+            this.#map_element.style.display = 'none';
+            this.#help_element.style.display = 'block';
         } else {
-            map.style.display = 'block';
-            help.style.display = 'none';
+            this.#map_element.style.display = 'block';
+            this.#help_element.style.display = 'none';
             this.reset();
         }
+    }
+
+    toggle_map_help() {
+        this.show_map_help(this.#map_element.style.display != 'none');
     }
 
     get_leaflet_map() {
@@ -145,7 +158,36 @@ export class NeuronMap {
         }
     }
 
+    toggle_map_tools(show:boolean) {
+
+        if(this.#map) {
+
+            if(!this.#map_zoom_control) {
+                this.#map.zoomControl;
+            }
+
+            if(!show && this.#map_zoom_control) {
+                this.#map_zoom_control.remove();
+                this.#map_zoom_control = null;
+            } else if(!this.#map_zoom_control) {
+                this.#map_zoom_control = L.control.zoom();
+                this.#map_zoom_control.addTo(this.#map);
+            }
+
+            if(!show && this.#map_layer_control) {
+                this.#map_layer_control.remove();
+                this.#map_layer_control = null;
+            } else if(!this.#map_layer_control) {
+                this.#map_layer_control = L.control.layers(this.#map_layers); //, otherLayers...
+                this.#map_layer_control.addTo(this.#map);
+            }
+        }
+    }
+
 	reset() {
+        this.#map_element = document.getElementById(this.#map_element_name);
+        this.#help_element = document.getElementById(this.#help_element_name);
+
 		if(!this.#map) {
 			const tiles_grey = L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
 				attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -164,9 +206,9 @@ export class NeuronMap {
 				accessToken: 'pk.eyJ1Ijoia3llbW9ydG9uIiwiYSI6ImNsMzJneXAybDAzcWwzY3BhNjB4OHJqMnoifQ.fue3o8Y3wWH4y_Wi50oUXw'
 			});
 
-            const layers = {
-                "Street": tiles_grey,
-                "Satellite": tiles_satellite
+            this.#map_layers = {
+                Street: tiles_grey,
+                Satellite: tiles_satellite
             };
 
 			this.#map = L.map(this.#map_element_name, {
@@ -174,10 +216,10 @@ export class NeuronMap {
                 layers: [
                     tiles_grey,
                     tiles_satellite
-                ]
+                ],
+                zoomControl: false
             });
-            this.#map_layer_control = L.control.layers(layers); //, otherLayers...
-            this.#map_layer_control.addTo(this.#map);
+            this.toggle_map_tools(true);
             this.#map.on("dblclick", this.on_double_click.bind(this));
 
             //Set an initial zoom
