@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n\n@media print {\n    /* body > * {\n        display: none;\n    } */\n    html {\n        height: auto;\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        height: 400px;\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,uBAAuB;IACvB;QACI,YAAY;IAChB;AACJ;;AAEA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,eAAe;QACf,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;;OAEG;IACH;QACI,YAAY;IAChB;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media only screen and (orientation: landscape) {\n    /* For mobile phones: */\n    #fp-map {\n        height: auto;\n    }\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        max-height: 50%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n}\n\n@media print {\n    /* body > * {\n        display: none;\n    } */\n    html {\n        height: auto;\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        height: 400px;\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5759,7 +5759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,gBAAgB;AACpB;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,aAAa;IACb,aAAa;AACjB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,eAAe;AACnB;;AAEA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options {\n    display: flex;\n    margin: 0.1em;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.2em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n}\n\n.mission-feature-content-item {\n    flex: auto;\n    display: flex;\n    margin: 0.1em;\n}\n\n.mission-feature-content-label {\n    flex: auto;\n}\n\n.mission-feature-content-value {\n    flex: auto;\n    max-width: 10em;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    overflow: scroll;\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;AACrB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,gBAAgB;AACpB;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n.stats-option-label {\n    flex: auto;\n}\n\n.stats-option-value {\n    flex: auto;\n    max-width: 5em;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    overflow: scroll;\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29518,6 +29518,371 @@ function create_popup_context_dom(popup_title = "Marker", context_items = [], ma
 
 /***/ }),
 
+/***/ "./src/js/neuron_brief.ts":
+/*!********************************!*\
+  !*** ./src/js/neuron_brief.ts ***!
+  \********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronBrief": () => (/* binding */ NeuronBrief)
+/* harmony export */ });
+/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronBrief_planner, _NeuronBrief_stats, _NeuronBrief_brief_element, _NeuronBrief_brief_element_name;
+
+
+
+
+
+class NeuronBrief {
+    constructor(planner, stats, brief_element_name) {
+        // static TYPE = 'NeuronBrief';
+        // static VERSION = 'bb92b580-d319-11ec-8818-bfb4bc4aa250';
+        _NeuronBrief_planner.set(this, void 0);
+        _NeuronBrief_stats.set(this, void 0);
+        _NeuronBrief_brief_element.set(this, void 0);
+        _NeuronBrief_brief_element_name.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronBrief_planner, planner, "f");
+        __classPrivateFieldSet(this, _NeuronBrief_stats, stats, "f");
+        __classPrivateFieldSet(this, _NeuronBrief_brief_element, null, "f");
+        __classPrivateFieldSet(this, _NeuronBrief_brief_element_name, brief_element_name, "f");
+    }
+    reset() {
+        __classPrivateFieldSet(this, _NeuronBrief_brief_element, document.getElementById(__classPrivateFieldGet(this, _NeuronBrief_brief_element_name, "f")), "f");
+    }
+    update_mission_brief() {
+        const brief = this.get_mission_brief();
+        // var tab = window.open('about:blank', '_blank');
+        // // tab.document.write(html); // where 'html' is a variable containing your HTML
+        // tab.document.head.title = "Neuron Planner Mission Brief";
+        // let title = tab.document.createElement('h1');
+        // title.appendChild(tab.document.createTextNode("Mission Brief"));
+        __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").innerHTML = '';
+        let title = document.createElement('h1');
+        title.appendChild(document.createTextNode("Mission Brief"));
+        __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(title);
+        if (brief.length) {
+            const headings = [
+                "Step",
+                "Type",
+                "Description",
+                "Features",
+                "Transit",
+                "Duration",
+            ];
+            let table = document.createElement('div');
+            table.className = 'brief-table';
+            for (const h of headings) {
+                let th = document.createElement('div');
+                th.className = 'brief-table-entry brief-table-entry-header';
+                th.appendChild(document.createTextNode(h));
+                table.appendChild(th);
+            }
+            // for(let j = 0; j < row_step; j++) {
+            //     if(i + j >= rows.length)
+            //         break;
+            //     table.appendChild(rows[i + j]);
+            // }
+            let count = 0;
+            for (const item of brief) {
+                count++;
+                //XXX: Check item.type for special cases of bold tallies
+                const content = [
+                    item.type ? count.toString() : "",
+                    item.type,
+                    item.description,
+                    item.components.length ? item.components[0] : "---",
+                    item.time_transit,
+                    item.time_duration
+                ];
+                for (const h of content) {
+                    let td = document.createElement('div');
+                    td.appendChild(document.createTextNode(h));
+                    td.className = 'brief-table-entry' + (item.type ? "" : " brief-table-entry-header");
+                    table.appendChild(td);
+                }
+                //Handle case of multiple components (skipped if one or less)
+                for (let i = 1; i < item.components.length; i++) {
+                    const content = [
+                        "",
+                        "",
+                        "",
+                        item.components[i],
+                        "",
+                        ""
+                    ];
+                    for (const h of content) {
+                        let td = document.createElement('div');
+                        td.appendChild(document.createTextNode(h));
+                        td.className = 'brief-table-entry';
+                        table.appendChild(td);
+                    }
+                }
+            }
+            __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(table);
+        }
+        else {
+            let td = document.createElement('div');
+            td.appendChild(document.createTextNode("No mission plan available."));
+            __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(td);
+        }
+    }
+    get_mission_brief() {
+        let brief = [];
+        const steps = __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_as_points();
+        if (steps.length) {
+            //Get the flight speed and lock it to at least 0.1m/s
+            const s = __classPrivateFieldGet(this, _NeuronBrief_stats, "f").get_option(_neuron_statistics__WEBPACK_IMPORTED_MODULE_3__.NeuronStatisticsOptionKeys.MISSION_SPEED);
+            const flight_speed = Math.max(s ? s : 0.0, 0.1);
+            let time_takeoff = "---";
+            let takeoff_point = steps[0];
+            if (takeoff_point.altitude != 0) {
+                takeoff_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(steps[0].latitude, steps[0].longitude, 0.0);
+                const takeoff_coords = [takeoff_point, steps[0]];
+                const takeoff_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(takeoff_coords);
+                time_takeoff = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(takeoff_distance / flight_speed);
+            }
+            let step0 = {
+                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                description: "Take-off at location",
+                components: [takeoff_point.toString()],
+                time_duration: time_takeoff,
+                time_transit: "---",
+            };
+            brief.push(step0);
+            let point_last = null;
+            for (const item of __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_items()) {
+                let path = item.get_path_coords();
+                let time_transit = "---";
+                if (path.length && point_last) {
+                    const transit_coords = [point_last, path[0]];
+                    const transit_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(transit_coords);
+                    time_transit = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(transit_distance / flight_speed);
+                }
+                let step = null;
+                //XXX: Ignore mission items with no points
+                // if(item instanceof NeuronFeatureBase) {
+                // } else
+                if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint) {
+                    if (path.length) {
+                        step = {
+                            type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                            description: "Fly to location",
+                            components: path.map(x => x.toString()),
+                            time_duration: "---",
+                            time_transit: time_transit
+                        };
+                    }
+                    // } else if(item instanceof NeuronFeaturePolygon) {
+                }
+                else if (item instanceof _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureSurvey) {
+                    let corners = item.get_corners_as_points();
+                    if (path.length) {
+                        const step_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(path);
+                        const step_duration = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(step_distance / flight_speed);
+                        step = {
+                            type: _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureSurvey.NAME,
+                            description: "Survey area with bounds",
+                            components: corners.map(x => x.toString()),
+                            time_duration: step_duration,
+                            time_transit: time_transit,
+                        };
+                    }
+                }
+                else {
+                    // console.warn("Unable to add mission item to brief");
+                    // console.warn(item);
+                }
+                if (path.length)
+                    point_last = path[path.length - 1];
+                if (step)
+                    brief.push(step);
+            }
+            let time_land = "---";
+            let land_point = point_last;
+            if (land_point && land_point.altitude != 0) {
+                land_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(point_last.latitude, point_last.longitude, 0.0);
+                const land_coords = [point_last, land_point];
+                const land_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(land_coords);
+                time_land = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(land_distance / flight_speed);
+            }
+            let stepn = {
+                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                description: "Land at location",
+                components: [land_point ? land_point.toString() : "---"],
+                time_duration: time_land,
+                time_transit: "---"
+            };
+            brief.push(stepn);
+            const total_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(steps);
+            const total_time = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(total_distance / flight_speed);
+            let step_total_time = {
+                type: "",
+                description: "",
+                components: [""],
+                time_transit: "Total:",
+                time_duration: total_time
+            };
+            brief.push(step_total_time);
+        }
+        return brief;
+    }
+}
+_NeuronBrief_planner = new WeakMap(), _NeuronBrief_stats = new WeakMap(), _NeuronBrief_brief_element = new WeakMap(), _NeuronBrief_brief_element_name = new WeakMap();
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_dom_factory.ts":
+/*!**************************************!*\
+  !*** ./src/js/neuron_dom_factory.ts ***!
+  \**************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronDOMFactory": () => (/* binding */ NeuronDOMFactory)
+/* harmony export */ });
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronDOMFactory_prefix;
+
+class NeuronDOMFactory {
+    constructor(css_prefix) {
+        _NeuronDOMFactory_prefix.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronDOMFactory_prefix, css_prefix, "f");
+    }
+    _create_dom_label(text, input, description = null, hide_label = false) {
+        // let dom = document.createElement("div");
+        // dom.className = `${this.#prefix}-content-item';
+        if (!input.id)
+            input.id = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.NeuronUID)();
+        let l = document.createElement("label");
+        l.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-label`;
+        l.htmlFor = input.id;
+        if (description)
+            l.title = description;
+        if (hide_label)
+            l.style.visibility = 'hidden';
+        l.appendChild(document.createTextNode(text));
+        // if(label_first) {
+        //     dom.appendChild(l);
+        //     dom.appendChild(input);
+        // } else {
+        //     dom.appendChild(input);
+        //     dom.appendChild(l);
+        // }
+        return l;
+    }
+    _create_dom_output(value = null) {
+        let dom = document.createElement("output");
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-right`;
+        if (value != null)
+            dom.value = value;
+        return dom;
+    }
+    _create_dom_input_file(on_change, accepts = null) {
+        let dom = document.createElement("input");
+        dom.type = "file";
+        if (accepts != null)
+            dom.accept = accepts;
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value`;
+        dom.onchange = on_change;
+        return dom;
+    }
+    _create_dom_input_button(text, on_change) {
+        let dom = document.createElement("button");
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-center`;
+        dom.onclick = on_change;
+        dom.appendChild(document.createTextNode(text));
+        return dom;
+    }
+    _create_dom_input_number(value, on_change, min = null, max = null, step = null) {
+        let dom = document.createElement("input");
+        dom.type = "number";
+        if (min != null)
+            dom.min = min.toString();
+        if (max != null)
+            dom.max = max.toString();
+        if (step != null)
+            dom.step = step.toString();
+        dom.value = value.toString();
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-right`;
+        dom.onchange = on_change;
+        return dom;
+    }
+    _create_dom_input_range(value, on_change, min, max, step = null) {
+        let dom = document.createElement("input");
+        dom.type = "range";
+        dom.min = min.toString();
+        dom.max = max.toString();
+        if (step == null)
+            step = (max - min) / 100;
+        dom.step = step.toString();
+        dom.value = value.toString();
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-right`;
+        dom.onchange = on_change;
+        return dom;
+    }
+    _create_dom_input_checkbox(checked, on_change) {
+        let dom = document.createElement("input");
+        dom.type = "checkbox";
+        dom.checked = checked;
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-right`;
+        dom.onchange = on_change;
+        return dom;
+    }
+    _create_dom_input_select(options, labels, on_change, selected_option = null) {
+        let dom = document.createElement("select");
+        if (options.length != labels.length)
+            throw new Error(`Options list does not match labels list (${options.length} != ${labels.length})`);
+        //Create and append the options
+        for (let i = 0; i < options.length; i++) {
+            let option = document.createElement("option");
+            option.value = options[i];
+            option.text = labels[i];
+            if (selected_option && selected_option == options[i])
+                option.selected = true;
+            dom.appendChild(option);
+        }
+        dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value`;
+        dom.onchange = on_change;
+        return dom;
+    }
+}
+_NeuronDOMFactory_prefix = new WeakMap();
+
+
+/***/ }),
+
 /***/ "./src/js/neuron_feature_base.ts":
 /*!***************************************!*\
   !*** ./src/js/neuron_feature_base.ts ***!
@@ -29530,7 +29895,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronFeatureBase": () => (/* binding */ NeuronFeatureBase)
 /* harmony export */ });
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
-/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_dom_factory */ "./src/js/neuron_dom_factory.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -29545,8 +29910,9 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
 var _NeuronFeatureBase_instances, _NeuronFeatureBase_map, _NeuronFeatureBase_features, _NeuronFeatureBase_on_remove, _NeuronFeatureBase_on_change, _NeuronFeatureBase_on_move, _NeuronFeatureBase_request_move;
 
 
-class NeuronFeatureBase {
+class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.NeuronDOMFactory {
     constructor(map) {
+        super('mission-feature');
         _NeuronFeatureBase_instances.add(this);
         _NeuronFeatureBase_map.set(this, void 0);
         _NeuronFeatureBase_features.set(this, void 0);
@@ -29621,95 +29987,6 @@ class NeuronFeatureBase {
         b3.appendChild(b3i);
         title.appendChild(b3);
         dom.appendChild(title);
-        return dom;
-    }
-    _create_dom_labelled_input(text, input, label_first = true, hide_label = false) {
-        let dom = document.createElement("div");
-        dom.className = 'mission-feature-content-item';
-        if (!input.id)
-            input.id = (0,_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronUID)();
-        let l = document.createElement("label");
-        l.className = 'mission-feature-content-label';
-        l.htmlFor = input.id;
-        l.appendChild(document.createTextNode(text));
-        if (hide_label)
-            l.style.visibility = 'hidden';
-        if (label_first) {
-            dom.appendChild(l);
-            dom.appendChild(input);
-        }
-        else {
-            dom.appendChild(input);
-            dom.appendChild(l);
-        }
-        return dom;
-    }
-    _create_dom_input_file(on_change, accepts = null) {
-        let dom = document.createElement("input");
-        dom.type = "file";
-        if (accepts != null)
-            dom.accept = accepts;
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-    _create_dom_input_button(text, on_change) {
-        let dom = document.createElement("button");
-        dom.className = 'mission-feature-content-value';
-        dom.onclick = on_change;
-        dom.appendChild(document.createTextNode(text));
-        return dom;
-    }
-    _create_dom_input_number(value, on_change, min = null, max = null, step = null) {
-        let dom = document.createElement("input");
-        dom.type = "number";
-        if (min != null)
-            dom.min = min.toString();
-        if (max != null)
-            dom.max = max.toString();
-        if (step != null)
-            dom.step = step.toString();
-        dom.value = value.toString();
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-    _create_dom_input_range(value, on_change, min, max, step = null) {
-        let dom = document.createElement("input");
-        dom.type = "range";
-        dom.min = min.toString();
-        dom.max = max.toString();
-        if (step == null)
-            step = (max - min) / 100;
-        dom.step = step.toString();
-        dom.value = value.toString();
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-    _create_dom_input_checkbox(checked, on_change) {
-        let dom = document.createElement("input");
-        dom.type = "checkbox";
-        dom.checked = checked;
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
-        return dom;
-    }
-    _create_dom_input_select(options, labels, on_change, selected_option = null) {
-        let dom = document.createElement("select");
-        if (options.length != labels.length)
-            throw new Error(`Options list does not match labels list (${options.length} != ${labels.length})`);
-        //Create and append the options
-        for (let i = 0; i < options.length; i++) {
-            let option = document.createElement("option");
-            option.value = options[i];
-            option.text = labels[i];
-            if (selected_option && selected_option == options[i])
-                option.selected = true;
-            dom.appendChild(option);
-        }
-        dom.className = 'mission-feature-content-value';
-        dom.onchange = on_change;
         return dom;
     }
     set_remove_callback(on_remove) {
@@ -29859,12 +30136,21 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom, this._get_dom("Waypoint"), "f");
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
+            const t0 = "Latitude location for the waypoint in decimal degrees";
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lat, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_latitude_from_dom).bind(this), -90, 90, 0.0002), "f");
-            c.appendChild(this._create_dom_labelled_input("Latitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f")));
+            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").title = t0;
+            c.appendChild(this._create_dom_label("Latitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"), t0));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"));
+            const t1 = "Longitude location for the waypoint in decimal degrees";
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lon, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_longitude_from_dom).bind(this), -180, 180, 0.0002), "f");
-            c.appendChild(this._create_dom_labelled_input("Longitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f")));
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_alt, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_altitude_from_dom).bind(this), 0), "f");
-            c.appendChild(this._create_dom_labelled_input("Altitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f")));
+            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f").title = t1;
+            c.appendChild(this._create_dom_label("Longitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f"), t1));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f"));
+            const t2 = "Altitude for the waypoint in meters relative to take-off location ground level";
+            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_alt, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_altitude_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").title = t2;
+            c.appendChild(this._create_dom_label("Altitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f"), t2));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f"));
             __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f");
@@ -30130,16 +30416,30 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom, this._get_dom("Polygon"), "f");
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
-            __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_corner_count, document.createElement("div"), "f");
-            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").className = 'mission-feature-content-item';
-            __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
+            //Output items
+            const t4 = "Number of corners that define this polygon's boundaries";
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_corner_count, this._create_dom_output(), "f");
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").title = t4;
+            c.appendChild(this._create_dom_label("Corners:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f"), t4));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f"));
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
+            //Input Items
+            const t0 = "Convert this polygon to a survey feature";
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_convert_survey, this._create_dom_input_button("Survey", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_convert_to_survey).bind(this)), "f");
-            c.appendChild(this._create_dom_labelled_input("Convert to:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_convert_survey, "f")));
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_convert_survey, "f").title = t0;
+            c.appendChild(this._create_dom_label("Convert to:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_convert_survey, "f"), t0));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_convert_survey, "f"));
+            const t1 = "Export this polygon to a drawing document";
+            const t11 = "Export this polygon to a KML document";
+            const t12 = "Export this polygon to a KMZ document";
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kml, this._create_dom_input_button("KML", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_export_as_kml).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kml, "f").title = t11;
+            c.appendChild(this._create_dom_label("Export as:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kml, "f"), t1));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kml, "f"));
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kmz, this._create_dom_input_button("KMZ", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_export_as_kmz).bind(this)), "f");
-            c.appendChild(this._create_dom_labelled_input("Export as:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kml, "f")));
-            c.appendChild(this._create_dom_labelled_input("Export as:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kmz, "f"), true, true));
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kmz, "f").title = t12;
+            c.appendChild(this._create_dom_label("Export as:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kmz, "f"), t1, true));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_export_kmz, "f"));
             // c.appendChild(this._create_dom_labelled_input("", this.#dom_export_shape.bind(this)));
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom, "f").append(c);
         }
@@ -30195,10 +30495,8 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         this.add_corner(p);
     }
 }, _NeuronFeaturePolygon_try_update_dom = function _NeuronFeaturePolygon_try_update_dom() {
-    if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f")) {
-        __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").innerHTML = '';
-        __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").appendChild(document.createTextNode(`Corners: ${__classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length}`));
-    }
+    if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f"))
+        __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f").value = __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").length.toFixed(0);
 }, _NeuronFeaturePolygon_convert_to_survey = function _NeuronFeaturePolygon_convert_to_survey() {
     if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_planner, "f")) {
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_planner, "f").replace_polygon_with_survey(this);
@@ -30402,29 +30700,35 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom, this._get_dom("Survey"), "f");
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_corner_count, document.createElement("div"), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").className = 'mission-feature-content-item';
+            //Output fields
+            const t0 = "Number of corners that define this survey's boundaries";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_corner_count, this._create_dom_output(), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").title = t0;
+            c.appendChild(this._create_dom_label("Corners:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"), t0));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_waypoint_count, document.createElement("div"), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").className = 'mission-feature-content-item';
+            const t1 = "Number of waypoints that have been calculated to perform this survey";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_waypoint_count, this._create_dom_output(), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").title = t1;
+            c.appendChild(this._create_dom_label("Waypoints:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"), t1));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"));
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_try_update_dom_stats).call(this);
+            //Input fields
+            const t2 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_waypoints, this._create_dom_input_checkbox(__classPrivateFieldGet(this, _NeuronFeatureSurvey_show_waypoints, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_show_waypoints_from_dom).bind(this)), "f");
-            c.appendChild(this._create_dom_labelled_input("Show waypoints", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"), false));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_altitude_from_dom).bind(this), 0), "f");
-            c.appendChild(this._create_dom_labelled_input("Altitude:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f")));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").title = t2;
+            c.appendChild(this._create_dom_label("Show Ends:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"), t2));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"));
+            const t3 = "Altitude for the survey in meters relative to take-off location ground level";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_altitude_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f").title = t3;
+            c.appendChild(this._create_dom_label("Altitude:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f"), t3));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f"));
+            const t4 = "Spacing between the individual lanes of the survey pattern in meters";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_distance, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_distance, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_distance_from_dom).bind(this), 0.5), "f");
-            c.appendChild(this._create_dom_labelled_input("Spacing:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f")));
-            // this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
-            // c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_angle, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_angle_from_dom).bind(this), -180, 180), "f");
-            c.appendChild(this._create_dom_labelled_input("Angle:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f")));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_angle_slider, this._create_dom_input_range(__classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_angle_slider_from_dom).bind(this), -180, 180, 5), "f");
-            c.appendChild(this._create_dom_labelled_input("Angle:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f"), true, true));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overshoot1, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot1, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_overshoot1_from_dom).bind(this)), "f");
-            c.appendChild(this._create_dom_labelled_input("Overshoot A:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f")));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overshoot2, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot2, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_overshoot2_from_dom).bind(this)), "f");
-            c.appendChild(this._create_dom_labelled_input("Overshoot B:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f")));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").title = t4;
+            c.appendChild(this._create_dom_label("Spacing:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f"), t4));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f"));
+            const t5 = "Entry location on the survey pattern relative to the most Northwestern point of the survey";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_startpos, this._create_dom_input_select([
                 _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopLeft,
                 _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopRight,
@@ -30436,11 +30740,41 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
                 "Bottom left",
                 "Bottom right"
             ], __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_startpos_from_dom).bind(this), __classPrivateFieldGet(this, _NeuronFeatureSurvey_startpos, "f").toString()), "f");
-            c.appendChild(this._create_dom_labelled_input("Entry:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f")));
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_minLaneSeparation, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_minLaneSeparation_from_dom).bind(this), 0), "f");
-            c.appendChild(this._create_dom_labelled_input("Lane Skip:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f")));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f").title = t5;
+            c.appendChild(this._create_dom_label("Entry:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f"), t5));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f"));
+            // this.#dom_spacing = this._create_dom_input_number(this.#spacing, this.#update_spacing_from_dom.bind(this), 0);
+            // c.appendChild(this._create_dom_labelled_input("Spacing:", this.#dom_spacing));
+            const t6 = "Angle of the survey pattern in degrees relative to North";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_angle, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_angle_from_dom).bind(this), -180, 180), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f").title = t6;
+            c.appendChild(this._create_dom_label("Angle:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f"), t6));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f"));
+            //XXX: Same title as dom_angle
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_angle_slider, this._create_dom_input_range(__classPrivateFieldGet(this, _NeuronFeatureSurvey_angle, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_angle_slider_from_dom).bind(this), -180, 180, 5), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f").title = t6;
+            c.appendChild(this._create_dom_label("Angle:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f"), t6, true));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f"));
+            const t7 = "Lane start waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_leadin, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_leadin, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_leadin_from_dom).bind(this), 0), "f");
-            c.appendChild(this._create_dom_labelled_input("Lead-in:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f")));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f").title = t7;
+            c.appendChild(this._create_dom_label("Lead-in:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f"), t7));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f"));
+            const t8 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for odd-numbered lanes";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overshoot1, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot1, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_overshoot1_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f").title = t8;
+            c.appendChild(this._create_dom_label("Run-out A:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f"), t8));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f"));
+            const t9 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for even-numbered lanes";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overshoot2, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_overshoot2, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_overshoot2_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f").title = t9;
+            c.appendChild(this._create_dom_label("Run-out B:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f"), t9));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f"));
+            const t10 = "Number of lanes to skip between each run across the survey area";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_minLaneSeparation, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_minLaneSeparation_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f").title = t10;
+            c.appendChild(this._create_dom_label("Lane Skip:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f"), t10));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f"));
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f");
@@ -30530,14 +30864,10 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_mappoints, [], "f");
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
 }, _NeuronFeatureSurvey_try_update_dom_stats = function _NeuronFeatureSurvey_try_update_dom_stats() {
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f")) {
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").innerHTML = '';
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").appendChild(document.createTextNode(`Corners: ${this.get_corners().length}`));
-    }
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f")) {
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").innerHTML = '';
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").appendChild(document.createTextNode(`Waypoints: ${__classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").length}`));
-    }
+    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").value = this.get_corners().length.toFixed(0);
+    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").value = this.get_path_coords().length.toFixed(0);
 }, _NeuronFeatureSurvey_update_show_waypoints_from_dom = function _NeuronFeatureSurvey_update_show_waypoints_from_dom() {
     this.update_show_waypoints(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").checked);
 }, _NeuronFeatureSurvey_update_altitude_from_dom = function _NeuronFeatureSurvey_update_altitude_from_dom() {
@@ -30585,8 +30915,7 @@ NeuronFeatureSurvey.VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NeuronInterfacePoint": () => (/* binding */ NeuronInterfacePoint),
-/* harmony export */   "NeuronUID": () => (/* binding */ NeuronUID)
+/* harmony export */   "NeuronInterfacePoint": () => (/* binding */ NeuronInterfacePoint)
 /* harmony export */ });
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _proj4_interface__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./proj4_interface */ "./src/js/proj4_interface.ts");
@@ -30598,13 +30927,6 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
 var _NeuronInterfacePoint_instances, _NeuronInterfacePoint_value_as_DMS;
 
 
-// @ts-ignore
-// import * as UTMConverter from "utm-latlng";
-let lastId = 0;
-function NeuronUID(prefix = 'nuid-') {
-    lastId++;
-    return `${prefix}${lastId}`;
-}
 class NeuronInterfacePoint {
     constructor(latitude = 0.0, longitude = 0.0, altitude = 0.0) {
         _NeuronInterfacePoint_instances.add(this);
@@ -30695,7 +31017,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_map_layer_control, _NeuronMap_path, _NeuronMap_map_element_name, _NeuronMap_help_element_name, _NeuronMap_get_poly_bounds_from_view;
+var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_map_layer_control, _NeuronMap_map_zoom_control, _NeuronMap_path, _NeuronMap_map_element_name, _NeuronMap_help_element_name, _NeuronMap_map_element, _NeuronMap_help_element, _NeuronMap_map_layers, _NeuronMap_get_poly_bounds_from_view;
 
 
 
@@ -30707,28 +31029,37 @@ class NeuronMap {
         _NeuronMap_planner.set(this, void 0);
         _NeuronMap_map.set(this, void 0);
         _NeuronMap_map_layer_control.set(this, void 0);
+        _NeuronMap_map_zoom_control.set(this, void 0);
         _NeuronMap_path.set(this, void 0);
         _NeuronMap_map_element_name.set(this, void 0);
         _NeuronMap_help_element_name.set(this, void 0);
+        _NeuronMap_map_element.set(this, void 0);
+        _NeuronMap_help_element.set(this, void 0);
+        _NeuronMap_map_layers.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronMap_planner, planner, "f");
         __classPrivateFieldSet(this, _NeuronMap_map, null, "f");
         __classPrivateFieldSet(this, _NeuronMap_map_layer_control, null, "f");
+        __classPrivateFieldSet(this, _NeuronMap_map_zoom_control, null, "f");
+        __classPrivateFieldSet(this, _NeuronMap_map_layers, null, "f");
+        __classPrivateFieldSet(this, _NeuronMap_map_element, null, "f");
+        __classPrivateFieldSet(this, _NeuronMap_help_element, null, "f");
         __classPrivateFieldSet(this, _NeuronMap_map_element_name, map_element_name, "f");
         __classPrivateFieldSet(this, _NeuronMap_help_element_name, help_element_name, "f");
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").on_mission_change(this.update_path.bind(this));
     }
-    toggle_map_help() {
-        const map = document.getElementById(__classPrivateFieldGet(this, _NeuronMap_map_element_name, "f"));
-        const help = document.getElementById(__classPrivateFieldGet(this, _NeuronMap_help_element_name, "f"));
-        if (map.style.display != 'none') {
-            map.style.display = 'none';
-            help.style.display = 'block';
+    show_map_help(show) {
+        if (show) {
+            __classPrivateFieldGet(this, _NeuronMap_map_element, "f").style.display = 'none';
+            __classPrivateFieldGet(this, _NeuronMap_help_element, "f").style.display = 'block';
         }
         else {
-            map.style.display = 'block';
-            help.style.display = 'none';
+            __classPrivateFieldGet(this, _NeuronMap_map_element, "f").style.display = 'block';
+            __classPrivateFieldGet(this, _NeuronMap_help_element, "f").style.display = 'none';
             this.reset();
         }
+    }
+    toggle_map_help() {
+        this.show_map_help(__classPrivateFieldGet(this, _NeuronMap_map_element, "f").style.display != 'none');
     }
     get_leaflet_map() {
         return __classPrivateFieldGet(this, _NeuronMap_map, "f");
@@ -30797,7 +31128,32 @@ class NeuronMap {
             __classPrivateFieldGet(this, _NeuronMap_path, "f").setLatLngs(path_points);
         }
     }
+    toggle_map_tools(show) {
+        if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
+            if (!__classPrivateFieldGet(this, _NeuronMap_map_zoom_control, "f")) {
+                __classPrivateFieldGet(this, _NeuronMap_map, "f").zoomControl;
+            }
+            if (!show && __classPrivateFieldGet(this, _NeuronMap_map_zoom_control, "f")) {
+                __classPrivateFieldGet(this, _NeuronMap_map_zoom_control, "f").remove();
+                __classPrivateFieldSet(this, _NeuronMap_map_zoom_control, null, "f");
+            }
+            else if (!__classPrivateFieldGet(this, _NeuronMap_map_zoom_control, "f")) {
+                __classPrivateFieldSet(this, _NeuronMap_map_zoom_control, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.control.zoom(), "f");
+                __classPrivateFieldGet(this, _NeuronMap_map_zoom_control, "f").addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f"));
+            }
+            if (!show && __classPrivateFieldGet(this, _NeuronMap_map_layer_control, "f")) {
+                __classPrivateFieldGet(this, _NeuronMap_map_layer_control, "f").remove();
+                __classPrivateFieldSet(this, _NeuronMap_map_layer_control, null, "f");
+            }
+            else if (!__classPrivateFieldGet(this, _NeuronMap_map_layer_control, "f")) {
+                __classPrivateFieldSet(this, _NeuronMap_map_layer_control, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.control.layers(__classPrivateFieldGet(this, _NeuronMap_map_layers, "f")), "f"); //, otherLayers...
+                __classPrivateFieldGet(this, _NeuronMap_map_layer_control, "f").addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f"));
+            }
+        }
+    }
     reset() {
+        __classPrivateFieldSet(this, _NeuronMap_map_element, document.getElementById(__classPrivateFieldGet(this, _NeuronMap_map_element_name, "f")), "f");
+        __classPrivateFieldSet(this, _NeuronMap_help_element, document.getElementById(__classPrivateFieldGet(this, _NeuronMap_help_element_name, "f")), "f");
         if (!__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
             const tiles_grey = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
                 attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
@@ -30815,19 +31171,19 @@ class NeuronMap {
                 zoomOffset: -1,
                 accessToken: 'pk.eyJ1Ijoia3llbW9ydG9uIiwiYSI6ImNsMzJneXAybDAzcWwzY3BhNjB4OHJqMnoifQ.fue3o8Y3wWH4y_Wi50oUXw'
             });
-            const layers = {
-                "Street": tiles_grey,
-                "Satellite": tiles_satellite
-            };
+            __classPrivateFieldSet(this, _NeuronMap_map_layers, {
+                Street: tiles_grey,
+                Satellite: tiles_satellite
+            }, "f");
             __classPrivateFieldSet(this, _NeuronMap_map, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.map(__classPrivateFieldGet(this, _NeuronMap_map_element_name, "f"), {
                 doubleClickZoom: false,
                 layers: [
                     tiles_grey,
                     tiles_satellite
-                ]
+                ],
+                zoomControl: false
             }), "f");
-            __classPrivateFieldSet(this, _NeuronMap_map_layer_control, _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.control.layers(layers), "f"); //, otherLayers...
-            __classPrivateFieldGet(this, _NeuronMap_map_layer_control, "f").addTo(__classPrivateFieldGet(this, _NeuronMap_map, "f"));
+            this.toggle_map_tools(true);
             __classPrivateFieldGet(this, _NeuronMap_map, "f").on("dblclick", this.on_double_click.bind(this));
             //Set an initial zoom
             this.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(-27.4771033, 153.0301422), 11);
@@ -30841,7 +31197,7 @@ class NeuronMap {
         }
     }
 }
-_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_map_layer_control = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_map_element_name = new WeakMap(), _NeuronMap_help_element_name = new WeakMap(), _NeuronMap_instances = new WeakSet(), _NeuronMap_get_poly_bounds_from_view = function _NeuronMap_get_poly_bounds_from_view() {
+_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_map_layer_control = new WeakMap(), _NeuronMap_map_zoom_control = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_map_element_name = new WeakMap(), _NeuronMap_help_element_name = new WeakMap(), _NeuronMap_map_element = new WeakMap(), _NeuronMap_help_element = new WeakMap(), _NeuronMap_map_layers = new WeakMap(), _NeuronMap_instances = new WeakSet(), _NeuronMap_get_poly_bounds_from_view = function _NeuronMap_get_poly_bounds_from_view() {
     let bounds = [];
     if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
         const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
@@ -30901,7 +31257,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_option_elements, _NeuronPlanner_stats_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_kml_loaded;
+var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_plan_element_name, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_kml_loaded;
 
 
 
@@ -30910,40 +31266,28 @@ var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _
 
 
 
-const zeroPad = (num, places) => String(num).padStart(places, '0');
-var NeuronPlannerOptionKeys;
-(function (NeuronPlannerOptionKeys) {
-    NeuronPlannerOptionKeys["MISSION_SPEED"] = "fp-stats-options-speed";
-})(NeuronPlannerOptionKeys || (NeuronPlannerOptionKeys = {}));
 class NeuronPlanner {
-    constructor(plan_element_name, stats_element_name, map = null) {
+    constructor(plan_element_name, map = null) {
         _NeuronPlanner_instances.add(this);
         _NeuronPlanner_map.set(this, void 0);
         _NeuronPlanner_plan_element.set(this, void 0);
-        _NeuronPlanner_option_elements.set(this, void 0);
-        _NeuronPlanner_stats_element.set(this, void 0);
         _NeuronPlanner_mission_items.set(this, void 0);
         _NeuronPlanner_on_change_callbacks.set(this, void 0);
         _NeuronPlanner_last_callback_id.set(this, void 0);
         _NeuronPlanner_clearing_mission.set(this, void 0);
         _NeuronPlanner_last_mission_altitude.set(this, void 0);
+        _NeuronPlanner_plan_element_name.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
-        __classPrivateFieldSet(this, _NeuronPlanner_plan_element, document.getElementById(plan_element_name), "f");
-        __classPrivateFieldSet(this, _NeuronPlanner_stats_element, document.getElementById(stats_element_name), "f");
-        __classPrivateFieldSet(this, _NeuronPlanner_option_elements, new Map(), "f");
-        let option_element_names = [
-            NeuronPlannerOptionKeys.MISSION_SPEED,
-        ];
-        for (const n of option_element_names) {
-            const e = document.getElementById(n);
-            e.onchange = this.update_mission_stats.bind(this);
-            __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").set(n, e);
-        }
+        __classPrivateFieldSet(this, _NeuronPlanner_plan_element, null, "f");
+        __classPrivateFieldSet(this, _NeuronPlanner_plan_element_name, plan_element_name, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_mission_items, [], "f");
         __classPrivateFieldSet(this, _NeuronPlanner_on_change_callbacks, new Map(), "f");
         __classPrivateFieldSet(this, _NeuronPlanner_last_callback_id, 0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_clearing_mission, false, "f");
+    }
+    get_mission_items() {
+        return __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f");
     }
     get_mission_as_json() {
         let mission_data = [];
@@ -30989,202 +31333,62 @@ class NeuronPlanner {
             this.set_mission_from_json(j);
         });
     }
-    fit_mission_on_map() {
-        //Try to fit all the features on screen
-        if (__classPrivateFieldGet(this, _NeuronPlanner_map, "f")) {
-            let m = __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map();
-            if (m) {
-                let features = [];
-                for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f"))
-                    features.push(...item.get_features());
-                if (features.length) {
-                    let fg = _leaflet_interface__WEBPACK_IMPORTED_MODULE_7__.L.featureGroup(features);
-                    m.fitBounds(fg.getBounds(), {
-                        padding: [20, 20]
-                    });
-                }
-            }
-        }
-    }
-    update_mission_brief() {
-        const brief = this.get_mission_brief();
-        // var tab = window.open('about:blank', '_blank');
-        // // tab.document.write(html); // where 'html' is a variable containing your HTML
-        // tab.document.head.title = "Neuron Planner Mission Brief";
-        // let title = tab.document.createElement('h1');
-        // title.appendChild(tab.document.createTextNode("Mission Brief"));
-        let dprint = document.getElementById("print-section");
-        dprint.innerHTML = '';
-        let title = document.createElement('h1');
-        title.appendChild(document.createTextNode("Mission Brief"));
-        dprint.appendChild(title);
-        const headings = [
-            "Step",
-            "Type",
-            "Description",
-            "Features",
-            "Transit",
-            "Duration",
-        ];
-        let table = document.createElement('div');
-        table.className = 'brief-table';
-        for (const h of headings) {
-            let th = document.createElement('div');
-            th.className = 'brief-table-entry brief-table-entry-header';
-            th.appendChild(document.createTextNode(h));
-            table.appendChild(th);
-        }
-        // for(let j = 0; j < row_step; j++) {
-        //     if(i + j >= rows.length)
-        //         break;
-        //     table.appendChild(rows[i + j]);
-        // }
-        let count = 0;
-        for (const item of brief) {
-            count++;
-            //XXX: Check item.type for special cases of bold tallies
-            const content = [
-                item.type ? count.toString() : "",
-                item.type,
-                item.description,
-                item.components.length ? item.components[0] : "---",
-                item.time_transit,
-                item.time_duration
-            ];
-            for (const h of content) {
-                let td = document.createElement('div');
-                td.appendChild(document.createTextNode(h));
-                td.className = 'brief-table-entry' + (item.type ? "" : " brief-table-entry-header");
-                table.appendChild(td);
-            }
-            //Handle case of multiple components (skipped if one or less)
-            for (let i = 1; i < item.components.length; i++) {
-                const content = [
-                    "",
-                    "",
-                    "",
-                    item.components[i],
-                    "",
-                    ""
-                ];
-                for (const h of content) {
-                    let td = document.createElement('div');
-                    td.appendChild(document.createTextNode(h));
-                    td.className = 'brief-table-entry';
-                    table.appendChild(td);
-                }
-            }
-        }
-        dprint.appendChild(table);
-    }
-    get_mission_brief() {
-        let brief = [];
-        const steps = this.get_mission_as_points();
-        if (steps.length) {
-            //Get the flight speed and lock it to at least 0.1m/s
-            const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
-            const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
-            let time_takeoff = "---";
-            let takeoff_point = steps[0];
-            if (takeoff_point.altitude != 0) {
-                takeoff_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint(steps[0].latitude, steps[0].longitude, 0.0);
-                const takeoff_coords = [takeoff_point, steps[0]];
-                const takeoff_distance = NeuronPlanner.flight_distance_from_coords(takeoff_coords);
-                time_takeoff = "+" + NeuronPlanner.flight_time_from_duration(takeoff_distance / flight_speed);
-            }
-            let step0 = {
-                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
-                description: "Take-off at location",
-                components: [takeoff_point.toString()],
-                time_duration: time_takeoff,
-                time_transit: "---",
-            };
-            brief.push(step0);
-            let point_last = null;
-            for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f")) {
-                let path = item.get_path_coords();
-                let time_transit = "---";
-                if (path.length && point_last) {
-                    const transit_coords = [point_last, path[0]];
-                    const transit_distance = NeuronPlanner.flight_distance_from_coords(transit_coords);
-                    time_transit = "+" + NeuronPlanner.flight_time_from_duration(transit_distance / flight_speed);
-                }
-                let step = null;
-                //XXX: Ignore mission items with no points
-                // if(item instanceof NeuronFeatureBase) {
-                // } else
-                if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint) {
-                    if (path.length) {
-                        step = {
-                            type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
-                            description: "Fly to location",
-                            components: path.map(x => x.toString()),
-                            time_duration: "---",
-                            time_transit: time_transit
-                        };
+    fit_mission_on_map(allow_animate = true, pad_left = 50, pad_top = 50, pad_right = 50, pad_bottom = 50) {
+        return __awaiter(this, void 0, void 0, function* () {
+            return new Promise(resolve => {
+                //Try to fit all the features on screen
+                if (__classPrivateFieldGet(this, _NeuronPlanner_map, "f")) {
+                    let m = __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map();
+                    if (m) {
+                        let features = [];
+                        for (const item of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f"))
+                            features.push(...item.get_features());
+                        if (features.length) {
+                            let fg = _leaflet_interface__WEBPACK_IMPORTED_MODULE_7__.L.featureGroup(features);
+                            // let fbounds = fg.getBounds();
+                            // if(!m.getBounds().contains(fbounds) || m.getBounds().intersects(fbounds)) {
+                            const old_snap = m.options.zoomSnap;
+                            m.options.zoomSnap = 0;
+                            let cb = (ev) => {
+                                // console.log(`Zoom ended at ${m.getZoom()}, disabling thingo~`);
+                                m.options.zoomSnap = old_snap;
+                                m.off('moveend', cb);
+                                resolve(true);
+                            };
+                            //XXX:  we use moveend here because the map always moves to
+                            //      fit bounds, but it doesn't always zoom to fit bounds
+                            m.on('moveend', cb);
+                            m.fitBounds(fg.getBounds(), {
+                                paddingTopLeft: [pad_left, pad_top],
+                                paddingBottomRight: [pad_right, pad_bottom],
+                                animate: allow_animate,
+                                // duration: 0.001
+                            });
+                            // } else {
+                            //     console.log("Zoom not needed!");
+                            //     resolve(true);
+                            // }
+                        }
+                        else {
+                            // console.log("No objects to zoom too!");
+                            resolve(true);
+                        }
                     }
-                    // } else if(item instanceof NeuronFeaturePolygon) {
-                }
-                else if (item instanceof _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey) {
-                    let corners = item.get_corners_as_points();
-                    if (path.length) {
-                        const step_distance = NeuronPlanner.flight_distance_from_coords(path);
-                        const step_duration = "+" + NeuronPlanner.flight_time_from_duration(step_distance / flight_speed);
-                        step = {
-                            type: _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__.NeuronFeatureSurvey.NAME,
-                            description: "Survey area with bounds",
-                            components: corners.map(x => x.toString()),
-                            time_duration: step_duration,
-                            time_transit: time_transit,
-                        };
+                    else {
+                        resolve(false);
                     }
                 }
                 else {
-                    // console.warn("Unable to add mission item to brief");
-                    // console.warn(item);
+                    resolve(false);
                 }
-                if (path.length)
-                    point_last = path[path.length - 1];
-                if (step)
-                    brief.push(step);
-            }
-            let time_land = "---";
-            let land_point = point_last;
-            if (land_point && land_point.altitude != 0) {
-                land_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint(point_last.latitude, point_last.longitude, 0.0);
-                const land_coords = [point_last, land_point];
-                const land_distance = NeuronPlanner.flight_distance_from_coords(land_coords);
-                time_land = "+" + NeuronPlanner.flight_time_from_duration(land_distance / flight_speed);
-            }
-            let stepn = {
-                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.NAME,
-                description: "Land at location",
-                components: [land_point ? land_point.toString() : "---"],
-                time_duration: time_land,
-                time_transit: "---"
-            };
-            brief.push(stepn);
-            const total_distance = NeuronPlanner.flight_distance_from_coords(steps);
-            const total_time = NeuronPlanner.flight_time_from_duration(total_distance / flight_speed);
-            let step_total_time = {
-                type: "",
-                description: "",
-                components: [""],
-                time_transit: "Total:",
-                time_duration: total_time
-            };
-            brief.push(step_total_time);
-        }
-        return brief;
+            });
+        });
     }
     export_mission_kml() {
         (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_points)(this.get_mission_as_points());
     }
     set_map(map) {
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
-    }
-    get_option(key) {
-        return __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").has(key) ? __classPrivateFieldGet(this, _NeuronPlanner_option_elements, "f").get(key).value : null;
     }
     on_mission_change(cb) {
         var _a, _b;
@@ -31234,7 +31438,7 @@ class NeuronPlanner {
         this.update();
         __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
     }
-    update_mission_plan() {
+    update() {
         __classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").innerHTML = '';
         // let count = 0;
         for (const i of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f")) {
@@ -31260,59 +31464,12 @@ class NeuronPlanner {
             (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
         }
     }
-    update_mission_stats() {
-        const coords = this.get_mission_as_points();
-        __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, coords.length ?
-            coords[coords.length - 1].altitude :
-            0.0, "f");
-        let total_distance = NeuronPlanner.flight_distance_from_coords(coords);
-        const dist_km = total_distance / 1000;
-        //Get the flight speed and lock it to at least 0.1m/s
-        const s = this.get_option(NeuronPlannerOptionKeys.MISSION_SPEED);
-        const flight_speed = Math.max(s ? Number.parseFloat(s) : 0.0, 0.1);
-        const total_time = total_distance / flight_speed;
-        __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").innerHTML = '';
-        const s1 = document.createElement('div');
-        s1.appendChild(document.createTextNode(`Waypoints: ${coords.length}`));
-        __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s1);
-        const s2 = document.createElement('div');
-        s2.appendChild(document.createTextNode(`Distance: ${(dist_km).toFixed(2)} km`));
-        __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s2);
-        const s3 = document.createElement('div');
-        s3.appendChild(document.createTextNode(`Time: ${NeuronPlanner.flight_time_from_duration(total_time)}`));
-        __classPrivateFieldGet(this, _NeuronPlanner_stats_element, "f").appendChild(s3);
-    }
-    static flight_distance_from_coords(coords) {
-        //XXX:  Total distance calculated with the haversine method
-        //      This is a shortcut and is probably ok for small distances
-        //      but we should definitely look at a propper earth model to
-        //      do it properly in the future
-        let total_distance = 0.0;
-        for (var i = 0; i < coords.length - 1; i++) {
-            const p1 = coords[i];
-            const p2 = coords[i + 1];
-            const u1 = p1.to_UTM();
-            const u2 = p2.to_UTM(u1.zone);
-            const d = u1.GetDistance2D(u2);
-            //Do some sneaky stuff to support altitude as well
-            const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
-            total_distance += Math.sqrt(Math.pow(d, 2) + altd);
-        }
-        return total_distance;
-    }
-    static flight_time_from_duration(duration) {
-        const t_h = Math.floor(duration / 3600);
-        const t_m = Math.floor(duration % 3600 / 60);
-        const t_s = Math.floor(duration % 3600 % 60);
-        return `${zeroPad(t_h, 2)}:${zeroPad(t_m, 2)}:${zeroPad(t_s, 2)}`;
-    }
     reset() {
+        //Collect our DOM elements
+        __classPrivateFieldSet(this, _NeuronPlanner_plan_element, document.getElementById(__classPrivateFieldGet(this, _NeuronPlanner_plan_element_name, "f")), "f");
+        //Update the planner
         this.update();
-    }
-    update() {
-        this.update_mission_plan();
-        this.update_mission_stats();
-        // this.update_mission_brief();
+        __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
     }
     get_mission_as_points() {
         let coords = [];
@@ -31321,7 +31478,7 @@ class NeuronPlanner {
         return coords;
     }
 }
-_NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_option_elements = new WeakMap(), _NeuronPlanner_stats_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_add_mission_features_from_json = function _NeuronPlanner_add_mission_features_from_json(mission_items) {
+_NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(), _NeuronPlanner_mission_items = new WeakMap(), _NeuronPlanner_on_change_callbacks = new WeakMap(), _NeuronPlanner_last_callback_id = new WeakMap(), _NeuronPlanner_clearing_mission = new WeakMap(), _NeuronPlanner_last_mission_altitude = new WeakMap(), _NeuronPlanner_plan_element_name = new WeakMap(), _NeuronPlanner_instances = new WeakSet(), _NeuronPlanner_add_mission_features_from_json = function _NeuronPlanner_add_mission_features_from_json(mission_items) {
     let features = [];
     for (const item of mission_items) {
         let feature = null;
@@ -31364,9 +31521,12 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
     }
     this.add_mission_items(features);
 }, _NeuronPlanner_run_on_mission_change = function _NeuronPlanner_run_on_mission_change() {
+    const coords = this.get_mission_as_points();
+    __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, coords.length ?
+        coords[coords.length - 1].altitude :
+        0.0, "f");
     for (const cb of __classPrivateFieldGet(this, _NeuronPlanner_on_change_callbacks, "f").values())
         cb();
-    this.update_mission_stats();
 }, _NeuronPlanner_remove_on_mission_change = function _NeuronPlanner_remove_on_mission_change(key) {
     if (__classPrivateFieldGet(this, _NeuronPlanner_on_change_callbacks, "f").has(key)) {
         __classPrivateFieldGet(this, _NeuronPlanner_on_change_callbacks, "f").delete(key);
@@ -31430,6 +31590,189 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
 };
 NeuronPlanner.TYPE = 'NeuronPlanner';
 NeuronPlanner.VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_statistics.ts":
+/*!*************************************!*\
+  !*** ./src/js/neuron_statistics.ts ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronStatistics": () => (/* binding */ NeuronStatistics),
+/* harmony export */   "NeuronStatisticsOptionKeys": () => (/* binding */ NeuronStatisticsOptionKeys)
+/* harmony export */ });
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_dom_factory */ "./src/js/neuron_dom_factory.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronStatistics_instances, _NeuronStatistics_planner, _NeuronStatistics_stat_options, _NeuronStatistics_stats_results_element, _NeuronStatistics_stats_options_element, _NeuronStatistics_stats_element_prefix, _NeuronStatistics_dom_option_speed, _NeuronStatistics_dom_stat_waypoints, _NeuronStatistics_dom_stat_distance, _NeuronStatistics_dom_stat_duration, _NeuronStatistics_get_option_id_from_key, _NeuronStatistics_update_option_speed_dom, _NeuronStatistics_gen_dom;
+
+
+//XXX: Keep in sync with NeuronStatistics #stat_options
+var NeuronStatisticsOptionKeys;
+(function (NeuronStatisticsOptionKeys) {
+    NeuronStatisticsOptionKeys[NeuronStatisticsOptionKeys["MISSION_SPEED"] = 0] = "MISSION_SPEED";
+})(NeuronStatisticsOptionKeys || (NeuronStatisticsOptionKeys = {}));
+class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.NeuronDOMFactory {
+    constructor(planner, stats_element_prefix) {
+        super(stats_element_prefix);
+        _NeuronStatistics_instances.add(this);
+        _NeuronStatistics_planner.set(this, void 0);
+        _NeuronStatistics_stat_options.set(this, void 0);
+        _NeuronStatistics_stats_results_element.set(this, void 0);
+        _NeuronStatistics_stats_options_element.set(this, void 0);
+        _NeuronStatistics_stats_element_prefix.set(this, void 0);
+        _NeuronStatistics_dom_option_speed.set(this, void 0);
+        _NeuronStatistics_dom_stat_waypoints.set(this, void 0);
+        _NeuronStatistics_dom_stat_distance.set(this, void 0);
+        _NeuronStatistics_dom_stat_duration.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronStatistics_planner, planner, "f");
+        //XXX: Keep in sync with NeuronStatisticsOptionKeys
+        __classPrivateFieldSet(this, _NeuronStatistics_stat_options, new Map(), "f");
+        __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").set(NeuronStatisticsOptionKeys.MISSION_SPEED, 5.0);
+        __classPrivateFieldSet(this, _NeuronStatistics_stats_options_element, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_stats_results_element, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_stats_element_prefix, stats_element_prefix, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_waypoints, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_distance, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_duration, null, "f");
+    }
+    // get_results_id_from_key(key:string) {
+    //     return `${this.#stats_element_prefix}-results-${key}`;
+    // }
+    get_option(key) {
+        return __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").has(key) ? __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").get(key) : null;
+    }
+    set_option(key, value) {
+        __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").set(key, value);
+        this.update();
+    }
+    update() {
+        const coords = __classPrivateFieldGet(this, _NeuronStatistics_planner, "f").get_mission_as_points();
+        // this.#last_mission_altitude = coords.length ?
+        //     coords[coords.length - 1].altitude :
+        //     0.0;
+        let total_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.flight_distance_from_coords)(coords);
+        const dist_km = total_distance / 1000;
+        //Get the flight speed and lock it to at least 0.1m/s
+        const s = this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED);
+        const flight_speed = Math.max(s ? s : 0.0, 0.1);
+        const total_time = total_distance / flight_speed;
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f").value = coords.length.toFixed(0);
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_distance, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_distance, "f").value = `${(dist_km).toFixed(2)}km`;
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f").value = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.flight_time_from_duration)(total_time);
+    }
+    reset() {
+        __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_gen_dom).call(this);
+        //Update the planner
+        this.update();
+    }
+}
+_NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stat_options = new WeakMap(), _NeuronStatistics_stats_results_element = new WeakMap(), _NeuronStatistics_stats_options_element = new WeakMap(), _NeuronStatistics_stats_element_prefix = new WeakMap(), _NeuronStatistics_dom_option_speed = new WeakMap(), _NeuronStatistics_dom_stat_waypoints = new WeakMap(), _NeuronStatistics_dom_stat_distance = new WeakMap(), _NeuronStatistics_dom_stat_duration = new WeakMap(), _NeuronStatistics_instances = new WeakSet(), _NeuronStatistics_get_option_id_from_key = function _NeuronStatistics_get_option_id_from_key(key) {
+    return `${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-options-${key}`;
+}, _NeuronStatistics_update_option_speed_dom = function _NeuronStatistics_update_option_speed_dom() {
+    if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"))
+        this.set_option(NeuronStatisticsOptionKeys.MISSION_SPEED, __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").valueAsNumber);
+}, _NeuronStatistics_gen_dom = function _NeuronStatistics_gen_dom() {
+    //Options
+    __classPrivateFieldSet(this, _NeuronStatistics_stats_options_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-options`), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").innerHTML = '';
+    const t0 = "Speed of the aircraft during regular flight in metres per second";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_speed, this._create_dom_input_number(this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED), __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_option_speed_dom).bind(this)), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").title = t0;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("Speed (m/s):", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"), t0));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"));
+    //Statistics
+    __classPrivateFieldSet(this, _NeuronStatistics_stats_results_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-results`), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").innerHTML = '';
+    const t1 = "Total number of waypoints in the mission plan";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_waypoints, this._create_dom_output(), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f").title = t1;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(this._create_dom_label("Waypoints:", __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f"), t1));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f"));
+    const t2 = "Total distance travelled during the mission plan";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_distance, this._create_dom_output(), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_distance, "f").title = t2;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(this._create_dom_label("Distance:", __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_distance, "f"), t2));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_distance, "f"));
+    const t3 = "Total time taken to fly the mission plan";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_duration, this._create_dom_output(), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f").title = t3;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(this._create_dom_label("Duration:", __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f"), t3));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f"));
+};
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_tools_common.ts":
+/*!***************************************!*\
+  !*** ./src/js/neuron_tools_common.ts ***!
+  \***************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronUID": () => (/* binding */ NeuronUID),
+/* harmony export */   "flight_distance_from_coords": () => (/* binding */ flight_distance_from_coords),
+/* harmony export */   "flight_time_from_duration": () => (/* binding */ flight_time_from_duration),
+/* harmony export */   "mm_to_px": () => (/* binding */ mm_to_px),
+/* harmony export */   "zero_pad": () => (/* binding */ zero_pad)
+/* harmony export */ });
+function zero_pad(num, places) {
+    return String(num).padStart(places, '0');
+}
+let lastId = 0;
+function NeuronUID(prefix = 'nuid-') {
+    lastId++;
+    return `${prefix}${lastId}`;
+}
+function flight_distance_from_coords(coords) {
+    //XXX:  Total distance calculated with the haversine method
+    //      This is a shortcut and is probably ok for small distances
+    //      but we should definitely look at a propper earth model to
+    //      do it properly in the future
+    let total_distance = 0.0;
+    for (var i = 0; i < coords.length - 1; i++) {
+        const p1 = coords[i];
+        const p2 = coords[i + 1];
+        const u1 = p1.to_UTM();
+        const u2 = p2.to_UTM(u1.zone);
+        const d = u1.GetDistance2D(u2);
+        //Do some sneaky stuff to support altitude as well
+        const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
+        total_distance += Math.sqrt(Math.pow(d, 2) + altd);
+    }
+    return total_distance;
+}
+function flight_time_from_duration(duration) {
+    const t_h = Math.floor(duration / 3600);
+    const t_m = Math.floor(duration % 3600 / 60);
+    const t_s = Math.floor(duration % 3600 % 60);
+    return `${zero_pad(t_h, 2)}:${zero_pad(t_m, 2)}:${zero_pad(t_s, 2)}`;
+}
+function mm_to_px(mm) {
+    const default_dpi = 96;
+    return (mm / 25.4) * window.devicePixelRatio * default_dpi;
+}
 
 
 /***/ }),
@@ -32247,14 +32590,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var proj4__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! proj4 */ "./node_modules/proj4/lib/index.js");
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 
 
-const zeroPad = (num, places) => String(num).padStart(places, '0');
+
 function EPSG_code_from_utm_zone(zone, is_south) {
     const zf = Math.floor(zone);
     if (zf <= 0 || zf > 60)
         throw new Error(`Zone out of range (${zone}|${zf})`);
-    return `EPSG:326${zeroPad(zf, 2)}${is_south ? 'S' : 'N'}`;
+    return `EPSG:326${(0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_2__.zero_pad)(zf, 2)}${is_south ? 'S' : 'N'}`;
 }
 //Predefine all of our zones
 // https://epsg.io/32600
@@ -43530,6 +43874,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
 /* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
 /* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
+/* harmony import */ var _neuron_brief__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./neuron_brief */ "./src/js/neuron_brief.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -43550,14 +43897,35 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
+
+
+
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${5}`); // without reference declared above, TypeScript will throw an error
-window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_1__.NeuronPlanner('fp-plan', 'fp-stats');
-window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_2__.NeuronMap('fp-map-interactive', 'fp-map-help', window.neuron_planner);
-window.neuron_planner.set_map(window.neuron_map);
+const element_name_plan = 'fp-plan';
+const element_nprefix_stats = 'fp-stats';
+const element_name_map = 'fp-map-interactive';
+const element_name_help = 'fp-map-help';
+const element_name_brief = 'print-section';
+const print_size_with_margin_mm = {
+    width: 190,
+    height: 277 / 2, /* 297 */
+};
+const print_size_with_margin_px = {
+    width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_12__.mm_to_px)(print_size_with_margin_mm.width),
+    height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_12__.mm_to_px)(print_size_with_margin_mm.height)
+};
+window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_1__.NeuronPlanner(element_name_plan);
+window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_2__.NeuronMap(element_name_map, element_name_help, window.neuron_planner);
+window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_13__.NeuronStatistics(window.neuron_planner, element_nprefix_stats);
+window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_11__.NeuronBrief(window.neuron_planner, window.neuron_statistics, element_name_brief);
 let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_planner.reset();
     window.neuron_map.reset();
+    window.neuron_statistics.reset();
+    window.neuron_brief.reset();
+    window.neuron_planner.set_map(window.neuron_map);
+    window.neuron_planner.on_mission_change(window.neuron_statistics.update.bind(window.neuron_statistics));
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {
         window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
@@ -43565,7 +43933,49 @@ let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
 });
 document.addEventListener('DOMContentLoaded', load_app_data, false);
 window.addEventListener('beforeprint', (event) => {
-    window.neuron_planner.update_mission_brief();
+    //Turn off the map tools
+    window.neuron_map.toggle_map_tools(false);
+    //Turn off the map tools
+    window.neuron_map.show_map_help(false);
+    //Set the size of the map, and reset it to fit the new size
+    const map = document.getElementById(element_name_map);
+    // map.style.width = `${print_size_with_margin_mm.width}mm`;
+    // map.style.height = `${print_size_with_margin_mm.height}mm`;
+    // window.neuron_map.reset();
+    //Position all visible elements on the map
+    const side_pad = 50;
+    let pl = side_pad;
+    let pr = side_pad;
+    if (print_size_with_margin_px.width > map.offsetWidth) {
+        const diff = print_size_with_margin_px.width - map.offsetWidth;
+        pr = -diff + side_pad;
+    }
+    else {
+        pr = side_pad + (map.offsetWidth - print_size_with_margin_px.width);
+    }
+    let pt = side_pad;
+    let pb = side_pad;
+    if (print_size_with_margin_px.height > map.offsetHeight) {
+        const diff = print_size_with_margin_px.height - map.offsetHeight;
+        pb = -diff + side_pad;
+    }
+    else {
+        pb = side_pad + (map.offsetHeight - print_size_with_margin_px.height);
+    }
+    window.neuron_planner.fit_mission_on_map(true, pl, pt, pr, pb);
+    //Generate the brief
+    window.neuron_brief.update_mission_brief();
+});
+window.addEventListener('afterprint', (event) => {
+    //Turn off the map tools
+    window.neuron_map.toggle_map_tools(true);
+    //Set the size of the map, and reset it to fit the new size
+    const map = document.getElementById(element_name_map);
+    map.style.width = `auto`;
+    map.style.height = `auto`;
+    window.neuron_map.reset();
+    //Position all visible elements on the map
+    // window.neuron_planner.fit_mission_on_map();
 });
 
 })();
