@@ -1,4 +1,3 @@
-import {NeuronFeatureBase} from "./neuron_feature_base";
 import {NeuronFeaturePoint} from "./neuron_feature_point";
 import {NeuronFeaturePolygon} from "./neuron_feature_polygon";
 

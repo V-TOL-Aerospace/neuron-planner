@@ -91,7 +91,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_options_element.innerHTML = '';
 
         const t0 = "Speed of the aircraft during regular flight in metres per second";
-        this.#dom_option_speed = this._create_dom_input_number(this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED), this.#update_option_speed_dom.bind(this));
+        this.#dom_option_speed = this._create_dom_input_number(this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED), this.#update_option_speed_dom.bind(this), 0.1);
         this.#dom_option_speed.title = t0;
         this.#stats_options_element.appendChild(this._create_dom_label("Speed (m/s):", this.#dom_option_speed, t0));
         this.#stats_options_element.appendChild(this.#dom_option_speed);
@@ -106,7 +106,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_results_element.appendChild(this._create_dom_label("Waypoints:", this.#dom_stat_waypoints, t1));
         this.#stats_results_element.appendChild(this.#dom_stat_waypoints);
 
-        const t2 = "Total distance travelled during the mission plan";
+        const t2 = "Total distance traveled during the mission plan";
         this.#dom_stat_distance = this._create_dom_output();
         this.#dom_stat_distance.title = t2;
         this.#stats_results_element.appendChild(this._create_dom_label("Distance:", this.#dom_stat_distance, t2));

@@ -213,7 +213,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         //Clear any queued updates
         this.#clear_update_timer();
 
-        //Force clear the survey survey imidiately for display
+        //Force clear the survey survey immediately for display
         this.#clean_waypoints();
 
         //Update survey with slight delay for processing
@@ -418,17 +418,17 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Lead-in:", this.#dom_leadin, t7));
             c.appendChild(this.#dom_leadin);
 
-            const t8 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for odd-numbered lanes";
-            this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this));
-            this.#dom_overshoot1.title = t8;
-            c.appendChild(this._create_dom_label("Run-out A:", this.#dom_overshoot1, t8));
-            c.appendChild(this.#dom_overshoot1);
-
-            const t9 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for even-numbered lanes";
+            const t9 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for odd-numbered lanes";
             this.#dom_overshoot2 = this._create_dom_input_number(this.#overshoot2, this.#update_overshoot2_from_dom.bind(this));
             this.#dom_overshoot2.title = t9;
-            c.appendChild(this._create_dom_label("Run-out B:", this.#dom_overshoot2, t9));
+            c.appendChild(this._create_dom_label("Run-out A:", this.#dom_overshoot2, t9));
             c.appendChild(this.#dom_overshoot2);
+
+            const t8 = "Lane end waypoint adjustment of the survey pattern in meters from the lane intersection point with the survey boundary for even-numbered lanes";
+            this.#dom_overshoot1 = this._create_dom_input_number(this.#overshoot1, this.#update_overshoot1_from_dom.bind(this));
+            this.#dom_overshoot1.title = t8;
+            c.appendChild(this._create_dom_label("Run-out B:", this.#dom_overshoot1, t8));
+            c.appendChild(this.#dom_overshoot1);
 
             const t10 = "Number of lanes to skip between each run across the survey area";
             this.#dom_minLaneSeparation = this._create_dom_input_number(this.#minLaneSeparation, this.#update_minLaneSeparation_from_dom.bind(this), 0);

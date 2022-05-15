@@ -14,6 +14,7 @@ import "../css/plan.css";
 import { NeuronBrief } from './neuron_brief';
 import { mm_to_px } from './neuron_tools_common';
 import { NeuronStatistics } from './neuron_statistics';
+import { NeuronHelp } from './neuron_help';
 
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
@@ -24,14 +25,19 @@ declare global {
         neuron_map: NeuronMap;
         neuron_brief: NeuronBrief;
         neuron_statistics: NeuronStatistics;
+        neuron_help: NeuronHelp;
     }
 }
 
 const element_name_plan = 'fp-plan';
-const element_nprefix_stats = 'fp-stats';
+const element_prefix_stats = 'fp-stats';
 const element_name_map = 'fp-map-interactive';
 const element_name_help = 'fp-map-help';
 const element_name_brief = 'print-section';
+const element_prefix_help = 'help';
+const elements_ignore_help = [
+    'fp-mission'
+]
 
 const print_size_with_margin_mm = {
     width: 190,   /* 210 */
@@ -44,18 +50,19 @@ const print_size_with_margin_px = {
 
 window.neuron_planner = new NeuronPlanner(element_name_plan);
 window.neuron_map = new NeuronMap(element_name_map, element_name_help, window.neuron_planner);
-window.neuron_statistics = new NeuronStatistics(window.neuron_planner, element_nprefix_stats);
+window.neuron_statistics = new NeuronStatistics(window.neuron_planner, element_prefix_stats);
 window.neuron_brief = new NeuronBrief(window.neuron_planner, window.neuron_statistics, element_name_brief);
+window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help);
 
 let load_app_data = async () => {
     window.neuron_planner.reset();
     window.neuron_map.reset();
     window.neuron_statistics.reset();
     window.neuron_brief.reset();
+    window.neuron_help.reset();
 
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update.bind(window.neuron_statistics));
-
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {

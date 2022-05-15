@@ -51,6 +51,13 @@
     max-width: 5em;
 }
 
+#fp-mission {
+    flex: auto;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
 #fp-plan-container {
     flex: auto;
     overflow: scroll;

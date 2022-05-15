@@ -77,54 +77,174 @@
         <div id="fp-map">
             <div id="fp-map-interactive" class="fp-map-sub"></div>
             <div id="fp-map-help" class="fp-map-sub">
-                <article>
+                <article id="help">
                     <header>
                         <h1>Neuron Planner Help</h1>
-                        <p>Welcome to the Neuron Planner help page. Please see below for details on how to use this application.</p>
+                        <p>Welcome to the Neuron Planner help page. Please see the details below for instructions on how to use this application.</p>
+                        <p>Hovering your mouse, or touching a section of this document will highlight the relevant interface or button within the Neuron Planner application.</p>
                     </header>
-                    <section>
+                    <section id="help-fp-manage">
                         <h2>Management Interface</h2>
-                        <p>Top row buttons...</p>
+                        <p>This set of buttons provides options for managing the current mission that is being planned.</p>
+                        <section id="help-fp-manage-load-plan">
+                            <h3>Load Flight Plan</h3>
+                            <p>Loads an existing flight plan into Neuron Planner.</p>
+                            <p>Loading a mission will not clear any previous mission items that are present. Loading a mission will add that mission to the current mission. If you wish to load an entire mission in its original state, you must first clear the current mission, then load the desired mission.</p>
+                            <p>Currently, only supported '.json' files are accepted. Older missions may be accepted and attempted to be converted if possible.</p>
+                        </section>
+                        <section id="help-fp-manage-save-plan">
+                            <h3>Save Flight Plan</h3>
+                            <p>Saves an existing flight plan to a Neuron Planner mission file.</p>
+                            <p>The mission file will be downloaded to your computer, or you may be prompted to download the mission file.</p>
+                        </section>
+                        <section id="help-fp-manage-clear-plan">
+                            <h3>Clear Flight Plan</h3>
+                            <p>Clears the current existing flight plan in Neuron Planner, removing all mission features.</p>
+                        </section>
+                        <section id="help-fp-manage-upload-plan">
+                            <h3>Upload Flight Plan</h3>
+                            <p>This tool is currently not available.</p>
+                        </section>
+                        <section id="help-fp-manage-create-brief">
+                            <h3>Create Flight Brief</h3>
+                            <p>Creates a printable flight brief based on the current mission plan in Neuron Planner.</p>
+                            <p>The flight brief contains various details that may be useful if submitting the flight plan to a reviewer or chief pilot, such as:</p>
+                            <ul>
+                                <li>A depiction of the mission plotted onto a map.</li>
+                                <li>A step-by-step listing of the mission's features.</li>
+                                <li>Key summary points of each mission feature.</li>
+                                <li>An estimated transit time from the previous mission feature to this mission feature (calculated with <a href="#help-fp-stats-settings">flight speed option</a>)</li>
+                                <li>An estimated duration required to perform the mission feature (calculated with <a href="#help-fp-stats-settings">flight speed option</a>)</li>
+                            </ul>
+                            <p>The flight brief can also be triggered by printing the page (e.g. with CTRL+P).</p>
+                            <p>Note: if the map display does not render correctly, please try to recrate the flight brief without adjusting the map. The map position process sometimes does not occur quickly enough before the flight brief is created.</p>
+                        </section>
+                        <section id="help-fp-manage-toggle-help">
+                            <h3>Toggle Help/Map</h3>
+                            <p>Toggles between this help page and the <a href="#help-fp-map-interactive">Interactive Map</a> in Neuron Planner.</p>
+                        </section>
                     </section>
-                    <section>
+                    <section id="help-fp-draw">
                         <h2>Drawing Interface</h2>
-                        <p>Bottom row buttons...</p>
-                    <section>
+                        <p>This set of buttons provides options for adding, removing, and viewing mission features for the current mission that is being planned.</p>
+                        <section id="help-fp-draw-fit-mission">
+                            <h3>Zoom To Fit</h3>
+                            <p>Zooms and pans the <a href="#help-fp-map-interactive">Interactive Map</a> to fit all of the mission features in view.</p>
+                        </section>
+                        <section id="help-fp-draw-create-waypoint">
+                            <h3>Create Waypoint</h3>
+                            <p>Creates a waypoint feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
+                            <p>See the <a href="#help-fp-mission-waypoint">Waypoint</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
+                        </section>
+                        <section id="help-fp-draw-create-polygon">
+                            <h3>Create Polygon</h3>
+                            <p>Creates a polygon feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
+                            <p>See the <a href="#help-fp-mission-polygon">Polygon</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
+                        </section>
+                        <section id="help-fp-draw-create-survey">
+                            <h3>Create Survey</h3>
+                            <p>Creates a survey feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
+                            <p>See the <a href="#help-fp-mission-survey">Survey</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
+                        </section>
+                        <section id="help-fp-draw-load-file">
+                            <h3>Import File</h3>
+                            <!-- TODO: -->
+                            <p></p>
+                        </section>
+                        <section id="help-fp-draw-export-mission">
+                            <h3>Export KML</h3>
+                            <!-- TODO: -->
+                            <p></p>
+                        </section>
+                    </section>
+                    <section id="help-fp-map-interactive">
                         <h2>Interactive Map</h2>
-                        <p>The interactive map displays the current mission plan overlayed on a world map. The map is displayed in the same location as this help text, and can be revealed again by pressing the "Toggle Map/Help" button.</p>
+                        <!-- TODO: -->
+                        <p>The interactive map displays the current mission plan overlay on a world map. The map is displayed in the same location as this help text, and can be revealed again by pressing the <a href="#help-fp-manage-toggle-help">Toggle Map/Help</a> button.</p>
                         <h3>View Controls</h3>
                         <p>The view controls allow the map view to be manipulated, moved, and zoomed. They also allow for changing the imagery that is shown.</p>
                         <h4>Panning and Movement</h4>
                         <p>move with mouse...</p>
                     </section>
-                    <section>
-                        <h2>Mission Options</h2>
-                        <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the mission statistics and mission brief windows.</p>
-                    </section>
-                    <section>
-                        <h2>Mission Statistics</h2>
-                        <p>Statistics bar...</p>
-                    </section>
-                    <section>
-                        <h2>Mission Plan</h2>
-                        <p>Mission plan list...</p>
+                    <section id="help-fp-summary">
+                        <h2>Mission Interface</h2>
+                        <!-- TODO: -->
+                        <p>Details about the mission interface panel</p>
+                        <section id="help-fp-stats-settings">
+                            <h3>Mission Options</h3>
+                            <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the mission statistics and mission brief windows.</p>
+                        </section>
+                        <section id="help-fp-stats-statistics">
+                            <h3>Mission Statistics</h3>
+                            <!-- TODO: -->
+                            <p>Statistics bar...</p>
+                        </section>
+                        <section id="help-fp-mission">
+                            <h3>Mission Plan</h3>
+                            <p>The mission plan lists all of the mission features that are part of the current mission. </p>
+                            <p>Each feature is listed in order of execution, which can be adjusted with the "up" and "down" arrows at the top-right of the specific mission feature. A mission feature can be removed by pressing the "cross" button, noting that this will immediately discard this feature.</p>
+                            <p>An identifier button is present on each feature. Pressing this button will cause the <a href="#help-fp-map-interactive">Interactive Map</a> to pan and zoom such that the specified mission feature is in the center of view.</p>
+                            <section id="help-fp-mission-waypoint">
+                                <h4>Waypoint</h4>
+                                <p>The waypoint feature acts as a simple "go-to" location for the aircraft to fly towards and pass through during the flight plan.</p>
+                                <p>It has the following properties:</p>
+                                <ul>
+                                    <li>Latitude: The latitude of the waypoint.</li>
+                                    <li>Longitude: The longitude of the waypoint.</li>
+                                    <li>Altitude: The altitude of the waypoint relative to ground level at the take-off location.</li>
+                                </ul>
+                                <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
+                            </section>
+                            <section id="help-fp-mission-polygon">
+                                <h4>Polygon</h4>
+                                <p>The polygon feature is a non-flyable mission feature that can be converted into other mission features. It could also be used as a visual aid to highlight areas of interest or other mission-relevant features.</p>
+                                <p>The polygon created on the screen can be adjusted by dragging the conner markers. Additional corner markers can be added by clicking in the shaded polygon area, where additional markers will be added "after" or "to the right" of the last corner marker the was interacted with (e.g. by clicking or dragging the marker).</p>
+                                <p>The corner markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific corner to be adjusted in order (e.g. moved "forwards" or "backwards", and also allows it to be removed entirely.</p>
+                                <p>The polygon feature can be exported to other file types, such as KML or KMZ through its <a href="#help-fp-mission">Mission Plan</a> item.</p>
+                            </section>
+                            <section id="help-fp-mission-survey">
+                                <h4>Survey</h4>
+                                <p>Creates a survey feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
+                                <p>The survey feature is a mission feature that creates a "lawn-mower' pattern for the aircraft to follow. The created pattern features a number of parallel "lanes" that the aircraft will fly up and down whilst performing the survey. This type of pattern is typically used to perform area surveys or scanning.</p>
+                                <p>The survey created on the screen can be adjusted in a similar manner to the <a href="#help-fp-mission-survey">Survey</a> feature.</p>
+                                <p>It has the following properties:</p>
+                                <ul>
+                                    <li>Number of Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
+                                    <li>Show ends: Enables the display of the waypoints that are required based on the survey settings.</li>
+                                    <li>Altitude: The altitude of the survey relative to ground level at the take-off location.</li>
+                                    <li>Spacing: Spacing between each lane of the survey.</li>
+                                    <li>Entry: The entry point that will be used as the survey start. This is aligned with the closest corresponding corner point.</li>
+                                    <li>Angle: The orientation angle of the lanes relative to North.</li>
+                                    <li>Lead-in: An additional distance that the aircraft must travel before it enters the survey pattern on each lane. This is typically used to ensure that fixed-wing aircraft are flying straight and level before they start their path down each lane.</li>
+                                    <li>Run-out A: An additional distance that the aircraft must travel as it exits the survey pattern on each lane. This is for odd numbered lanes (e.g. 1, 3, 5, ...). This is typically used to ensure that fixed-wing aircraft do not start turning before the last survey point for that lane has been taken.</li>
+                                    <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...)..</li>
+                                    <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
+                                </ul>
+                            </section>
+                        </section>
                     </section>
                 </article>
             </div>
         </div>
         <div id="fp-summary">
             <div id="fp-stats">
-                <div id="fp-stats-title">Options</div>
-                <div id="fp-stats-options">
-                    <!-- <label for="fp-stats-options-speed" class="fp-stats-option-label">Speed (m/s):</label>
-                    <input id="fp-stats-options-speed" class="fp-stats-option-value fp-stats-options-value-right" type="number" value="5.0" min="0.1"> -->
+                <div id="fp-stats-settings">
+                    <div id="fp-stats-title">Options</div>
+                    <div id="fp-stats-options">
+                        <!-- <label for="fp-stats-options-speed" class="fp-stats-option-label">Speed (m/s):</label>
+                        <input id="fp-stats-options-speed" class="fp-stats-option-value fp-stats-options-value-right" type="number" value="5.0" min="0.1"> -->
+                    </div>
                 </div>
-                <div id="fp-stats-title">Statistics</div>
-                <div id="fp-stats-results"></div>
+                <div id="fp-stats-statistics">
+                    <div id="fp-stats-title">Statistics</div>
+                    <div id="fp-stats-results"></div>
+                </div>
             </div>
-            <div id="fp-plan-title">Mission Plan</div>
-            <div id="fp-plan-container">
-                <div id="fp-plan"></div>
+            <div id="fp-mission">
+                <div id="fp-plan-title">Mission Plan</div>
+                <div id="fp-plan-container">
+                    <div id="fp-plan"></div>
+                </div>
             </div>
         </div>
     </div>

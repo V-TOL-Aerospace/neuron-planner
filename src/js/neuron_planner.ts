@@ -31,7 +31,7 @@ export interface NeuronPlannerMissionData {
     waypoints: NeuronInterfacePointData[]
 }
 
-export interface MissionBiref {
+export interface MissionBrief {
     type:string,
     description:string,
     components:string[],
@@ -187,12 +187,10 @@ export class NeuronPlanner {
 
                     if(features.length) {
                         let fg = L.featureGroup(features);
-                        // let fbounds = fg.getBounds();
-                        // if(!m.getBounds().contains(fbounds) || m.getBounds().intersects(fbounds)) {
                         const old_snap = m.options.zoomSnap;
                         m.options.zoomSnap = 0;
                         let cb = (ev:L.LayerEvent) => {
-                            // console.log(`Zoom ended at ${m.getZoom()}, disabling thingo~`);
+                            // console.log(`Zoom ended at ${m.getZoom()}, disabling thing~`);
                             m.options.zoomSnap = old_snap;
                             m.off('moveend', cb);
                             resolve(true);
@@ -380,7 +378,7 @@ export class NeuronPlanner {
 
         for(const p of result.polygons) {
             const f = new NeuronFeaturePolygon(this.#map.get_leaflet_map(), p);
-            f.set_planner(this);    //XXX: Enable functions for upscaling polygon
+            f.set_planner(this);    //XXX: Enable functions for up-scaling polygon
             features.push(f);
         }
 
