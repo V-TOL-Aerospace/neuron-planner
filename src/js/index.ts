@@ -68,6 +68,8 @@ let load_app_data = async () => {
     navigator.geolocation.getCurrentPosition( async (location) => {
         window.neuron_map.set_location(new NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
     });
+
+
 }
 
 document.addEventListener('DOMContentLoaded', load_app_data, false);
@@ -119,4 +121,3 @@ window.addEventListener('afterprint', (event) => {
     //Position all visible elements on the map
     // window.neuron_planner.fit_mission_on_map();
 });
-

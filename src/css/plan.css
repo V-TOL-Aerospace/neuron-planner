@@ -14,9 +14,22 @@
     flex-direction: column;
 }
 
-#fp-stats-title {
+.fp-stats-title {
     text-align: center;
     font-weight: bold;
+    background-color: black;
+    color: white;
+    display: flex;
+}
+
+.fp-stats-title-button {
+    flex: auto;
+    flex-grow: 0;
+    margin-left: 0.5em;
+}
+
+.fp-stats-title-label {
+    flex: auto;
 }
 
 #fp-stats-options, #fp-stats-results {

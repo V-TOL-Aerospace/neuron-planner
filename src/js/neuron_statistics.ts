@@ -12,6 +12,10 @@ export class NeuronStatistics extends NeuronDOMFactory {
     #stat_options:Map<NeuronStatisticsOptionKeys,number>;
     #stats_results_element:HTMLElement;
     #stats_options_element:HTMLElement;
+    #stats_results_hide_element:HTMLElement;
+    #stats_options_hide_element:HTMLElement;
+    #stats_results_title_element:HTMLElement;
+    #stats_options_title_element:HTMLElement;
     #stats_element_prefix:string;
 
     #dom_option_speed:HTMLInputElement;
@@ -31,6 +35,10 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
         this.#stats_options_element = null;
         this.#stats_results_element = null;
+        this.#stats_options_hide_element = null;
+        this.#stats_results_hide_element = null;
+        this.#stats_options_title_element = null;
+        this.#stats_results_title_element = null;
         this.#stats_element_prefix = stats_element_prefix;
 
         this.#dom_stat_waypoints = null;
@@ -38,9 +46,9 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#dom_stat_duration = null;
     }
 
-    #get_option_id_from_key(key:NeuronStatisticsOptionKeys) {
-        return `${this.#stats_element_prefix}-options-${key}`;
-    }
+    // #get_option_id_from_key(key:NeuronStatisticsOptionKeys) {
+    //     return `${this.#stats_element_prefix}-options-${key}`;
+    // }
 
     // get_results_id_from_key(key:string) {
     //     return `${this.#stats_element_prefix}-results-${key}`;
@@ -117,6 +125,30 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#dom_stat_duration.title = t3;
         this.#stats_results_element.appendChild(this._create_dom_label("Duration:", this.#dom_stat_duration, t3));
         this.#stats_results_element.appendChild(this.#dom_stat_duration);
+
+        //Callbacks for hide
+        this.#stats_results_title_element = document.getElementById(`${this.#stats_element_prefix}-results-title`);
+        this.#stats_options_title_element = document.getElementById(`${this.#stats_element_prefix}-options-title`);
+        this.#stats_results_hide_element = document.getElementById(`${this.#stats_element_prefix}-results-hide`);
+        this.#stats_results_hide_element.onclick = this.#toggle_hide_section.bind(
+            this,
+            this.#stats_results_title_element,
+            this.#stats_results_hide_element,
+            this.#stats_results_element
+        );
+        this.#stats_options_hide_element = document.getElementById(`${this.#stats_element_prefix}-options-hide`);
+        this.#stats_options_hide_element.onclick = this.#toggle_hide_section.bind(
+            this,
+            this.#stats_options_title_element,
+            this.#stats_options_hide_element,
+            this.#stats_options_element
+        );
+
+    }
+
+    #toggle_hide_section(title:HTMLElement, button:HTMLElement, section:HTMLElement) {
+        let els = button.childNodes[0];
+        //TODO
     }
 
     reset() {
