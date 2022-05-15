@@ -17,13 +17,13 @@ export class NeuronHelp {
     }
 
     #add_hover(trigger_element:HTMLElement, target_element:HTMLElement) {
-        console.log('mouse entered');
+        // console.log('mouse entered');
         target_element.classList.add(NeuronHelp.class_highlight);
     }
 
     #remove_hover(trigger_element:HTMLElement, target_element:HTMLElement) {
         target_element.classList.remove(NeuronHelp.class_highlight);
-        console.log('mouse exit');
+        // console.log('mouse exit');
     }
 
     #configure_linked_element_callbacks(trigger_element:HTMLElement) {
@@ -33,7 +33,7 @@ export class NeuronHelp {
             let target_element = target_element_id ? document.getElementById(target_element_id) : null;
 
             if(target_element) {
-                console.log(`Adding help hover display for ${trigger_element.id} -> ${target_element_id}`)
+                // console.log(`Adding help hover display for ${trigger_element.id} -> ${target_element_id}`)
 
                 trigger_element.addEventListener(NeuronHelp.key_hover_start, this.#add_hover.bind(this, trigger_element, target_element));
                 trigger_element.addEventListener(NeuronHelp.key_hover_end, this.#remove_hover.bind(this, trigger_element, target_element));

@@ -103,20 +103,8 @@ export async function kml_extract_features(kml_plain_text:string) {
     return ret;
 }
 
-export async function kml_download_from_points(coordinates:NeuronInterfacePoint[]) {
-    const textXML = await kml_data_from_coordinates(coordinates);
-    const file = new Blob(
-        [textXML],
-        {
-            type: type_kml
-        }
-    );
-    // `data:${data_type}${is_text ? ';charset=utf-8' : ''},` + encodeURIComponent(data)
-    download_file(get_filename('kml'), file);
-}
-
-export async function kml_download_from_polygon(coordinates:NeuronInterfacePoint[]) {
-    const textXML = await kml_data_from_polygon(coordinates);
+export async function kml_download_from_points(coordinates:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+    const textXML = await kml_data_from_neuron_data(coordinates, polygons);
     const file = new Blob(
         [textXML],
         {
@@ -126,14 +114,8 @@ export async function kml_download_from_polygon(coordinates:NeuronInterfacePoint
     download_file(get_filename('kml'), file);
 }
 
-export async function kmz_download_from_points(coordinates:NeuronInterfacePoint[]) {
-    const textXML = await kml_data_from_coordinates(coordinates);
-    const kmz = await get_kmz_from_kml_data(textXML);
-    download_file(get_filename('kmz'), kmz);
-}
-
-export async function kmz_download_from_polygon(coordinates:NeuronInterfacePoint[]) {
-    const textXML = await kml_data_from_polygon(coordinates);
+export async function kmz_download_from_neuron_data(coordinates:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+    const textXML = await kml_data_from_neuron_data(coordinates, polygons);
     const kmz = await get_kmz_from_kml_data(textXML);
     download_file(get_filename('kmz'), kmz);
 }
@@ -153,11 +135,11 @@ async function get_kmz_from_kml_data(data:string) {
     return blobWriter.getData();
 }
 
-export async function kml_data_from_coordinates(coordinates:NeuronInterfacePoint[]) {
+export async function kml_data_from_neuron_data(coordinates:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
     let xmlDocument = document.implementation.createDocument("", "", null);
     const kmlNode = xmlDocument.createElement('kml');
     kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
-    const  documentNode = xmlDocument.createElement('Document');
+    const documentNode = xmlDocument.createElement('Document');
     kmlNode.appendChild(documentNode);
     xmlDocument.appendChild(kmlNode);
     for(let i=0; i<coordinates.length; i++) {
@@ -165,18 +147,9 @@ export async function kml_data_from_coordinates(coordinates:NeuronInterfacePoint
             kml_create_point_node(xmlDocument, i.toString(), coordinates[i].latitude, coordinates[i].longitude)
         );
     }
-
-    return kml_document_to_string(xmlDocument);
-}
-
-export async function kml_data_from_polygon(coordinates:NeuronInterfacePoint[]) {
-    let xmlDocument = document.implementation.createDocument("", "", null);
-    const kmlNode = xmlDocument.createElement('kml');
-    kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
-    const documentNode = xmlDocument.createElement('Document');
-    kmlNode.appendChild(documentNode);
-    xmlDocument.appendChild(kmlNode);
-    documentNode.appendChild(kml_create_polygon_node(xmlDocument, "path", coordinates));
+    for(let i=0; i<polygons.length; i++) {
+        documentNode.appendChild(kml_create_polygon_node(xmlDocument, `path-${i}`, polygons[i]));
+    }
     return kml_document_to_string(xmlDocument);
 }
 

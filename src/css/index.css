@@ -170,6 +170,25 @@ h5:before{
     .leaflet-control-attribution {
         display: none;
     }
+
+    #fp-summary > * {
+        font-size: x-small;
+    }
+}
+
+@media only screen and (max-height: 320px) {
+    #fp-map {
+        display: none;
+    }
+
+    #fp-summary {
+        height: 100%;
+        width: 100%;
+    }
+
+    #fp-summary > * {
+        font-size: x-small;
+    }
 }
 
 @media print {

@@ -148,13 +148,28 @@
                         </section>
                         <section id="help-fp-draw-load-file">
                             <h3>Import File</h3>
-                            <!-- TODO: -->
-                            <p></p>
+                            <p>Imports mission features from supported files and adds them to the mission plan.</p>
+                            <p>The currently supported features and files are:</p>
+                            <ul>
+                                <li>KML/KMZ:</li>
+                                <ul>
+                                    <li>Waypoints: imported from Placemark/Point objects.</li>
+                                    <li>Polygons: imported from Placemark/Polygon/LinearRing objects.</li>
+                                </ul>
+                            </ul>
+                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Flight Plan</a> and <a href="#help-fp-manage-load-plan">Load Flight Plan</a> tools with this application where possible.</p>
                         </section>
                         <section id="help-fp-draw-export-mission">
                             <h3>Export KML</h3>
-                            <!-- TODO: -->
-                            <p></p>
+                            <p>Exports supported mission features to a KML file.</p>
+                            <p>The KML file will be downloaded to your computer, or you may be prompted to download the mission file.</p>
+                            <p>The currently supported features are:</p>
+                            <ul>
+                                <li>Waypoints: exported as Placemark/Point objects.</li>
+                                <li>Polygons: exported as Placemark/Polygon/LinearRing objects.</li>
+                                <li>Surveys: converted to waypoints and exported as Placemark/Point objects.</li>
+                            </ul>
+                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Flight Plan</a> and <a href="#help-fp-manage-load-plan">Load Flight Plan</a> tools with this application where possible.</p>
                         </section>
                     </section>
                     <section id="help-fp-map-interactive">
@@ -168,16 +183,25 @@
                     </section>
                     <section id="help-fp-summary">
                         <h2>Mission Interface</h2>
-                        <!-- TODO: -->
-                        <p>Details about the mission interface panel</p>
+                        <p>The mission interface is used to manage the current mission plan, including current mission settings and features, and to review mission statistics.</p>
                         <section id="help-fp-stats-settings">
                             <h3>Mission Options</h3>
-                            <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the mission statistics and mission brief windows.</p>
+                            <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats-statistics">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Flight Brief</a> interfaces.</p>
+                            <p>These options include:</p>
+                            <ul>
+                                <li>Speed: aircraft cruise airspeed in meters per second </li>
+                            </ul>
                         </section>
                         <section id="help-fp-stats-statistics">
                             <h3>Mission Statistics</h3>
-                            <!-- TODO: -->
-                            <p>Statistics bar...</p>
+                            <p>The mission statistics interface lists various statistics about the current mission.</p>
+                            <p>These statistics include:</p>
+                            <ul>
+                                <li>Waypoints: the total number of waypoints required to perform the mission.</li>
+                                <li>Distance: the total distance in kilometers that will be required to be flown during the mission.</li>
+                                <li>Duration: the estimated duration of the mission based on mission distance and aircraft cruise speed.</li>
+                            </ul>
+                            <p>Note: these statistics do not factor in components such as wind speed, wind direction, flight maneuvers, stopping at waypoints, or any other aircraft flight characteristics. As such, it is recommended that these statistics are used as rough estimates only.</p>
                         </section>
                         <section id="help-fp-mission">
                             <h3>Mission Plan</h3>
@@ -209,7 +233,7 @@
                                 <p>The survey created on the screen can be adjusted in a similar manner to the <a href="#help-fp-mission-survey">Survey</a> feature.</p>
                                 <p>It has the following properties:</p>
                                 <ul>
-                                    <li>Number of Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
+                                    <li>Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
                                     <li>Show ends: Enables the display of the waypoints that are required based on the survey settings.</li>
                                     <li>Altitude: The altitude of the survey relative to ground level at the take-off location.</li>
                                     <li>Spacing: Spacing between each lane of the survey.</li>
@@ -217,7 +241,7 @@
                                     <li>Angle: The orientation angle of the lanes relative to North.</li>
                                     <li>Lead-in: An additional distance that the aircraft must travel before it enters the survey pattern on each lane. This is typically used to ensure that fixed-wing aircraft are flying straight and level before they start their path down each lane.</li>
                                     <li>Run-out A: An additional distance that the aircraft must travel as it exits the survey pattern on each lane. This is for odd numbered lanes (e.g. 1, 3, 5, ...). This is typically used to ensure that fixed-wing aircraft do not start turning before the last survey point for that lane has been taken.</li>
-                                    <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...)..</li>
+                                    <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...).</li>
                                     <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
                                 </ul>
                             </section>

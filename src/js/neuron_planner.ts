@@ -4,11 +4,9 @@ import { NeuronFeaturePolygon, NeuronFeaturePolygonData } from "./neuron_feature
 import { NeuronFeatureSurvey, NeuronFeatureSurveyData } from "./neuron_feature_survey";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { NeuronMap } from "./neuron_map";
-import { kml_download_from_points, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
+import { kmz_download_from_neuron_data, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
-import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
-import { NeuronStatistics } from "./neuron_statistics";
 
 export type MissionFeatureData = (
     NeuronFeatureBaseData |
@@ -223,7 +221,14 @@ export class NeuronPlanner {
     }
 
     export_mission_kml() {
-        kml_download_from_points(this.get_mission_as_points());
+        let polygons:NeuronInterfacePoint[][] = [];
+        for(const i of this.#mission_items) {
+            if(i instanceof NeuronFeaturePolygon) {
+                polygons.push(i.get_corners_as_points());
+            }
+        }
+
+        kmz_download_from_neuron_data(this.get_mission_as_points(), polygons);
     }
 
     set_map(map:NeuronMap) {
