@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG;;AAEA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 320px) {\n    #fp-map {\n        display: none;\n    }\n\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG;;AAEA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 320px) {\n    #fp-map {\n        display: none;\n    }\n\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30505,9 +30505,9 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
         console.warn("Planner not set, cannot convert polygon feature!");
     }
 }, _NeuronFeaturePolygon_export_as_kml = function _NeuronFeaturePolygon_export_as_kml() {
-    (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kml_download_from_polygon)(this.get_corners_as_points());
+    (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_neuron_data)([], [this.get_corners_as_points()]);
 }, _NeuronFeaturePolygon_export_as_kmz = function _NeuronFeaturePolygon_export_as_kmz() {
-    (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_polygon)(this.get_corners_as_points());
+    (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_neuron_data)([], [this.get_corners_as_points()]);
 };
 NeuronFeaturePolygon.NAME = "[POLYGON FEATURE]";
 NeuronFeaturePolygon.TYPE = "NeuronFeaturePolygon";
@@ -30958,18 +30958,18 @@ class NeuronHelp {
     }
 }
 _NeuronHelp_help_element_name = new WeakMap(), _NeuronHelp_help_element_ignore_subs = new WeakMap(), _NeuronHelp_controller = new WeakMap(), _NeuronHelp_instances = new WeakSet(), _NeuronHelp_add_hover = function _NeuronHelp_add_hover(trigger_element, target_element) {
-    console.log('mouse entered');
+    // console.log('mouse entered');
     target_element.classList.add(NeuronHelp.class_highlight);
 }, _NeuronHelp_remove_hover = function _NeuronHelp_remove_hover(trigger_element, target_element) {
     target_element.classList.remove(NeuronHelp.class_highlight);
-    console.log('mouse exit');
+    // console.log('mouse exit');
 }, _NeuronHelp_configure_linked_element_callbacks = function _NeuronHelp_configure_linked_element_callbacks(trigger_element) {
     if (trigger_element.id) {
         const target_element_ids = trigger_element.id.split(__classPrivateFieldGet(this, _NeuronHelp_help_element_name, "f") + '-');
         const target_element_id = target_element_ids.length > 1 ? target_element_ids[1] : null;
         let target_element = target_element_id ? document.getElementById(target_element_id) : null;
         if (target_element) {
-            console.log(`Adding help hover display for ${trigger_element.id} -> ${target_element_id}`);
+            // console.log(`Adding help hover display for ${trigger_element.id} -> ${target_element_id}`)
             trigger_element.addEventListener(NeuronHelp.key_hover_start, __classPrivateFieldGet(this, _NeuronHelp_instances, "m", _NeuronHelp_add_hover).bind(this, trigger_element, target_element));
             trigger_element.addEventListener(NeuronHelp.key_hover_end, __classPrivateFieldGet(this, _NeuronHelp_instances, "m", _NeuronHelp_remove_hover).bind(this, trigger_element, target_element));
         }
@@ -31465,7 +31465,13 @@ class NeuronPlanner {
         });
     }
     export_mission_kml() {
-        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_points)(this.get_mission_as_points());
+        let polygons = [];
+        for (const i of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f")) {
+            if (i instanceof _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon) {
+                polygons.push(i.get_corners_as_points());
+            }
+        }
+        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kmz_download_from_neuron_data)(this.get_mission_as_points(), polygons);
     }
     set_map(map) {
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
@@ -31906,15 +31912,12 @@ function download_file(filename, data) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "kml_data_from_coordinates": () => (/* binding */ kml_data_from_coordinates),
-/* harmony export */   "kml_data_from_polygon": () => (/* binding */ kml_data_from_polygon),
+/* harmony export */   "kml_data_from_neuron_data": () => (/* binding */ kml_data_from_neuron_data),
 /* harmony export */   "kml_document_to_string": () => (/* binding */ kml_document_to_string),
 /* harmony export */   "kml_download_from_points": () => (/* binding */ kml_download_from_points),
-/* harmony export */   "kml_download_from_polygon": () => (/* binding */ kml_download_from_polygon),
 /* harmony export */   "kml_extract_features": () => (/* binding */ kml_extract_features),
 /* harmony export */   "kml_load_file": () => (/* binding */ kml_load_file),
-/* harmony export */   "kmz_download_from_points": () => (/* binding */ kmz_download_from_points),
-/* harmony export */   "kmz_download_from_polygon": () => (/* binding */ kmz_download_from_polygon)
+/* harmony export */   "kmz_download_from_neuron_data": () => (/* binding */ kmz_download_from_neuron_data)
 /* harmony export */ });
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_tools_files */ "./src/js/neuron_tools_files.ts");
@@ -32010,35 +32013,18 @@ function kml_extract_features(kml_plain_text) {
         return ret;
     });
 }
-function kml_download_from_points(coordinates) {
+function kml_download_from_points(coordinates, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
-        const textXML = yield kml_data_from_coordinates(coordinates);
-        const file = new Blob([textXML], {
-            type: type_kml
-        });
-        // `data:${data_type}${is_text ? ';charset=utf-8' : ''},` + encodeURIComponent(data)
-        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kml'), file);
-    });
-}
-function kml_download_from_polygon(coordinates) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const textXML = yield kml_data_from_polygon(coordinates);
+        const textXML = yield kml_data_from_neuron_data(coordinates, polygons);
         const file = new Blob([textXML], {
             type: type_kml
         });
         (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kml'), file);
     });
 }
-function kmz_download_from_points(coordinates) {
+function kmz_download_from_neuron_data(coordinates, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
-        const textXML = yield kml_data_from_coordinates(coordinates);
-        const kmz = yield get_kmz_from_kml_data(textXML);
-        (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kmz'), kmz);
-    });
-}
-function kmz_download_from_polygon(coordinates) {
-    return __awaiter(this, void 0, void 0, function* () {
-        const textXML = yield kml_data_from_polygon(coordinates);
+        const textXML = yield kml_data_from_neuron_data(coordinates, polygons);
         const kmz = yield get_kmz_from_kml_data(textXML);
         (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kmz'), kmz);
     });
@@ -32056,7 +32042,7 @@ function get_kmz_from_kml_data(data) {
         return blobWriter.getData();
     });
 }
-function kml_data_from_coordinates(coordinates) {
+function kml_data_from_neuron_data(coordinates, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
         let xmlDocument = document.implementation.createDocument("", "", null);
         const kmlNode = xmlDocument.createElement('kml');
@@ -32067,18 +32053,9 @@ function kml_data_from_coordinates(coordinates) {
         for (let i = 0; i < coordinates.length; i++) {
             documentNode.appendChild(kml_create_point_node(xmlDocument, i.toString(), coordinates[i].latitude, coordinates[i].longitude));
         }
-        return kml_document_to_string(xmlDocument);
-    });
-}
-function kml_data_from_polygon(coordinates) {
-    return __awaiter(this, void 0, void 0, function* () {
-        let xmlDocument = document.implementation.createDocument("", "", null);
-        const kmlNode = xmlDocument.createElement('kml');
-        kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
-        const documentNode = xmlDocument.createElement('Document');
-        kmlNode.appendChild(documentNode);
-        xmlDocument.appendChild(kmlNode);
-        documentNode.appendChild(kml_create_polygon_node(xmlDocument, "path", coordinates));
+        for (let i = 0; i < polygons.length; i++) {
+            documentNode.appendChild(kml_create_polygon_node(xmlDocument, `path-${i}`, polygons[i]));
+        }
         return kml_document_to_string(xmlDocument);
     });
 }
@@ -43787,7 +43764,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let baseURL;
 try {
-	baseURL = "file:///home/pryre/Workspace/github/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
+	baseURL = "file:///home/pryre/Workspace/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
 } catch (error) {
 	// ignored
 }
