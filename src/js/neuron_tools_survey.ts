@@ -10,6 +10,75 @@ export enum StartPosition {
     // Point = 5
 }
 
+export class Camera {
+    name:string;
+    focal_length:number;    //mm
+    sensor_width:number;    //mm
+    sensor_height:number;   //mm
+    image_width:number;     //px
+    image_height:number;    //px
+
+    constructor(name:string="Custom", focal_length:number = 0.0, sensor_width:number = 0.0, sensor_height:number = 0.0, image_width:number = 0, image_height:number = 0) {
+        this.name = name;
+        this.focal_length = focal_length;
+        this.sensor_width = sensor_width;
+        this.sensor_height = sensor_height;
+        this.image_width = image_width;
+        this.image_height = image_height;
+    }
+
+    copy() {
+        return new Camera(
+            this.name,
+            this.focal_length,
+            this.sensor_width,
+            this.sensor_height,
+            this.image_width,
+            this.image_height
+        );
+    }
+
+    is_valid() {
+        return (this.focal_length > 0) &&
+               (this.sensor_width > 0) &&
+               (this.sensor_height > 0) &&
+               (this.image_width > 0) &&
+               (this.image_height > 0);
+    }
+
+    get_ground_resolution(distance:number) {
+        let res:number = null;
+
+        if(this.is_valid() && distance > 0) {
+            //XXX: Assume square pixels
+            const projection = this.get_projected_size(distance);
+            if(projection) {
+                res = projection.Width() / this.image_width;
+            }
+        }
+
+        return res;
+    }
+
+    get_projected_size(distance:number) {
+        let proj:Rect = null;
+
+        if(this.is_valid() && distance > 0) {
+            //Calculate the half field of views
+            const fov2_h = Math.atan2(this.sensor_height, 2*this.focal_length);
+            const fov2_w = Math.atan2(this.sensor_width, 2*this.focal_length);
+
+            //Calculate the half distances
+            const h2 = Math.tan(fov2_h) * distance;
+            const w2 = Math.tan(fov2_w) * distance;
+
+            proj = new Rect(-w2, -h2, 2*w2, 2*h2);
+        }
+
+        return proj;
+    }
+}
+
 export class Rect
 {
     Top:number;

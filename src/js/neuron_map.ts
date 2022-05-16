@@ -145,7 +145,7 @@ export class NeuronMap {
 
         if(this.#map && bounds.length) {
             const p = new NeuronFeatureSurvey(this.#map, bounds);
-            p.update_altitude(this.#planner.get_last_item_altitude());
+            p.set_altitude(this.#planner.get_last_item_altitude());
             this.#planner.add_mission_item(p);
         }
     }

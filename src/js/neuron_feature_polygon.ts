@@ -41,7 +41,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.#corners = [];
         if(corners.length) {
             if(corners.length == 1)
-                console.warn("Insufficient number of corners to define polygon! May be removed imidiately");
+                console.warn("Insufficient number of corners to define polygon! May be removed immediately");
 
             this.add_corners(corners);
             //XXX: This also calls update_polygon();
