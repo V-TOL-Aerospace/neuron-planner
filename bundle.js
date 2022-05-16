@@ -30272,7 +30272,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
             if (corners.length == 1)
-                console.warn("Insufficient number of corners to define polygon! May be removed imidiately");
+                console.warn("Insufficient number of corners to define polygon! May be removed immediately");
             this.add_corners(corners);
             //XXX: This also calls update_polygon();
         }
@@ -30542,7 +30542,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom;
+var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_camera, _NeuronFeatureSurvey_sidelap, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_ground_resolution, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_dom_camera_name, _NeuronFeatureSurvey_dom_camera_focal_length, _NeuronFeatureSurvey_dom_camera_image_width, _NeuronFeatureSurvey_dom_camera_image_height, _NeuronFeatureSurvey_dom_camera_sensor_width, _NeuronFeatureSurvey_dom_camera_sensor_height, _NeuronFeatureSurvey_dom_sidelap, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom, _NeuronFeatureSurvey_set_camera_selector, _NeuronFeatureSurvey_update_camera_from_dom, _NeuronFeatureSurvey_update_camera_focal_length_from_dom, _NeuronFeatureSurvey_update_camera_sensor_width_from_dom, _NeuronFeatureSurvey_update_camera_sensor_height_from_dom, _NeuronFeatureSurvey_update_camera_image_width_from_dom, _NeuronFeatureSurvey_update_camera_image_height_from_dom, _NeuronFeatureSurvey_update_sidelap_from_dom, _NeuronFeatureSurvey_calculate_and_update_camera_variables;
 
 
 
@@ -30562,10 +30562,13 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_startpos.set(this, void 0);
         _NeuronFeatureSurvey_minLaneSeparation.set(this, void 0);
         _NeuronFeatureSurvey_leadin.set(this, void 0);
+        _NeuronFeatureSurvey_camera.set(this, void 0);
+        _NeuronFeatureSurvey_sidelap.set(this, void 0);
         _NeuronFeatureSurvey_show_waypoints.set(this, void 0);
         _NeuronFeatureSurvey_dom.set(this, void 0);
         _NeuronFeatureSurvey_dom_corner_count.set(this, void 0);
         _NeuronFeatureSurvey_dom_waypoint_count.set(this, void 0);
+        _NeuronFeatureSurvey_dom_ground_resolution.set(this, void 0);
         _NeuronFeatureSurvey_dom_show_waypoints.set(this, void 0);
         _NeuronFeatureSurvey_dom_altitude.set(this, void 0);
         _NeuronFeatureSurvey_dom_distance.set(this, void 0);
@@ -30577,6 +30580,13 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_dom_startpos.set(this, void 0);
         _NeuronFeatureSurvey_dom_minLaneSeparation.set(this, void 0);
         _NeuronFeatureSurvey_dom_leadin.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_name.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_focal_length.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_image_width.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_image_height.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_sensor_width.set(this, void 0);
+        _NeuronFeatureSurvey_dom_camera_sensor_height.set(this, void 0);
+        _NeuronFeatureSurvey_dom_sidelap.set(this, void 0);
         _NeuronFeatureSurvey_update_timer.set(this, void 0);
         _NeuronFeatureSurvey_update_interval.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
@@ -30586,6 +30596,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_corner_count, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_waypoint_count, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_ground_resolution, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_waypoints, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_distance, null, "f");
@@ -30597,6 +30608,13 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_startpos, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_leadin, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_name, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_focal_length, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_width, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_height, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_sidelap, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_show_waypoints, show_waypoints, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_altitude, 100, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_distance, 50, "f");
@@ -30607,6 +30625,8 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_startpos, _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopLeft, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_minLaneSeparation, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_leadin, 0.0, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_camera, NeuronFeatureSurvey.camera_preset_value_custom, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_sidelap, 70.0, "f");
         this._set_on_change_internal(this.update_survey.bind(this));
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey__update_survey).call(this, false);
     }
@@ -30614,39 +30634,40 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_show_waypoints, show_waypoints, "f");
         this.update_survey();
     }
-    update_altitude(altitude) {
+    set_altitude(altitude) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_altitude, altitude, "f");
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
         this.update_survey();
     }
-    update_distance(distance) {
+    set_distance(distance) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_distance, distance, "f");
         this.update_survey();
     }
-    update_spacing(spacing) {
+    set_spacing(spacing) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_spacing, spacing, "f");
         this.update_survey();
     }
-    update_angle(angle) {
+    set_angle(angle) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_angle, angle, "f");
         this.update_survey();
     }
-    update_overshoot1(overshoot1) {
+    set_overshoot1(overshoot1) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_overshoot1, overshoot1, "f");
         this.update_survey();
     }
-    update_overshoot2(overshoot2) {
+    set_overshoot2(overshoot2) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_overshoot2, overshoot2, "f");
         this.update_survey();
     }
-    update_startpos(startpos) {
+    set_startpos(startpos) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_startpos, startpos, "f");
         this.update_survey();
     }
-    update_minLaneSeparation(minLaneSeparation) {
+    set_minLaneSeparation(minLaneSeparation) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_minLaneSeparation, minLaneSeparation, "f");
         this.update_survey();
     }
-    update_leadin(leadin) {
+    set_leadin(leadin) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_leadin, leadin, "f");
         this.update_survey();
     }
@@ -30693,7 +30714,8 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         super.remove_feature();
     }
     get_path_coords() {
-        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f");
+        const corners = this.get_corners_as_points();
+        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").length ? __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f") : (corners.length ? [corners[0]] : []);
     }
     get_dom() {
         if (!__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f")) {
@@ -30701,16 +30723,21 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             let c = document.createElement("div");
             c.className = 'mission-feature-content';
             //Output fields
-            const t0 = "Number of corners that define this survey's boundaries";
+            const t00 = "Number of corners that define this survey's boundaries";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_corner_count, this._create_dom_output(), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").title = t0;
-            c.appendChild(this._create_dom_label("Corners:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"), t0));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").title = t00;
+            c.appendChild(this._create_dom_label("Corners:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"), t00));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"));
-            const t1 = "Number of waypoints that have been calculated to perform this survey";
+            const t01 = "Number of waypoints that have been calculated to perform this survey";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_waypoint_count, this._create_dom_output(), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").title = t1;
-            c.appendChild(this._create_dom_label("Waypoints:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"), t1));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").title = t01;
+            c.appendChild(this._create_dom_label("Waypoints:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"), t01));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"));
+            const t02 = "Ground resolution, or ground sampling distance, in meters per pixel";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_ground_resolution, this._create_dom_output("---"), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f").title = t02;
+            c.appendChild(this._create_dom_label("GSD:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f"), t02));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f"));
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_try_update_dom_stats).call(this);
             //Input fields
             const t2 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
@@ -30775,10 +30802,70 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f").title = t10;
             c.appendChild(this._create_dom_label("Lane Skip:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f"), t10));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f"));
+            const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
+            const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_name, this._create_dom_input_select(camera_names, camera_names, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_from_dom).bind(this), NeuronFeatureSurvey.camera_preset_key_custom), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").title = t11;
+            c.appendChild(this._create_dom_label("Camera:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f"), t11));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f"));
+            const t12 = "Camera focal length in millimeters";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_focal_length, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_focal_length_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").title = t12;
+            c.appendChild(this._create_dom_label("F.Length:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f"), t12));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f"));
+            const t13 = "Camera sensors width in millimeters";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_sensor_width_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").title = t13;
+            c.appendChild(this._create_dom_label("S.Width:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f"), t13));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f"));
+            const t14 = "Camera sensor height in millimeters";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_sensor_height_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").title = t14;
+            c.appendChild(this._create_dom_label("S.Height:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f"), t14));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f"));
+            const t15 = "Camera image width in pixels";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_width, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_image_width_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").title = t15;
+            c.appendChild(this._create_dom_label("I.Width:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f"), t15));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f"));
+            const t16 = "Camera image height in pixels";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_height, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_image_height_from_dom).bind(this), 0), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").title = t16;
+            c.appendChild(this._create_dom_label("I.Height:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"), t16));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"));
+            const t17 = "Image horizontal overlap as a percentage";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_sidelap, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_sidelap_from_dom).bind(this), 0, 100), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f").title = t17;
+            c.appendChild(this._create_dom_label("Sidelap:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f"), t17));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f"));
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f");
     }
+    get_camera() {
+        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f");
+    }
+    ;
+    get_sidelap() {
+        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f");
+    }
+    ;
+    set_sidelap(sidelap) {
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_sidelap, sidelap, "f");
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
+    }
+    ;
+    set_camera(camera) {
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_camera, camera, "f");
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_camera_selector).call(this, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").name);
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").min), __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length).toString();
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").min), __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width).toString();
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").min), __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height).toString();
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").min), __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width).toString();
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").min), __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height).toString();
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
+    }
+    ;
     static isObjectOfDataType(object) {
         let is_valid = (object.type == NeuronFeatureSurvey.TYPE) ||
             (object.version == NeuronFeatureSurvey.VERSION);
@@ -30790,15 +30877,15 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             throw new Error(`Invalid type check during creation of NeuronFeatureSurvey`);
         const corners = j.corners.map(x => _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(x));
         let s = new NeuronFeatureSurvey(map, corners);
-        s.update_altitude(j.altitude);
-        s.update_distance(j.distance);
-        s.update_spacing(j.spacing);
-        s.update_angle(j.angle);
-        s.update_overshoot1(j.overshoot1);
-        s.update_overshoot2(j.overshoot2);
-        s.update_startpos(j.startpos);
-        s.update_minLaneSeparation(j.minLaneSeparation);
-        s.update_leadin(j.leadin);
+        s.set_altitude(j.altitude);
+        s.set_distance(j.distance);
+        s.set_spacing(j.spacing);
+        s.set_angle(j.angle);
+        s.set_overshoot1(j.overshoot1);
+        s.set_overshoot2(j.overshoot2);
+        s.set_startpos(j.startpos);
+        s.set_minLaneSeparation(j.minLaneSeparation);
+        s.set_leadin(j.leadin);
         return s;
     }
     to_json() {
@@ -30819,7 +30906,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         };
     }
 }
-_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
+_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_camera = new WeakMap(), _NeuronFeatureSurvey_sidelap = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_dom_camera_name = new WeakMap(), _NeuronFeatureSurvey_dom_camera_focal_length = new WeakMap(), _NeuronFeatureSurvey_dom_camera_image_width = new WeakMap(), _NeuronFeatureSurvey_dom_camera_image_height = new WeakMap(), _NeuronFeatureSurvey_dom_camera_sensor_width = new WeakMap(), _NeuronFeatureSurvey_dom_camera_sensor_height = new WeakMap(), _NeuronFeatureSurvey_dom_sidelap = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_show_waypoints, "f")) {
         let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.marker([point.latitude, point.longitude], {
             // draggable: true,
@@ -30871,37 +30958,97 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 }, _NeuronFeatureSurvey_update_show_waypoints_from_dom = function _NeuronFeatureSurvey_update_show_waypoints_from_dom() {
     this.update_show_waypoints(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").checked);
 }, _NeuronFeatureSurvey_update_altitude_from_dom = function _NeuronFeatureSurvey_update_altitude_from_dom() {
-    this.update_altitude(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f").valueAsNumber);
+    this.set_altitude(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_distance_from_dom = function _NeuronFeatureSurvey_update_distance_from_dom() {
-    this.update_distance(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").valueAsNumber);
+    this.set_distance(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_spacing_from_dom = function _NeuronFeatureSurvey_update_spacing_from_dom() {
-    this.update_spacing(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_spacing, "f").valueAsNumber);
+    this.set_spacing(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_spacing, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_angle_from_dom = function _NeuronFeatureSurvey_update_angle_from_dom() {
     const val = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f").valueAsNumber;
     __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f").value = val.toString();
-    this.update_angle(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f").valueAsNumber);
+    this.set_angle(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_angle_slider_from_dom = function _NeuronFeatureSurvey_update_angle_slider_from_dom() {
     const val = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle_slider, "f").valueAsNumber;
     __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_angle, "f").value = val.toString();
-    this.update_angle(val);
+    this.set_angle(val);
 }, _NeuronFeatureSurvey_update_overshoot1_from_dom = function _NeuronFeatureSurvey_update_overshoot1_from_dom() {
-    this.update_overshoot1(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f").valueAsNumber);
+    this.set_overshoot1(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot1, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_overshoot2_from_dom = function _NeuronFeatureSurvey_update_overshoot2_from_dom() {
-    this.update_overshoot2(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f").valueAsNumber);
+    this.set_overshoot2(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overshoot2, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_startpos_from_dom = function _NeuronFeatureSurvey_update_startpos_from_dom() {
     const v = Number.parseInt(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_startpos, "f").value);
     const values = Object.values(_neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition);
     if (!values.includes(v))
         throw new Error(`Selected value (${v}) is not a StartingPosition`);
-    this.update_startpos(v);
+    this.set_startpos(v);
 }, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom = function _NeuronFeatureSurvey_update_minLaneSeparation_from_dom() {
-    this.update_minLaneSeparation(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f").valueAsNumber);
+    this.set_minLaneSeparation(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_minLaneSeparation, "f").valueAsNumber);
 }, _NeuronFeatureSurvey_update_leadin_from_dom = function _NeuronFeatureSurvey_update_leadin_from_dom() {
-    this.update_leadin(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f").valueAsNumber);
+    this.set_leadin(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_leadin, "f").valueAsNumber);
+}, _NeuronFeatureSurvey_set_camera_selector = function _NeuronFeatureSurvey_set_camera_selector(value = NeuronFeatureSurvey.camera_preset_key_custom) {
+    const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
+    if (camera_names.includes(value)) {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").value = value;
+    }
+    else {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").value = NeuronFeatureSurvey.camera_preset_key_custom;
+    }
+}, _NeuronFeatureSurvey_update_camera_from_dom = function _NeuronFeatureSurvey_update_camera_from_dom() {
+    const value = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").value;
+    const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
+    let camera = NeuronFeatureSurvey.camera_preset_value_custom.copy();
+    if (camera_names.includes(value)) {
+        const matches = NeuronFeatureSurvey.camera_presets.filter(x => x.name == value);
+        if (matches.length > 0) {
+            camera = matches[0].copy();
+        }
+    }
+    this.set_camera(camera);
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
+}, _NeuronFeatureSurvey_update_camera_focal_length_from_dom = function _NeuronFeatureSurvey_update_camera_focal_length_from_dom() {
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").valueAsNumber;
+    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+}, _NeuronFeatureSurvey_update_camera_sensor_width_from_dom = function _NeuronFeatureSurvey_update_camera_sensor_width_from_dom() {
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").valueAsNumber;
+    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+}, _NeuronFeatureSurvey_update_camera_sensor_height_from_dom = function _NeuronFeatureSurvey_update_camera_sensor_height_from_dom() {
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").valueAsNumber;
+    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+}, _NeuronFeatureSurvey_update_camera_image_width_from_dom = function _NeuronFeatureSurvey_update_camera_image_width_from_dom() {
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").valueAsNumber;
+    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+}, _NeuronFeatureSurvey_update_camera_image_height_from_dom = function _NeuronFeatureSurvey_update_camera_image_height_from_dom() {
+    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").valueAsNumber;
+    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+}, _NeuronFeatureSurvey_update_sidelap_from_dom = function _NeuronFeatureSurvey_update_sidelap_from_dom() {
+    this.set_sidelap(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f").valueAsNumber);
+}, _NeuronFeatureSurvey_calculate_and_update_camera_variables = function _NeuronFeatureSurvey_calculate_and_update_camera_variables() {
+    let projection = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+    let resolution = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_ground_resolution(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+    if (projection && __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f") && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f") >= 0) && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f") <= 100)) {
+        const min_dist = Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").min);
+        const sidelap_factor = 1 - (__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f") / 100.0);
+        const distance = projection.Width() * sidelap_factor;
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").value = Math.max(min_dist, distance).toString();
+        this.set_distance(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").valueAsNumber);
+    }
+    if (resolution && __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f")) {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f").value = resolution.toFixed(4);
+    }
+    else if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f")) {
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f").value = "---";
+    }
 };
 NeuronFeatureSurvey.NAME = "Survey";
 NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
 NeuronFeatureSurvey.VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
+//XXX: Keys must be unique!
+NeuronFeatureSurvey.camera_preset_key_custom = "Custom";
+NeuronFeatureSurvey.camera_preset_value_custom = new _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.Camera(NeuronFeatureSurvey.camera_preset_key_custom);
+NeuronFeatureSurvey.camera_presets = [
+    NeuronFeatureSurvey.camera_preset_value_custom,
+    new _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.Camera("A6000", 20, 23.50, 15.60, 6000, 4000),
+];
 
 
 /***/ }),
@@ -31200,7 +31347,7 @@ class NeuronMap {
         const bounds = __classPrivateFieldGet(this, _NeuronMap_instances, "m", _NeuronMap_get_poly_bounds_from_view).call(this);
         if (__classPrivateFieldGet(this, _NeuronMap_map, "f") && bounds.length) {
             const p = new _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__.NeuronFeatureSurvey(__classPrivateFieldGet(this, _NeuronMap_map, "f"), bounds);
-            p.update_altitude(__classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude());
+            p.set_altitude(__classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude());
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
@@ -32146,6 +32293,7 @@ function kml_create_polygon_node(xmlDocument, name, coordinates) {
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "Camera": () => (/* binding */ Camera),
 /* harmony export */   "CreateGrid": () => (/* binding */ CreateGrid),
 /* harmony export */   "Rect": () => (/* binding */ Rect),
 /* harmony export */   "StartPosition": () => (/* binding */ StartPosition)
@@ -32163,6 +32311,50 @@ var StartPosition;
     StartPosition[StartPosition["TopRight"] = 4] = "TopRight";
     // Point = 5
 })(StartPosition || (StartPosition = {}));
+class Camera {
+    constructor(name = "Custom", focal_length = 0.0, sensor_width = 0.0, sensor_height = 0.0, image_width = 0, image_height = 0) {
+        this.name = name;
+        this.focal_length = focal_length;
+        this.sensor_width = sensor_width;
+        this.sensor_height = sensor_height;
+        this.image_width = image_width;
+        this.image_height = image_height;
+    }
+    copy() {
+        return new Camera(this.name, this.focal_length, this.sensor_width, this.sensor_height, this.image_width, this.image_height);
+    }
+    is_valid() {
+        return (this.focal_length > 0) &&
+            (this.sensor_width > 0) &&
+            (this.sensor_height > 0) &&
+            (this.image_width > 0) &&
+            (this.image_height > 0);
+    }
+    get_ground_resolution(distance) {
+        let res = null;
+        if (this.is_valid() && distance > 0) {
+            //XXX: Assume square pixels
+            const projection = this.get_projected_size(distance);
+            if (projection) {
+                res = projection.Width() / this.image_width;
+            }
+        }
+        return res;
+    }
+    get_projected_size(distance) {
+        let proj = null;
+        if (this.is_valid() && distance > 0) {
+            //Calculate the half field of views
+            const fov2_h = Math.atan2(this.sensor_height, 2 * this.focal_length);
+            const fov2_w = Math.atan2(this.sensor_width, 2 * this.focal_length);
+            //Calculate the half distances
+            const h2 = Math.tan(fov2_h) * distance;
+            const w2 = Math.tan(fov2_w) * distance;
+            proj = new Rect(-w2, -h2, 2 * w2, 2 * h2);
+        }
+        return proj;
+    }
+}
 class Rect {
     constructor(Left = 0.0, Top = 0.0, Width = 0.0, Height = 0.0) {
         this.Left = Left;
