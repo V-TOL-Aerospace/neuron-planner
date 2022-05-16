@@ -27,7 +27,7 @@
     }
 }
 
-@media only screen and (max-height: 620px) {
+@media only screen and ((max-height: 620px) or (max-width: 820px)) {
     .leaflet-control-attribution {
         display: none;
     }
