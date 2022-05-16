@@ -136,7 +136,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_results_title_element.style.cursor = 'pointer';
         this.#stats_results_title_element.onclick = this.#toggle_hide_section.bind(
             this,
-            this.#stats_results_title_element,
+            // this.#stats_results_title_element,
             this.#stats_results_hide_element,
             this.#stats_results_element
         );
