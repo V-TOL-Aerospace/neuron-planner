@@ -31818,7 +31818,9 @@ _NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stats_element_prefi
     __classPrivateFieldSet(this, _NeuronStatistics_stats_results_hide_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-results-hide`), "f");
     __classPrivateFieldSet(this, _NeuronStatistics_stats_results_title_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-results-title`), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_stats_results_title_element, "f").style.cursor = 'pointer';
-    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_title_element, "f").onclick = __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_toggle_hide_section).bind(this, __classPrivateFieldGet(this, _NeuronStatistics_stats_results_title_element, "f"), __classPrivateFieldGet(this, _NeuronStatistics_stats_results_hide_element, "f"), __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f"));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_title_element, "f").onclick = __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_toggle_hide_section).bind(this, 
+    // this.#stats_results_title_element,
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_results_hide_element, "f"), __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f"));
     __classPrivateFieldSet(this, _NeuronStatistics_stats_options_hide_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-options-hide`), "f");
     __classPrivateFieldSet(this, _NeuronStatistics_stats_options_title_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-options-title`), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_title_element, "f").style.cursor = 'pointer';
