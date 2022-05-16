@@ -1,6 +1,6 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
-import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { Camera, CreateGrid, Rect, StartPosition } from "./neuron_tools_survey"
+import { NeuronInterfacePoint, NeuronInterfacePointData, NeuronCameraSpecifications, NeuronCameraSpecificationsData } from "./neuron_interfaces";
+import { CreateGrid, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
 
 export interface NeuronFeatureSurveyData {
@@ -15,13 +15,15 @@ export interface NeuronFeatureSurveyData {
     overshoot2:number,
     startpos:number,
     minLaneSeparation:number,
-    leadin:number
+    leadin:number,
+    camera:NeuronCameraSpecificationsData,
+    sidelap:number
 }
 
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     static override NAME = "Survey";
     static override TYPE = "NeuronFeatureSurvey";
-    static override VERSION = '8383fdb0-d243-11ec-8833-d736eebe41e8';
+    static override VERSION = '24cd1570-d4fc-11ec-a2cb-cb428cc5d90e';
 
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
@@ -36,7 +38,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #minLaneSeparation:number;
     #leadin:number;
 
-    #camera:Camera;
+    #camera:NeuronCameraSpecifications;
     #sidelap:number;
 
     #show_waypoints;
@@ -70,10 +72,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     //XXX: Keys must be unique!
     static camera_preset_key_custom = "Custom";
-    static camera_preset_value_custom = new Camera(NeuronFeatureSurvey.camera_preset_key_custom);
-    static camera_presets:Camera[]= [
+    static camera_preset_value_custom = new NeuronCameraSpecifications(NeuronFeatureSurvey.camera_preset_key_custom);
+    static camera_presets:NeuronCameraSpecifications[]= [
         NeuronFeatureSurvey.camera_preset_value_custom,
-        new Camera("A6000", 20, 23.50, 15.60, 6000, 4000),
+        new NeuronCameraSpecifications("A6000", 20, 23.50, 15.60, 6000, 4000),
     ];
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], show_waypoints=false) {
@@ -476,6 +478,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Lane Skip:", this.#dom_minLaneSeparation, t10));
             c.appendChild(this.#dom_minLaneSeparation);
 
+            //TODO: try to set camera name based on the current camera to support loading from mission plan
             const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
             const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
             this.#dom_camera_name = this._create_dom_input_select(camera_names, camera_names, this.#update_camera_from_dom.bind(this), NeuronFeatureSurvey.camera_preset_key_custom);
@@ -547,7 +550,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
     }
 
-    set_camera(camera:Camera) {
+    set_camera(camera:NeuronCameraSpecifications) {
         this.#camera = camera;
         this.#set_camera_selector(this.#camera.name);
 
@@ -650,6 +653,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         s.set_startpos(j.startpos);
         s.set_minLaneSeparation(j.minLaneSeparation);
         s.set_leadin(j.leadin);
+        s.set_camera(NeuronCameraSpecifications.from_json(j.camera));
+        s.set_sidelap(j.sidelap);
 
         return s;
     }
@@ -669,6 +674,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             startpos: this.get_startpos(),
             minLaneSeparation: this.get_minLaneSeparation(),
             leadin: this.get_leadin(),
+            camera: this.get_camera().to_json(),
+            sidelap: this.get_sidelap()
         }
     }
 }
