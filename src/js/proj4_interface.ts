@@ -111,11 +111,11 @@ export class UTMLine {
     // end of line
     p2:UTMPos;
     // used as a base for grid along line (initial setout)
-    basepnt:UTMPos;
+    base_pnt:UTMPos;
 
     constructor(p1:UTMPos, p2:UTMPos, basepnt:UTMPos) {
         this.p1 = p1;
         this.p2 = p2;
-        this.basepnt = basepnt;
+        this.base_pnt = basepnt;
     }
 }

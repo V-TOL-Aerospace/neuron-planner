@@ -4,12 +4,16 @@
         "fortawesome",
         "FOUC",
         "Geofence",
+        "latlng",
         "leadin",
+        "Lngs",
         "mappoints",
+        "mouseevent",
         "moveend",
         "Placemark",
         "placemarks",
         "sidelap",
-        "startpos"
+        "startpos",
+        "utmpos"
     ]
 }

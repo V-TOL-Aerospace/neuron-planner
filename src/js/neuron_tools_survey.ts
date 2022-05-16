@@ -111,7 +111,7 @@ export class Rect
         this.Bottom = Top + Height;
     }
 
-    DiagDistance()
+    diag_distance()
     {
         // Pythagoras
         return Math.sqrt(Math.pow(this.Width(), 2) + Math.pow(this.Height(), 2));
@@ -141,10 +141,10 @@ function FindLineIntersection(start1:UTMPos, end1:UTMPos, start2:UTMPos, end2:UT
     //  AB & CD are parallel
     if (denom == 0)
         return new UTMPos();
-    let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
-    let r = numer / denom;
-    let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
-    let s = numer2 / denom;
+    let numerator = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+    let r = numerator / denom;
+    let numerator2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+    let s = numerator2 / denom;
     if ((r < 0 || r > 1) || (s < 0 || s > 1))
         return new UTMPos();
     // Find intersection point
@@ -159,20 +159,20 @@ function getPolyMinMax(utmpos:UTMPos[]) {
     if (utmpos.length == 0)
         return new Rect();
 
-    let minx, miny, maxx, maxy = 0.0;
+    let min_x, min_y, max_x, max_y = 0.0;
 
-    minx = maxx = utmpos[0].x;
-    miny = maxy = utmpos[0].y;
+    min_x = max_x = utmpos[0].x;
+    min_y = max_y = utmpos[0].y;
 
     for(const pnt of utmpos) {
-        minx = Math.min(minx, pnt.x);
-        maxx = Math.max(maxx, pnt.x);
+        min_x = Math.min(min_x, pnt.x);
+        max_x = Math.max(max_x, pnt.x);
 
-        miny = Math.min(miny, pnt.y);
-        maxy = Math.max(maxy, pnt.y);
+        min_y = Math.min(min_y, pnt.y);
+        max_y = Math.max(max_y, pnt.y);
     }
 
-    return new Rect(minx, maxy, maxx - minx, miny - maxy);
+    return new Rect(min_x, max_y, max_x - min_x, min_y - max_y);
 }
 
 function PointInPolygon(p:UTMPos, poly:UTMPos[]) {
@@ -218,10 +218,10 @@ function FindLineIntersectionExtension(start1:UTMPos, end1:UTMPos, start2:UTMPos
     //  AB & CD are parallel
     if (denom == 0)
         return new UTMPos();
-    let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
-    let r = numer / denom;
-    let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
-    let s = numer2 / denom;
+    let numerator = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+    let r = numerator / denom;
+    let numerator2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+    let s = numerator2 / denom;
     if ((r < 0 || r > 1) || (s < 0 || s > 1)) {
         // line intersection is outside our lines.
     }
@@ -239,25 +239,25 @@ function FindLineIntersectionExtension(start1:UTMPos, end1:UTMPos, start2:UTMPos
 function findClosestPoint(start:UTMPos, list:UTMPos[])
 {
     let answer = new UTMPos();
-    let currentbest = Number.MAX_VALUE;
+    let current_best = Number.MAX_VALUE;
 
     for(const pnt of list) {
         const dist1 = start.GetDistance2D(pnt);
 
-        if (dist1 < currentbest) {
+        if (dist1 < current_best) {
             answer = pnt;
-            currentbest = dist1;
+            current_best = dist1;
         }
     }
 
     return answer;
 }
 
-function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle:number):UTMLine {
-    if (minDistance != 0) {
+function findClosestLine(start:UTMPos, list:UTMLine[], min_distance:number, angle:number):UTMLine {
+    if (min_distance != 0) {
         // By now, just add 5.000 km to our lines so they are long enough to allow intersection
         let METERS_TO_EXTEND = 5000;
-        let perperndicularOrientation = AddAngle(angle, 90);
+        let perpendicularOrientation = AddAngle(angle, 90);
 
         // Calculation of a perpendicular line to the grid lines containing the "start" point
         /*
@@ -270,8 +270,8 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
         *  --------------------------------------|------------------------------------------
         *  --------------------------------------|------------------------------------------
         */
-        let start_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, -METERS_TO_EXTEND);
-        let stop_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, METERS_TO_EXTEND);
+        let start_perpendicular_line = start.relative_point_from_dist_bearing(perpendicularOrientation, -METERS_TO_EXTEND);
+        let stop_perpendicular_line = start.relative_point_from_dist_bearing(perpendicularOrientation, METERS_TO_EXTEND);
 
         // Store one intersection point per grid line
         let intersectedPoints:Map<UTMPos,UTMLine> = new Map();
@@ -285,7 +285,7 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
             // Store it
             intersectedPoints.set(p, line);
 
-            // Calculate distances between interesected point and "start" (i.e. line and start)
+            // Calculate distances between intersect point and "start" (i.e. line and start)
             let distance_p = start.GetDistance2D(p);
 
             if (!ordered_min_to_max.has(distance_p))
@@ -298,24 +298,24 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
             return a - b;
         });
 
-        // Lets select a line that is the closest to "start" point but "mindistance" away at least.
+        // Lets select a line that is the closest to "start" point but "min_distance" away at least.
         // If we have only one line, return that line whatever the minDistance says
         let key = Number.MAX_VALUE;
         let i = 0;
         while (key == Number.MAX_VALUE && i < ordered_keys.length) {
-            if (ordered_keys[i] >= minDistance)
+            if (ordered_keys[i] >= min_distance)
                 key = ordered_keys[i];
             i++;
         }
 
-        // If no line is selected (because all of them are closer than minDistance, then get the farest one
+        // If no line is selected (because all of them are closer than minDistance, then get the farthest one
         if (key == Number.MAX_VALUE)
             key = ordered_keys[ordered_keys.length - 1];
 
-        let filteredmap = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance2D(start) >= key);
-        let filteredlines = filteredmap.map(a => a[1]);
+        let filtered_map = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance2D(start) >= key);
+        let filtered_lines = filtered_map.map(a => a[1]);
 
-        return findClosestLine(start, filteredlines, 0, angle);
+        return findClosestLine(start, filtered_lines, 0, angle);
     } else {
         let answer = list[0];
         let shortest = Number.MAX_VALUE;
@@ -323,11 +323,11 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
         for(const line of list) {
             let ans1 = start.GetDistance2D(line.p1);
             let ans2 = start.GetDistance2D(line.p2);
-            let shorterpnt = ans1 < ans2 ? line.p1 : line.p2;
+            let shorter_pnt = ans1 < ans2 ? line.p1 : line.p2;
 
-            if (shortest > start.GetDistance2D(shorterpnt)) {
+            if (shortest > start.GetDistance2D(shorter_pnt)) {
                 answer = line;
-                shortest = start.GetDistance2D(shorterpnt);
+                shortest = start.GetDistance2D(shorter_pnt);
             }
         }
 
@@ -338,7 +338,7 @@ function findClosestLine(start:UTMPos, list:UTMLine[], minDistance:number, angle
 const min_distance = 0.5;
 /**
  * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
- * @param  {number} altitude altitude to map to thhe final points
+ * @param  {number} altitude altitude to map to the final points
  * @param  {number} distance distance between lines
  * @param  {number} spacing Additional spacing between polygon and turns?  TODO: Figure out what this is meant to do?
  * @param  {number} angle angle of the survey pattern to follow (lane angle)
@@ -380,24 +380,24 @@ export function CreateGrid(
     // Lane Separation in meters
     const minLaneSeparationINMeters = minLaneSeparation * distance;
 
-    const utmzone = polygon[0].to_UTM().zone;
+    const utm_zone = polygon[0].to_UTM().zone;
     // utm position list
-    let utmpositions = polygon.map(x => x.to_UTM(utmzone));
+    let utm_positions = polygon.map(x => x.to_UTM(utm_zone));
     // utm zone distance calcs will be done in
-    // let utmpositions = utmpos.ToList(NeuronInterfacePoint.ToUTM(utmzone, polygon), utmzone);
-    // let utmpositions = polygon;
+    // let utm_positions = utmpos.ToList(NeuronInterfacePoint.ToUTM(utm_zone, polygon), utm_zone);
+    // let utm_positions = polygon;
 
     // close the loop if its not already
-    if (!utmpositions[0].equals(utmpositions[utmpositions.length - 1]))
-        utmpositions.push(utmpositions[0]); // make a full loop
+    if (!utm_positions[0].equals(utm_positions[utm_positions.length - 1]))
+        utm_positions.push(utm_positions[0]); // make a full loop
 
-    // get mins/maxs of coverage area
-    let area = getPolyMinMax(utmpositions);
+    // get min/max of coverage area
+    let area = getPolyMinMax(utm_positions);
 
     // get initial grid
 
     // used to determine the size of the outer grid area
-    let diagdist = area.DiagDistance();
+    let diag_dist = area.diag_distance();
 
     // somewhere to store out generated lines
     let grid:UTMLine[] = [];
@@ -407,20 +407,20 @@ export function CreateGrid(
     // get start point middle
     let x = area.MidWidth();
     let y = area.MidHeight();
-    let startp = new UTMPos(x,y,utmzone);
+    let start_p = new UTMPos(x,y,utm_zone);
 
-    // //UTMLine(new utmpos(x, y, utmzone), "Base");
+    // //UTMLine(new utmpos(x, y, utm_zone), "Base");
 
     // // get left extent
     // let xb1 = x;
     // let yb1 = y;
     // // to the left
-    // newpos(ref xb1, ref yb1, angle - 90, diagdist / 2 + distance);
+    // new_pos(ref xb1, ref yb1, angle - 90, diag_dist / 2 + distance);
     // // backwards
-    // newpos(ref xb1, ref yb1, angle + 180, diagdist / 2 + distance);
+    // new_pos(ref xb1, ref yb1, angle + 180, diag_dist / 2 + distance);
 
-    // utmpos left = new utmpos(xb1, yb1, utmzone);
-    let left = startp.relative_point_from_dist_bearing(angle - 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
+    // utmpos left = new utmpos(xb1, yb1, utm_zone);
+    let left = start_p.relative_point_from_dist_bearing(angle - 90, diag_dist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diag_dist / 2 + distance);
 
     ////UTMLine(left, "left");
 
@@ -428,12 +428,12 @@ export function CreateGrid(
     // // double xb2 = x;
     // // double yb2 = y;
     // // // to the right
-    // // newpos(ref xb2, ref yb2, angle + 90, diagdist / 2 + distance);
+    // // new_pos(ref xb2, ref yb2, angle + 90, diag_dist / 2 + distance);
     // // // backwards
-    // // newpos(ref xb2, ref yb2, angle + 180, diagdist / 2 + distance);
+    // // new_pos(ref xb2, ref yb2, angle + 180, diag_dist / 2 + distance);
 
-    // // utmpos right = new utmpos(xb2, yb2, utmzone);
-    // let right = startp.relative_point_from_dist_bearing(angle + 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
+    // // utmpos right = new utmpos(xb2, yb2, utm_zone);
+    // let right = start_p.relative_point_from_dist_bearing(angle + 90, diag_dist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diag_dist / 2 + distance);
 
     ////UTMLine(right, "right");
 
@@ -441,28 +441,28 @@ export function CreateGrid(
     x = left.x;
     y = left.y;
 
-    // draw the outergrid, this is a grid that cover the entire area of the rectangle plus more.
-    while (lines < ((diagdist + distance * 2) / distance))
+    // draw the outer grid, this is a grid that cover the entire area of the rectangle plus more.
+    while (lines < ((diag_dist + distance * 2) / distance))
     {
         // copy the start point to generate the end point
-        let lstart = new UTMPos(x, y, utmzone);
-        let lend = lstart.relative_point_from_dist_bearing(angle, diagdist + distance * 2);
+        let l_start = new UTMPos(x, y, utm_zone);
+        let l_end = l_start.relative_point_from_dist_bearing(angle, diag_dist + distance * 2);
         // let nx = x;
         // let ny = y;
-        // newpos(ref nx, ref ny, angle, diagdist + distance * 2);
+        // new_pos(ref nx, ref ny, angle, diag_dist + distance * 2);
 
-        let line = new UTMLine(lstart, lend, lstart.copy());
-        // line.p1 = new utmpos(x, y, utmzone);
-        // line.p2 = new utmpos(nx, ny, utmzone);
-        // line.basepnt = new utmpos(x, y, utmzone);
+        let line = new UTMLine(l_start, l_end, l_start.copy());
+        // line.p1 = new utmpos(x, y, utm_zone);
+        // line.p2 = new utmpos(nx, ny, utm_zone);
+        // line.base_pnt = new utmpos(x, y, utm_zone);
         grid.push(line);
 
         // //UTMLine(line);
 
-        // newpos(ref x, ref y, angle + 90, distance);
-        let lnext = lstart.relative_point_from_dist_bearing(angle + 90, distance);
-        x = lnext.x;
-        y = lnext.y;
+        // new_pos(ref x, ref y, angle + 90, distance);
+        let l_next = l_start.relative_point_from_dist_bearing(angle + 90, distance);
+        x = l_next.x;
+        y = l_next.y;
         lines++;
     }
 
@@ -471,58 +471,58 @@ export function CreateGrid(
     // store lines that dont have any intersections
     let remove:UTMLine[] = [];
 
-    let gridno = grid.length;
+    let grid_no = grid.length;
 
     // cycle through our grid
-    for (let a = 0; a < gridno; a++) {
-        let closestdistance = Number.MAX_VALUE;
-        let farestdistance = Number.MIN_VALUE;
+    for (let a = 0; a < grid_no; a++) {
+        let closest_distance = Number.MAX_VALUE;
+        let farthest_distance = Number.MIN_VALUE;
 
-        let closestpoint = new UTMPos();
-        let farestpoint = new UTMPos();
+        let closest_point = new UTMPos();
+        let farthest_point = new UTMPos();
 
         // somewhere to store our intersections
-        let matchs:UTMPos[] = [];
+        let matches:UTMPos[] = [];
 
         let crosses = 0;
-        for (let b = 1; b < utmpositions.length; b++) {
-            const utmp1 = utmpositions[b-1];
-            const utmp2 = utmpositions[b];
+        for (let b = 1; b < utm_positions.length; b++) {
+            const utm_p1 = utm_positions[b-1];
+            const utm_p2 = utm_positions[b];
 
-            let newutmpos = FindLineIntersection(utmp1, utmp2, grid[a].p1, grid[a].p2);
-            if (!(newutmpos.equals(new UTMPos()))) {
+            let new_utmpos = FindLineIntersection(utm_p1, utm_p2, grid[a].p1, grid[a].p2);
+            if (!(new_utmpos.equals(new UTMPos()))) {
                 crosses++;
-                matchs.push(newutmpos);
-                if (closestdistance > grid[a].p1.GetDistance2D(newutmpos))
+                matches.push(new_utmpos);
+                if (closest_distance > grid[a].p1.GetDistance2D(new_utmpos))
                 {
-                    closestpoint.y = newutmpos.y;
-                    closestpoint.x = newutmpos.x;
-                    closestpoint.zone = newutmpos.zone;
-                    closestdistance = grid[a].p1.GetDistance2D(newutmpos);
+                    closest_point.y = new_utmpos.y;
+                    closest_point.x = new_utmpos.x;
+                    closest_point.zone = new_utmpos.zone;
+                    closest_distance = grid[a].p1.GetDistance2D(new_utmpos);
                 }
-                if (farestdistance < grid[a].p1.GetDistance2D(newutmpos))
+                if (farthest_distance < grid[a].p1.GetDistance2D(new_utmpos))
                 {
-                    farestpoint.y = newutmpos.y;
-                    farestpoint.x = newutmpos.x;
-                    farestpoint.zone = newutmpos.zone;
-                    farestdistance = grid[a].p1.GetDistance2D(newutmpos);
+                    farthest_point.y = new_utmpos.y;
+                    farthest_point.x = new_utmpos.x;
+                    farthest_point.zone = new_utmpos.zone;
+                    farthest_distance = grid[a].p1.GetDistance2D(new_utmpos);
                 }
             }
         }
         if (crosses == 0) // outside our polygon
         {
-            if (!PointInPolygon(grid[a].p1, utmpositions) && !PointInPolygon(grid[a].p2, utmpositions))
+            if (!PointInPolygon(grid[a].p1, utm_positions) && !PointInPolygon(grid[a].p2, utm_positions))
                 remove.push(grid[a]);
         }
-        else if (crosses == 1) // bad - shouldnt happen
+        else if (crosses == 1) // bad - shouldn't happen
         {
 
         }
         else if (crosses == 2) // simple start and finish
         {
             let line = grid[a];
-            line.p1 = closestpoint;
-            line.p2 = farestpoint;
+            line.p1 = closest_point;
+            line.p2 = farthest_point;
             grid[a] = line;
         }
         else // multiple intersections
@@ -530,20 +530,20 @@ export function CreateGrid(
             let line = grid[a];
             remove.push(line);
 
-            while (matchs.length > 1)
+            while (matches.length > 1)
             {
-                closestpoint = findClosestPoint(closestpoint, matchs);
-                const p1 = closestpoint;
-                remove_item_from_array(matchs, closestpoint);
+                closest_point = findClosestPoint(closest_point, matches);
+                const p1 = closest_point;
+                remove_item_from_array(matches, closest_point);
 
-                closestpoint = findClosestPoint(closestpoint, matchs);
-                const p2 = closestpoint;
-                remove_item_from_array(matchs, closestpoint);
+                closest_point = findClosestPoint(closest_point, matches);
+                const p2 = closest_point;
+                remove_item_from_array(matches, closest_point);
 
                 let newline = new UTMLine(
                     p1,
                     p2,
-                    line.basepnt.copy()
+                    line.base_pnt.copy()
                 );
 
                 grid.push(newline);
@@ -566,49 +566,49 @@ export function CreateGrid(
         return [];
         // return NeuronInterfacePoint.from_UTMs(debug_points);
 
-    // pick start positon based on initial point rectangle
-    let startposutm:UTMPos = null;
+    // pick start position based on initial point rectangle
+    let start_pos_utm:UTMPos = null;
 
     switch (startpos)
     {
         default:
         // case StartPosition.Home:
-        //     startposutm = HomeLocation.to_UTM(utmzone);
+        //     start_pos_utm = HomeLocation.to_UTM(utm_zone);
         //     break;
         case StartPosition.BottomLeft:
-            startposutm = new UTMPos(area.Left, area.Bottom, utmzone);
+            start_pos_utm = new UTMPos(area.Left, area.Bottom, utm_zone);
             break;
         case StartPosition.BottomRight:
-            startposutm = new UTMPos(area.Right, area.Bottom, utmzone);
+            start_pos_utm = new UTMPos(area.Right, area.Bottom, utm_zone);
             break;
         case StartPosition.TopLeft:
-            startposutm = new UTMPos(area.Left, area.Top, utmzone);
+            start_pos_utm = new UTMPos(area.Left, area.Top, utm_zone);
             break;
         case StartPosition.TopRight:
-            startposutm = new UTMPos(area.Right, area.Top, utmzone);
+            start_pos_utm = new UTMPos(area.Right, area.Top, utm_zone);
             break;
         // case StartPosition.Point:
-        //     startposutm = new UTMPos();
-        //     startposutm.zone = utmzone;
+        //     start_pos_utm = new UTMPos();
+        //     start_pos_utm.zone = utm_zone;
         //     break;
     }
 
     // find the closes polygon point based from our startpos selection
-    startposutm = findClosestPoint(startposutm, utmpositions);
+    start_pos_utm = findClosestPoint(start_pos_utm, utm_positions);
 
     // find closest line point to startpos
-    let closest = findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
+    let closest = findClosestLine(start_pos_utm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
 
-    let lastpnt = new UTMPos();
+    let last_pnt = new UTMPos();
 
     // get the closes point from the line we picked
-    if (closest.p1.GetDistance2D(startposutm) < closest.p2.GetDistance2D(startposutm))
+    if (closest.p1.GetDistance2D(start_pos_utm) < closest.p2.GetDistance2D(start_pos_utm))
     {
-        lastpnt = closest.p1;
+        last_pnt = closest.p1;
     }
     else
     {
-        lastpnt = closest.p2;
+        last_pnt = closest.p2;
     }
 
     let ans:UTMPos[] = [];
@@ -620,15 +620,15 @@ export function CreateGrid(
 
     while (grid.length > 0) {
         // for each line, check which end of the line is the next closest
-        if (closest.p1.GetDistance2D(lastpnt) < closest.p2.GetDistance2D(lastpnt))
+        if (closest.p1.GetDistance2D(last_pnt) < closest.p2.GetDistance2D(last_pnt))
         {
-            let newstart = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
-            newstart.tag = "S";
-            //UTMLine(newstart, "S");
-            ans.push(newstart);
+            let new_start = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
+            new_start.tag = "S";
+            //UTMLine(new_start, "S");
+            ans.push(new_start);
 
             if (leadin < 0) {
-                var p2 = newstart.copy();
+                var p2 = new_start.copy();
                 p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
@@ -639,20 +639,20 @@ export function CreateGrid(
             }
 
             if (spacing > 0) {
-                for (let d = (spacing - ((closest.basepnt.GetDistance2D(closest.p1)) % spacing));
+                for (let d = (spacing - ((closest.base_pnt.GetDistance2D(closest.p1)) % spacing));
                     d < (closest.p1.GetDistance2D(closest.p2));
                     d += spacing) {
-                    // newpos(ref ax, ref ay, angle, d);
-                    let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utmzone, "M");
+                    // new_pos(ref ax, ref ay, angle, d);
+                    let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utm_zone, "M");
                     //UTMLine(utmpos1, "M");
                     ans.push(utmpos1);
                 }
             }
 
-            let newend = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
+            let new_end = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
 
             if (overshoot1 < 0) {
-                var p2 = newend.copy()
+                var p2 = new_end.copy()
                 p2.tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
@@ -662,25 +662,25 @@ export function CreateGrid(
                 ans.push(closest.p2);
             }
 
-            newend.tag = "E";
-            //UTMLine(newend, "E");
-            ans.push(newend);
+            new_end.tag = "E";
+            //UTMLine(new_end, "E");
+            ans.push(new_end);
 
-            lastpnt = closest.p2;
+            last_pnt = closest.p2;
 
             remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
 
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+            closest = findClosestLine(new_end, grid, minLaneSeparationINMeters, angle);
         } else {
-            let newstart = closest.p2.relative_point_from_dist_bearing(angle, leadin);
-            newstart.tag = "S";
-            //UTMLine(newstart, "S");
-            ans.push(newstart);
+            let new_start = closest.p2.relative_point_from_dist_bearing(angle, leadin);
+            new_start.tag = "S";
+            //UTMLine(new_start, "S");
+            ans.push(new_start);
 
             if (leadin < 0) {
-                var p2 = newstart.copy()
+                var p2 = new_start.copy()
                 p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
@@ -691,44 +691,44 @@ export function CreateGrid(
             }
 
             if (spacing > 0) {
-                for (let d = ((closest.basepnt.GetDistance2D(closest.p2)) % spacing);
+                for (let d = ((closest.base_pnt.GetDistance2D(closest.p2)) % spacing);
                     d < (closest.p1.GetDistance2D(closest.p2));
                     d += spacing) {
                     // let ax = closest.p2.x;
                     // let ay = closest.p2.y;
                     let a = closest.p2.relative_point_from_dist_bearing(angle, -d);
 
-                    // newpos(ref ax, ref ay, angle, -d);
-                    var utmpos2 = new UTMPos(a.x, a.y, utmzone, "M");
+                    // new_pos(ref ax, ref ay, angle, -d);
+                    var utmpos2 = new UTMPos(a.x, a.y, utm_zone, "M");
                     //UTMLine(utmpos2, "M");
                     ans.push(utmpos2);
                 }
             }
 
-            let newend = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, "E");
-            // utmpos newend = newpos(closest.p1, angle, -overshoot2);
+            let new_end = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, "E");
+            // utmpos new_end = new_pos(closest.p1, angle, -overshoot2);
 
             if (overshoot2 < 0) {
-                // var p2 = newend.copy("ME");
+                // var p2 = new_end.copy("ME");
                 //UTMLine(p2, "ME");
-                ans.push(newend.copy("ME"));
+                ans.push(new_end.copy("ME"));
             } else if (overshoot2 > 0) {
                 // closest.p1.tag = "ME";
                 //UTMLine(closest.p1, "ME");
                 ans.push(closest.p1.copy("ME"));
             }
 
-            // newend.tag = "E";
-            //UTMLine(newend, "E");
-            ans.push(newend);
+            // new_end.tag = "E";
+            //UTMLine(new_end, "E");
+            ans.push(new_end);
 
-            lastpnt = closest.p1;
+            last_pnt = closest.p1;
 
             // grid.Remove(closest);
             remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+            closest = findClosestLine(new_end, grid, minLaneSeparationINMeters, angle);
         }
     }
 
