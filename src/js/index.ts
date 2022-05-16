@@ -7,10 +7,12 @@ import '@fortawesome/fontawesome-free/js/solid'
 import '@fortawesome/fontawesome-free/js/regular'
 import '@fortawesome/fontawesome-free/js/brands'
 
-import "../css/theme.css";
+import "../css/theme.css";  //XXX: Load this first so other definitions can use it
 import "../css/index.css";
 import "../css/map.css";
 import "../css/plan.css";
+import "../css/responsive.css"; //XXX: Load this last so it gets applied after all other definitions
+
 import { NeuronBrief } from './neuron_brief';
 import { mm_to_px } from './neuron_tools_common';
 import { NeuronStatistics } from './neuron_statistics';

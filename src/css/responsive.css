@@ -1,0 +1,117 @@
+
+/* Prefer portrait mode for very small screen sizes */
+@media screen and ((orientation: portrait) or (max-height: 400px) or (max-width: 800px)) {
+    #fp-main {
+        flex-direction: column;
+    }
+
+    #fp-map {
+        max-height: 50%;
+    }
+
+    #fp-summary {
+        height: 50%;
+        width: 100%;
+        border-left: 0px;
+        border-top: 2px solid black;
+    }
+}
+
+@media only screen and (max-width: 820px) {
+    .fp-long-name {
+        display: none;
+    }
+
+    .leaflet-control-attribution {
+        display: none;
+    }
+}
+
+@media only screen and (max-height: 620px) {
+    .leaflet-control-attribution {
+        display: none;
+    }
+
+    #fp-summary > * {
+        font-size: x-small;
+    }
+
+    .mission-feature-content-value {
+        font-size: x-small;
+    }
+
+    .fp-stats-content-value {
+        font-size: x-small;
+    }
+
+    .mission-feature-title-button {
+        display: none;
+    }
+
+    .mission-feature-title-button-small {
+        display: block;
+    }
+}
+
+@media only screen and (max-height: 400px) {
+    #fp-summary {
+        height: 100%;
+        width: 100%;
+    }
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 10mm;
+    }
+
+    /* body > * {
+        display: none;
+    } */
+    html {
+        /* height: auto; */
+        /*
+        Manually set our height and width
+        to make sure that we can scale the map
+        properly for display later.
+        Also account for our margins.
+        */
+        width: 190mm;   /* 210 */
+        height: 277mm;   /* 297 */
+    }
+
+    body {
+        height: auto;
+        width: auto;
+        display: block;
+        overflow-x: auto;
+    }
+
+    #fp-manage {
+        display: none;
+    }
+    #fp-summary {
+        display: none;
+    }
+    #fp-draw {
+        display: none;
+    }
+    #fp-map {
+        width: calc(190mm);
+        height: calc(277mm/2);
+    }
+    #fp-map-interactive {
+        display: block;
+    }
+    #fp-map-help {
+        display: none;
+    }
+    #print-section {
+        display: block;
+    }
+
+    .leaflet-control-attribution {
+        display: none;
+    }
+}

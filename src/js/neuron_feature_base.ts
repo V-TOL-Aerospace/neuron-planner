@@ -63,41 +63,51 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
 
-        let b0 = document.createElement("button");
-        b0.className = 'mission-feature-title-button';
-        b0.title = "Zoom to feature";
-        b0.onclick = this.zoom_to_feature.bind(this);
-        let b0i = document.createElement("i");
-        b0i.className = 'fas fa-location-crosshairs';
-        b0.appendChild(b0i);
-        title.appendChild(b0);
+        //Add two sets of icons, one for each size button
+        const button_sizes = [
+            'mission-feature-title-button',
+            'mission-feature-title-button-small'
+        ];
 
-        let b1 = document.createElement("button");
-        b1.className = 'mission-feature-title-button';
-        b1.title = "Move up";
-        b1.onclick = this.#request_move.bind(this, -1);
-        let b1i = document.createElement("i");
-        b1i.className = 'fas fa-arrow-up';
-        b1.appendChild(b1i);
-        title.appendChild(b1);
+        for(const but_class of button_sizes) {
+            const fa_size = but_class.includes('small') ? " fa-2xs" : "";
 
-        let b2 = document.createElement("button");
-        b2.className = 'mission-feature-title-button';
-        b2.title = "Move down";
-        b2.onclick = this.#request_move.bind(this, 1);
-        let b2i = document.createElement("i");
-        b2i.className = 'fas fa-arrow-down';
-        b2.appendChild(b2i);
-        title.appendChild(b2);
+            let b0 = document.createElement("button");
+            b0.className = but_class;
+            b0.title = "Zoom to feature";
+            b0.onclick = this.zoom_to_feature.bind(this);
+            let b0i = document.createElement("i");
+            b0i.className = 'fas fa-location-crosshairs' + fa_size;
+            b0.appendChild(b0i);
+            title.appendChild(b0);
 
-        let b3 = document.createElement("button");
-        b3.className = 'mission-feature-title-button';
-        b3.title = "Remove";
-        b3.onclick = this.remove_feature.bind(this);
-        let b3i = document.createElement("i");
-        b3i.className = 'fas fa-close';
-        b3.appendChild(b3i);
-        title.appendChild(b3);
+            let b1 = document.createElement("button");
+            b1.className = but_class;
+            b1.title = "Move up";
+            b1.onclick = this.#request_move.bind(this, -1);
+            let b1i = document.createElement("i");
+            b1i.className = 'fas fa-arrow-up' + fa_size;
+            b1.appendChild(b1i);
+            title.appendChild(b1);
+
+            let b2 = document.createElement("button");
+            b2.className = but_class;
+            b2.title = "Move down";
+            b2.onclick = this.#request_move.bind(this, 1);
+            let b2i = document.createElement("i");
+            b2i.className = 'fas fa-arrow-down' + fa_size;
+            b2.appendChild(b2i);
+            title.appendChild(b2);
+
+            let b3 = document.createElement("button");
+            b3.className = but_class;
+            b3.title = "Remove";
+            b3.onclick = this.remove_feature.bind(this);
+            let b3i = document.createElement("i");
+            b3i.className = 'fas fa-close' + fa_size;
+            b3.appendChild(b3i);
+            title.appendChild(b3);
+        }
 
         dom.appendChild(title);
 

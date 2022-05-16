@@ -108,11 +108,17 @@
     flex-direction: row;
 }
 
-.mission-feature-title-button {
+.mission-feature-title-button,
+.mission-feature-title-button-small {
     flex: auto;
     flex-grow: 0;
     margin-left: 0.1em;
     margin-right: 0.1em;
+}
+
+
+.mission-feature-title-button-small {
+    display: none;
 }
 
 .mission-feature-title-text {
