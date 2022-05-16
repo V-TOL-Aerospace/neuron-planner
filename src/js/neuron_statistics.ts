@@ -149,7 +149,6 @@ export class NeuronStatistics extends NeuronDOMFactory {
             this.#stats_options_hide_element,
             this.#stats_options_element
         );
-
     }
 
     #toggle_hide_section(button:HTMLElement, section:HTMLElement) {

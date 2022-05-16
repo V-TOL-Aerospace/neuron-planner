@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 320px) {\n    #fp-map {\n        display: none;\n    }\n\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG;;AAEA;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n@media screen and (orientation: portrait) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 620px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 320px) {\n    #fp-map {\n        display: none;\n    }\n\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n/* Prefer portrait mode for very small screen sizes */\n@media screen and ((orientation: portrait) or (max-height: 400px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;IACI,YAAY;AAChB;;AAEA;IACI,YAAY;IACZ,WAAW;IACX,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG;;AAEA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,kBAAkB;IACtB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;;;;;CAKC","sourcesContent":["html {\n    height: 100%;\n}\n\nbody {\n    height: 100%;\n    width: 100%;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n\n/* Prefer portrait mode for very small screen sizes */\n@media screen and ((orientation: portrait) or (max-height: 400px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and (max-height: 620px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media only screen and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n/* @media print and (orientation: landscape) {\n    #fp-map {\n        height: auto;\n    }\n}\n*/"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -30833,7 +30833,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").title = t16;
             c.appendChild(this._create_dom_label("I.Height:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"), t16));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"));
-            const t17 = "Image horizontal overlap as a percentage";
+            const t17 = "Image horizontal overlap between lanes as a percentage";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_sidelap, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_sidelap_from_dom).bind(this), 0, 100), "f");
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f").title = t17;
             c.appendChild(this._create_dom_label("Sidelap:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f"), t17));
@@ -31618,7 +31618,7 @@ class NeuronPlanner {
                 polygons.push(i.get_corners_as_points());
             }
         }
-        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kmz_download_from_neuron_data)(this.get_mission_as_points(), polygons);
+        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_download_from_neuron_data)(this.get_mission_as_points(), polygons);
     }
     set_map(map) {
         __classPrivateFieldSet(this, _NeuronPlanner_map, map, "f");
@@ -31694,7 +31694,7 @@ class NeuronPlanner {
     }
     import_features_from_files(files) {
         for (const file of files) {
-            (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kml_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
+            (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kmx_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
         }
     }
     reset() {
@@ -32098,9 +32098,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "kml_data_from_neuron_data": () => (/* binding */ kml_data_from_neuron_data),
 /* harmony export */   "kml_document_to_string": () => (/* binding */ kml_document_to_string),
-/* harmony export */   "kml_download_from_points": () => (/* binding */ kml_download_from_points),
+/* harmony export */   "kml_download_from_neuron_data": () => (/* binding */ kml_download_from_neuron_data),
 /* harmony export */   "kml_extract_features": () => (/* binding */ kml_extract_features),
-/* harmony export */   "kml_load_file": () => (/* binding */ kml_load_file),
+/* harmony export */   "kmx_load_file": () => (/* binding */ kmx_load_file),
 /* harmony export */   "kmz_download_from_neuron_data": () => (/* binding */ kmz_download_from_neuron_data)
 /* harmony export */ });
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
@@ -32120,7 +32120,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 const type_kml = "application/vnd.google-earth.kml+xml";
 const type_kmz = "application/vnd.google-earth.kmz";
-function kml_load_file(file, cb_file_loaded) {
+function kmx_load_file(file, cb_file_loaded) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = null;
         console.log(`Loaded file identified as "${file.type}" type`);
@@ -32197,7 +32197,7 @@ function kml_extract_features(kml_plain_text) {
         return ret;
     });
 }
-function kml_download_from_points(coordinates, polygons) {
+function kml_download_from_neuron_data(coordinates, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_neuron_data(coordinates, polygons);
         const file = new Blob([textXML], {
@@ -32374,7 +32374,7 @@ class Rect {
     MidHeight() {
         return ((this.Top - this.Bottom) / 2) + this.Bottom;
     }
-    DiagDistance() {
+    diag_distance() {
         // Pythagoras
         return Math.sqrt(Math.pow(this.Width(), 2) + Math.pow(this.Height(), 2));
     }
@@ -32397,10 +32397,10 @@ function FindLineIntersection(start1, end1, start2, end2) {
     //  AB & CD are parallel
     if (denom == 0)
         return new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
-    let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
-    let r = numer / denom;
-    let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
-    let s = numer2 / denom;
+    let numerator = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+    let r = numerator / denom;
+    let numerator2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+    let s = numerator2 / denom;
     if ((r < 0 || r > 1) || (s < 0 || s > 1))
         return new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
     // Find intersection point
@@ -32409,16 +32409,16 @@ function FindLineIntersection(start1, end1, start2, end2) {
 function getPolyMinMax(utmpos) {
     if (utmpos.length == 0)
         return new Rect();
-    let minx, miny, maxx, maxy = 0.0;
-    minx = maxx = utmpos[0].x;
-    miny = maxy = utmpos[0].y;
+    let min_x, min_y, max_x, max_y = 0.0;
+    min_x = max_x = utmpos[0].x;
+    min_y = max_y = utmpos[0].y;
     for (const pnt of utmpos) {
-        minx = Math.min(minx, pnt.x);
-        maxx = Math.max(maxx, pnt.x);
-        miny = Math.min(miny, pnt.y);
-        maxy = Math.max(maxy, pnt.y);
+        min_x = Math.min(min_x, pnt.x);
+        max_x = Math.max(max_x, pnt.x);
+        min_y = Math.min(min_y, pnt.y);
+        max_y = Math.max(max_y, pnt.y);
     }
-    return new Rect(minx, maxy, maxx - minx, miny - maxy);
+    return new Rect(min_x, max_y, max_x - min_x, min_y - max_y);
 }
 function PointInPolygon(p, poly) {
     let p1 = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
@@ -32452,10 +32452,10 @@ function FindLineIntersectionExtension(start1, end1, start2, end2) {
     //  AB & CD are parallel
     if (denom == 0)
         return new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
-    let numer = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
-    let r = numer / denom;
-    let numer2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
-    let s = numer2 / denom;
+    let numerator = ((start1.y - start2.y) * (end2.x - start2.x)) - ((start1.x - start2.x) * (end2.y - start2.y));
+    let r = numerator / denom;
+    let numerator2 = ((start1.y - start2.y) * (end1.x - start1.x)) - ((start1.x - start2.x) * (end1.y - start1.y));
+    let s = numerator2 / denom;
     if ((r < 0 || r > 1) || (s < 0 || s > 1)) {
         // line intersection is outside our lines.
     }
@@ -32465,21 +32465,21 @@ function FindLineIntersectionExtension(start1, end1, start2, end2) {
 }
 function findClosestPoint(start, list) {
     let answer = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
-    let currentbest = Number.MAX_VALUE;
+    let current_best = Number.MAX_VALUE;
     for (const pnt of list) {
         const dist1 = start.GetDistance2D(pnt);
-        if (dist1 < currentbest) {
+        if (dist1 < current_best) {
             answer = pnt;
-            currentbest = dist1;
+            current_best = dist1;
         }
     }
     return answer;
 }
-function findClosestLine(start, list, minDistance, angle) {
-    if (minDistance != 0) {
+function findClosestLine(start, list, min_distance, angle) {
+    if (min_distance != 0) {
         // By now, just add 5.000 km to our lines so they are long enough to allow intersection
         let METERS_TO_EXTEND = 5000;
-        let perperndicularOrientation = AddAngle(angle, 90);
+        let perpendicularOrientation = AddAngle(angle, 90);
         // Calculation of a perpendicular line to the grid lines containing the "start" point
         /*
         *  --------------------------------------|------------------------------------------
@@ -32491,8 +32491,8 @@ function findClosestLine(start, list, minDistance, angle) {
         *  --------------------------------------|------------------------------------------
         *  --------------------------------------|------------------------------------------
         */
-        let start_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, -METERS_TO_EXTEND);
-        let stop_perpendicular_line = start.relative_point_from_dist_bearing(perperndicularOrientation, METERS_TO_EXTEND);
+        let start_perpendicular_line = start.relative_point_from_dist_bearing(perpendicularOrientation, -METERS_TO_EXTEND);
+        let stop_perpendicular_line = start.relative_point_from_dist_bearing(perpendicularOrientation, METERS_TO_EXTEND);
         // Store one intersection point per grid line
         let intersectedPoints = new Map();
         // lets order distances from every intersected point per line with the "start" point
@@ -32502,7 +32502,7 @@ function findClosestLine(start, list, minDistance, angle) {
             let p = FindLineIntersectionExtension(line.p1, line.p2, start_perpendicular_line, stop_perpendicular_line);
             // Store it
             intersectedPoints.set(p, line);
-            // Calculate distances between interesected point and "start" (i.e. line and start)
+            // Calculate distances between intersect point and "start" (i.e. line and start)
             let distance_p = start.GetDistance2D(p);
             if (!ordered_min_to_max.has(distance_p))
                 ordered_min_to_max.set(distance_p, p);
@@ -32512,21 +32512,21 @@ function findClosestLine(start, list, minDistance, angle) {
         ordered_keys.sort(function (a, b) {
             return a - b;
         });
-        // Lets select a line that is the closest to "start" point but "mindistance" away at least.
+        // Lets select a line that is the closest to "start" point but "min_distance" away at least.
         // If we have only one line, return that line whatever the minDistance says
         let key = Number.MAX_VALUE;
         let i = 0;
         while (key == Number.MAX_VALUE && i < ordered_keys.length) {
-            if (ordered_keys[i] >= minDistance)
+            if (ordered_keys[i] >= min_distance)
                 key = ordered_keys[i];
             i++;
         }
-        // If no line is selected (because all of them are closer than minDistance, then get the farest one
+        // If no line is selected (because all of them are closer than minDistance, then get the farthest one
         if (key == Number.MAX_VALUE)
             key = ordered_keys[ordered_keys.length - 1];
-        let filteredmap = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance2D(start) >= key);
-        let filteredlines = filteredmap.map(a => a[1]);
-        return findClosestLine(start, filteredlines, 0, angle);
+        let filtered_map = Array.from(intersectedPoints.entries()).filter(a => a[0].GetDistance2D(start) >= key);
+        let filtered_lines = filtered_map.map(a => a[1]);
+        return findClosestLine(start, filtered_lines, 0, angle);
     }
     else {
         let answer = list[0];
@@ -32534,10 +32534,10 @@ function findClosestLine(start, list, minDistance, angle) {
         for (const line of list) {
             let ans1 = start.GetDistance2D(line.p1);
             let ans2 = start.GetDistance2D(line.p2);
-            let shorterpnt = ans1 < ans2 ? line.p1 : line.p2;
-            if (shortest > start.GetDistance2D(shorterpnt)) {
+            let shorter_pnt = ans1 < ans2 ? line.p1 : line.p2;
+            if (shortest > start.GetDistance2D(shorter_pnt)) {
                 answer = line;
-                shortest = start.GetDistance2D(shorterpnt);
+                shortest = start.GetDistance2D(shorter_pnt);
             }
         }
         return answer;
@@ -32546,7 +32546,7 @@ function findClosestLine(start, list, minDistance, angle) {
 const min_distance = 0.5;
 /**
  * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
- * @param  {number} altitude altitude to map to thhe final points
+ * @param  {number} altitude altitude to map to the final points
  * @param  {number} distance distance between lines
  * @param  {number} spacing Additional spacing between polygon and turns?  TODO: Figure out what this is meant to do?
  * @param  {number} angle angle of the survey pattern to follow (lane angle)
@@ -32570,20 +32570,20 @@ minLaneSeparation, leadin) {
         minLaneSeparation += 0.5;
     // Lane Separation in meters
     const minLaneSeparationINMeters = minLaneSeparation * distance;
-    const utmzone = polygon[0].to_UTM().zone;
+    const utm_zone = polygon[0].to_UTM().zone;
     // utm position list
-    let utmpositions = polygon.map(x => x.to_UTM(utmzone));
+    let utm_positions = polygon.map(x => x.to_UTM(utm_zone));
     // utm zone distance calcs will be done in
-    // let utmpositions = utmpos.ToList(NeuronInterfacePoint.ToUTM(utmzone, polygon), utmzone);
-    // let utmpositions = polygon;
+    // let utm_positions = utmpos.ToList(NeuronInterfacePoint.ToUTM(utm_zone, polygon), utm_zone);
+    // let utm_positions = polygon;
     // close the loop if its not already
-    if (!utmpositions[0].equals(utmpositions[utmpositions.length - 1]))
-        utmpositions.push(utmpositions[0]); // make a full loop
-    // get mins/maxs of coverage area
-    let area = getPolyMinMax(utmpositions);
+    if (!utm_positions[0].equals(utm_positions[utm_positions.length - 1]))
+        utm_positions.push(utm_positions[0]); // make a full loop
+    // get min/max of coverage area
+    let area = getPolyMinMax(utm_positions);
     // get initial grid
     // used to determine the size of the outer grid area
-    let diagdist = area.DiagDistance();
+    let diag_dist = area.diag_distance();
     // somewhere to store out generated lines
     let grid = [];
     // number of lines we need
@@ -32591,112 +32591,112 @@ minLaneSeparation, leadin) {
     // get start point middle
     let x = area.MidWidth();
     let y = area.MidHeight();
-    let startp = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(x, y, utmzone);
-    // //UTMLine(new utmpos(x, y, utmzone), "Base");
+    let start_p = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(x, y, utm_zone);
+    // //UTMLine(new utmpos(x, y, utm_zone), "Base");
     // // get left extent
     // let xb1 = x;
     // let yb1 = y;
     // // to the left
-    // newpos(ref xb1, ref yb1, angle - 90, diagdist / 2 + distance);
+    // new_pos(ref xb1, ref yb1, angle - 90, diag_dist / 2 + distance);
     // // backwards
-    // newpos(ref xb1, ref yb1, angle + 180, diagdist / 2 + distance);
-    // utmpos left = new utmpos(xb1, yb1, utmzone);
-    let left = startp.relative_point_from_dist_bearing(angle - 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
+    // new_pos(ref xb1, ref yb1, angle + 180, diag_dist / 2 + distance);
+    // utmpos left = new utmpos(xb1, yb1, utm_zone);
+    let left = start_p.relative_point_from_dist_bearing(angle - 90, diag_dist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diag_dist / 2 + distance);
     ////UTMLine(left, "left");
     // get right extent
     // // double xb2 = x;
     // // double yb2 = y;
     // // // to the right
-    // // newpos(ref xb2, ref yb2, angle + 90, diagdist / 2 + distance);
+    // // new_pos(ref xb2, ref yb2, angle + 90, diag_dist / 2 + distance);
     // // // backwards
-    // // newpos(ref xb2, ref yb2, angle + 180, diagdist / 2 + distance);
-    // // utmpos right = new utmpos(xb2, yb2, utmzone);
-    // let right = startp.relative_point_from_dist_bearing(angle + 90, diagdist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diagdist / 2 + distance);
+    // // new_pos(ref xb2, ref yb2, angle + 180, diag_dist / 2 + distance);
+    // // utmpos right = new utmpos(xb2, yb2, utm_zone);
+    // let right = start_p.relative_point_from_dist_bearing(angle + 90, diag_dist / 2 + distance).relative_point_from_dist_bearing(angle + 180, diag_dist / 2 + distance);
     ////UTMLine(right, "right");
     // set start point to left hand side
     x = left.x;
     y = left.y;
-    // draw the outergrid, this is a grid that cover the entire area of the rectangle plus more.
-    while (lines < ((diagdist + distance * 2) / distance)) {
+    // draw the outer grid, this is a grid that cover the entire area of the rectangle plus more.
+    while (lines < ((diag_dist + distance * 2) / distance)) {
         // copy the start point to generate the end point
-        let lstart = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(x, y, utmzone);
-        let lend = lstart.relative_point_from_dist_bearing(angle, diagdist + distance * 2);
+        let l_start = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(x, y, utm_zone);
+        let l_end = l_start.relative_point_from_dist_bearing(angle, diag_dist + distance * 2);
         // let nx = x;
         // let ny = y;
-        // newpos(ref nx, ref ny, angle, diagdist + distance * 2);
-        let line = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMLine(lstart, lend, lstart.copy());
-        // line.p1 = new utmpos(x, y, utmzone);
-        // line.p2 = new utmpos(nx, ny, utmzone);
-        // line.basepnt = new utmpos(x, y, utmzone);
+        // new_pos(ref nx, ref ny, angle, diag_dist + distance * 2);
+        let line = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMLine(l_start, l_end, l_start.copy());
+        // line.p1 = new utmpos(x, y, utm_zone);
+        // line.p2 = new utmpos(nx, ny, utm_zone);
+        // line.base_pnt = new utmpos(x, y, utm_zone);
         grid.push(line);
         // //UTMLine(line);
-        // newpos(ref x, ref y, angle + 90, distance);
-        let lnext = lstart.relative_point_from_dist_bearing(angle + 90, distance);
-        x = lnext.x;
-        y = lnext.y;
+        // new_pos(ref x, ref y, angle + 90, distance);
+        let l_next = l_start.relative_point_from_dist_bearing(angle + 90, distance);
+        x = l_next.x;
+        y = l_next.y;
         lines++;
     }
     // find intersections with our polygon
     // store lines that dont have any intersections
     let remove = [];
-    let gridno = grid.length;
+    let grid_no = grid.length;
     // cycle through our grid
-    for (let a = 0; a < gridno; a++) {
-        let closestdistance = Number.MAX_VALUE;
-        let farestdistance = Number.MIN_VALUE;
-        let closestpoint = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
-        let farestpoint = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
+    for (let a = 0; a < grid_no; a++) {
+        let closest_distance = Number.MAX_VALUE;
+        let farthest_distance = Number.MIN_VALUE;
+        let closest_point = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
+        let farthest_point = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
         // somewhere to store our intersections
-        let matchs = [];
+        let matches = [];
         let crosses = 0;
-        for (let b = 1; b < utmpositions.length; b++) {
-            const utmp1 = utmpositions[b - 1];
-            const utmp2 = utmpositions[b];
-            let newutmpos = FindLineIntersection(utmp1, utmp2, grid[a].p1, grid[a].p2);
-            if (!(newutmpos.equals(new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos()))) {
+        for (let b = 1; b < utm_positions.length; b++) {
+            const utm_p1 = utm_positions[b - 1];
+            const utm_p2 = utm_positions[b];
+            let new_utmpos = FindLineIntersection(utm_p1, utm_p2, grid[a].p1, grid[a].p2);
+            if (!(new_utmpos.equals(new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos()))) {
                 crosses++;
-                matchs.push(newutmpos);
-                if (closestdistance > grid[a].p1.GetDistance2D(newutmpos)) {
-                    closestpoint.y = newutmpos.y;
-                    closestpoint.x = newutmpos.x;
-                    closestpoint.zone = newutmpos.zone;
-                    closestdistance = grid[a].p1.GetDistance2D(newutmpos);
+                matches.push(new_utmpos);
+                if (closest_distance > grid[a].p1.GetDistance2D(new_utmpos)) {
+                    closest_point.y = new_utmpos.y;
+                    closest_point.x = new_utmpos.x;
+                    closest_point.zone = new_utmpos.zone;
+                    closest_distance = grid[a].p1.GetDistance2D(new_utmpos);
                 }
-                if (farestdistance < grid[a].p1.GetDistance2D(newutmpos)) {
-                    farestpoint.y = newutmpos.y;
-                    farestpoint.x = newutmpos.x;
-                    farestpoint.zone = newutmpos.zone;
-                    farestdistance = grid[a].p1.GetDistance2D(newutmpos);
+                if (farthest_distance < grid[a].p1.GetDistance2D(new_utmpos)) {
+                    farthest_point.y = new_utmpos.y;
+                    farthest_point.x = new_utmpos.x;
+                    farthest_point.zone = new_utmpos.zone;
+                    farthest_distance = grid[a].p1.GetDistance2D(new_utmpos);
                 }
             }
         }
         if (crosses == 0) // outside our polygon
          {
-            if (!PointInPolygon(grid[a].p1, utmpositions) && !PointInPolygon(grid[a].p2, utmpositions))
+            if (!PointInPolygon(grid[a].p1, utm_positions) && !PointInPolygon(grid[a].p2, utm_positions))
                 remove.push(grid[a]);
         }
-        else if (crosses == 1) // bad - shouldnt happen
+        else if (crosses == 1) // bad - shouldn't happen
          {
         }
         else if (crosses == 2) // simple start and finish
          {
             let line = grid[a];
-            line.p1 = closestpoint;
-            line.p2 = farestpoint;
+            line.p1 = closest_point;
+            line.p2 = farthest_point;
             grid[a] = line;
         }
         else // multiple intersections
          {
             let line = grid[a];
             remove.push(line);
-            while (matchs.length > 1) {
-                closestpoint = findClosestPoint(closestpoint, matchs);
-                const p1 = closestpoint;
-                remove_item_from_array(matchs, closestpoint);
-                closestpoint = findClosestPoint(closestpoint, matchs);
-                const p2 = closestpoint;
-                remove_item_from_array(matchs, closestpoint);
-                let newline = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMLine(p1, p2, line.basepnt.copy());
+            while (matches.length > 1) {
+                closest_point = findClosestPoint(closest_point, matches);
+                const p1 = closest_point;
+                remove_item_from_array(matches, closest_point);
+                closest_point = findClosestPoint(closest_point, matches);
+                const p2 = closest_point;
+                remove_item_from_array(matches, closest_point);
+                let newline = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMLine(p1, p2, line.base_pnt.copy());
                 grid.push(newline);
             }
         }
@@ -32713,41 +32713,41 @@ minLaneSeparation, leadin) {
     if (grid.length == 0)
         return [];
     // return NeuronInterfacePoint.from_UTMs(debug_points);
-    // pick start positon based on initial point rectangle
-    let startposutm = null;
+    // pick start position based on initial point rectangle
+    let start_pos_utm = null;
     switch (startpos) {
         default:
         // case StartPosition.Home:
-        //     startposutm = HomeLocation.to_UTM(utmzone);
+        //     start_pos_utm = HomeLocation.to_UTM(utm_zone);
         //     break;
         case StartPosition.BottomLeft:
-            startposutm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Left, area.Bottom, utmzone);
+            start_pos_utm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Left, area.Bottom, utm_zone);
             break;
         case StartPosition.BottomRight:
-            startposutm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Right, area.Bottom, utmzone);
+            start_pos_utm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Right, area.Bottom, utm_zone);
             break;
         case StartPosition.TopLeft:
-            startposutm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Left, area.Top, utmzone);
+            start_pos_utm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Left, area.Top, utm_zone);
             break;
         case StartPosition.TopRight:
-            startposutm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Right, area.Top, utmzone);
+            start_pos_utm = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(area.Right, area.Top, utm_zone);
             break;
         // case StartPosition.Point:
-        //     startposutm = new UTMPos();
-        //     startposutm.zone = utmzone;
+        //     start_pos_utm = new UTMPos();
+        //     start_pos_utm.zone = utm_zone;
         //     break;
     }
     // find the closes polygon point based from our startpos selection
-    startposutm = findClosestPoint(startposutm, utmpositions);
+    start_pos_utm = findClosestPoint(start_pos_utm, utm_positions);
     // find closest line point to startpos
-    let closest = findClosestLine(startposutm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
-    let lastpnt = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
+    let closest = findClosestLine(start_pos_utm, grid, 0 /*Lane separation does not apply to starting point*/, angle);
+    let last_pnt = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
     // get the closes point from the line we picked
-    if (closest.p1.GetDistance2D(startposutm) < closest.p2.GetDistance2D(startposutm)) {
-        lastpnt = closest.p1;
+    if (closest.p1.GetDistance2D(start_pos_utm) < closest.p2.GetDistance2D(start_pos_utm)) {
+        last_pnt = closest.p1;
     }
     else {
-        lastpnt = closest.p2;
+        last_pnt = closest.p2;
     }
     let ans = [];
     // Tags:
@@ -32757,13 +32757,13 @@ minLaneSeparation, leadin) {
     //   SM = start middle
     while (grid.length > 0) {
         // for each line, check which end of the line is the next closest
-        if (closest.p1.GetDistance2D(lastpnt) < closest.p2.GetDistance2D(lastpnt)) {
-            let newstart = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
-            newstart.tag = "S";
-            //UTMLine(newstart, "S");
-            ans.push(newstart);
+        if (closest.p1.GetDistance2D(last_pnt) < closest.p2.GetDistance2D(last_pnt)) {
+            let new_start = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
+            new_start.tag = "S";
+            //UTMLine(new_start, "S");
+            ans.push(new_start);
             if (leadin < 0) {
-                var p2 = newstart.copy();
+                var p2 = new_start.copy();
                 p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
@@ -32774,16 +32774,16 @@ minLaneSeparation, leadin) {
                 ans.push(closest.p1);
             }
             if (spacing > 0) {
-                for (let d = (spacing - ((closest.basepnt.GetDistance2D(closest.p1)) % spacing)); d < (closest.p1.GetDistance2D(closest.p2)); d += spacing) {
-                    // newpos(ref ax, ref ay, angle, d);
-                    let utmpos1 = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(closest.p1.x, closest.p1.y, utmzone, "M");
+                for (let d = (spacing - ((closest.base_pnt.GetDistance2D(closest.p1)) % spacing)); d < (closest.p1.GetDistance2D(closest.p2)); d += spacing) {
+                    // new_pos(ref ax, ref ay, angle, d);
+                    let utmpos1 = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(closest.p1.x, closest.p1.y, utm_zone, "M");
                     //UTMLine(utmpos1, "M");
                     ans.push(utmpos1);
                 }
             }
-            let newend = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
+            let new_end = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
             if (overshoot1 < 0) {
-                var p2 = newend.copy();
+                var p2 = new_end.copy();
                 p2.tag = "ME";
                 //UTMLine(p2, "ME");
                 ans.push(p2);
@@ -32793,22 +32793,22 @@ minLaneSeparation, leadin) {
                 //UTMLine(closest.p2, "ME");
                 ans.push(closest.p2);
             }
-            newend.tag = "E";
-            //UTMLine(newend, "E");
-            ans.push(newend);
-            lastpnt = closest.p2;
+            new_end.tag = "E";
+            //UTMLine(new_end, "E");
+            ans.push(new_end);
+            last_pnt = closest.p2;
             remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+            closest = findClosestLine(new_end, grid, minLaneSeparationINMeters, angle);
         }
         else {
-            let newstart = closest.p2.relative_point_from_dist_bearing(angle, leadin);
-            newstart.tag = "S";
-            //UTMLine(newstart, "S");
-            ans.push(newstart);
+            let new_start = closest.p2.relative_point_from_dist_bearing(angle, leadin);
+            new_start.tag = "S";
+            //UTMLine(new_start, "S");
+            ans.push(new_start);
             if (leadin < 0) {
-                var p2 = newstart.copy();
+                var p2 = new_start.copy();
                 p2.tag = "SM";
                 //UTMLine(p2, "SM");
                 ans.push(p2);
@@ -32819,37 +32819,37 @@ minLaneSeparation, leadin) {
                 ans.push(closest.p2);
             }
             if (spacing > 0) {
-                for (let d = ((closest.basepnt.GetDistance2D(closest.p2)) % spacing); d < (closest.p1.GetDistance2D(closest.p2)); d += spacing) {
+                for (let d = ((closest.base_pnt.GetDistance2D(closest.p2)) % spacing); d < (closest.p1.GetDistance2D(closest.p2)); d += spacing) {
                     // let ax = closest.p2.x;
                     // let ay = closest.p2.y;
                     let a = closest.p2.relative_point_from_dist_bearing(angle, -d);
-                    // newpos(ref ax, ref ay, angle, -d);
-                    var utmpos2 = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(a.x, a.y, utmzone, "M");
+                    // new_pos(ref ax, ref ay, angle, -d);
+                    var utmpos2 = new _proj4_interface__WEBPACK_IMPORTED_MODULE_1__.UTMPos(a.x, a.y, utm_zone, "M");
                     //UTMLine(utmpos2, "M");
                     ans.push(utmpos2);
                 }
             }
-            let newend = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, "E");
-            // utmpos newend = newpos(closest.p1, angle, -overshoot2);
+            let new_end = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, "E");
+            // utmpos new_end = new_pos(closest.p1, angle, -overshoot2);
             if (overshoot2 < 0) {
-                // var p2 = newend.copy("ME");
+                // var p2 = new_end.copy("ME");
                 //UTMLine(p2, "ME");
-                ans.push(newend.copy("ME"));
+                ans.push(new_end.copy("ME"));
             }
             else if (overshoot2 > 0) {
                 // closest.p1.tag = "ME";
                 //UTMLine(closest.p1, "ME");
                 ans.push(closest.p1.copy("ME"));
             }
-            // newend.tag = "E";
-            //UTMLine(newend, "E");
-            ans.push(newend);
-            lastpnt = closest.p1;
+            // new_end.tag = "E";
+            //UTMLine(new_end, "E");
+            ans.push(new_end);
+            last_pnt = closest.p1;
             // grid.Remove(closest);
             remove_item_from_array(grid, closest);
             if (grid.length == 0)
                 break;
-            closest = findClosestLine(newend, grid, minLaneSeparationINMeters, angle);
+            closest = findClosestLine(new_end, grid, minLaneSeparationINMeters, angle);
         }
     }
     const points = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronInterfacePoint.from_UTMs(ans);
@@ -32947,7 +32947,7 @@ class UTMLine {
     constructor(p1, p2, basepnt) {
         this.p1 = p1;
         this.p2 = p2;
-        this.basepnt = basepnt;
+        this.base_pnt = basepnt;
     }
 }
 
@@ -43993,7 +43993,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let baseURL;
 try {
-	baseURL = "file:///home/pryre/Workspace/github/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
+	baseURL = "file:///home/pryre/Workspace/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
 } catch (error) {
 	// ignored
 }

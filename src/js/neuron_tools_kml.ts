@@ -10,7 +10,7 @@ export interface NeuronKMLData {
     polygons:NeuronInterfacePoint[][];
 }
 
-export async function kml_load_file(file:Blob, cb_file_loaded:CallableFunction) {
+export async function kmx_load_file(file:Blob, cb_file_loaded:CallableFunction) {
     let result = null;
     console.log(`Loaded file identified as "${file.type}" type`);
     switch(file.type) {
@@ -103,7 +103,7 @@ export async function kml_extract_features(kml_plain_text:string) {
     return ret;
 }
 
-export async function kml_download_from_points(coordinates:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+export async function kml_download_from_neuron_data(coordinates:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
     const textXML = await kml_data_from_neuron_data(coordinates, polygons);
     const file = new Blob(
         [textXML],

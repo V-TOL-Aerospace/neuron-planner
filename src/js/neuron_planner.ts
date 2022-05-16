@@ -4,7 +4,7 @@ import { NeuronFeaturePolygon, NeuronFeaturePolygonData } from "./neuron_feature
 import { NeuronFeatureSurvey, NeuronFeatureSurveyData } from "./neuron_feature_survey";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { NeuronMap } from "./neuron_map";
-import { kmz_download_from_neuron_data, kml_load_file, NeuronKMLData } from "./neuron_tools_kml";
+import { kml_download_from_neuron_data, kmx_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
 
@@ -228,7 +228,7 @@ export class NeuronPlanner {
             }
         }
 
-        kmz_download_from_neuron_data(this.get_mission_as_points(), polygons);
+        kml_download_from_neuron_data(this.get_mission_as_points(), polygons);
     }
 
     set_map(map:NeuronMap) {
@@ -404,7 +404,7 @@ export class NeuronPlanner {
 
     import_features_from_files(files:Blob[]) {
         for(const file of files) {
-            kml_load_file(file, this.#kml_loaded.bind(this));
+            kmx_load_file(file, this.#kml_loaded.bind(this));
         }
     }
 
