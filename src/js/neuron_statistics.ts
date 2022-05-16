@@ -9,14 +9,17 @@ export enum NeuronStatisticsOptionKeys {
 
 export class NeuronStatistics extends NeuronDOMFactory {
     #planner:NeuronPlanner;
+    #stats_element_prefix:string;
+    #stats_section_show_display:string;
+
     #stat_options:Map<NeuronStatisticsOptionKeys,number>;
+
     #stats_results_element:HTMLElement;
     #stats_options_element:HTMLElement;
     #stats_results_hide_element:HTMLElement;
     #stats_options_hide_element:HTMLElement;
     #stats_results_title_element:HTMLElement;
     #stats_options_title_element:HTMLElement;
-    #stats_element_prefix:string;
 
     #dom_option_speed:HTMLInputElement;
 
@@ -40,6 +43,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_options_title_element = null;
         this.#stats_results_title_element = null;
         this.#stats_element_prefix = stats_element_prefix;
+        this.#stats_section_show_display = 'grid';
 
         this.#dom_stat_waypoints = null;
         this.#dom_stat_distance = null;
@@ -127,28 +131,40 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_results_element.appendChild(this.#dom_stat_duration);
 
         //Callbacks for hide
-        this.#stats_results_title_element = document.getElementById(`${this.#stats_element_prefix}-results-title`);
-        this.#stats_options_title_element = document.getElementById(`${this.#stats_element_prefix}-options-title`);
         this.#stats_results_hide_element = document.getElementById(`${this.#stats_element_prefix}-results-hide`);
-        this.#stats_results_hide_element.onclick = this.#toggle_hide_section.bind(
+        this.#stats_results_title_element = document.getElementById(`${this.#stats_element_prefix}-results-title`);
+        this.#stats_results_title_element.style.cursor = 'pointer';
+        this.#stats_results_title_element.onclick = this.#toggle_hide_section.bind(
             this,
             this.#stats_results_title_element,
             this.#stats_results_hide_element,
             this.#stats_results_element
         );
         this.#stats_options_hide_element = document.getElementById(`${this.#stats_element_prefix}-options-hide`);
-        this.#stats_options_hide_element.onclick = this.#toggle_hide_section.bind(
+        this.#stats_options_title_element = document.getElementById(`${this.#stats_element_prefix}-options-title`);
+        this.#stats_options_title_element.style.cursor = 'pointer';
+        this.#stats_options_title_element.onclick = this.#toggle_hide_section.bind(
             this,
-            this.#stats_options_title_element,
+            // this.#stats_options_title_element,
             this.#stats_options_hide_element,
             this.#stats_options_element
         );
 
     }
 
-    #toggle_hide_section(title:HTMLElement, button:HTMLElement, section:HTMLElement) {
-        let els = button.childNodes[0];
-        //TODO
+    #toggle_hide_section(button:HTMLElement, section:HTMLElement) {
+        if(section.style.display != 'none') {
+            //Hide
+            section.style.display = 'none';
+        } else {
+            //Show
+            section.style.display = this.#stats_section_show_display;
+        }
+
+        button.innerHTML = '';
+        let i = document.createElement('i');
+        i.className = `fas fa-${section.style.display == 'none' ? 'plus' : 'minus'}`;
+        button.appendChild(i);
     }
 
     reset() {
