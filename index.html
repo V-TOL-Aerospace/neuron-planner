@@ -64,14 +64,14 @@
 
 <body>
     <div id="fp-manage" class="fp-user-buttons-frame">
-        <button type="button" id="fp-manage-load-plan" class="fp-user-buttons"  onclick="document.getElementById('fp-manage-load-plan-sub').click();" title="Load Flight Plan"><i class="fas fa-folder-open"></i><span class="fp-long-name">Load Flight Plan</span></button>
+        <button type="button" id="fp-manage-load-plan" class="fp-user-buttons"  onclick="document.getElementById('fp-manage-load-plan-sub').click();" title="Load Flight Plan"><i class="fas fa-folder-open"></i><span class="fp-long-name">Load Plan</span></button>
         <input type="file" style="display:none;" id="fp-manage-load-plan-sub" onchange="window.neuron_planner.load_mission_file(this.files[0])" accept="application/json, .json"/>
-        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons"  onclick="window.neuron_planner.save_mission_file()" title="Save Flight Plan"><i class="fas fa-save"></i><span class="fp-long-name">Save Flight Plan</span></button>
+        <button type="button" id="fp-manage-save-plan" class="fp-user-buttons"  onclick="window.neuron_planner.save_mission_file()" title="Save Flight Plan"><i class="fas fa-save"></i><span class="fp-long-name">Save Plan</span></button>
         <!-- <input type="file" style="display:none;" id="fp-manage-save-plan-sub" onchange="window.neuron_planner.save_mission_file()" accept="application/json, .json"/> -->
-        <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" onclick="window.neuron_planner.clear_mission();" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Flight Plan</span></button>
-        <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="Upload Flight Plan" disabled><i class="fas fa-upload"></i><span class="fp-long-name">Upload Flight Plan</span></button>
-        <button type="button" id="fp-manage-create-brief" class="fp-user-buttons" title="Create Flight Brief" onclick="print();"><i class="fas fa-file"></i><span class="fp-long-name">Create Flight Brief</span></button>
-        <button type="button" id="fp-manage-toggle-help" class="fp-user-buttons" onclick="window.neuron_map.toggle_map_help()" title="Toggle Help/Map"><i class="fas fa-question-circle"></i><span class="fp-long-name">Toggle Help/Map</span></button>
+        <button type="button" id="fp-manage-clear-plan" class="fp-user-buttons" onclick="window.neuron_planner.clear_mission();" title="Clear Flight Plan"><i class="fas fa-trash"></i><span class="fp-long-name">Clear Plan</span></button>
+        <button type="button" id="fp-manage-upload-plan" class="fp-user-buttons" title="UpLoad Flight Plan" disabled><i class="fas fa-upload"></i><span class="fp-long-name">Upload Plan</span></button>
+        <button type="button" id="fp-manage-create-brief" class="fp-user-buttons" title="Create Flight Brief" onclick="print();"><i class="fas fa-file"></i><span class="fp-long-name">Create Brief</span></button>
+        <button type="button" id="fp-manage-toggle-help" class="fp-user-buttons" onclick="window.neuron_map.toggle_map_help()" title="Toggle Help/Map"><i class="fas fa-question-circle"></i><span class="fp-long-name">Toggle Help</span></button>
     </div>
     <div id="fp-main">
         <div id="fp-map">
@@ -87,26 +87,26 @@
                         <h2>Management Interface</h2>
                         <p>This set of buttons provides options for managing the current mission that is being planned.</p>
                         <section id="help-fp-manage-load-plan">
-                            <h3>Load Flight Plan</h3>
+                            <h3>Load Plan</h3>
                             <p>Loads an existing flight plan into Neuron Planner.</p>
                             <p>Loading a mission will not clear any previous mission items that are present. Loading a mission will add that mission to the current mission. If you wish to load an entire mission in its original state, you must first clear the current mission, then load the desired mission.</p>
                             <p>Currently, only supported '.json' files are accepted. Older missions may be accepted and attempted to be converted if possible.</p>
                         </section>
                         <section id="help-fp-manage-save-plan">
-                            <h3>Save Flight Plan</h3>
+                            <h3>Save Plan</h3>
                             <p>Saves an existing flight plan to a Neuron Planner mission file.</p>
                             <p>The mission file will be downloaded to your computer, or you may be prompted to download the mission file.</p>
                         </section>
                         <section id="help-fp-manage-clear-plan">
-                            <h3>Clear Flight Plan</h3>
+                            <h3>Clear Plan</h3>
                             <p>Clears the current existing flight plan in Neuron Planner, removing all mission features.</p>
                         </section>
                         <section id="help-fp-manage-upload-plan">
-                            <h3>Upload Flight Plan</h3>
+                            <h3>UpLoad Plan</h3>
                             <p>This tool is currently not available.</p>
                         </section>
                         <section id="help-fp-manage-create-brief">
-                            <h3>Create Flight Brief</h3>
+                            <h3>Create Brief</h3>
                             <p>Creates a printable flight brief based on the current mission plan in Neuron Planner.</p>
                             <p>The flight brief contains various details that may be useful if submitting the flight plan to a reviewer or chief pilot, such as:</p>
                             <ul>
@@ -120,7 +120,7 @@
                             <p>Note: if the map display does not render correctly, please try to recrate the flight brief without adjusting the map. The map position process sometimes does not occur quickly enough before the flight brief is created.</p>
                         </section>
                         <section id="help-fp-manage-toggle-help">
-                            <h3>Toggle Help/Map</h3>
+                            <h3>Toggle Help</h3>
                             <p>Toggles between this help page and the <a href="#help-fp-map-interactive">Interactive Map</a> in Neuron Planner.</p>
                         </section>
                     </section>
@@ -157,7 +157,7 @@
                                     <li>Polygons: imported from Placemark/Polygon/LinearRing objects.</li>
                                 </ul>
                             </ul>
-                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Flight Plan</a> and <a href="#help-fp-manage-load-plan">Load Flight Plan</a> tools with this application where possible.</p>
+                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Plan</a> and <a href="#help-fp-manage-load-plan">Load Plan</a> tools with this application where possible.</p>
                         </section>
                         <section id="help-fp-draw-export-mission">
                             <h3>Export KML</h3>
@@ -169,7 +169,7 @@
                                 <li>Polygons: exported as Placemark/Polygon/LinearRing objects.</li>
                                 <li>Surveys: converted to waypoints and exported as Placemark/Point objects.</li>
                             </ul>
-                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Flight Plan</a> and <a href="#help-fp-manage-load-plan">Load Flight Plan</a> tools with this application where possible.</p>
+                            <p>Note: Neuron Planner is not optimized for importing large numbers of individual mission features. It is recommended that you use the <a href="#help-fp-manage-save-plan">Save Plan</a> and <a href="#help-fp-manage-load-plan">Load Plan</a> tools with this application where possible.</p>
                         </section>
                     </section>
                     <section id="help-fp-map-interactive">
@@ -186,7 +186,7 @@
                         <p>The mission interface is used to manage the current mission plan, including current mission settings and features, and to review mission statistics.</p>
                         <section id="help-fp-stats-settings">
                             <h3>Mission Options</h3>
-                            <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats-statistics">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Flight Brief</a> interfaces.</p>
+                            <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats-statistics">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Brief</a> interfaces.</p>
                             <p>These options include:</p>
                             <ul>
                                 <li>Speed: aircraft cruise airspeed in meters per second </li>
