@@ -1,6 +1,6 @@
 
 /* Prefer portrait mode for very small screen sizes */
-@media screen and ((orientation: portrait) or (max-height: 400px) or (max-width: 800px)) {
+@media only screen and ((orientation: portrait) or (max-width: 620px)) {
     #fp-main {
         flex-direction: column;
     }
@@ -27,7 +27,7 @@
     }
 }
 
-@media only screen and ((max-height: 620px) or (max-width: 820px)) {
+@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {
     .leaflet-control-attribution {
         display: none;
     }
@@ -53,10 +53,20 @@
     }
 }
 
-@media only screen and (max-height: 400px) {
+@media only screen and (orientation: portrait) and (max-height: 400px) {
     #fp-summary {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {
+    #fp-map {
+        max-height: 100%;
+    }
+
+    #fp-summary {
+        display: none;
     }
 }
 
