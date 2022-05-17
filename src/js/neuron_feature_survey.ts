@@ -1,6 +1,6 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronInterfacePoint, NeuronInterfacePointData, NeuronCameraSpecifications, NeuronCameraSpecificationsData } from "./neuron_interfaces";
-import { CreateGrid, StartPosition } from "./neuron_tools_survey"
+import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
 
 export interface NeuronFeatureSurveyData {
@@ -18,13 +18,19 @@ export interface NeuronFeatureSurveyData {
     leadin:number,
     camera:NeuronCameraSpecificationsData,
     sidelap:number,
+    overlap:number,
     ground_resolution:number
+}
+
+interface NeuronFeatureSurveyLane {
+    start:NeuronInterfacePoint,
+    end:NeuronInterfacePoint
 }
 
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     static override NAME = "Survey";
     static override TYPE = "NeuronFeatureSurvey";
-    static override VERSION = '24cd1570-d4fc-11ec-a2cb-cb428cc5d90e';
+    static override VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
 
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
@@ -41,6 +47,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #camera:NeuronCameraSpecifications;
     #sidelap:number;
+    #overlap:number;
     #ground_resolution:number;
 
     #show_waypoints;
@@ -48,6 +55,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
     #dom_waypoint_count:HTMLOutputElement;
+    #dom_photo_count:HTMLOutputElement;
+    //Display parameters
     #dom_show_waypoints:HTMLInputElement;
     //Survey parameters
     #dom_altitude:HTMLInputElement;
@@ -68,6 +77,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_camera_sensor_width:HTMLInputElement;
     #dom_camera_sensor_height:HTMLInputElement;
     #dom_sidelap:HTMLInputElement;
+    #dom_overlap:HTMLInputElement;
     #dom_ground_resolution:HTMLInputElement;
 
     #update_timer:NodeJS.Timeout;
@@ -81,7 +91,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     ];
 
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
-    static _sidelap_ratio = 0.01;   //Sidelap = [DOM Value] * Ratio
+    static _xlap_ratio = 0.01;   //Sidelap = [DOM Value] * Ratio
     static _camera_focal_length_min:number = 0;
     static _camera_sensor_width_min:number = 0;
     static _camera_sensor_height_min:number = 0;
@@ -98,7 +108,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom = null;
         this.#dom_corner_count = null;
         this.#dom_waypoint_count = null;
-        this.#dom_ground_resolution = null;
+        this.#dom_photo_count = null;
+
         this.#dom_show_waypoints = null;
         this.#dom_altitude = null;
         this.#dom_distance = null;
@@ -111,13 +122,15 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom_minLaneSeparation = null;
         this.#dom_leadin = null;
 
+        this.#dom_sidelap = null;
+        this.#dom_overlap = null;
+        this.#dom_ground_resolution = null;
         this.#dom_camera_name = null;
         this.#dom_camera_focal_length = null;
         this.#dom_camera_image_width = null;
         this.#dom_camera_image_height = null;
         this.#dom_camera_sensor_width = null;
         this.#dom_camera_sensor_height = null;
-        this.#dom_sidelap = null;
 
         this.#show_waypoints = show_waypoints;
         this.#altitude = 100;
@@ -131,7 +144,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#leadin = 0.0;
 
         this.#camera = NeuronFeatureSurvey._camera_preset_custom.copy();
-        this.#sidelap = 70.0;
+        this.#sidelap = 0.7;
+        this.#overlap = 0.7;
         this.#ground_resolution = 0.0;
 
         this._set_on_change_internal(this.update_survey.bind(this));
@@ -202,7 +216,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
                 const sidelap = Math.max(Math.min(1 - sidelap_factor, 1.0), 0.0);
 
                 if(this.#dom_ground_resolution)
-                    this.#dom_sidelap.value = (sidelap / NeuronFeatureSurvey._sidelap_ratio).toString();
+                    this.#dom_sidelap.value = (sidelap / NeuronFeatureSurvey._xlap_ratio).toString();
 
                 this.#set_sidelap(sidelap, false);
             }
@@ -348,6 +362,29 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         if(this.#dom_waypoint_count)
             this.#dom_waypoint_count.value = this.get_path_coords().length.toFixed(0);
+
+        if(this.#dom_photo_count) {
+            let count = "---";
+            let projection = this.#camera.get_projected_size(this.#altitude);
+
+            if(projection && (this.#overlap >= 0) && (this.#overlap <= 1)) {
+                const overlap_factor = 1 - this.#overlap;
+                const photo_distance = Math.abs(projection.Height())*overlap_factor;
+
+                let photo_count = 0;
+                for(const lane of this.get_lane_coords()) {
+                    const ps = lane.start.to_UTM();
+                    const pe = lane.end.to_UTM(ps.zone);
+
+                    const lane_distance = ps.GetDistance2D(pe);
+                    photo_count += Math.ceil(lane_distance / photo_distance);
+                }
+
+                count = photo_count.toString();
+            }
+
+            this.#dom_photo_count.value = count;
+        }
     }
 
     #update_show_waypoints_from_dom() {
@@ -414,6 +451,34 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return this.#waypoints.length ? this.#waypoints : (corners.length ? [corners[0]] : []);
     }
 
+    get_lane_coords() {
+        const coords = this.get_path_coords();
+        let lanes:NeuronFeatureSurveyLane[] = [];
+        let start:NeuronInterfacePoint = null;
+
+        for(let i = 0; i < coords.length; i++) {
+            const p = coords[i];
+            if((!start && p.tag == GridPointTags.START) || (start && p.tag == GridPointTags.MIDDLE_START)) {
+                //If we found a new start, or we are adjusting to a new middle start
+                start = p;
+            } else if (start && ((p.tag == GridPointTags.MIDDLE_END) || (p.tag == GridPointTags.END))) {
+                //If we have a valid start and we have found a valid end
+                //Add our finished lane
+                lanes.push({
+                    start: start,
+                    end: p
+                })
+                //And reset
+                start = null;
+            }
+        }
+
+        if(start)
+            console.warn("Unable to determine all lanes correctly!");
+
+        return lanes;
+    }
+
     override get_dom() {
         if(!this.#dom) {
             this.#dom = this._get_dom("Survey");
@@ -434,7 +499,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Waypoints:", this.#dom_waypoint_count, t01));
             c.appendChild(this.#dom_waypoint_count);
 
-            this.#try_update_dom_stats();
+            const t02 = "Number of photos that will be captured to perform this survey";
+            this.#dom_photo_count = this._create_dom_output();
+            this.#dom_photo_count.title = t02;
+            c.appendChild(this._create_dom_label("Photos:", this.#dom_photo_count, t02));
+            c.appendChild(this.#dom_photo_count);
 
             //Input fields
             const t2 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
@@ -531,10 +600,16 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
             c.appendChild(this.#dom_ground_resolution);
 
-            const t17 = "Image horizontal overlap between lanes as a percentage";
-            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._sidelap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
-            this.#dom_sidelap.title = t17;
-            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t17));
+            const t17 = "Image vertical overlap between lanes as a percentage";
+            this.#dom_overlap = this._create_dom_input_number(this.#overlap / NeuronFeatureSurvey._xlap_ratio, this.#update_overlap_from_dom.bind(this), 0, 100);
+            this.#dom_overlap.title = t17;
+            c.appendChild(this._create_dom_label("Overlap:", this.#dom_overlap, t17));
+            c.appendChild(this.#dom_overlap);
+
+            const t19 = "Image horizontal overlap between lanes as a percentage";
+            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._xlap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
+            this.#dom_sidelap.title = t19;
+            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t19));
             c.appendChild(this.#dom_sidelap);
 
             const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
@@ -578,6 +653,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
             //Try go back now and calculate other values if relevant
             this.#calculate_and_update_camera_variables();
+            this.#try_update_dom_stats();
 
             this.#dom.append(c);
         }
@@ -593,6 +669,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return this.#sidelap;
     };
 
+    get_overlap() {
+        return this.#overlap;
+    }
+
     get_ground_resolution() {
         return this.#ground_resolution;
     };
@@ -606,6 +686,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         if(update_calcs)
             this.#calculate_and_update_camera_variables();
     };
+
+    set_overlap(overlap:number) {
+        this.#overlap = overlap;
+        this.#try_update_dom_stats();
+    }
 
     set_ground_resolution(ground_resolution:number) {
         this.#set_ground_resolution(ground_resolution);
@@ -701,7 +786,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #update_sidelap_from_dom() {
-        this.set_sidelap(this.#dom_sidelap.valueAsNumber * NeuronFeatureSurvey._sidelap_ratio)
+        this.set_sidelap(this.#dom_sidelap.valueAsNumber * NeuronFeatureSurvey._xlap_ratio)
+    }
+
+    #update_overlap_from_dom() {
+        this.set_overlap(this.#dom_overlap.valueAsNumber * NeuronFeatureSurvey._xlap_ratio)
     }
 
     #update_ground_resolution_from_dom() {
@@ -756,6 +845,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         s.set_minLaneSeparation(j.minLaneSeparation);
         s.set_leadin(j.leadin);
         s.#set_camera(NeuronCameraSpecifications.from_json(j.camera), false);
+        s.set_overlap(j.overlap);
         s.#set_sidelap(j.sidelap, false);
         s.#set_ground_resolution(j.ground_resolution, false);
 
@@ -780,6 +870,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             minLaneSeparation: this.get_minLaneSeparation(),
             leadin: this.get_leadin(),
             camera: this.get_camera().to_json(),
+            overlap: this.get_overlap(),
             sidelap: this.get_sidelap(),
             ground_resolution: this.get_ground_resolution()
         }

@@ -15,6 +15,7 @@
         "placemarks",
         "sidelap",
         "startpos",
-        "utmpos"
+        "utmpos",
+        "xlap"
     ]
 }

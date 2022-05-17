@@ -80,7 +80,7 @@ export class UTMPos {
         );
 
         //p given as [lng, lat]
-        return new NeuronInterfacePoint(p[1], p[0]);
+        return new NeuronInterfacePoint(p[1], p[0], 0.0, this.tag);
     }
 
     /**
@@ -88,7 +88,7 @@ export class UTMPos {
      * @param  {number=null} zone Zone override to use during the projection
      * @param  {string=""} tag Additional tag information for this point
      */
-    static from_NeuronInterfacePoint(point:NeuronInterfacePoint, zone:number = null, tag:string="") {
+    static from_NeuronInterfacePoint(point:NeuronInterfacePoint, zone:number = null) {
         if (!zone)
             zone = get_UTM_zone(point.latitude, point.longitude);
 
@@ -101,7 +101,7 @@ export class UTMPos {
         );
 
         //p given as [x, y]
-        return new UTMPos(p[0], p[1], zone, tag);
+        return new UTMPos(p[0], p[1], zone, point.tag);
     }
 }
 
@@ -113,9 +113,9 @@ export class UTMLine {
     // used as a base for grid along line (initial setout)
     base_pnt:UTMPos;
 
-    constructor(p1:UTMPos, p2:UTMPos, basepnt:UTMPos) {
+    constructor(p1:UTMPos, p2:UTMPos, base_pnt:UTMPos) {
         this.p1 = p1;
         this.p2 = p2;
-        this.base_pnt = basepnt;
+        this.base_pnt = base_pnt;
     }
 }

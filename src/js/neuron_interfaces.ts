@@ -9,17 +9,20 @@ export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;
     altitude:number;
+    tag:string;
 }
 
 export class NeuronInterfacePoint {
     latitude: number;
     longitude: number;
     altitude:number;
+    tag:string;
 
-    constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0) {
+    constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0, tag:string="") {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
+        this.tag = tag;
     }
 
     static projection_code() {
@@ -40,8 +43,8 @@ export class NeuronInterfacePoint {
         return new NeuronInterfacePoint(latlng.lat, latlng.lng);
     }
 
-    to_UTM(zone:number = null, tag:string = "") {
-        return UTMPos.from_NeuronInterfacePoint(this, zone, tag);
+    to_UTM(zone:number = null) {
+        return UTMPos.from_NeuronInterfacePoint(this, zone);
     }
 
     static from_UTM(utm:UTMPos) {
@@ -54,9 +57,10 @@ export class NeuronInterfacePoint {
 
     static isObjectOfDataType(object: any): object is NeuronInterfacePointData {
         let is_valid =
-            Number.isFinite(object.latitude) ||
-            Number.isFinite(object.longitude) ||
-            Number.isFinite(object.altitude);
+            Number.isFinite(object.latitude) &&
+            Number.isFinite(object.longitude) &&
+            Number.isFinite(object.altitude) &&
+            ((object.tag !== undefined) || (object.tag !== null)) ;
 
         return is_valid;
     }
@@ -65,7 +69,7 @@ export class NeuronInterfacePoint {
         if(!NeuronInterfacePoint.isObjectOfDataType(j))
             throw new Error(`Invalid type check during creation of NeuronInterfacePoint`);
 
-        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude);
+        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude, j.tag.toString());
     }
 
     to_json() {
@@ -73,6 +77,7 @@ export class NeuronInterfacePoint {
             latitude: this.latitude,
             longitude: this.longitude,
             altitude:this.altitude,
+            tag:this.tag,
         }
     }
 

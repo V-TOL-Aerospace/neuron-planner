@@ -213,7 +213,8 @@
                                     <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...).</li>
                                     <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
                                 </ul>
-                                <p>The survey feature also provides an interface for setting the survey properties through imagery capture requirements and camera information. These calculations require the following properties:</p>
+                                <p>The survey feature also provides an interface for setting the survey properties through imagery capture requirements and camera information. It is assumed that the camera is oriented such that the height axis points forward on the drone, and that the drone will fly in the direction of travel.</p>
+                                <p>The camera calculations require the following properties:</p>
                                 <ul>
                                     <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
                                     <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>

@@ -22,7 +22,7 @@ export class Rect
     }
 
     Height() {
-        return this.Top - this.Bottom;
+        return this.Bottom - this.Top;
     }
 
 
@@ -264,6 +264,14 @@ function findClosestLine(start:UTMPos, list:UTMLine[], min_distance:number, angl
 
         return answer;
     }
+}
+
+export enum GridPointTags {
+    START = "S",
+    END = "E",
+    MIDDLE = "M",
+    MIDDLE_START= "MS",
+    MIDDLE_END = "ME",
 }
 
 const min_distance = 0.5;
@@ -543,28 +551,22 @@ export function CreateGrid(
     }
 
     let ans:UTMPos[] = [];
-    // Tags:
-    //   S =  start
-    //   E = end
-    //   ME = middle end
-    //   SM = start middle
-
     while (grid.length > 0) {
         // for each line, check which end of the line is the next closest
         if (closest.p1.GetDistance2D(last_pnt) < closest.p2.GetDistance2D(last_pnt))
         {
             let new_start = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
-            new_start.tag = "S";
+            new_start.tag = GridPointTags.START;
             //UTMLine(new_start, "S");
             ans.push(new_start);
 
             if (leadin < 0) {
                 var p2 = new_start.copy();
-                p2.tag = "SM";
+                p2.tag = GridPointTags.MIDDLE_START;
                 //UTMLine(p2, "SM");
                 ans.push(p2);
             } else if (leadin > 0) {
-                closest.p1.tag = "SM";
+                closest.p1.tag = GridPointTags.MIDDLE_START;
                 //UTMLine(closest.p1, "SM");
                 ans.push(closest.p1);
             }
@@ -574,26 +576,26 @@ export function CreateGrid(
                     d < (closest.p1.GetDistance2D(closest.p2));
                     d += spacing) {
                     // new_pos(ref ax, ref ay, angle, d);
-                    let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utm_zone, "M");
+                    let utmpos1 = new UTMPos(closest.p1.x, closest.p1.y, utm_zone, GridPointTags.MIDDLE);
                     //UTMLine(utmpos1, "M");
                     ans.push(utmpos1);
                 }
             }
 
-            let new_end = closest.p2.relative_point_from_dist_bearing(angle, overshoot1);
+            let new_end = closest.p2.relative_point_from_dist_bearing(angle, overshoot1, GridPointTags.END);
 
             if (overshoot1 < 0) {
                 var p2 = new_end.copy()
-                p2.tag = "ME";
+                p2.tag = GridPointTags.MIDDLE_END;
                 //UTMLine(p2, "ME");
                 ans.push(p2);
             } else if (overshoot1 > 0) {
-                closest.p2.tag = "ME";
+                closest.p2.tag = GridPointTags.MIDDLE_END;
                 //UTMLine(closest.p2, "ME");
                 ans.push(closest.p2);
             }
 
-            new_end.tag = "E";
+            // new_end.tag = GridPointTags.END;
             //UTMLine(new_end, "E");
             ans.push(new_end);
 
@@ -606,17 +608,17 @@ export function CreateGrid(
             closest = findClosestLine(new_end, grid, minLaneSeparationINMeters, angle);
         } else {
             let new_start = closest.p2.relative_point_from_dist_bearing(angle, leadin);
-            new_start.tag = "S";
+            new_start.tag = GridPointTags.START;
             //UTMLine(new_start, "S");
             ans.push(new_start);
 
             if (leadin < 0) {
                 var p2 = new_start.copy()
-                p2.tag = "SM";
+                p2.tag = GridPointTags.MIDDLE_START;
                 //UTMLine(p2, "SM");
                 ans.push(p2);
             } else if(leadin > 0) {
-                closest.p2.tag = "SM";
+                closest.p2.tag = GridPointTags.MIDDLE_START;
                 //UTMLine(closest.p2, "SM");
                 ans.push(closest.p2);
             }
@@ -630,23 +632,23 @@ export function CreateGrid(
                     let a = closest.p2.relative_point_from_dist_bearing(angle, -d);
 
                     // new_pos(ref ax, ref ay, angle, -d);
-                    var utmpos2 = new UTMPos(a.x, a.y, utm_zone, "M");
+                    var utmpos2 = new UTMPos(a.x, a.y, utm_zone, GridPointTags.MIDDLE);
                     //UTMLine(utmpos2, "M");
                     ans.push(utmpos2);
                 }
             }
 
-            let new_end = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, "E");
+            let new_end = closest.p1.relative_point_from_dist_bearing(angle, -overshoot2, GridPointTags.END);
             // utmpos new_end = new_pos(closest.p1, angle, -overshoot2);
 
             if (overshoot2 < 0) {
                 // var p2 = new_end.copy("ME");
                 //UTMLine(p2, "ME");
-                ans.push(new_end.copy("ME"));
+                ans.push(new_end.copy(GridPointTags.MIDDLE_END));
             } else if (overshoot2 > 0) {
                 // closest.p1.tag = "ME";
                 //UTMLine(closest.p1, "ME");
-                ans.push(closest.p1.copy("ME"));
+                ans.push(closest.p1.copy(GridPointTags.MIDDLE_END));
             }
 
             // new_end.tag = "E";
