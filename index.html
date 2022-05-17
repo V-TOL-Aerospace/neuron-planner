@@ -15,7 +15,6 @@
     <meta property="og:description" content="An online mission planning and flight management software.">
     <meta property="og:image" content="image.png">
 
-
     <link rel="manifest" href="/manifest.json">
     <link rel="icon" href="/favicon.ico">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
@@ -26,36 +25,6 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
 
-    <!-- <link rel="stylesheet" href="css/00-theme.css">
-    <link rel="stylesheet" href="css/01-index.css"> -->
-
-	<!-- Plugins -->
-	<!-- FontAwesome icons -->
-	<!-- <script defer src="https://kit.fontawesome.com/2e13b370d8.js" crossorigin="anonymous"></script> -->
-	<!-- Chart.JS-->
-	<!-- <script defer src="https://cdn.jsdelivr.net/npm/chart.js@3.7.0/dist/chart.min.js" crossorigin="anonymous"></script> -->
-	<!-- Leaflet -->
-	<!-- <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
-	integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-	crossorigin=""/>
-	<script defer src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
-	integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
-	crossorigin=""></script>
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-contextmenu/1.4.0/leaflet.contextmenu.css"
-	integrity="sha512-sgMNQqQqKbwIukMPRGv16lpaZLXNnWdtgLtzUwrorvhoLyC4QnkuT59T1jq9GTaVoZJJ4bnKjs8lS5shjc02AA=="
-	crossorigin=""/>
-	<script defer src="https://unpkg.com/leaflet-contextmenu@1.4.0/dist/leaflet.contextmenu.js"
-	integrity="sha512-CFGYUwcYFH5ixlvTGquEhoM+ggeyW+lO/ostl++x1K+P31EyW5kj+lyFt8HucjybA9VSB0+wffwhOIiFJjhtAQ=="
-	crossorigin=""></script> -->
-	<!-- Load app -->
-	<!-- <script defer type="module" src="https://www.gstatic.com/firebasejs/9.1.1/firebase-app.js"></script>
-	<script defer type="module" src="https://www.gstatic.com/firebasejs/9.1.1/firebase-firestore.js"></script>
-	<script defer type="module" src="https://www.gstatic.com/firebasejs/9.1.1/firebase-auth.js"></script> -->
-    <!-- <script defer type="text/javascript" src="js/map_point.js"></script>
-    <script defer type="text/javascript" src="js/map_polygon.js"></script>
-    <script defer type="text/javascript" src="js/map.js"></script>
-    <script defer type="text/javascript" src="js/adv_mode.js"></script>
-    <script defer type="text/javascript" src="js/index.js"></script> -->
     <script defer type="text/javascript" src="bundle.js"></script>
 	<script>
 	  /*to prevent Firefox FOUC, this must be here*/
@@ -244,6 +213,20 @@
                                     <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...).</li>
                                     <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
                                 </ul>
+                                <p>The survey feature also provides an interface for setting the survey properties through imagery capture requirements and camera information. It is assumed that the camera is oriented such that the height axis points forward on the drone, and that the drone will fly in the direction of travel.</p>
+                                <p>The camera calculations require the following properties:</p>
+                                <ul>
+                                    <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
+                                    <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>
+                                    <li>Overlap: Amount of overlap in the imagery that will be captured between sequential images. Typically, photogrammetry software requires a overlap greater than 50% to perform accurate stitching.</li>
+                                    <li>Camera: A listing of camera information for cameras that are typically used for surveying. Custom entry of camera information is also permitted.</li>
+                                    <li>Focal Length: Focal length of the lense that will be fitted to the camera on the aircraft.</li>
+                                    <li>Sensor Width: Physical width of the imagery sensor camera on the aircraft.</li>
+                                    <li>Sensor Height: Physical height of the imagery sensor of the camera on the aircraft.</li>
+                                    <li>Image Width: Number of pixels in the width axis of the imagery sensor of the camera on the aircraft.</li>
+                                    <li>Image Height: Number of pixels in the height axis of the imagery sensor of the camera on the aircraft.</li>
+                                </ul>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is selected and the survey properties are adjusted. As such, the imagery capture requirements can be used to cross check survey outcomes after adjusting the survey to meet flight limitations.</p>
                             </section>
                         </section>
                     </section>
