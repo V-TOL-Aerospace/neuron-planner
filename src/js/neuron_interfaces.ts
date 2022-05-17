@@ -137,11 +137,11 @@ export class NeuronCameraSpecifications {
 
     equals(other:NeuronCameraSpecifications) {
         return (this.name == other.name) &&
-               (this.focal_length && other.focal_length) &&
-               (this.sensor_width && other.sensor_width) &&
-               (this.sensor_height && other.sensor_height) &&
-               (this.image_width && other.image_width) &&
-               (this.image_height && other.image_height);
+               (this.focal_length == other.focal_length) &&
+               (this.sensor_width == other.sensor_width) &&
+               (this.sensor_height == other.sensor_height) &&
+               (this.image_width == other.image_width) &&
+               (this.image_height == other.image_height);
     }
 
     is_valid() {
