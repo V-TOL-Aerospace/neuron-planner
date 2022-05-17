@@ -213,6 +213,19 @@
                                     <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...).</li>
                                     <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
                                 </ul>
+                                <p>The survey feature also provides an interface for setting the survey properties through imagery capture requirements and camera information. These calculations require the following properties:</p>
+                                <ul>
+                                    <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
+                                    <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>
+                                    <li>Overlap: Amount of overlap in the imagery that will be captured between sequential images. Typically, photogrammetry software requires a overlap greater than 50% to perform accurate stitching.</li>
+                                    <li>Camera: A listing of camera information for cameras that are typically used for surveying. Custom entry of camera information is also permitted.</li>
+                                    <li>Focal Length: Focal length of the lense that will be fitted to the camera on the aircraft.</li>
+                                    <li>Sensor Width: Physical width of the imagery sensor camera on the aircraft.</li>
+                                    <li>Sensor Height: Physical height of the imagery sensor of the camera on the aircraft.</li>
+                                    <li>Image Width: Number of pixels in the width axis of the imagery sensor of the camera on the aircraft.</li>
+                                    <li>Image Height: Number of pixels in the height axis of the imagery sensor of the camera on the aircraft.</li>
+                                </ul>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is selected and the survey properties are adjusted. As such, the imagery capture requirements can be used to cross check survey outcomes after adjusting the survey to meet flight limitations.</p>
                             </section>
                         </section>
                     </section>
