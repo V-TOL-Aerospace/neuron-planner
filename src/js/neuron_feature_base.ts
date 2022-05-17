@@ -19,6 +19,8 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     #on_change:CallableFunction;
     #on_move:CallableFunction;
 
+    static _altitude_ratio = 0.3048;   //Alt = [DOM Value] * Ratio
+
     constructor(map:L.Map) {
         super('mission-feature');
 

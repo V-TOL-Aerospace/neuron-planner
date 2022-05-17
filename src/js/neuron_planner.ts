@@ -223,7 +223,7 @@ export class NeuronPlanner {
     export_mission_kml() {
         let polygons:NeuronInterfacePoint[][] = [];
         for(const i of this.#mission_items) {
-            if(i instanceof NeuronFeaturePolygon) {
+            if((i instanceof NeuronFeaturePolygon) || (i instanceof NeuronFeatureSurvey)) {
                 polygons.push(i.get_corners_as_points());
             }
         }

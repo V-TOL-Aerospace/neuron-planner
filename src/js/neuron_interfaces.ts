@@ -48,8 +48,8 @@ export class NeuronInterfacePoint {
         return utm.to_NeuronInterfacePoint();
     }
 
-    static from_UTMs(utms:UTMPos[]) {
-        return utms.map(p => p.to_NeuronInterfacePoint());
+    static from_UTMs(positions:UTMPos[]) {
+        return positions.map(p => p.to_NeuronInterfacePoint());
     }
 
     static isObjectOfDataType(object: any): object is NeuronInterfacePointData {
@@ -159,6 +159,39 @@ export class NeuronCameraSpecifications {
         }
 
         return res;
+    }
+
+    get_distance(ground_resolution:number) {
+        let res:number = null;
+
+        if(this.is_valid() && ground_resolution > 0) {
+            //XXX: Assume square pixels
+            const ground_span = this.image_width * ground_resolution;
+            const fov2_w = Math.atan2(this.sensor_width, 2*this.focal_length);
+
+            //Calculate from half the ground span for half the AoV
+            res = (ground_span / 2) / Math.tan(fov2_w);
+        }
+
+        return res;
+    }
+
+    get_projection(distance:number) {
+        let proj:Rect = null;
+
+        if(this.is_valid() && distance > 0) {
+            //Calculate the half field of views
+            const fov2_h = Math.atan2(this.sensor_height, 2*this.focal_length);
+            const fov2_w = Math.atan2(this.sensor_width, 2*this.focal_length);
+
+            //Calculate the half distances
+            const h2 = Math.tan(fov2_h) * distance;
+            const w2 = Math.tan(fov2_w) * distance;
+
+            proj = new Rect(-w2, -h2, 2*w2, 2*h2);
+        }
+
+        return proj;
     }
 
     get_projected_size(distance:number) {

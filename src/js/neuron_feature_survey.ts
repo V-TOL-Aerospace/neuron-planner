@@ -17,7 +17,8 @@ export interface NeuronFeatureSurveyData {
     minLaneSeparation:number,
     leadin:number,
     camera:NeuronCameraSpecificationsData,
-    sidelap:number
+    sidelap:number,
+    ground_resolution:number
 }
 
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
@@ -40,14 +41,15 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #camera:NeuronCameraSpecifications;
     #sidelap:number;
+    #ground_resolution:number;
 
     #show_waypoints;
 
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
     #dom_waypoint_count:HTMLOutputElement;
-    #dom_ground_resolution:HTMLOutputElement;
     #dom_show_waypoints:HTMLInputElement;
+    //Survey parameters
     #dom_altitude:HTMLInputElement;
     #dom_distance:HTMLInputElement;
     #dom_spacing:HTMLInputElement;
@@ -58,7 +60,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_startpos:HTMLSelectElement;
     #dom_minLaneSeparation:HTMLInputElement;
     #dom_leadin:HTMLInputElement;
-
+    //Camera parameters
     #dom_camera_name:HTMLSelectElement;
     #dom_camera_focal_length:HTMLInputElement;
     #dom_camera_image_width:HTMLInputElement;
@@ -66,17 +68,25 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_camera_sensor_width:HTMLInputElement;
     #dom_camera_sensor_height:HTMLInputElement;
     #dom_sidelap:HTMLInputElement;
+    #dom_ground_resolution:HTMLInputElement;
 
     #update_timer:NodeJS.Timeout;
     #update_interval:number;
 
     //XXX: Keys must be unique!
-    static camera_preset_key_custom = "Custom";
-    static camera_preset_value_custom = new NeuronCameraSpecifications(NeuronFeatureSurvey.camera_preset_key_custom);
+    static _camera_preset_custom = new NeuronCameraSpecifications();
     static camera_presets:NeuronCameraSpecifications[]= [
-        NeuronFeatureSurvey.camera_preset_value_custom,
+        NeuronFeatureSurvey._camera_preset_custom,
         new NeuronCameraSpecifications("A6000", 20, 23.50, 15.60, 6000, 4000),
     ];
+
+    static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
+    static _sidelap_ratio = 0.01;   //Sidelap = [DOM Value] * Ratio
+    static _camera_focal_length_min:number = 0;
+    static _camera_sensor_width_min:number = 0;
+    static _camera_sensor_height_min:number = 0;
+    static _camera_image_width_min:number = 0;
+    static _camera_image_height_min:number = 0;
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], show_waypoints=false) {
         super(map, corners);
@@ -120,8 +130,9 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#minLaneSeparation = 0;
         this.#leadin = 0.0;
 
-        this.#camera = NeuronFeatureSurvey.camera_preset_value_custom;
+        this.#camera = NeuronFeatureSurvey._camera_preset_custom.copy();
         this.#sidelap = 70.0;
+        this.#ground_resolution = 0.0;
 
         this._set_on_change_internal(this.update_survey.bind(this));
         this.#_update_survey(false);
@@ -158,13 +169,45 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     set_altitude(altitude:number) {
+        this.#set_altitude(altitude, true);
+    }
+
+    #set_altitude(altitude:number, update_calcs:boolean=true) {
         this.#altitude = altitude;
-        this.#calculate_and_update_camera_variables();
+
+        if(update_calcs) {
+            let resolution = this.#camera.get_ground_resolution(this.#altitude);
+            if(resolution) {
+                if(this.#dom_ground_resolution)
+                    this.#dom_ground_resolution.value = (resolution / NeuronFeatureSurvey._gsd_ratio).toString();
+
+                this.#set_ground_resolution(resolution, false);
+            }
+        }
+
         this.update_survey();
     }
 
     set_distance(distance:number) {
+        this.#set_distance(distance);
+    }
+
+    #set_distance(distance:number, update_calcs:boolean=true) {
         this.#distance = distance;
+
+        if(update_calcs) {
+            let projection = this.#camera.get_projected_size(this.#altitude);
+            if(projection && (distance >= 0)) {
+                const sidelap_factor = distance/projection.Width();
+                const sidelap = Math.max(Math.min(1 - sidelap_factor, 1.0), 0.0);
+
+                if(this.#dom_ground_resolution)
+                    this.#dom_sidelap.value = (sidelap / NeuronFeatureSurvey._sidelap_ratio).toString();
+
+                this.#set_sidelap(sidelap, false);
+            }
+        }
+
         this.update_survey();
     }
 
@@ -243,7 +286,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return this.#leadin;
     }
 
-
     update_survey() {
         //Clear any queued updates
         this.#clear_update_timer();
@@ -313,7 +355,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #update_altitude_from_dom() {
-        this.set_altitude(this.#dom_altitude.valueAsNumber);
+        this.set_altitude(this.#dom_altitude.valueAsNumber * NeuronFeatureSurvey._altitude_ratio);
     }
 
     #update_distance_from_dom() {
@@ -392,12 +434,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Waypoints:", this.#dom_waypoint_count, t01));
             c.appendChild(this.#dom_waypoint_count);
 
-            const t02 = "Ground resolution, or ground sampling distance, in meters per pixel";
-            this.#dom_ground_resolution = this._create_dom_output("---");
-            this.#dom_ground_resolution.title = t02;
-            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t02));
-            c.appendChild(this.#dom_ground_resolution);
-
             this.#try_update_dom_stats();
 
             //Input fields
@@ -407,8 +443,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Show Ends:", this.#dom_show_waypoints, t2));
             c.appendChild(this.#dom_show_waypoints);
 
-            const t3 = "Altitude for the survey in meters relative to take-off location ground level";
-            this.#dom_altitude = this._create_dom_input_number(this.#altitude, this.#update_altitude_from_dom.bind(this));
+            const t3 = "Altitude for the survey in feet relative to take-off location ground level";
+            this.#dom_altitude = this._create_dom_input_number(this.#altitude / NeuronFeatureSurvey._altitude_ratio, this.#update_altitude_from_dom.bind(this));
             this.#dom_altitude.title = t3;
             c.appendChild(this._create_dom_label("Altitude:", this.#dom_altitude, t3));
             c.appendChild(this.#dom_altitude);
@@ -478,49 +514,70 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Lane Skip:", this.#dom_minLaneSeparation, t10));
             c.appendChild(this.#dom_minLaneSeparation);
 
-            //TODO: try to set camera name based on the current camera to support loading from mission plan
+            //=====================================
+            //Camera calculations
+            //=====================================
+            const tb = "Camera configuration and calculations for survey parameters.";
+            let dom_break = this._create_dom_output();
+            dom_break.title = tb;
+            let dom_break_label = this._create_dom_label("Camera Config.", dom_break, tb)
+            dom_break_label.classList.add('mission-feature-content-subtitle');
+            c.appendChild(dom_break_label);
+            c.appendChild(dom_break);
+
+            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
+            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
+            this.#dom_ground_resolution.title = t18;
+            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
+            c.appendChild(this.#dom_ground_resolution);
+
+            const t17 = "Image horizontal overlap between lanes as a percentage";
+            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._sidelap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
+            this.#dom_sidelap.title = t17;
+            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t17));
+            c.appendChild(this.#dom_sidelap);
+
             const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
             const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
-            this.#dom_camera_name = this._create_dom_input_select(camera_names, camera_names, this.#update_camera_from_dom.bind(this), NeuronFeatureSurvey.camera_preset_key_custom);
+            this.#dom_camera_name = this._create_dom_input_select(camera_names, camera_names, this.#update_camera_from_dom.bind(this));
             this.#dom_camera_name.title = t11;
             c.appendChild(this._create_dom_label("Camera:", this.#dom_camera_name, t11));
             c.appendChild(this.#dom_camera_name);
+            //Manually set the camera name based off of the currently loaded camera
+            this.#set_camera_selector(this.#camera);
 
             const t12 = "Camera focal length in millimeters";
-            this.#dom_camera_focal_length = this._create_dom_input_number(this.#camera.focal_length, this.#update_camera_focal_length_from_dom.bind(this), 0);
+            this.#dom_camera_focal_length = this._create_dom_input_number(this.#camera.focal_length, this.#update_camera_focal_length_from_dom.bind(this), NeuronFeatureSurvey._camera_focal_length_min);
             this.#dom_camera_focal_length.title = t12;
             c.appendChild(this._create_dom_label("F.Length:", this.#dom_camera_focal_length, t12));
             c.appendChild(this.#dom_camera_focal_length);
 
-            const t13 = "Camera sensors width in millimeters";
-            this.#dom_camera_sensor_width = this._create_dom_input_number(this.#camera.sensor_width, this.#update_camera_sensor_width_from_dom.bind(this), 0);
+            const t13 = "Camera sensor width in millimeters";
+            this.#dom_camera_sensor_width = this._create_dom_input_number(this.#camera.sensor_width, this.#update_camera_sensor_width_from_dom.bind(this), NeuronFeatureSurvey._camera_sensor_width_min);
             this.#dom_camera_sensor_width.title = t13;
             c.appendChild(this._create_dom_label("S.Width:", this.#dom_camera_sensor_width, t13));
             c.appendChild(this.#dom_camera_sensor_width);
 
             const t14 = "Camera sensor height in millimeters";
-            this.#dom_camera_sensor_height = this._create_dom_input_number(this.#camera.sensor_height, this.#update_camera_sensor_height_from_dom.bind(this), 0);
+            this.#dom_camera_sensor_height = this._create_dom_input_number(this.#camera.sensor_height, this.#update_camera_sensor_height_from_dom.bind(this), NeuronFeatureSurvey._camera_sensor_height_min);
             this.#dom_camera_sensor_height.title = t14;
             c.appendChild(this._create_dom_label("S.Height:", this.#dom_camera_sensor_height, t14));
             c.appendChild(this.#dom_camera_sensor_height);
 
             const t15 = "Camera image width in pixels";
-            this.#dom_camera_image_width = this._create_dom_input_number(this.#camera.image_width, this.#update_camera_image_width_from_dom.bind(this), 0);
+            this.#dom_camera_image_width = this._create_dom_input_number(this.#camera.image_width, this.#update_camera_image_width_from_dom.bind(this), NeuronFeatureSurvey._camera_image_width_min);
             this.#dom_camera_image_width.title = t15;
             c.appendChild(this._create_dom_label("I.Width:", this.#dom_camera_image_width, t15));
             c.appendChild(this.#dom_camera_image_width);
 
             const t16 = "Camera image height in pixels";
-            this.#dom_camera_image_height = this._create_dom_input_number(this.#camera.image_height, this.#update_camera_image_height_from_dom.bind(this), 0);
+            this.#dom_camera_image_height = this._create_dom_input_number(this.#camera.image_height, this.#update_camera_image_height_from_dom.bind(this), NeuronFeatureSurvey._camera_image_height_min);
             this.#dom_camera_image_height.title = t16;
             c.appendChild(this._create_dom_label("I.Height:", this.#dom_camera_image_height, t16));
             c.appendChild(this.#dom_camera_image_height);
 
-            const t17 = "Image horizontal overlap between lanes as a percentage";
-            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap, this.#update_sidelap_from_dom.bind(this), 0, 100);
-            this.#dom_sidelap.title = t17;
-            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t17));
-            c.appendChild(this.#dom_sidelap);
+            //Try go back now and calculate other values if relevant
+            this.#calculate_and_update_camera_variables();
 
             this.#dom.append(c);
         }
@@ -536,38 +593,76 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return this.#sidelap;
     };
 
-    set_sidelap(sidelap:number) {
-        this.#sidelap = sidelap;
-        this.#calculate_and_update_camera_variables();
+    get_ground_resolution() {
+        return this.#ground_resolution;
     };
 
-    #set_camera_selector(value:string = NeuronFeatureSurvey.camera_preset_key_custom) {
-        const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
-        if(camera_names.includes(value)) {
-            this.#dom_camera_name.value = value;
-        } else {
-            this.#dom_camera_name.value = NeuronFeatureSurvey.camera_preset_key_custom;
+    set_sidelap(sidelap:number) {
+        this.#set_sidelap(sidelap);
+    }
+
+    #set_sidelap(sidelap:number, update_calcs:boolean = true) {
+        this.#sidelap = sidelap;
+        if(update_calcs)
+            this.#calculate_and_update_camera_variables();
+    };
+
+    set_ground_resolution(ground_resolution:number) {
+        this.#set_ground_resolution(ground_resolution);
+    }
+
+    #set_ground_resolution(ground_resolution:number, update_calcs:boolean = true) {
+        this.#ground_resolution = ground_resolution;
+
+        if(update_calcs)
+            this.#calculate_and_update_camera_variables();
+    };
+
+    #set_camera_selector(camera:NeuronCameraSpecifications = NeuronFeatureSurvey._camera_preset_custom) {
+        if(this.#dom_camera_name) {
+            let matched_camera:boolean = false;
+
+            //Go through our list and find possible matches for our set camera
+            const camera_matches = NeuronFeatureSurvey.camera_presets.filter(x => x.name == camera.name);
+            if(camera_matches.length) {
+                const full_matches = camera_matches.filter(x => x.equals(camera));
+                matched_camera = full_matches.length > 0;
+            }
+
+            //If there is a proper match, then use that name (details should be filled in by set_camera())
+            //Otherwise it is a custom camera
+            this.#dom_camera_name.value = matched_camera ? camera.name : NeuronFeatureSurvey._camera_preset_custom.name;
         }
     }
 
     set_camera(camera:NeuronCameraSpecifications) {
+        this.#set_camera(camera);
+    };
+
+    #set_camera(camera:NeuronCameraSpecifications, update_calcs:boolean = true) {
         this.#camera = camera;
-        this.#set_camera_selector(this.#camera.name);
+        this.#set_camera_selector(this.#camera);
 
-        this.#dom_camera_focal_length.value = Math.max(Number.parseFloat(this.#dom_camera_focal_length.min), this.#camera.focal_length).toString();
-        this.#dom_camera_sensor_width.value = Math.max(Number.parseFloat(this.#dom_camera_sensor_width.min), this.#camera.sensor_width).toString();
-        this.#dom_camera_sensor_height.value = Math.max(Number.parseFloat(this.#dom_camera_sensor_height.min), this.#camera.sensor_height).toString();
-        this.#dom_camera_image_width.value = Math.max(Number.parseFloat(this.#dom_camera_image_width.min), this.#camera.image_width).toString();
-        this.#dom_camera_image_height.value = Math.max(Number.parseFloat(this.#dom_camera_image_height.min), this.#camera.image_height).toString();
+        if(this.#dom_camera_focal_length)
+            this.#dom_camera_focal_length.value = Math.max(NeuronFeatureSurvey._camera_focal_length_min, this.#camera.focal_length).toString();
+        if(this.#dom_camera_sensor_width)
+            this.#dom_camera_sensor_width.value = Math.max(NeuronFeatureSurvey._camera_sensor_width_min, this.#camera.sensor_width).toString();
+        if(this.#dom_camera_sensor_height)
+            this.#dom_camera_sensor_height.value = Math.max(NeuronFeatureSurvey._camera_sensor_height_min, this.#camera.sensor_height).toString();
+        if(this.#dom_camera_image_width)
+            this.#dom_camera_image_width.value = Math.max(NeuronFeatureSurvey._camera_image_width_min, this.#camera.image_width).toString();
+        if(this.#dom_camera_image_height)
+            this.#dom_camera_image_height.value = Math.max(NeuronFeatureSurvey._camera_image_height_min, this.#camera.image_height).toString();
 
-        this.#calculate_and_update_camera_variables();
+        if(update_calcs)
+            this.#calculate_and_update_camera_variables();
     };
 
     #update_camera_from_dom() {
         const value = this.#dom_camera_name.value;
 
         const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
-        let camera = NeuronFeatureSurvey.camera_preset_value_custom.copy();
+        let camera = NeuronFeatureSurvey._camera_preset_custom.copy();
 
         if(camera_names.includes(value)) {
             const matches = NeuronFeatureSurvey.camera_presets.filter(x => x.name == value);
@@ -606,25 +701,32 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #update_sidelap_from_dom() {
-        this.set_sidelap(this.#dom_sidelap.valueAsNumber)
+        this.set_sidelap(this.#dom_sidelap.valueAsNumber * NeuronFeatureSurvey._sidelap_ratio)
+    }
+
+    #update_ground_resolution_from_dom() {
+        this.#set_ground_resolution(this.#dom_ground_resolution.valueAsNumber * NeuronFeatureSurvey._gsd_ratio)
     }
 
     #calculate_and_update_camera_variables() {
-        let projection = this.#camera.get_projected_size(this.#altitude);
-        let resolution = this.#camera.get_ground_resolution(this.#altitude);
+        let altitude = this.#camera.get_distance(this.#ground_resolution);
 
-        if(projection && this.#dom_distance && (this.#sidelap >= 0) && (this.#sidelap <= 100)) {
-            const min_dist = Number.parseFloat(this.#dom_distance.min);
-            const sidelap_factor = 1 - (this.#sidelap / 100.0);
-            const distance = projection.Width()*sidelap_factor;
-            this.#dom_distance.value = Math.max(min_dist, distance).toString();
-            this.set_distance(this.#dom_distance.valueAsNumber);
+        if(altitude) {
+            if(this.#dom_altitude)
+                this.#dom_altitude.value = (altitude / NeuronFeatureSurvey._altitude_ratio).toString();
+            this.#set_altitude(altitude, false);
         }
 
-        if(resolution && this.#dom_ground_resolution) {
-            this.#dom_ground_resolution.value = resolution.toFixed(4);
-        } else if(this.#dom_ground_resolution) {
-            this.#dom_ground_resolution.value = "---";
+        let projection = this.#camera.get_projected_size(this.#altitude);
+
+        if(projection && (this.#sidelap >= 0) && (this.#sidelap <= 1)) {
+            const sidelap_factor = 1 - this.#sidelap;
+            const distance = projection.Width()*sidelap_factor;
+
+            if(this.#dom_distance)
+                this.#dom_distance.value = Math.max(Number.parseFloat(this.#dom_distance.min), distance).toString();
+
+            this.#set_distance(distance, false);
         }
     }
 
@@ -653,8 +755,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         s.set_startpos(j.startpos);
         s.set_minLaneSeparation(j.minLaneSeparation);
         s.set_leadin(j.leadin);
-        s.set_camera(NeuronCameraSpecifications.from_json(j.camera));
-        s.set_sidelap(j.sidelap);
+        s.#set_camera(NeuronCameraSpecifications.from_json(j.camera), false);
+        s.#set_sidelap(j.sidelap, false);
+        s.#set_ground_resolution(j.ground_resolution, false);
+
+        s.#calculate_and_update_camera_variables();
 
         return s;
     }
@@ -675,7 +780,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             minLaneSeparation: this.get_minLaneSeparation(),
             leadin: this.get_leadin(),
             camera: this.get_camera().to_json(),
-            sidelap: this.get_sidelap()
+            sidelap: this.get_sidelap(),
+            ground_resolution: this.get_ground_resolution()
         }
     }
 }

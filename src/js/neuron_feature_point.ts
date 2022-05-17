@@ -87,7 +87,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
                 this.#dom_lon.value = point.longitude.toString();
 
             if(this.#dom_alt)
-                this.#dom_alt.value = point.altitude.toString();
+                this.#dom_alt.value = (point.altitude / NeuronFeatureBase._altitude_ratio).toString();
         }
 
         this._trigger_on_changed();
@@ -109,7 +109,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
     #update_altitude_from_dom() {
         if(this.#point)
-            this.#point.altitude = this.#dom_alt.valueAsNumber;
+            this.#point.altitude = this.#dom_alt.valueAsNumber * NeuronFeatureBase._altitude_ratio;
 
         this.#internal_set_point(this.#point, true, false);
     }
@@ -144,8 +144,8 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             c.appendChild(this._create_dom_label("Longitude:", this.#dom_lon, t1));
             c.appendChild(this.#dom_lon);
 
-            const t2 = "Altitude for the waypoint in meters relative to take-off location ground level";
-            this.#dom_alt = this._create_dom_input_number(this.#point ? this.#point.altitude : 0.0, this.#update_altitude_from_dom.bind(this));
+            const t2 = "Altitude for the waypoint in feet relative to take-off location ground level";
+            this.#dom_alt = this._create_dom_input_number((this.#point ? this.#point.altitude : 0.0) / NeuronFeatureBase._altitude_ratio, this.#update_altitude_from_dom.bind(this));
             this.#dom_alt.title = t2;
             c.appendChild(this._create_dom_label("Altitude:", this.#dom_alt, t2));
             c.appendChild(this.#dom_alt);
