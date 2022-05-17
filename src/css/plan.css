@@ -125,13 +125,12 @@
     font-weight: bold;
     flex: auto;
 }
-
 .mission-feature-content {
     flex: auto;
     display: grid;
     /* flex-direction: column; */
     grid-template-columns: 50% 50%;
-    overflow: scroll;
+    /* overflow: scroll; */
 }
 
 .mission-feature-content-label, .mission-feature-content-value {
@@ -141,6 +140,10 @@
 
 .mission-feature-content-value-center {
     text-align: center;
+}
+
+.mission-feature-content-subtitle {
+    font-weight: bold;
 }
 
 .mission-feature-content-value-right {
