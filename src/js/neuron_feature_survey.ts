@@ -594,24 +594,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(dom_break_label);
             c.appendChild(dom_break);
 
-            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
-            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
-            this.#dom_ground_resolution.title = t18;
-            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
-            c.appendChild(this.#dom_ground_resolution);
-
-            const t17 = "Image vertical overlap between lanes as a percentage";
-            this.#dom_overlap = this._create_dom_input_number(this.#overlap / NeuronFeatureSurvey._xlap_ratio, this.#update_overlap_from_dom.bind(this), 0, 100);
-            this.#dom_overlap.title = t17;
-            c.appendChild(this._create_dom_label("Overlap:", this.#dom_overlap, t17));
-            c.appendChild(this.#dom_overlap);
-
-            const t19 = "Image horizontal overlap between lanes as a percentage";
-            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._xlap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
-            this.#dom_sidelap.title = t19;
-            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t19));
-            c.appendChild(this.#dom_sidelap);
-
             const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
             const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
             this.#dom_camera_name = this._create_dom_input_select(camera_names, camera_names, this.#update_camera_from_dom.bind(this));
@@ -650,6 +632,32 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_camera_image_height.title = t16;
             c.appendChild(this._create_dom_label("I.Height:", this.#dom_camera_image_height, t16));
             c.appendChild(this.#dom_camera_image_height);
+
+            const tb2 = "Image capture configuration and calculations for survey parameters.";
+            let dom_break2 = this._create_dom_output();
+            dom_break2.title = tb2;
+            let dom_break_label2 = this._create_dom_label("Capture Config.", dom_break2, tb2)
+            dom_break_label2.classList.add('mission-feature-content-subtitle');
+            c.appendChild(dom_break_label2);
+            c.appendChild(dom_break2);
+
+            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
+            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
+            this.#dom_ground_resolution.title = t18;
+            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
+            c.appendChild(this.#dom_ground_resolution);
+
+            const t17 = "Image vertical overlap between lanes as a percentage";
+            this.#dom_overlap = this._create_dom_input_number(this.#overlap / NeuronFeatureSurvey._xlap_ratio, this.#update_overlap_from_dom.bind(this), 0, 100);
+            this.#dom_overlap.title = t17;
+            c.appendChild(this._create_dom_label("Overlap:", this.#dom_overlap, t17));
+            c.appendChild(this.#dom_overlap);
+
+            const t19 = "Image horizontal overlap between lanes as a percentage";
+            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._xlap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
+            this.#dom_sidelap.title = t19;
+            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t19));
+            c.appendChild(this.#dom_sidelap);
 
             //Try go back now and calculate other values if relevant
             this.#calculate_and_update_camera_variables();
