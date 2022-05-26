@@ -15,6 +15,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     static override TYPE = "NeuronFeaturePolygon";
     static override VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
 
+    #show_corners:boolean
+
     #corners:L.Marker[];
     #polygon:L.Polygon;
     #planner:NeuronPlanner;
@@ -22,6 +24,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #on_change_internal:CallableFunction;
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
+    #dom_show_corners:HTMLInputElement;
     #dom_convert_survey:HTMLButtonElement;
     #dom_export_kml:HTMLButtonElement;
     #dom_export_kmz:HTMLButtonElement;
@@ -37,6 +40,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
         this.set_planner(planner);
 
+        this.#show_corners = true;
         this.#selected_corner = 0;
         this.#corners = [];
         if(corners.length) {
@@ -47,6 +51,24 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             //XXX: This also calls update_polygon();
         } else {
             this.update_polygon();
+        }
+    }
+
+    corners_visible() {
+        return this.#show_corners;
+    }
+
+    update_show_corners(show_corners:boolean) {
+        this.#show_corners = show_corners;
+
+        if(this.#show_corners) {
+            //Show layers
+            for(let feature of this.#corners)
+                this._add_layer_to_map(feature);
+        } else {
+            //Hide layers
+            for(let feature of this.#corners)
+                this._remove_layer_from_map(feature);
         }
     }
 
@@ -138,7 +160,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         m.on("dblclick", this.#remove_point_by_event.bind(this));
 
         this.#corners.splice(this.#selected_corner, 0, m);
-        this._add_layer_to_map(m);
+        if(this.#show_corners)
+            this._add_layer_to_map(m);
 
         if(update_polygon)
             this.update_polygon();
@@ -176,7 +199,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #add_point_at_mouseevent(event:L.LeafletMouseEvent) {
-        if(this.#polygon) {
+        if(this.#polygon && this.#show_corners) {
             // const c = this.#polygon.getCenter();
             // const dx = b._northEast.lng - b._southWest.lng;
             // const dy = b._northEast.lat - b._southWest.lat;
@@ -283,6 +306,12 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             this.#try_update_dom();
 
             //Input Items
+            const t21 = "Show the corners of the polygon";
+            this.#dom_show_corners = this._create_dom_input_checkbox(this.corners_visible(), this.#update_show_corners_from_dom.bind(this));
+            this.#dom_show_corners.title = t21;
+            c.appendChild(this._create_dom_label("Show corners:", this.#dom_show_corners, t21));
+            c.appendChild(this.#dom_show_corners);
+
             const t0 = "Convert this polygon to a survey feature";
             this.#dom_convert_survey = this._create_dom_input_button("Survey", this.#convert_to_survey.bind(this));
             this.#dom_convert_survey.title = t0;
@@ -309,6 +338,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         }
 
         return this.#dom;
+    }
+
+    #update_show_corners_from_dom() {
+        this.update_show_corners(this.#dom_show_corners.checked);
     }
 
     static override isObjectOfDataType(object: any): object is NeuronFeaturePolygonData {

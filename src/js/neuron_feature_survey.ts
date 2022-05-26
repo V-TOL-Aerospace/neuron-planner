@@ -49,7 +49,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #overlap:number;
     #ground_resolution:number;
 
-    #show_waypoints;
+    #show_waypoints:boolean;
 
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
@@ -57,6 +57,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_photo_count:HTMLOutputElement;
     //Display parameters
     #dom_show_waypoints:HTMLInputElement;
+    #dom_show_corners:HTMLInputElement;
     //Survey parameters
     #dom_altitude:HTMLInputElement;
     #dom_distance:HTMLInputElement;
@@ -93,6 +94,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom_waypoint_count = null;
         this.#dom_photo_count = null;
 
+        this.#dom_show_corners = null;
         this.#dom_show_waypoints = null;
         this.#dom_altitude = null;
         this.#dom_distance = null;
@@ -378,6 +380,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
     }
 
+    #update_show_corners_from_dom() {
+        this.update_show_corners(this.#dom_show_corners.checked);
+    }
+
     #update_show_waypoints_from_dom() {
         this.update_show_waypoints(this.#dom_show_waypoints.checked);
     }
@@ -497,10 +503,16 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this.#dom_photo_count);
 
             //Input fields
-            const t2 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
+            const t2 = "Show the corners of the polygon that defines the survey area";
+            this.#dom_show_corners = this._create_dom_input_checkbox(this.corners_visible(), this.#update_show_corners_from_dom.bind(this));
+            this.#dom_show_corners.title = t2;
+            c.appendChild(this._create_dom_label("Show corners:", this.#dom_show_corners, t2));
+            c.appendChild(this.#dom_show_corners);
+
+            const t21 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
             this.#dom_show_waypoints = this._create_dom_input_checkbox(this.#show_waypoints, this.#update_show_waypoints_from_dom.bind(this));
-            this.#dom_show_waypoints.title = t2;
-            c.appendChild(this._create_dom_label("Show Ends:", this.#dom_show_waypoints, t2));
+            this.#dom_show_waypoints.title = t21;
+            c.appendChild(this._create_dom_label("Show ends:", this.#dom_show_waypoints, t2));
             c.appendChild(this.#dom_show_waypoints);
 
             const t3 = "Altitude for the survey in feet relative to take-off location ground level";

@@ -214,7 +214,7 @@
                                 <h4>Polygon</h4>
                                 <p>The polygon feature is a non-flyable mission feature that can be converted into other mission features. It could also be used as a visual aid to highlight areas of interest or other mission-relevant features.</p>
                                 <p>The polygon created on the screen can be adjusted by dragging the conner markers. Additional corner markers can be added by clicking in the shaded polygon area, where additional markers will be added "after" or "to the right" of the last corner marker the was interacted with (e.g. by clicking or dragging the marker).</p>
-                                <p>The corner markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific corner to be adjusted in order (e.g. moved "forwards" or "backwards", and also allows it to be removed entirely.</p>
+                                <p>The corner markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific corner to be adjusted in order (e.g. moved "forwards" or "backwards", and also allows it to be removed entirely. The " Show corners" checkbox enables the display of the corners that define the polygon. Note that the shape of the polygon that defines the survey cannot be edited if the corners are not shown.</p>
                                 <p>The polygon feature can be exported to other file types, such as KML or KMZ through its <a href="#help-fp-mission">Mission Plan</a> item.</p>
                             </section>
                             <section id="help-fp-mission-survey">
@@ -225,6 +225,7 @@
                                 <p>It has the following properties:</p>
                                 <ul>
                                     <li>Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
+                                    <li>Show corners: Enables the display of the polygon corners that define the survey area.</li>
                                     <li>Show ends: Enables the display of the waypoints that are required based on the survey settings.</li>
                                     <li>Altitude: The altitude of the survey relative to ground level at the take-off location.</li>
                                     <li>Spacing: Spacing between each lane of the survey.</li>
@@ -235,6 +236,7 @@
                                     <li>Run-out B: This parameter provides the same function a "Run-out A", but for even numbered lanes (e.g. 2, 4, 6, ...).</li>
                                     <li>Lane Skip: Causes the aircraft to "skip" a specific number of consecutive lanes in the survey pattern, coming back to the intermediate lanes later in the survey. This is typically used for fixed-wing aircraft with a large turning radius.</li>
                                 </ul>
+                                <p>Note that the shape of the polygon that defines the survey cannot be edited if the corners are not shown.</p>
                                 <p>The survey feature also provides an interface for setting the survey properties through imagery capture requirements and camera information. It is assumed that the camera is oriented such that the height axis points forward on the drone, and that the drone will fly in the direction of travel.</p>
                                 <p>The camera calculations require the following properties:</p>
                                 <ul>
