@@ -2,7 +2,8 @@ import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
-import { NeuronOptions } from "./neuron_options";
+import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
+import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
 
 export interface NeuronFeatureSurveyData {
     version:string,
@@ -54,6 +55,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
     #dom_waypoint_count:HTMLOutputElement;
+    #dom_segment_duration:HTMLOutputElement;
     #dom_photo_count:HTMLOutputElement;
     //Display parameters
     #dom_show_waypoints:HTMLInputElement;
@@ -92,6 +94,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom = null;
         this.#dom_corner_count = null;
         this.#dom_waypoint_count = null;
+        this.#dom_segment_duration = null;
         this.#dom_photo_count = null;
 
         this.#dom_show_corners = null;
@@ -350,11 +353,21 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     }
 
     #try_update_dom_stats() {
+        const coords = this.get_path_coords();
+
         if(this.#dom_corner_count)
             this.#dom_corner_count.value = this.get_corners().length.toFixed(0);
 
         if(this.#dom_waypoint_count)
-            this.#dom_waypoint_count.value = this.get_path_coords().length.toFixed(0);
+            this.#dom_waypoint_count.value = coords.length.toFixed(0);
+
+
+        if(this.#dom_segment_duration) {
+
+            const distance = flight_distance_from_coords(coords);
+            const duration = distance / NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED);
+            this.#dom_segment_duration.value = flight_time_from_duration(duration);
+        }
 
         if(this.#dom_photo_count) {
             let count = "---";
@@ -495,6 +508,12 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_waypoint_count.title = t01;
             c.appendChild(this._create_dom_label("Waypoints:", this.#dom_waypoint_count, t01));
             c.appendChild(this.#dom_waypoint_count);
+
+            const t03 = "Estimated flight time of the survey feature";
+            this.#dom_segment_duration = this._create_dom_output();
+            this.#dom_segment_duration.title = t03;
+            c.appendChild(this._create_dom_label("Duration:", this.#dom_segment_duration, t03));
+            c.appendChild(this.#dom_segment_duration);
 
             const t02 = "Number of photos that will be captured to perform this survey";
             this.#dom_photo_count = this._create_dom_output();
