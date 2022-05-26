@@ -5685,6 +5685,33 @@ ___CSS_LOADER_EXPORT___.push([module.id, "/* required styles */\r\n\r\n.leaflet-
 
 /***/ }),
 
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/css/brief.css":
+/*!*****************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/brief.css ***!
+  \*****************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":[".brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
 /***/ "./node_modules/css-loader/dist/cjs.js!./src/css/index.css":
 /*!*****************************************************************!*\
   !*** ./node_modules/css-loader/dist/cjs.js!./src/css/index.css ***!
@@ -5759,7 +5786,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;;;;;;GAOG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.mission-feature-title-button-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,yBAAyB;AAC7B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;AACvB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.mission-feature-title-button-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5786,7 +5813,34 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+// Exports
+/* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
+
+
+/***/ }),
+
+/***/ "./node_modules/css-loader/dist/cjs.js!./src/css/stats_options.css":
+/*!*************************************************************************!*\
+  !*** ./node_modules/css-loader/dist/cjs.js!./src/css/stats_options.css ***!
+  \*************************************************************************/
+/***/ ((module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/sourceMaps.js */ "./node_modules/css-loader/dist/runtime/sourceMaps.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
+/* harmony import */ var _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1__);
+// Imports
+
+
+var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
+// Module
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n    padding: 0.2em;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/stats_options.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;;;;;;GAOG;;AAEH;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n    padding: 0.2em;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -28928,6 +28982,61 @@ var update = _style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMP
 
 /***/ }),
 
+/***/ "./src/css/brief.css":
+/*!***************************!*\
+  !*** ./src/css/brief.css ***!
+  \***************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_brief_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./brief.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/brief.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_brief_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_brief_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_brief_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_brief_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
 /***/ "./src/css/index.css":
 /*!***************************!*\
   !*** ./src/css/index.css ***!
@@ -29144,6 +29253,61 @@ var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js
 
 
        /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_responsive_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_responsive_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_responsive_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
+
+
+/***/ }),
+
+/***/ "./src/css/stats_options.css":
+/*!***********************************!*\
+  !*** ./src/css/stats_options.css ***!
+  \***********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
+/* harmony export */ });
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js */ "./node_modules/style-loader/dist/runtime/injectStylesIntoStyleTag.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleDomAPI.js */ "./node_modules/style-loader/dist/runtime/styleDomAPI.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertBySelector.js */ "./node_modules/style-loader/dist/runtime/insertBySelector.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js */ "./node_modules/style-loader/dist/runtime/setAttributesWithoutAttributes.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/insertStyleElement.js */ "./node_modules/style-loader/dist/runtime/insertStyleElement.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! !../../node_modules/style-loader/dist/runtime/styleTagTransform.js */ "./node_modules/style-loader/dist/runtime/styleTagTransform.js");
+/* harmony import */ var _node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _node_modules_css_loader_dist_cjs_js_stats_options_css__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! !!../../node_modules/css-loader/dist/cjs.js!./stats_options.css */ "./node_modules/css-loader/dist/cjs.js!./src/css/stats_options.css");
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
+
+var options = {};
+
+options.styleTagTransform = (_node_modules_style_loader_dist_runtime_styleTagTransform_js__WEBPACK_IMPORTED_MODULE_5___default());
+options.setAttributes = (_node_modules_style_loader_dist_runtime_setAttributesWithoutAttributes_js__WEBPACK_IMPORTED_MODULE_3___default());
+
+      options.insert = _node_modules_style_loader_dist_runtime_insertBySelector_js__WEBPACK_IMPORTED_MODULE_2___default().bind(null, "head");
+    
+options.domAPI = (_node_modules_style_loader_dist_runtime_styleDomAPI_js__WEBPACK_IMPORTED_MODULE_1___default());
+options.insertStyleElement = (_node_modules_style_loader_dist_runtime_insertStyleElement_js__WEBPACK_IMPORTED_MODULE_4___default());
+
+var update = _node_modules_style_loader_dist_runtime_injectStylesIntoStyleTag_js__WEBPACK_IMPORTED_MODULE_0___default()(_node_modules_css_loader_dist_cjs_js_stats_options_css__WEBPACK_IMPORTED_MODULE_6__["default"], options);
+
+
+
+
+       /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (_node_modules_css_loader_dist_cjs_js_stats_options_css__WEBPACK_IMPORTED_MODULE_6__["default"] && _node_modules_css_loader_dist_cjs_js_stats_options_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals ? _node_modules_css_loader_dist_cjs_js_stats_options_css__WEBPACK_IMPORTED_MODULE_6__["default"].locals : undefined);
 
 
 /***/ }),
@@ -29611,7 +29775,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NeuronBrief": () => (/* binding */ NeuronBrief)
 /* harmony export */ });
-/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_waypoint */ "./src/js/neuron_feature_waypoint.ts");
 /* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
@@ -29628,7 +29792,9 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _NeuronBrief_planner, _NeuronBrief_brief_element, _NeuronBrief_brief_element_name;
+// import { NeuronFeatureBase } from "./neuron_feature_base";
 
+// import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 
 
 
@@ -29740,7 +29906,7 @@ class NeuronBrief {
                 time_takeoff = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(takeoff_distance / flight_speed);
             }
             let step0 = {
-                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                 description: "Take-off at location",
                 components: [takeoff_point.toString()],
                 time_duration: time_takeoff,
@@ -29760,10 +29926,10 @@ class NeuronBrief {
                 //XXX: Ignore mission items with no points
                 // if(item instanceof NeuronFeatureBase) {
                 // } else
-                if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint) {
+                if (item instanceof _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint) {
                     if (path.length) {
                         step = {
-                            type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                            type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                             description: "Fly to location",
                             components: path.map(x => x.toString()),
                             time_duration: "---",
@@ -29804,7 +29970,7 @@ class NeuronBrief {
                 time_land = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(land_distance / flight_speed);
             }
             let stepn = {
-                type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint.NAME,
+                type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                 description: "Land at location",
                 components: [land_point ? land_point.toString() : "---"],
                 time_duration: time_land,
@@ -30053,6 +30219,8 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
         t.className = 'mission-feature-title-text';
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
+        let d = document.createElement("div");
+        d.className = 'mission-feature-title-button-container';
         __classPrivateFieldSet(this, _NeuronFeatureBase_dom_buttons_visibility, [], "f");
         for (const button_class of NeuronFeatureBase._button_sizes) {
             const fa_size = __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_get_button_size_class).call(this, button_class);
@@ -30063,12 +30231,12 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             let b0i = document.createElement("i");
             b0i.className = 'fas fa-location-crosshairs' + fa_size;
             b0.appendChild(b0i);
-            title.appendChild(b0);
+            d.appendChild(b0);
             let bv = document.createElement("button");
             bv.className = button_class;
             bv.title = "Toggle feature visibility";
             bv.onclick = this.toggle_visibility.bind(this);
-            title.appendChild(bv);
+            d.appendChild(bv);
             __classPrivateFieldGet(this, _NeuronFeatureBase_dom_buttons_visibility, "f").push(bv);
             let b1 = document.createElement("button");
             b1.className = button_class;
@@ -30077,7 +30245,7 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             let b1i = document.createElement("i");
             b1i.className = 'fas fa-arrow-up' + fa_size;
             b1.appendChild(b1i);
-            title.appendChild(b1);
+            d.appendChild(b1);
             let b2 = document.createElement("button");
             b2.className = button_class;
             b2.title = "Move down";
@@ -30085,7 +30253,15 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             let b2i = document.createElement("i");
             b2i.className = 'fas fa-arrow-down' + fa_size;
             b2.appendChild(b2i);
-            title.appendChild(b2);
+            d.appendChild(b2);
+            let b4 = document.createElement("button");
+            b4.className = button_class;
+            b4.title = "Help";
+            b4.onclick = this.show_help.bind(this);
+            let b4i = document.createElement("i");
+            b4i.className = 'fas fa-question' + fa_size;
+            b4.appendChild(b4i);
+            d.appendChild(b4);
             let b3 = document.createElement("button");
             b3.className = button_class;
             b3.title = "Remove";
@@ -30093,8 +30269,9 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             let b3i = document.createElement("i");
             b3i.className = 'fas fa-close' + fa_size;
             b3.appendChild(b3i);
-            title.appendChild(b3);
+            d.appendChild(b3);
         }
+        title.appendChild(d);
         __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_icons).call(this);
         __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_dom).call(this);
         __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").appendChild(title);
@@ -30136,6 +30313,11 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
         __classPrivateFieldGet(this, _NeuronFeatureBase_map, "f").fitBounds(group.getBounds(), {
             padding: [20, 20]
         });
+    }
+    show_help() {
+        //XXX: Implement this per inherited feature
+        //XXX: Explicitly do use "base" key for the base feature
+        window.neuron_map.show_map_help(true);
     }
     remove_feature() {
         //XXX: Implement this per inherited feature
@@ -30197,176 +30379,13 @@ _NeuronFeatureBase_visible = new WeakMap(), _NeuronFeatureBase_map = new WeakMap
 NeuronFeatureBase.NAME = "[BASE FEATURE]";
 NeuronFeatureBase.TYPE = "NeuronFeatureBase";
 NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
+NeuronFeatureBase.HELP_KEY = 'base';
 NeuronFeatureBase._altitude_ratio = 0.3048; //Alt = [DOM Value] * Ratio
 //Add two sets of icons, one for each size button
 NeuronFeatureBase._button_sizes = [
     'mission-feature-title-button',
     'mission-feature-title-button-small'
 ];
-
-
-/***/ }),
-
-/***/ "./src/js/neuron_feature_point.ts":
-/*!****************************************!*\
-  !*** ./src/js/neuron_feature_point.ts ***!
-  \****************************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NeuronFeaturePoint": () => (/* binding */ NeuronFeaturePoint)
-/* harmony export */ });
-/* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
-/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
-/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
-var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
-    if (kind === "m") throw new TypeError("Private method is not writable");
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
-    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
-};
-var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
-    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
-    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
-    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
-};
-var _NeuronFeaturePoint_instances, _NeuronFeaturePoint_marker, _NeuronFeaturePoint_point, _NeuronFeaturePoint_dom, _NeuronFeaturePoint_dom_lat, _NeuronFeaturePoint_dom_lon, _NeuronFeaturePoint_dom_alt, _NeuronFeaturePoint_remove_point_by_event, _NeuronFeaturePoint_update_position_from_event, _NeuronFeaturePoint_internal_set_point, _NeuronFeaturePoint_update_latitude_from_dom, _NeuronFeaturePoint_update_longitude_from_dom, _NeuronFeaturePoint_update_altitude_from_dom;
-
-
-
-class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
-    constructor(map, point = null) {
-        super(map);
-        _NeuronFeaturePoint_instances.add(this);
-        _NeuronFeaturePoint_marker.set(this, void 0);
-        _NeuronFeaturePoint_point.set(this, void 0);
-        _NeuronFeaturePoint_dom.set(this, void 0);
-        _NeuronFeaturePoint_dom_lat.set(this, void 0);
-        _NeuronFeaturePoint_dom_lon.set(this, void 0);
-        _NeuronFeaturePoint_dom_alt.set(this, void 0);
-        __classPrivateFieldSet(this, _NeuronFeaturePoint_marker, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeaturePoint_point, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeaturePoint_dom, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lat, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lon, null, "f");
-        if (point)
-            this.set_point(point);
-    }
-    remove_point_by_context(context) {
-        if (__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f") == context) {
-            this.remove_feature();
-        }
-        else {
-            console.warn("Call to remove unknown marker context");
-        }
-    }
-    set_point(point) {
-        if (!__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f")) {
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_marker, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker(point.to_leaflet(), {
-                draggable: true,
-                autoPan: true,
-            }), "f");
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("drag", __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_position_from_event).bind(this));
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").on("dblclick", __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_remove_point_by_event).bind(this));
-            const menu_items = [
-                new _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
-            ];
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Waypoint", menu_items, __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f")));
-            this._add_layer_to_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
-        }
-        __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, point);
-    }
-    remove_feature() {
-        if (__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"))
-            this._remove_layer_from_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
-        super.remove_feature();
-    }
-    get_path_coords() {
-        return __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? [__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f")] : [];
-    }
-    get_dom() {
-        if (!__classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f")) {
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom, this._get_dom("Waypoint"), "f");
-            let c = document.createElement("div");
-            c.className = 'mission-feature-content';
-            const t0 = "Latitude location for the waypoint in decimal degrees";
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lat, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_latitude_from_dom).bind(this), -90, 90, 0.0002), "f");
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").title = t0;
-            c.appendChild(this._create_dom_label("Latitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"), t0));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"));
-            const t1 = "Longitude location for the waypoint in decimal degrees";
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_lon, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude : 0.0, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_longitude_from_dom).bind(this), -180, 180, 0.0002), "f");
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f").title = t1;
-            c.appendChild(this._create_dom_label("Longitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f"), t1));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f"));
-            const t2 = "Altitude for the waypoint in feet relative to take-off location ground level";
-            __classPrivateFieldSet(this, _NeuronFeaturePoint_dom_alt, this._create_dom_input_number((__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude : 0.0) / _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio, __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_update_altitude_from_dom).bind(this)), "f");
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").title = t2;
-            c.appendChild(this._create_dom_label("Altitude:", __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f"), t2));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f"));
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f").append(c);
-        }
-        return __classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f");
-    }
-    static isObjectOfDataType(object) {
-        let is_valid = (object.type == NeuronFeaturePoint.TYPE) ||
-            (object.version == NeuronFeaturePoint.VERSION);
-        return is_valid;
-    }
-    static from_json(j, map) {
-        //XXX: Implement this per inherited feature
-        if (!NeuronFeaturePoint.isObjectOfDataType(j))
-            throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
-        const point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(j.point);
-        return new NeuronFeaturePoint(map, point);
-    }
-    to_json() {
-        //XXX: Implement this per inherited feature
-        return {
-            version: NeuronFeaturePoint.VERSION,
-            type: NeuronFeaturePoint.TYPE,
-            point: __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").to_json()
-        };
-    }
-}
-_NeuronFeaturePoint_marker = new WeakMap(), _NeuronFeaturePoint_point = new WeakMap(), _NeuronFeaturePoint_dom = new WeakMap(), _NeuronFeaturePoint_dom_lat = new WeakMap(), _NeuronFeaturePoint_dom_lon = new WeakMap(), _NeuronFeaturePoint_dom_alt = new WeakMap(), _NeuronFeaturePoint_instances = new WeakSet(), _NeuronFeaturePoint_remove_point_by_event = function _NeuronFeaturePoint_remove_point_by_event(event) {
-    this.remove_point_by_context(event.target);
-}, _NeuronFeaturePoint_update_position_from_event = function _NeuronFeaturePoint_update_position_from_event(event) {
-    let point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.target.getLatLng());
-    if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
-        point.altitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, point);
-}, _NeuronFeaturePoint_internal_set_point = function _NeuronFeaturePoint_internal_set_point(point, update_marker = true, update_dom = true) {
-    __classPrivateFieldSet(this, _NeuronFeaturePoint_point, point, "f");
-    if (update_marker && __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"))
-        __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").setLatLng(point.to_leaflet());
-    if (update_dom) {
-        if (__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f"))
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").value = point.latitude.toString();
-        if (__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f"))
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f").value = point.longitude.toString();
-        if (__classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f"))
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").value = (point.altitude / _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio).toString();
-    }
-    this._trigger_on_changed();
-}, _NeuronFeaturePoint_update_latitude_from_dom = function _NeuronFeaturePoint_update_latitude_from_dom() {
-    if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
-        __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").latitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lat, "f").valueAsNumber;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
-}, _NeuronFeaturePoint_update_longitude_from_dom = function _NeuronFeaturePoint_update_longitude_from_dom() {
-    if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
-        __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").longitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_lon, "f").valueAsNumber;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
-}, _NeuronFeaturePoint_update_altitude_from_dom = function _NeuronFeaturePoint_update_altitude_from_dom() {
-    if (__classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"))
-        __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f").altitude = __classPrivateFieldGet(this, _NeuronFeaturePoint_dom_alt, "f").valueAsNumber * _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio;
-    __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeaturePoint_point, "f"), true, false);
-};
-NeuronFeaturePoint.NAME = "Waypoint";
-NeuronFeaturePoint.TYPE = "NeuronFeaturePoint";
-NeuronFeaturePoint.VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
 
 
 /***/ }),
@@ -30386,6 +30405,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
+/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30397,7 +30417,8 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_planner, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_dom_convert_survey, _NeuronFeaturePolygon_dom_export_kml, _NeuronFeaturePolygon_dom_export_kmz, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom, _NeuronFeaturePolygon_convert_to_survey, _NeuronFeaturePolygon_export_as_kml, _NeuronFeaturePolygon_export_as_kmz;
+var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_show_corners, _NeuronFeaturePolygon_corners, _NeuronFeaturePolygon_polygon, _NeuronFeaturePolygon_planner, _NeuronFeaturePolygon_selected_corner, _NeuronFeaturePolygon_on_change_internal, _NeuronFeaturePolygon_dom, _NeuronFeaturePolygon_dom_corner_count, _NeuronFeaturePolygon_dom_show_corners, _NeuronFeaturePolygon_dom_convert_survey, _NeuronFeaturePolygon_dom_export_kml, _NeuronFeaturePolygon_dom_export_kmz, _NeuronFeaturePolygon_array_move, _NeuronFeaturePolygon_array_move_cyclic, _NeuronFeaturePolygon_select_corner_by_event, _NeuronFeaturePolygon_remove_point_by_event, _NeuronFeaturePolygon_add_point_at_mouseevent, _NeuronFeaturePolygon_try_update_dom, _NeuronFeaturePolygon_convert_to_survey, _NeuronFeaturePolygon_export_as_kml, _NeuronFeaturePolygon_export_as_kmz, _NeuronFeaturePolygon_update_show_corners_from_dom;
+
 
 
 
@@ -30406,6 +30427,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
     constructor(map, corners = [], planner = null) {
         super(map);
         _NeuronFeaturePolygon_instances.add(this);
+        _NeuronFeaturePolygon_show_corners.set(this, void 0);
         _NeuronFeaturePolygon_corners.set(this, void 0);
         _NeuronFeaturePolygon_polygon.set(this, void 0);
         _NeuronFeaturePolygon_planner.set(this, void 0);
@@ -30413,6 +30435,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         _NeuronFeaturePolygon_on_change_internal.set(this, void 0);
         _NeuronFeaturePolygon_dom.set(this, void 0);
         _NeuronFeaturePolygon_dom_corner_count.set(this, void 0);
+        _NeuronFeaturePolygon_dom_show_corners.set(this, void 0);
         _NeuronFeaturePolygon_dom_convert_survey.set(this, void 0);
         _NeuronFeaturePolygon_dom_export_kml.set(this, void 0);
         _NeuronFeaturePolygon_dom_export_kmz.set(this, void 0);
@@ -30423,6 +30446,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kml, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kmz, null, "f");
         this.set_planner(planner);
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_show_corners, true, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
@@ -30433,6 +30457,22 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         }
         else {
             this.update_polygon();
+        }
+    }
+    corners_visible() {
+        return __classPrivateFieldGet(this, _NeuronFeaturePolygon_show_corners, "f");
+    }
+    update_show_corners(show_corners) {
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_show_corners, show_corners, "f");
+        if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_show_corners, "f")) {
+            //Show layers
+            for (let feature of __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f"))
+                this._add_layer_to_map(feature);
+        }
+        else {
+            //Hide layers
+            for (let feature of __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f"))
+                this._remove_layer_from_map(feature);
         }
     }
     set_planner(planner) {
@@ -30491,7 +30531,8 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         m.on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_select_corner_by_event).bind(this));
         m.on("dblclick", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_remove_point_by_event).bind(this));
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").splice(__classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f"), 0, m);
-        this._add_layer_to_map(m);
+        if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_show_corners, "f"))
+            this._add_layer_to_map(m);
         if (update_polygon)
             this.update_polygon();
     }
@@ -30555,6 +30596,9 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         this._trigger_on_changed();
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
     }
+    show_help() {
+        window.neuron_map.show_map_help(true, `${_neuron_help__WEBPACK_IMPORTED_MODULE_4__.NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeaturePolygon.HELP_KEY}`);
+    }
     remove_feature() {
         for (const c of __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f")) {
             this._remove_layer_from_map(c);
@@ -30580,6 +30624,11 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_corner_count, "f"));
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
             //Input Items
+            const t21 = "Show the corners of the polygon";
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_show_corners, this._create_dom_input_checkbox(this.corners_visible(), __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_update_show_corners_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_show_corners, "f").title = t21;
+            c.appendChild(this._create_dom_label("Show corners:", __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_show_corners, "f"), t21));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_show_corners, "f"));
             const t0 = "Convert this polygon to a survey feature";
             __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_convert_survey, this._create_dom_input_button("Survey", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_convert_to_survey).bind(this)), "f");
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_convert_survey, "f").title = t0;
@@ -30622,7 +30671,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         };
     }
 }
-_NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_planner = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_dom_convert_survey = new WeakMap(), _NeuronFeaturePolygon_dom_export_kml = new WeakMap(), _NeuronFeaturePolygon_dom_export_kmz = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
+_NeuronFeaturePolygon_show_corners = new WeakMap(), _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = new WeakMap(), _NeuronFeaturePolygon_planner = new WeakMap(), _NeuronFeaturePolygon_selected_corner = new WeakMap(), _NeuronFeaturePolygon_on_change_internal = new WeakMap(), _NeuronFeaturePolygon_dom = new WeakMap(), _NeuronFeaturePolygon_dom_corner_count = new WeakMap(), _NeuronFeaturePolygon_dom_show_corners = new WeakMap(), _NeuronFeaturePolygon_dom_convert_survey = new WeakMap(), _NeuronFeaturePolygon_dom_export_kml = new WeakMap(), _NeuronFeaturePolygon_dom_export_kmz = new WeakMap(), _NeuronFeaturePolygon_instances = new WeakSet(), _NeuronFeaturePolygon_array_move = function _NeuronFeaturePolygon_array_move(arr, old_index, new_index) {
     if (new_index >= arr.length) {
         var k = new_index - arr.length + 1;
         while (k--) {
@@ -30642,7 +30691,7 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
 }, _NeuronFeaturePolygon_remove_point_by_event = function _NeuronFeaturePolygon_remove_point_by_event(event) {
     this.remove_point_by_corner(event.target);
 }, _NeuronFeaturePolygon_add_point_at_mouseevent = function _NeuronFeaturePolygon_add_point_at_mouseevent(event) {
-    if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f")) {
+    if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f") && __classPrivateFieldGet(this, _NeuronFeaturePolygon_show_corners, "f")) {
         // const c = this.#polygon.getCenter();
         // const dx = b._northEast.lng - b._southWest.lng;
         // const dy = b._northEast.lat - b._southWest.lat;
@@ -30664,10 +30713,13 @@ _NeuronFeaturePolygon_corners = new WeakMap(), _NeuronFeaturePolygon_polygon = n
     (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_neuron_data)([], [this.get_corners_as_points()]);
 }, _NeuronFeaturePolygon_export_as_kmz = function _NeuronFeaturePolygon_export_as_kmz() {
     (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_3__.kmz_download_from_neuron_data)([], [this.get_corners_as_points()]);
+}, _NeuronFeaturePolygon_update_show_corners_from_dom = function _NeuronFeaturePolygon_update_show_corners_from_dom() {
+    this.update_show_corners(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_show_corners, "f").checked);
 };
 NeuronFeaturePolygon.NAME = "[POLYGON FEATURE]";
 NeuronFeaturePolygon.TYPE = "NeuronFeaturePolygon";
 NeuronFeaturePolygon.VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
+NeuronFeaturePolygon.HELP_KEY = 'polygon';
 
 
 /***/ }),
@@ -30688,6 +30740,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_tools_survey */ "./src/js/neuron_tools_survey.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30699,7 +30753,9 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_sidelap, _NeuronFeatureSurvey_overlap, _NeuronFeatureSurvey_ground_resolution, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_photo_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_dom_sidelap, _NeuronFeatureSurvey_dom_overlap, _NeuronFeatureSurvey_dom_ground_resolution, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_unsub_option_cb, _NeuronFeatureSurvey_options_changed, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_set_altitude, _NeuronFeatureSurvey_set_distance, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom, _NeuronFeatureSurvey_set_sidelap, _NeuronFeatureSurvey_set_ground_resolution, _NeuronFeatureSurvey_update_sidelap_from_dom, _NeuronFeatureSurvey_update_overlap_from_dom, _NeuronFeatureSurvey_update_ground_resolution_from_dom, _NeuronFeatureSurvey_calculate_and_update_capture_variables;
+var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_sidelap, _NeuronFeatureSurvey_overlap, _NeuronFeatureSurvey_ground_resolution, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_segment_duration, _NeuronFeatureSurvey_dom_photo_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_show_corners, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_dom_sidelap, _NeuronFeatureSurvey_dom_overlap, _NeuronFeatureSurvey_dom_ground_resolution, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_unsub_option_cb, _NeuronFeatureSurvey_options_changed, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_set_altitude, _NeuronFeatureSurvey_set_distance, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_corners_from_dom, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom, _NeuronFeatureSurvey_set_sidelap, _NeuronFeatureSurvey_set_ground_resolution, _NeuronFeatureSurvey_update_sidelap_from_dom, _NeuronFeatureSurvey_update_overlap_from_dom, _NeuronFeatureSurvey_update_ground_resolution_from_dom, _NeuronFeatureSurvey_calculate_and_update_capture_variables;
+
+
 
 
 
@@ -30727,9 +30783,11 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_dom.set(this, void 0);
         _NeuronFeatureSurvey_dom_corner_count.set(this, void 0);
         _NeuronFeatureSurvey_dom_waypoint_count.set(this, void 0);
+        _NeuronFeatureSurvey_dom_segment_duration.set(this, void 0);
         _NeuronFeatureSurvey_dom_photo_count.set(this, void 0);
         //Display parameters
         _NeuronFeatureSurvey_dom_show_waypoints.set(this, void 0);
+        _NeuronFeatureSurvey_dom_show_corners.set(this, void 0);
         //Survey parameters
         _NeuronFeatureSurvey_dom_altitude.set(this, void 0);
         _NeuronFeatureSurvey_dom_distance.set(this, void 0);
@@ -30755,7 +30813,9 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_corner_count, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_waypoint_count, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_segment_duration, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_photo_count, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_corners, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_waypoints, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_distance, null, "f");
@@ -30868,6 +30928,9 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         //Update survey with slight delay for processing
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_update_timer, setTimeout(__classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey__update_survey).bind(this, true), __classPrivateFieldGet(this, _NeuronFeatureSurvey_update_interval, "f")), "f");
     }
+    show_help() {
+        window.neuron_map.show_map_help(true, `${_neuron_help__WEBPACK_IMPORTED_MODULE_6__.NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeatureSurvey.HELP_KEY}`);
+    }
     remove_feature() {
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_clean_waypoints).call(this);
         super.remove_feature();
@@ -30917,16 +30980,26 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").title = t01;
             c.appendChild(this._create_dom_label("Waypoints:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"), t01));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"));
+            const t03 = "Estimated flight time of the survey feature";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_segment_duration, this._create_dom_output(), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_segment_duration, "f").title = t03;
+            c.appendChild(this._create_dom_label("Duration:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_segment_duration, "f"), t03));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_segment_duration, "f"));
             const t02 = "Number of photos that will be captured to perform this survey";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_photo_count, this._create_dom_output(), "f");
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f").title = t02;
             c.appendChild(this._create_dom_label("Photos:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f"), t02));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f"));
             //Input fields
-            const t2 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
+            const t2 = "Show the corners of the polygon that defines the survey area";
+            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_corners, this._create_dom_input_checkbox(this.corners_visible(), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_show_corners_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_corners, "f").title = t2;
+            c.appendChild(this._create_dom_label("Show corners:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_corners, "f"), t2));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_corners, "f"));
+            const t21 = "Show the waypoints that have been calculated at the end of each lane to perform this survey";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_show_waypoints, this._create_dom_input_checkbox(__classPrivateFieldGet(this, _NeuronFeatureSurvey_show_waypoints, "f"), __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_show_waypoints_from_dom).bind(this)), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").title = t2;
-            c.appendChild(this._create_dom_label("Show Ends:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"), t2));
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").title = t21;
+            c.appendChild(this._create_dom_label("Show ends:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"), t2));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f"));
             const t3 = "Altitude for the survey in feet relative to take-off location ground level";
             __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_altitude, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f") / NeuronFeatureSurvey._altitude_ratio, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_altitude_from_dom).bind(this)), "f");
@@ -31087,7 +31160,7 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         };
     }
 }
-_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_sidelap = new WeakMap(), _NeuronFeatureSurvey_overlap = new WeakMap(), _NeuronFeatureSurvey_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_photo_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_dom_sidelap = new WeakMap(), _NeuronFeatureSurvey_dom_overlap = new WeakMap(), _NeuronFeatureSurvey_dom_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_unsub_option_cb = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_options_changed = function _NeuronFeatureSurvey_options_changed() {
+_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_sidelap = new WeakMap(), _NeuronFeatureSurvey_overlap = new WeakMap(), _NeuronFeatureSurvey_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_segment_duration = new WeakMap(), _NeuronFeatureSurvey_dom_photo_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_show_corners = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_dom_sidelap = new WeakMap(), _NeuronFeatureSurvey_dom_overlap = new WeakMap(), _NeuronFeatureSurvey_dom_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_unsub_option_cb = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_options_changed = function _NeuronFeatureSurvey_options_changed() {
     //Update our variables, and then the survey if there was a change
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(this))
         this.update_survey();
@@ -31160,10 +31233,16 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_mappoints, [], "f");
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
 }, _NeuronFeatureSurvey_try_update_dom_stats = function _NeuronFeatureSurvey_try_update_dom_stats() {
+    const coords = this.get_path_coords();
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f"))
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_corner_count, "f").value = this.get_corners().length.toFixed(0);
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").value = this.get_path_coords().length.toFixed(0);
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").value = coords.length.toFixed(0);
+    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_segment_duration, "f")) {
+        const distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_5__.flight_distance_from_coords)(coords);
+        const duration = distance / _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptionsNumber.MISSION_SPEED);
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_segment_duration, "f").value = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_5__.flight_time_from_duration)(duration);
+    }
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f")) {
         let count = "---";
         let projection = _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_camera().get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
@@ -31181,6 +31260,8 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         }
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f").value = count;
     }
+}, _NeuronFeatureSurvey_update_show_corners_from_dom = function _NeuronFeatureSurvey_update_show_corners_from_dom() {
+    this.update_show_corners(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_corners, "f").checked);
 }, _NeuronFeatureSurvey_update_show_waypoints_from_dom = function _NeuronFeatureSurvey_update_show_waypoints_from_dom() {
     this.update_show_waypoints(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_show_waypoints, "f").checked);
 }, _NeuronFeatureSurvey_update_altitude_from_dom = function _NeuronFeatureSurvey_update_altitude_from_dom() {
@@ -31251,8 +31332,179 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 NeuronFeatureSurvey.NAME = "Survey";
 NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
 NeuronFeatureSurvey.VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
+NeuronFeatureSurvey.HELP_KEY = 'survey';
 NeuronFeatureSurvey._gsd_ratio = 0.01; //GSD = [DOM Value] * Ratio
 NeuronFeatureSurvey._xlap_ratio = 0.01; //Sidelap = [DOM Value] * Ratio
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_feature_waypoint.ts":
+/*!*******************************************!*\
+  !*** ./src/js/neuron_feature_waypoint.ts ***!
+  \*******************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronFeatureWaypoint": () => (/* binding */ NeuronFeatureWaypoint)
+/* harmony export */ });
+/* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _NeuronFeatureWaypoint_instances, _NeuronFeatureWaypoint_marker, _NeuronFeatureWaypoint_point, _NeuronFeatureWaypoint_dom, _NeuronFeatureWaypoint_dom_lat, _NeuronFeatureWaypoint_dom_lon, _NeuronFeatureWaypoint_dom_alt, _NeuronFeatureWaypoint_remove_point_by_event, _NeuronFeatureWaypoint_update_position_from_event, _NeuronFeatureWaypoint_internal_set_point, _NeuronFeatureWaypoint_update_latitude_from_dom, _NeuronFeatureWaypoint_update_longitude_from_dom, _NeuronFeatureWaypoint_update_altitude_from_dom;
+
+
+
+
+class NeuronFeatureWaypoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
+    constructor(map, point = null) {
+        super(map);
+        _NeuronFeatureWaypoint_instances.add(this);
+        _NeuronFeatureWaypoint_marker.set(this, void 0);
+        _NeuronFeatureWaypoint_point.set(this, void 0);
+        _NeuronFeatureWaypoint_dom.set(this, void 0);
+        _NeuronFeatureWaypoint_dom_lat.set(this, void 0);
+        _NeuronFeatureWaypoint_dom_lon.set(this, void 0);
+        _NeuronFeatureWaypoint_dom_alt.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronFeatureWaypoint_marker, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureWaypoint_point, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom_lat, null, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom_lon, null, "f");
+        if (point)
+            this.set_point(point);
+    }
+    remove_point_by_context(context) {
+        if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f") == context) {
+            this.remove_feature();
+        }
+        else {
+            console.warn("Call to remove unknown marker context");
+        }
+    }
+    set_point(point) {
+        if (!__classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f")) {
+            __classPrivateFieldSet(this, _NeuronFeatureWaypoint_marker, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.marker(point.to_leaflet(), {
+                draggable: true,
+                autoPan: true,
+            }), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f").on("drag", __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_update_position_from_event).bind(this));
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f").on("dblclick", __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_remove_point_by_event).bind(this));
+            const menu_items = [
+                new _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
+            ];
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f").bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Waypoint", menu_items, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f")));
+            this._add_layer_to_map(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f"));
+        }
+        __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_internal_set_point).call(this, point);
+    }
+    show_help() {
+        window.neuron_map.show_map_help(true, `${_neuron_help__WEBPACK_IMPORTED_MODULE_3__.NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeatureWaypoint.HELP_KEY}`);
+    }
+    remove_feature() {
+        if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f"))
+            this._remove_layer_from_map(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f"));
+        super.remove_feature();
+    }
+    get_path_coords() {
+        return __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f") ? [__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f")] : [];
+    }
+    get_dom() {
+        if (!__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom, "f")) {
+            __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom, this._get_dom("Waypoint"), "f");
+            let c = document.createElement("div");
+            c.className = 'mission-feature-content';
+            const t0 = "Latitude location for the waypoint in decimal degrees";
+            __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom_lat, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").latitude : 0.0, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_update_latitude_from_dom).bind(this), -90, 90, 0.0002), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f").title = t0;
+            c.appendChild(this._create_dom_label("Latitude:", __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f"), t0));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f"));
+            const t1 = "Longitude location for the waypoint in decimal degrees";
+            __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom_lon, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").longitude : 0.0, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_update_longitude_from_dom).bind(this), -180, 180, 0.0002), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f").title = t1;
+            c.appendChild(this._create_dom_label("Longitude:", __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f"), t1));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f"));
+            const t2 = "Altitude for the waypoint in feet relative to take-off location ground level";
+            __classPrivateFieldSet(this, _NeuronFeatureWaypoint_dom_alt, this._create_dom_input_number((__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f") ? __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").altitude : 0.0) / _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_update_altitude_from_dom).bind(this)), "f");
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f").title = t2;
+            c.appendChild(this._create_dom_label("Altitude:", __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f"), t2));
+            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f"));
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom, "f").append(c);
+        }
+        return __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom, "f");
+    }
+    static isObjectOfDataType(object) {
+        let is_valid = (object.type == NeuronFeatureWaypoint.TYPE) ||
+            (object.version == NeuronFeatureWaypoint.VERSION);
+        return is_valid;
+    }
+    static from_json(j, map) {
+        //XXX: Implement this per inherited feature
+        if (!NeuronFeatureWaypoint.isObjectOfDataType(j))
+            throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
+        const point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_json(j.point);
+        return new NeuronFeatureWaypoint(map, point);
+    }
+    to_json() {
+        //XXX: Implement this per inherited feature
+        return {
+            version: NeuronFeatureWaypoint.VERSION,
+            type: NeuronFeatureWaypoint.TYPE,
+            point: __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").to_json()
+        };
+    }
+}
+_NeuronFeatureWaypoint_marker = new WeakMap(), _NeuronFeatureWaypoint_point = new WeakMap(), _NeuronFeatureWaypoint_dom = new WeakMap(), _NeuronFeatureWaypoint_dom_lat = new WeakMap(), _NeuronFeatureWaypoint_dom_lon = new WeakMap(), _NeuronFeatureWaypoint_dom_alt = new WeakMap(), _NeuronFeatureWaypoint_instances = new WeakSet(), _NeuronFeatureWaypoint_remove_point_by_event = function _NeuronFeatureWaypoint_remove_point_by_event(event) {
+    this.remove_point_by_context(event.target);
+}, _NeuronFeatureWaypoint_update_position_from_event = function _NeuronFeatureWaypoint_update_position_from_event(event) {
+    let point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.from_leaflet(event.target.getLatLng());
+    if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"))
+        point.altitude = __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").altitude;
+    __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_internal_set_point).call(this, point);
+}, _NeuronFeatureWaypoint_internal_set_point = function _NeuronFeatureWaypoint_internal_set_point(point, update_marker = true, update_dom = true) {
+    __classPrivateFieldSet(this, _NeuronFeatureWaypoint_point, point, "f");
+    if (update_marker && __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureWaypoint_marker, "f").setLatLng(point.to_leaflet());
+    if (update_dom) {
+        if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f"))
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f").value = point.latitude.toString();
+        if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f"))
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f").value = point.longitude.toString();
+        if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f"))
+            __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f").value = (point.altitude / _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio).toString();
+    }
+    this._trigger_on_changed();
+}, _NeuronFeatureWaypoint_update_latitude_from_dom = function _NeuronFeatureWaypoint_update_latitude_from_dom() {
+    if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").latitude = __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lat, "f").valueAsNumber;
+    __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"), true, false);
+}, _NeuronFeatureWaypoint_update_longitude_from_dom = function _NeuronFeatureWaypoint_update_longitude_from_dom() {
+    if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").longitude = __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_lon, "f").valueAsNumber;
+    __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"), true, false);
+}, _NeuronFeatureWaypoint_update_altitude_from_dom = function _NeuronFeatureWaypoint_update_altitude_from_dom() {
+    if (__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"))
+        __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f").altitude = __classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom_alt, "f").valueAsNumber * _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase._altitude_ratio;
+    __classPrivateFieldGet(this, _NeuronFeatureWaypoint_instances, "m", _NeuronFeatureWaypoint_internal_set_point).call(this, __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f"), true, false);
+};
+NeuronFeatureWaypoint.NAME = "Waypoint";
+NeuronFeatureWaypoint.TYPE = "NeuronFeaturePoint";
+NeuronFeatureWaypoint.VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
+NeuronFeatureWaypoint.HELP_KEY = 'waypoint';
 
 
 /***/ }),
@@ -31332,6 +31584,7 @@ _NeuronHelp_help_element_name = new WeakMap(), _NeuronHelp_help_element_ignore_s
         throw new Error("Unable to link element without ID!");
     }
 };
+NeuronHelp.HELP_PREFIX_MISSION = 'help-fp-mission';
 NeuronHelp.key_hover_start = "mouseenter";
 NeuronHelp.key_hover_end = "mouseleave";
 NeuronHelp.class_highlight = "help-highlight";
@@ -31541,7 +31794,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "NeuronMap": () => (/* binding */ NeuronMap)
 /* harmony export */ });
-/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_waypoint */ "./src/js/neuron_feature_waypoint.ts");
 /* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
@@ -31596,10 +31849,13 @@ class NeuronMap {
             __classPrivateFieldGet(this, _NeuronMap_unsub_option_cb, "f").call(this);
         __classPrivateFieldSet(this, _NeuronMap_unsub_option_cb, _neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptions.add_callback(this.update_path.bind(this)), "f");
     }
-    show_map_help(show) {
+    show_map_help(show, help_key = '') {
+        var _a;
         if (show) {
             __classPrivateFieldGet(this, _NeuronMap_map_element, "f").style.display = 'none';
             __classPrivateFieldGet(this, _NeuronMap_help_element, "f").style.display = 'block';
+            if (help_key)
+                (_a = document.getElementById(help_key)) === null || _a === void 0 ? void 0 : _a.scrollIntoView();
         }
         else {
             __classPrivateFieldGet(this, _NeuronMap_map_element, "f").style.display = 'block';
@@ -31640,7 +31896,7 @@ class NeuronMap {
         // } else {
         const l = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint.from_leaflet(event.latlng);
         l.altitude = __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude();
-        const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
+        const p = new _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), l);
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         // }
     }
@@ -31651,7 +31907,7 @@ class NeuronMap {
             const sw = b.getSouthWest();
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
-            const p = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2, __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude()));
+            const p = new _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint(__classPrivateFieldGet(this, _NeuronMap_map, "f"), new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(sw.lat + dy / 2, sw.lng + dx / 2, __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_last_item_altitude()));
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
@@ -31905,7 +32161,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "NeuronPlanner": () => (/* binding */ NeuronPlanner)
 /* harmony export */ });
 /* harmony import */ var _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_base */ "./src/js/neuron_feature_base.ts");
-/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_waypoint */ "./src/js/neuron_feature_waypoint.ts");
 /* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
 /* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
@@ -32171,8 +32427,8 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
         if (_neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase.isObjectOfDataType(item)) {
             feature = _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
         }
-        else if (_neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.isObjectOfDataType(item)) {
-            feature = _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
+        else if (_neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureWaypoint.isObjectOfDataType(item)) {
+            feature = _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureWaypoint.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
         }
         else if (_neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon.isObjectOfDataType(item)) {
             let p = _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_2__.NeuronFeaturePolygon.from_json(item, __classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map());
@@ -32196,7 +32452,7 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
         let feature = null;
         if (_neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint.isObjectOfDataType(item)) {
             const point = _neuron_interfaces__WEBPACK_IMPORTED_MODULE_4__.NeuronInterfacePoint.from_json(item);
-            feature = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), point);
+            feature = new _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureWaypoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), point);
         }
         else {
             console.warn("Unable to import waypoint item");
@@ -32263,7 +32519,7 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
     let features = [];
     for (const p of result.markers) {
         p.altitude = this.get_last_item_altitude();
-        const f = new _neuron_feature_point__WEBPACK_IMPORTED_MODULE_1__.NeuronFeaturePoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), p);
+        const f = new _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureWaypoint(__classPrivateFieldGet(this, _NeuronPlanner_map, "f").get_leaflet_map(), p);
         features.push(f);
     }
     for (const p of result.polygons) {
@@ -44708,12 +44964,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _css_theme_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/theme.css */ "./src/css/theme.css");
 /* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
 /* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
-/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
-/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
-/* harmony import */ var _neuron_brief__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./neuron_brief */ "./src/js/neuron_brief.ts");
-/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
-/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
-/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
+/* harmony import */ var _css_stats_options_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/stats_options.css */ "./src/css/stats_options.css");
+/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
+/* harmony import */ var _css_brief_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/brief.css */ "./src/css/brief.css");
+/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
+/* harmony import */ var _neuron_brief__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./neuron_brief */ "./src/js/neuron_brief.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
+/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -44732,6 +44990,8 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
  //XXX: Load this first so other definitions can use it
+
+
 
 
 
@@ -44758,14 +45018,14 @@ const print_size_with_margin_mm = {
     height: 277 / 2, /* 297 */
 };
 const print_size_with_margin_px = {
-    width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__.mm_to_px)(print_size_with_margin_mm.width),
-    height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__.mm_to_px)(print_size_with_margin_mm.height)
+    width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_16__.mm_to_px)(print_size_with_margin_mm.width),
+    height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_16__.mm_to_px)(print_size_with_margin_mm.height)
 };
 window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_2__.NeuronPlanner(element_name_plan);
 window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_3__.NeuronMap(element_name_map, element_name_help, window.neuron_planner);
-window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_15__.NeuronStatistics(window.neuron_planner, element_prefix_stats);
-window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_13__.NeuronBrief(window.neuron_planner, element_name_brief);
-window.neuron_help = new _neuron_help__WEBPACK_IMPORTED_MODULE_16__.NeuronHelp(element_prefix_help, elements_ignore_help);
+window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_17__.NeuronStatistics(window.neuron_planner, element_prefix_stats);
+window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_15__.NeuronBrief(window.neuron_planner, element_name_brief);
+window.neuron_help = new _neuron_help__WEBPACK_IMPORTED_MODULE_18__.NeuronHelp(element_prefix_help, elements_ignore_help);
 let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_planner.reset();
     window.neuron_map.reset();
