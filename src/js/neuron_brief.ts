@@ -3,14 +3,14 @@ import { NeuronFeaturePoint } from "./neuron_feature_point";
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
+import { NeuronOptions, NeuronOptionKeysNumber } from "./neuron_options";
 
 import { NeuronPlanner } from "./neuron_planner";
-import { NeuronStatistics, NeuronStatisticsOptionKeys } from "./neuron_statistics";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
 
 // const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
-export interface MissionBiref {
+export interface MissionBrief {
     type:string,
     description:string,
     components:string[],
@@ -23,13 +23,11 @@ export class NeuronBrief {
     // static VERSION = 'bb92b580-d319-11ec-8818-bfb4bc4aa250';
 
     #planner:NeuronPlanner;
-    #stats:NeuronStatistics;
     #brief_element:HTMLElement;
     #brief_element_name:string;
 
-    constructor(planner:NeuronPlanner, stats:NeuronStatistics, brief_element_name:string) {
+    constructor(planner:NeuronPlanner, brief_element_name:string) {
         this.#planner = planner;
-        this.#stats = stats;
         this.#brief_element = null;
         this.#brief_element_name = brief_element_name
     }
@@ -127,11 +125,11 @@ export class NeuronBrief {
     }
 
     get_mission_brief() {
-        let brief:MissionBiref[] = [];
+        let brief:MissionBrief[] = [];
         const steps = this.#planner.get_mission_as_points();
         if(steps.length) {
             //Get the flight speed and lock it to at least 0.1m/s
-            const s = this.#stats.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED);
+            const s = NeuronOptions.get_option(NeuronOptionKeysNumber.MISSION_SPEED) as number;
             const flight_speed = Math.max(s ? s : 0.0, 0.1);
 
             let time_takeoff = "---";
@@ -143,7 +141,7 @@ export class NeuronBrief {
                 time_takeoff = "+" + flight_time_from_duration(takeoff_distance/flight_speed);
             }
 
-            let step0:MissionBiref = {
+            let step0:MissionBrief = {
                 type: NeuronFeaturePoint.NAME,
                 description: "Take-off at location",
                 components: [takeoff_point.toString()],
@@ -164,7 +162,7 @@ export class NeuronBrief {
                     time_transit = "+" + flight_time_from_duration(transit_distance/flight_speed);
                 }
 
-                let step:MissionBiref = null;
+                let step:MissionBrief = null;
                 //XXX: Ignore mission items with no points
                 // if(item instanceof NeuronFeatureBase) {
                 // } else
@@ -214,7 +212,7 @@ export class NeuronBrief {
                 time_land = "+" + flight_time_from_duration(land_distance/flight_speed);
             }
 
-            let stepn:MissionBiref = {
+            let stepn:MissionBrief = {
                 type: NeuronFeaturePoint.NAME,
                 description: "Land at location",
                 components: [land_point ? land_point.toString() : "---"],
@@ -226,7 +224,7 @@ export class NeuronBrief {
             const total_distance = flight_distance_from_coords(steps);
             const total_time = flight_time_from_duration(total_distance/flight_speed);
 
-            let step_total_time:MissionBiref= {
+            let step_total_time:MissionBrief= {
                 type: "",
                 description: "",
                 components: [""],

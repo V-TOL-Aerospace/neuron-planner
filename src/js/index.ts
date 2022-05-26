@@ -1,3 +1,4 @@
+import { NeuronOptions } from './neuron_options';
 import { NeuronInterfacePoint } from './neuron_interfaces';
 import { NeuronPlanner } from './neuron_planner';
 import { NeuronMap } from './neuron_map';
@@ -20,6 +21,9 @@ import { NeuronHelp } from './neuron_help';
 
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
+
+//Initialize all of our options
+NeuronOptions.init();
 
 declare global {
     interface Window {
@@ -53,7 +57,7 @@ const print_size_with_margin_px = {
 window.neuron_planner = new NeuronPlanner(element_name_plan);
 window.neuron_map = new NeuronMap(element_name_map, element_name_help, window.neuron_planner);
 window.neuron_statistics = new NeuronStatistics(window.neuron_planner, element_prefix_stats);
-window.neuron_brief = new NeuronBrief(window.neuron_planner, window.neuron_statistics, element_name_brief);
+window.neuron_brief = new NeuronBrief(window.neuron_planner, element_name_brief);
 window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help);
 
 let load_app_data = async () => {

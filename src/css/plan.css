@@ -55,13 +55,17 @@
     text-align: right;
 }
 
-.stats-option-label {
+/* .fp-stats-option-label {
     flex: auto;
 }
 
-.stats-option-value {
+.fp-stats-option-value {
     flex: auto;
     max-width: 5em;
+} */
+
+.fp-stats-option-content-subtitle {
+    font-weight: bold;
 }
 
 #fp-mission {
