@@ -7,6 +7,7 @@ import { NeuronMap } from "./neuron_map";
 import { kml_download_from_neuron_data, kmx_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
+import { NeuronOptions } from "./neuron_options";
 
 export type MissionFeatureData = (
     NeuronFeatureBaseData |
@@ -52,6 +53,7 @@ export class NeuronPlanner {
     #last_mission_altitude:number;
 
     #plan_element_name:string;
+    // #unsub_option_cb:CallableFunction;
 
     constructor(plan_element_name:string, map:NeuronMap = null) {
         this.#map = map;
@@ -64,7 +66,15 @@ export class NeuronPlanner {
         this.#last_callback_id = 0;
         this.#last_mission_altitude = 0.0;
         this.#clearing_mission = false;
+        // this.#unsub_option_cb = null;
     }
+
+    // set_options_subscriber() {
+    //     if(this.#unsub_option_cb)
+    //         this.#unsub_option_cb();
+
+    //     this.#unsub_option_cb = NeuronOptions.add_callback(this.#run_on_mission_change.bind(this));
+    // }
 
     get_mission_items() {
         return this.#mission_items;

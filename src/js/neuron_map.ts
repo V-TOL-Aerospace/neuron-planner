@@ -6,6 +6,7 @@ import { NeuronPlanner } from "./neuron_planner";
 import {NeuronInterfacePoint} from "./neuron_interfaces";
 import { L } from "./leaflet_interface";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
+import { NeuronOptions, NeuronOptionsBoolean } from "./neuron_options";
 
 interface NeuronMapLayers {
     [id: string]: L.TileLayer;
@@ -22,6 +23,7 @@ export class NeuronMap {
     #map_element:HTMLElement;
     #help_element:HTMLElement;
     #map_layers:NeuronMapLayers;
+    #unsub_option_cb:CallableFunction;
 
     constructor(map_element_name:string, help_element_name:string, planner:NeuronPlanner) {
         this.#planner = planner;
@@ -35,6 +37,14 @@ export class NeuronMap {
         this.#help_element_name = help_element_name;
 
         this.#planner.on_mission_change(this.update_path.bind(this));
+        this.set_options_subscriber();
+    }
+
+    set_options_subscriber() {
+        if(this.#unsub_option_cb)
+            this.#unsub_option_cb();
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.update_path.bind(this));
     }
 
     show_map_help(show:boolean) {
@@ -152,7 +162,8 @@ export class NeuronMap {
 
     update_path() {
         if(this.#path) {
-            const path_points = this.#planner.get_mission_as_points().map(x => x.to_leaflet());
+            const show = NeuronOptions.get_option_boolean(NeuronOptionsBoolean.SHOW_PATH);
+            const path_points = show ? this.#planner.get_mission_as_points().map(x => x.to_leaflet()) : [];
             this.#path.setLatLngs(path_points);
         }
     }

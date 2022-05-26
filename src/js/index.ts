@@ -68,7 +68,7 @@ let load_app_data = async () => {
     window.neuron_help.reset();
 
     window.neuron_planner.set_map(window.neuron_map);
-    window.neuron_planner.on_mission_change(window.neuron_statistics.update.bind(window.neuron_statistics));
+    window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {

@@ -173,6 +173,13 @@
                             <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats-statistics">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Brief</a> interfaces.</p>
                             <p>These options include:</p>
                             <ul>
+                                <li>Show path: display mission flight plan on the map.</li>
+                                <li>Camera: A listing of camera information for cameras that are typically used for surveying. Custom entry of camera information is also permitted.</li>
+                                <li>Focal Length: Focal length of the lense that will be fitted to the camera on the aircraft.</li>
+                                <li>Sensor Width: Physical width of the imagery sensor camera on the aircraft.</li>
+                                <li>Sensor Height: Physical height of the imagery sensor of the camera on the aircraft.</li>
+                                <li>Image Width: Number of pixels in the width axis of the imagery sensor of the camera on the aircraft.</li>
+                                <li>Image Height: Number of pixels in the height axis of the imagery sensor of the camera on the aircraft.</li>
                                 <li>Speed: aircraft cruise airspeed in meters per second.</li>
                             </ul>
                         </section>
@@ -190,8 +197,8 @@
                         <section id="help-fp-mission">
                             <h3>Mission Plan</h3>
                             <p>The mission plan lists all of the mission features that are part of the current mission. </p>
-                            <p>Each feature is listed in order of execution, which can be adjusted with the "up" and "down" arrows at the top-right of the specific mission feature. A mission feature can be removed by pressing the "cross" button, noting that this will immediately discard this feature.</p>
-                            <p>An identifier button is present on each feature. Pressing this button will cause the <a href="#help-fp-map-interactive">Interactive Map</a> to pan and zoom such that the specified mission feature is in the center of view.</p>
+                            <p>Each feature is listed in order of execution, which can be adjusted with the up (<i class="fas fa-arrow-up"></i>) and down (<i class="fas fa-arrow-down"></i>) arrows at the top-right of the specific mission feature. A mission feature can be removed by pressing the cross (<i class="fas fa-close"></i>) button, noting that this will immediately discard this feature.</p>
+                            <p>An identifier (<i class="fas fa-location-crosshairs"></i>) button is present on each feature. Pressing this button will cause the <a href="#help-fp-map-interactive">Interactive Map</a> to pan and zoom such that the specified mission feature is in the center of view. The map visibility of each feature can also be toggled using the visibility (<i class="fas fa-eye"></i>) button, causing the feature to be shown or hidden on the map display. Note that the mission paths for a feature will remain visible for even if the feature is hidden.</p>
                             <section id="help-fp-mission-waypoint">
                                 <h4>Waypoint</h4>
                                 <p>The waypoint feature acts as a simple "go-to" location for the aircraft to fly towards and pass through during the flight plan.</p>
@@ -234,14 +241,8 @@
                                     <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
                                     <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>
                                     <li>Overlap: Amount of overlap in the imagery that will be captured between sequential images. Typically, photogrammetry software requires a overlap greater than 50% to perform accurate stitching.</li>
-                                    <li>Camera: A listing of camera information for cameras that are typically used for surveying. Custom entry of camera information is also permitted.</li>
-                                    <li>Focal Length: Focal length of the lense that will be fitted to the camera on the aircraft.</li>
-                                    <li>Sensor Width: Physical width of the imagery sensor camera on the aircraft.</li>
-                                    <li>Sensor Height: Physical height of the imagery sensor of the camera on the aircraft.</li>
-                                    <li>Image Width: Number of pixels in the width axis of the imagery sensor of the camera on the aircraft.</li>
-                                    <li>Image Height: Number of pixels in the height axis of the imagery sensor of the camera on the aircraft.</li>
                                 </ul>
-                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is selected and the survey properties are adjusted. As such, the imagery capture requirements can be used to cross check survey outcomes after adjusting the survey to meet flight limitations.</p>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the survey properties are adjusted. As such, the imagery capture requirements can be used to cross check survey outcomes after adjusting the survey to meet flight limitations.</p>
                             </section>
                         </section>
                     </section>
@@ -256,8 +257,6 @@
                         <span class="fp-stats-title-label">Options</span>
                     </div>
                     <div id="fp-stats-options">
-                        <!-- <label for="fp-stats-options-speed" class="fp-stats-option-label">Speed (m/s):</label>
-                        <input id="fp-stats-options-speed" class="fp-stats-option-value fp-stats-options-value-right" type="number" value="5.0" min="0.1"> -->
                     </div>
                 </div>
                 <div id="fp-stats-statistics">

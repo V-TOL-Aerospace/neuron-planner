@@ -5705,7 +5705,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* html {\r\n    height: 100%;\r\n} */\r\n\r\nbody {\r\n    height: 100vh;\r\n    width: 100vw;\r\n    margin: 0;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-bg);\r\n}\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    padding: 0.5em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-map-sub {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-help {\r\n    display: none;\r\n    overflow: scroll;\r\n    padding: 1em;\r\n}\r\n\r\n#fp-summary {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    width: 25%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-left: 2px solid black;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n#print-section {\r\n    display: none;\r\n}\r\n\r\n.help-highlight {\r\n    background-color: rgba(50,50,255,0.3);\r\n}\r\n\r\nbody{counter-reset: section}\r\nh2{counter-reset: sub-section}\r\nh3{counter-reset: composite}\r\nh4{counter-reset: detail}\r\n\r\nh2:before{\r\n  counter-increment: section;\r\n  content: counter(section) \". \";\r\n}\r\nh3:before{\r\n  counter-increment: sub-section;\r\n  content: counter(section) \".\" counter(sub-section) \". \";\r\n}\r\nh4:before{\r\n  counter-increment: composite;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\r\n}\r\nh5:before{\r\n  counter-increment: detail;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IACI,aAAa;IACb,YAAY;IACZ,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG","sourcesContent":["/* html {\r\n    height: 100%;\r\n} */\r\n\r\nbody {\r\n    height: 100vh;\r\n    width: 100vw;\r\n    margin: 0;\r\n    overflow-x: hidden;\r\n    overflow-y: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-bg);\r\n}\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    padding: 0.5em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-map-sub {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-help {\r\n    display: none;\r\n    overflow: scroll;\r\n    padding: 1em;\r\n}\r\n\r\n#fp-summary {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    width: 25%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-left: 2px solid black;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n#print-section {\r\n    display: none;\r\n}\r\n\r\n.help-highlight {\r\n    background-color: rgba(50,50,255,0.3);\r\n}\r\n\r\nbody{counter-reset: section}\r\nh2{counter-reset: sub-section}\r\nh3{counter-reset: composite}\r\nh4{counter-reset: detail}\r\n\r\nh2:before{\r\n  counter-increment: section;\r\n  content: counter(section) \". \";\r\n}\r\nh3:before{\r\n  counter-increment: sub-section;\r\n  content: counter(section) \".\" counter(sub-section) \". \";\r\n}\r\nh4:before{\r\n  counter-increment: composite;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\r\n}\r\nh5:before{\r\n  counter-increment: detail;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* html {\n    height: 100%;\n} */\n\nbody {\n    height: 100vh;\n    width: 100vw;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IACI,aAAa;IACb,YAAY;IACZ,SAAS;IACT,kBAAkB;IAClB,gBAAgB;IAChB,aAAa;IACb,sBAAsB;IACtB,iCAAiC;AACrC;;AAEA;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,qCAAqC;AACzC;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG","sourcesContent":["/* html {\n    height: 100%;\n} */\n\nbody {\n    height: 100vh;\n    width: 100vw;\n    margin: 0;\n    overflow-x: hidden;\n    overflow-y: auto;\n    display: flex;\n    flex-direction: column;\n    background-color: var(--theme-bg);\n}\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: rgba(50,50,255,0.3);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5732,7 +5732,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5759,7 +5759,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n}\r\n\r\n#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n}\r\n\r\n#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    border: 2px solid black;\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px #888888;\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.brief-table {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-entry {\r\n    display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto;\r\n}\r\n\r\n.brief-table-entry-header {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n    background-color: black;\n    color: white;\n    display: flex;\n}\n\n.fp-stats-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.5em;\n}\n\n.fp-stats-title-label {\n    flex: auto;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n/* .fp-stats-option-label {\n    flex: auto;\n}\n\n.fp-stats-option-value {\n    flex: auto;\n    max-width: 5em;\n} */\n\n.fp-stats-option-content-subtitle {\n    font-weight: bold;\n}\n\n#fp-mission {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-hidden {\n    background: #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button,\n.mission-feature-title-button-small {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n\n.mission-feature-title-button-small {\n    display: none;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    /* overflow: scroll; */\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-subtitle {\n    font-weight: bold;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;AACjB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;;;;;;GAOG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;AACvB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n    background-color: black;\n    color: white;\n    display: flex;\n}\n\n.fp-stats-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.5em;\n}\n\n.fp-stats-title-label {\n    flex: auto;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n/* .fp-stats-option-label {\n    flex: auto;\n}\n\n.fp-stats-option-value {\n    flex: auto;\n    max-width: 5em;\n} */\n\n.fp-stats-option-content-subtitle {\n    font-weight: bold;\n}\n\n#fp-mission {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-hidden {\n    background: #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n}\n\n.mission-feature-title-button,\n.mission-feature-title-button-small {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n\n.mission-feature-title-button-small {\n    display: none;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    /* overflow: scroll; */\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-subtitle {\n    font-weight: bold;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5786,7 +5786,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for our margins.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 277mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -5813,7 +5813,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n    --theme-bg: #FFFFFF;\r\n    --theme-bg-border: #505050;\r\n}", "",{"version":3,"sources":["webpack://./src/css/theme.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,0BAA0B;AAC9B","sourcesContent":[":root {\r\n    --theme-bg: #FFFFFF;\r\n    --theme-bg-border: #505050;\r\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\n    --theme-bg: #FFFFFF;\n    --theme-bg-border: #505050;\n}", "",{"version":3,"sources":["webpack://./src/css/theme.css"],"names":[],"mappings":"AAAA;IACI,mBAAmB;IACnB,0BAA0B;AAC9B","sourcesContent":[":root {\n    --theme-bg: #FFFFFF;\n    --theme-bg-border: #505050;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -29614,7 +29614,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
 /* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
-/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
+/* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
 /* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
@@ -29627,22 +29627,20 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronBrief_planner, _NeuronBrief_stats, _NeuronBrief_brief_element, _NeuronBrief_brief_element_name;
+var _NeuronBrief_planner, _NeuronBrief_brief_element, _NeuronBrief_brief_element_name;
 
 
 
 
 
 class NeuronBrief {
-    constructor(planner, stats, brief_element_name) {
+    constructor(planner, brief_element_name) {
         // static TYPE = 'NeuronBrief';
         // static VERSION = 'bb92b580-d319-11ec-8818-bfb4bc4aa250';
         _NeuronBrief_planner.set(this, void 0);
-        _NeuronBrief_stats.set(this, void 0);
         _NeuronBrief_brief_element.set(this, void 0);
         _NeuronBrief_brief_element_name.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronBrief_planner, planner, "f");
-        __classPrivateFieldSet(this, _NeuronBrief_stats, stats, "f");
         __classPrivateFieldSet(this, _NeuronBrief_brief_element, null, "f");
         __classPrivateFieldSet(this, _NeuronBrief_brief_element_name, brief_element_name, "f");
     }
@@ -29731,7 +29729,7 @@ class NeuronBrief {
         const steps = __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_as_points();
         if (steps.length) {
             //Get the flight speed and lock it to at least 0.1m/s
-            const s = __classPrivateFieldGet(this, _NeuronBrief_stats, "f").get_option(_neuron_statistics__WEBPACK_IMPORTED_MODULE_3__.NeuronStatisticsOptionKeys.MISSION_SPEED);
+            const s = _neuron_options__WEBPACK_IMPORTED_MODULE_3__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_3__.NeuronOptionsNumber.MISSION_SPEED);
             const flight_speed = Math.max(s ? s : 0.0, 0.1);
             let time_takeoff = "---";
             let takeoff_point = steps[0];
@@ -29827,7 +29825,7 @@ class NeuronBrief {
         return brief;
     }
 }
-_NeuronBrief_planner = new WeakMap(), _NeuronBrief_stats = new WeakMap(), _NeuronBrief_brief_element = new WeakMap(), _NeuronBrief_brief_element_name = new WeakMap();
+_NeuronBrief_planner = new WeakMap(), _NeuronBrief_brief_element = new WeakMap(), _NeuronBrief_brief_element_name = new WeakMap();
 
 
 /***/ }),
@@ -29989,20 +29987,28 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureBase_instances, _NeuronFeatureBase_map, _NeuronFeatureBase_features, _NeuronFeatureBase_on_remove, _NeuronFeatureBase_on_change, _NeuronFeatureBase_on_move, _NeuronFeatureBase_request_move;
+var _NeuronFeatureBase_instances, _NeuronFeatureBase_visible, _NeuronFeatureBase_map, _NeuronFeatureBase_features, _NeuronFeatureBase_hidden_features, _NeuronFeatureBase_on_remove, _NeuronFeatureBase_on_change, _NeuronFeatureBase_on_move, _NeuronFeatureBase_dom, _NeuronFeatureBase_dom_buttons_visibility, _NeuronFeatureBase_update_visibility_dom, _NeuronFeatureBase_update_visibility_icons, _NeuronFeatureBase_get_button_size_class, _NeuronFeatureBase_request_move;
 
 
 class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.NeuronDOMFactory {
     constructor(map) {
         super('mission-feature');
         _NeuronFeatureBase_instances.add(this);
+        _NeuronFeatureBase_visible.set(this, void 0);
         _NeuronFeatureBase_map.set(this, void 0);
         _NeuronFeatureBase_features.set(this, void 0);
+        _NeuronFeatureBase_hidden_features.set(this, void 0);
         _NeuronFeatureBase_on_remove.set(this, void 0);
         _NeuronFeatureBase_on_change.set(this, void 0);
         _NeuronFeatureBase_on_move.set(this, void 0);
+        _NeuronFeatureBase_dom.set(this, void 0);
+        _NeuronFeatureBase_dom_buttons_visibility.set(this, void 0);
+        __classPrivateFieldSet(this, _NeuronFeatureBase_visible, true, "f");
         __classPrivateFieldSet(this, _NeuronFeatureBase_features, [], "f");
+        __classPrivateFieldSet(this, _NeuronFeatureBase_hidden_features, [], "f");
         __classPrivateFieldSet(this, _NeuronFeatureBase_map, map, "f");
+        __classPrivateFieldSet(this, _NeuronFeatureBase_dom_buttons_visibility, [], "f");
+        __classPrivateFieldSet(this, _NeuronFeatureBase_dom, null, "f");
         this.set_remove_callback(null);
         this.set_change_callback(null);
         this.set_move_callback(null);
@@ -30011,48 +30017,61 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
         if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_change, "f"))
             __classPrivateFieldGet(this, _NeuronFeatureBase_on_change, "f").call(this, this);
     }
-    _add_feature_to_map(m) {
+    _add_layer_to_map(m) {
         if (__classPrivateFieldGet(this, _NeuronFeatureBase_map, "f")) {
-            m.addTo(__classPrivateFieldGet(this, _NeuronFeatureBase_map, "f"));
-            __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").push(m);
-            m.on('remove', this._feature_removed.bind(this));
+            if (__classPrivateFieldGet(this, _NeuronFeatureBase_visible, "f")) {
+                m.addTo(__classPrivateFieldGet(this, _NeuronFeatureBase_map, "f"));
+                __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").push(m);
+            }
+            else {
+                __classPrivateFieldGet(this, _NeuronFeatureBase_hidden_features, "f").push(m);
+            }
+            // m.on('remove', this._feature_removed.bind(this));
         }
         else {
             console.error('Error: no map reference set');
         }
     }
-    _feature_removed(event) {
-        let index = __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").indexOf(event.target);
-        if (index !== -1) {
-            __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").splice(index, 1);
+    _remove_layer_from_map(m) {
+        let index_visible = __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").indexOf(m);
+        if (index_visible !== -1) {
+            __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").splice(index_visible, 1);
+            m.remove();
+        }
+        let index_hidden = __classPrivateFieldGet(this, _NeuronFeatureBase_hidden_features, "f").indexOf(m);
+        if (index_hidden !== -1) {
+            __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f").splice(index_hidden, 1);
+            //XXX: These already do not exist on the map, so no need to remove!
         }
     }
     _get_dom(text = "Mission Feature") {
-        let dom = document.createElement("div");
-        dom.className = 'mission-feature';
+        __classPrivateFieldSet(this, _NeuronFeatureBase_dom, document.createElement("div"), "f");
+        __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").className = 'mission-feature';
         let title = document.createElement("div");
         title.className = 'mission-feature-title';
         let t = document.createElement("div");
         t.className = 'mission-feature-title-text';
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
-        //Add two sets of icons, one for each size button
-        const button_sizes = [
-            'mission-feature-title-button',
-            'mission-feature-title-button-small'
-        ];
-        for (const but_class of button_sizes) {
-            const fa_size = but_class.includes('small') ? " fa-2xs" : "";
+        __classPrivateFieldSet(this, _NeuronFeatureBase_dom_buttons_visibility, [], "f");
+        for (const button_class of NeuronFeatureBase._button_sizes) {
+            const fa_size = __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_get_button_size_class).call(this, button_class);
             let b0 = document.createElement("button");
-            b0.className = but_class;
+            b0.className = button_class;
             b0.title = "Zoom to feature";
             b0.onclick = this.zoom_to_feature.bind(this);
             let b0i = document.createElement("i");
             b0i.className = 'fas fa-location-crosshairs' + fa_size;
             b0.appendChild(b0i);
             title.appendChild(b0);
+            let bv = document.createElement("button");
+            bv.className = button_class;
+            bv.title = "Toggle feature visibility";
+            bv.onclick = this.toggle_visibility.bind(this);
+            title.appendChild(bv);
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom_buttons_visibility, "f").push(bv);
             let b1 = document.createElement("button");
-            b1.className = but_class;
+            b1.className = button_class;
             b1.title = "Move up";
             b1.onclick = __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_request_move).bind(this, -1);
             let b1i = document.createElement("i");
@@ -30060,7 +30079,7 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             b1.appendChild(b1i);
             title.appendChild(b1);
             let b2 = document.createElement("button");
-            b2.className = but_class;
+            b2.className = button_class;
             b2.title = "Move down";
             b2.onclick = __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_request_move).bind(this, 1);
             let b2i = document.createElement("i");
@@ -30068,7 +30087,7 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             b2.appendChild(b2i);
             title.appendChild(b2);
             let b3 = document.createElement("button");
-            b3.className = but_class;
+            b3.className = button_class;
             b3.title = "Remove";
             b3.onclick = this.remove_feature.bind(this);
             let b3i = document.createElement("i");
@@ -30076,8 +30095,10 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
             b3.appendChild(b3i);
             title.appendChild(b3);
         }
-        dom.appendChild(title);
-        return dom;
+        __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_icons).call(this);
+        __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_dom).call(this);
+        __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").appendChild(title);
+        return __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f");
     }
     set_remove_callback(on_remove) {
         __classPrivateFieldSet(this, _NeuronFeatureBase_on_remove, on_remove, "f");
@@ -30090,6 +30111,25 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
     }
     get_features() {
         return __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f");
+    }
+    toggle_visibility() {
+        __classPrivateFieldSet(this, _NeuronFeatureBase_visible, !__classPrivateFieldGet(this, _NeuronFeatureBase_visible, "f"), "f");
+        if (__classPrivateFieldGet(this, _NeuronFeatureBase_visible, "f")) {
+            //Show layers
+            __classPrivateFieldSet(this, _NeuronFeatureBase_features, [].concat(__classPrivateFieldGet(this, _NeuronFeatureBase_hidden_features, "f")), "f");
+            __classPrivateFieldSet(this, _NeuronFeatureBase_hidden_features, [], "f");
+            for (let feature of __classPrivateFieldGet(this, _NeuronFeatureBase_features, "f"))
+                feature.addTo(__classPrivateFieldGet(this, _NeuronFeatureBase_map, "f"));
+        }
+        else {
+            //Hide layers
+            __classPrivateFieldSet(this, _NeuronFeatureBase_hidden_features, [].concat(__classPrivateFieldGet(this, _NeuronFeatureBase_features, "f")), "f");
+            __classPrivateFieldSet(this, _NeuronFeatureBase_features, [], "f");
+            for (let feature of __classPrivateFieldGet(this, _NeuronFeatureBase_hidden_features, "f"))
+                feature.remove();
+        }
+        __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_icons).call(this);
+        __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_update_visibility_dom).call(this);
     }
     zoom_to_feature() {
         const group = _leaflet_interface__WEBPACK_IMPORTED_MODULE_0__.L.featureGroup(__classPrivateFieldGet(this, _NeuronFeatureBase_features, "f"));
@@ -30130,7 +30170,26 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__
         };
     }
 }
-_NeuronFeatureBase_map = new WeakMap(), _NeuronFeatureBase_features = new WeakMap(), _NeuronFeatureBase_on_remove = new WeakMap(), _NeuronFeatureBase_on_change = new WeakMap(), _NeuronFeatureBase_on_move = new WeakMap(), _NeuronFeatureBase_instances = new WeakSet(), _NeuronFeatureBase_request_move = function _NeuronFeatureBase_request_move(direction = 0) {
+_NeuronFeatureBase_visible = new WeakMap(), _NeuronFeatureBase_map = new WeakMap(), _NeuronFeatureBase_features = new WeakMap(), _NeuronFeatureBase_hidden_features = new WeakMap(), _NeuronFeatureBase_on_remove = new WeakMap(), _NeuronFeatureBase_on_change = new WeakMap(), _NeuronFeatureBase_on_move = new WeakMap(), _NeuronFeatureBase_dom = new WeakMap(), _NeuronFeatureBase_dom_buttons_visibility = new WeakMap(), _NeuronFeatureBase_instances = new WeakSet(), _NeuronFeatureBase_update_visibility_dom = function _NeuronFeatureBase_update_visibility_dom() {
+    if (__classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f")) {
+        if (__classPrivateFieldGet(this, _NeuronFeatureBase_visible, "f")) {
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.remove('mission-feature-hidden');
+        }
+        else {
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.add('mission-feature-hidden');
+        }
+    }
+}, _NeuronFeatureBase_update_visibility_icons = function _NeuronFeatureBase_update_visibility_icons() {
+    for (let but of __classPrivateFieldGet(this, _NeuronFeatureBase_dom_buttons_visibility, "f")) {
+        const fa_size = __classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_get_button_size_class).call(this, but.className);
+        but.innerHTML = '';
+        let bvi = document.createElement("i");
+        bvi.className = 'fas ' + (__classPrivateFieldGet(this, _NeuronFeatureBase_visible, "f") ? 'fa-eye-slash' : 'fa-eye') + fa_size;
+        but.appendChild(bvi);
+    }
+}, _NeuronFeatureBase_get_button_size_class = function _NeuronFeatureBase_get_button_size_class(button_class) {
+    return button_class.includes('small') ? " fa-2xs" : "";
+}, _NeuronFeatureBase_request_move = function _NeuronFeatureBase_request_move(direction = 0) {
     if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f") && direction != 0)
         __classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f").call(this, this, direction);
 };
@@ -30139,6 +30198,11 @@ NeuronFeatureBase.NAME = "[BASE FEATURE]";
 NeuronFeatureBase.TYPE = "NeuronFeatureBase";
 NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 NeuronFeatureBase._altitude_ratio = 0.3048; //Alt = [DOM Value] * Ratio
+//Add two sets of icons, one for each size button
+NeuronFeatureBase._button_sizes = [
+    'mission-feature-title-button',
+    'mission-feature-title-button-small'
+];
 
 
 /***/ }),
@@ -30210,13 +30274,13 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
                 new _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
             ];
             __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").bindPopup((0,_leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.create_popup_context_dom)("Waypoint", menu_items, __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f")));
-            this._add_feature_to_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
+            this._add_layer_to_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
         }
         __classPrivateFieldGet(this, _NeuronFeaturePoint_instances, "m", _NeuronFeaturePoint_internal_set_point).call(this, point);
     }
     remove_feature() {
         if (__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"))
-            __classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f").remove();
+            this._remove_layer_from_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
         super.remove_feature();
     }
     get_path_coords() {
@@ -30427,7 +30491,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         m.on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_select_corner_by_event).bind(this));
         m.on("dblclick", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_remove_point_by_event).bind(this));
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").splice(__classPrivateFieldGet(this, _NeuronFeaturePolygon_selected_corner, "f"), 0, m);
-        this._add_feature_to_map(m);
+        this._add_layer_to_map(m);
         if (update_polygon)
             this.update_polygon();
     }
@@ -30446,7 +30510,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
     remove_point_by_corner(corner) {
         const ind = __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").indexOf(corner);
         if (ind >= 0) {
-            corner.remove(); //Remove from map
+            this._remove_layer_from_map(corner); //Remove from map
             __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f").splice(ind, 1); //Remove from list
             this.update_polygon(); //Redraw
         }
@@ -30480,7 +30544,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
                 //Create a new polygon
                 __classPrivateFieldSet(this, _NeuronFeaturePolygon_polygon, _leaflet_interface__WEBPACK_IMPORTED_MODULE_2__.L.polygon(corners, { color: 'red' }), "f");
                 __classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f").on("click", __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_add_point_at_mouseevent).bind(this));
-                this._add_feature_to_map(__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f"));
+                this._add_layer_to_map(__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f"));
             }
         }
         else {
@@ -30492,13 +30556,14 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         __classPrivateFieldGet(this, _NeuronFeaturePolygon_instances, "m", _NeuronFeaturePolygon_try_update_dom).call(this);
     }
     remove_feature() {
-        var _a;
         for (const c of __classPrivateFieldGet(this, _NeuronFeaturePolygon_corners, "f")) {
-            c.remove();
+            this._remove_layer_from_map(c);
         }
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
-        (_a = __classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f")) === null || _a === void 0 ? void 0 : _a.remove();
-        __classPrivateFieldSet(this, _NeuronFeaturePolygon_polygon, null, "f");
+        if (__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f")) {
+            this._remove_layer_from_map(__classPrivateFieldGet(this, _NeuronFeaturePolygon_polygon, "f"));
+            __classPrivateFieldSet(this, _NeuronFeaturePolygon_polygon, null, "f");
+        }
         super.remove_feature();
     }
     //override get_path_coords() {} //XXX: No paths provided by this feature, use base return
@@ -30622,6 +30687,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_tools_survey */ "./src/js/neuron_tools_survey.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
+/* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -30633,7 +30699,8 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_camera, _NeuronFeatureSurvey_sidelap, _NeuronFeatureSurvey_overlap, _NeuronFeatureSurvey_ground_resolution, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_photo_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_dom_camera_name, _NeuronFeatureSurvey_dom_camera_focal_length, _NeuronFeatureSurvey_dom_camera_image_width, _NeuronFeatureSurvey_dom_camera_image_height, _NeuronFeatureSurvey_dom_camera_sensor_width, _NeuronFeatureSurvey_dom_camera_sensor_height, _NeuronFeatureSurvey_dom_sidelap, _NeuronFeatureSurvey_dom_overlap, _NeuronFeatureSurvey_dom_ground_resolution, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_set_altitude, _NeuronFeatureSurvey_set_distance, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom, _NeuronFeatureSurvey_set_sidelap, _NeuronFeatureSurvey_set_ground_resolution, _NeuronFeatureSurvey_set_camera_selector, _NeuronFeatureSurvey_set_camera, _NeuronFeatureSurvey_update_camera_from_dom, _NeuronFeatureSurvey_update_camera_focal_length_from_dom, _NeuronFeatureSurvey_update_camera_sensor_width_from_dom, _NeuronFeatureSurvey_update_camera_sensor_height_from_dom, _NeuronFeatureSurvey_update_camera_image_width_from_dom, _NeuronFeatureSurvey_update_camera_image_height_from_dom, _NeuronFeatureSurvey_update_sidelap_from_dom, _NeuronFeatureSurvey_update_overlap_from_dom, _NeuronFeatureSurvey_update_ground_resolution_from_dom, _NeuronFeatureSurvey_calculate_and_update_camera_variables;
+var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatureSurvey_mappoints, _NeuronFeatureSurvey_altitude, _NeuronFeatureSurvey_distance, _NeuronFeatureSurvey_spacing, _NeuronFeatureSurvey_angle, _NeuronFeatureSurvey_overshoot1, _NeuronFeatureSurvey_overshoot2, _NeuronFeatureSurvey_startpos, _NeuronFeatureSurvey_minLaneSeparation, _NeuronFeatureSurvey_leadin, _NeuronFeatureSurvey_sidelap, _NeuronFeatureSurvey_overlap, _NeuronFeatureSurvey_ground_resolution, _NeuronFeatureSurvey_show_waypoints, _NeuronFeatureSurvey_dom, _NeuronFeatureSurvey_dom_corner_count, _NeuronFeatureSurvey_dom_waypoint_count, _NeuronFeatureSurvey_dom_photo_count, _NeuronFeatureSurvey_dom_show_waypoints, _NeuronFeatureSurvey_dom_altitude, _NeuronFeatureSurvey_dom_distance, _NeuronFeatureSurvey_dom_spacing, _NeuronFeatureSurvey_dom_angle, _NeuronFeatureSurvey_dom_angle_slider, _NeuronFeatureSurvey_dom_overshoot1, _NeuronFeatureSurvey_dom_overshoot2, _NeuronFeatureSurvey_dom_startpos, _NeuronFeatureSurvey_dom_minLaneSeparation, _NeuronFeatureSurvey_dom_leadin, _NeuronFeatureSurvey_dom_sidelap, _NeuronFeatureSurvey_dom_overlap, _NeuronFeatureSurvey_dom_ground_resolution, _NeuronFeatureSurvey_update_timer, _NeuronFeatureSurvey_update_interval, _NeuronFeatureSurvey_unsub_option_cb, _NeuronFeatureSurvey_options_changed, _NeuronFeatureSurvey_add_waypoint, _NeuronFeatureSurvey_set_altitude, _NeuronFeatureSurvey_set_distance, _NeuronFeatureSurvey_clear_update_timer, _NeuronFeatureSurvey__update_survey, _NeuronFeatureSurvey_clean_waypoints, _NeuronFeatureSurvey_try_update_dom_stats, _NeuronFeatureSurvey_update_show_waypoints_from_dom, _NeuronFeatureSurvey_update_altitude_from_dom, _NeuronFeatureSurvey_update_distance_from_dom, _NeuronFeatureSurvey_update_spacing_from_dom, _NeuronFeatureSurvey_update_angle_from_dom, _NeuronFeatureSurvey_update_angle_slider_from_dom, _NeuronFeatureSurvey_update_overshoot1_from_dom, _NeuronFeatureSurvey_update_overshoot2_from_dom, _NeuronFeatureSurvey_update_startpos_from_dom, _NeuronFeatureSurvey_update_minLaneSeparation_from_dom, _NeuronFeatureSurvey_update_leadin_from_dom, _NeuronFeatureSurvey_set_sidelap, _NeuronFeatureSurvey_set_ground_resolution, _NeuronFeatureSurvey_update_sidelap_from_dom, _NeuronFeatureSurvey_update_overlap_from_dom, _NeuronFeatureSurvey_update_ground_resolution_from_dom, _NeuronFeatureSurvey_calculate_and_update_capture_variables;
+
 
 
 
@@ -30653,7 +30720,6 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_startpos.set(this, void 0);
         _NeuronFeatureSurvey_minLaneSeparation.set(this, void 0);
         _NeuronFeatureSurvey_leadin.set(this, void 0);
-        _NeuronFeatureSurvey_camera.set(this, void 0);
         _NeuronFeatureSurvey_sidelap.set(this, void 0);
         _NeuronFeatureSurvey_overlap.set(this, void 0);
         _NeuronFeatureSurvey_ground_resolution.set(this, void 0);
@@ -30675,18 +30741,13 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         _NeuronFeatureSurvey_dom_startpos.set(this, void 0);
         _NeuronFeatureSurvey_dom_minLaneSeparation.set(this, void 0);
         _NeuronFeatureSurvey_dom_leadin.set(this, void 0);
-        //Camera parameters
-        _NeuronFeatureSurvey_dom_camera_name.set(this, void 0);
-        _NeuronFeatureSurvey_dom_camera_focal_length.set(this, void 0);
-        _NeuronFeatureSurvey_dom_camera_image_width.set(this, void 0);
-        _NeuronFeatureSurvey_dom_camera_image_height.set(this, void 0);
-        _NeuronFeatureSurvey_dom_camera_sensor_width.set(this, void 0);
-        _NeuronFeatureSurvey_dom_camera_sensor_height.set(this, void 0);
+        //Capture parameters
         _NeuronFeatureSurvey_dom_sidelap.set(this, void 0);
         _NeuronFeatureSurvey_dom_overlap.set(this, void 0);
         _NeuronFeatureSurvey_dom_ground_resolution.set(this, void 0);
         _NeuronFeatureSurvey_update_timer.set(this, void 0);
         _NeuronFeatureSurvey_update_interval.set(this, void 0);
+        _NeuronFeatureSurvey_unsub_option_cb.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_mappoints, [], "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_update_timer, null, "f");
@@ -30709,12 +30770,6 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_sidelap, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_overlap, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_ground_resolution, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_name, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_focal_length, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_width, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_height, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, null, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, null, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_show_waypoints, show_waypoints, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_altitude, 100, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_distance, 50, "f");
@@ -30725,12 +30780,17 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_startpos, _neuron_tools_survey__WEBPACK_IMPORTED_MODULE_2__.StartPosition.TopLeft, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_minLaneSeparation, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_leadin, 0.0, "f");
-        __classPrivateFieldSet(this, _NeuronFeatureSurvey_camera, NeuronFeatureSurvey._camera_preset_custom.copy(), "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_sidelap, 0.7, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_overlap, 0.7, "f");
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_ground_resolution, 0.0, "f");
         this._set_on_change_internal(this.update_survey.bind(this));
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey__update_survey).call(this, false);
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_unsub_option_cb, _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.add_callback(__classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_options_changed).bind(this)), "f");
+    }
+    set_options_subscriber() {
+        if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_unsub_option_cb, "f"))
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_unsub_option_cb, "f").call(this);
+        __classPrivateFieldSet(this, _NeuronFeatureSurvey_unsub_option_cb, _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.add_callback(__classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_options_changed).bind(this)), "f");
     }
     update_show_waypoints(show_waypoints) {
         __classPrivateFieldSet(this, _NeuronFeatureSurvey_show_waypoints, show_waypoints, "f");
@@ -30928,46 +30988,6 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             //=====================================
             //Camera calculations
             //=====================================
-            const tb = "Camera configuration and calculations for survey parameters.";
-            let dom_break = this._create_dom_output();
-            dom_break.title = tb;
-            let dom_break_label = this._create_dom_label("Camera Config.", dom_break, tb);
-            dom_break_label.classList.add('mission-feature-content-subtitle');
-            c.appendChild(dom_break_label);
-            c.appendChild(dom_break);
-            const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
-            const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_name, this._create_dom_input_select(camera_names, camera_names, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_from_dom).bind(this)), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").title = t11;
-            c.appendChild(this._create_dom_label("Camera:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f"), t11));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f"));
-            //Manually set the camera name based off of the currently loaded camera
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_camera_selector).call(this, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-            const t12 = "Camera focal length in millimeters";
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_focal_length, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_focal_length_from_dom).bind(this), NeuronFeatureSurvey._camera_focal_length_min), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").title = t12;
-            c.appendChild(this._create_dom_label("F.Length:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f"), t12));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f"));
-            const t13 = "Camera sensor width in millimeters";
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_sensor_width_from_dom).bind(this), NeuronFeatureSurvey._camera_sensor_width_min), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").title = t13;
-            c.appendChild(this._create_dom_label("S.Width:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f"), t13));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f"));
-            const t14 = "Camera sensor height in millimeters";
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_sensor_height_from_dom).bind(this), NeuronFeatureSurvey._camera_sensor_height_min), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").title = t14;
-            c.appendChild(this._create_dom_label("S.Height:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f"), t14));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f"));
-            const t15 = "Camera image width in pixels";
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_width, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_image_width_from_dom).bind(this), NeuronFeatureSurvey._camera_image_width_min), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").title = t15;
-            c.appendChild(this._create_dom_label("I.Width:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f"), t15));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f"));
-            const t16 = "Camera image height in pixels";
-            __classPrivateFieldSet(this, _NeuronFeatureSurvey_dom_camera_image_height, this._create_dom_input_number(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height, __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_update_camera_image_height_from_dom).bind(this), NeuronFeatureSurvey._camera_image_height_min), "f");
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").title = t16;
-            c.appendChild(this._create_dom_label("I.Height:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"), t16));
-            c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"));
             const tb2 = "Image capture configuration and calculations for survey parameters.";
             let dom_break2 = this._create_dom_output();
             dom_break2.title = tb2;
@@ -30991,16 +31011,12 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             c.appendChild(this._create_dom_label("Sidelap:", __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f"), t19));
             c.appendChild(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f"));
             //Try go back now and calculate other values if relevant
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(this);
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_try_update_dom_stats).call(this);
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f").append(c);
         }
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom, "f");
     }
-    get_camera() {
-        return __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f");
-    }
-    ;
     get_sidelap() {
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f");
     }
@@ -31024,11 +31040,6 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_ground_resolution).call(this, ground_resolution);
     }
     ;
-    set_camera(camera) {
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_camera).call(this, camera);
-    }
-    ;
-    ;
     static isObjectOfDataType(object) {
         let is_valid = (object.type == NeuronFeatureSurvey.TYPE) ||
             (object.version == NeuronFeatureSurvey.VERSION);
@@ -31049,11 +31060,10 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         s.set_startpos(j.startpos);
         s.set_minLaneSeparation(j.minLaneSeparation);
         s.set_leadin(j.leadin);
-        __classPrivateFieldGet(s, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_camera).call(s, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronCameraSpecifications.from_json(j.camera), false);
         s.set_overlap(j.overlap);
         __classPrivateFieldGet(s, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_sidelap).call(s, j.sidelap, false);
         __classPrivateFieldGet(s, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_ground_resolution).call(s, j.ground_resolution, false);
-        __classPrivateFieldGet(s, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(s);
+        __classPrivateFieldGet(s, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(s);
         return s;
     }
     to_json() {
@@ -31071,14 +31081,17 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
             startpos: this.get_startpos(),
             minLaneSeparation: this.get_minLaneSeparation(),
             leadin: this.get_leadin(),
-            camera: this.get_camera().to_json(),
             overlap: this.get_overlap(),
             sidelap: this.get_sidelap(),
             ground_resolution: this.get_ground_resolution()
         };
     }
 }
-_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_camera = new WeakMap(), _NeuronFeatureSurvey_sidelap = new WeakMap(), _NeuronFeatureSurvey_overlap = new WeakMap(), _NeuronFeatureSurvey_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_photo_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_dom_camera_name = new WeakMap(), _NeuronFeatureSurvey_dom_camera_focal_length = new WeakMap(), _NeuronFeatureSurvey_dom_camera_image_width = new WeakMap(), _NeuronFeatureSurvey_dom_camera_image_height = new WeakMap(), _NeuronFeatureSurvey_dom_camera_sensor_width = new WeakMap(), _NeuronFeatureSurvey_dom_camera_sensor_height = new WeakMap(), _NeuronFeatureSurvey_dom_sidelap = new WeakMap(), _NeuronFeatureSurvey_dom_overlap = new WeakMap(), _NeuronFeatureSurvey_dom_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
+_NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints = new WeakMap(), _NeuronFeatureSurvey_altitude = new WeakMap(), _NeuronFeatureSurvey_distance = new WeakMap(), _NeuronFeatureSurvey_spacing = new WeakMap(), _NeuronFeatureSurvey_angle = new WeakMap(), _NeuronFeatureSurvey_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_startpos = new WeakMap(), _NeuronFeatureSurvey_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_leadin = new WeakMap(), _NeuronFeatureSurvey_sidelap = new WeakMap(), _NeuronFeatureSurvey_overlap = new WeakMap(), _NeuronFeatureSurvey_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom = new WeakMap(), _NeuronFeatureSurvey_dom_corner_count = new WeakMap(), _NeuronFeatureSurvey_dom_waypoint_count = new WeakMap(), _NeuronFeatureSurvey_dom_photo_count = new WeakMap(), _NeuronFeatureSurvey_dom_show_waypoints = new WeakMap(), _NeuronFeatureSurvey_dom_altitude = new WeakMap(), _NeuronFeatureSurvey_dom_distance = new WeakMap(), _NeuronFeatureSurvey_dom_spacing = new WeakMap(), _NeuronFeatureSurvey_dom_angle = new WeakMap(), _NeuronFeatureSurvey_dom_angle_slider = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot1 = new WeakMap(), _NeuronFeatureSurvey_dom_overshoot2 = new WeakMap(), _NeuronFeatureSurvey_dom_startpos = new WeakMap(), _NeuronFeatureSurvey_dom_minLaneSeparation = new WeakMap(), _NeuronFeatureSurvey_dom_leadin = new WeakMap(), _NeuronFeatureSurvey_dom_sidelap = new WeakMap(), _NeuronFeatureSurvey_dom_overlap = new WeakMap(), _NeuronFeatureSurvey_dom_ground_resolution = new WeakMap(), _NeuronFeatureSurvey_update_timer = new WeakMap(), _NeuronFeatureSurvey_update_interval = new WeakMap(), _NeuronFeatureSurvey_unsub_option_cb = new WeakMap(), _NeuronFeatureSurvey_instances = new WeakSet(), _NeuronFeatureSurvey_options_changed = function _NeuronFeatureSurvey_options_changed() {
+    //Update our variables, and then the survey if there was a change
+    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(this))
+        this.update_survey();
+}, _NeuronFeatureSurvey_add_waypoint = function _NeuronFeatureSurvey_add_waypoint(point, name = "Survey Waypoint") {
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_show_waypoints, "f")) {
         let m = _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__.L.marker([point.latitude, point.longitude], {
             // draggable: true,
@@ -31094,14 +31107,14 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         // m.on("drag", this.update_polygon.bind(this));
         // m.on("click", this.#select_corner_by_event.bind(this));
         // m.on("dblclick", this.#remove_point_by_event.bind(this));
-        this._add_feature_to_map(m);
+        this._add_layer_to_map(m);
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_mappoints, "f").push(m);
     }
     __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").push(point);
 }, _NeuronFeatureSurvey_set_altitude = function _NeuronFeatureSurvey_set_altitude(altitude, update_calcs = true) {
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_altitude, altitude, "f");
     if (update_calcs) {
-        let resolution = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_ground_resolution(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+        let resolution = _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_camera().get_ground_resolution(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
         if (resolution) {
             if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f"))
                 __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f").value = (resolution / NeuronFeatureSurvey._gsd_ratio).toString();
@@ -31112,7 +31125,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 }, _NeuronFeatureSurvey_set_distance = function _NeuronFeatureSurvey_set_distance(distance, update_calcs = true) {
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_distance, distance, "f");
     if (update_calcs) {
-        let projection = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+        let projection = _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_camera().get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
         if (projection && (distance >= 0)) {
             const sidelap_factor = distance / projection.Width();
             const sidelap = Math.max(Math.min(1 - sidelap_factor, 1.0), 0.0);
@@ -31142,7 +31155,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         this._trigger_on_changed();
 }, _NeuronFeatureSurvey_clean_waypoints = function _NeuronFeatureSurvey_clean_waypoints() {
     for (const m of __classPrivateFieldGet(this, _NeuronFeatureSurvey_mappoints, "f")) {
-        m.remove();
+        this._remove_layer_from_map(m);
     }
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_mappoints, [], "f");
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_waypoints, [], "f");
@@ -31153,7 +31166,7 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_waypoint_count, "f").value = this.get_path_coords().length.toFixed(0);
     if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_photo_count, "f")) {
         let count = "---";
-        let projection = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+        let projection = _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_camera().get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
         if (projection && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_overlap, "f") >= 0) && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_overlap, "f") <= 1)) {
             const overlap_factor = 1 - __classPrivateFieldGet(this, _NeuronFeatureSurvey_overlap, "f");
             const photo_distance = Math.abs(projection.Height()) * overlap_factor;
@@ -31201,104 +31214,45 @@ _NeuronFeatureSurvey_waypoints = new WeakMap(), _NeuronFeatureSurvey_mappoints =
 }, _NeuronFeatureSurvey_set_sidelap = function _NeuronFeatureSurvey_set_sidelap(sidelap, update_calcs = true) {
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_sidelap, sidelap, "f");
     if (update_calcs)
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(this);
 }, _NeuronFeatureSurvey_set_ground_resolution = function _NeuronFeatureSurvey_set_ground_resolution(ground_resolution, update_calcs = true) {
     __classPrivateFieldSet(this, _NeuronFeatureSurvey_ground_resolution, ground_resolution, "f");
     if (update_calcs)
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
-}, _NeuronFeatureSurvey_set_camera_selector = function _NeuronFeatureSurvey_set_camera_selector(camera = NeuronFeatureSurvey._camera_preset_custom) {
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f")) {
-        let matched_camera = false;
-        //Go through our list and find possible matches for our set camera
-        const camera_matches = NeuronFeatureSurvey.camera_presets.filter(x => x.name == camera.name);
-        if (camera_matches.length) {
-            const full_matches = camera_matches.filter(x => x.equals(camera));
-            matched_camera = full_matches.length > 0;
-        }
-        //If there is a proper match, then use that name (details should be filled in by set_camera())
-        //Otherwise it is a custom camera
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").value = matched_camera ? camera.name : NeuronFeatureSurvey._camera_preset_custom.name;
-    }
-}, _NeuronFeatureSurvey_set_camera = function _NeuronFeatureSurvey_set_camera(camera, update_calcs = true) {
-    __classPrivateFieldSet(this, _NeuronFeatureSurvey_camera, camera, "f");
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_camera_selector).call(this, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").value = Math.max(NeuronFeatureSurvey._camera_focal_length_min, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length).toString();
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").value = Math.max(NeuronFeatureSurvey._camera_sensor_width_min, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width).toString();
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").value = Math.max(NeuronFeatureSurvey._camera_sensor_height_min, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height).toString();
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").value = Math.max(NeuronFeatureSurvey._camera_image_width_min, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width).toString();
-    if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f"))
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").value = Math.max(NeuronFeatureSurvey._camera_image_height_min, __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height).toString();
-    if (update_calcs)
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
-}, _NeuronFeatureSurvey_update_camera_from_dom = function _NeuronFeatureSurvey_update_camera_from_dom() {
-    const value = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_name, "f").value;
-    const camera_names = NeuronFeatureSurvey.camera_presets.map(x => x.name);
-    let camera = NeuronFeatureSurvey._camera_preset_custom.copy();
-    if (camera_names.includes(value)) {
-        const matches = NeuronFeatureSurvey.camera_presets.filter(x => x.name == value);
-        if (matches.length > 0) {
-            camera = matches[0].copy();
-        }
-    }
-    this.set_camera(camera);
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_camera_variables).call(this);
-}, _NeuronFeatureSurvey_update_camera_focal_length_from_dom = function _NeuronFeatureSurvey_update_camera_focal_length_from_dom() {
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").focal_length = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_focal_length, "f").valueAsNumber;
-    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-}, _NeuronFeatureSurvey_update_camera_sensor_width_from_dom = function _NeuronFeatureSurvey_update_camera_sensor_width_from_dom() {
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_width = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_width, "f").valueAsNumber;
-    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-}, _NeuronFeatureSurvey_update_camera_sensor_height_from_dom = function _NeuronFeatureSurvey_update_camera_sensor_height_from_dom() {
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").sensor_height = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_sensor_height, "f").valueAsNumber;
-    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-}, _NeuronFeatureSurvey_update_camera_image_width_from_dom = function _NeuronFeatureSurvey_update_camera_image_width_from_dom() {
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_width = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_width, "f").valueAsNumber;
-    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
-}, _NeuronFeatureSurvey_update_camera_image_height_from_dom = function _NeuronFeatureSurvey_update_camera_image_height_from_dom() {
-    __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").image_height = __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_camera_image_height, "f").valueAsNumber;
-    this.set_camera(__classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f"));
+        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_calculate_and_update_capture_variables).call(this);
 }, _NeuronFeatureSurvey_update_sidelap_from_dom = function _NeuronFeatureSurvey_update_sidelap_from_dom() {
     this.set_sidelap(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_sidelap, "f").valueAsNumber * NeuronFeatureSurvey._xlap_ratio);
 }, _NeuronFeatureSurvey_update_overlap_from_dom = function _NeuronFeatureSurvey_update_overlap_from_dom() {
     this.set_overlap(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_overlap, "f").valueAsNumber * NeuronFeatureSurvey._xlap_ratio);
 }, _NeuronFeatureSurvey_update_ground_resolution_from_dom = function _NeuronFeatureSurvey_update_ground_resolution_from_dom() {
     __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_ground_resolution).call(this, __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_ground_resolution, "f").valueAsNumber * NeuronFeatureSurvey._gsd_ratio);
-}, _NeuronFeatureSurvey_calculate_and_update_camera_variables = function _NeuronFeatureSurvey_calculate_and_update_camera_variables() {
-    let altitude = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_distance(__classPrivateFieldGet(this, _NeuronFeatureSurvey_ground_resolution, "f"));
-    if (altitude) {
+}, _NeuronFeatureSurvey_calculate_and_update_capture_variables = function _NeuronFeatureSurvey_calculate_and_update_capture_variables() {
+    let settings_changed = false;
+    const camera = _neuron_options__WEBPACK_IMPORTED_MODULE_4__.NeuronOptions.get_camera();
+    let altitude = camera.get_distance(this.get_ground_resolution());
+    if (altitude != this.get_altitude()) {
+        settings_changed = true;
         if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f"))
             __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_altitude, "f").value = (altitude / NeuronFeatureSurvey._altitude_ratio).toString();
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_altitude).call(this, altitude, false);
     }
-    let projection = __classPrivateFieldGet(this, _NeuronFeatureSurvey_camera, "f").get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
+    let projection = camera.get_projected_size(__classPrivateFieldGet(this, _NeuronFeatureSurvey_altitude, "f"));
     if (projection && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f") >= 0) && (__classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f") <= 1)) {
         const sidelap_factor = 1 - __classPrivateFieldGet(this, _NeuronFeatureSurvey_sidelap, "f");
         const distance = projection.Width() * sidelap_factor;
-        if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f"))
-            __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").min), distance).toString();
-        __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_distance).call(this, distance, false);
+        if (distance != this.get_distance()) {
+            settings_changed = true;
+            if (__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f"))
+                __classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").value = Math.max(Number.parseFloat(__classPrivateFieldGet(this, _NeuronFeatureSurvey_dom_distance, "f").min), distance).toString();
+            __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_set_distance).call(this, distance, false);
+        }
     }
+    return settings_changed;
 };
 NeuronFeatureSurvey.NAME = "Survey";
 NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
 NeuronFeatureSurvey.VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
-//XXX: Keys must be unique!
-NeuronFeatureSurvey._camera_preset_custom = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronCameraSpecifications();
-NeuronFeatureSurvey.camera_presets = [
-    NeuronFeatureSurvey._camera_preset_custom,
-    new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronCameraSpecifications("A6000", 20, 23.50, 15.60, 6000, 4000),
-];
 NeuronFeatureSurvey._gsd_ratio = 0.01; //GSD = [DOM Value] * Ratio
 NeuronFeatureSurvey._xlap_ratio = 0.01; //Sidelap = [DOM Value] * Ratio
-NeuronFeatureSurvey._camera_focal_length_min = 0;
-NeuronFeatureSurvey._camera_sensor_width_min = 0;
-NeuronFeatureSurvey._camera_sensor_height_min = 0;
-NeuronFeatureSurvey._camera_image_width_min = 0;
-NeuronFeatureSurvey._camera_image_height_min = 0;
 
 
 /***/ }),
@@ -31592,6 +31546,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _leaflet_interface__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./leaflet_interface */ "./src/js/leaflet_interface.ts");
 /* harmony import */ var _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_feature_survey */ "./src/js/neuron_feature_survey.ts");
+/* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -31603,7 +31558,8 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_map_layer_control, _NeuronMap_map_zoom_control, _NeuronMap_path, _NeuronMap_map_element_name, _NeuronMap_help_element_name, _NeuronMap_map_element, _NeuronMap_help_element, _NeuronMap_map_layers, _NeuronMap_get_poly_bounds_from_view;
+var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_map_layer_control, _NeuronMap_map_zoom_control, _NeuronMap_path, _NeuronMap_map_element_name, _NeuronMap_help_element_name, _NeuronMap_map_element, _NeuronMap_help_element, _NeuronMap_map_layers, _NeuronMap_unsub_option_cb, _NeuronMap_get_poly_bounds_from_view;
+
 
 
 
@@ -31622,6 +31578,7 @@ class NeuronMap {
         _NeuronMap_map_element.set(this, void 0);
         _NeuronMap_help_element.set(this, void 0);
         _NeuronMap_map_layers.set(this, void 0);
+        _NeuronMap_unsub_option_cb.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronMap_planner, planner, "f");
         __classPrivateFieldSet(this, _NeuronMap_map, null, "f");
         __classPrivateFieldSet(this, _NeuronMap_map_layer_control, null, "f");
@@ -31632,6 +31589,12 @@ class NeuronMap {
         __classPrivateFieldSet(this, _NeuronMap_map_element_name, map_element_name, "f");
         __classPrivateFieldSet(this, _NeuronMap_help_element_name, help_element_name, "f");
         __classPrivateFieldGet(this, _NeuronMap_planner, "f").on_mission_change(this.update_path.bind(this));
+        this.set_options_subscriber();
+    }
+    set_options_subscriber() {
+        if (__classPrivateFieldGet(this, _NeuronMap_unsub_option_cb, "f"))
+            __classPrivateFieldGet(this, _NeuronMap_unsub_option_cb, "f").call(this);
+        __classPrivateFieldSet(this, _NeuronMap_unsub_option_cb, _neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptions.add_callback(this.update_path.bind(this)), "f");
     }
     show_map_help(show) {
         if (show) {
@@ -31710,7 +31673,8 @@ class NeuronMap {
     }
     update_path() {
         if (__classPrivateFieldGet(this, _NeuronMap_path, "f")) {
-            const path_points = __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_mission_as_points().map(x => x.to_leaflet());
+            const show = _neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptions.get_option_boolean(_neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptionsBoolean.SHOW_PATH);
+            const path_points = show ? __classPrivateFieldGet(this, _NeuronMap_planner, "f").get_mission_as_points().map(x => x.to_leaflet()) : [];
             __classPrivateFieldGet(this, _NeuronMap_path, "f").setLatLngs(path_points);
         }
     }
@@ -31783,7 +31747,7 @@ class NeuronMap {
         }
     }
 }
-_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_map_layer_control = new WeakMap(), _NeuronMap_map_zoom_control = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_map_element_name = new WeakMap(), _NeuronMap_help_element_name = new WeakMap(), _NeuronMap_map_element = new WeakMap(), _NeuronMap_help_element = new WeakMap(), _NeuronMap_map_layers = new WeakMap(), _NeuronMap_instances = new WeakSet(), _NeuronMap_get_poly_bounds_from_view = function _NeuronMap_get_poly_bounds_from_view() {
+_NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_map_layer_control = new WeakMap(), _NeuronMap_map_zoom_control = new WeakMap(), _NeuronMap_path = new WeakMap(), _NeuronMap_map_element_name = new WeakMap(), _NeuronMap_help_element_name = new WeakMap(), _NeuronMap_map_element = new WeakMap(), _NeuronMap_help_element = new WeakMap(), _NeuronMap_map_layers = new WeakMap(), _NeuronMap_unsub_option_cb = new WeakMap(), _NeuronMap_instances = new WeakSet(), _NeuronMap_get_poly_bounds_from_view = function _NeuronMap_get_poly_bounds_from_view() {
     let bounds = [];
     if (__classPrivateFieldGet(this, _NeuronMap_map, "f")) {
         const b = __classPrivateFieldGet(this, _NeuronMap_map, "f").getBounds();
@@ -31800,6 +31764,131 @@ _NeuronMap_planner = new WeakMap(), _NeuronMap_map = new WeakMap(), _NeuronMap_m
     }
     return bounds;
 };
+
+
+/***/ }),
+
+/***/ "./src/js/neuron_options.ts":
+/*!**********************************!*\
+  !*** ./src/js/neuron_options.ts ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "NeuronOptions": () => (/* binding */ NeuronOptions),
+/* harmony export */   "NeuronOptionsBoolean": () => (/* binding */ NeuronOptionsBoolean),
+/* harmony export */   "NeuronOptionsNumber": () => (/* binding */ NeuronOptionsNumber),
+/* harmony export */   "NeuronOptionsString": () => (/* binding */ NeuronOptionsString)
+/* harmony export */ });
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
+    if (kind === "m") throw new TypeError("Private method is not writable");
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot write private member to an object whose class did not declare it");
+    return (kind === "a" ? f.call(receiver, value) : f ? f.value = value : state.set(receiver, value)), value;
+};
+var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || function (receiver, state, kind, f) {
+    if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a getter");
+    if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
+    return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
+};
+var _a, _NeuronOptions_stat_options_boolean, _NeuronOptions_stat_options_number, _NeuronOptions_stat_options_string, _NeuronOptions_dom_callback, _NeuronOptions_general_callbacks, _NeuronOptions_remove_callback, _NeuronOptions_handle_callbacks;
+
+
+//XXX: Keep in sync with NeuronStatistics #stat_options
+var NeuronOptionsBoolean;
+(function (NeuronOptionsBoolean) {
+    NeuronOptionsBoolean[NeuronOptionsBoolean["SHOW_PATH"] = 0] = "SHOW_PATH";
+})(NeuronOptionsBoolean || (NeuronOptionsBoolean = {}));
+var NeuronOptionsNumber;
+(function (NeuronOptionsNumber) {
+    NeuronOptionsNumber[NeuronOptionsNumber["MISSION_SPEED"] = 0] = "MISSION_SPEED";
+    NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_FOCAL_LENGTH"] = 1] = "CAMERA_FOCAL_LENGTH";
+    NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_IMAGE_WIDTH"] = 2] = "CAMERA_IMAGE_WIDTH";
+    NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_IMAGE_HEIGHT"] = 3] = "CAMERA_IMAGE_HEIGHT";
+    NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_SENSOR_WIDTH"] = 4] = "CAMERA_SENSOR_WIDTH";
+    NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_SENSOR_HEIGHT"] = 5] = "CAMERA_SENSOR_HEIGHT";
+})(NeuronOptionsNumber || (NeuronOptionsNumber = {}));
+var NeuronOptionsString;
+(function (NeuronOptionsString) {
+    NeuronOptionsString[NeuronOptionsString["CAMERA_NAME"] = 0] = "CAMERA_NAME";
+})(NeuronOptionsString || (NeuronOptionsString = {}));
+class NeuronOptions {
+    static init() {
+        this.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, true, false, false);
+        this.set_option_number(NeuronOptionsNumber.MISSION_SPEED, 5.0, false, false);
+        this.set_camera(NeuronOptions.camera_preset_custom, false, false);
+    }
+    static set_dom_callback(callback) {
+        __classPrivateFieldSet(this, _a, callback, "f", _NeuronOptions_dom_callback);
+    }
+    static add_callback(callback) {
+        const id = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_1__.NeuronUID)('option');
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_general_callbacks).set(id, callback);
+        return __classPrivateFieldGet(this, _a, "m", _NeuronOptions_remove_callback).bind(this, id);
+    }
+    static set_option_boolean(key, value, trigger_callbacks = true, trigger_dom = true) {
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_boolean).set(key, value);
+        __classPrivateFieldGet(this, _a, "m", _NeuronOptions_handle_callbacks).call(this, trigger_callbacks, trigger_dom);
+    }
+    static set_option_number(key, value, trigger_callbacks = true, trigger_dom = true) {
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_number).set(key, value);
+        __classPrivateFieldGet(this, _a, "m", _NeuronOptions_handle_callbacks).call(this, trigger_callbacks, trigger_dom);
+    }
+    static set_option_string(key, value, trigger_callbacks = true, trigger_dom = true) {
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_string).set(key, value);
+        __classPrivateFieldGet(this, _a, "m", _NeuronOptions_handle_callbacks).call(this, trigger_callbacks, trigger_dom);
+    }
+    static set_camera(value, trigger_callbacks = false, trigger_dom = true) {
+        this.set_option_string(NeuronOptionsString.CAMERA_NAME, value.name, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH, value.focal_length, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH, value.image_width, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT, value.image_height, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH, value.sensor_width, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT, value.sensor_height, false, false);
+        __classPrivateFieldGet(this, _a, "m", _NeuronOptions_handle_callbacks).call(this, trigger_callbacks, trigger_dom);
+    }
+    ;
+    static get_option_boolean(key) {
+        return __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_boolean).get(key);
+    }
+    static get_option_number(key) {
+        return __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_number).get(key);
+    }
+    static get_option_string(key) {
+        return __classPrivateFieldGet(this, _a, "f", _NeuronOptions_stat_options_string).get(key);
+    }
+    static get_camera() {
+        return new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronCameraSpecifications(this.get_option_string(NeuronOptionsString.CAMERA_NAME), this.get_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH), this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH), this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT), this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH), this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT));
+    }
+}
+_a = NeuronOptions, _NeuronOptions_remove_callback = function _NeuronOptions_remove_callback(id) {
+    if (__classPrivateFieldGet(this, _a, "f", _NeuronOptions_general_callbacks).has(id)) {
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_general_callbacks).delete(id);
+    }
+}, _NeuronOptions_handle_callbacks = function _NeuronOptions_handle_callbacks(trigger_callbacks, trigger_dom) {
+    if (trigger_callbacks) {
+        for (const cb of __classPrivateFieldGet(this, _a, "f", _NeuronOptions_general_callbacks).values())
+            cb();
+    }
+    if (trigger_dom && __classPrivateFieldGet(this, _a, "f", _NeuronOptions_dom_callback))
+        __classPrivateFieldGet(this, _a, "f", _NeuronOptions_dom_callback).call(this);
+};
+//XXX: Keys must be unique!
+NeuronOptions.camera_preset_custom = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronCameraSpecifications();
+NeuronOptions.camera_presets = [
+    NeuronOptions.camera_preset_custom,
+    new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronCameraSpecifications("A6000", 20, 23.50, 15.60, 6000, 4000),
+];
+//XXX: Keep in sync with NeuronStatisticsOptionKeys
+_NeuronOptions_stat_options_boolean = { value: new Map() };
+_NeuronOptions_stat_options_number = { value: new Map() };
+_NeuronOptions_stat_options_string = { value: new Map() };
+_NeuronOptions_dom_callback = { value: null };
+_NeuronOptions_general_callbacks = { value: new Map() };
 
 
 /***/ }),
@@ -31853,6 +31942,7 @@ var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _
 
 
 class NeuronPlanner {
+    // #unsub_option_cb:CallableFunction;
     constructor(plan_element_name, map = null) {
         _NeuronPlanner_instances.add(this);
         _NeuronPlanner_map.set(this, void 0);
@@ -31871,7 +31961,13 @@ class NeuronPlanner {
         __classPrivateFieldSet(this, _NeuronPlanner_last_callback_id, 0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_last_mission_altitude, 0.0, "f");
         __classPrivateFieldSet(this, _NeuronPlanner_clearing_mission, false, "f");
+        // this.#unsub_option_cb = null;
     }
+    // set_options_subscriber() {
+    //     if(this.#unsub_option_cb)
+    //         this.#unsub_option_cb();
+    //     this.#unsub_option_cb = NeuronOptions.add_callback(this.#run_on_mission_change.bind(this));
+    // }
     get_mission_items() {
         return __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f");
     }
@@ -32193,11 +32289,11 @@ NeuronPlanner.VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "NeuronStatistics": () => (/* binding */ NeuronStatistics),
-/* harmony export */   "NeuronStatisticsOptionKeys": () => (/* binding */ NeuronStatisticsOptionKeys)
+/* harmony export */   "NeuronStatistics": () => (/* binding */ NeuronStatistics)
 /* harmony export */ });
 /* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 /* harmony import */ var _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_dom_factory */ "./src/js/neuron_dom_factory.ts");
+/* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -32209,14 +32305,10 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronStatistics_instances, _NeuronStatistics_planner, _NeuronStatistics_stats_element_prefix, _NeuronStatistics_stats_section_show_display, _NeuronStatistics_stat_options, _NeuronStatistics_stats_results_element, _NeuronStatistics_stats_options_element, _NeuronStatistics_stats_results_hide_element, _NeuronStatistics_stats_options_hide_element, _NeuronStatistics_stats_results_title_element, _NeuronStatistics_stats_options_title_element, _NeuronStatistics_dom_option_speed, _NeuronStatistics_dom_stat_waypoints, _NeuronStatistics_dom_stat_distance, _NeuronStatistics_dom_stat_duration, _NeuronStatistics_update_option_speed_dom, _NeuronStatistics_gen_dom, _NeuronStatistics_toggle_hide_section;
+var _NeuronStatistics_instances, _NeuronStatistics_planner, _NeuronStatistics_stats_element_prefix, _NeuronStatistics_stats_section_show_display, _NeuronStatistics_stats_results_element, _NeuronStatistics_stats_options_element, _NeuronStatistics_stats_results_hide_element, _NeuronStatistics_stats_options_hide_element, _NeuronStatistics_stats_results_title_element, _NeuronStatistics_stats_options_title_element, _NeuronStatistics_dom_option_show_path, _NeuronStatistics_dom_option_speed, _NeuronStatistics_dom_option_camera_name, _NeuronStatistics_dom_option_camera_focal_length, _NeuronStatistics_dom_option_camera_image_width, _NeuronStatistics_dom_option_camera_image_height, _NeuronStatistics_dom_option_camera_sensor_width, _NeuronStatistics_dom_option_camera_sensor_height, _NeuronStatistics_dom_stat_waypoints, _NeuronStatistics_dom_stat_distance, _NeuronStatistics_dom_stat_duration, _NeuronStatistics_unsub_option_cb, _NeuronStatistics_update_option_speed_dom, _NeuronStatistics_update_option_show_path, _NeuronStatistics_update_dom_from_options, _NeuronStatistics_gen_dom, _NeuronStatistics_set_camera_selector, _NeuronStatistics_update_camera_from_dom, _NeuronStatistics_update_camera_focal_length_from_dom, _NeuronStatistics_update_camera_sensor_width_from_dom, _NeuronStatistics_update_camera_sensor_height_from_dom, _NeuronStatistics_update_camera_image_width_from_dom, _NeuronStatistics_update_camera_image_height_from_dom, _NeuronStatistics_toggle_hide_section;
 
 
-//XXX: Keep in sync with NeuronStatistics #stat_options
-var NeuronStatisticsOptionKeys;
-(function (NeuronStatisticsOptionKeys) {
-    NeuronStatisticsOptionKeys[NeuronStatisticsOptionKeys["MISSION_SPEED"] = 0] = "MISSION_SPEED";
-})(NeuronStatisticsOptionKeys || (NeuronStatisticsOptionKeys = {}));
+
 class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.NeuronDOMFactory {
     constructor(planner, stats_element_prefix) {
         super(stats_element_prefix);
@@ -32224,21 +32316,35 @@ class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.
         _NeuronStatistics_planner.set(this, void 0);
         _NeuronStatistics_stats_element_prefix.set(this, void 0);
         _NeuronStatistics_stats_section_show_display.set(this, void 0);
-        _NeuronStatistics_stat_options.set(this, void 0);
         _NeuronStatistics_stats_results_element.set(this, void 0);
         _NeuronStatistics_stats_options_element.set(this, void 0);
         _NeuronStatistics_stats_results_hide_element.set(this, void 0);
         _NeuronStatistics_stats_options_hide_element.set(this, void 0);
         _NeuronStatistics_stats_results_title_element.set(this, void 0);
         _NeuronStatistics_stats_options_title_element.set(this, void 0);
+        //Flight options
+        _NeuronStatistics_dom_option_show_path.set(this, void 0);
         _NeuronStatistics_dom_option_speed.set(this, void 0);
+        //Capture parameters
+        _NeuronStatistics_dom_option_camera_name.set(this, void 0);
+        _NeuronStatistics_dom_option_camera_focal_length.set(this, void 0);
+        _NeuronStatistics_dom_option_camera_image_width.set(this, void 0);
+        _NeuronStatistics_dom_option_camera_image_height.set(this, void 0);
+        _NeuronStatistics_dom_option_camera_sensor_width.set(this, void 0);
+        _NeuronStatistics_dom_option_camera_sensor_height.set(this, void 0);
         _NeuronStatistics_dom_stat_waypoints.set(this, void 0);
         _NeuronStatistics_dom_stat_distance.set(this, void 0);
         _NeuronStatistics_dom_stat_duration.set(this, void 0);
+        _NeuronStatistics_unsub_option_cb.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronStatistics_planner, planner, "f");
-        //XXX: Keep in sync with NeuronStatisticsOptionKeys
-        __classPrivateFieldSet(this, _NeuronStatistics_stat_options, new Map(), "f");
-        __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").set(NeuronStatisticsOptionKeys.MISSION_SPEED, 5.0);
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_show_path, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_speed, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_name, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_focal_length, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_image_width, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_image_height, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_sensor_width, null, "f");
+        __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_sensor_height, null, "f");
         __classPrivateFieldSet(this, _NeuronStatistics_stats_options_element, null, "f");
         __classPrivateFieldSet(this, _NeuronStatistics_stats_results_element, null, "f");
         __classPrivateFieldSet(this, _NeuronStatistics_stats_options_hide_element, null, "f");
@@ -32250,6 +32356,13 @@ class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.
         __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_waypoints, null, "f");
         __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_distance, null, "f");
         __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_duration, null, "f");
+        this.set_options_subscriber();
+    }
+    set_options_subscriber() {
+        if (__classPrivateFieldGet(this, _NeuronStatistics_unsub_option_cb, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_unsub_option_cb, "f").call(this);
+        __classPrivateFieldSet(this, _NeuronStatistics_unsub_option_cb, _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.add_callback(this.update_statistics.bind(this)), "f");
+        _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.set_dom_callback(__classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_dom_from_options).bind(this));
     }
     // #get_option_id_from_key(key:NeuronStatisticsOptionKeys) {
     //     return `${this.#stats_element_prefix}-options-${key}`;
@@ -32257,14 +32370,7 @@ class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.
     // get_results_id_from_key(key:string) {
     //     return `${this.#stats_element_prefix}-results-${key}`;
     // }
-    get_option(key) {
-        return __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").has(key) ? __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").get(key) : null;
-    }
-    set_option(key, value) {
-        __classPrivateFieldGet(this, _NeuronStatistics_stat_options, "f").set(key, value);
-        this.update();
-    }
-    update() {
+    update_statistics() {
         const coords = __classPrivateFieldGet(this, _NeuronStatistics_planner, "f").get_mission_as_points();
         // this.#last_mission_altitude = coords.length ?
         //     coords[coords.length - 1].altitude :
@@ -32272,7 +32378,7 @@ class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.
         let total_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.flight_distance_from_coords)(coords);
         const dist_km = total_distance / 1000;
         //Get the flight speed and lock it to at least 0.1m/s
-        const s = this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED);
+        const s = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsNumber.MISSION_SPEED);
         const flight_speed = Math.max(s ? s : 0.0, 0.1);
         const total_time = total_distance / flight_speed;
         if (__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f"))
@@ -32282,24 +32388,100 @@ class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.
         if (__classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f"))
             __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_duration, "f").value = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.flight_time_from_duration)(total_time);
     }
+    // set_camera(camera:NeuronCameraSpecifications) {
+    //     this.#set_camera(camera);
+    // };
+    // #set_camera(camera:NeuronCameraSpecifications, update_calcs:boolean = true) {
+    set_camera(camera, update_settings = true) {
+        if (update_settings)
+            _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.set_camera(camera, true, false);
+        __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_set_camera_selector).call(this, camera);
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f").value = Math.max(NeuronStatistics._camera_focal_length_min, camera.focal_length).toString();
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f").value = Math.max(NeuronStatistics._camera_sensor_width_min, camera.sensor_width).toString();
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f").value = Math.max(NeuronStatistics._camera_sensor_height_min, camera.sensor_height).toString();
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f").value = Math.max(NeuronStatistics._camera_image_width_min, camera.image_width).toString();
+        if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f"))
+            __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f").value = Math.max(NeuronStatistics._camera_image_height_min, camera.image_height).toString();
+    }
+    //TODO: From JSON!
+    //TODO: To JSON!
     reset() {
         __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_gen_dom).call(this);
         //Update the planner
-        this.update();
+        this.update_statistics();
     }
 }
-_NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stats_element_prefix = new WeakMap(), _NeuronStatistics_stats_section_show_display = new WeakMap(), _NeuronStatistics_stat_options = new WeakMap(), _NeuronStatistics_stats_results_element = new WeakMap(), _NeuronStatistics_stats_options_element = new WeakMap(), _NeuronStatistics_stats_results_hide_element = new WeakMap(), _NeuronStatistics_stats_options_hide_element = new WeakMap(), _NeuronStatistics_stats_results_title_element = new WeakMap(), _NeuronStatistics_stats_options_title_element = new WeakMap(), _NeuronStatistics_dom_option_speed = new WeakMap(), _NeuronStatistics_dom_stat_waypoints = new WeakMap(), _NeuronStatistics_dom_stat_distance = new WeakMap(), _NeuronStatistics_dom_stat_duration = new WeakMap(), _NeuronStatistics_instances = new WeakSet(), _NeuronStatistics_update_option_speed_dom = function _NeuronStatistics_update_option_speed_dom() {
+_NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stats_element_prefix = new WeakMap(), _NeuronStatistics_stats_section_show_display = new WeakMap(), _NeuronStatistics_stats_results_element = new WeakMap(), _NeuronStatistics_stats_options_element = new WeakMap(), _NeuronStatistics_stats_results_hide_element = new WeakMap(), _NeuronStatistics_stats_options_hide_element = new WeakMap(), _NeuronStatistics_stats_results_title_element = new WeakMap(), _NeuronStatistics_stats_options_title_element = new WeakMap(), _NeuronStatistics_dom_option_show_path = new WeakMap(), _NeuronStatistics_dom_option_speed = new WeakMap(), _NeuronStatistics_dom_option_camera_name = new WeakMap(), _NeuronStatistics_dom_option_camera_focal_length = new WeakMap(), _NeuronStatistics_dom_option_camera_image_width = new WeakMap(), _NeuronStatistics_dom_option_camera_image_height = new WeakMap(), _NeuronStatistics_dom_option_camera_sensor_width = new WeakMap(), _NeuronStatistics_dom_option_camera_sensor_height = new WeakMap(), _NeuronStatistics_dom_stat_waypoints = new WeakMap(), _NeuronStatistics_dom_stat_distance = new WeakMap(), _NeuronStatistics_dom_stat_duration = new WeakMap(), _NeuronStatistics_unsub_option_cb = new WeakMap(), _NeuronStatistics_instances = new WeakSet(), _NeuronStatistics_update_option_speed_dom = function _NeuronStatistics_update_option_speed_dom() {
     if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"))
-        this.set_option(NeuronStatisticsOptionKeys.MISSION_SPEED, __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").valueAsNumber);
+        _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.set_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsNumber.MISSION_SPEED, __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").valueAsNumber, true, false);
+}, _NeuronStatistics_update_option_show_path = function _NeuronStatistics_update_option_show_path() {
+    if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f"))
+        _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.set_option_boolean(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsBoolean.SHOW_PATH, __classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f").checked, true, false);
+}, _NeuronStatistics_update_dom_from_options = function _NeuronStatistics_update_dom_from_options() {
+    if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f"))
+        __classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f").checked = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_option_boolean(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsBoolean.SHOW_PATH);
+    if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"))
+        __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").value = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsNumber.MISSION_SPEED).toString();
+    this.set_camera(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera(), false);
 }, _NeuronStatistics_gen_dom = function _NeuronStatistics_gen_dom() {
     //Options
     __classPrivateFieldSet(this, _NeuronStatistics_stats_options_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-options`), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").innerHTML = '';
+    const t5 = "Display the calculated flight path on the map";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_show_path, this._create_dom_input_checkbox(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_option_boolean(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsBoolean.SHOW_PATH), __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_option_show_path).bind(this)), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f").title = t5;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("Show path:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f"), t5));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_show_path, "f"));
     const t0 = "Speed of the aircraft during regular flight in metres per second";
-    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_speed, this._create_dom_input_number(this.get_option(NeuronStatisticsOptionKeys.MISSION_SPEED), __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_option_speed_dom).bind(this), 0.1), "f");
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_speed, this._create_dom_input_number(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptionsNumber.MISSION_SPEED), __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_option_speed_dom).bind(this), 0.1), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f").title = t0;
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("Speed (m/s):", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"), t0));
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_speed, "f"));
+    const tb = "Camera configuration for survey parameters.";
+    let dom_break = this._create_dom_output();
+    dom_break.title = tb;
+    let dom_break_label = this._create_dom_label("Camera Config.", dom_break, tb);
+    dom_break_label.classList.add('fp-stats-option-content-subtitle');
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(dom_break_label);
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(dom_break);
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    const t11 = "Camera preset values for calculations based off of typical drone survey cameras";
+    const camera_names = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_presets.map(x => x.name);
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_name, this._create_dom_input_select(camera_names, camera_names, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_from_dom).bind(this)), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f").title = t11;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("Camera:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f"), t11));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f"));
+    //Manually set the camera name based off of the currently loaded camera
+    __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_set_camera_selector).call(this, camera);
+    const t12 = "Camera focal length in millimeters";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_focal_length, this._create_dom_input_number(camera.focal_length, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_focal_length_from_dom).bind(this), NeuronStatistics._camera_focal_length_min), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f").title = t12;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("F.Length:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f"), t12));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f"));
+    const t13 = "Camera sensor width in millimeters";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_sensor_width, this._create_dom_input_number(camera.sensor_width, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_sensor_width_from_dom).bind(this), NeuronStatistics._camera_sensor_width_min), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f").title = t13;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("S.Width:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f"), t13));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f"));
+    const t14 = "Camera sensor height in millimeters";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_sensor_height, this._create_dom_input_number(camera.sensor_height, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_sensor_height_from_dom).bind(this), NeuronStatistics._camera_sensor_height_min), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f").title = t14;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("S.Height:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f"), t14));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f"));
+    const t15 = "Camera image width in pixels";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_image_width, this._create_dom_input_number(camera.image_width, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_image_width_from_dom).bind(this), NeuronStatistics._camera_image_width_min), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f").title = t15;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("I.Width:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f"), t15));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f"));
+    const t16 = "Camera image height in pixels";
+    __classPrivateFieldSet(this, _NeuronStatistics_dom_option_camera_image_height, this._create_dom_input_number(camera.image_height, __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_update_camera_image_height_from_dom).bind(this), NeuronStatistics._camera_image_height_min), "f");
+    __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f").title = t16;
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(this._create_dom_label("I.Height:", __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f"), t16));
+    __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f").appendChild(__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f"));
     //Statistics
     __classPrivateFieldSet(this, _NeuronStatistics_stats_results_element, document.getElementById(`${__classPrivateFieldGet(this, _NeuronStatistics_stats_element_prefix, "f")}-results`), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").innerHTML = '';
@@ -32331,6 +32513,51 @@ _NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stats_element_prefi
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_title_element, "f").onclick = __classPrivateFieldGet(this, _NeuronStatistics_instances, "m", _NeuronStatistics_toggle_hide_section).bind(this, 
     // this.#stats_options_title_element,
     __classPrivateFieldGet(this, _NeuronStatistics_stats_options_hide_element, "f"), __classPrivateFieldGet(this, _NeuronStatistics_stats_options_element, "f"));
+}, _NeuronStatistics_set_camera_selector = function _NeuronStatistics_set_camera_selector(camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_preset_custom) {
+    if (__classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f")) {
+        let matched_camera = false;
+        //Go through our list and find possible matches for our set camera
+        const camera_matches = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_presets.filter(x => x.name == camera.name);
+        if (camera_matches.length) {
+            const full_matches = camera_matches.filter(x => x.equals(camera));
+            matched_camera = full_matches.length > 0;
+        }
+        //If there is a proper match, then use that name (details should be filled in by set_camera())
+        //Otherwise it is a custom camera
+        __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f").value = matched_camera ? camera.name : _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_preset_custom.name;
+    }
+}, _NeuronStatistics_update_camera_from_dom = function _NeuronStatistics_update_camera_from_dom() {
+    const value = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_name, "f").value;
+    const camera_names = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_presets.map(x => x.name);
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_preset_custom.copy();
+    if (camera_names.includes(value)) {
+        const matches = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.camera_presets.filter(x => x.name == value);
+        if (matches.length > 0) {
+            camera = matches[0].copy();
+        }
+    }
+    this.set_camera(camera);
+    // this.#calculate_and_update_camera_variables();
+}, _NeuronStatistics_update_camera_focal_length_from_dom = function _NeuronStatistics_update_camera_focal_length_from_dom() {
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    camera.focal_length = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_focal_length, "f").valueAsNumber;
+    this.set_camera(camera);
+}, _NeuronStatistics_update_camera_sensor_width_from_dom = function _NeuronStatistics_update_camera_sensor_width_from_dom() {
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    camera.sensor_width = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_width, "f").valueAsNumber;
+    this.set_camera(camera);
+}, _NeuronStatistics_update_camera_sensor_height_from_dom = function _NeuronStatistics_update_camera_sensor_height_from_dom() {
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    camera.sensor_height = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_sensor_height, "f").valueAsNumber;
+    this.set_camera(camera);
+}, _NeuronStatistics_update_camera_image_width_from_dom = function _NeuronStatistics_update_camera_image_width_from_dom() {
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    camera.image_width = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_width, "f").valueAsNumber;
+    this.set_camera(camera);
+}, _NeuronStatistics_update_camera_image_height_from_dom = function _NeuronStatistics_update_camera_image_height_from_dom() {
+    let camera = _neuron_options__WEBPACK_IMPORTED_MODULE_2__.NeuronOptions.get_camera();
+    camera.image_height = __classPrivateFieldGet(this, _NeuronStatistics_dom_option_camera_image_height, "f").valueAsNumber;
+    this.set_camera(camera);
 }, _NeuronStatistics_toggle_hide_section = function _NeuronStatistics_toggle_hide_section(button, section) {
     if (section.style.display != 'none') {
         //Hide
@@ -32345,6 +32572,11 @@ _NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_stats_element_prefi
     i.className = `fas fa-${section.style.display == 'none' ? 'plus' : 'minus'}`;
     button.appendChild(i);
 };
+NeuronStatistics._camera_focal_length_min = 0;
+NeuronStatistics._camera_sensor_width_min = 0;
+NeuronStatistics._camera_sensor_height_min = 0;
+NeuronStatistics._camera_image_width_min = 0;
+NeuronStatistics._camera_image_height_min = 0;
 
 
 /***/ }),
@@ -32375,7 +32607,7 @@ function NeuronUID(prefix = 'nuid-') {
 function flight_distance_from_coords(coords) {
     //XXX:  Total distance calculated with the haversine method
     //      This is a shortcut and is probably ok for small distances
-    //      but we should definitely look at a propper earth model to
+    //      but we should definitely look at a proper earth model to
     //      do it properly in the future
     let total_distance = 0.0;
     for (var i = 0; i < coords.length - 1; i++) {
@@ -32385,8 +32617,8 @@ function flight_distance_from_coords(coords) {
         const u2 = p2.to_UTM(u1.zone);
         const d = u1.GetDistance2D(u2);
         //Do some sneaky stuff to support altitude as well
-        const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
-        total_distance += Math.sqrt(Math.pow(d, 2) + altd);
+        const alt_d = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
+        total_distance += Math.sqrt(Math.pow(d, 2) + alt_d);
     }
     return total_distance;
 }
@@ -32511,7 +32743,7 @@ function kmx_load_file(file, cb_file_loaded) {
                 break;
             }
         }
-        console.log(result);
+        // console.log(result);
         cb_file_loaded(result);
     });
 }
@@ -44309,7 +44541,7 @@ __webpack_require__.r(__webpack_exports__);
 
 let baseURL;
 try {
-	baseURL = "file:///D:/git/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
+	baseURL = "file:///home/pryre/Workspace/neuron-planner/node_modules/@zip.js/zip.js/lib/zip-fs.js";
 } catch (error) {
 	// ignored
 }
@@ -44461,26 +44693,27 @@ var __webpack_exports__ = {};
   !*** ./src/js/index.ts ***!
   \*************************/
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
-/* harmony import */ var _neuron_planner__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_planner */ "./src/js/neuron_planner.ts");
-/* harmony import */ var _neuron_map__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_map */ "./src/js/neuron_map.ts");
-/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
-/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_3__);
-/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ "./node_modules/@fortawesome/fontawesome-free/js/solid.js");
-/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_4__);
-/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/regular */ "./node_modules/@fortawesome/fontawesome-free/js/regular.js");
-/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_5__);
-/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/brands */ "./node_modules/@fortawesome/fontawesome-free/js/brands.js");
-/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_6__);
-/* harmony import */ var _css_theme_css__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../css/theme.css */ "./src/css/theme.css");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
-/* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
-/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
-/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
-/* harmony import */ var _neuron_brief__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./neuron_brief */ "./src/js/neuron_brief.ts");
-/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
-/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
-/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
+/* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
+/* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
+/* harmony import */ var _neuron_planner__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_planner */ "./src/js/neuron_planner.ts");
+/* harmony import */ var _neuron_map__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_map */ "./src/js/neuron_map.ts");
+/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/fontawesome */ "./node_modules/@fortawesome/fontawesome-free/js/fontawesome.js");
+/* harmony import */ var _fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_fontawesome__WEBPACK_IMPORTED_MODULE_4__);
+/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/solid */ "./node_modules/@fortawesome/fontawesome-free/js/solid.js");
+/* harmony import */ var _fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_5___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_solid__WEBPACK_IMPORTED_MODULE_5__);
+/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/regular */ "./node_modules/@fortawesome/fontawesome-free/js/regular.js");
+/* harmony import */ var _fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_regular__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @fortawesome/fontawesome-free/js/brands */ "./node_modules/@fortawesome/fontawesome-free/js/brands.js");
+/* harmony import */ var _fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_7___default = /*#__PURE__*/__webpack_require__.n(_fortawesome_fontawesome_free_js_brands__WEBPACK_IMPORTED_MODULE_7__);
+/* harmony import */ var _css_theme_css__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../css/theme.css */ "./src/css/theme.css");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
+/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
+/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
+/* harmony import */ var _neuron_brief__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./neuron_brief */ "./src/js/neuron_brief.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_statistics__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./neuron_statistics */ "./src/js/neuron_statistics.ts");
+/* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -44490,6 +44723,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -44508,6 +44742,8 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 /// <reference types="webpack/module" />
 console.log(`Loaded V-TOL Neuron, packed with Webpack v${5}`); // without reference declared above, TypeScript will throw an error
+//Initialize all of our options
+_neuron_options__WEBPACK_IMPORTED_MODULE_0__.NeuronOptions.init();
 const element_name_plan = 'fp-plan';
 const element_prefix_stats = 'fp-stats';
 const element_name_map = 'fp-map-interactive';
@@ -44522,14 +44758,14 @@ const print_size_with_margin_mm = {
     height: 277 / 2, /* 297 */
 };
 const print_size_with_margin_px = {
-    width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_13__.mm_to_px)(print_size_with_margin_mm.width),
-    height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_13__.mm_to_px)(print_size_with_margin_mm.height)
+    width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__.mm_to_px)(print_size_with_margin_mm.width),
+    height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_14__.mm_to_px)(print_size_with_margin_mm.height)
 };
-window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_1__.NeuronPlanner(element_name_plan);
-window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_2__.NeuronMap(element_name_map, element_name_help, window.neuron_planner);
-window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_14__.NeuronStatistics(window.neuron_planner, element_prefix_stats);
-window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_12__.NeuronBrief(window.neuron_planner, window.neuron_statistics, element_name_brief);
-window.neuron_help = new _neuron_help__WEBPACK_IMPORTED_MODULE_15__.NeuronHelp(element_prefix_help, elements_ignore_help);
+window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_2__.NeuronPlanner(element_name_plan);
+window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_3__.NeuronMap(element_name_map, element_name_help, window.neuron_planner);
+window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_15__.NeuronStatistics(window.neuron_planner, element_prefix_stats);
+window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_13__.NeuronBrief(window.neuron_planner, element_name_brief);
+window.neuron_help = new _neuron_help__WEBPACK_IMPORTED_MODULE_16__.NeuronHelp(element_prefix_help, elements_ignore_help);
 let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_planner.reset();
     window.neuron_map.reset();
@@ -44537,10 +44773,10 @@ let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_brief.reset();
     window.neuron_help.reset();
     window.neuron_planner.set_map(window.neuron_map);
-    window.neuron_planner.on_mission_change(window.neuron_statistics.update.bind(window.neuron_statistics));
+    window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {
-        window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
+        window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
     }));
 });
 document.addEventListener('DOMContentLoaded', load_app_data, false);

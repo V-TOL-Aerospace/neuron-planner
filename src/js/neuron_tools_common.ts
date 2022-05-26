@@ -13,7 +13,7 @@ export function NeuronUID(prefix='nuid-') {
 export function flight_distance_from_coords(coords:NeuronInterfacePoint[]) {
     //XXX:  Total distance calculated with the haversine method
     //      This is a shortcut and is probably ok for small distances
-    //      but we should definitely look at a propper earth model to
+    //      but we should definitely look at a proper earth model to
     //      do it properly in the future
 
     let total_distance = 0.0;
@@ -24,8 +24,8 @@ export function flight_distance_from_coords(coords:NeuronInterfacePoint[]) {
         const u2 = p2.to_UTM(u1.zone);
         const d = u1.GetDistance2D(u2);
         //Do some sneaky stuff to support altitude as well
-        const altd = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
-        total_distance += Math.sqrt(Math.pow(d,2) + altd);
+        const alt_d = Math.pow(Math.abs(p1.altitude - p2.altitude), 2);
+        total_distance += Math.sqrt(Math.pow(d,2) + alt_d);
     }
 
     return total_distance;

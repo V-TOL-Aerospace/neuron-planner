@@ -75,6 +75,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #update_timer:NodeJS.Timeout;
     #update_interval:number;
+    #unsub_option_cb:CallableFunction;
+
 
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
     static _xlap_ratio = 0.01;   //Sidelap = [DOM Value] * Ratio
@@ -124,6 +126,21 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         this._set_on_change_internal(this.update_survey.bind(this));
         this.#_update_survey(false);
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.#options_changed.bind(this));
+    }
+
+    set_options_subscriber() {
+        if(this.#unsub_option_cb)
+            this.#unsub_option_cb();
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.#options_changed.bind(this));
+    }
+
+    #options_changed() {
+        //Update our variables, and then the survey if there was a change
+        if(this.#calculate_and_update_capture_variables())
+            this.update_survey();
     }
 
     #add_waypoint(point:NeuronInterfacePoint, name:string = "Survey Waypoint") {
@@ -587,7 +604,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this.#dom_sidelap);
 
             //Try go back now and calculate other values if relevant
-            this.#calculate_and_update_camera_variables();
+            this.#calculate_and_update_capture_variables();
             this.#try_update_dom_stats();
 
             this.#dom.append(c);
@@ -615,7 +632,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #set_sidelap(sidelap:number, update_calcs:boolean = true) {
         this.#sidelap = sidelap;
         if(update_calcs)
-            this.#calculate_and_update_camera_variables();
+            this.#calculate_and_update_capture_variables();
     };
 
     set_overlap(overlap:number) {
@@ -631,7 +648,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#ground_resolution = ground_resolution;
 
         if(update_calcs)
-            this.#calculate_and_update_camera_variables();
+            this.#calculate_and_update_capture_variables();
     };
 
     #update_sidelap_from_dom() {
@@ -646,12 +663,15 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#set_ground_resolution(this.#dom_ground_resolution.valueAsNumber * NeuronFeatureSurvey._gsd_ratio)
     }
 
-    #calculate_and_update_camera_variables() {
+    #calculate_and_update_capture_variables() {
+        let settings_changed = false;
         const camera = NeuronOptions.get_camera();
 
-        let altitude = camera.get_distance(this.#ground_resolution);
+        let altitude = camera.get_distance(this.get_ground_resolution());
 
-        if(altitude) {
+        if(altitude != this.get_altitude()) {
+            settings_changed = true;
+
             if(this.#dom_altitude)
                 this.#dom_altitude.value = (altitude / NeuronFeatureSurvey._altitude_ratio).toString();
             this.#set_altitude(altitude, false);
@@ -663,11 +683,17 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             const sidelap_factor = 1 - this.#sidelap;
             const distance = projection.Width()*sidelap_factor;
 
-            if(this.#dom_distance)
+            if(distance != this.get_distance()) {
+                settings_changed = true;
+
+                if(this.#dom_distance)
                 this.#dom_distance.value = Math.max(Number.parseFloat(this.#dom_distance.min), distance).toString();
 
-            this.#set_distance(distance, false);
+                this.#set_distance(distance, false);
+            }
         }
+
+        return settings_changed;
     }
 
     static override isObjectOfDataType(object: any): object is NeuronFeatureSurveyData {
@@ -699,7 +725,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         s.#set_sidelap(j.sidelap, false);
         s.#set_ground_resolution(j.ground_resolution, false);
 
-        s.#calculate_and_update_camera_variables();
+        s.#calculate_and_update_capture_variables();
 
         return s;
     }

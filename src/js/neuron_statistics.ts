@@ -2,7 +2,7 @@ import { flight_distance_from_coords, flight_time_from_duration } from "./neuron
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
-import { NeuronOptionKeysBoolean, NeuronOptionKeysNumber, NeuronOptions } from "./neuron_options";
+import { NeuronOptionsBoolean, NeuronOptionsNumber, NeuronOptions } from "./neuron_options";
 
 export class NeuronStatistics extends NeuronDOMFactory {
     #planner:NeuronPlanner;
@@ -37,6 +37,8 @@ export class NeuronStatistics extends NeuronDOMFactory {
     static _camera_image_width_min:number = 0;
     static _camera_image_height_min:number = 0;
 
+    #unsub_option_cb:CallableFunction;
+
     constructor(planner:NeuronPlanner, stats_element_prefix:string) {
         super(stats_element_prefix);
 
@@ -63,6 +65,16 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#dom_stat_waypoints = null;
         this.#dom_stat_distance = null;
         this.#dom_stat_duration = null;
+
+        this.set_options_subscriber();
+    }
+
+    set_options_subscriber() {
+        if(this.#unsub_option_cb)
+            this.#unsub_option_cb();
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.update_statistics.bind(this));
+        NeuronOptions.set_dom_callback(this.#update_dom_from_options.bind(this));
     }
 
     // #get_option_id_from_key(key:NeuronStatisticsOptionKeys) {
@@ -73,7 +85,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
     //     return `${this.#stats_element_prefix}-results-${key}`;
     // }
 
-    update() {
+    update_statistics() {
         const coords = this.#planner.get_mission_as_points();
         // this.#last_mission_altitude = coords.length ?
         //     coords[coords.length - 1].altitude :
@@ -83,7 +95,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         const dist_km = total_distance / 1000;
 
         //Get the flight speed and lock it to at least 0.1m/s
-        const s = NeuronOptions.get_option(NeuronOptionKeysNumber.MISSION_SPEED) as number;
+        const s = NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED);
         const flight_speed = Math.max(s ? s : 0.0, 0.1);
         const total_time = total_distance/flight_speed;
 
@@ -99,12 +111,22 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
     #update_option_speed_dom() {
         if(this.#dom_option_speed)
-            NeuronOptions.set_option(NeuronOptionKeysNumber.MISSION_SPEED, this.#dom_option_speed.valueAsNumber);
+            NeuronOptions.set_option_number(NeuronOptionsNumber.MISSION_SPEED, this.#dom_option_speed.valueAsNumber, true, false);
     }
 
     #update_option_show_path() {
         if(this.#dom_option_show_path)
-            NeuronOptions.set_option(NeuronOptionKeysBoolean.SHOW_PATH, this.#dom_option_show_path.checked);
+            NeuronOptions.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, this.#dom_option_show_path.checked, true, false);
+    }
+
+    #update_dom_from_options() {
+        if(this.#dom_option_show_path)
+            this.#dom_option_show_path.checked = NeuronOptions.get_option_boolean(NeuronOptionsBoolean.SHOW_PATH);
+
+        if(this.#dom_option_speed)
+            this.#dom_option_speed.value = NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED).toString();
+
+        this.set_camera(NeuronOptions.get_camera(), false);
     }
 
     #gen_dom() {
@@ -113,13 +135,13 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_options_element.innerHTML = '';
 
         const t5 = "Display the calculated flight path on the map";
-        this.#dom_option_show_path = this._create_dom_input_checkbox(NeuronOptions.get_option(NeuronOptionKeysBoolean.SHOW_PATH) as boolean, this.#update_option_show_path.bind(this));
+        this.#dom_option_show_path = this._create_dom_input_checkbox(NeuronOptions.get_option_boolean(NeuronOptionsBoolean.SHOW_PATH), this.#update_option_show_path.bind(this));
         this.#dom_option_show_path.title = t5;
         this.#stats_options_element.appendChild(this._create_dom_label("Show path:", this.#dom_option_show_path, t5));
         this.#stats_options_element.appendChild(this.#dom_option_show_path);
 
         const t0 = "Speed of the aircraft during regular flight in metres per second";
-        this.#dom_option_speed = this._create_dom_input_number(NeuronOptions.get_option(NeuronOptionKeysNumber.MISSION_SPEED) as number, this.#update_option_speed_dom.bind(this), 0.1);
+        this.#dom_option_speed = this._create_dom_input_number(NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED), this.#update_option_speed_dom.bind(this), 0.1);
         this.#dom_option_speed.title = t0;
         this.#stats_options_element.appendChild(this._create_dom_label("Speed (m/s):", this.#dom_option_speed, t0));
         this.#stats_options_element.appendChild(this.#dom_option_speed);
@@ -239,8 +261,10 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
     // #set_camera(camera:NeuronCameraSpecifications, update_calcs:boolean = true) {
 
-    set_camera(camera:NeuronCameraSpecifications) {
-        NeuronOptions.set_camera(camera, false);
+    set_camera(camera:NeuronCameraSpecifications, update_settings:boolean = true) {
+        if(update_settings)
+            NeuronOptions.set_camera(camera, true, false);
+
         this.#set_camera_selector(camera);
 
         if(this.#dom_option_camera_focal_length)
@@ -325,6 +349,6 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#gen_dom();
 
         //Update the planner
-        this.update();
+        this.update_statistics();
     }
 }

@@ -1,11 +1,12 @@
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
+import { NeuronUID } from "./neuron_tools_common";
 
 //XXX: Keep in sync with NeuronStatistics #stat_options
-export enum NeuronOptionKeysBoolean {
+export enum NeuronOptionsBoolean {
     SHOW_PATH,
 }
 
-export enum NeuronOptionKeysNumber {
+export enum NeuronOptionsNumber {
     MISSION_SPEED,
     CAMERA_FOCAL_LENGTH,
     CAMERA_IMAGE_WIDTH,
@@ -14,14 +15,9 @@ export enum NeuronOptionKeysNumber {
     CAMERA_SENSOR_HEIGHT,
 }
 
-export enum NeuronOptionKeysString {
+export enum NeuronOptionsString {
     CAMERA_NAME,
 }
-
-
-type NeuronOptionTypes = NeuronOptionKeysBoolean |
-                         NeuronOptionKeysNumber |
-                         NeuronOptionKeysString;
 
 export class NeuronOptions {
     //XXX: Keys must be unique!
@@ -32,76 +28,91 @@ export class NeuronOptions {
     ];
 
     //XXX: Keep in sync with NeuronStatisticsOptionKeys
-    static #stat_options_boolean = new Map();
-    static #stat_options_number = new Map();
-    static #stat_options_string = new Map();
-    static #camera = NeuronOptions.camera_preset_custom.copy();
+    static #stat_options_boolean:Map<NeuronOptionsBoolean,boolean> = new Map();
+    static #stat_options_number:Map<NeuronOptionsNumber,number> = new Map();
+    static #stat_options_string:Map<NeuronOptionsString,string> = new Map();
+
+    static #dom_callback:CallableFunction = null;
+    static #general_callbacks:Map<string,CallableFunction> = new Map();
 
     static init() {
-        this.set_option(NeuronOptionKeysBoolean.SHOW_PATH, true, false);
-        this.set_option(NeuronOptionKeysNumber.MISSION_SPEED, 5.0, false);
-        this.set_camera(NeuronOptions.camera_preset_custom, false);
-        // this.set_option(NeuronStatisticsOptionKeysString.CAMERA_NAME, NeuronStatistics._camera_preset_custom.name);
-        // this.set_option(NeuronStatisticsOptionKeysNumber.CAMERA_FOCAL_LENGTH, 0);
-        // this.set_option(NeuronStatisticsOptionKeysNumber.CAMERA_IMAGE_WIDTH, 0);
-        // this.set_option(NeuronStatisticsOptionKeysNumber.CAMERA_IMAGE_HEIGHT, 0);
-        // this.set_option(NeuronStatisticsOptionKeysNumber.CAMERA_SENSOR_WIDTH, 0);
-        // this.set_option(NeuronStatisticsOptionKeysNumber.CAMERA_SENSOR_HEIGHT, 0);
-
+        this.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, true, false, false);
+        this.set_option_number(NeuronOptionsNumber.MISSION_SPEED, 5.0, false, false);
+        this.set_camera(NeuronOptions.camera_preset_custom, false, false)
     }
 
-    static get_option(key:NeuronOptionTypes) {
-        if(key in NeuronOptionKeysBoolean) {
-            const k = key as NeuronOptionKeysBoolean;
-            return this.#stat_options_boolean.has(k) ? this.#stat_options_boolean.get(k) : null;
-        } else if (key in NeuronOptionKeysNumber) {
-            const k = key as NeuronOptionKeysNumber;
-            return this.#stat_options_number.has(k) ? this.#stat_options_number.get(k) : null;
-        } else if (key in NeuronOptionKeysString) {
-            const k = key as NeuronOptionKeysString;
-            return this.#stat_options_string.has(k) ? this.#stat_options_string.get(k) : null;
+    static set_dom_callback(callback:CallableFunction) {
+        this.#dom_callback = callback;
+    }
+
+    static add_callback(callback:CallableFunction) {
+        const id = NeuronUID('option');
+        this.#general_callbacks.set(id, callback);
+        return this.#remove_callback.bind(this, id);
+    }
+
+    static #remove_callback(id:string) {
+        if(this.#general_callbacks.has(id)) {
+            this.#general_callbacks.delete(id);
+        }
+    }
+
+    static #handle_callbacks(trigger_callbacks:boolean, trigger_dom:boolean) {
+        if(trigger_callbacks) {
+            for(const cb of this.#general_callbacks.values())
+                cb();
         }
 
-        return null;
+        if(trigger_dom && this.#dom_callback)
+            this.#dom_callback();
     }
 
-    static set_option(key:NeuronOptionTypes, value:number|boolean|string, trigger_callbacks:boolean = false) {
-        if((key in NeuronOptionKeysBoolean) && (typeof value == 'boolean')) {
-            const k = key as NeuronOptionKeysBoolean;
-            this.#stat_options_boolean.set(k, value);
-        } else if ((key in NeuronOptionKeysNumber) && (typeof value == 'number')) {
-            const k = key as NeuronOptionKeysNumber;
-            this.#stat_options_number.set(k, value);
-        } else if ((key in NeuronOptionKeysString) && (typeof value == 'string')) {
-            const k = key as NeuronOptionKeysString;
-            this.#stat_options_string.set(k, value);
-        } else {
-            throw new Error("Type could not be identified!");
-        }
-
-        //TODO: Add option callbacks!
-        // if(trigger_callbacks)
-        //     this.#calculate_and_update_camera_variables();
-
-        //TODO: Figure out how to do it without callback hell!
+    static set_option_boolean(key:NeuronOptionsBoolean, value:boolean, trigger_callbacks:boolean = true, trigger_dom:boolean = true) {
+        this.#stat_options_boolean.set(key, value);
+        this.#handle_callbacks(trigger_callbacks, trigger_dom);
     }
 
-    static set_camera(camera:NeuronCameraSpecifications, trigger_callbacks:boolean = false) {
-        this.#camera = camera;
+    static set_option_number(key:NeuronOptionsNumber, value:number, trigger_callbacks:boolean = true, trigger_dom:boolean = true) {
+        this.#stat_options_number.set(key, value);
+        this.#handle_callbacks(trigger_callbacks, trigger_dom);
+    }
 
-        this.set_option(NeuronOptionKeysString.CAMERA_NAME, this.#camera.name, false);
-        this.set_option(NeuronOptionKeysNumber.CAMERA_FOCAL_LENGTH, this.#camera.focal_length, false);
-        this.set_option(NeuronOptionKeysNumber.CAMERA_IMAGE_WIDTH, this.#camera.image_width, false);
-        this.set_option(NeuronOptionKeysNumber.CAMERA_IMAGE_HEIGHT, this.#camera.image_height, false);
-        this.set_option(NeuronOptionKeysNumber.CAMERA_SENSOR_WIDTH, this.#camera.sensor_width, false);
-        this.set_option(NeuronOptionKeysNumber.CAMERA_SENSOR_HEIGHT, this.#camera.sensor_height, false);
+    static set_option_string(key:NeuronOptionsString, value:string, trigger_callbacks:boolean = true, trigger_dom:boolean = true) {
+        this.#stat_options_string.set(key, value);
+        this.#handle_callbacks(trigger_callbacks, trigger_dom);
+    }
 
-        //TODO: Add option callbacks!
-        // if(trigger_callbacks)
-        //     this.#calculate_and_update_camera_variables();
+    static set_camera(value:NeuronCameraSpecifications, trigger_callbacks:boolean = false, trigger_dom:boolean = true) {
+        this.set_option_string(NeuronOptionsString.CAMERA_NAME, value.name, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH, value.focal_length, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH, value.image_width, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT, value.image_height, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH, value.sensor_width, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT, value.sensor_height, false, false);
+
+        this.#handle_callbacks(trigger_callbacks, trigger_dom);
     };
 
+    static get_option_boolean(key:NeuronOptionsBoolean) {
+        return this.#stat_options_boolean.get(key);
+    }
+
+    static get_option_number(key:NeuronOptionsNumber) {
+        return this.#stat_options_number.get(key);
+    }
+
+    static get_option_string(key:NeuronOptionsString) {
+        return this.#stat_options_string.get(key);
+    }
+
     static get_camera() {
-        return this.#camera.copy();
+        return new NeuronCameraSpecifications(
+            this.get_option_string(NeuronOptionsString.CAMERA_NAME),
+            this.get_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH),
+            this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH),
+            this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT),
+            this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH),
+            this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT)
+        );
     }
 }

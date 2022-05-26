@@ -3,7 +3,7 @@ import { NeuronFeaturePoint } from "./neuron_feature_point";
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
-import { NeuronOptions, NeuronOptionKeysNumber } from "./neuron_options";
+import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
 
 import { NeuronPlanner } from "./neuron_planner";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
@@ -129,7 +129,7 @@ export class NeuronBrief {
         const steps = this.#planner.get_mission_as_points();
         if(steps.length) {
             //Get the flight speed and lock it to at least 0.1m/s
-            const s = NeuronOptions.get_option(NeuronOptionKeysNumber.MISSION_SPEED) as number;
+            const s = NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED);
             const flight_speed = Math.max(s ? s : 0.0, 0.1);
 
             let time_takeoff = "---";
