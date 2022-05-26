@@ -13,19 +13,34 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     static TYPE = "NeuronFeatureBase";
     static VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 
+    #visible:boolean;
     #map:L.Map;
     #features:L.Layer[];
+    #hidden_features:L.Layer[];
     #on_remove:CallableFunction;
     #on_change:CallableFunction;
     #on_move:CallableFunction;
 
+    #dom:HTMLDivElement;
+    #dom_buttons_visibility:HTMLButtonElement[];
+
     static _altitude_ratio = 0.3048;   //Alt = [DOM Value] * Ratio
+
+    //Add two sets of icons, one for each size button
+    static _button_sizes = [
+        'mission-feature-title-button',
+        'mission-feature-title-button-small'
+    ];
 
     constructor(map:L.Map) {
         super('mission-feature');
 
+        this.#visible = true;
         this.#features = [];
+        this.#hidden_features = [];
         this.#map = map;
+        this.#dom_buttons_visibility = [];
+        this.#dom = null;
         this.set_remove_callback(null);
         this.set_change_callback(null);
         this.set_move_callback(null);
@@ -36,26 +51,61 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             this.#on_change(this);
     }
 
-    _add_feature_to_map(m:L.Layer) {
+    _add_layer_to_map(m:L.Layer) {
         if(this.#map) {
-            m.addTo(this.#map);
-            this.#features.push(m);
-            m.on('remove', this._feature_removed.bind(this));
+            if(this.#visible) {
+                m.addTo(this.#map);
+                this.#features.push(m);
+            } else {
+                this.#hidden_features.push(m);
+            }
+            // m.on('remove', this._feature_removed.bind(this));
         } else {
             console.error('Error: no map reference set');
         }
     }
 
-    _feature_removed(event:L.LayerEvent) {
-        let index = this.#features.indexOf(event.target);
-        if(index !== -1) {
-            this.#features.splice(index, 1);
+    _remove_layer_from_map(m:L.Layer) {
+        let index_visible = this.#features.indexOf(m);
+        if(index_visible !== -1) {
+            this.#features.splice(index_visible, 1);
+            m.remove();
+        }
+
+        let index_hidden = this.#hidden_features.indexOf(m);
+        if(index_hidden !== -1) {
+            this.#features.splice(index_hidden, 1);
+            //XXX: These already do not exist on the map, so no need to remove!
         }
     }
 
+    #update_visibility_dom() {
+        if(this.#dom) {
+            if(this.#visible) {
+                this.#dom.classList.remove('mission-feature-hidden');
+            } else {
+                this.#dom.classList.add('mission-feature-hidden');
+            }
+        }
+    }
+
+    #update_visibility_icons() {
+        for(let but of this.#dom_buttons_visibility) {
+            const fa_size = this.#get_button_size_class(but.className);
+            but.innerHTML = '';
+            let bvi = document.createElement("i");
+            bvi.className = 'fas ' + (this.#visible ? 'fa-eye-slash' : 'fa-eye') + fa_size;
+            but.appendChild(bvi);
+        }
+    }
+
+    #get_button_size_class(button_class:string) {
+        return  button_class.includes('small') ? " fa-2xs" : "";
+    }
+
     _get_dom(text:string="Mission Feature") {
-        let dom = document.createElement("div");
-        dom.className = 'mission-feature';
+        this.#dom = document.createElement("div");
+        this.#dom.className = 'mission-feature';
 
         let title = document.createElement("div");
         title.className = 'mission-feature-title';
@@ -65,17 +115,12 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
 
-        //Add two sets of icons, one for each size button
-        const button_sizes = [
-            'mission-feature-title-button',
-            'mission-feature-title-button-small'
-        ];
-
-        for(const but_class of button_sizes) {
-            const fa_size = but_class.includes('small') ? " fa-2xs" : "";
+        this.#dom_buttons_visibility = [];
+        for(const button_class of NeuronFeatureBase._button_sizes) {
+            const fa_size = this.#get_button_size_class(button_class);
 
             let b0 = document.createElement("button");
-            b0.className = but_class;
+            b0.className = button_class;
             b0.title = "Zoom to feature";
             b0.onclick = this.zoom_to_feature.bind(this);
             let b0i = document.createElement("i");
@@ -83,8 +128,15 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             b0.appendChild(b0i);
             title.appendChild(b0);
 
+            let bv = document.createElement("button");
+            bv.className = button_class;
+            bv.title = "Toggle feature visibility";
+            bv.onclick = this.toggle_visibility.bind(this);
+            title.appendChild(bv);
+            this.#dom_buttons_visibility.push(bv);
+
             let b1 = document.createElement("button");
-            b1.className = but_class;
+            b1.className = button_class;
             b1.title = "Move up";
             b1.onclick = this.#request_move.bind(this, -1);
             let b1i = document.createElement("i");
@@ -93,7 +145,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             title.appendChild(b1);
 
             let b2 = document.createElement("button");
-            b2.className = but_class;
+            b2.className = button_class;
             b2.title = "Move down";
             b2.onclick = this.#request_move.bind(this, 1);
             let b2i = document.createElement("i");
@@ -102,7 +154,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             title.appendChild(b2);
 
             let b3 = document.createElement("button");
-            b3.className = but_class;
+            b3.className = button_class;
             b3.title = "Remove";
             b3.onclick = this.remove_feature.bind(this);
             let b3i = document.createElement("i");
@@ -111,9 +163,12 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             title.appendChild(b3);
         }
 
-        dom.appendChild(title);
+        this.#update_visibility_icons();
+        this.#update_visibility_dom();
 
-        return dom;
+        this.#dom.appendChild(title);
+
+        return this.#dom;
     }
 
 
@@ -146,7 +201,6 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             this.#on_move(this, direction);
     }
 
-
     set_remove_callback(on_remove:CallableFunction) {
         this.#on_remove = on_remove;
     }
@@ -161,6 +215,28 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
     get_features() {
         return this.#features;
+    }
+
+    toggle_visibility() {
+        this.#visible = !this.#visible;
+        if(this.#visible) {
+            //Show layers
+            this.#features = [].concat(this.#hidden_features);
+            this.#hidden_features = [];
+
+            for(let feature of this.#features)
+                feature.addTo(this.#map);
+        } else {
+            //Hide layers
+            this.#hidden_features = [].concat(this.#features);
+            this.#features = [];
+
+            for(let feature of this.#hidden_features)
+                feature.remove();
+        }
+
+        this.#update_visibility_icons();
+        this.#update_visibility_dom();
     }
 
     zoom_to_feature() {

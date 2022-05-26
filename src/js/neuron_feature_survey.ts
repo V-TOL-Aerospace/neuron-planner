@@ -170,7 +170,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             // m.on("drag", this.update_polygon.bind(this));
             // m.on("click", this.#select_corner_by_event.bind(this));
             // m.on("dblclick", this.#remove_point_by_event.bind(this));
-            this._add_feature_to_map(m);
+            this._add_layer_to_map(m);
             this.#mappoints.push(m);
         }
 
@@ -350,7 +350,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #clean_waypoints() {
         for(const m of this.#mappoints) {
-            m.remove();
+            this._remove_layer_from_map(m);
         }
         this.#mappoints = [];
         this.#waypoints = [];

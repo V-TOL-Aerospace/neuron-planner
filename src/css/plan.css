@@ -102,6 +102,10 @@
     box-shadow: 4px 4px 4px #888888;
 }
 
+.mission-feature-hidden {
+    background: #888888;
+}
+
 .mission-feature-title {
     flex: auto;
     display: flex;

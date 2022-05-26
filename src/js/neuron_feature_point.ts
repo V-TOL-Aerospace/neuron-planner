@@ -67,7 +67,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             ]
             this.#marker.bindPopup(create_popup_context_dom("Waypoint", menu_items, this.#marker));
 
-            this._add_feature_to_map(this.#marker);
+            this._add_layer_to_map(this.#marker);
         }
 
         this.#internal_set_point(point);
@@ -116,7 +116,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
     override remove_feature() {
         if(this.#marker)
-            this.#marker.remove();
+            this._remove_layer_from_map(this.#marker);
 
         super.remove_feature();
     }

@@ -138,7 +138,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         m.on("dblclick", this.#remove_point_by_event.bind(this));
 
         this.#corners.splice(this.#selected_corner, 0, m);
-        this._add_feature_to_map(m);
+        this._add_layer_to_map(m);
 
         if(update_polygon)
             this.update_polygon();
@@ -167,7 +167,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     remove_point_by_corner(corner:L.Marker) {
         const ind = this.#corners.indexOf(corner);
         if(ind >= 0) {
-            corner.remove();                //Remove from map
+            this._remove_layer_from_map(corner); //Remove from map
             this.#corners.splice(ind, 1);   //Remove from list
             this.update_polygon();          //Redraw
         } else {
@@ -216,7 +216,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
                 //Create a new polygon
                 this.#polygon = L.polygon(corners, {color: 'red'});
                 this.#polygon.on("click", this.#add_point_at_mouseevent.bind(this));
-                this._add_feature_to_map(this.#polygon);
+                this._add_layer_to_map(this.#polygon);
             }
         } else {
             this.remove_feature();
@@ -252,12 +252,14 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
     override remove_feature() {
         for(const c of this.#corners) {
-            c.remove();
+            this._remove_layer_from_map(c);
         }
         this.#corners = [];
 
-        this.#polygon?.remove();
-        this.#polygon = null;
+        if(this.#polygon) {
+            this._remove_layer_from_map(this.#polygon);
+            this.#polygon = null;
+        }
 
         super.remove_feature();
     }
