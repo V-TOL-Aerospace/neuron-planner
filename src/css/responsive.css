@@ -27,7 +27,7 @@
     }
 }
 
-@media only screen and ((orientation: portrait) or (max-height: 620px) or (max-width: 800px)) {
+@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {
     .leaflet-control-attribution {
         display: none;
     }

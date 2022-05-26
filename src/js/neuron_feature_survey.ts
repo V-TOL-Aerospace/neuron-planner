@@ -4,6 +4,7 @@ import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./leaflet_interface";
 import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
+import { NeuronHelp } from "./neuron_help";
 
 export interface NeuronFeatureSurveyData {
     version:string,
@@ -32,6 +33,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     static override NAME = "Survey";
     static override TYPE = "NeuronFeatureSurvey";
     static override VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
+    static override HELP_KEY = 'survey';
 
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
@@ -448,6 +450,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #update_leadin_from_dom() {
         this.set_leadin(this.#dom_leadin.valueAsNumber);
+    }
+
+    override show_help() {
+        window.neuron_map.show_map_help(true, `${NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeatureSurvey.HELP_KEY}`);
     }
 
     override remove_feature() {

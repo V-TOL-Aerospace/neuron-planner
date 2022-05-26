@@ -1,4 +1,4 @@
-import {NeuronFeaturePoint} from "./neuron_feature_point";
+import {NeuronFeatureWaypoint} from "./neuron_feature_waypoint";
 import {NeuronFeaturePolygon} from "./neuron_feature_polygon";
 
 import { NeuronPlanner } from "./neuron_planner";
@@ -47,11 +47,13 @@ export class NeuronMap {
         this.#unsub_option_cb = NeuronOptions.add_callback(this.update_path.bind(this));
     }
 
-    show_map_help(show:boolean) {
-
+    show_map_help(show:boolean, help_key:string = '') {
         if(show) {
             this.#map_element.style.display = 'none';
             this.#help_element.style.display = 'block';
+
+            if(help_key)
+                document.getElementById(help_key)?.scrollIntoView();
         } else {
             this.#map_element.style.display = 'block';
             this.#help_element.style.display = 'none';
@@ -98,7 +100,7 @@ export class NeuronMap {
         // } else {
             const l = NeuronInterfacePoint.from_leaflet(event.latlng);
             l.altitude = this.#planner.get_last_item_altitude();
-            const p = new NeuronFeaturePoint(this.#map, l);
+            const p = new NeuronFeatureWaypoint(this.#map, l);
             this.#planner.add_mission_item(p);
         // }
     }
@@ -111,7 +113,7 @@ export class NeuronMap {
             const dx = ne.lng - sw.lng;
             const dy = ne.lat - sw.lat;
 
-            const p = new NeuronFeaturePoint(this.#map, new NeuronInterfacePoint(
+            const p = new NeuronFeatureWaypoint(this.#map, new NeuronInterfacePoint(
                 sw.lat + dy / 2,
                 sw.lng + dx / 2,
                 this.#planner.get_last_item_altitude()

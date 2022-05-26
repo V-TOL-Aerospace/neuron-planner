@@ -1,5 +1,5 @@
 import { NeuronFeatureBase, NeuronFeatureBaseData } from "./neuron_feature_base";
-import { NeuronFeaturePoint, NeuronFeaturePointData } from "./neuron_feature_point";
+import { NeuronFeatureWaypoint, NeuronFeaturePointData } from "./neuron_feature_waypoint";
 import { NeuronFeaturePolygon, NeuronFeaturePolygonData } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey, NeuronFeatureSurveyData } from "./neuron_feature_survey";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
@@ -7,7 +7,7 @@ import { NeuronMap } from "./neuron_map";
 import { kml_download_from_neuron_data, kmx_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
-import { NeuronOptions } from "./neuron_options";
+// import { NeuronOptions } from "./neuron_options";
 
 export type MissionFeatureData = (
     NeuronFeatureBaseData |
@@ -18,7 +18,7 @@ export type MissionFeatureData = (
 
 export type MissionFeature = (
     NeuronFeatureBase |
-    NeuronFeaturePoint |
+    NeuronFeatureWaypoint |
     NeuronFeaturePolygon |
     NeuronFeatureSurvey
 );
@@ -118,8 +118,8 @@ export class NeuronPlanner {
 
             if(NeuronFeatureBase.isObjectOfDataType(item)) {
                 feature = NeuronFeatureBase.from_json(item, this.#map.get_leaflet_map());
-            } else if(NeuronFeaturePoint.isObjectOfDataType(item)) {
-                feature = NeuronFeaturePoint.from_json(item, this.#map.get_leaflet_map());
+            } else if(NeuronFeatureWaypoint.isObjectOfDataType(item)) {
+                feature = NeuronFeatureWaypoint.from_json(item, this.#map.get_leaflet_map());
             } else if(NeuronFeaturePolygon.isObjectOfDataType(item)) {
                 let p = NeuronFeaturePolygon.from_json(item, this.#map.get_leaflet_map());
                 p.set_planner(this);
@@ -146,7 +146,7 @@ export class NeuronPlanner {
 
             if(NeuronInterfacePoint.isObjectOfDataType(item)) {
                 const point = NeuronInterfacePoint.from_json(item);
-                feature = new NeuronFeaturePoint(this.#map.get_leaflet_map(), point);
+                feature = new NeuronFeatureWaypoint(this.#map.get_leaflet_map(), point);
             } else {
                 console.warn("Unable to import waypoint item");
                 console.warn(item);
@@ -387,7 +387,7 @@ export class NeuronPlanner {
 
         for(const p of result.markers) {
             p.altitude = this.get_last_item_altitude();
-            const f = new NeuronFeaturePoint(this.#map.get_leaflet_map(), p);
+            const f = new NeuronFeatureWaypoint(this.#map.get_leaflet_map(), p);
             features.push(f);
         }
 

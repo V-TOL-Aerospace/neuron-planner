@@ -1,6 +1,6 @@
-import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronFeaturePoint } from "./neuron_feature_point";
-import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
+// import { NeuronFeatureBase } from "./neuron_feature_base";
+import { NeuronFeatureWaypoint } from "./neuron_feature_waypoint";
+// import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
@@ -142,7 +142,7 @@ export class NeuronBrief {
             }
 
             let step0:MissionBrief = {
-                type: NeuronFeaturePoint.NAME,
+                type: NeuronFeatureWaypoint.NAME,
                 description: "Take-off at location",
                 components: [takeoff_point.toString()],
                 time_duration: time_takeoff,
@@ -166,10 +166,10 @@ export class NeuronBrief {
                 //XXX: Ignore mission items with no points
                 // if(item instanceof NeuronFeatureBase) {
                 // } else
-                if(item instanceof NeuronFeaturePoint) {
+                if(item instanceof NeuronFeatureWaypoint) {
                     if(path.length) {
                         step = {
-                            type: NeuronFeaturePoint.NAME,
+                            type: NeuronFeatureWaypoint.NAME,
                             description: "Fly to location",
                             components: path.map(x => x.toString()),
                             time_duration: "---",
@@ -213,7 +213,7 @@ export class NeuronBrief {
             }
 
             let stepn:MissionBrief = {
-                type: NeuronFeaturePoint.NAME,
+                type: NeuronFeatureWaypoint.NAME,
                 description: "Land at location",
                 components: [land_point ? land_point.toString() : "---"],
                 time_duration: time_land,

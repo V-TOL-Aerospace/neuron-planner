@@ -1,5 +1,7 @@
 
 export class NeuronHelp {
+    static HELP_PREFIX_MISSION = 'help-fp-mission';
+
     #help_element_name:string;
     #help_element_ignore_subs:string[];
 

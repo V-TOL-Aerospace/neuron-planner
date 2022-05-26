@@ -1,6 +1,7 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
+import { NeuronHelp } from "./neuron_help";
 
 export interface NeuronFeaturePointData {
     version:string,
@@ -8,10 +9,11 @@ export interface NeuronFeaturePointData {
     point:NeuronInterfacePointData
 }
 
-export class NeuronFeaturePoint extends NeuronFeatureBase {
+export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override NAME = "Waypoint";
     static override TYPE = "NeuronFeaturePoint";
     static override VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
+    static override HELP_KEY = 'waypoint';
 
     #marker:L.Marker;
     #point:NeuronInterfacePoint;
@@ -114,6 +116,10 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         this.#internal_set_point(this.#point, true, false);
     }
 
+    override show_help() {
+        window.neuron_map.show_map_help(true, `${NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeatureWaypoint.HELP_KEY}`);
+    }
+
     override remove_feature() {
         if(this.#marker)
             this._remove_layer_from_map(this.#marker);
@@ -158,26 +164,26 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
     static override isObjectOfDataType(object: any): object is NeuronFeaturePointData {
         let is_valid =
-            (object.type == NeuronFeaturePoint.TYPE) ||
-            (object.version == NeuronFeaturePoint.VERSION);
+            (object.type == NeuronFeatureWaypoint.TYPE) ||
+            (object.version == NeuronFeatureWaypoint.VERSION);
 
         return is_valid;
     }
 
     static override from_json(j:NeuronFeaturePointData, map:L.Map) {
         //XXX: Implement this per inherited feature
-        if(!NeuronFeaturePoint.isObjectOfDataType(j))
+        if(!NeuronFeatureWaypoint.isObjectOfDataType(j))
             throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
 
         const point = NeuronInterfacePoint.from_json(j.point);
-        return new NeuronFeaturePoint(map, point);
+        return new NeuronFeatureWaypoint(map, point);
     }
 
     override to_json() {
         //XXX: Implement this per inherited feature
         return <NeuronFeaturePointData>{
-            version: NeuronFeaturePoint.VERSION,
-            type: NeuronFeaturePoint.TYPE,
+            version: NeuronFeatureWaypoint.VERSION,
+            type: NeuronFeatureWaypoint.TYPE,
             point: this.#point.to_json()
         }
     }

@@ -12,6 +12,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     static NAME = "[BASE FEATURE]";
     static TYPE = "NeuronFeatureBase";
     static VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
+    static HELP_KEY = 'base';
 
     #visible:boolean;
     #map:L.Map;
@@ -156,6 +157,15 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             b2.appendChild(b2i);
             d.appendChild(b2);
 
+            let b4 = document.createElement("button");
+            b4.className = button_class;
+            b4.title = "Help";
+            b4.onclick = this.show_help.bind(this);
+            let b4i = document.createElement("i");
+            b4i.className = 'fas fa-question' + fa_size;
+            b4.appendChild(b4i);
+            d.appendChild(b4);
+
             let b3 = document.createElement("button");
             b3.className = button_class;
             b3.title = "Remove";
@@ -174,7 +184,6 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
         return this.#dom;
     }
-
 
     // _create_dom_labelled_input(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement), label_first:boolean=true, hide_label:boolean=false) {
     //     let dom = document.createElement("div");
@@ -248,6 +257,13 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         this.#map.fitBounds(group.getBounds(), {
             padding: [20, 20]
         });
+    }
+
+
+    show_help() {
+        //XXX: Implement this per inherited feature
+        //XXX: Explicitly do use "base" key for the base feature
+        window.neuron_map.show_map_help(true);
     }
 
     remove_feature() {

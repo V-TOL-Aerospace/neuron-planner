@@ -3,6 +3,7 @@ import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfa
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
 import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
+import { NeuronHelp } from "./neuron_help";
 
 export interface NeuronFeaturePolygonData {
     version:string,
@@ -14,6 +15,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     static override NAME = "[POLYGON FEATURE]";
     static override TYPE = "NeuronFeaturePolygon";
     static override VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
+    static override HELP_KEY = 'polygon';
 
     #show_corners:boolean
 
@@ -271,6 +273,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
     #export_as_kmz() {
         kmz_download_from_neuron_data([], [this.get_corners_as_points()]);
+    }
+
+    override show_help() {
+        window.neuron_map.show_map_help(true, `${NeuronHelp.HELP_PREFIX_MISSION}-${NeuronFeaturePolygon.HELP_KEY}`);
     }
 
     override remove_feature() {
