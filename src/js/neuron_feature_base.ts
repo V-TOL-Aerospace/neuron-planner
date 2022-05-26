@@ -115,6 +115,9 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         t.appendChild(document.createTextNode(text));
         title.appendChild(t);
 
+        let d = document.createElement("div");
+        d.className = 'mission-feature-title-button-container';
+
         this.#dom_buttons_visibility = [];
         for(const button_class of NeuronFeatureBase._button_sizes) {
             const fa_size = this.#get_button_size_class(button_class);
@@ -126,13 +129,13 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             let b0i = document.createElement("i");
             b0i.className = 'fas fa-location-crosshairs' + fa_size;
             b0.appendChild(b0i);
-            title.appendChild(b0);
+            d.appendChild(b0);
 
             let bv = document.createElement("button");
             bv.className = button_class;
             bv.title = "Toggle feature visibility";
             bv.onclick = this.toggle_visibility.bind(this);
-            title.appendChild(bv);
+            d.appendChild(bv);
             this.#dom_buttons_visibility.push(bv);
 
             let b1 = document.createElement("button");
@@ -142,7 +145,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             let b1i = document.createElement("i");
             b1i.className = 'fas fa-arrow-up' + fa_size;
             b1.appendChild(b1i);
-            title.appendChild(b1);
+            d.appendChild(b1);
 
             let b2 = document.createElement("button");
             b2.className = button_class;
@@ -151,7 +154,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             let b2i = document.createElement("i");
             b2i.className = 'fas fa-arrow-down' + fa_size;
             b2.appendChild(b2i);
-            title.appendChild(b2);
+            d.appendChild(b2);
 
             let b3 = document.createElement("button");
             b3.className = button_class;
@@ -160,8 +163,9 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             let b3i = document.createElement("i");
             b3i.className = 'fas fa-close' + fa_size;
             b3.appendChild(b3i);
-            title.appendChild(b3);
+            d.appendChild(b3);
         }
+        title.appendChild(d);
 
         this.#update_visibility_icons();
         this.#update_visibility_dom();

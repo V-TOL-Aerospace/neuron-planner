@@ -11,7 +11,9 @@ import '@fortawesome/fontawesome-free/js/brands'
 import "../css/theme.css";  //XXX: Load this first so other definitions can use it
 import "../css/index.css";
 import "../css/map.css";
+import "../css/stats_options.css";
 import "../css/plan.css";
+import "../css/brief.css";
 import "../css/responsive.css"; //XXX: Load this last so it gets applied after all other definitions
 
 import { NeuronBrief } from './neuron_brief';
