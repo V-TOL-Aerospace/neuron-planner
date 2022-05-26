@@ -1,4 +1,5 @@
 :root {
     --theme-bg: #FFFFFF;
     --theme-bg-border: #505050;
+    --theme-highlight: rgba(50,50,255,0.3);
 }

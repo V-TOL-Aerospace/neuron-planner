@@ -65,6 +65,8 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             this.#marker.on("dblclick", this.#remove_point_by_event.bind(this));
 
             const menu_items = [
+                new LeafletContextMenuItem("Show in plan", "fa-bars", this.show_on_plan.bind(this)),
+                null,
                 new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
             ]
             this.#marker.bindPopup(create_popup_context_dom("Waypoint", menu_items, this.#marker));
@@ -73,6 +75,22 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         }
 
         this.#internal_set_point(point);
+    }
+
+    show_on_plan() {
+        if(this.#dom) {
+            this.#dom.scrollIntoView();
+            this.#dom.classList.remove('mission-feature-highlight-remove');
+            this.#dom.classList.add('mission-feature-highlight');
+            setTimeout(this.#remove_dom_highlight.bind(this), 1000);
+        }
+    }
+
+    #remove_dom_highlight() {
+        if(this.#dom) {
+            this.#dom.classList.remove('mission-feature-highlight');
+            this.#dom.classList.add('mission-feature-highlight-remove');
+        }
     }
 
     #internal_set_point(point:NeuronInterfacePoint, update_marker:boolean = true, update_dom:boolean=true) {

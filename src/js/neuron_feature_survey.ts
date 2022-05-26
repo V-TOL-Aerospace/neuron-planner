@@ -137,6 +137,22 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#unsub_option_cb = NeuronOptions.add_callback(this.#options_changed.bind(this));
     }
 
+    override show_on_plan() {
+        if(this.#dom) {
+            this.#dom.scrollIntoView();
+            this.#dom.classList.remove('mission-feature-highlight-remove');
+            this.#dom.classList.add('mission-feature-highlight');
+            setTimeout(this.#remove_dom_highlight.bind(this), 1000);
+        }
+    }
+
+    #remove_dom_highlight() {
+        if(this.#dom) {
+            this.#dom.classList.remove('mission-feature-highlight');
+            this.#dom.classList.add('mission-feature-highlight-remove');
+        }
+    }
+
     set_options_subscriber() {
         if(this.#unsub_option_cb)
             this.#unsub_option_cb();

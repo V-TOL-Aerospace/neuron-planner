@@ -150,6 +150,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         })
 
         const menu_items = [
+            new LeafletContextMenuItem("Show in plan", "fa-bars", this.show_on_plan.bind(this)),
+            null,
             new LeafletContextMenuItem("Move forward", "fa-arrow-left", this.move_corner_forwards.bind(this)),
             new LeafletContextMenuItem("Move backward", "fa-arrow-right", this.move_corner_backwards.bind(this)),
             null,
@@ -167,6 +169,22 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
         if(update_polygon)
             this.update_polygon();
+    }
+
+    show_on_plan() {
+        if(this.#dom) {
+            this.#dom.scrollIntoView();
+            this.#dom.classList.remove('mission-feature-highlight-remove');
+            this.#dom.classList.add('mission-feature-highlight');
+            setTimeout(this.#remove_dom_highlight.bind(this), 1000);
+        }
+    }
+
+    #remove_dom_highlight() {
+        if(this.#dom) {
+            this.#dom.classList.remove('mission-feature-highlight');
+            this.#dom.classList.add('mission-feature-highlight-remove');
+        }
     }
 
     add_corners(corners:NeuronInterfacePoint[]=[]) {

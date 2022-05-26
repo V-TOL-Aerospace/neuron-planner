@@ -32,8 +32,19 @@
     margin-bottom: 0.25em;
     margin-left: 0.5em;
     margin-right: 0.5em;
+    scroll-margin: 0.25em;
     padding: 0.5em;
     box-shadow: 4px 4px 4px #888888;
+}
+
+.mission-feature-highlight {
+    background-color: var(--theme-highlight);
+    transition: 250ms linear all;
+}
+
+.mission-feature-highlight-remove {
+    background-color: inherit;
+    transition: 250ms linear all;
 }
 
 .mission-feature-hidden {

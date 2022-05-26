@@ -115,7 +115,7 @@ body {
 }
 
 .help-highlight {
-    background-color: rgba(50,50,255,0.3);
+    background-color: var(--theme-highlight);
 }
 
 body{counter-reset: section}
