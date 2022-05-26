@@ -31671,7 +31671,6 @@ class NeuronMap {
             __classPrivateFieldGet(this, _NeuronMap_planner, "f").add_mission_item(p);
         }
     }
-    //TODO: Check path option if we should hide or show it!
     update_path() {
         if (__classPrivateFieldGet(this, _NeuronMap_path, "f")) {
             const show = _neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptions.get_option_boolean(_neuron_options__WEBPACK_IMPORTED_MODULE_5__.NeuronOptionsBoolean.SHOW_PATH);
