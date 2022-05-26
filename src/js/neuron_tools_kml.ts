@@ -48,7 +48,7 @@ export async function kmx_load_file(file:Blob, cb_file_loaded:CallableFunction) 
         }
     }
 
-    console.log(result);
+    // console.log(result);
     cb_file_loaded(result);
 }
 
