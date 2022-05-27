@@ -1,11 +1,12 @@
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
 import { NeuronUID } from "./neuron_tools_common";
 
-//XXX: Keep in sync with NeuronStatistics #stat_options
+//XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsBoolean {
     SHOW_PATH,
 }
 
+//XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsNumber {
     MISSION_SPEED,
     CAMERA_FOCAL_LENGTH,
@@ -15,8 +16,20 @@ export enum NeuronOptionsNumber {
     CAMERA_SENSOR_HEIGHT,
 }
 
+//XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsString {
     CAMERA_NAME,
+}
+
+export interface NeuronOptionsData {
+    SHOW_PATH:boolean,
+    MISSION_SPEED:number,
+    CAMERA_FOCAL_LENGTH:number,
+    CAMERA_IMAGE_WIDTH:number,
+    CAMERA_IMAGE_HEIGHT:number,
+    CAMERA_SENSOR_WIDTH:number,
+    CAMERA_SENSOR_HEIGHT:number,
+    CAMERA_NAME:string,
 }
 
 export class NeuronOptions {
@@ -115,4 +128,30 @@ export class NeuronOptions {
             this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT)
         );
     }
+
+    static as_json() {
+        return <NeuronOptionsData>{
+            SHOW_PATH: this.get_option_boolean(NeuronOptionsBoolean.SHOW_PATH),
+            MISSION_SPEED: this.get_option_number(NeuronOptionsNumber.MISSION_SPEED),
+            CAMERA_FOCAL_LENGTH: this.get_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH),
+            CAMERA_SENSOR_WIDTH: this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH),
+            CAMERA_SENSOR_HEIGHT: this.get_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT),
+            CAMERA_IMAGE_WIDTH: this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH),
+            CAMERA_IMAGE_HEIGHT: this.get_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT),
+            CAMERA_NAME: this.get_option_string(NeuronOptionsString.CAMERA_NAME),
+        };
+    }
+
+    static load(j:NeuronOptionsData) {
+        this.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, Boolean(j.SHOW_PATH), false, false);
+        this.set_option_number(NeuronOptionsNumber.MISSION_SPEED, Number.isNaN(j.MISSION_SPEED) ? 0 : j.MISSION_SPEED, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_FOCAL_LENGTH, Number.isNaN(j.CAMERA_FOCAL_LENGTH) ? 0 : j.CAMERA_FOCAL_LENGTH, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_WIDTH, Number.isNaN(j.CAMERA_IMAGE_WIDTH) ? 0 : j.CAMERA_IMAGE_WIDTH, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_IMAGE_HEIGHT, Number.isNaN(j.CAMERA_IMAGE_HEIGHT) ? 0 : j.CAMERA_IMAGE_HEIGHT, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_WIDTH, Number.isNaN(j.CAMERA_SENSOR_WIDTH) ? 0 : j.CAMERA_SENSOR_WIDTH, false, false);
+        this.set_option_number(NeuronOptionsNumber.CAMERA_SENSOR_HEIGHT, Number.isNaN(j.CAMERA_SENSOR_HEIGHT) ? 0 : j.CAMERA_SENSOR_HEIGHT, false, false);
+        this.set_option_string(NeuronOptionsString.CAMERA_NAME, j.CAMERA_NAME.toString(), false, false);
+
+        this.#handle_callbacks(true, true);
+    };
 }

@@ -355,10 +355,6 @@ export class NeuronStatistics extends NeuronDOMFactory {
         button.appendChild(i);
     }
 
-    //TODO: From JSON!
-
-    //TODO: To JSON!
-
     reset() {
         this.#gen_dom();
 

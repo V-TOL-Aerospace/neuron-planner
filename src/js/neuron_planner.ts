@@ -8,6 +8,7 @@ import { kml_download_from_neuron_data, kmx_load_file, NeuronKMLData } from "./n
 import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./leaflet_interface"
 import { NeuronFeaturePoint } from "./neuron_feature_point";
+import { NeuronOptions, NeuronOptionsData } from "./neuron_options";
 // import { NeuronOptions } from "./neuron_options";
 
 export type MissionFeatureData = (
@@ -25,10 +26,11 @@ export type MissionFeature = (
 );
 
 export interface NeuronPlannerMissionData {
-    version:string,
-    type:string,
-    mission_items:MissionFeatureData[]  //
-    waypoints: NeuronInterfacePointData[]
+    version:string;
+    type:string;
+    settings:NeuronOptionsData;
+    mission_items:MissionFeatureData[],
+    waypoints: NeuronInterfacePointData[];
 }
 
 export interface MissionBrief {
@@ -101,6 +103,9 @@ export class NeuronPlanner {
         if(!NeuronPlanner.isObjectOfDataType(j))
             throw new Error("Invalid version during import of NeuronPlannerMissionData");
 
+        if(j.settings)
+            NeuronOptions.load(j.settings);
+
         if(j.mission_items && j.mission_items.length) {
             this.#add_mission_features_from_json(j.mission_items);
         } else if(j.waypoints && j.waypoints.length) {
@@ -164,10 +169,32 @@ export class NeuronPlanner {
         this.add_mission_items(features);
     }
 
+    #add_point_features_from_json(points:NeuronInterfacePointData[]) {
+        let features:NeuronFeatureBase[] = [];
+
+        for(const item of points) {
+            let feature:NeuronFeatureBase = null;
+
+            if(NeuronInterfacePoint.isObjectOfDataType(item)) {
+                const point = NeuronInterfacePoint.from_json(item);
+                feature = new NeuronFeaturePoint(this.#map.get_leaflet_map(), point);
+            } else {
+                console.warn("Unable to import waypoint item");
+                console.warn(item);
+            }
+
+            if(feature)
+                features.push(feature);
+        }
+
+        this.add_mission_items(features);
+    }
+
     async save_mission_file() {
         let j:NeuronPlannerMissionData = {
             version: NeuronPlanner.VERSION,
             type: NeuronPlanner.TYPE,
+            settings: NeuronOptions.as_json(),
             mission_items: this.get_mission_as_json(),
             waypoints: this.get_mission_as_points().map(x => x.to_json())
         }
