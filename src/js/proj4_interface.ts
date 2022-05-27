@@ -80,7 +80,7 @@ export class UTMPos {
         );
 
         //p given as [lng, lat]
-        return new NeuronInterfacePoint(p[1], p[0], 0.0, this.tag);
+        return new NeuronInterfacePoint(p[1], p[0], 0.0, 0.0, this.tag);
     }
 
     /**

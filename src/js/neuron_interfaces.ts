@@ -9,6 +9,7 @@ export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;
     altitude:number;
+    heading:number;
     tag:string;
 }
 
@@ -16,12 +17,14 @@ export class NeuronInterfacePoint {
     latitude: number;
     longitude: number;
     altitude:number;
+    heading:number;
     tag:string;
 
-    constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0, tag:string="") {
+    constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0, heading:number=0.0, tag:string="") {
         this.latitude = latitude;
         this.longitude = longitude;
         this.altitude = altitude;
+        this.heading = heading;
         this.tag = tag;
     }
 
@@ -32,7 +35,8 @@ export class NeuronInterfacePoint {
     equals(other:NeuronInterfacePoint) {
         return this.latitude == other.latitude &&
                this.longitude == other.longitude &&
-               this.altitude == other.altitude;
+               this.altitude == other.altitude &&
+               this.heading == other.heading;
     }
 
     to_leaflet() {
@@ -69,7 +73,7 @@ export class NeuronInterfacePoint {
         if(!NeuronInterfacePoint.isObjectOfDataType(j))
             throw new Error(`Invalid type check during creation of NeuronInterfacePoint`);
 
-        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude, j.tag.toString());
+        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude, j.heading, j.tag.toString());
     }
 
     to_json() {
@@ -77,6 +81,7 @@ export class NeuronInterfacePoint {
             latitude: this.latitude,
             longitude: this.longitude,
             altitude:this.altitude,
+            heading:this.heading,
             tag:this.tag,
         }
     }

@@ -12,7 +12,7 @@ export interface NeuronFeaturePointData {
 export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override NAME = "Waypoint";
     static override TYPE = "NeuronFeaturePoint";
-    static override VERSION = '66102a60-d243-11ec-8c53-d9ce4e8a3b58';
+    static override VERSION = '8d4da180-dd50-11ec-b376-8d28c5e9d4d0';
     static override HELP_KEY = 'waypoint';
 
     #marker:L.Marker;
@@ -21,6 +21,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #dom_lat:HTMLInputElement;
     #dom_lon:HTMLInputElement;
     #dom_alt:HTMLInputElement;
+    #dom_hdg:HTMLInputElement;
 
     constructor(map:L.Map, point:NeuronInterfacePoint=null) {
         super(map);
@@ -30,6 +31,8 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         this.#dom = null;
         this.#dom_lat = null;
         this.#dom_lon = null;
+        this.#dom_alt = null;
+        this.#dom_hdg = null;
 
         if(point)
             this.set_point(point);
@@ -108,6 +111,9 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
             if(this.#dom_alt)
                 this.#dom_alt.value = (point.altitude / NeuronFeatureBase._altitude_ratio).toString();
+
+            if(this.#dom_hdg)
+                this.#dom_hdg.value = point.heading.toString();
         }
 
         this._trigger_on_changed();
@@ -130,6 +136,13 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #update_altitude_from_dom() {
         if(this.#point)
             this.#point.altitude = this.#dom_alt.valueAsNumber * NeuronFeatureBase._altitude_ratio;
+
+        this.#internal_set_point(this.#point, true, false);
+    }
+
+    #update_heading_from_dom() {
+        if(this.#point)
+            this.#point.heading = this.#dom_hdg.valueAsNumber;
 
         this.#internal_set_point(this.#point, true, false);
     }
@@ -173,6 +186,12 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             this.#dom_alt.title = t2;
             c.appendChild(this._create_dom_label("Altitude:", this.#dom_alt, t2));
             c.appendChild(this.#dom_alt);
+
+            const t3 = "Heading for the waypoint in degrees relative to North";
+            this.#dom_hdg = this._create_dom_input_number((this.#point ? this.#point.heading : 0.0), this.#update_heading_from_dom.bind(this), -180, 180);
+            this.#dom_hdg.title = t3;
+            c.appendChild(this._create_dom_label("Heading:", this.#dom_hdg, t3));
+            c.appendChild(this.#dom_hdg);
 
             this.#dom.append(c);
         }
