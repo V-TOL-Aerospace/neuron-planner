@@ -388,27 +388,33 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         }
 
         if(this.#dom_photo_count) {
-            let count = "---";
-            let projection = NeuronOptions.get_camera().get_projected_size(this.#altitude);
+            let count = this.get_image_count();
+            this.#dom_photo_count.value = count > 0 ? count.toString() : "---";
+        }
+    }
 
-            if(projection && (this.#overlap >= 0) && (this.#overlap <= 1)) {
-                const overlap_factor = 1 - this.#overlap;
-                const photo_distance = Math.abs(projection.Height())*overlap_factor;
+    get_image_count() {
+        let count = null;
+        let projection = NeuronOptions.get_camera().get_projected_size(this.#altitude);
 
-                let photo_count = 0;
-                for(const lane of this.get_lane_coords()) {
-                    const ps = lane.start.to_UTM();
-                    const pe = lane.end.to_UTM(ps.zone);
+        if(projection && (this.#overlap >= 0) && (this.#overlap <= 1)) {
+            let photo_count = 0;
 
-                    const lane_distance = ps.GetDistance2D(pe);
-                    photo_count += Math.ceil(lane_distance / photo_distance);
-                }
+            const overlap_factor = 1 - this.#overlap;
+            const photo_distance = Math.abs(projection.Height())*overlap_factor;
 
-                count = photo_count.toString();
+            for(const lane of this.get_lane_coords()) {
+                const ps = lane.start.to_UTM();
+                const pe = lane.end.to_UTM(ps.zone);
+
+                const lane_distance = ps.GetDistance2D(pe);
+                photo_count += Math.ceil(lane_distance / photo_distance);
             }
 
-            this.#dom_photo_count.value = count;
+            count = photo_count;
         }
+
+        return count;
     }
 
     #update_show_corners_from_dom() {
@@ -556,6 +562,48 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Show ends:", this.#dom_show_waypoints, t2));
             c.appendChild(this.#dom_show_waypoints);
 
+
+            //=====================================
+            //Capture calculations
+            //=====================================
+            const tb2 = "Image capture configuration and calculations for survey parameters.";
+            let dom_break2 = this._create_dom_output();
+            dom_break2.title = tb2;
+            let dom_break_label2 = this._create_dom_label("Capture Config.", dom_break2, tb2)
+            dom_break_label2.classList.add('mission-feature-content-subtitle');
+            c.appendChild(dom_break_label2);
+            c.appendChild(dom_break2);
+
+            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
+            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
+            this.#dom_ground_resolution.title = t18;
+            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
+            c.appendChild(this.#dom_ground_resolution);
+
+            const t17 = "Image vertical overlap between lanes as a percentage";
+            this.#dom_overlap = this._create_dom_input_number(this.#overlap / NeuronFeatureSurvey._xlap_ratio, this.#update_overlap_from_dom.bind(this), 0, 100);
+            this.#dom_overlap.title = t17;
+            c.appendChild(this._create_dom_label("Overlap:", this.#dom_overlap, t17));
+            c.appendChild(this.#dom_overlap);
+
+            const t19 = "Image horizontal overlap between lanes as a percentage";
+            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._xlap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
+            this.#dom_sidelap.title = t19;
+            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t19));
+            c.appendChild(this.#dom_sidelap);
+
+            //=====================================
+            //Flight calculations
+            //=====================================
+            const tb1 = "Flight path parameter configuration and calculations for the survey.";
+            let dom_break1 = this._create_dom_output();
+            dom_break1.title = tb1;
+            let dom_break_label1 = this._create_dom_label("Path Config.", dom_break1, tb1)
+            dom_break_label1.classList.add('mission-feature-content-subtitle');
+            c.appendChild(dom_break_label1);
+            c.appendChild(dom_break1);
+
+
             const t3 = "Altitude for the survey in feet relative to take-off location ground level";
             this.#dom_altitude = this._create_dom_input_number(this.#altitude / NeuronFeatureSurvey._altitude_ratio, this.#update_altitude_from_dom.bind(this));
             this.#dom_altitude.title = t3;
@@ -626,35 +674,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_minLaneSeparation.title = t10;
             c.appendChild(this._create_dom_label("Lane Skip:", this.#dom_minLaneSeparation, t10));
             c.appendChild(this.#dom_minLaneSeparation);
-
-            //=====================================
-            //Camera calculations
-            //=====================================
-            const tb2 = "Image capture configuration and calculations for survey parameters.";
-            let dom_break2 = this._create_dom_output();
-            dom_break2.title = tb2;
-            let dom_break_label2 = this._create_dom_label("Capture Config.", dom_break2, tb2)
-            dom_break_label2.classList.add('mission-feature-content-subtitle');
-            c.appendChild(dom_break_label2);
-            c.appendChild(dom_break2);
-
-            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
-            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
-            this.#dom_ground_resolution.title = t18;
-            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
-            c.appendChild(this.#dom_ground_resolution);
-
-            const t17 = "Image vertical overlap between lanes as a percentage";
-            this.#dom_overlap = this._create_dom_input_number(this.#overlap / NeuronFeatureSurvey._xlap_ratio, this.#update_overlap_from_dom.bind(this), 0, 100);
-            this.#dom_overlap.title = t17;
-            c.appendChild(this._create_dom_label("Overlap:", this.#dom_overlap, t17));
-            c.appendChild(this.#dom_overlap);
-
-            const t19 = "Image horizontal overlap between lanes as a percentage";
-            this.#dom_sidelap = this._create_dom_input_number(this.#sidelap / NeuronFeatureSurvey._xlap_ratio, this.#update_sidelap_from_dom.bind(this), 0, 100);
-            this.#dom_sidelap.title = t19;
-            c.appendChild(this._create_dom_label("Sidelap:", this.#dom_sidelap, t19));
-            c.appendChild(this.#dom_sidelap);
 
             //Try go back now and calculate other values if relevant
             this.#calculate_and_update_capture_variables();

@@ -6,13 +6,14 @@ import { NeuronHelp } from "./neuron_help";
 export interface NeuronFeaturePointData {
     version:string,
     type:string,
-    point:NeuronInterfacePointData
+    point:NeuronInterfacePointData,
+    wait_duration:number,
 }
 
 export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override NAME = "Waypoint";
     static override TYPE = "NeuronFeatureWaypoint";
-    static override VERSION = '8d4da180-dd50-11ec-b376-8d28c5e9d4d0';
+    static override VERSION = 'a8bc5a60-dd6e-11ec-bef2-1be7bc5596a6';
     static override HELP_KEY = 'waypoint';
 
     #marker:L.Marker;
@@ -22,6 +23,9 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #dom_lon:HTMLInputElement;
     #dom_alt:HTMLInputElement;
     #dom_hdg:HTMLInputElement;
+    #dom_wait:HTMLInputElement;
+
+    #wait_duration:number;
 
     constructor(map:L.Map, point:NeuronInterfacePoint=null) {
         super(map);
@@ -33,6 +37,9 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         this.#dom_lon = null;
         this.#dom_alt = null;
         this.#dom_hdg = null;
+        this.#dom_wait = null;
+
+        this.#wait_duration = 0;
 
         if(point)
             this.set_point(point);
@@ -119,32 +126,47 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         this._trigger_on_changed();
     }
 
+    get_wait_duration() {
+        return this.#wait_duration;
+    }
+
+    set_wait_duration(wait_duration:number) {
+        this.#wait_duration = wait_duration;
+
+        if(this.#dom_wait)
+            this.#dom_wait.value = this.#wait_duration.toString();
+    }
+
     #update_latitude_from_dom() {
-        if(this.#point)
+        if(this.#point && this.#dom_lat)
             this.#point.latitude = this.#dom_lat.valueAsNumber;
 
         this.#internal_set_point(this.#point, true, false);
     }
 
     #update_longitude_from_dom() {
-        if(this.#point)
+        if(this.#point && this.#dom_lon)
             this.#point.longitude = this.#dom_lon.valueAsNumber;
 
         this.#internal_set_point(this.#point, true, false);
     }
 
     #update_altitude_from_dom() {
-        if(this.#point)
+        if(this.#point && this.#dom_alt)
             this.#point.altitude = this.#dom_alt.valueAsNumber * NeuronFeatureBase._altitude_ratio;
 
         this.#internal_set_point(this.#point, true, false);
     }
 
     #update_heading_from_dom() {
-        if(this.#point)
+        if(this.#point && this.#dom_hdg)
             this.#point.heading = this.#dom_hdg.valueAsNumber;
 
         this.#internal_set_point(this.#point, true, false);
+    }
+
+    #update_wait_duration_from_dom() {
+        this.#wait_duration = this.#dom_wait.valueAsNumber;
     }
 
     override show_help() {
@@ -193,6 +215,12 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             c.appendChild(this._create_dom_label("Heading:", this.#dom_hdg, t3));
             c.appendChild(this.#dom_hdg);
 
+            const t4 = "Duration in seconds for the aircraft to hold position at the waypoint";
+            this.#dom_wait = this._create_dom_input_number(this.#wait_duration, this.#update_wait_duration_from_dom.bind(this), 0);
+            this.#dom_wait.title = t4;
+            c.appendChild(this._create_dom_label("Wait:", this.#dom_wait, t4));
+            c.appendChild(this.#dom_wait);
+
             this.#dom.append(c);
         }
 
@@ -213,7 +241,9 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             throw new Error(`Invalid type check during creation of NeuronFeaturePoint`);
 
         const point = NeuronInterfacePoint.from_json(j.point);
-        return new NeuronFeatureWaypoint(map, point);
+        const p = new NeuronFeatureWaypoint(map, point);
+        p.set_wait_duration(j.wait_duration);
+        return p;
     }
 
     override to_json() {
@@ -221,7 +251,8 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         return <NeuronFeaturePointData>{
             version: NeuronFeatureWaypoint.VERSION,
             type: NeuronFeatureWaypoint.TYPE,
-            point: this.#point.to_json()
+            point: this.#point.to_json(),
+            wait_duration: this.#wait_duration,
         }
     }
 }
