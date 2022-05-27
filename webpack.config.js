@@ -3,7 +3,14 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
   mode: 'development',
-  entry: './src/js/index.ts',
+  // entry: './src/js/index.ts',
+  entry: {
+    index: {
+      import: './src/js/index.ts',
+      dependOn: 'libs'
+    },
+    libs: ['proj4', 'leaflet', '@zip.js/zip.js', '@fortawesome/fontawesome-free/js/fontawesome', '@fortawesome/fontawesome-free/js/solid'],
+  },
   devtool: 'source-map',
   devServer: {
     static: {
@@ -36,7 +43,7 @@ module.exports = {
     extensions: ['.tsx', '.ts', '.js'],
   },
   output: {
-    filename: 'bundle.js',
+    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [

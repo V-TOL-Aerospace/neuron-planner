@@ -3,10 +3,11 @@ import { NeuronInterfacePoint } from './neuron_interfaces';
 import { NeuronPlanner } from './neuron_planner';
 import { NeuronMap } from './neuron_map';
 
+//TODO: https://www.skovy.dev/blog/tree-shaking-font-awesome?seed=tnv79i
 import '@fortawesome/fontawesome-free/js/fontawesome'
 import '@fortawesome/fontawesome-free/js/solid'
-import '@fortawesome/fontawesome-free/js/regular'
-import '@fortawesome/fontawesome-free/js/brands'
+// import '@fortawesome/fontawesome-free/js/regular'
+// import '@fortawesome/fontawesome-free/js/brands'
 
 import "../css/theme.css";  //XXX: Load this first so other definitions can use it
 import "../css/index.css";
