@@ -34,6 +34,8 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #capture_image:boolean;
     #ground_resolution:number;
 
+    #unsub_option_cb:CallableFunction;
+
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
 
     constructor(map:L.Map, point:NeuronInterfacePoint=null) {
@@ -56,6 +58,24 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
         if(point)
             this.set_point(point);
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.#options_changed.bind(this));
+    }
+
+    set_options_subscriber() {
+        if(this.#unsub_option_cb)
+            this.#unsub_option_cb();
+
+        this.#unsub_option_cb = NeuronOptions.add_callback(this.#options_changed.bind(this));
+    }
+
+    #options_changed() {
+        //Give preference to update altitude from current ground resolution if we're capturing an image
+        if(this.#capture_image) {
+            this.set_ground_resolution(this.#ground_resolution);
+        } else {
+            this.#internal_set_point(this.#point, false, false, true);  //Only use this to trigger calcs, don't update other marker details
+        }
     }
 
     remove_point_by_context(context:L.Marker) {

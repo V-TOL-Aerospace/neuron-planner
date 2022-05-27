@@ -224,7 +224,7 @@
                                     <li>Capture: Instructs the aircraft to capture an image when arriving at the waypoint.</li>
                                     <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
                                 </ul>
-                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the waypoint properties are adjusted.</p>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the waypoint properties are adjusted. Adjusting camera parameters will update ground resolution from current altitude if "Capture" is disabled, or will update altitude from current ground resolution if "Capture" is enabled. The ground resolution can be calculated by manually setting the altitude, and vice versa.</p>
                                 <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
                             </section>
                             <section id="help-fp-mission-polygon">
@@ -266,7 +266,7 @@
                                     <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>
                                     <li>Overlap: Amount of overlap in the imagery that will be captured between sequential images. Typically, photogrammetry software requires a overlap greater than 50% to perform accurate stitching.</li>
                                 </ul>
-                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the survey properties are adjusted. As such, the imagery capture requirements can be used to cross check survey outcomes after adjusting the survey to meet flight limitations.</p>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the survey properties are adjusted. The current ground resolution is always used to calculate the required altitude based on the camera configuration, and spacing settings are always calculated based off of the cameras projected area based on the calculated altitude and current sidelap. The ground resolution can be calculated by manually setting the altitude, and the sidelap can be calculated by manually setting the lane spacing.</p>
                             </section>
                         </section>
                     </section>
