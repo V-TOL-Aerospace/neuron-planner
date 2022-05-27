@@ -60,6 +60,15 @@ export class NeuronDOMFactory {
         return dom;
     }
 
+    _create_dom_input_textbox(value:string, on_change:any) {
+        let dom = document.createElement("input");
+        dom.type = "text";
+        dom.value = value.toString();
+        dom.className = `${this.#prefix}-content-value`;
+        dom.onchange = on_change;
+        return dom;
+    }
+
     _create_dom_input_number(value:number, on_change:any, min:number = null, max:number = null, step:number=null) {
         let dom = document.createElement("input");
         dom.type = "number";

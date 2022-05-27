@@ -8,11 +8,20 @@ import 'leaflet/dist/leaflet.css';
 
 // delete L.Icon.Default.prototype._getIconUrl;
 //XXX: Fix the image paths loaded by leaflet
-L.Icon.Default.mergeOptions({
+
+const default_icon_options = {
     iconUrl: require('leaflet/dist/images/marker-icon.png'),
     shadowUrl: require('leaflet/dist/images/marker-shadow.png'),
     iconRetinaUrl: require('leaflet/dist/images/marker-icon-2x.png'),
-});
+}
+L.Icon.Default.mergeOptions(default_icon_options);
+
+export function get_neuron_icon(class_name:string) {
+    return new L.Icon({
+        ...L.Icon.Default.prototype.options,
+        className: class_name
+    });
+}
 
 //require('leaflet/dist/images/layers.png')
 //require('leaflet/dist/images/layers-2x.png')

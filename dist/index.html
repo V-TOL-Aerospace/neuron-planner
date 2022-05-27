@@ -101,21 +101,21 @@
                             <h3>Zoom To Fit</h3>
                             <p>Zooms and pans the <a href="#help-fp-map-interactive">Interactive Map</a> to fit all of the mission features in view.</p>
                         </section>
-                        <section id="help-fp-draw-create-waypoint">
-                            <h3>Create Waypoint</h3>
-                            <p>Creates a waypoint feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
-                            <p>See the <a href="#help-fp-mission-waypoint">Waypoint</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
+                        <section id="help-fp-draw-create-point">
+                            <h3>Create Point</h3>
+                            <p>Creates a point feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
+                            <p>See the <a href="#help-fp-mission-point">Point</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
                         </section>
                         <section id="help-fp-draw-create-polygon">
                             <h3>Create Polygon</h3>
                             <p>Creates a polygon feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
                             <p>See the <a href="#help-fp-mission-polygon">Polygon</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
                         </section>
-                        <section id="help-fp-draw-create-survey">
+                        <!-- <section id="help-fp-draw-create-survey">
                             <h3>Create Survey</h3>
                             <p>Creates a survey feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
                             <p>See the <a href="#help-fp-mission-survey">Survey</a> in the <a href="#help-fp-mission">Mission Plan</a> section for more information about this mission feature.</p>
-                        </section>
+                        </section> -->
                         <section id="help-fp-draw-load-file">
                             <h3>Import File</h3>
                             <p>Imports mission features from supported files and adds them to the mission plan.</p>
@@ -199,6 +199,17 @@
                             <p>The mission plan lists all of the mission features that are part of the current mission. </p>
                             <p>Each feature is listed in order of execution, which can be adjusted with the up (<i class="fas fa-arrow-up"></i>) and down (<i class="fas fa-arrow-down"></i>) arrows at the top-right of the specific mission feature. A mission feature can be removed by pressing the cross (<i class="fas fa-close"></i>) button, noting that this will immediately discard this feature. Help for each mission feature can shown by pressing the help (<i class="fas fa-question"></i>) button.</p>
                             <p>An identifier (<i class="fas fa-location-crosshairs"></i>) button is present on each feature. Pressing this button will cause the <a href="#help-fp-map-interactive">Interactive Map</a> to pan and zoom such that the specified mission feature is in the center of view. The map visibility of each feature can also be toggled using the visibility (<i class="fas fa-eye"></i>) button, causing the feature to be shown or hidden on the map display. Note that the mission paths for a feature will remain visible for even if the feature is hidden.</p>
+                            <section id="help-fp-mission-point">
+                                <h4>Point</h4>
+                                <p>The point feature is a non-flyable mission feature that can be converted into other mission features. It acts as a point marker for a location of interest.</p>
+                                <p>It has the following properties:</p>
+                                <ul>
+                                    <li>Latitude: The latitude of the waypoint.</li>
+                                    <li>Longitude: The longitude of the waypoint.</li>
+                                    <li>Altitude: The altitude of the waypoint relative to ground level at the take-off location.</li>
+                                </ul>
+                                <p>The point marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
+                            </section>
                             <section id="help-fp-mission-waypoint">
                                 <h4>Waypoint</h4>
                                 <p>The waypoint feature acts as a simple "go-to" location for the aircraft to fly towards and pass through during the flight plan.</p>
@@ -207,6 +218,7 @@
                                     <li>Latitude: The latitude of the waypoint.</li>
                                     <li>Longitude: The longitude of the waypoint.</li>
                                     <li>Altitude: The altitude of the waypoint relative to ground level at the take-off location.</li>
+                                    <li>Heading: The heading of the aircraft relative to North that should be achieved at this waypoint.</li>
                                 </ul>
                                 <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
                             </section>
@@ -279,9 +291,11 @@
     </div>
     <div id="fp-draw" class="fp-user-buttons-frame">
         <button type="button" id="fp-draw-fit-mission" class="fp-user-buttons" onclick="window.neuron_planner.fit_mission_on_map()" title="Zoom To Fit"><i class="fas fa-minimize"></i><span class="fp-long-name">Zoom To Fit</span></button>
-        <button type="button" id="fp-draw-create-waypoint" class="fp-user-buttons" onclick="window.neuron_map.create_waypoint_in_view()" title="Insert Waypoint"><i class="fas fa-location-dot"></i><span class="fp-long-name">Create Waypoint</span></button>
+        <button type="button" id="fp-draw-create-point" class="fp-user-buttons" onclick="window.neuron_map.create_point_in_view()" title="Insert Point"><i class="fas fa-location-dot"></i><span class="fp-long-name">Create Point</span></button>
         <button type="button" id="fp-draw-create-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Create Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Create Polygon</span></button>
-        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="Create Survey"><i class="fas fa-hashtag"></i><span class="fp-long-name">Create Survey</span></button>
+        <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="" disabled>
+            <!-- <i class="fas fa-hashtag"></i><span class="fp-long-name">Create Survey</span> -->
+        </button>
         <!-- <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button> -->
         <button type="button" id="fp-draw-load-file" class="fp-user-buttons"  onclick="document.getElementById('fp-draw-load-file-sub').click();" title="Import File"><i class="fas fa-file-import"></i><span class="fp-long-name">Import File</span></button>
         <input type="file" style="display:none;" id="fp-draw-load-file-sub" onchange="window.neuron_planner.import_features_from_files(this.files)" multiple accept="application/vnd.google-earth.kml+xml, application/vnd.google-earth.kmz, .kml, .kmz"/>

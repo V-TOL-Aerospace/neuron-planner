@@ -1,6 +1,6 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
+import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./leaflet_interface";
 import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";
@@ -147,6 +147,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         let m = L.marker([corner.latitude, corner.longitude], {
             draggable: true,
             autoPan: true,
+            icon: get_neuron_icon('neuron-marker-corner')
         })
 
         const menu_items = [
@@ -286,11 +287,11 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #export_as_kml() {
-        kmz_download_from_neuron_data([], [this.get_corners_as_points()]);
+        kmz_download_from_neuron_data([], [], [this.get_corners_as_points()]);
     }
 
     #export_as_kmz() {
-        kmz_download_from_neuron_data([], [this.get_corners_as_points()]);
+        kmz_download_from_neuron_data([], [], [this.get_corners_as_points()]);
     }
 
     override show_help() {

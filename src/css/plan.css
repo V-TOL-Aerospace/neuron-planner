@@ -108,3 +108,11 @@
 .mission-feature-content-value-right {
     text-align: right;
 }
+
+.neuron-marker-poi {
+    filter: hue-rotate(120deg);
+}
+
+.neuron-marker-corner {
+    filter: hue-rotate(240deg);
+}

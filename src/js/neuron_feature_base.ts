@@ -56,6 +56,14 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         if(this.#map) {
             if(this.#visible) {
                 m.addTo(this.#map);
+
+                // //XXX: Forbidden work to change the hue of the marker (must be done after adding to map)
+                // //@ts-ignore
+                // if(icon_adj && m._icon) {
+                //     //@ts-ignore
+                //     m._icon.classList.add(icon_adj);
+                // }
+
                 this.#features.push(m);
             } else {
                 this.#hidden_features.push(m);

@@ -7,6 +7,7 @@ import {NeuronInterfacePoint} from "./neuron_interfaces";
 import { L } from "./leaflet_interface";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronOptions, NeuronOptionsBoolean } from "./neuron_options";
+import { NeuronFeaturePoint } from "./neuron_feature_point";
 
 interface NeuronMapLayers {
     [id: string]: L.TileLayer;
@@ -103,6 +104,24 @@ export class NeuronMap {
             const p = new NeuronFeatureWaypoint(this.#map, l);
             this.#planner.add_mission_item(p);
         // }
+    }
+
+    create_point_in_view() {
+        if(this.#map) {
+            const b = this.#map.getBounds();
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+
+            const p = new NeuronFeaturePoint(this.#map, new NeuronInterfacePoint(
+                sw.lat + dy / 2,
+                sw.lng + dx / 2,
+                this.#planner.get_last_item_altitude()
+            ));
+            p.set_planner(this.#planner);
+            this.#planner.add_mission_item(p);
+        }
     }
 
     create_waypoint_in_view() {
