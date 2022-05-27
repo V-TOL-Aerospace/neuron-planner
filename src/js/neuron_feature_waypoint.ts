@@ -2,18 +2,21 @@ import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
 import { NeuronHelp } from "./neuron_help";
+import { NeuronOptions } from "./neuron_options";
 
 export interface NeuronFeaturePointData {
     version:string,
     type:string,
     point:NeuronInterfacePointData,
     wait_duration:number,
+    capture_image:boolean,
+    ground_resolution:number,
 }
 
 export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override NAME = "Waypoint";
     static override TYPE = "NeuronFeatureWaypoint";
-    static override VERSION = 'a8bc5a60-dd6e-11ec-bef2-1be7bc5596a6';
+    static override VERSION = '1066fce0-dd80-11ec-b085-f96e36263ede';
     static override HELP_KEY = 'waypoint';
 
     #marker:L.Marker;
@@ -24,8 +27,14 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #dom_alt:HTMLInputElement;
     #dom_hdg:HTMLInputElement;
     #dom_wait:HTMLInputElement;
+    #dom_capture:HTMLInputElement;
+    #dom_ground_resolution:HTMLInputElement;
 
     #wait_duration:number;
+    #capture_image:boolean;
+    #ground_resolution:number;
+
+    static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
 
     constructor(map:L.Map, point:NeuronInterfacePoint=null) {
         super(map);
@@ -38,8 +47,12 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         this.#dom_alt = null;
         this.#dom_hdg = null;
         this.#dom_wait = null;
+        this.#dom_capture = null;
+        this.#dom_ground_resolution = null;
 
         this.#wait_duration = 0;
+        this.#capture_image = false;
+        this.#ground_resolution = 0;
 
         if(point)
             this.set_point(point);
@@ -103,7 +116,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         }
     }
 
-    #internal_set_point(point:NeuronInterfacePoint, update_marker:boolean = true, update_dom:boolean=true) {
+    #internal_set_point(point:NeuronInterfacePoint, update_marker:boolean = true, update_dom:boolean=true, update_calcs:boolean=true) {
         this.#point = point;
 
         if(update_marker && this.#marker)
@@ -123,6 +136,16 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
                 this.#dom_hdg.value = point.heading.toString();
         }
 
+        if(update_calcs) {
+            let resolution = NeuronOptions.get_camera().get_ground_resolution(this.#point.altitude);
+            if(resolution) {
+                if(this.#dom_ground_resolution)
+                    this.#dom_ground_resolution.value = (resolution / NeuronFeatureWaypoint._gsd_ratio).toString();
+
+                this.#set_ground_resolution(resolution, false, false);
+            }
+        }
+
         this._trigger_on_changed();
     }
 
@@ -135,27 +158,46 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
         if(this.#dom_wait)
             this.#dom_wait.value = this.#wait_duration.toString();
+
+        this._trigger_on_changed();
+    }
+
+    get_image_count() {
+        return this.#capture_image ? 1 : 0;
+    }
+
+    get_capture_image() {
+        return this.#capture_image;
+    }
+
+    set_capture_image(capture_image:boolean) {
+        this.#capture_image = capture_image;
+
+        if(this.#dom_capture)
+            this.#dom_capture.checked = this.#capture_image;
+
+        this._trigger_on_changed();
     }
 
     #update_latitude_from_dom() {
         if(this.#point && this.#dom_lat)
             this.#point.latitude = this.#dom_lat.valueAsNumber;
 
-        this.#internal_set_point(this.#point, true, false);
+        this.#internal_set_point(this.#point, true, false, true);
     }
 
     #update_longitude_from_dom() {
         if(this.#point && this.#dom_lon)
             this.#point.longitude = this.#dom_lon.valueAsNumber;
 
-        this.#internal_set_point(this.#point, true, false);
+        this.#internal_set_point(this.#point, true, false, true);
     }
 
     #update_altitude_from_dom() {
         if(this.#point && this.#dom_alt)
             this.#point.altitude = this.#dom_alt.valueAsNumber * NeuronFeatureBase._altitude_ratio;
 
-        this.#internal_set_point(this.#point, true, false);
+        this.#internal_set_point(this.#point, true, false, true);
     }
 
     #update_heading_from_dom() {
@@ -167,6 +209,18 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
     #update_wait_duration_from_dom() {
         this.#wait_duration = this.#dom_wait.valueAsNumber;
+
+        this._trigger_on_changed();
+    }
+
+    #update_capture_image_from_dom() {
+        this.#capture_image = this.#dom_capture.checked;
+
+        this._trigger_on_changed();
+    }
+
+    #update_ground_resolution_from_dom() {
+        this.#set_ground_resolution(this.#dom_ground_resolution.valueAsNumber * NeuronFeatureWaypoint._gsd_ratio);
     }
 
     override show_help() {
@@ -221,15 +275,52 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             c.appendChild(this._create_dom_label("Wait:", this.#dom_wait, t4));
             c.appendChild(this.#dom_wait);
 
+            const t5 = "Capture an image when the aircraft arrives at the waypoint";
+            this.#dom_capture = this._create_dom_input_checkbox(this.#capture_image, this.#update_capture_image_from_dom.bind(this));
+            this.#dom_capture.title = t5;
+            c.appendChild(this._create_dom_label("Capture:", this.#dom_capture, t5));
+            c.appendChild(this.#dom_capture);
+
+            const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
+            this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureWaypoint._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
+            this.#dom_ground_resolution.title = t18;
+            c.appendChild(this._create_dom_label("GSD:", this.#dom_ground_resolution, t18));
+            c.appendChild(this.#dom_ground_resolution);
+
             this.#dom.append(c);
         }
 
         return this.#dom;
     }
 
+    set_ground_resolution(ground_resolution:number) {
+        this.#set_ground_resolution(ground_resolution);
+    }
+
+    #set_ground_resolution(ground_resolution:number, update_calcs:boolean = true, trigger_callbacks:boolean = true) {
+        this.#ground_resolution = ground_resolution;
+
+        if(update_calcs) {
+            let altitude = NeuronOptions.get_camera().get_distance(this.get_ground_resolution());
+
+            if( altitude && altitude != this.#point.altitude) {
+                this.#point.altitude = altitude;
+                this.#internal_set_point(this.#point, true, true, false);
+            }
+        }
+
+        if(trigger_callbacks)
+            this._trigger_on_changed();
+    };
+
+
+    get_ground_resolution() {
+        return this.#ground_resolution;
+    };
+
     static override isObjectOfDataType(object: any): object is NeuronFeaturePointData {
         let is_valid =
-            (object.type == NeuronFeatureWaypoint.TYPE) ||
+            (object.type == NeuronFeatureWaypoint.TYPE) &&
             (object.version == NeuronFeatureWaypoint.VERSION);
 
         return is_valid;
@@ -242,7 +333,9 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
         const point = NeuronInterfacePoint.from_json(j.point);
         const p = new NeuronFeatureWaypoint(map, point);
-        p.set_wait_duration(j.wait_duration);
+        p.set_wait_duration(Number.isNaN(j.wait_duration) ? 0.0 : j.wait_duration);
+        p.set_capture_image(Boolean(j.capture_image));
+        p.set_ground_resolution(Number.isNaN(j.ground_resolution) ? 0.0 : j.ground_resolution); //Also triggers update of calculations
         return p;
     }
 
@@ -253,6 +346,8 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             type: NeuronFeatureWaypoint.TYPE,
             point: this.#point.to_json(),
             wait_duration: this.#wait_duration,
+            capture_image: this.#capture_image,
+            ground_resolution: this.#ground_resolution,
         }
     }
 }

@@ -73,7 +73,13 @@ export class NeuronInterfacePoint {
         if(!NeuronInterfacePoint.isObjectOfDataType(j))
             throw new Error(`Invalid type check during creation of NeuronInterfacePoint`);
 
-        return new NeuronInterfacePoint(j.latitude, j.longitude, j.altitude, j.heading, j.tag.toString());
+        return new NeuronInterfacePoint(
+            Number.isNaN(j.latitude) ? 0.0 : j.latitude,
+            Number.isNaN(j.longitude) ? 0.0 : j.longitude,
+            Number.isNaN(j.altitude) ? 0.0 : j.altitude,
+            Number.isNaN(j.heading) ? 0.0 : j.heading,
+            j.tag ? j.tag.toString() : ""
+        );
     }
 
     to_json() {
@@ -92,7 +98,7 @@ export class NeuronInterfacePoint {
         const min = 0 | (((dd += 1e-9) % 1) * 60);
         const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
 
-        return `${deg.toFixed(2)}° ${min.toFixed(2)}' ${sec.toFixed(2)}" ${dir}`;
+        return `${deg.toFixed(0)}° ${min.toFixed(0)}' ${sec.toFixed(2)}" ${dir}`;
       }
 
     toString() {
@@ -226,7 +232,7 @@ export class NeuronCameraSpecifications {
 
     static isObjectOfDataType(object: any): object is NeuronCameraSpecificationsData {
         let is_valid =
-            (object.type == NeuronCameraSpecifications.TYPE) ||
+            (object.type == NeuronCameraSpecifications.TYPE) &&
             (object.version == NeuronCameraSpecifications.VERSION);
 
         return is_valid;

@@ -741,7 +741,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         let altitude = camera.get_distance(this.get_ground_resolution());
 
-        if(altitude != this.get_altitude()) {
+        if(altitude && altitude != this.get_altitude()) {
             settings_changed = true;
 
             if(this.#dom_altitude)
@@ -770,7 +770,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     static override isObjectOfDataType(object: any): object is NeuronFeatureSurveyData {
         let is_valid =
-            (object.type == NeuronFeatureSurvey.TYPE) ||
+            (object.type == NeuronFeatureSurvey.TYPE) &&
             (object.version == NeuronFeatureSurvey.VERSION);
 
         return is_valid;
@@ -784,18 +784,18 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         const corners = j.corners.map(x => NeuronInterfacePoint.from_json(x));
         let s = new NeuronFeatureSurvey(map, corners);
 
-        s.set_altitude(j.altitude);
-        s.set_distance(j.distance);
-        s.set_spacing(j.spacing);
-        s.set_angle(j.angle);
-        s.set_overshoot1(j.overshoot1);
-        s.set_overshoot2(j.overshoot2);
-        s.set_startpos(j.startpos);
-        s.set_minLaneSeparation(j.minLaneSeparation);
-        s.set_leadin(j.leadin);
-        s.set_overlap(j.overlap);
-        s.#set_sidelap(j.sidelap, false);
-        s.#set_ground_resolution(j.ground_resolution, false);
+        s.set_altitude(Number.isNaN(j.altitude) ? 0.0 : j.altitude);
+        s.set_distance(Number.isNaN(j.distance) ? 0.0 : j.distance);
+        s.set_spacing(Number.isNaN(j.spacing) ? 0.0 : j.spacing);
+        s.set_angle(Number.isNaN(j.angle) ? 0.0 : j.angle);
+        s.set_overshoot1(Number.isNaN(j.overshoot1) ? 0.0 : j.overshoot1);
+        s.set_overshoot2(Number.isNaN(j.overshoot2) ? 0.0 : j.overshoot2);
+        s.set_startpos(Number.isNaN(j.startpos) ? 0.0 : j.startpos);
+        s.set_minLaneSeparation(Number.isNaN(j.minLaneSeparation) ? 0.0 : j.minLaneSeparation);
+        s.set_leadin(Number.isNaN(j.leadin) ? 0.0 : j.leadin);
+        s.set_overlap(Number.isNaN(j.overlap) ? 0.0 : j.overlap);
+        s.#set_sidelap(Number.isNaN(j.sidelap) ? 0.0 : j.sidelap, false);
+        s.#set_ground_resolution(Number.isNaN(j.ground_resolution) ? 0.0 : j.ground_resolution, false);
 
         s.#calculate_and_update_capture_variables();
 

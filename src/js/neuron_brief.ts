@@ -189,13 +189,15 @@ export class NeuronBrief {
                     if(path.length) {
                         const wait = item.get_wait_duration();
                         extra_mission_duration += wait;
+                        const image_count = item.get_image_count();
                         step = {
                             type: NeuronFeatureWaypoint.NAME,
-                            description: "Fly to location",
+                            description: "Fly to location" + (image_count ? ' and capture image' : ''),
                             components: path.map(x => x.toString()),
                             time_duration: wait > 0 ? "+" + flight_time_from_duration(wait) : "---",
                             time_transit: time_transit
                         };
+                        summary.total_images += image_count;
                     }
                 // } else if(item instanceof NeuronFeaturePolygon) {
                 } else if(item instanceof NeuronFeatureSurvey) {

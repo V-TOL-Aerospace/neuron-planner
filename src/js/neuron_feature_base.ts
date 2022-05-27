@@ -293,7 +293,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
     static isObjectOfDataType(object: any): object is NeuronFeatureBaseData {
         let is_valid =
-            (object.type == NeuronFeatureBase.TYPE) ||
+            (object.type == NeuronFeatureBase.TYPE) &&
             (object.version == NeuronFeatureBase.VERSION);
 
         return is_valid;

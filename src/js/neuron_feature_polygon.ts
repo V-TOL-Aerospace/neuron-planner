@@ -371,7 +371,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
     static override isObjectOfDataType(object: any): object is NeuronFeaturePolygonData {
         let is_valid =
-            (object.type == NeuronFeaturePolygon.TYPE) ||
+            (object.type == NeuronFeaturePolygon.TYPE) &&
             (object.version == NeuronFeaturePolygon.VERSION);
 
         return is_valid;

@@ -93,7 +93,7 @@ export class NeuronPlanner {
 
     static isObjectOfDataType(object: any): object is NeuronPlannerMissionData {
         let is_valid =
-            (object.type == NeuronPlanner.TYPE) ||
+            (object.type == NeuronPlanner.TYPE) &&
             (object.version == NeuronPlanner.VERSION);
 
         return is_valid;
