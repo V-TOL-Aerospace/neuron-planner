@@ -204,6 +204,7 @@
                                 <p>The point feature is a non-flyable mission feature that can be converted into other mission features. It acts as a point marker for a location of interest.</p>
                                 <p>It has the following properties:</p>
                                 <ul>
+                                    <li>Label: A text label to describe the marked location.</li>
                                     <li>Latitude: The latitude of the waypoint.</li>
                                     <li>Longitude: The longitude of the waypoint.</li>
                                     <li>Altitude: The altitude of the waypoint relative to ground level at the take-off location.</li>
@@ -219,7 +220,11 @@
                                     <li>Longitude: The longitude of the waypoint.</li>
                                     <li>Altitude: The altitude of the waypoint relative to ground level at the take-off location.</li>
                                     <li>Heading: The heading of the aircraft relative to North that should be achieved at this waypoint.</li>
+                                    <li>Wait: The duration in seconds for the aircraft to wait at the waypoint once it has been reached.</li>
+                                    <li>Capture: Instructs the aircraft to capture an image when arriving at the waypoint.</li>
+                                    <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
                                 </ul>
+                                <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the waypoint properties are adjusted.</p>
                                 <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
                             </section>
                             <section id="help-fp-mission-polygon">
@@ -234,9 +239,14 @@
                                 <p>Creates a survey feature in the center of view of the <a href="#help-fp-map-interactive">Interactive Map</a>.</p>
                                 <p>The survey feature is a mission feature that creates a "lawn-mower' pattern for the aircraft to follow. The created pattern features a number of parallel "lanes" that the aircraft will fly up and down whilst performing the survey. This type of pattern is typically used to perform area surveys or scanning.</p>
                                 <p>The survey created on the screen can be adjusted in a similar manner to the <a href="#help-fp-mission-survey">Survey</a> feature.</p>
-                                <p>It has the following properties:</p>
+                                <p>It has the following statistics:</p>
                                 <ul>
                                     <li>Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
+                                    <li>Duration: Lists the estimated flight time for the survey feature based on the <a href="#help-fp-stats-settings">Mission Options</a>.</li>
+                                    <li>Images: Lists the estimated number of images captured for the survey feature based on the <a href="#help-fp-stats-settings">Mission Options</a>.</li>
+                                </ul>
+                                <p>It has the following properties:</p>
+                                <ul>
                                     <li>Show corners: Enables the display of the polygon corners that define the survey area.</li>
                                     <li>Show ends: Enables the display of the waypoints that are required based on the survey settings.</li>
                                     <li>Altitude: The altitude of the survey relative to ground level at the take-off location.</li>
