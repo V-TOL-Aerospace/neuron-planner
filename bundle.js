@@ -30718,7 +30718,7 @@ class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kml, null, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_dom_export_kmz, null, "f");
         this.set_planner(planner);
-        __classPrivateFieldSet(this, _NeuronFeaturePolygon_show_corners, true, "f");
+        __classPrivateFieldSet(this, _NeuronFeaturePolygon_show_corners, corners.length < 20, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_selected_corner, 0, "f");
         __classPrivateFieldSet(this, _NeuronFeaturePolygon_corners, [], "f");
         if (corners.length) {
@@ -33557,10 +33557,19 @@ function kml_extract_features(kml_plain_text) {
             let paths = [];
             let polygons = [];
             for (const item of xmlDoc.getElementsByTagName('Placemark')) {
-                let placeMarkName = item.getElementsByTagName('name')[0].childNodes[0].nodeValue.trim();
-                let kml_polygons = item.getElementsByTagName('Polygon');
-                let kml_markers = item.getElementsByTagName('Point');
-                let kml_paths = item.getElementsByTagName('LineString');
+                let placeMarkName = "Unknown";
+                try {
+                    placeMarkName = item.getElementsByTagName('name')[0].childNodes[0].nodeValue.trim();
+                }
+                catch (_a) { }
+                let kml_polygons = Array.from(item.getElementsByTagName('Polygon'));
+                let kml_markers = Array.from(item.getElementsByTagName('Point'));
+                let kml_paths = Array.from(item.getElementsByTagName('LineString'));
+                for (const multi of item.getElementsByTagName('MultiGeometry')) {
+                    kml_polygons = kml_polygons.concat(Array.from(multi.getElementsByTagName('Polygon')));
+                    kml_markers = kml_markers.concat(Array.from(multi.getElementsByTagName('Point')));
+                    kml_paths = kml_paths.concat(Array.from(multi.getElementsByTagName('LineString')));
+                }
                 /** MARKER PARSE **/
                 for (const marker of kml_markers) {
                     let point = marker.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
