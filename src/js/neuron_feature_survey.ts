@@ -543,10 +543,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Duration:", this.#dom_segment_duration, t03));
             c.appendChild(this.#dom_segment_duration);
 
-            const t02 = "Number of photos that will be captured to perform this survey";
+            const t02 = "Number of images that will be captured by the camera on the aircraft to perform this survey";
             this.#dom_photo_count = this._create_dom_output();
             this.#dom_photo_count.title = t02;
-            c.appendChild(this._create_dom_label("Photos:", this.#dom_photo_count, t02));
+            c.appendChild(this._create_dom_label("Images:", this.#dom_photo_count, t02));
             c.appendChild(this.#dom_photo_count);
 
             //Input fields

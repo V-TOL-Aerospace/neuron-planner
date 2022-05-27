@@ -110,9 +110,13 @@
 }
 
 .neuron-marker-poi {
-    filter: hue-rotate(120deg);
+    filter: hue-rotate(0deg);
 }
 
 .neuron-marker-corner {
-    filter: hue-rotate(240deg);
+    filter: hue-rotate(145deg);
+}
+
+.neuron-marker-waypoint {
+    filter: hue-rotate(180deg);
 }

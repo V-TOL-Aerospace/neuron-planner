@@ -1,6 +1,6 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { L, create_popup_context_dom, LeafletContextMenuItem } from "./leaflet_interface";
+import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./leaflet_interface";
 import { NeuronHelp } from "./neuron_help";
 import { NeuronOptions } from "./neuron_options";
 
@@ -82,6 +82,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             this.#marker = L.marker(point.to_leaflet(),{
                 draggable: true,
                 autoPan: true,
+                icon: get_neuron_icon('neuron-marker-waypoint')
             })
 
             this.#marker.on("drag", this.#update_position_from_event.bind(this));
