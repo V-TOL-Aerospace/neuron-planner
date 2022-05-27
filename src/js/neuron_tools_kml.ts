@@ -67,11 +67,21 @@ export async function kml_extract_features(kml_plain_text:string) {
         let paths:NeuronInterfacePoint[][] = [];
         let polygons:NeuronInterfacePoint[][] = [];
 
-        for (const item of xmlDoc.getElementsByTagName('Placemark') as any) {
-            let placeMarkName = item.getElementsByTagName('name')[0].childNodes[0].nodeValue.trim();
-            let kml_polygons = item.getElementsByTagName('Polygon');
-            let kml_markers = item.getElementsByTagName('Point');
-            let kml_paths = item.getElementsByTagName('LineString');
+        for (const item of xmlDoc.getElementsByTagName('Placemark')) {
+            let placeMarkName = "Unknown";
+            try{
+                placeMarkName = item.getElementsByTagName('name')[0].childNodes[0].nodeValue.trim();
+            }
+            catch {}
+            let kml_polygons = Array.from(item.getElementsByTagName('Polygon'));
+            let kml_markers = Array.from(item.getElementsByTagName('Point'));
+            let kml_paths = Array.from(item.getElementsByTagName('LineString'));
+
+            for(const multi of item.getElementsByTagName('MultiGeometry')) {
+                kml_polygons = kml_polygons.concat(Array.from(multi.getElementsByTagName('Polygon')));
+                kml_markers = kml_markers.concat(Array.from(multi.getElementsByTagName('Point')));
+                kml_paths = kml_paths.concat(Array.from(multi.getElementsByTagName('LineString')));
+            }
 
             /** MARKER PARSE **/
             for (const marker of kml_markers) {

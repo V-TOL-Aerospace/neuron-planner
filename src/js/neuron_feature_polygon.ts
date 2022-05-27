@@ -42,7 +42,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
         this.set_planner(planner);
 
-        this.#show_corners = true;
+        this.#show_corners = corners.length < 20;
         this.#selected_corner = 0;
         this.#corners = [];
         if(corners.length) {
