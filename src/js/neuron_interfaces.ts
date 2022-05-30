@@ -1,6 +1,6 @@
-import { L } from "./leaflet_interface";
+import { L } from "./interface_leaflet";
 import { Rect } from "./neuron_tools_survey";
-import { UTMPos } from "./proj4_interface";
+import { UTMPos } from "./interface_proj4";
 
 // @ts-ignore
 // import * as UTMConverter from "utm-latlng";

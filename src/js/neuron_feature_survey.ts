@@ -1,7 +1,7 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
-import { L, create_popup_context_dom } from "./leaflet_interface";
+import { L, create_popup_context_dom } from "./interface_leaflet";
 import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
 import { NeuronHelp } from "./neuron_help";

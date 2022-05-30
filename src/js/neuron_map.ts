@@ -4,7 +4,7 @@ import {NeuronFeaturePolygon} from "./neuron_feature_polygon";
 import { NeuronPlanner } from "./neuron_planner";
 
 import {NeuronInterfacePoint} from "./neuron_interfaces";
-import { L } from "./leaflet_interface";
+import { L } from "./interface_leaflet";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronOptions, NeuronOptionsBoolean } from "./neuron_options";
 import { NeuronFeaturePoint } from "./neuron_feature_point";

@@ -1,5 +1,5 @@
 import { NeuronInterfacePoint } from "./neuron_interfaces";
-import { UTMPos, UTMLine } from "./proj4_interface";
+import { UTMPos, UTMLine } from "./interface_proj4";
 
 export enum StartPosition {
     // Home = 0,

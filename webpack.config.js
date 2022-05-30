@@ -7,9 +7,13 @@ module.exports = {
   entry: {
     index: {
       import: './src/js/index.ts',
-      dependOn: 'libs'
+      // dependOn: [
+      //   'libs_map',
+      //   'libs_util',
+      // ]
     },
-    libs: ['proj4', 'leaflet', '@zip.js/zip.js', '@fortawesome/fontawesome-free/js/fontawesome', '@fortawesome/fontawesome-free/js/solid'],
+    // libs_map: ['proj4', 'leaflet'],
+    // libs_util: ['@zip.js/zip.js', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons']
   },
   devtool: 'source-map',
   devServer: {
@@ -45,6 +49,18 @@ module.exports = {
   output: {
     filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+  },
+  optimization: {
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/]/,
+          name: 'vendors',
+          chunks: 'all'
+        }
+      }
+    },
   },
   plugins: [
       new CopyWebpackPlugin({

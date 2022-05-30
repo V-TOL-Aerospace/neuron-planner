@@ -1,4 +1,4 @@
-import { L } from "./leaflet_interface";
+import { L } from "./interface_leaflet";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronInterfacePoint} from "./neuron_interfaces";
 

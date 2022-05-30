@@ -6,7 +6,7 @@ import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfa
 import { NeuronMap } from "./neuron_map";
 import { kml_download_from_neuron_data, kmx_load_file, NeuronKMLData } from "./neuron_tools_kml";
 import { download_file, get_filename } from "./neuron_tools_files"
-import { L } from "./leaflet_interface"
+import { L } from "./interface_leaflet"
 import { NeuronFeaturePoint } from "./neuron_feature_point";
 import { NeuronOptions, NeuronOptionsData } from "./neuron_options";
 // import { NeuronOptions } from "./neuron_options";

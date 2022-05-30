@@ -1,6 +1,6 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./leaflet_interface";
+import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./interface_leaflet";
 import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";

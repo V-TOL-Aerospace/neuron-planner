@@ -2,12 +2,18 @@ import { NeuronOptions } from './neuron_options';
 import { NeuronInterfacePoint } from './neuron_interfaces';
 import { NeuronPlanner } from './neuron_planner';
 import { NeuronMap } from './neuron_map';
+import { NeuronBrief } from './neuron_brief';
+import { NeuronStatistics } from './neuron_statistics';
+import { NeuronHelp } from './neuron_help';
+import { mm_to_px } from './neuron_tools_common';
 
 //TODO: https://www.skovy.dev/blog/tree-shaking-font-awesome?seed=tnv79i
-import '@fortawesome/fontawesome-free/js/fontawesome'
-import '@fortawesome/fontawesome-free/js/solid'
+// import '@fortawesome/fontawesome-free/js/fontawesome'
+// import '@fortawesome/fontawesome-free/js/solid'
 // import '@fortawesome/fontawesome-free/js/regular'
 // import '@fortawesome/fontawesome-free/js/brands'
+
+import { neuron_load_dom_icons } from './interface_fontawesome'
 
 import "../css/theme.css";  //XXX: Load this first so other definitions can use it
 import "../css/index.css";
@@ -16,17 +22,6 @@ import "../css/stats_options.css";
 import "../css/plan.css";
 import "../css/brief.css";
 import "../css/responsive.css"; //XXX: Load this last so it gets applied after all other definitions
-
-import { NeuronBrief } from './neuron_brief';
-import { mm_to_px } from './neuron_tools_common';
-import { NeuronStatistics } from './neuron_statistics';
-import { NeuronHelp } from './neuron_help';
-
-/// <reference types="webpack/module" />
-console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
-
-//Initialize all of our options
-NeuronOptions.init();
 
 declare global {
     interface Window {
@@ -38,6 +33,15 @@ declare global {
     }
 }
 
+/// <reference types="webpack/module" />
+console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
+
+//Initialize all of our options
+NeuronOptions.init();
+//Do the FA switch-out for our DOM icons
+neuron_load_dom_icons();
+
+//All of our preset DOM IDs
 const element_name_plan = 'fp-plan';
 const element_prefix_stats = 'fp-stats';
 const element_name_map = 'fp-map-interactive';
@@ -48,6 +52,7 @@ const elements_ignore_help = [
     'fp-mission'
 ]
 
+//Print-specific variables to store for later
 const print_size_with_margin_mm = {
     width: 190,   /* 210 */
     height: 277/2,   /* 297 */
@@ -57,6 +62,7 @@ const print_size_with_margin_px = {
     height: mm_to_px(print_size_with_margin_mm.height)
 }
 
+//Application variables
 window.neuron_planner = new NeuronPlanner(element_name_plan);
 window.neuron_map = new NeuronMap(element_name_map, element_name_help, window.neuron_planner);
 window.neuron_brief = new NeuronBrief(window.neuron_planner, element_name_brief);
@@ -77,8 +83,6 @@ let load_app_data = async () => {
     navigator.geolocation.getCurrentPosition( async (location) => {
         window.neuron_map.set_location(new NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
     });
-
-
 }
 
 document.addEventListener('DOMContentLoaded', load_app_data, false);
