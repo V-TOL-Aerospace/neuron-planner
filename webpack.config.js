@@ -56,6 +56,9 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: 'single',
+    //XXX:  Chunk splitting is handled manually through entry point grouping.
+    //      This may not be the best way, but at least it gets all our bundles low
+    //      and (hopefully) provides efficient loading!
     // splitChunks: {
     //   chunks: 'all',
     //   cacheGroups: {
