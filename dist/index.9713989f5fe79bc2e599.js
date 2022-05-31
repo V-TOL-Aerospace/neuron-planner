@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oDAAoD;IACpD,kBAAkB;AACtB;;AAEA;IACI,aAAa;IACb,oDAAoD;AACxD;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB","sourcesContent":[".brief-table {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    display: grid;\n    grid-template-columns: auto auto auto auto auto auto;\n}\n\n.brief-table-entry-header {\n    font-weight: bold;\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oFAAoF;IACpF,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,iBAAiB;IACjB;2DACuD;AAC3D;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;GAEG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":[".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1621,6 +1621,8 @@ class NeuronBrief {
                 "Type",
                 "Description",
                 "Features",
+                "",
+                "",
                 "Transit",
                 "Duration",
             ];
@@ -1628,7 +1630,7 @@ class NeuronBrief {
             table.className = 'brief-table';
             for (const h of headings) {
                 let th = document.createElement('div');
-                th.className = 'brief-table-entry brief-table-entry-header';
+                th.className = 'brief-table-header';
                 th.appendChild(document.createTextNode(h));
                 table.appendChild(th);
             }
@@ -1645,14 +1647,21 @@ class NeuronBrief {
                     item.type ? count.toString() : "",
                     item.type,
                     item.description,
-                    item.components.length ? item.components[0] : "---",
+                    item.components.length ? item.components[0].field1 : "—",
+                    item.components.length ? item.components[0].field2 : "—",
+                    item.components.length ? item.components[0].field3 : "—",
                     item.time_transit,
                     item.time_duration
                 ];
-                for (const h of content) {
+                const ind_values_start = 3;
+                for (let j = 0; j < content.length; j++) {
                     let td = document.createElement('div');
-                    td.appendChild(document.createTextNode(h));
-                    td.className = 'brief-table-entry' + (item.type ? "" : " brief-table-entry-header");
+                    td.appendChild(document.createTextNode(content[j]));
+                    if ((j == 0) || (j >= ind_values_start))
+                        td.classList.add('brief-table-entry-right');
+                    if (!item.type)
+                        td.classList.add('brief-table-entry-bold');
+                    td.classList.add('brief-table-entry');
                     table.appendChild(td);
                 }
                 //Handle case of multiple components (skipped if one or less)
@@ -1661,14 +1670,16 @@ class NeuronBrief {
                         "",
                         "",
                         "",
-                        item.components[i],
+                        item.components[i].field1,
+                        item.components[i].field2,
+                        item.components[i].field3,
                         "",
                         ""
                     ];
                     for (const h of content) {
                         let td = document.createElement('div');
                         td.appendChild(document.createTextNode(h));
-                        td.className = 'brief-table-entry';
+                        td.className = 'brief-table-entry-right brief-table-entry';
                         table.appendChild(td);
                     }
                 }
@@ -1680,6 +1691,13 @@ class NeuronBrief {
             td.appendChild(document.createTextNode("No mission plan available."));
             __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(td);
         }
+    }
+    static get_components_from_point(point) {
+        return {
+            field1: point.toStringLatitude(),
+            field2: point.toStringLongitude(),
+            field3: point.toStringAltitude(),
+        };
     }
     get_mission_summary() {
         let summary = {
@@ -1698,27 +1716,28 @@ class NeuronBrief {
             //Get the flight speed and lock it to at least 0.1m/s
             const s = _neuron_options__WEBPACK_IMPORTED_MODULE_3__.NeuronOptions.get_option_number(_neuron_options__WEBPACK_IMPORTED_MODULE_3__.NeuronOptionsNumber.MISSION_SPEED);
             const flight_speed = Math.max(s ? s : 0.0, 0.1);
-            let time_takeoff = "---";
+            let point_last = null;
+            // let time_takeoff = "—";
             let takeoff_point = steps[0];
             if (takeoff_point.altitude != 0) {
                 takeoff_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(steps[0].latitude, steps[0].longitude, 0.0);
                 const takeoff_coords = [takeoff_point, steps[0]];
                 takeoff_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(takeoff_coords);
                 takeoff_duration = takeoff_distance / flight_speed;
-                time_takeoff = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(takeoff_duration);
+                point_last = takeoff_point;
+                // time_takeoff = "+" + flight_time_from_duration(takeoff_duration);
             }
             let step0 = {
                 type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                 description: "Take-off at location",
-                components: [takeoff_point.toString()],
-                time_duration: time_takeoff,
-                time_transit: "---",
+                components: [NeuronBrief.get_components_from_point(takeoff_point)],
+                time_duration: "—",
+                time_transit: "—",
             };
             summary.brief.push(step0);
-            let point_last = null;
             for (const item of __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_items()) {
                 let path = item.get_path_coords();
-                let time_transit = "---";
+                let time_transit = "—";
                 if (path.length && point_last) {
                     const transit_coords = [point_last, path[0]];
                     const transit_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(transit_coords);
@@ -1736,8 +1755,8 @@ class NeuronBrief {
                         step = {
                             type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                             description: "Fly to location" + (image_count ? ' and capture image' : ''),
-                            components: path.map(x => x.toString()),
-                            time_duration: wait > 0 ? "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(wait) : "---",
+                            components: path.map(x => NeuronBrief.get_components_from_point(x)),
+                            time_duration: wait > 0 ? "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(wait) : "—",
                             time_transit: time_transit
                         };
                         summary.total_images += image_count;
@@ -1752,7 +1771,7 @@ class NeuronBrief {
                         step = {
                             type: _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureSurvey.NAME,
                             description: "Survey area with bounds",
-                            components: corners.map(x => x.toString()),
+                            components: corners.map(x => NeuronBrief.get_components_from_point(x)),
                             time_duration: step_duration,
                             time_transit: time_transit,
                         };
@@ -1768,10 +1787,16 @@ class NeuronBrief {
                 if (step)
                     summary.brief.push(step);
             }
-            let time_land = "---";
+            let time_land = "—";
             let land_point = point_last;
+            let land_component = {
+                field1: "—",
+                field2: "—",
+                field3: "—"
+            };
             if (land_point && land_point.altitude != 0) {
                 land_point = new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__.NeuronInterfacePoint(point_last.latitude, point_last.longitude, 0.0);
+                land_component = NeuronBrief.get_components_from_point(land_point);
                 const land_coords = [point_last, land_point];
                 land_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(land_coords);
                 land_duration = land_distance / flight_speed;
@@ -1780,9 +1805,9 @@ class NeuronBrief {
             let step_n = {
                 type: _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint.NAME,
                 description: "Land at location",
-                components: [land_point ? land_point.toString() : "---"],
+                components: [land_component],
                 time_duration: time_land,
-                time_transit: "---"
+                time_transit: "—"
             };
             summary.brief.push(step_n);
             summary.total_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(steps) + takeoff_distance + land_distance;
@@ -1792,7 +1817,11 @@ class NeuronBrief {
             let step_total_time = {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                        field1: "",
+                        field2: "",
+                        field3: "",
+                    }],
                 time_transit: "Duration:",
                 time_duration: total_time,
             };
@@ -1800,7 +1829,11 @@ class NeuronBrief {
             let step_total_distance = {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                        field1: "",
+                        field2: "",
+                        field3: "",
+                    }],
                 time_transit: "Distance:",
                 time_duration: `${(summary.total_distance / 1000).toFixed(2)}km`,
             };
@@ -1808,9 +1841,13 @@ class NeuronBrief {
             let step_total_images = {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                        field1: "",
+                        field2: "",
+                        field3: "",
+                    }],
                 time_transit: "Images:",
-                time_duration: summary.total_images > 0 ? summary.total_images.toString() : "---",
+                time_duration: summary.total_images > 0 ? summary.total_images.toString() : "—",
             };
             summary.brief.push(step_total_images);
         }
@@ -2218,7 +2255,7 @@ NeuronFeatureBase.NAME = "[BASE FEATURE]";
 NeuronFeatureBase.TYPE = "NeuronFeatureBase";
 NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 NeuronFeatureBase.HELP_KEY = 'base';
-NeuronFeatureBase._altitude_ratio = 0.3048; //Alt = [DOM Value] * Ratio
+NeuronFeatureBase._altitude_ratio = 0.3048; //ft -> m: `Alt = [DOM Value] * Ratio
 //Add two sets of icons, one for each size button
 NeuronFeatureBase._button_sizes = [
     'mission-feature-title-button',
@@ -3901,8 +3938,17 @@ class NeuronInterfacePoint {
             tag: this.tag,
         };
     }
-    toString() {
-        return `[${__classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.latitude, false)}, ${__classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.longitude, false)}, ${this.altitude.toFixed(2)}m]`;
+    toString(use_imperial = true, use_decimal = false) {
+        return `[${this.toStringLatitude(use_decimal)}, ${this.toStringLatitude(use_decimal)}, ${this.toStringAltitude(use_imperial)}]`;
+    }
+    toStringLatitude(use_decimal = false) {
+        return use_decimal ? this.latitude.toFixed(8) + '°' : __classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.latitude, false);
+    }
+    toStringLongitude(use_decimal = false) {
+        return use_decimal ? this.longitude.toFixed(8) + '°' : __classPrivateFieldGet(this, _NeuronInterfacePoint_instances, "m", _NeuronInterfacePoint_value_as_DMS).call(this, this.longitude, true);
+    }
+    toStringAltitude(use_imperial = true) {
+        return use_imperial ? (this.altitude / NeuronInterfacePoint._altitude_ratio).toFixed(2) + "'" : this.altitude.toFixed(2) + 'm';
     }
 }
 _NeuronInterfacePoint_instances = new WeakSet(), _NeuronInterfacePoint_value_as_DMS = function _NeuronInterfacePoint_value_as_DMS(dd, is_lng) {
@@ -3912,6 +3958,7 @@ _NeuronInterfacePoint_instances = new WeakSet(), _NeuronInterfacePoint_value_as_
     const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
     return `${deg.toFixed(0)}° ${min.toFixed(0)}' ${sec.toFixed(2)}" ${dir}`;
 };
+NeuronInterfacePoint._altitude_ratio = 0.3048;
 class NeuronCameraSpecifications {
     constructor(name = "Custom", focal_length = 0.0, sensor_width = 0.0, sensor_height = 0.0, image_width = 0, image_height = 0) {
         this.name = name;
@@ -6098,4 +6145,4 @@ module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=index.3bf939ba160042636dd0.js.map
+//# sourceMappingURL=index.9713989f5fe79bc2e599.js.map

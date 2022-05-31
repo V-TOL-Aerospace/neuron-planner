@@ -20,6 +20,8 @@ export class NeuronInterfacePoint {
     heading:number;
     tag:string;
 
+    static _altitude_ratio = 0.3048;
+
     constructor(latitude:number=0.0, longitude:number=0.0, altitude:number=0.0, heading:number=0.0, tag:string="") {
         this.latitude = latitude;
         this.longitude = longitude;
@@ -99,10 +101,22 @@ export class NeuronInterfacePoint {
         const sec = (0 | (((dd * 60) % 1) * 6000)) / 100;
 
         return `${deg.toFixed(0)}° ${min.toFixed(0)}' ${sec.toFixed(2)}" ${dir}`;
-      }
+    }
 
-    toString() {
-         return `[${this.#value_as_DMS(this.latitude, false)}, ${this.#value_as_DMS(this.longitude, false)}, ${this.altitude.toFixed(2)}m]`;
+    toString(use_imperial:boolean = true, use_decimal:boolean = false) {
+        return `[${this.toStringLatitude(use_decimal)}, ${this.toStringLatitude(use_decimal)}, ${this.toStringAltitude(use_imperial)}]`;
+     }
+
+     toStringLatitude(use_decimal:boolean = false) {
+        return use_decimal ? this.latitude.toFixed(8) + '°' : this.#value_as_DMS(this.latitude, false);
+     }
+
+     toStringLongitude(use_decimal:boolean = false) {
+        return use_decimal ? this.longitude.toFixed(8) + '°' : this.#value_as_DMS(this.longitude, true);
+     }
+
+     toStringAltitude(use_imperial:boolean = true) {
+        return use_imperial ? (this.altitude / NeuronInterfacePoint._altitude_ratio ).toFixed(2) + "'" : this.altitude.toFixed(2) + 'm';
      }
 }
 

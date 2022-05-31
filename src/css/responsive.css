@@ -85,19 +85,27 @@
         Manually set our height and width
         to make sure that we can scale the map
         properly for display later.
-        Also account for our margins.
+        Also account for page margin and a slight inset to make sure there's no unneeded overflow.
         */
         width: 190mm;   /* 210 */
-        height: 277mm;   /* 297 */
+        height: 276mm;   /* 297 */
     }
 
     body {
+        height: auto;
+        width: auto;
+    }
+
+    #app {
         height: auto;
         width: auto;
         display: block;
         overflow-x: auto;
     }
 
+    #fp-main {
+        overflow: initial;
+    }
     #fp-manage {
         display: none;
     }

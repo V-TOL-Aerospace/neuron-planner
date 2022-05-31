@@ -10,10 +10,16 @@ import { flight_distance_from_coords, flight_time_from_duration } from "./neuron
 
 // const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
 
+export interface MissionBriefComponent {
+    field1:string,
+    field2:string,
+    field3:string
+}
+
 export interface MissionBrief {
     type:string,
     description:string,
-    components:string[],
+    components:MissionBriefComponent[],
     time_transit:string,
     time_duration:string
 }
@@ -62,6 +68,8 @@ export class NeuronBrief {
                 "Type",
                 "Description",
                 "Features",
+                "",
+                "",
                 "Transit",
                 "Duration",
             ]
@@ -70,7 +78,7 @@ export class NeuronBrief {
             table.className = 'brief-table';
             for(const h of headings) {
                 let th = document.createElement('div');
-                th.className = 'brief-table-entry brief-table-entry-header';
+                th.className = 'brief-table-header';
                 th.appendChild(document.createTextNode(h));
                 table.appendChild(th);
             }
@@ -91,15 +99,22 @@ export class NeuronBrief {
                     item.type ? count.toString() : "",
                     item.type,
                     item.description,
-                    item.components.length ? item.components[0] : "---",
+                    item.components.length ? item.components[0].field1 : "—",
+                    item.components.length ? item.components[0].field2 : "—",
+                    item.components.length ? item.components[0].field3 : "—",
                     item.time_transit,
                     item.time_duration
-                ]
+                ];
 
-                for(const h of content) {
+                const ind_values_start = 3;
+                for(let j=0; j<content.length; j++) {
                     let td = document.createElement('div');
-                    td.appendChild(document.createTextNode(h));
-                    td.className = 'brief-table-entry' + (item.type ? "" : " brief-table-entry-header");
+                    td.appendChild(document.createTextNode(content[j]));
+                    if((j == 0) || (j >= ind_values_start))
+                        td.classList.add('brief-table-entry-right');
+                    if(!item.type)
+                        td.classList.add('brief-table-entry-bold');
+                    td.classList.add('brief-table-entry');
                     table.appendChild(td);
                 }
 
@@ -109,7 +124,9 @@ export class NeuronBrief {
                         "",
                         "",
                         "",
-                        item.components[i],
+                        item.components[i].field1,
+                        item.components[i].field2,
+                        item.components[i].field3,
                         "",
                         ""
                     ]
@@ -117,7 +134,7 @@ export class NeuronBrief {
                     for(const h of content) {
                         let td = document.createElement('div');
                         td.appendChild(document.createTextNode(h));
-                        td.className = 'brief-table-entry';
+                        td.className = 'brief-table-entry-right brief-table-entry';
                         table.appendChild(td);
                     }
                 }
@@ -128,6 +145,14 @@ export class NeuronBrief {
             let td = document.createElement('div');
             td.appendChild(document.createTextNode("No mission plan available."));
             this.#brief_element.appendChild(td);
+        }
+    }
+
+    static get_components_from_point(point:NeuronInterfacePoint) {
+        return <MissionBriefComponent>{
+            field1: point.toStringLatitude(),
+            field2: point.toStringLongitude(),
+            field3: point.toStringAltitude(),
         }
     }
 
@@ -150,31 +175,32 @@ export class NeuronBrief {
             const s = NeuronOptions.get_option_number(NeuronOptionsNumber.MISSION_SPEED);
             const flight_speed = Math.max(s ? s : 0.0, 0.1);
 
-            let time_takeoff = "---";
+            let point_last = null;
+            // let time_takeoff = "—";
             let takeoff_point = steps[0];
             if(takeoff_point.altitude != 0) {
                 takeoff_point = new NeuronInterfacePoint(steps[0].latitude, steps[0].longitude, 0.0);
                 const takeoff_coords = [takeoff_point, steps[0]];
                 takeoff_distance = flight_distance_from_coords(takeoff_coords);
                 takeoff_duration = takeoff_distance/flight_speed;
-                time_takeoff = "+" + flight_time_from_duration(takeoff_duration);
+                point_last = takeoff_point;
+                // time_takeoff = "+" + flight_time_from_duration(takeoff_duration);
             }
 
             let step0:MissionBrief = {
                 type: NeuronFeatureWaypoint.NAME,
                 description: "Take-off at location",
-                components: [takeoff_point.toString()],
-                time_duration: time_takeoff,
-                time_transit: "---",
+                components: [NeuronBrief.get_components_from_point(takeoff_point)],
+                time_duration: "—",
+                time_transit: "—",
             };
 
             summary.brief.push(step0);
 
-            let point_last = null;
             for(const item of this.#planner.get_mission_items()) {
                 let path = item.get_path_coords();
 
-                let time_transit = "---";
+                let time_transit = "—";
                 if(path.length && point_last) {
                     const transit_coords = [point_last, path[0]];
                     const transit_distance = flight_distance_from_coords(transit_coords);
@@ -193,8 +219,8 @@ export class NeuronBrief {
                         step = {
                             type: NeuronFeatureWaypoint.NAME,
                             description: "Fly to location" + (image_count ? ' and capture image' : ''),
-                            components: path.map(x => x.toString()),
-                            time_duration: wait > 0 ? "+" + flight_time_from_duration(wait) : "---",
+                            components: path.map(x => NeuronBrief.get_components_from_point(x)),
+                            time_duration: wait > 0 ? "+" + flight_time_from_duration(wait) : "—",
                             time_transit: time_transit
                         };
                         summary.total_images += image_count;
@@ -209,7 +235,7 @@ export class NeuronBrief {
                         step = {
                             type: NeuronFeatureSurvey.NAME,
                             description: "Survey area with bounds",
-                            components: corners.map(x => x.toString()),
+                            components: corners.map(x => NeuronBrief.get_components_from_point(x)),
                             time_duration: step_duration,
                             time_transit: time_transit,
                         };
@@ -227,10 +253,16 @@ export class NeuronBrief {
                 summary.brief.push(step);
             }
 
-            let time_land = "---";
+            let time_land = "—";
             let land_point = point_last;
+            let land_component:MissionBriefComponent = {
+                field1: "—",
+                field2: "—",
+                field3: "—"
+            };
             if(land_point && land_point.altitude != 0) {
                 land_point = new NeuronInterfacePoint(point_last.latitude, point_last.longitude, 0.0);
+                land_component = NeuronBrief.get_components_from_point(land_point);
                 const land_coords = [point_last, land_point];
                 land_distance = flight_distance_from_coords(land_coords);
                 land_duration = land_distance/flight_speed;
@@ -240,9 +272,9 @@ export class NeuronBrief {
             let step_n:MissionBrief = {
                 type: NeuronFeatureWaypoint.NAME,
                 description: "Land at location",
-                components: [land_point ? land_point.toString() : "---"],
+                components: [land_component],
                 time_duration: time_land,
-                time_transit: "---"
+                time_transit: "—"
             };
             summary.brief.push(step_n);
 
@@ -254,7 +286,11 @@ export class NeuronBrief {
             let step_total_time:MissionBrief= {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                    field1: "",
+                    field2: "",
+                    field3: "",
+                }],
                 time_transit: "Duration:",
                 time_duration: total_time,
             };
@@ -263,7 +299,11 @@ export class NeuronBrief {
             let step_total_distance:MissionBrief= {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                    field1: "",
+                    field2: "",
+                    field3: "",
+                }],
                 time_transit: "Distance:",
                 time_duration: `${(summary.total_distance / 1000).toFixed(2)}km`,
             };
@@ -272,9 +312,13 @@ export class NeuronBrief {
             let step_total_images:MissionBrief= {
                 type: "",
                 description: "",
-                components: [""],
+                components: [{
+                    field1: "",
+                    field2: "",
+                    field3: "",
+                }],
                 time_transit: "Images:",
-                time_duration: summary.total_images > 0 ? summary.total_images.toString() : "---",
+                time_duration: summary.total_images > 0 ? summary.total_images.toString() : "—",
             };
             summary.brief.push(step_total_images);
         }

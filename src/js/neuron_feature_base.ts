@@ -25,7 +25,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     #dom:HTMLDivElement;
     #dom_buttons_visibility:HTMLButtonElement[];
 
-    static _altitude_ratio = 0.3048;   //Alt = [DOM Value] * Ratio
+    static _altitude_ratio = 0.3048;   //ft -> m: `Alt = [DOM Value] * Ratio
 
     //Add two sets of icons, one for each size button
     static _button_sizes = [
