@@ -38,8 +38,6 @@ console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`);
 
 //Initialize all of our options
 NeuronOptions.init();
-//Do the FA switch-out for our DOM icons
-neuron_load_dom_icons();
 
 //All of our preset DOM IDs
 const element_name_loader = 'loader';
@@ -74,11 +72,17 @@ window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help);
 function show_loader(show:boolean) {
     const el_loader = document.getElementById(element_name_loader);
     const el_app = document.getElementById(element_name_app);
-    el_loader.style.display = show ? 'block' : 'none';
-    el_app.style.display = show ? 'none' : 'block';
+    el_loader.style.display = show ? 'flex' : 'none';
+    el_app.style.display = show ? 'none' : 'flex';
 }
 
 let load_app_data = async () => {
+    //Do the FA switch-out for our DOM icons
+    neuron_load_dom_icons();
+
+    //Need to do this next, because many of the following need to known their final size on reset
+    show_loader(false);
+
     window.neuron_planner.reset();
     window.neuron_map.reset();
     window.neuron_statistics.reset();
@@ -87,8 +91,6 @@ let load_app_data = async () => {
 
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
-
-    // show_loader(false);
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {

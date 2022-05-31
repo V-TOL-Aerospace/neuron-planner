@@ -132,17 +132,16 @@ function _neuron_get_icon_fa(neuron_icon:NeuronIcons) {
         }
     }
 
-    console.log(i);
-
     return i;
 }
 
 export function neuron_load_dom_icons() {
     //Handle the DOM conversions for hard-coded icons
     for(const icon_name in NeuronIcons) {
-        if (!isNaN(Number(icon_name))) {
-            //@ts-ignore
-            const i = _neuron_get_icon_fa(icon_name);
+        const icon_id = Number(icon_name);
+        if (!isNaN(icon_id)) {
+            //XXX: Slight abuse of the enum, but it gets results!
+            const i = _neuron_get_icon_fa(icon_id);
             if(i)
                 library.add(i);
         }
