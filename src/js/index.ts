@@ -6,6 +6,7 @@ import { NeuronBrief } from './neuron_brief';
 import { NeuronStatistics } from './neuron_statistics';
 import { NeuronHelp } from './neuron_help';
 import { mm_to_px } from './neuron_tools_common';
+import { neuron_load_dom_icons } from './interface_fontawesome'
 
 //TODO: https://www.skovy.dev/blog/tree-shaking-font-awesome?seed=tnv79i
 // import '@fortawesome/fontawesome-free/js/fontawesome'
@@ -13,9 +14,7 @@ import { mm_to_px } from './neuron_tools_common';
 // import '@fortawesome/fontawesome-free/js/regular'
 // import '@fortawesome/fontawesome-free/js/brands'
 
-import { neuron_load_dom_icons } from './interface_fontawesome'
-
-import "../css/theme.css";  //XXX: Load this first so other definitions can use it
+// import "../css/theme.css";  //XXX: Loaded by minimal script in head
 import "../css/index.css";
 import "../css/map.css";
 import "../css/stats_options.css";
