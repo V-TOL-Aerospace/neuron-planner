@@ -7,16 +7,16 @@ module.exports = {
   mode: 'development',
   // entry: './src/js/index.ts',
   entry: {
-    index: './src/js/index.ts',
-    // index: {
-      // import: './src/js/index.ts',
-  //     // dependOn: [
-  //     //   'libs_map',
-  //     //   'libs_util',
-  //     // ]
-  //   },
-  //   // libs_map: ['proj4', 'leaflet'],
-  //   // libs_util: ['@zip.js/zip.js', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons']
+    // index: './src/js/index.ts',
+    index: {
+      import: './src/js/index.ts',
+      dependOn: [
+        'libs_map',
+        'libs_util',
+      ]
+    },
+    libs_map: ['proj4', 'leaflet'],
+    libs_util: ['@zip.js/zip.js', '@fortawesome/fontawesome-svg-core', '@fortawesome/free-solid-svg-icons']
   },
   devtool: 'source-map',
   devServer: {
@@ -56,15 +56,31 @@ module.exports = {
   },
   optimization: {
     runtimeChunk: 'single',
-    splitChunks: {
-      cacheGroups: {
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all'
-        }
-      }
-    },
+    // splitChunks: {
+    //   chunks: 'all',
+    //   cacheGroups: {
+    //     vendor: {
+    //       test: /[\\/]node_modules[\\/]/,
+    //       name: 'vendors',
+    //       chunks: 'all'
+    //     }
+    //   },
+      // maxInitialRequests: Infinity,
+      // minSize: 0,
+      // cacheGroups: {
+      //   vendor: {
+      //     test: /[\\/]node_modules[\\/]/,
+      //     name(module) {
+      //       // get the name. E.g. node_modules/packageName/not/this/part.js
+      //       // or node_modules/packageName
+      //       const packageName = module.context.match(/[\\/]node_modules[\\/](.*?)([\\/]|$)/)[1];
+
+      //       // npm package names are URL-safe, but some servers don't like @ symbols
+      //       return `npm.${packageName.replace('@', '')}`;
+      //     },
+      //   },
+      // },
+    // },
   },
   plugins: [
       new CopyWebpackPlugin({
