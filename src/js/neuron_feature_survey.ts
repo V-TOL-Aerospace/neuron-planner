@@ -21,7 +21,8 @@ export interface NeuronFeatureSurveyData {
     leadin:number,
     sidelap:number,
     overlap:number,
-    ground_resolution:number
+    ground_resolution:number,
+    label:string
 }
 
 interface NeuronFeatureSurveyLane {
@@ -819,7 +820,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             leadin: this.get_leadin(),
             overlap: this.get_overlap(),
             sidelap: this.get_sidelap(),
-            ground_resolution: this.get_ground_resolution()
+            ground_resolution: this.get_ground_resolution(),
+            label: this.get_label(),
         }
     }
 }

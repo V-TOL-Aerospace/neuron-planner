@@ -92,7 +92,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
     update_statistics() {
         const coords = this.#planner.get_mission_as_points();
-        const summary = this.#brief.get_mission_summary();
+        const summary = this.#brief.get_mission_summary(this.#planner.get_mission_items());
         // this.#last_mission_altitude = coords.length ?
         //     coords[coords.length - 1].altitude :
         //     0.0;

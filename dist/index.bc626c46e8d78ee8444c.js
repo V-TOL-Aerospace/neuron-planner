@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oFAAoF;IACpF,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,iBAAiB;IACjB;2DACuD;AAC3D;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;GAEG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":[".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-title {\n    grid-row: span;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oFAAoF;IACpF,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,cAAc;AAClB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,iBAAiB;IACjB;2DACuD;AAC3D;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;GAEG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":[".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-title {\n    grid-row: span;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for our margins.\n        */\n        width: 190mm;   /* 210 */\n        height: 277mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\n        */\n        width: 190mm;   /* 210 */\n        height: 276mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    #app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-main {\n        overflow: initial;\n    }\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,iBAAiB;IACrB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\n        */\n        width: 190mm;   /* 210 */\n        height: 276mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    #app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-main {\n        overflow: initial;\n    }\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1571,6 +1571,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_interfaces__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_interfaces */ "./src/js/neuron_interfaces.ts");
 /* harmony import */ var _neuron_options__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_options */ "./src/js/neuron_options.ts");
 /* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
+/* harmony import */ var _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./neuron_feature_point */ "./src/js/neuron_feature_point.ts");
+/* harmony import */ var _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./neuron_feature_polygon */ "./src/js/neuron_feature_polygon.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -1590,6 +1592,8 @@ var _NeuronBrief_planner, _NeuronBrief_brief_element, _NeuronBrief_brief_element
 
 
 
+
+
 class NeuronBrief {
     constructor(planner, brief_element_name) {
         // static TYPE = 'NeuronBrief';
@@ -1605,17 +1609,95 @@ class NeuronBrief {
         __classPrivateFieldSet(this, _NeuronBrief_brief_element, document.getElementById(__classPrivateFieldGet(this, _NeuronBrief_brief_element_name, "f")), "f");
     }
     update_mission_brief() {
-        const summary = this.get_mission_summary();
-        // var tab = window.open('about:blank', '_blank');
-        // // tab.document.write(html); // where 'html' is a variable containing your HTML
-        // tab.document.head.title = "Neuron Planner Mission Brief";
-        // let title = tab.document.createElement('h1');
-        // title.appendChild(tab.document.createTextNode("Mission Brief"));
+        const mission_features = __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_items();
+        const notables = this.get_mission_notables(mission_features);
+        const summary = this.get_mission_summary(mission_features);
         __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").innerHTML = '';
         let title = document.createElement('h1');
         title.appendChild(document.createTextNode("Mission Brief"));
         __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(title);
+        let table = document.createElement('div');
+        table.className = 'brief-table';
+        if (notables.length) {
+            let t1 = document.createElement('h2');
+            t1.className = 'brief-table-title';
+            t1.appendChild(document.createTextNode("Points of Interest"));
+            table.appendChild(t1);
+            const headings = [
+                "Item",
+                "Type",
+                "Description",
+                "Features",
+                "",
+                "",
+                "",
+                "",
+            ];
+            // let table = document.createElement('div');
+            // table.className = 'brief-table';
+            for (const h of headings) {
+                let th = document.createElement('div');
+                th.className = 'brief-table-header';
+                th.appendChild(document.createTextNode(h));
+                table.appendChild(th);
+            }
+            // for(let j = 0; j < row_step; j++) {
+            //     if(i + j >= rows.length)
+            //         break;
+            //     table.appendChild(rows[i + j]);
+            // }
+            let count = 0;
+            for (const item of summary.brief) {
+                count++;
+                //XXX: Check item.type for special cases of bold tallies
+                const content = [
+                    item.type ? count.toString() : "",
+                    item.type,
+                    item.description,
+                    item.components.length ? item.components[0].field1 : "—",
+                    item.components.length ? item.components[0].field2 : "—",
+                    item.components.length ? item.components[0].field3 : "—",
+                    "",
+                    ""
+                ];
+                const ind_values_start = 3;
+                for (let j = 0; j < content.length; j++) {
+                    let td = document.createElement('div');
+                    td.appendChild(document.createTextNode(content[j]));
+                    if ((j == 0) || (j >= ind_values_start))
+                        td.classList.add('brief-table-entry-right');
+                    if (!item.type)
+                        td.classList.add('brief-table-entry-bold');
+                    td.classList.add('brief-table-entry');
+                    table.appendChild(td);
+                }
+                //Handle case of multiple components (skipped if one or less)
+                for (let i = 1; i < item.components.length; i++) {
+                    const content = [
+                        "",
+                        "",
+                        "",
+                        item.components[i].field1,
+                        item.components[i].field2,
+                        item.components[i].field3,
+                        "",
+                        ""
+                    ];
+                    for (const h of content) {
+                        let td = document.createElement('div');
+                        td.appendChild(document.createTextNode(h));
+                        td.className = 'brief-table-entry-right brief-table-entry';
+                        table.appendChild(td);
+                    }
+                }
+            }
+            __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(table);
+        }
         if (summary.brief.length) {
+            let t2 = document.createElement('h2');
+            t2.className = 'brief-table-title';
+            t2.appendChild(document.createTextNode("Flight Plan"));
+            __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(t2);
             const headings = [
                 "Step",
                 "Type",
@@ -1686,9 +1768,9 @@ class NeuronBrief {
             }
             __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(table);
         }
-        else {
+        if (!notables.length && !summary.brief.length) {
             let td = document.createElement('div');
-            td.appendChild(document.createTextNode("No mission plan available."));
+            td.appendChild(document.createTextNode("No mission brief available."));
             __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(td);
         }
     }
@@ -1699,7 +1781,48 @@ class NeuronBrief {
             field3: point.toStringAltitude(),
         };
     }
-    get_mission_summary() {
+    get_mission_notables(mission_features) {
+        let notables = [];
+        for (const item of mission_features) {
+            let step = null;
+            //XXX: Ignore mission items with waypoints
+            // if(item instanceof NeuronFeatureBase) {
+            // } else
+            if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint) {
+                const point = item.get_point();
+                step = {
+                    type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint.NAME,
+                    description: (point && point.tag) ? point.tag : "Point of interest",
+                    components: [point ? NeuronBrief.get_components_from_point(point) : {
+                            field1: "",
+                            field2: "",
+                            field3: "",
+                        }],
+                    time_duration: "",
+                    time_transit: ""
+                };
+                // } else if(item instanceof NeuronFeaturePolygon) {
+            }
+            else if (item instanceof _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon) {
+                let corners = item.get_corners_as_points();
+                step = {
+                    type: _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon.NAME,
+                    description: "Area of interest",
+                    components: corners.map(x => NeuronBrief.get_components_from_point(x)),
+                    time_duration: "",
+                    time_transit: "",
+                };
+            }
+            else {
+                // console.warn("Unable to add mission item to brief");
+                // console.warn(item);
+            }
+            if (step)
+                notables.push(step);
+        }
+        return notables;
+    }
+    get_mission_summary(mission_features) {
         let summary = {
             brief: [],
             total_distance: 0,
@@ -1735,7 +1858,7 @@ class NeuronBrief {
                 time_transit: "—",
             };
             summary.brief.push(step0);
-            for (const item of __classPrivateFieldGet(this, _NeuronBrief_planner, "f").get_mission_items()) {
+            for (const item of mission_features) {
                 let path = item.get_path_coords();
                 let time_transit = "—";
                 if (path.length && point_last) {
@@ -2474,7 +2597,7 @@ _NeuronFeaturePoint_planner = new WeakMap(), _NeuronFeaturePoint_marker = new We
         console.warn("Planner not set, cannot convert point feature!");
     }
 };
-NeuronFeaturePoint.NAME = "[POLYGON FEATURE]";
+NeuronFeaturePoint.NAME = "Point";
 NeuronFeaturePoint.TYPE = "NeuronFeaturePoint";
 NeuronFeaturePoint.VERSION = 'cd512a90-dd55-11ec-8a8a-23c90341eb99';
 NeuronFeaturePoint.HELP_KEY = 'point';
@@ -2823,7 +2946,7 @@ _NeuronFeaturePolygon_show_corners = new WeakMap(), _NeuronFeaturePolygon_corner
 }, _NeuronFeaturePolygon_update_show_corners_from_dom = function _NeuronFeaturePolygon_update_show_corners_from_dom() {
     this.update_show_corners(__classPrivateFieldGet(this, _NeuronFeaturePolygon_dom_show_corners, "f").checked);
 };
-NeuronFeaturePolygon.NAME = "[POLYGON FEATURE]";
+NeuronFeaturePolygon.NAME = "Polygon";
 NeuronFeaturePolygon.TYPE = "NeuronFeaturePolygon";
 NeuronFeaturePolygon.VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
 NeuronFeaturePolygon.HELP_KEY = 'polygon';
@@ -6145,4 +6268,4 @@ module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=index.9713989f5fe79bc2e599.js.map
+//# sourceMappingURL=index.bc626c46e8d78ee8444c.js.map

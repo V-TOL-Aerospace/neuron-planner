@@ -11,7 +11,7 @@ export interface NeuronFeaturePointData {
 }
 
 export class NeuronFeaturePoint extends NeuronFeatureBase {
-    static override NAME = "[POLYGON FEATURE]";
+    static override NAME = "Point";
     static override TYPE = "NeuronFeaturePoint";
     static override VERSION = 'cd512a90-dd55-11ec-8a8a-23c90341eb99';
     static override HELP_KEY = 'point';

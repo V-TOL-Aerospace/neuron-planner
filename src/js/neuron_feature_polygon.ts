@@ -6,19 +6,21 @@ import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";
 
 export interface NeuronFeaturePolygonData {
-    version:string,
-    type:string,
-    corners:NeuronInterfacePointData[]
+    version:string;
+    type:string;
+    corners:NeuronInterfacePointData[];
+    label:string;
 }
 
 export class NeuronFeaturePolygon extends NeuronFeatureBase {
-    static override NAME = "[POLYGON FEATURE]";
+    static override NAME = "Polygon";
     static override TYPE = "NeuronFeaturePolygon";
-    static override VERSION = '79ed7650-d243-11ec-81f2-096bfcf46f51';
+    static override VERSION = 'f0e9c050-e135-11ec-8ea0-c3c316816bb1';
     static override HELP_KEY = 'polygon';
 
     #show_corners:boolean
 
+    #label:string;
     #corners:L.Marker[];
     #polygon:L.Polygon;
     #planner:NeuronPlanner;
@@ -27,6 +29,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
     #dom_show_corners:HTMLInputElement;
+    #dom_label:HTMLInputElement;
     #dom_convert_survey:HTMLButtonElement;
     #dom_export_kml:HTMLButtonElement;
     #dom_export_kmz:HTMLButtonElement;
@@ -39,6 +42,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.#dom_convert_survey = null;
         this.#dom_export_kml = null;
         this.#dom_export_kmz = null;
+        this.#label = "";
 
         this.set_planner(planner);
 
@@ -337,6 +341,12 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             c.appendChild(this._create_dom_label("Show corners:", this.#dom_show_corners, t21));
             c.appendChild(this.#dom_show_corners);
 
+            const t22 = "Text label for identification of the polygon";
+            this.#dom_label = this._create_dom_input_textbox(this.#label, this.#update_label_from_dom.bind(this));
+            this.#dom_label.title = t22;
+            c.appendChild(this._create_dom_label("Label:", this.#dom_label, t22));
+            c.appendChild(this.#dom_label);
+
             const t0 = "Convert this polygon to a survey feature";
             this.#dom_convert_survey = this._create_dom_input_button("Survey", this.#convert_to_survey.bind(this));
             this.#dom_convert_survey.title = t0;
@@ -369,6 +379,20 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.update_show_corners(this.#dom_show_corners.checked);
     }
 
+    #update_label_from_dom() {
+        this.set_label(this.#dom_label.value, false);
+    }
+
+    get_label() {
+        return this.#label;
+    }
+
+    set_label(label:string, update_dom:boolean = true) {
+        this.#label = label;
+        if(this.#dom_label && update_dom)
+            this.#dom_label.value = label;
+    }
+
     static override isObjectOfDataType(object: any): object is NeuronFeaturePolygonData {
         let is_valid =
             (object.type == NeuronFeaturePolygon.TYPE) &&
@@ -383,7 +407,9 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             throw new Error(`Invalid type check during creation of NeuronFeaturePolygon`);
 
         const corners = j.corners.map(x => NeuronInterfacePoint.from_json(x));
-        return new NeuronFeaturePolygon(map, corners);
+        let p = new NeuronFeaturePolygon(map, corners);
+        p.set_label(j.label.toString());
+        return p;
     }
 
     override to_json() {
@@ -391,7 +417,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         return <NeuronFeaturePolygonData>{
             version: NeuronFeaturePolygon.VERSION,
             type: NeuronFeaturePolygon.TYPE,
-            corners: this.get_corners_as_points().map(x => x.to_json())
+            corners: this.get_corners_as_points().map(x => x.to_json()),
+            label: this.#label,
         }
     }
 }
