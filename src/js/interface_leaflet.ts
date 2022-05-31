@@ -1,5 +1,6 @@
 import * as L from "leaflet";
 import 'leaflet/dist/leaflet.css';
+import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 // @ts-ignore
 //import * as ContextMenu from "leaflet-contextmenu";
 // import 'leaflet-contextmenu/dist/leaflet.contextmenu.css';\
@@ -16,7 +17,7 @@ const default_icon_options = {
 }
 L.Icon.Default.mergeOptions(default_icon_options);
 
-export function get_neuron_icon(class_name:string) {
+export function get_neuron_map_marker(class_name:string) {
     return new L.Icon({
         ...L.Icon.Default.prototype.options,
         className: class_name
@@ -33,12 +34,12 @@ export { L };
 
 export class LeafletContextMenuItem {
     text:string = "";
-    icon:string = "";
+    icon:NeuronIcons;
     callback: (contextTarget:L.Marker) => null;
 
-    constructor(text:string = "", fa_icon:string = "", callback:(contextTarget:L.Marker) => null = null) {
+    constructor(text:string = "", icon:NeuronIcons = null, callback:(contextTarget:L.Marker) => null = null) {
         this.text = text;
-        this.icon = fa_icon;
+        this.icon = icon;
 
         if(callback)
             this.callback = callback;
@@ -60,10 +61,14 @@ export function create_popup_context_dom(popup_title:string = "Marker", context_
             d.className = 'neuron-marker-popup-item';
 
             if(i.icon) {
-                let o = document.createElement('i');
-                o.className = `fas ${i.icon} neuron-marker-popup-icon`;
-                o.appendChild(document.createTextNode(i.text));
-                d.appendChild(o);
+                for(let ic of neuron_get_icon(i.icon)) {
+                    ic.classList.add('neuron-marker-popup-icon');
+                    d.appendChild(ic);
+                }
+                // let o = document.createElement('i');
+                // o.className = `fas ${i.icon} neuron-marker-popup-icon`;
+                // o.appendChild(document.createTextNode(i.text));
+                // d.appendChild(o);
             }
 
             let s = document.createElement('span');

@@ -1,3 +1,4 @@
+import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 import { L } from "./interface_leaflet";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronInterfacePoint} from "./neuron_interfaces";
@@ -100,16 +101,16 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
     #update_visibility_icons() {
         for(let but of this.#dom_buttons_visibility) {
-            const fa_size = this.#get_button_size_class(but.className);
+            const is_small = this.#use_small_icon(but.className);
             but.innerHTML = '';
-            let bvi = document.createElement("i");
-            bvi.className = 'fas ' + (this.#visible ? 'fa-eye-slash' : 'fa-eye') + fa_size;
-            but.appendChild(bvi);
+            const icons = neuron_get_icon(this.#visible ? NeuronIcons.HIDE : NeuronIcons.REVEAL, is_small);
+            for(const i of icons)
+                but.appendChild(i);
         }
     }
 
-    #get_button_size_class(button_class:string) {
-        return  button_class.includes('small') ? " fa-2xs" : "";
+    #use_small_icon(button_class:string) {
+        return  button_class.includes('small');
     }
 
     _get_dom(text:string="Mission Feature") {
@@ -129,15 +130,17 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
         this.#dom_buttons_visibility = [];
         for(const button_class of NeuronFeatureBase._button_sizes) {
-            const fa_size = this.#get_button_size_class(button_class);
+            const is_small = this.#use_small_icon(button_class);
 
             let b0 = document.createElement("button");
             b0.className = button_class;
             b0.title = "Zoom to feature";
             b0.onclick = this.zoom_to_feature.bind(this);
-            let b0i = document.createElement("i");
-            b0i.className = 'fas fa-location-crosshairs' + fa_size;
-            b0.appendChild(b0i);
+            for(const i of neuron_get_icon(NeuronIcons.IDENTIFY, is_small))
+                b0.appendChild(i);
+            // let b0i = document.createElement("i");
+            // b0i.className = 'fas fa-location-crosshairs' + is_small;
+            // b0.appendChild(b0i);
             d.appendChild(b0);
 
             let bv = document.createElement("button");
@@ -151,36 +154,35 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
             b1.className = button_class;
             b1.title = "Move up";
             b1.onclick = this.#request_move.bind(this, -1);
-            let b1i = document.createElement("i");
-            b1i.className = 'fas fa-arrow-up' + fa_size;
-            b1.appendChild(b1i);
+            // let b1i = document.createElement("i");
+            // b1i.className = 'fas fa-arrow-up' + is_small;
+            // b1.appendChild(b1i);
+            for(const i of neuron_get_icon(NeuronIcons.ARROW_UP, is_small))
+                b1.appendChild(i);
             d.appendChild(b1);
 
             let b2 = document.createElement("button");
             b2.className = button_class;
             b2.title = "Move down";
             b2.onclick = this.#request_move.bind(this, 1);
-            let b2i = document.createElement("i");
-            b2i.className = 'fas fa-arrow-down' + fa_size;
-            b2.appendChild(b2i);
+            for(const i of neuron_get_icon(NeuronIcons.ARROW_DOWN, is_small))
+                b2.appendChild(i);
             d.appendChild(b2);
 
             let b4 = document.createElement("button");
             b4.className = button_class;
             b4.title = "Help";
             b4.onclick = this.show_help.bind(this);
-            let b4i = document.createElement("i");
-            b4i.className = 'fas fa-question' + fa_size;
-            b4.appendChild(b4i);
+            for(const i of neuron_get_icon(NeuronIcons.HELP, is_small))
+                b4.appendChild(i);
             d.appendChild(b4);
 
             let b3 = document.createElement("button");
             b3.className = button_class;
             b3.title = "Remove";
             b3.onclick = this.remove_feature.bind(this);
-            let b3i = document.createElement("i");
-            b3i.className = 'fas fa-close' + fa_size;
-            b3.appendChild(b3i);
+            for(const i of neuron_get_icon(NeuronIcons.DELETE, is_small))
+                b3.appendChild(i);
             d.appendChild(b3);
         }
         title.appendChild(d);

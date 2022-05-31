@@ -3,7 +3,7 @@
 // import '@fortawesome/fontawesome-free/js/solid'
 
 import { icon, dom, library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowLeft, faArrowRight, faArrowUp, faBars, faClose, faDrawPolygon, faEye, faEyeSlash, faFile, faFileExport, faFileImport, faFolderOpen, faLocationCrosshairs, faLocationDot, faMinimize, faMinus, faPlus, faQuestionCircle, faSave, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faBars, faClose, faDrawPolygon, faEye, faEyeSlash, faFile, faFileExport, faFileImport, faFolderOpen, faLocationCrosshairs, faLocationDot, faMinimize, faMinus, faPlus, faQuestionCircle, faSave, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 
 // const faPlusIcon = icon(faFolderOpen)
 
@@ -72,7 +72,7 @@ function _neuron_get_icon_fa(neuron_icon:NeuronIcons) {
             break;
         }
         case NeuronIcons.ARROW_DOWN: {
-            i = faArrowUp;
+            i = faArrowDown;
             break;
         }
         case NeuronIcons.ARROW_LEFT: {
@@ -150,7 +150,12 @@ export function neuron_load_dom_icons() {
     dom.i2svg();
 }
 
-export function neuron_get_icon(neuron_icon:NeuronIcons) {
-    const i = _neuron_get_icon_fa(neuron_icon);
-    return i ? icon(i).node : new HTMLCollection();
+export function neuron_get_icon(neuron_icon:NeuronIcons, is_small:boolean = false) {
+    let i = _neuron_get_icon_fa(neuron_icon);
+    let opts = {
+        transform: {
+          size: is_small ? 10 : 16,     // small is fa-2xs
+        }
+    }
+    return i ? icon(i, opts).node : new HTMLCollection();
 }

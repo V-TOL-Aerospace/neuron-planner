@@ -4,6 +4,7 @@ import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
 import { NeuronOptionsBoolean, NeuronOptionsNumber, NeuronOptions } from "./neuron_options";
 import { NeuronBrief } from "./neuron_brief";
+import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 
 export class NeuronStatistics extends NeuronDOMFactory {
     #planner:NeuronPlanner;
@@ -350,9 +351,12 @@ export class NeuronStatistics extends NeuronDOMFactory {
         }
 
         button.innerHTML = '';
-        let i = document.createElement('i');
-        i.className = `fas fa-${section.style.display == 'none' ? 'plus' : 'minus'}`;
-        button.appendChild(i);
+        // let i = document.createElement('i');
+        // i.className = `fas fa-${section.style.display == 'none' ? 'plus' : 'minus'}`;
+        // button.appendChild(i);
+        const icons = neuron_get_icon(section.style.display == 'none' ? NeuronIcons.EXPAND : NeuronIcons.MINIMIZE);
+        for(const i of icons)
+            button.appendChild(i);
     }
 
     reset() {

@@ -1,9 +1,10 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./interface_leaflet";
+import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
 import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";
+import { NeuronIcons } from "./interface_fontawesome";
 
 export interface NeuronFeaturePolygonData {
     version:string;
@@ -151,16 +152,16 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         let m = L.marker([corner.latitude, corner.longitude], {
             draggable: true,
             autoPan: true,
-            icon: get_neuron_icon('neuron-marker-corner')
+            icon: get_neuron_map_marker('neuron-marker-corner')
         })
 
         const menu_items = [
-            new LeafletContextMenuItem("Show in plan", "fa-bars", this.show_on_plan.bind(this)),
+            new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
             null,
-            new LeafletContextMenuItem("Move forward", "fa-arrow-left", this.move_corner_forwards.bind(this)),
-            new LeafletContextMenuItem("Move backward", "fa-arrow-right", this.move_corner_backwards.bind(this)),
+            new LeafletContextMenuItem("Move forward", NeuronIcons.ARROW_LEFT, this.move_corner_forwards.bind(this)),
+            new LeafletContextMenuItem("Move backward", NeuronIcons.ARROW_RIGHT, this.move_corner_backwards.bind(this)),
             null,
-            new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_corner.bind(this)),
+            new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_corner.bind(this)),
         ]
         m.bindPopup(create_popup_context_dom("Polygon Corner", menu_items, m));
 

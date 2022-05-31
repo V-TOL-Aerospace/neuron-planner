@@ -1,8 +1,9 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
-import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_icon } from "./interface_leaflet";
+import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
 import { NeuronHelp } from "./neuron_help";
 import { NeuronOptions } from "./neuron_options";
+import { NeuronIcons } from "./interface_fontawesome";
 
 export interface NeuronFeaturePointData {
     version:string,
@@ -102,16 +103,16 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             this.#marker = L.marker(point.to_leaflet(),{
                 draggable: true,
                 autoPan: true,
-                icon: get_neuron_icon('neuron-marker-waypoint')
+                icon: get_neuron_map_marker('neuron-marker-waypoint')
             })
 
             this.#marker.on("drag", this.#update_position_from_event.bind(this));
             this.#marker.on("dblclick", this.#remove_point_by_event.bind(this));
 
             const menu_items = [
-                new LeafletContextMenuItem("Show in plan", "fa-bars", this.show_on_plan.bind(this)),
+                new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
                 null,
-                new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_context.bind(this)),
+                new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_context.bind(this)),
             ]
             this.#marker.bindPopup(create_popup_context_dom("Waypoint", menu_items, this.#marker));
 
