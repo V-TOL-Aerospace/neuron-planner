@@ -42,6 +42,8 @@ NeuronOptions.init();
 neuron_load_dom_icons();
 
 //All of our preset DOM IDs
+const element_name_loader = 'loader';
+const element_name_app = 'app';
 const element_name_plan = 'fp-plan';
 const element_prefix_stats = 'fp-stats';
 const element_name_map = 'fp-map-interactive';
@@ -69,6 +71,13 @@ window.neuron_brief = new NeuronBrief(window.neuron_planner, element_name_brief)
 window.neuron_statistics = new NeuronStatistics(window.neuron_planner, window.neuron_brief, element_prefix_stats);
 window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help);
 
+function show_loader(show:boolean) {
+    const el_loader = document.getElementById(element_name_loader);
+    const el_app = document.getElementById(element_name_app);
+    el_loader.style.display = show ? 'block' : 'none';
+    el_app.style.display = show ? 'none' : 'block';
+}
+
 let load_app_data = async () => {
     window.neuron_planner.reset();
     window.neuron_map.reset();
@@ -78,6 +87,8 @@ let load_app_data = async () => {
 
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
+
+    show_loader(false);
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {
