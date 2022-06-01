@@ -1,7 +1,6 @@
 const path = require('path');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const HtmlWebpackPartialsPlugin = require('html-webpack-partials-plugin');
 
 module.exports = {
   mode: 'development',
@@ -92,6 +91,7 @@ module.exports = {
           ]
       }),
     new HtmlWebpackPlugin({
+      template: 'src/html/index.html',
       title: 'Neuron Planner',
       meta: {
         "viewport":"width=device-width, height=device-height,  initial-scale=1.0, user-scalable=no;user-scalable=0;",
@@ -100,16 +100,6 @@ module.exports = {
         "msapplication-TileColor":"#da532c",
         "theme-color":"#ffffff",
       }
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, './src/html/head.partial.html'),
-      location: 'head',
-      priority: 'high'
-    }),
-    new HtmlWebpackPartialsPlugin({
-      path: path.join(__dirname, './src/html/body.partial.html'),
-      location: 'body',
-      priority: 'high'
     })
   ]
 };

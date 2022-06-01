@@ -25,7 +25,7 @@ export interface NeuronFeatureSurveyData {
     label:string
 }
 
-interface NeuronFeatureSurveyLane {
+export interface NeuronFeatureSurveyLane {
     start:NeuronInterfacePoint,
     end:NeuronInterfacePoint
 }

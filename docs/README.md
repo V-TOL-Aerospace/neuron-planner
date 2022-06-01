@@ -1,3 +1,5 @@
+neuron-planner / [Modules](modules.md)
+
 # Neuron Planner
 An online mission planning and flight management software
 

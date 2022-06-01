@@ -47,10 +47,14 @@ export class NeuronBrief {
         this.#brief_element_name = brief_element_name
     }
 
+    /** Resets the internal state of this class and prepares any relevant variables
+     */
     reset() {
         this.#brief_element = document.getElementById(this.#brief_element_name);
     }
 
+    /** Generates and updates the mission brief element in the document with the current mission brief details
+     */
     update_mission_brief() {
         const mission_features = this.#planner.get_mission_items();
         const notables = this.get_mission_notables(mission_features);
