@@ -7,6 +7,7 @@ import { NeuronStatistics } from './neuron_statistics';
 import { NeuronHelp } from './neuron_help';
 import { mm_to_px } from './neuron_tools_common';
 import { neuron_load_dom_icons } from './interface_fontawesome'
+import { get_supported_kmx_types } from './neuron_tools_kml'
 
 //TODO: https://www.skovy.dev/blog/tree-shaking-font-awesome?seed=tnv79i
 // import '@fortawesome/fontawesome-free/js/fontawesome'
@@ -75,6 +76,25 @@ function show_loader(show:boolean) {
     el_app.style.display = show ? 'none' : 'flex';
 }
 
+function dragOverHandler(event:DragEvent) {
+    // console.log('File(s) in drop zone');
+
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault();
+}
+
+function dragDropHandler(event:DragEvent) {
+    event.preventDefault();
+    const kmx_types = get_supported_kmx_types();
+    for(const file of event.dataTransfer.items) {
+        if(file.type == 'application/json') {
+            window.neuron_planner.load_mission_file(file.getAsFile());
+        } else if (kmx_types.includes(file.type)) {
+            window.neuron_planner.import_features_from_kmx(file.getAsFile());
+        }
+    }
+}
+
 let load_app_data = async () => {
     //Do the FA switch-out for our DOM icons
     neuron_load_dom_icons();
@@ -90,6 +110,10 @@ let load_app_data = async () => {
 
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
+
+    let el_app = document.getElementById(element_name_map);
+    el_app.ondrop = dragDropHandler;
+    el_app.ondragover = dragOverHandler;
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {

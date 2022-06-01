@@ -2,6 +2,7 @@ import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 import { L } from "./interface_leaflet";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronInterfacePoint} from "./neuron_interfaces";
+import { NeuronUID } from "./neuron_tools_common";
 
 export interface NeuronFeatureBaseData {
     version:string,
@@ -114,8 +115,16 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         return  button_class.includes('small');
     }
 
+    #remove_mission_feature_highlight() {
+        if(this.#dom) {
+            this.#dom.classList.remove('mission-feature-highlight');
+            this.#dom.classList.add('mission-feature-highlight-remove');
+        }
+    }
+
     _get_dom(text:string="Mission Feature") {
         this.#dom = document.createElement("div");
+        this.#dom.id = `mission-item-${NeuronUID()}`;
         this.#dom.className = 'mission-feature';
 
         let title = document.createElement("div");
@@ -221,9 +230,30 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     // }
 
     #request_move(direction:number = 0) {
-        if(this.#on_move && direction != 0)
+        if(this.#on_move && direction != 0) {
+            if(this.#dom) {
+                this.#dom.classList.remove('mission-feature-highlight-remove');
+                this.#dom.classList.add('mission-feature-highlight');
+                setTimeout(this.#remove_mission_feature_highlight.bind(this), 1000);
+
+                // this.#dom.classList.add('mission-feature-moved');
+                // setTimeout(this.#remove_mission_feature_moved.bind(this), 300);
+            }
+
             this.#on_move(this, direction);
+
+            if(this.#dom)
+                this.#dom.scrollIntoView();
+        }
     }
+
+    // #remove_mission_feature_moved() {
+    //     if(this.#dom) {
+    //         this.#dom.classList.remove('mission-feature-moved');
+    //         // dom.classList.remove('mission-feature-moved-down');
+    //         this.#dom.scrollIntoView();
+    //     }
+    // }
 
     set_remove_callback(on_remove:CallableFunction) {
         this.#on_remove = on_remove;

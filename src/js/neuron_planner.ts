@@ -402,17 +402,53 @@ export class NeuronPlanner {
     }
 
     update() {
-        this.#plan_element.innerHTML = '';
+        const mission_doms = this.#mission_items.map(x => x.get_dom());
+        const mission_ids = mission_doms.map(x => x.id);
 
-        // let count = 0;
-        for(const i of this.#mission_items) {
-            // count++;
+        const old_elements = Array.from(this.#plan_element.children).filter(x => !mission_ids.includes(x.id));
 
-            // const dom = document.createElement('div');
-            // dom.appendChild(document.createTextNode(`Step #${count}: ${i.constructor.name}`));
+        for(const el of old_elements)
+            el.remove();
+        // for(let el of this.#plan_element.children) {
+        //     if(!mission_ids.includes(el.id))
+        //         this.#plan_element.removeChild(el);
+        // }
 
-            this.#plan_element.appendChild(i.get_dom());
+        for(let j = 0; j < mission_doms.length; j++) {
+            const i = mission_doms[j];
+            const i_next = j+1 > mission_doms.length ? null : mission_doms[j+1];
+
+            let nodes = Array.from(this.#plan_element.children);
+            const ind_n = nodes.indexOf(i);
+            const ind_nn = nodes.indexOf(i_next);
+
+            //Check to see if our node is in the right location
+            if(ind_n != j) {
+                //It is not...
+                //Our next item is already in the list, so place it before that
+                if(i_next && ind_nn >= 0) {
+                    //Item is in the list, but is in the wrong spot
+                    //Or
+                    //Item is not in the list, insert before the next item
+                    this.#plan_element.insertBefore(i, i_next);
+                } else {
+                    //Item is not in the list, and there is no next item, append to end
+                    this.#plan_element.appendChild(i);
+                    i.scrollIntoView();
+                }
+
+                if(ind_n < 0) {
+                    i.classList.remove('mission-feature-highlight-remove');
+                    i.classList.add('mission-feature-highlight');
+                    setTimeout(this.#remove_mission_feature_highlight.bind(this, i), 1000);
+                }
+            }
         }
+    }
+
+    #remove_mission_feature_highlight(dom:HTMLDivElement) {
+        dom.classList.remove('mission-feature-highlight');
+        dom.classList.add('mission-feature-highlight-remove');
     }
 
     #kml_loaded(result:NeuronKMLData) {
@@ -467,10 +503,14 @@ export class NeuronPlanner {
         }
     }
 
-    import_features_from_files(files:Blob[]) {
+    import_features_from_kmx_multiple(files:Blob[]) {
         for(const file of files) {
-            kmx_load_file(file, this.#kml_loaded.bind(this));
+            this.import_features_from_kmx(file);
         }
+    }
+
+    import_features_from_kmx(file:Blob) {
+        kmx_load_file(file, this.#kml_loaded.bind(this));
     }
 
     reset() {

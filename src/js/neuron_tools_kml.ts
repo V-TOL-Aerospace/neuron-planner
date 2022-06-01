@@ -5,6 +5,10 @@ import * as zip from "@zip.js/zip.js";
 const type_kml = "application/vnd.google-earth.kml+xml";
 const type_kmz = "application/vnd.google-earth.kmz";
 
+export function get_supported_kmx_types() {
+    return [type_kml, type_kmz];
+}
+
 export interface NeuronKMLData {
     markers:NeuronInterfacePoint[];
     paths:NeuronInterfacePoint[][];
