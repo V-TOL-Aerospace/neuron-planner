@@ -35,6 +35,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     static override TYPE = "NeuronFeatureSurvey";
     static override VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
     static override HELP_KEY = 'survey';
+    static override IS_FLYABLE = true;
 
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
@@ -483,6 +484,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#clean_waypoints();
 
         super.remove_feature();
+    }
+
+    override is_flyable() {
+        return NeuronFeatureSurvey.IS_FLYABLE;
     }
 
     override get_path_coords() {

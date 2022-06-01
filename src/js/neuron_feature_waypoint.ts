@@ -19,6 +19,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override TYPE = "NeuronFeatureWaypoint";
     static override VERSION = '1066fce0-dd80-11ec-b085-f96e36263ede';
     static override HELP_KEY = 'waypoint';
+    static override IS_FLYABLE = true;
 
     #marker:L.Marker;
     #point:NeuronInterfacePoint;
@@ -258,6 +259,10 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
     override get_path_coords() {
         return this.#point ? [this.#point] : [];
+    }
+
+    override is_flyable() {
+        return NeuronFeatureWaypoint.IS_FLYABLE;
     }
 
     override get_dom() {

@@ -169,9 +169,10 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         super.remove_feature();
     }
 
-    override get_path_coords():NeuronInterfacePoint[] {
-        return [];
-    }
+    //XXX: No paths provided by this feature, use base return
+    // override get_path_coords():NeuronInterfacePoint[] {
+    //     return [];
+    // }
 
     override get_dom() {
         if(!this.#dom) {

@@ -14,6 +14,7 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     static TYPE = "NeuronFeatureBase";
     static VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
     static HELP_KEY = 'base';
+    static IS_FLYABLE = false;
 
     #visible:boolean;
     #map:L.Map;
@@ -280,6 +281,10 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         //XXX: Implement this per inherited feature
         if(this.#on_remove)
             this.#on_remove(this);
+    }
+
+    is_flyable() {
+        return NeuronFeatureBase.IS_FLYABLE;
     }
 
     get_path_coords() {

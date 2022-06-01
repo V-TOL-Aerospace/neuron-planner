@@ -256,39 +256,33 @@ export class NeuronBrief {
 
         for(const item of mission_features) {
             let step:MissionBriefItem = null;
-            //XXX: Ignore mission items with waypoints
-            // if(item instanceof NeuronFeatureBase) {
-            // } else
-            const coords = item.get_path_coords();
-            if(coords.length) {
-                //XXX: Skip all elements with path coordinates
-            } else if(item instanceof NeuronFeaturePoint) {
-                const point = item.get_point();
-                step = {
-                    type: NeuronFeaturePoint.NAME,
-                    description: (point && point.tag) ? point.tag : "Point of interest",
-                    components: [point ? NeuronBrief.get_components_from_point(point) : {
-                        field1: "",
-                        field2: "",
-                        field3: "",
-                    }],
-                    time_duration: "",
-                    time_transit: ""
-                };
-            // } else if(item instanceof NeuronFeaturePolygon) {
-            } else if(item instanceof NeuronFeaturePolygon) {
-                const corners = item.get_corners_as_points();
-                const tag = item.get_label();
-                step = {
-                    type: NeuronFeaturePolygon.NAME,
-                    description: (tag) ? tag : "Area of interest",
-                    components: corners.map(x => NeuronBrief.get_components_from_point(x)),
-                    time_duration: "",
-                    time_transit: "",
-                };
-            } else {
-                // console.warn("Unable to add mission item to brief");
-                // console.warn(item);
+
+            if(!item.is_flyable()) {
+                if(item instanceof NeuronFeaturePoint) {
+                    const point = item.get_point();
+                    step = {
+                        type: NeuronFeaturePoint.NAME,
+                        description: (point && point.tag) ? point.tag : "Point of interest",
+                        components: [point ? NeuronBrief.get_components_from_point(point) : {
+                            field1: "",
+                            field2: "",
+                            field3: "",
+                        }],
+                        time_duration: "",
+                        time_transit: ""
+                    };
+                // } else if(item instanceof NeuronFeaturePolygon) {
+                } else if(item instanceof NeuronFeaturePolygon) {
+                    const corners = item.get_corners_as_points();
+                    const tag = item.get_label();
+                    step = {
+                        type: NeuronFeaturePolygon.NAME,
+                        description: (tag) ? tag : "Area of interest",
+                        components: corners.map(x => NeuronBrief.get_components_from_point(x)),
+                        time_duration: "",
+                        time_transit: "",
+                    };
+                }
             }
 
            if(step)
@@ -350,11 +344,8 @@ export class NeuronBrief {
                 }
 
                 let step:MissionBriefItem = null;
-                //XXX: Ignore mission items with no points
-                // if(item instanceof NeuronFeatureBase) {
-                // } else
-                if(item instanceof NeuronFeatureWaypoint) {
-                    if(path.length) {
+                if(item.is_flyable()) {
+                    if(item instanceof NeuronFeatureWaypoint) {
                         const wait = item.get_wait_duration();
                         extra_mission_duration += wait;
                         const image_count = item.get_image_count();
@@ -366,12 +357,8 @@ export class NeuronBrief {
                             time_transit: time_transit
                         };
                         summary.total_images += image_count;
-                    }
-                // } else if(item instanceof NeuronFeaturePolygon) {
-                } else if(item instanceof NeuronFeatureSurvey) {
-                    let corners = item.get_corners_as_points();
-                    if(path.length) {
-
+                    } else if(item instanceof NeuronFeatureSurvey) {
+                        let corners = item.get_corners_as_points();
                         const step_distance = flight_distance_from_coords(path);
                         const step_duration = "+" + flight_time_from_duration(step_distance/flight_speed);
                         step = {
@@ -383,9 +370,6 @@ export class NeuronBrief {
                         };
                         summary.total_images += item.get_image_count();
                     }
-                } else {
-                    // console.warn("Unable to add mission item to brief");
-                    // console.warn(item);
                 }
 
                 if(path.length)
@@ -438,7 +422,7 @@ export class NeuronBrief {
             };
             summary.brief.push(step_total_time);
 
-            let step_total_distance:MissionBriefItem= {
+            let step_total_distance:MissionBriefItem = {
                 type: "",
                 description: "",
                 components: [{
@@ -451,7 +435,7 @@ export class NeuronBrief {
             };
             summary.brief.push(step_total_distance);
 
-            let step_total_images:MissionBriefItem= {
+            let step_total_images:MissionBriefItem = {
                 type: "",
                 description: "",
                 components: [{
