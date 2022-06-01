@@ -1,55 +1,55 @@
 {
-  "version": "0.2.0",
-  "name": "Neuron",
-  "short_name": "Neuron",
+  "version": "1.0.0",
+  "name": "Neuron Planner",
+  "short_name": "Neuron Planner",
   "description": "An online mission planning and flight management software.",
-  "launch_path": "/index.html",
-  "start_url": "/index.html",
+  "launch_path": "index.html",
+  "start_url": "index.html",
   "lang": "en",
   "icons": [
     {
-      "src": "/img/icons/mstile-70x70.png",
+      "src": "img/icons/mstile-70x70.png",
       "type": "image/png",
       "sizes": "70x70"
     },
     {
-      "src": "/img/icons/mstile-144x144.png",
+      "src": "img/icons/mstile-144x144.png",
       "type": "image/png",
       "sizes": "144x144"
     },
     {
-      "src": "/img/icons/mstile-150x150.png",
+      "src": "img/icons/mstile-150x150.png",
       "type": "image/png",
       "sizes": "150x150"
     },
     {
-      "src": "/img/icons/mstile-310x150.png",
+      "src": "img/icons/mstile-310x150.png",
       "type": "image/png",
       "sizes": "310x150"
     },
     {
-      "src": "/img/icons/mstile-310x310.png",
+      "src": "img/icons/mstile-310x310.png",
       "type": "image/png",
       "sizes": "310x310"
     },
     {
-      "src": "/img/icons/apple-touch-icon.png",
+      "src": "img/icons/apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
     },
     {
-      "src": "/img/icons/safari-pinned-tab.svg",
+      "src": "img/icons/safari-pinned-tab.svg",
       "type": "image/svg",
       "sizes": "196x196",
       "purpose": "any maskable"
     },
     {
-        "src": "/img/icons/android-chrome-192x192.png",
+        "src": "img/icons/android-chrome-192x192.png",
         "sizes": "192x192",
         "type": "image/png"
     },
     {
-        "src": "/img/icons/android-chrome-512x512.png",
+        "src": "img/icons/android-chrome-512x512.png",
         "sizes": "512x512",
         "type": "image/png"
     }
