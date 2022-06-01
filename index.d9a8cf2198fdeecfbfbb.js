@@ -55,7 +55,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-title {\n    grid-column: 1 / 9;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oFAAoF;IACpF,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,iBAAiB;IACjB;2DACuD;AAC3D;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;GAEG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":[".brief-table {\n    display: grid;\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\n    grid-template-columns: auto auto auto auto auto auto auto auto;\n    font-size: x-small;\n}\n\n.brief-table-title {\n    grid-column: 1 / 9;\n}\n\n.brief-table-entry {\n    text-align: left;\n    margin-left: 1em;\n    margin-right: 1em;\n    /* display: grid;\n    grid-template-columns: auto auto auto auto auto auto; */\n}\n\n.brief-table-entry-right {\n    text-align: right;\n}\n\n/* .brief-table-entry-center {\n    text-align: center;\n} */\n\n.brief-table-entry-bold {\n    font-weight: bold;\n}\n\n.brief-table-header {\n    font-weight: bold;\n    text-align: center;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".brief-table {\r\n    display: grid;\r\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\r\n    grid-template-columns: auto auto auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-title {\r\n    grid-column: 1 / 9;\r\n}\r\n\r\n.brief-table-entry {\r\n    text-align: left;\r\n    margin-left: 1em;\r\n    margin-right: 1em;\r\n    /* display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto; */\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .brief-table-entry-center {\r\n    text-align: center;\r\n} */\r\n\r\n.brief-table-entry-bold {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-header {\r\n    font-weight: bold;\r\n    text-align: center;\r\n}", "",{"version":3,"sources":["webpack://./src/css/brief.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,oFAAoF;IACpF,8DAA8D;IAC9D,kBAAkB;AACtB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,gBAAgB;IAChB,gBAAgB;IAChB,iBAAiB;IACjB;2DACuD;AAC3D;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;GAEG;;AAEH;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;IACjB,kBAAkB;AACtB","sourcesContent":[".brief-table {\r\n    display: grid;\r\n    /* Step, Type, Description, Features A, Features B, Features C, Transit, Duration  */\r\n    grid-template-columns: auto auto auto auto auto auto auto auto;\r\n    font-size: x-small;\r\n}\r\n\r\n.brief-table-title {\r\n    grid-column: 1 / 9;\r\n}\r\n\r\n.brief-table-entry {\r\n    text-align: left;\r\n    margin-left: 1em;\r\n    margin-right: 1em;\r\n    /* display: grid;\r\n    grid-template-columns: auto auto auto auto auto auto; */\r\n}\r\n\r\n.brief-table-entry-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .brief-table-entry-center {\r\n    text-align: center;\r\n} */\r\n\r\n.brief-table-entry-bold {\r\n    font-weight: bold;\r\n}\r\n\r\n.brief-table-header {\r\n    font-weight: bold;\r\n    text-align: center;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -81,7 +81,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "/* html {\n    height: 100%;\n} */\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: var(--theme-highlight);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,wCAAwC;AAC5C;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG","sourcesContent":["/* html {\n    height: 100%;\n} */\n\n.fp-user-buttons-frame {\n    display: flex;\n    flex: 0 1 1;\n    flex-direction: row;\n    background-color: var(--theme-bg-border);\n    padding: 0.1em;\n}\n\n.fp-user-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    padding: 0.5em;\n    border-radius: 0;\n}\n\n/* ========================== */\n/*          Main View         */\n/* ========================== */\n\n#fp-main {\n    display: flex;\n    flex-direction: row;\n    flex: 1 0 0;\n    overflow: hidden;\n}\n\n#fp-map {\n    flex: 1 0 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-map-sub {\n    flex: 1 0 0;\n}\n\n#fp-map-help {\n    display: none;\n    overflow: scroll;\n    padding: 1em;\n}\n\n#fp-summary {\n    flex: auto;\n    flex-grow: 0;\n    width: 25%;\n    display: flex;\n    flex-direction: column;\n    border-left: 2px solid black;\n}\n\n#fp-advanced {\n    display: flex;\n    flex-direction: column;\n}\n\n/* ========================== */\n/*       Drawing Toolbar      */\n/* ========================== */\n/*\n#fp-draw {\n    display: flex;\n    flex: 1 0 0;\n    flex-direction: row;\n    background-color: black;\n    padding: 0.1em;\n}\n\n.fp-draw-buttons {\n    flex: 1 0 0;\n    margin: 0.1em;\n    border-radius: 0;\n}\n*/\n\n/* ========================== */\n/*     Management Toolbar     */\n/* ========================== */\n/*\n#fp-manage {\n    display: flex;\n    flex: auto;\n    flex-direction: row;\n    padding: 0.1em;\n    background-color: black;\n}\n\n.fp-manage-buttons {\n    flex: 1 0 0;\n    border-radius: 0;\n}\n*/\n\n.fp-long-name {\n    margin-left: 0.5em;\n}\n\n#print-section {\n    display: none;\n}\n\n.help-highlight {\n    background-color: var(--theme-highlight);\n}\n\nbody{counter-reset: section}\nh2{counter-reset: sub-section}\nh3{counter-reset: composite}\nh4{counter-reset: detail}\n\nh2:before{\n  counter-increment: section;\n  content: counter(section) \". \";\n}\nh3:before{\n  counter-increment: sub-section;\n  content: counter(section) \".\" counter(sub-section) \". \";\n}\nh4:before{\n  counter-increment: composite;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\n}\nh5:before{\n  counter-increment: detail;\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "/* html {\r\n    height: 100%;\r\n} */\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    padding: 0.5em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-map-sub {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-help {\r\n    display: none;\r\n    overflow: scroll;\r\n    padding: 1em;\r\n}\r\n\r\n#fp-summary {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    width: 25%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-left: 2px solid black;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n#print-section {\r\n    display: none;\r\n}\r\n\r\n.help-highlight {\r\n    background-color: var(--theme-highlight);\r\n}\r\n\r\nbody{counter-reset: section}\r\nh2{counter-reset: sub-section}\r\nh3{counter-reset: composite}\r\nh4{counter-reset: detail}\r\n\r\nh2:before{\r\n  counter-increment: section;\r\n  content: counter(section) \". \";\r\n}\r\nh3:before{\r\n  counter-increment: sub-section;\r\n  content: counter(section) \".\" counter(sub-section) \". \";\r\n}\r\nh4:before{\r\n  counter-increment: composite;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\r\n}\r\nh5:before{\r\n  counter-increment: detail;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/index.css"],"names":[],"mappings":"AAAA;;GAEG;;AAEH;IACI,aAAa;IACb,WAAW;IACX,mBAAmB;IACnB,wCAAwC;IACxC,cAAc;AAClB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,cAAc;IACd,gBAAgB;AACpB;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;;AAE/B;IACI,aAAa;IACb,mBAAmB;IACnB,WAAW;IACX,gBAAgB;AACpB;;AAEA;IACI,WAAW;IACX,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,WAAW;AACf;;AAEA;IACI,aAAa;IACb,gBAAgB;IAChB,YAAY;AAChB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,4BAA4B;AAChC;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;;CAcC;;AAED,+BAA+B;AAC/B,+BAA+B;AAC/B,+BAA+B;AAC/B;;;;;;;;;;;;;CAaC;;AAED;IACI,kBAAkB;AACtB;;AAEA;IACI,aAAa;AACjB;;AAEA;IACI,wCAAwC;AAC5C;;AAEA,KAAK,sBAAsB;AAC3B,GAAG,0BAA0B;AAC7B,GAAG,wBAAwB;AAC3B,GAAG,qBAAqB;;AAExB;EACE,0BAA0B;EAC1B,8BAA8B;AAChC;AACA;EACE,8BAA8B;EAC9B,uDAAuD;AACzD;AACA;EACE,4BAA4B;EAC5B,8EAA8E;AAChF;AACA;EACE,yBAAyB;EACzB,kGAAkG;AACpG","sourcesContent":["/* html {\r\n    height: 100%;\r\n} */\r\n\r\n.fp-user-buttons-frame {\r\n    display: flex;\r\n    flex: 0 1 1;\r\n    flex-direction: row;\r\n    background-color: var(--theme-bg-border);\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-user-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    padding: 0.5em;\r\n    border-radius: 0;\r\n}\r\n\r\n/* ========================== */\r\n/*          Main View         */\r\n/* ========================== */\r\n\r\n#fp-main {\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex: 1 0 0;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-map {\r\n    flex: 1 0 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-map-sub {\r\n    flex: 1 0 0;\r\n}\r\n\r\n#fp-map-help {\r\n    display: none;\r\n    overflow: scroll;\r\n    padding: 1em;\r\n}\r\n\r\n#fp-summary {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    width: 25%;\r\n    display: flex;\r\n    flex-direction: column;\r\n    border-left: 2px solid black;\r\n}\r\n\r\n#fp-advanced {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n/* ========================== */\r\n/*       Drawing Toolbar      */\r\n/* ========================== */\r\n/*\r\n#fp-draw {\r\n    display: flex;\r\n    flex: 1 0 0;\r\n    flex-direction: row;\r\n    background-color: black;\r\n    padding: 0.1em;\r\n}\r\n\r\n.fp-draw-buttons {\r\n    flex: 1 0 0;\r\n    margin: 0.1em;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n/* ========================== */\r\n/*     Management Toolbar     */\r\n/* ========================== */\r\n/*\r\n#fp-manage {\r\n    display: flex;\r\n    flex: auto;\r\n    flex-direction: row;\r\n    padding: 0.1em;\r\n    background-color: black;\r\n}\r\n\r\n.fp-manage-buttons {\r\n    flex: 1 0 0;\r\n    border-radius: 0;\r\n}\r\n*/\r\n\r\n.fp-long-name {\r\n    margin-left: 0.5em;\r\n}\r\n\r\n#print-section {\r\n    display: none;\r\n}\r\n\r\n.help-highlight {\r\n    background-color: var(--theme-highlight);\r\n}\r\n\r\nbody{counter-reset: section}\r\nh2{counter-reset: sub-section}\r\nh3{counter-reset: composite}\r\nh4{counter-reset: detail}\r\n\r\nh2:before{\r\n  counter-increment: section;\r\n  content: counter(section) \". \";\r\n}\r\nh3:before{\r\n  counter-increment: sub-section;\r\n  content: counter(section) \".\" counter(sub-section) \". \";\r\n}\r\nh4:before{\r\n  counter-increment: composite;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \". \";\r\n}\r\nh5:before{\r\n  counter-increment: detail;\r\n  content: counter(section) \".\" counter(sub-section) \".\" counter(composite) \".\" counter(detail) \". \";\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -107,7 +107,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\n    display: flex;\n    flex-direction: column;\n}\n\n.neuron-marker-popup-title {\n    flex: auto;\n    justify-content: center;\n    display: flex;\n\n    font-weight: bold;\n    text-decoration: underline;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item {\n    flex: auto;\n    padding: 0.5em;\n}\n\n.neuron-marker-popup-item:hover {\n    background-color: #b0b0fd;\n    text-decoration: underline;\n    cursor: pointer;\n}\n\n.neuron-marker-popup-icon {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-item-text {\n    margin-left: 0.2em;\n    margin-right: 0.2em;\n}\n\n.neuron-marker-popup-break {\n    width: 100%;\n}"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, ".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}", "",{"version":3,"sources":["webpack://./src/css/map.css"],"names":[],"mappings":"AAAA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,UAAU;IACV,uBAAuB;IACvB,aAAa;;IAEb,iBAAiB;IACjB,0BAA0B;IAC1B,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,cAAc;AAClB;;AAEA;IACI,yBAAyB;IACzB,0BAA0B;IAC1B,eAAe;AACnB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,kBAAkB;IAClB,mBAAmB;AACvB;;AAEA;IACI,WAAW;AACf","sourcesContent":[".neuron-marker-popup {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.neuron-marker-popup-title {\r\n    flex: auto;\r\n    justify-content: center;\r\n    display: flex;\r\n\r\n    font-weight: bold;\r\n    text-decoration: underline;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item {\r\n    flex: auto;\r\n    padding: 0.5em;\r\n}\r\n\r\n.neuron-marker-popup-item:hover {\r\n    background-color: #b0b0fd;\r\n    text-decoration: underline;\r\n    cursor: pointer;\r\n}\r\n\r\n.neuron-marker-popup-icon {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-item-text {\r\n    margin-left: 0.2em;\r\n    margin-right: 0.2em;\r\n}\r\n\r\n.neuron-marker-popup-break {\r\n    width: 100%;\r\n}"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -133,7 +133,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-mission {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    scroll-margin: 0.25em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-highlight {\n    background-color: var(--theme-highlight);\n    transition: 250ms linear all;\n}\n\n.mission-feature-highlight-remove {\n    background-color: inherit;\n    transition: 250ms linear all;\n}\n\n.mission-feature-hidden {\n    background: #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: flex-end;\n}\n\n.mission-feature-title-button-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n\n.mission-feature-title-button,\n.mission-feature-title-button-small {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n\n.mission-feature-title-button-small {\n    display: none;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    /* overflow: scroll; */\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-subtitle {\n    font-weight: bold;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.neuron-marker-poi {\n    filter: hue-rotate(0deg);\n}\n\n.neuron-marker-corner {\n    filter: hue-rotate(145deg);\n}\n\n.neuron-marker-waypoint {\n    filter: hue-rotate(180deg);\n}\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;AAC1B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,+BAA+B;AACnC;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,uBAAuB;IACvB,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;IACd,+BAA+B;AACnC;;AAEA;IACI,wCAAwC;IACxC,4BAA4B;AAChC;;AAEA;IACI,yBAAyB;IACzB,4BAA4B;AAChC;;AAEA;IACI,mBAAmB;AACvB;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,yBAAyB;AAC7B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,wBAAwB;AAC5B;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,0BAA0B;AAC9B","sourcesContent":["#fp-mission {\n    flex: auto;\n    display: flex;\n    flex-direction: column;\n    overflow: hidden;\n}\n\n#fp-plan-container {\n    flex: auto;\n    overflow: scroll;\n    padding-top: 0.25em;\n    padding-bottom: 0.25em;\n}\n\n#fp-plan {\n    display: flex;\n    flex-direction: column;\n}\n\n#fp-plan-title {\n    text-align: center;\n    font-weight: bold;\n    box-shadow: 0px 4px 4px #888888;\n}\n\n.mission-feature {\n    display: flex;\n    flex-direction: column;\n    border: 2px solid black;\n    border-radius: 0.5em;\n    margin-top: 0.25em;\n    margin-bottom: 0.25em;\n    margin-left: 0.5em;\n    margin-right: 0.5em;\n    scroll-margin: 0.25em;\n    padding: 0.5em;\n    box-shadow: 4px 4px 4px #888888;\n}\n\n.mission-feature-highlight {\n    background-color: var(--theme-highlight);\n    transition: 250ms linear all;\n}\n\n.mission-feature-highlight-remove {\n    background-color: inherit;\n    transition: 250ms linear all;\n}\n\n.mission-feature-hidden {\n    background: #888888;\n}\n\n.mission-feature-title {\n    flex: auto;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n    justify-content: flex-end;\n}\n\n.mission-feature-title-button-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: row;\n    flex-wrap: wrap;\n}\n\n.mission-feature-title-button,\n.mission-feature-title-button-small {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.1em;\n    margin-right: 0.1em;\n}\n\n\n.mission-feature-title-button-small {\n    display: none;\n}\n\n.mission-feature-title-text {\n    font-weight: bold;\n    flex: auto;\n}\n.mission-feature-content {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    /* overflow: scroll; */\n}\n\n.mission-feature-content-label, .mission-feature-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.mission-feature-content-value-center {\n    text-align: center;\n}\n\n.mission-feature-content-subtitle {\n    font-weight: bold;\n}\n\n.mission-feature-content-value-right {\n    text-align: right;\n}\n\n.neuron-marker-poi {\n    filter: hue-rotate(0deg);\n}\n\n.neuron-marker-corner {\n    filter: hue-rotate(145deg);\n}\n\n.neuron-marker-waypoint {\n    filter: hue-rotate(180deg);\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n    scroll-behavior: smooth;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px var(--theme-shadow);\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-background);\r\n    border: 2px solid var(--theme-bg-border);\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    scroll-margin: 0.25em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px var(--theme-shadow);\r\n}\r\n\r\n.mission-feature-highlight {\r\n    background-color: var(--theme-highlight);\r\n    transition: 250ms linear all;\r\n}\r\n\r\n.mission-feature-highlight-remove {\r\n    background-color: inherit;\r\n    transition: 250ms linear all;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: var(--theme-shadow);\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.mission-feature-title-button-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.neuron-marker-poi {\r\n    filter: hue-rotate(0deg);\r\n}\r\n\r\n.neuron-marker-corner {\r\n    filter: hue-rotate(145deg);\r\n}\r\n\r\n.neuron-marker-waypoint {\r\n    filter: hue-rotate(180deg);\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/plan.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,aAAa;IACb,sBAAsB;IACtB,gBAAgB;AACpB;;AAEA;IACI,UAAU;IACV,gBAAgB;IAChB,mBAAmB;IACnB,sBAAsB;IACtB,uBAAuB;AAC3B;;AAEA;IACI,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,2CAA2C;AAC/C;;AAEA;IACI,aAAa;IACb,sBAAsB;IACtB,yCAAyC;IACzC,wCAAwC;IACxC,oBAAoB;IACpB,kBAAkB;IAClB,qBAAqB;IACrB,kBAAkB;IAClB,mBAAmB;IACnB,qBAAqB;IACrB,cAAc;IACd,2CAA2C;AAC/C;;AAEA;IACI,wCAAwC;IACxC,4BAA4B;AAChC;;AAEA;IACI,yBAAyB;IACzB,4BAA4B;AAChC;;AAEA;IACI,+BAA+B;AACnC;;AAEA;IACI,UAAU;IACV,aAAa;IACb,mBAAmB;IACnB,eAAe;IACf,yBAAyB;AAC7B;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,mBAAmB;IACnB,eAAe;AACnB;;AAEA;;IAEI,UAAU;IACV,YAAY;IACZ,kBAAkB;IAClB,mBAAmB;AACvB;;;AAGA;IACI,aAAa;AACjB;;AAEA;IACI,iBAAiB;IACjB,UAAU;AACd;AACA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,sBAAsB;AAC1B;;AAEA;IACI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;IACI,wBAAwB;AAC5B;;AAEA;IACI,0BAA0B;AAC9B;;AAEA;IACI,0BAA0B;AAC9B","sourcesContent":["#fp-mission {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: column;\r\n    overflow: hidden;\r\n}\r\n\r\n#fp-plan-container {\r\n    flex: auto;\r\n    overflow: scroll;\r\n    padding-top: 0.25em;\r\n    padding-bottom: 0.25em;\r\n    scroll-behavior: smooth;\r\n}\r\n\r\n#fp-plan {\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n#fp-plan-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    box-shadow: 0px 4px 4px var(--theme-shadow);\r\n}\r\n\r\n.mission-feature {\r\n    display: flex;\r\n    flex-direction: column;\r\n    background-color: var(--theme-background);\r\n    border: 2px solid var(--theme-bg-border);\r\n    border-radius: 0.5em;\r\n    margin-top: 0.25em;\r\n    margin-bottom: 0.25em;\r\n    margin-left: 0.5em;\r\n    margin-right: 0.5em;\r\n    scroll-margin: 0.25em;\r\n    padding: 0.5em;\r\n    box-shadow: 4px 4px 4px var(--theme-shadow);\r\n}\r\n\r\n.mission-feature-highlight {\r\n    background-color: var(--theme-highlight);\r\n    transition: 250ms linear all;\r\n}\r\n\r\n.mission-feature-highlight-remove {\r\n    background-color: inherit;\r\n    transition: 250ms linear all;\r\n}\r\n\r\n.mission-feature-hidden {\r\n    background: var(--theme-shadow);\r\n}\r\n\r\n.mission-feature-title {\r\n    flex: auto;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n    justify-content: flex-end;\r\n}\r\n\r\n.mission-feature-title-button-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: row;\r\n    flex-wrap: wrap;\r\n}\r\n\r\n.mission-feature-title-button,\r\n.mission-feature-title-button-small {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.1em;\r\n    margin-right: 0.1em;\r\n}\r\n\r\n\r\n.mission-feature-title-button-small {\r\n    display: none;\r\n}\r\n\r\n.mission-feature-title-text {\r\n    font-weight: bold;\r\n    flex: auto;\r\n}\r\n.mission-feature-content {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    /* overflow: scroll; */\r\n}\r\n\r\n.mission-feature-content-label, .mission-feature-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.mission-feature-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.mission-feature-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n\r\n.mission-feature-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n.neuron-marker-poi {\r\n    filter: hue-rotate(0deg);\r\n}\r\n\r\n.neuron-marker-corner {\r\n    filter: hue-rotate(145deg);\r\n}\r\n\r\n.neuron-marker-waypoint {\r\n    filter: hue-rotate(180deg);\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -159,7 +159,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\n        */\n        width: 190mm;   /* 210 */\n        height: 276mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    #app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-main {\n        overflow: initial;\n    }\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,iBAAiB;IACrB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\n/* Prefer portrait mode for very small screen sizes */\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\n    #fp-main {\n        flex-direction: column;\n    }\n\n    #fp-map {\n        max-height: 50%;\n    }\n\n    #fp-summary {\n        height: 50%;\n        width: 100%;\n        border-left: 0px;\n        border-top: 2px solid black;\n    }\n}\n\n@media only screen and (max-width: 820px) {\n    .fp-long-name {\n        display: none;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\n    .leaflet-control-attribution {\n        display: none;\n    }\n\n    #fp-summary > * {\n        font-size: x-small;\n    }\n\n    .mission-feature-content-value {\n        font-size: x-small;\n    }\n\n    .fp-stats-content-value {\n        font-size: x-small;\n    }\n\n    .mission-feature-title-button {\n        display: none;\n    }\n\n    .mission-feature-title-button-small {\n        display: block;\n    }\n}\n\n@media only screen and (orientation: portrait) and (max-height: 400px) {\n    #fp-summary {\n        height: 100%;\n        width: 100%;\n    }\n}\n\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\n    #fp-map {\n        max-height: 100%;\n    }\n\n    #fp-summary {\n        display: none;\n    }\n}\n\n@media print {\n    @page {\n        size: A4;\n        margin: 10mm;\n    }\n\n    /* body > * {\n        display: none;\n    } */\n    html {\n        /* height: auto; */\n        /*\n        Manually set our height and width\n        to make sure that we can scale the map\n        properly for display later.\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\n        */\n        width: 190mm;   /* 210 */\n        height: 276mm;   /* 297 */\n    }\n\n    body {\n        height: auto;\n        width: auto;\n    }\n\n    #app {\n        height: auto;\n        width: auto;\n        display: block;\n        overflow-x: auto;\n    }\n\n    #fp-main {\n        overflow: initial;\n    }\n    #fp-manage {\n        display: none;\n    }\n    #fp-summary {\n        display: none;\n    }\n    #fp-draw {\n        display: none;\n    }\n    #fp-map {\n        width: calc(190mm);\n        height: calc(277mm/2);\n    }\n    #fp-map-interactive {\n        display: block;\n    }\n    #fp-map-help {\n        display: none;\n    }\n    #print-section {\n        display: block;\n    }\n\n    .leaflet-control-attribution {\n        display: none;\n    }\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 276mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n\r\n    #app {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-main {\r\n        overflow: initial;\r\n    }\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/responsive.css"],"names":[],"mappings":";AACA,qDAAqD;AACrD;IACI;QACI,sBAAsB;IAC1B;;IAEA;QACI,eAAe;IACnB;;IAEA;QACI,WAAW;QACX,WAAW;QACX,gBAAgB;QAChB,2BAA2B;IAC/B;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,aAAa;IACjB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,kBAAkB;IACtB;;IAEA;QACI,aAAa;IACjB;;IAEA;QACI,cAAc;IAClB;AACJ;;AAEA;IACI;QACI,YAAY;QACZ,WAAW;IACf;AACJ;;AAEA;IACI;QACI,gBAAgB;IACpB;;IAEA;QACI,aAAa;IACjB;AACJ;;AAEA;IACI;QACI,QAAQ;QACR,YAAY;IAChB;;IAEA;;OAEG;IACH;QACI,kBAAkB;QAClB;;;;;SAKC;QACD,YAAY,IAAI,QAAQ;QACxB,aAAa,IAAI,QAAQ;IAC7B;;IAEA;QACI,YAAY;QACZ,WAAW;IACf;;IAEA;QACI,YAAY;QACZ,WAAW;QACX,cAAc;QACd,gBAAgB;IACpB;;IAEA;QACI,iBAAiB;IACrB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,aAAa;IACjB;IACA;QACI,kBAAkB;QAClB,qBAAqB;IACzB;IACA;QACI,cAAc;IAClB;IACA;QACI,aAAa;IACjB;IACA;QACI,cAAc;IAClB;;IAEA;QACI,aAAa;IACjB;AACJ","sourcesContent":["\r\n/* Prefer portrait mode for very small screen sizes */\r\n@media only screen and ((orientation: portrait) or (max-width: 620px)) {\r\n    #fp-main {\r\n        flex-direction: column;\r\n    }\r\n\r\n    #fp-map {\r\n        max-height: 50%;\r\n    }\r\n\r\n    #fp-summary {\r\n        height: 50%;\r\n        width: 100%;\r\n        border-left: 0px;\r\n        border-top: 2px solid black;\r\n    }\r\n}\r\n\r\n@media only screen and (max-width: 820px) {\r\n    .fp-long-name {\r\n        display: none;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n\r\n    #fp-summary > * {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .fp-stats-content-value {\r\n        font-size: x-small;\r\n    }\r\n\r\n    .mission-feature-title-button {\r\n        display: none;\r\n    }\r\n\r\n    .mission-feature-title-button-small {\r\n        display: block;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: portrait) and (max-height: 400px) {\r\n    #fp-summary {\r\n        height: 100%;\r\n        width: 100%;\r\n    }\r\n}\r\n\r\n@media only screen and (orientation: landscape) and (max-height: 400px) and (max-width: 620px) {\r\n    #fp-map {\r\n        max-height: 100%;\r\n    }\r\n\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n}\r\n\r\n@media print {\r\n    @page {\r\n        size: A4;\r\n        margin: 10mm;\r\n    }\r\n\r\n    /* body > * {\r\n        display: none;\r\n    } */\r\n    html {\r\n        /* height: auto; */\r\n        /*\r\n        Manually set our height and width\r\n        to make sure that we can scale the map\r\n        properly for display later.\r\n        Also account for page margin and a slight inset to make sure there's no unneeded overflow.\r\n        */\r\n        width: 190mm;   /* 210 */\r\n        height: 276mm;   /* 297 */\r\n    }\r\n\r\n    body {\r\n        height: auto;\r\n        width: auto;\r\n    }\r\n\r\n    #app {\r\n        height: auto;\r\n        width: auto;\r\n        display: block;\r\n        overflow-x: auto;\r\n    }\r\n\r\n    #fp-main {\r\n        overflow: initial;\r\n    }\r\n    #fp-manage {\r\n        display: none;\r\n    }\r\n    #fp-summary {\r\n        display: none;\r\n    }\r\n    #fp-draw {\r\n        display: none;\r\n    }\r\n    #fp-map {\r\n        width: calc(190mm);\r\n        height: calc(277mm/2);\r\n    }\r\n    #fp-map-interactive {\r\n        display: block;\r\n    }\r\n    #fp-map-help {\r\n        display: none;\r\n    }\r\n    #print-section {\r\n        display: block;\r\n    }\r\n\r\n    .leaflet-control-attribution {\r\n        display: none;\r\n    }\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -185,7 +185,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_sourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n    background-color: black;\n    color: white;\n    display: flex;\n    padding: 0.2em;\n}\n\n.fp-stats-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.5em;\n}\n\n.fp-stats-title-label {\n    flex: auto;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n/* .fp-stats-option-label {\n    flex: auto;\n}\n\n.fp-stats-option-value {\n    flex: auto;\n    max-width: 5em;\n} */\n\n.fp-stats-option-content-subtitle {\n    font-weight: bold;\n}\n", "",{"version":3,"sources":["webpack://./src/css/stats_options.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;;;;;;GAOG;;AAEH;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n    padding: 0.5em;\n    border-bottom: 2px solid black;\n}\n\n#fp-stats {\n    flex: auto;\n    flex-grow: 0;\n    display: flex;\n    flex-direction: column;\n}\n\n.fp-stats-title {\n    text-align: center;\n    font-weight: bold;\n    background-color: black;\n    color: white;\n    display: flex;\n    padding: 0.2em;\n}\n\n.fp-stats-title-button {\n    flex: auto;\n    flex-grow: 0;\n    margin-left: 0.5em;\n}\n\n.fp-stats-title-label {\n    flex: auto;\n}\n\n#fp-stats-options, #fp-stats-results {\n    flex: auto;\n    display: grid;\n    /* flex-direction: column; */\n    grid-template-columns: 50% 50%;\n    padding: 0.5em;\n    overflow: scroll;\n}\n\n.fp-stats-options-label, .fp-stats-options-value,\n.fp-stats-content-label, .fp-stats-content-value {\n    display: block;\n    margin-top: 0.2em;\n}\n\n.fp-stats-options-value-center, .fp-stats-content-value-center {\n    text-align: center;\n}\n\n.fp-stats-options-value-right, .fp-stats-content-value-right {\n    text-align: right;\n}\n\n/* .fp-stats-option-label {\n    flex: auto;\n}\n\n.fp-stats-option-value {\n    flex: auto;\n    max-width: 5em;\n} */\n\n.fp-stats-option-content-subtitle {\n    font-weight: bold;\n}\n"],"sourceRoot":""}]);
+___CSS_LOADER_EXPORT___.push([module.id, "#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n    padding: 0.2em;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n", "",{"version":3,"sources":["webpack://./src/css/stats_options.css"],"names":[],"mappings":"AAAA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;IACtB,cAAc;IACd,8BAA8B;AAClC;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,aAAa;IACb,sBAAsB;AAC1B;;AAEA;IACI,kBAAkB;IAClB,iBAAiB;IACjB,uBAAuB;IACvB,YAAY;IACZ,aAAa;IACb,cAAc;AAClB;;AAEA;IACI,UAAU;IACV,YAAY;IACZ,kBAAkB;AACtB;;AAEA;IACI,UAAU;AACd;;AAEA;IACI,UAAU;IACV,aAAa;IACb,4BAA4B;IAC5B,8BAA8B;IAC9B,cAAc;IACd,gBAAgB;AACpB;;AAEA;;IAEI,cAAc;IACd,iBAAiB;AACrB;;AAEA;IACI,kBAAkB;AACtB;;AAEA;IACI,iBAAiB;AACrB;;AAEA;;;;;;;GAOG;;AAEH;IACI,iBAAiB;AACrB","sourcesContent":["#fp-stats-container {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n    padding: 0.5em;\r\n    border-bottom: 2px solid black;\r\n}\r\n\r\n#fp-stats {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    display: flex;\r\n    flex-direction: column;\r\n}\r\n\r\n.fp-stats-title {\r\n    text-align: center;\r\n    font-weight: bold;\r\n    background-color: black;\r\n    color: white;\r\n    display: flex;\r\n    padding: 0.2em;\r\n}\r\n\r\n.fp-stats-title-button {\r\n    flex: auto;\r\n    flex-grow: 0;\r\n    margin-left: 0.5em;\r\n}\r\n\r\n.fp-stats-title-label {\r\n    flex: auto;\r\n}\r\n\r\n#fp-stats-options, #fp-stats-results {\r\n    flex: auto;\r\n    display: grid;\r\n    /* flex-direction: column; */\r\n    grid-template-columns: 50% 50%;\r\n    padding: 0.5em;\r\n    overflow: scroll;\r\n}\r\n\r\n.fp-stats-options-label, .fp-stats-options-value,\r\n.fp-stats-content-label, .fp-stats-content-value {\r\n    display: block;\r\n    margin-top: 0.2em;\r\n}\r\n\r\n.fp-stats-options-value-center, .fp-stats-content-value-center {\r\n    text-align: center;\r\n}\r\n\r\n.fp-stats-options-value-right, .fp-stats-content-value-right {\r\n    text-align: right;\r\n}\r\n\r\n/* .fp-stats-option-label {\r\n    flex: auto;\r\n}\r\n\r\n.fp-stats-option-value {\r\n    flex: auto;\r\n    max-width: 5em;\r\n} */\r\n\r\n.fp-stats-option-content-subtitle {\r\n    font-weight: bold;\r\n}\r\n"],"sourceRoot":""}]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -1072,12 +1072,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_help__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./neuron_help */ "./src/js/neuron_help.ts");
 /* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 /* harmony import */ var _interface_fontawesome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./interface_fontawesome */ "./src/js/interface_fontawesome.ts");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
-/* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
-/* harmony import */ var _css_stats_options_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/stats_options.css */ "./src/css/stats_options.css");
-/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
-/* harmony import */ var _css_brief_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/brief.css */ "./src/css/brief.css");
-/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
+/* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
+/* harmony import */ var _css_map_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/map.css */ "./src/css/map.css");
+/* harmony import */ var _css_stats_options_css__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../css/stats_options.css */ "./src/css/stats_options.css");
+/* harmony import */ var _css_plan_css__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ../css/plan.css */ "./src/css/plan.css");
+/* harmony import */ var _css_brief_css__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ../css/brief.css */ "./src/css/brief.css");
+/* harmony import */ var _css_responsive_css__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ../css/responsive.css */ "./src/css/responsive.css");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -1087,6 +1088,7 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+
 
 
 
@@ -1145,6 +1147,23 @@ function show_loader(show) {
     el_loader.style.display = show ? 'flex' : 'none';
     el_app.style.display = show ? 'none' : 'flex';
 }
+function dragOverHandler(event) {
+    // console.log('File(s) in drop zone');
+    // Prevent default behavior (Prevent file from being opened)
+    event.preventDefault();
+}
+function dragDropHandler(event) {
+    event.preventDefault();
+    const kmx_types = (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_9__.get_supported_kmx_types)();
+    for (const file of event.dataTransfer.items) {
+        if (file.type == 'application/json') {
+            window.neuron_planner.load_mission_file(file.getAsFile());
+        }
+        else if (kmx_types.includes(file.type)) {
+            window.neuron_planner.import_features_from_kmx(file.getAsFile());
+        }
+    }
+}
 let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     //Do the FA switch-out for our DOM icons
     (0,_interface_fontawesome__WEBPACK_IMPORTED_MODULE_8__.neuron_load_dom_icons)();
@@ -1157,6 +1176,9 @@ let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
     window.neuron_help.reset();
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
+    let el_app = document.getElementById(element_name_map);
+    el_app.ondrop = dragDropHandler;
+    el_app.ondragover = dragOverHandler;
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {
         window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
@@ -1794,42 +1816,33 @@ class NeuronBrief {
         let notables = [];
         for (const item of mission_features) {
             let step = null;
-            //XXX: Ignore mission items with waypoints
-            // if(item instanceof NeuronFeatureBase) {
-            // } else
-            const coords = item.get_path_coords();
-            if (coords.length) {
-                //XXX: Skip all elements with path coordinates
-            }
-            else if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint) {
-                const point = item.get_point();
-                step = {
-                    type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint.NAME,
-                    description: (point && point.tag) ? point.tag : "Point of interest",
-                    components: [point ? NeuronBrief.get_components_from_point(point) : {
-                            field1: "",
-                            field2: "",
-                            field3: "",
-                        }],
-                    time_duration: "",
-                    time_transit: ""
-                };
-                // } else if(item instanceof NeuronFeaturePolygon) {
-            }
-            else if (item instanceof _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon) {
-                const corners = item.get_corners_as_points();
-                const tag = item.get_label();
-                step = {
-                    type: _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon.NAME,
-                    description: (tag) ? tag : "Area of interest",
-                    components: corners.map(x => NeuronBrief.get_components_from_point(x)),
-                    time_duration: "",
-                    time_transit: "",
-                };
-            }
-            else {
-                // console.warn("Unable to add mission item to brief");
-                // console.warn(item);
+            if (!item.is_flyable()) {
+                if (item instanceof _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint) {
+                    const point = item.get_point();
+                    step = {
+                        type: _neuron_feature_point__WEBPACK_IMPORTED_MODULE_5__.NeuronFeaturePoint.NAME,
+                        description: (point && point.tag) ? point.tag : "Point of interest",
+                        components: [point ? NeuronBrief.get_components_from_point(point) : {
+                                field1: "",
+                                field2: "",
+                                field3: "",
+                            }],
+                        time_duration: "",
+                        time_transit: ""
+                    };
+                    // } else if(item instanceof NeuronFeaturePolygon) {
+                }
+                else if (item instanceof _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon) {
+                    const corners = item.get_corners_as_points();
+                    const tag = item.get_label();
+                    step = {
+                        type: _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_6__.NeuronFeaturePolygon.NAME,
+                        description: (tag) ? tag : "Area of interest",
+                        components: corners.map(x => NeuronBrief.get_components_from_point(x)),
+                        time_duration: "",
+                        time_transit: "",
+                    };
+                }
             }
             if (step)
                 notables.push(step);
@@ -1881,11 +1894,8 @@ class NeuronBrief {
                     time_transit = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(transit_distance / flight_speed);
                 }
                 let step = null;
-                //XXX: Ignore mission items with no points
-                // if(item instanceof NeuronFeatureBase) {
-                // } else
-                if (item instanceof _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint) {
-                    if (path.length) {
+                if (item.is_flyable()) {
+                    if (item instanceof _neuron_feature_waypoint__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureWaypoint) {
                         const wait = item.get_wait_duration();
                         extra_mission_duration += wait;
                         const image_count = item.get_image_count();
@@ -1898,11 +1908,8 @@ class NeuronBrief {
                         };
                         summary.total_images += image_count;
                     }
-                    // } else if(item instanceof NeuronFeaturePolygon) {
-                }
-                else if (item instanceof _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureSurvey) {
-                    let corners = item.get_corners_as_points();
-                    if (path.length) {
+                    else if (item instanceof _neuron_feature_survey__WEBPACK_IMPORTED_MODULE_1__.NeuronFeatureSurvey) {
+                        let corners = item.get_corners_as_points();
                         const step_distance = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_distance_from_coords)(path);
                         const step_duration = "+" + (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_4__.flight_time_from_duration)(step_distance / flight_speed);
                         step = {
@@ -1914,10 +1921,6 @@ class NeuronBrief {
                         };
                         summary.total_images += item.get_image_count();
                     }
-                }
-                else {
-                    // console.warn("Unable to add mission item to brief");
-                    // console.warn(item);
                 }
                 if (path.length)
                     point_last = path[path.length - 1];
@@ -2149,6 +2152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _interface_fontawesome__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./interface_fontawesome */ "./src/js/interface_fontawesome.ts");
 /* harmony import */ var _interface_leaflet__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interface_leaflet */ "./src/js/interface_leaflet.ts");
 /* harmony import */ var _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./neuron_dom_factory */ "./src/js/neuron_dom_factory.ts");
+/* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 var __classPrivateFieldSet = (undefined && undefined.__classPrivateFieldSet) || function (receiver, state, value, kind, f) {
     if (kind === "m") throw new TypeError("Private method is not writable");
     if (kind === "a" && !f) throw new TypeError("Private accessor was defined without a setter");
@@ -2160,7 +2164,8 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronFeatureBase_instances, _NeuronFeatureBase_visible, _NeuronFeatureBase_map, _NeuronFeatureBase_features, _NeuronFeatureBase_hidden_features, _NeuronFeatureBase_on_remove, _NeuronFeatureBase_on_change, _NeuronFeatureBase_on_move, _NeuronFeatureBase_dom, _NeuronFeatureBase_dom_buttons_visibility, _NeuronFeatureBase_update_visibility_dom, _NeuronFeatureBase_update_visibility_icons, _NeuronFeatureBase_use_small_icon, _NeuronFeatureBase_request_move;
+var _NeuronFeatureBase_instances, _NeuronFeatureBase_visible, _NeuronFeatureBase_map, _NeuronFeatureBase_features, _NeuronFeatureBase_hidden_features, _NeuronFeatureBase_on_remove, _NeuronFeatureBase_on_change, _NeuronFeatureBase_on_move, _NeuronFeatureBase_dom, _NeuronFeatureBase_dom_buttons_visibility, _NeuronFeatureBase_update_visibility_dom, _NeuronFeatureBase_update_visibility_icons, _NeuronFeatureBase_use_small_icon, _NeuronFeatureBase_remove_mission_feature_highlight, _NeuronFeatureBase_request_move;
+
 
 
 
@@ -2226,6 +2231,7 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_2__
     }
     _get_dom(text = "Mission Feature") {
         __classPrivateFieldSet(this, _NeuronFeatureBase_dom, document.createElement("div"), "f");
+        __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").id = `mission-item-${(0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_3__.NeuronUID)()}`;
         __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").className = 'mission-feature';
         let title = document.createElement("div");
         title.className = 'mission-feature-title';
@@ -2292,6 +2298,13 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_2__
         __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").appendChild(title);
         return __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f");
     }
+    // #remove_mission_feature_moved() {
+    //     if(this.#dom) {
+    //         this.#dom.classList.remove('mission-feature-moved');
+    //         // dom.classList.remove('mission-feature-moved-down');
+    //         this.#dom.scrollIntoView();
+    //     }
+    // }
     set_remove_callback(on_remove) {
         __classPrivateFieldSet(this, _NeuronFeatureBase_on_remove, on_remove, "f");
     }
@@ -2338,6 +2351,9 @@ class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_2__
         //XXX: Implement this per inherited feature
         if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_remove, "f"))
             __classPrivateFieldGet(this, _NeuronFeatureBase_on_remove, "f").call(this, this);
+    }
+    is_flyable() {
+        return NeuronFeatureBase.IS_FLYABLE;
     }
     get_path_coords() {
         //XXX: Implement this per inherited feature
@@ -2386,15 +2402,31 @@ _NeuronFeatureBase_visible = new WeakMap(), _NeuronFeatureBase_map = new WeakMap
     }
 }, _NeuronFeatureBase_use_small_icon = function _NeuronFeatureBase_use_small_icon(button_class) {
     return button_class.includes('small');
+}, _NeuronFeatureBase_remove_mission_feature_highlight = function _NeuronFeatureBase_remove_mission_feature_highlight() {
+    if (__classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f")) {
+        __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.remove('mission-feature-highlight');
+        __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.add('mission-feature-highlight-remove');
+    }
 }, _NeuronFeatureBase_request_move = function _NeuronFeatureBase_request_move(direction = 0) {
-    if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f") && direction != 0)
+    if (__classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f") && direction != 0) {
+        if (__classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f")) {
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.remove('mission-feature-highlight-remove');
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").classList.add('mission-feature-highlight');
+            setTimeout(__classPrivateFieldGet(this, _NeuronFeatureBase_instances, "m", _NeuronFeatureBase_remove_mission_feature_highlight).bind(this), 1000);
+            // this.#dom.classList.add('mission-feature-moved');
+            // setTimeout(this.#remove_mission_feature_moved.bind(this), 300);
+        }
         __classPrivateFieldGet(this, _NeuronFeatureBase_on_move, "f").call(this, this, direction);
+        if (__classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f"))
+            __classPrivateFieldGet(this, _NeuronFeatureBase_dom, "f").scrollIntoView();
+    }
 };
 //XXX: Override this in any inherited classes
 NeuronFeatureBase.NAME = "[BASE FEATURE]";
 NeuronFeatureBase.TYPE = "NeuronFeatureBase";
 NeuronFeatureBase.VERSION = '5caf31f0-d243-11ec-bbb3-df25a4f645e3';
 NeuronFeatureBase.HELP_KEY = 'base';
+NeuronFeatureBase.IS_FLYABLE = false;
 NeuronFeatureBase._altitude_ratio = 0.3048; //ft -> m: `Alt = [DOM Value] * Ratio
 //Add two sets of icons, one for each size button
 NeuronFeatureBase._button_sizes = [
@@ -2511,9 +2543,10 @@ class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0
             this._remove_layer_from_map(__classPrivateFieldGet(this, _NeuronFeaturePoint_marker, "f"));
         super.remove_feature();
     }
-    get_path_coords() {
-        return [];
-    }
+    //XXX: No paths provided by this feature, use base return
+    // override get_path_coords():NeuronInterfacePoint[] {
+    //     return [];
+    // }
     get_dom() {
         if (!__classPrivateFieldGet(this, _NeuronFeaturePoint_dom, "f")) {
             __classPrivateFieldSet(this, _NeuronFeaturePoint_dom, this._get_dom("Point"), "f");
@@ -3231,6 +3264,9 @@ class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODU
         __classPrivateFieldGet(this, _NeuronFeatureSurvey_instances, "m", _NeuronFeatureSurvey_clean_waypoints).call(this);
         super.remove_feature();
     }
+    is_flyable() {
+        return NeuronFeatureSurvey.IS_FLYABLE;
+    }
     get_path_coords() {
         const corners = this.get_corners_as_points();
         return __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f").length ? __classPrivateFieldGet(this, _NeuronFeatureSurvey_waypoints, "f") : (corners.length ? [corners[0]] : []);
@@ -3632,6 +3668,7 @@ NeuronFeatureSurvey.NAME = "Survey";
 NeuronFeatureSurvey.TYPE = "NeuronFeatureSurvey";
 NeuronFeatureSurvey.VERSION = '70bb75e0-d5a0-11ec-aaa0-9f86362bde1a';
 NeuronFeatureSurvey.HELP_KEY = 'survey';
+NeuronFeatureSurvey.IS_FLYABLE = true;
 NeuronFeatureSurvey._gsd_ratio = 0.01; //GSD = [DOM Value] * Ratio
 NeuronFeatureSurvey._xlap_ratio = 0.01; //Sidelap = [DOM Value] * Ratio
 
@@ -3778,6 +3815,9 @@ class NeuronFeatureWaypoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODUL
     }
     get_path_coords() {
         return __classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f") ? [__classPrivateFieldGet(this, _NeuronFeatureWaypoint_point, "f")] : [];
+    }
+    is_flyable() {
+        return NeuronFeatureWaypoint.IS_FLYABLE;
     }
     get_dom() {
         if (!__classPrivateFieldGet(this, _NeuronFeatureWaypoint_dom, "f")) {
@@ -3942,6 +3982,7 @@ NeuronFeatureWaypoint.NAME = "Waypoint";
 NeuronFeatureWaypoint.TYPE = "NeuronFeatureWaypoint";
 NeuronFeatureWaypoint.VERSION = '1066fce0-dd80-11ec-b085-f96e36263ede';
 NeuronFeatureWaypoint.HELP_KEY = 'waypoint';
+NeuronFeatureWaypoint.IS_FLYABLE = true;
 NeuronFeatureWaypoint._gsd_ratio = 0.01; //GSD = [DOM Value] * Ratio
 
 
@@ -4676,7 +4717,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     if (typeof state === "function" ? receiver !== state || !f : !state.has(receiver)) throw new TypeError("Cannot read private member from an object whose class did not declare it");
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
-var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_plan_element_name, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_add_point_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_kml_loaded;
+var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _NeuronPlanner_mission_items, _NeuronPlanner_on_change_callbacks, _NeuronPlanner_last_callback_id, _NeuronPlanner_clearing_mission, _NeuronPlanner_last_mission_altitude, _NeuronPlanner_plan_element_name, _NeuronPlanner_add_mission_features_from_json, _NeuronPlanner_add_waypoint_features_from_json, _NeuronPlanner_add_point_features_from_json, _NeuronPlanner_run_on_mission_change, _NeuronPlanner_remove_on_mission_change, _NeuronPlanner_mission_item_changed, _NeuronPlanner_array_move, _NeuronPlanner_move_mission_item, _NeuronPlanner_on_add_mission_item_updates, _NeuronPlanner_add_mission_item, _NeuronPlanner_remove_mission_feature_highlight, _NeuronPlanner_kml_loaded;
 
 
 
@@ -4878,13 +4919,42 @@ class NeuronPlanner {
         __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_run_on_mission_change).call(this);
     }
     update() {
-        __classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").innerHTML = '';
-        // let count = 0;
-        for (const i of __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f")) {
-            // count++;
-            // const dom = document.createElement('div');
-            // dom.appendChild(document.createTextNode(`Step #${count}: ${i.constructor.name}`));
-            __classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").appendChild(i.get_dom());
+        const mission_doms = __classPrivateFieldGet(this, _NeuronPlanner_mission_items, "f").map(x => x.get_dom());
+        const mission_ids = mission_doms.map(x => x.id);
+        const old_elements = Array.from(__classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").children).filter(x => !mission_ids.includes(x.id));
+        for (const el of old_elements)
+            el.remove();
+        // for(let el of this.#plan_element.children) {
+        //     if(!mission_ids.includes(el.id))
+        //         this.#plan_element.removeChild(el);
+        // }
+        for (let j = 0; j < mission_doms.length; j++) {
+            const i = mission_doms[j];
+            const i_next = j + 1 > mission_doms.length ? null : mission_doms[j + 1];
+            let nodes = Array.from(__classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").children);
+            const ind_n = nodes.indexOf(i);
+            const ind_nn = nodes.indexOf(i_next);
+            //Check to see if our node is in the right location
+            if (ind_n != j) {
+                //It is not...
+                //Our next item is already in the list, so place it before that
+                if (i_next && ind_nn >= 0) {
+                    //Item is in the list, but is in the wrong spot
+                    //Or
+                    //Item is not in the list, insert before the next item
+                    __classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").insertBefore(i, i_next);
+                }
+                else {
+                    //Item is not in the list, and there is no next item, append to end
+                    __classPrivateFieldGet(this, _NeuronPlanner_plan_element, "f").appendChild(i);
+                    i.scrollIntoView();
+                }
+                if (ind_n < 0) {
+                    i.classList.remove('mission-feature-highlight-remove');
+                    i.classList.add('mission-feature-highlight');
+                    setTimeout(__classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_remove_mission_feature_highlight).bind(this, i), 1000);
+                }
+            }
         }
     }
     replace_point_with_waypoint(old_item) {
@@ -4909,10 +4979,13 @@ class NeuronPlanner {
             console.warn("Unknown mission feature, cannot replace");
         }
     }
-    import_features_from_files(files) {
+    import_features_from_kmx_multiple(files) {
         for (const file of files) {
-            (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kmx_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
+            this.import_features_from_kmx(file);
         }
+    }
+    import_features_from_kmx(file) {
+        (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_5__.kmx_load_file)(file, __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_kml_loaded).bind(this));
     }
     reset() {
         //Collect our DOM elements
@@ -5042,6 +5115,9 @@ _NeuronPlanner_map = new WeakMap(), _NeuronPlanner_plan_element = new WeakMap(),
     if (run_update) {
         __classPrivateFieldGet(this, _NeuronPlanner_instances, "m", _NeuronPlanner_on_add_mission_item_updates).call(this);
     }
+}, _NeuronPlanner_remove_mission_feature_highlight = function _NeuronPlanner_remove_mission_feature_highlight(dom) {
+    dom.classList.remove('mission-feature-highlight');
+    dom.classList.add('mission-feature-highlight-remove');
 }, _NeuronPlanner_kml_loaded = function _NeuronPlanner_kml_loaded(result) {
     // console.log("Got file result:");
     // console.log(result);
@@ -5488,6 +5564,7 @@ function download_file(filename, data) {
 
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "get_supported_kmx_types": () => (/* binding */ get_supported_kmx_types),
 /* harmony export */   "kml_data_from_neuron_data": () => (/* binding */ kml_data_from_neuron_data),
 /* harmony export */   "kml_document_to_string": () => (/* binding */ kml_document_to_string),
 /* harmony export */   "kml_download_from_neuron_data": () => (/* binding */ kml_download_from_neuron_data),
@@ -5512,6 +5589,9 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 const type_kml = "application/vnd.google-earth.kml+xml";
 const type_kmz = "application/vnd.google-earth.kmz";
+function get_supported_kmx_types() {
+    return [type_kml, type_kmz];
+}
 function kmx_load_file(file, cb_file_loaded) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = null;
@@ -6318,4 +6398,4 @@ module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=index.d559978af005e2a53ad4.js.map
+//# sourceMappingURL=index.d9a8cf2198fdeecfbfbb.js.map
