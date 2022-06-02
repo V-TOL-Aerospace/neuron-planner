@@ -415,27 +415,39 @@
                 </div>
             </div>
             <div id="fp-summary">
-                <div id="fp-stats">
-                    <div id="fp-stats-settings">
-                        <div id='fp-stats-options-title' class="fp-stats-title">
-                            <span id='fp-stats-options-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
-                            <span class="fp-stats-title-label">Options</span>
+                <div id="plan-tab-container">
+                    <input id="plan-tab-fp-mission" type="radio" name="tab-group" checked="checked" />
+                    <label for="plan-tab-fp-mission">Plan</label>
+                    <input id="plan-tab-fp-stats" type="radio" name="tab-group" />
+                    <label for="plan-tab-fp-stats">Statistics</label>
+                    <input id="plan-tab-fp-options" type="radio" name="tab-group" />
+                    <label for="plan-tab-fp-options">Options</label>
+                    <div id="plan-tab-content">
+                        <div id="fp-mission">
+                            <!-- <div id="fp-plan-title">Mission Plan</div> -->
+                            <div id="fp-plan-container">
+                                <div id="fp-plan"></div>
+                            </div>
                         </div>
-                        <div id="fp-stats-options">
+                        <div id="fp-stats">
+                            <div id="fp-stats-statistics">
+                                <div id='fp-stats-results-title' class="fp-stats-title">
+                                    <span id='fp-stats-results-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
+                                    <!-- <span class="fp-stats-title-label">Statistics</span> -->
+                                </div>
+                                <div id="fp-stats-results"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div id="fp-stats-statistics">
-                        <div id='fp-stats-results-title' class="fp-stats-title">
-                            <span id='fp-stats-results-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
-                            <span class="fp-stats-title-label">Statistics</span>
+                        <div id="fp-options">
+                            <div id="fp-stats-settings">
+                                <div id='fp-stats-options-title' class="fp-stats-title">
+                                    <span id='fp-stats-options-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
+                                    <!-- <span class="fp-stats-title-label">Options</span> -->
+                                </div>
+                                <div id="fp-stats-options">
+                                </div>
+                            </div>
                         </div>
-                        <div id="fp-stats-results"></div>
-                    </div>
-                </div>
-                <div id="fp-mission">
-                    <div id="fp-plan-title">Mission Plan</div>
-                    <div id="fp-plan-container">
-                        <div id="fp-plan"></div>
                     </div>
                 </div>
             </div>
