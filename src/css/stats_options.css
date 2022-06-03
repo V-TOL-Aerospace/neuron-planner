@@ -1,13 +1,13 @@
-#fp-stats-container {
+/* #fp-stats {
     flex: auto;
     flex-grow: 0;
     display: flex;
     flex-direction: column;
     padding: 0.5em;
     border-bottom: 2px solid black;
-}
+} */
 
-#fp-stats {
+/* #fp-stats {
     flex: auto;
     flex-grow: 0;
     display: flex;
@@ -31,15 +31,17 @@
 
 .fp-stats-title-label {
     flex: auto;
-}
+} */
 
-#fp-stats-options, #fp-stats-results {
+#fp-options, #fp-stats {
     flex: auto;
     display: grid;
+    /* width: 100%; */
     /* flex-direction: column; */
     grid-template-columns: 50% 50%;
-    padding: 0.5em;
-    overflow: scroll;
+    grid-template-rows: auto auto;
+    /* padding: 0.5em; */
+    overflow: auto;
 }
 
 .fp-stats-options-label, .fp-stats-options-value,

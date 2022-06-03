@@ -42,15 +42,16 @@ NeuronOptions.init();
 //All of our preset DOM IDs
 const element_name_loader = 'loader';
 const element_name_app = 'app';
-const element_name_plan = 'fp-plan';
-const element_prefix_stats = 'fp-stats';
+const element_name_plan = 'fp-mission';
+const element_name_stats = 'fp-stats';
+const element_name_options = 'fp-options';
 const element_name_map = 'fp-map-interactive';
 const element_name_help = 'fp-map-help';
 const element_name_brief = 'print-section';
 const element_prefix_help = 'help';
-const elements_ignore_help = [
-    'fp-mission'
-]
+const elements_ignore_help_subs = [
+    'fp-mission',
+];
 
 //Print-specific variables to store for later
 const print_size_with_margin_mm = {
@@ -66,8 +67,8 @@ const print_size_with_margin_px = {
 window.neuron_planner = new NeuronPlanner(element_name_plan);
 window.neuron_map = new NeuronMap(element_name_map, element_name_help, window.neuron_planner);
 window.neuron_brief = new NeuronBrief(window.neuron_planner, element_name_brief);
-window.neuron_statistics = new NeuronStatistics(window.neuron_planner, window.neuron_brief, element_prefix_stats);
-window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help);
+window.neuron_statistics = new NeuronStatistics(window.neuron_planner, window.neuron_brief, element_name_stats, element_name_options);
+window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help_subs);
 
 function show_loader(show:boolean) {
     const el_loader = document.getElementById(element_name_loader);

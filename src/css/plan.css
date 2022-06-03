@@ -27,16 +27,16 @@
 .mission-feature {
     display: flex;
     flex-direction: column;
-    background-color: var(--theme-background);
+    background-color: var(--theme-bg);
     border: 2px solid var(--theme-bg-border);
     border-radius: 0.5em;
     margin-top: 0.25em;
     margin-bottom: 0.25em;
-    margin-left: 0.5em;
-    margin-right: 0.5em;
+    /* margin-left: 0.5em;
+    margin-right: 0.5em; */
     scroll-margin: 0.25em;
     padding: 0.5em;
-    box-shadow: 4px 4px 4px var(--theme-shadow);
+    box-shadow: 2px 2px 2px var(--theme-shadow);
 }
 
 .mission-feature-highlight {
@@ -121,69 +121,4 @@
 
 .neuron-marker-waypoint {
     filter: hue-rotate(180deg);
-}
-
-/* Main container */
-/* https://codepen.io/CesarVMB/pen/kPOrQb */
-#plan-tab-container {
-    margin: 0 auto;
-    width: 100%;
-    height: 100%;
-}
-
-/* Hide driving checkboxes */
-#plan-tab-container input {
-	height: 2.5em;
-	display: none;
-}
-
-/* Tabs */
-#plan-tab-container label {
-	background: #f9f9f9;
-	color: #888;
-    border-width: 2px;
-    border-style: solid;
-    border-left: #444;
-    border-right: #444;
-    border-top: #444;
-	cursor: pointer;
-	float: left;
-	height: 2.5em;
-	line-height: 2.5em;
-	margin-right: .25em;
-	padding: 0 1.5em;
-	text-align: center;
-}
-
-/* Hover for the tabs */
-#plan-tab-container input:hover + label {
-	background: #ddd;
-	color: #666;
-}
-
-/* Selected Tab */
-#plan-tab-container input:checked + label {
-	background: #f1f1f1;
-	color: #444;
-}
-
-/* Main content internal area */
-#plan-tab-content {
-	background: #f1f1f1;
-	height: 100%;
-	width: 100%;
-}
-
-/* Content pages */
-#plan-tab-content > div {
-	display: none;
-	padding: 1.5em;
-}
-
-/* Shown content page */
-/* XXX: Add and remove tab IDs here */
-#plan-tab-container input#plan-tab-fp-mission:checked ~ #plan-tab-content #fp-mission,
-#plan-tab-container input#plan-tab-fp-stats:checked ~ #plan-tab-content #fp-stats,
-#plan-tab-container input#plan-tab-fp-options:checked ~ #plan-tab-content #fp-options {
-    display: block;
 }

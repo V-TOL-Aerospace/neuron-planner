@@ -30,7 +30,7 @@
         --theme-bg-border: #505050;
         --theme-highlight: rgba(50,50,255,0.3);
         --theme-primary: #202944;
-        --theme-shadow: #888888;
+        --theme-shadow: #AAAAAA;
     }
 
     body {
@@ -223,8 +223,8 @@
                                     <li>A listing of non-flyable mission features, including any additional notations.</li>
                                     <li>A step-by-step listing of flyable mission features.</li>
                                     <li>Key summary points of each mission feature.</li>
-                                    <li>An estimated transit time from the previous mission feature to this mission feature (calculated with <a href="#help-fp-stats-settings">flight speed option</a>)</li>
-                                    <li>An estimated duration required to perform the mission feature (calculated with <a href="#help-fp-stats-settings">flight speed option</a>)</li>
+                                    <li>An estimated transit time from the previous mission feature to this mission feature (calculated with <a href="#help-fp-options">flight speed option</a>)</li>
+                                    <li>An estimated duration required to perform the mission feature (calculated with <a href="#help-fp-options">flight speed option</a>)</li>
                                 </ul>
                                 <p>The flight brief can also be triggered by printing the page (e.g. with CTRL+P).</p>
                                 <p>Note: if the map display does not render correctly, please try to recrate the flight brief without adjusting the map. The map position process sometimes does not occur quickly enough before the flight brief is created.</p>
@@ -309,9 +309,9 @@
                         <section id="help-fp-summary">
                             <h2>Mission Interface</h2>
                             <p>The mission interface is used to manage the current mission plan, including current mission settings and features, and to review mission statistics.</p>
-                            <section id="help-fp-stats-settings">
+                            <section id="help-fp-options">
                                 <h3>Mission Options</h3>
-                                <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats-statistics">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Brief</a> interfaces.</p>
+                                <p>The mission options panel displays a list of mission options that can be adjusted. These options are used to generate the details shown in the <a href="#help-fp-stats">Mission Statistics</a> and <a href="#help-fp-manage-create-flight-brief">Create Brief</a> interfaces.</p>
                                 <p>These options include:</p>
                                 <ul>
                                     <li>Show path: display mission flight plan on the map.</li>
@@ -324,7 +324,7 @@
                                     <li>Speed: aircraft cruise airspeed in meters per second.</li>
                                 </ul>
                             </section>
-                            <section id="help-fp-stats-statistics">
+                            <section id="help-fp-stats">
                                 <h3>Mission Statistics</h3>
                                 <p>The mission statistics interface lists various statistics about the current mission.</p>
                                 <p>These statistics include:</p>
@@ -365,7 +365,7 @@
                                         <li>Capture: Instructs the aircraft to capture an image when arriving at the waypoint.</li>
                                         <li>Ground Sampling Distance: The captured detail of the ground as a measure of distance per pixel on the final image. Lower values indicate a higher detail survey.</li>
                                     </ul>
-                                    <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the waypoint properties are adjusted. Adjusting camera parameters will update ground resolution from current altitude if "Capture" is disabled, or will update altitude from current ground resolution if "Capture" is enabled. The ground resolution can be calculated by manually setting the altitude, and vice versa.</p>
+                                    <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-options">Mission Options</a> and the waypoint properties are adjusted. Adjusting camera parameters will update ground resolution from current altitude if "Capture" is disabled, or will update altitude from current ground resolution if "Capture" is enabled. The ground resolution can be calculated by manually setting the altitude, and vice versa.</p>
                                     <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
                                 </section>
                                 <section id="help-fp-mission-polygon">
@@ -383,8 +383,8 @@
                                     <p>It has the following statistics:</p>
                                     <ul>
                                         <li>Waypoints: Lists the number of waypoints that are required based on the survey settings.</li>
-                                        <li>Duration: Lists the estimated flight time for the survey feature based on the <a href="#help-fp-stats-settings">Mission Options</a>.</li>
-                                        <li>Images: Lists the estimated number of images captured for the survey feature based on the <a href="#help-fp-stats-settings">Mission Options</a>.</li>
+                                        <li>Duration: Lists the estimated flight time for the survey feature based on the <a href="#help-fp-options">Mission Options</a>.</li>
+                                        <li>Images: Lists the estimated number of images captured for the survey feature based on the <a href="#help-fp-options">Mission Options</a>.</li>
                                     </ul>
                                     <p>It has the following properties:</p>
                                     <ul>
@@ -407,7 +407,7 @@
                                         <li>Sidelap: Amount of overlap in the imagery that will be captured between a pair of lanes. Typically, photogrammetry software requires an overlap greater than 50% to perform accurate stitching.</li>
                                         <li>Overlap: Amount of overlap in the imagery that will be captured between sequential images. Typically, photogrammetry software requires a overlap greater than 50% to perform accurate stitching.</li>
                                     </ul>
-                                    <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-stats-settings">Mission Options</a> and the survey properties are adjusted. The current ground resolution is always used to calculate the required altitude based on the camera configuration, and spacing settings are always calculated based off of the cameras projected area based on the calculated altitude and current sidelap. The ground resolution can be calculated by manually setting the altitude, and the sidelap can be calculated by manually setting the lane spacing.</p>
+                                    <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-fp-options">Mission Options</a> and the survey properties are adjusted. The current ground resolution is always used to calculate the required altitude based on the camera configuration, and spacing settings are always calculated based off of the cameras projected area based on the calculated altitude and current sidelap. The ground resolution can be calculated by manually setting the altitude, and the sidelap can be calculated by manually setting the lane spacing.</p>
                                 </section>
                             </section>
                         </section>
@@ -415,39 +415,47 @@
                 </div>
             </div>
             <div id="fp-summary">
-                <div id="plan-tab-container">
-                    <input id="plan-tab-fp-mission" type="radio" name="tab-group" checked="checked" />
-                    <label for="plan-tab-fp-mission">Plan</label>
-                    <input id="plan-tab-fp-stats" type="radio" name="tab-group" />
-                    <label for="plan-tab-fp-stats">Statistics</label>
-                    <input id="plan-tab-fp-options" type="radio" name="tab-group" />
-                    <label for="plan-tab-fp-options">Options</label>
-                    <div id="plan-tab-content">
-                        <div id="fp-mission">
+                <div class="tab-container">
+                    <input id="tab-label-mission" type="radio" name="tab-group" checked="checked" />
+                    <label for="tab-label-mission">Plan</label>
+                    <input id="tab-label-stats" type="radio" name="tab-group" />
+                    <label for="tab-label-stats">Statistics</label>
+                    <input id="tab-label-options" type="radio" name="tab-group" />
+                    <label for="tab-label-options">Options</label>
+                    <div class="tab-content">
+                        <div id="tab-item-mission">
+                            <div id="fp-mission"></div>
+                        </div>
+                        <div id="tab-item-stats">
+                            <div id="fp-stats"></div>
+                        </div>
+                        <div id="tab-item-options">
+                            <div id="fp-options"></div>
+                        </div>
                             <!-- <div id="fp-plan-title">Mission Plan</div> -->
-                            <div id="fp-plan-container">
-                                <div id="fp-plan"></div>
-                            </div>
-                        </div>
-                        <div id="fp-stats">
-                            <div id="fp-stats-statistics">
-                                <div id='fp-stats-results-title' class="fp-stats-title">
-                                    <span id='fp-stats-results-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
+                            <!-- <div id="fp-plan-container"> -->
+                                <!-- <div id="fp-plan"></div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div id="fp-stats"> -->
+                            <!-- <div id="fp-stats"> -->
+                                <!-- <div id='fp-stats-results-title' class="fp-stats-title">
+                                    <span id='fp-stats-results-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span> -->
                                     <!-- <span class="fp-stats-title-label">Statistics</span> -->
-                                </div>
-                                <div id="fp-stats-results"></div>
-                            </div>
-                        </div>
-                        <div id="fp-options">
-                            <div id="fp-stats-settings">
-                                <div id='fp-stats-options-title' class="fp-stats-title">
-                                    <span id='fp-stats-options-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span>
+                                <!-- </div> -->
+                                <!-- <div id="fp-stats-results"></div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
+                        <!-- <div id="fp-options"> -->
+                            <!-- <div id="fp-options"> -->
+                                <!-- <div id='fp-stats-options-title' class="fp-stats-title">
+                                    <span id='fp-stats-options-hide' class="fp-stats-title-button"><i class="fas fa-minus"></i></span> -->
                                     <!-- <span class="fp-stats-title-label">Options</span> -->
-                                </div>
-                                <div id="fp-stats-options">
-                                </div>
-                            </div>
-                        </div>
+                                <!-- </div> -->
+                                <!-- <div id="fp-stats-options"> -->
+                                <!-- </div> -->
+                            <!-- </div> -->
+                        <!-- </div> -->
                     </div>
                 </div>
             </div>

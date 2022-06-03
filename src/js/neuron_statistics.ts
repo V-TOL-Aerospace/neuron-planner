@@ -9,7 +9,8 @@ import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 export class NeuronStatistics extends NeuronDOMFactory {
     #planner:NeuronPlanner;
     #brief:NeuronBrief;
-    #stats_element_prefix:string;
+    #stats_element_name_stats:string;
+    #stats_element_name_options:string;
     #stats_section_show_display:string;
 
     #stats_results_element:HTMLElement;
@@ -43,11 +44,14 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
     #unsub_option_cb:CallableFunction;
 
-    constructor(planner:NeuronPlanner, brief:NeuronBrief, stats_element_prefix:string) {
-        super(stats_element_prefix);
+    constructor(planner:NeuronPlanner, brief:NeuronBrief, element_name_stats:string, element_name_options:string) {
+        super('fp-stats');
 
         this.#planner = planner;
         this.#brief = brief;
+
+        this.#stats_element_name_stats = element_name_stats;
+        this.#stats_element_name_options = element_name_options;
 
         this.#dom_option_show_path = null;
         this.#dom_option_speed = null;
@@ -64,7 +68,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_results_hide_element = null;
         this.#stats_options_title_element = null;
         this.#stats_results_title_element = null;
-        this.#stats_element_prefix = stats_element_prefix;
+        // this.#stats_element_prefix = stats_element_prefix;
         this.#stats_section_show_display = 'grid';
 
         this.#dom_stat_waypoints = null;
@@ -140,7 +144,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
     #gen_dom() {
         //Options
-        this.#stats_options_element = document.getElementById(`${this.#stats_element_prefix}-options`);
+        this.#stats_options_element = document.getElementById(this.#stats_element_name_options);
         this.#stats_options_element.innerHTML = '';
 
         const t5 = "Display the calculated flight path on the map";
@@ -205,7 +209,7 @@ export class NeuronStatistics extends NeuronDOMFactory {
 
 
         //Statistics
-        this.#stats_results_element = document.getElementById(`${this.#stats_element_prefix}-results`);
+        this.#stats_results_element = document.getElementById(this.#stats_element_name_stats);
         this.#stats_results_element.innerHTML = '';
 
         const t1 = "Total number of waypoints in the mission plan";
@@ -232,25 +236,25 @@ export class NeuronStatistics extends NeuronDOMFactory {
         this.#stats_results_element.appendChild(this._create_dom_label("Images:", this.#dom_stat_images, t4));
         this.#stats_results_element.appendChild(this.#dom_stat_images);
 
-        //Callbacks for hide
-        this.#stats_results_hide_element = document.getElementById(`${this.#stats_element_prefix}-results-hide`);
-        this.#stats_results_title_element = document.getElementById(`${this.#stats_element_prefix}-results-title`);
-        this.#stats_results_title_element.style.cursor = 'pointer';
-        this.#stats_results_title_element.onclick = this.#toggle_hide_section.bind(
-            this,
-            // this.#stats_results_title_element,
-            this.#stats_results_hide_element,
-            this.#stats_results_element
-        );
-        this.#stats_options_hide_element = document.getElementById(`${this.#stats_element_prefix}-options-hide`);
-        this.#stats_options_title_element = document.getElementById(`${this.#stats_element_prefix}-options-title`);
-        this.#stats_options_title_element.style.cursor = 'pointer';
-        this.#stats_options_title_element.onclick = this.#toggle_hide_section.bind(
-            this,
-            // this.#stats_options_title_element,
-            this.#stats_options_hide_element,
-            this.#stats_options_element
-        );
+        // //Callbacks for hide
+        // this.#stats_results_hide_element = document.getElementById(`${this.#stats_element_prefix}-results-hide`);
+        // this.#stats_results_title_element = document.getElementById(`${this.#stats_element_prefix}-results-title`);
+        // this.#stats_results_title_element.style.cursor = 'pointer';
+        // this.#stats_results_title_element.onclick = this.#toggle_hide_section.bind(
+        //     this,
+        //     // this.#stats_results_title_element,
+        //     this.#stats_results_hide_element,
+        //     this.#stats_results_element
+        // );
+        // this.#stats_options_hide_element = document.getElementById(`${this.#stats_element_prefix}-options-hide`);
+        // this.#stats_options_title_element = document.getElementById(`${this.#stats_element_prefix}-options-title`);
+        // this.#stats_options_title_element.style.cursor = 'pointer';
+        // this.#stats_options_title_element.onclick = this.#toggle_hide_section.bind(
+        //     this,
+        //     // this.#stats_options_title_element,
+        //     this.#stats_options_hide_element,
+        //     this.#stats_options_element
+        // );
     }
 
     #set_camera_selector(camera:NeuronCameraSpecifications = NeuronOptions.camera_preset_custom) {
