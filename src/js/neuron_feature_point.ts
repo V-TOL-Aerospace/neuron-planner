@@ -5,12 +5,14 @@ import { NeuronHelp } from "./neuron_help";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronIcons } from "./interface_fontawesome";
 
+//TODO: Document
 export interface NeuronFeaturePointData {
     version:string,
     type:string,
     point:NeuronInterfacePointData
 }
 
+//TODO: Document
 export class NeuronFeaturePoint extends NeuronFeatureBase {
     static override NAME = "Point";
     static override TYPE = "NeuronFeaturePoint";

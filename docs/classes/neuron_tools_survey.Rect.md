@@ -42,7 +42,7 @@
 
 #### Defined in
 
-[neuron_tools_survey.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L37)
+[neuron_tools_survey.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L21)
 
 ## Properties
 
@@ -52,7 +52,7 @@
 
 #### Defined in
 
-[neuron_tools_survey.ts:16](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L16)
+[neuron_tools_survey.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L17)
 
 ___
 
@@ -62,7 +62,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L17)
+[neuron_tools_survey.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L18)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L18)
+[neuron_tools_survey.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L19)
 
 ___
 
@@ -82,7 +82,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L15)
+[neuron_tools_survey.ts:16](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L16)
 
 ## Methods
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:24](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L24)
+[neuron_tools_survey.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L33)
 
 ___
 
@@ -110,7 +110,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L33)
+[neuron_tools_survey.ts:42](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L42)
 
 ___
 
@@ -124,7 +124,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L29)
+[neuron_tools_survey.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L38)
 
 ___
 
@@ -138,7 +138,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L20)
+[neuron_tools_survey.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L29)
 
 ___
 
@@ -152,4 +152,4 @@ ___
 
 #### Defined in
 
-[neuron_tools_survey.ts:45](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L45)
+[neuron_tools_survey.ts:46](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L46)

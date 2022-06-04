@@ -19,7 +19,7 @@
 
 #### Defined in
 
-[neuron_feature_survey.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L30)
+[neuron_feature_survey.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L32)
 
 ___
 
@@ -29,4 +29,4 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L29)
+[neuron_feature_survey.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L31)

@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[neuron_feature_polygon.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L12)
+[neuron_feature_polygon.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L13)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L13)
+[neuron_feature_polygon.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L14)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L11)
+[neuron_feature_polygon.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L12)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L10)
+[neuron_feature_polygon.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L11)

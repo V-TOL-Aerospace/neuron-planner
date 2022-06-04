@@ -19,13 +19,15 @@
 
 ▸ **create_popup_context_dom**(`popup_title?`, `context_items?`, `marker_context?`): `HTMLDivElement`
 
+Creates a consistent popup context menu for a leaflet marker
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `popup_title` | `string` | `"Marker"` |
-| `context_items` | [`LeafletContextMenuItem`](../classes/interface_leaflet.LeafletContextMenuItem.md)[] | `[]` |
-| `marker_context` | `Marker`<`any`\> | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `popup_title` | `string` | `"Marker"` | Title to put at the top of the popup |
+| `context_items` | [`LeafletContextMenuItem`](../classes/interface_leaflet.LeafletContextMenuItem.md)[] | `[]` | List of context menu items to load in |
+| `marker_context` | `Marker`<`any`\> | `null` | Marker context to use when calling the context menu item callbacks (passed as argument) |
 
 #### Returns
 
@@ -33,7 +35,7 @@
 
 #### Defined in
 
-[interface_leaflet.ts:49](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L49)
+[interface_leaflet.ts:59](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L59)
 
 ___
 
@@ -53,4 +55,4 @@ ___
 
 #### Defined in
 
-[interface_leaflet.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L20)
+[interface_leaflet.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L20)

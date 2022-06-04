@@ -23,6 +23,8 @@
 
 ▸ **CreateGrid**(`polygon`, `altitude`, `distance`, `spacing`, `angle`, `overshoot1`, `overshoot2`, `startpos`, `minLaneSeparation`, `leadin`): [`NeuronInterfacePoint`](../classes/neuron_interfaces.NeuronInterfacePoint.md)[]
 
+Creates listing of points that form a survey grid of a provided area
+
 #### Parameters
 
 | Name | Type | Description |
@@ -44,4 +46,4 @@
 
 #### Defined in
 
-[neuron_tools_survey.ts:290](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_survey.ts#L290)
+[neuron_tools_survey.ts:301](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_survey.ts#L301)

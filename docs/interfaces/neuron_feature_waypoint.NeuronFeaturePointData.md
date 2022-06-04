@@ -23,7 +23,7 @@
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L13)
+[neuron_feature_waypoint.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L14)
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L14)
+[neuron_feature_waypoint.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L15)
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L11)
+[neuron_feature_waypoint.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L12)
 
 ___
 
@@ -53,7 +53,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L10)
+[neuron_feature_waypoint.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L11)
 
 ___
 
@@ -63,7 +63,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:9](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L9)
+[neuron_feature_waypoint.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L10)
 
 ___
 
@@ -73,4 +73,4 @@ ___
 
 #### Defined in
 
-[neuron_feature_waypoint.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_waypoint.ts#L12)
+[neuron_feature_waypoint.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_waypoint.ts#L13)

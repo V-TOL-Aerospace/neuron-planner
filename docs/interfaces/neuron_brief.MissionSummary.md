@@ -21,7 +21,7 @@
 
 #### Defined in
 
-[neuron_brief.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_brief.ts#L30)
+[neuron_brief.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_brief.ts#L31)
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 #### Defined in
 
-[neuron_brief.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_brief.ts#L32)
+[neuron_brief.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_brief.ts#L33)
 
 ___
 
@@ -41,7 +41,7 @@ ___
 
 #### Defined in
 
-[neuron_brief.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_brief.ts#L31)
+[neuron_brief.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_brief.ts#L32)
 
 ___
 
@@ -51,4 +51,4 @@ ___
 
 #### Defined in
 
-[neuron_brief.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_brief.ts#L33)
+[neuron_brief.ts:34](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_brief.ts#L34)

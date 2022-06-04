@@ -4,11 +4,13 @@ import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { InterfaceSummaryTabName, NeuronInterfacePoint} from "./neuron_interfaces";
 import { NeuronUID } from "./neuron_tools_common";
 
+//TODO: Document
 export interface NeuronFeatureBaseData {
     version:string,
     type:string
 }
 
+//TODO: Document
 export class NeuronFeatureBase extends NeuronDOMFactory {
     //XXX: Override this in any inherited classes
     static NAME = "[BASE FEATURE]";

@@ -9,10 +9,12 @@ import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronOptions, NeuronOptionsBoolean } from "./neuron_options";
 import { NeuronFeaturePoint } from "./neuron_feature_point";
 
+//TODO: Document
 interface NeuronMapLayers {
     [id: string]: L.TileLayer;
 }
 
+//TODO: Document
 export class NeuronMap {
     #planner:NeuronPlanner
     #map:L.Map;

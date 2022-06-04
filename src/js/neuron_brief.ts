@@ -10,14 +10,14 @@ import { flight_distance_from_coords, flight_time_from_duration } from "./neuron
 import { NeuronFeaturePoint } from "./neuron_feature_point";
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 
-// const zeroPad = (num:number, places:number) => String(num).padStart(places, '0');
-
+//Defines an listing of key component fields to be displayed on the mission brief
 export interface MissionBriefComponent {
     field1:string,
     field2:string,
     field3:string
 }
 
+//Defines an summary for a set of specific feature, or part of a specific mission feature
 export interface MissionBriefItem {
     type:string,
     description:string,
@@ -26,6 +26,7 @@ export interface MissionBriefItem {
     time_duration:string
 }
 
+//Defines an summary for a set of mission features in an itemized list
 export interface MissionSummary {
     brief:MissionBriefItem[],
     total_duration:number,
@@ -34,13 +35,14 @@ export interface MissionSummary {
 }
 
 export class NeuronBrief {
-    // static TYPE = 'NeuronBrief';
-    // static VERSION = 'bb92b580-d319-11ec-8818-bfb4bc4aa250';
-
     #planner:NeuronPlanner;
     #brief_element:HTMLElement;
     #brief_element_name:string;
 
+    /** Creates a NeuronBrief object that controls the generation of the mission brief functions of the app
+     * @param  {NeuronPlanner} planner NeuronPlanner to use for accessing the current mission plan
+     * @param  {string} brief_element_name Identifier for the document element to use when generating a brief
+     */
     constructor(planner:NeuronPlanner, brief_element_name:string) {
         this.#planner = planner;
         this.#brief_element = null;
@@ -86,22 +88,12 @@ export class NeuronBrief {
                 "",
             ]
 
-            // let table = document.createElement('div');
-            // table.className = 'brief-table';
             for(const h of headings) {
                 let th = document.createElement('div');
                 th.className = 'brief-table-header';
                 th.appendChild(document.createTextNode(h));
                 table.appendChild(th);
             }
-
-            // for(let j = 0; j < row_step; j++) {
-            //     if(i + j >= rows.length)
-            //         break;
-
-            //     table.appendChild(rows[i + j]);
-            // }
-
 
             let count = 0;
             for(const item of notables) {
@@ -179,14 +171,6 @@ export class NeuronBrief {
                 table.appendChild(th);
             }
 
-            // for(let j = 0; j < row_step; j++) {
-            //     if(i + j >= rows.length)
-            //         break;
-
-            //     table.appendChild(rows[i + j]);
-            // }
-
-
             let count = 0;
             for(const item of summary.brief) {
                 count++;
@@ -246,6 +230,9 @@ export class NeuronBrief {
         }
     }
 
+    /** Breaks down a NeuronInterfacePoint location into set field components for the mission summary
+     * @param  {NeuronInterfacePoint} point Point to split into summary fields
+     */
     static get_components_from_point(point:NeuronInterfacePoint) {
         return <MissionBriefComponent>{
             field1: point.toStringLatitude(),
@@ -254,7 +241,9 @@ export class NeuronBrief {
         }
     }
 
-
+    /** Generates a list of mission brief items for non-flyable mission features
+     * @param  {MissionFeature[]} mission_features List of features to analyze.
+     */
     get_mission_notables(mission_features:MissionFeature[]) {
         let notables:MissionBriefItem[] = [];
 
@@ -296,6 +285,9 @@ export class NeuronBrief {
         return notables;
     }
 
+    /** Generates a mission summary for a set of mission features
+     * @param  {MissionFeature[]} mission_features List of features to analyze.
+     */
     get_mission_summary(mission_features:MissionFeature[]) {
         let summary:MissionSummary = {
             brief: [],

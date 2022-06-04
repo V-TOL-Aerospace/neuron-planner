@@ -26,7 +26,7 @@
 
 #### Defined in
 
-[neuron_planner.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L21)
+[neuron_planner.ts:22](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L22)
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L14)
+[neuron_planner.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L14)

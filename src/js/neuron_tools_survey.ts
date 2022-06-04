@@ -1,6 +1,7 @@
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { UTMPos, UTMLine } from "./interface_proj4";
 
+//TODO: Document
 export enum StartPosition {
     // Home = 0,
     BottomLeft = 1,
@@ -10,12 +11,20 @@ export enum StartPosition {
     // Point = 5
 }
 
-export class Rect
-{
+//TODO: Document
+export class Rect {
     Top:number;
     Bottom:number;
     Left:number;
     Right:number;
+
+    constructor(Left:number=0.0, Top:number=0.0, Width:number=0.0, Height:number=0.0)
+    {
+        this.Left = Left;
+        this.Top = Top;
+        this.Right = Left + Width;
+        this.Bottom = Top + Height;
+    }
 
     Width() {
         return this.Right - this.Left;
@@ -34,14 +43,6 @@ export class Rect
         return ((this.Top - this.Bottom) / 2) + this.Bottom;
     }
 
-    constructor(Left:number=0.0, Top:number=0.0, Width:number=0.0, Height:number=0.0)
-    {
-        this.Left = Left;
-        this.Top = Top;
-        this.Right = Left + Width;
-        this.Bottom = Top + Height;
-    }
-
     diag_distance()
     {
         // Pythagoras
@@ -50,13 +51,17 @@ export class Rect
 
 }
 
+//TODO: Document
 function remove_item_from_array(array:any[], item:any) {
     const index = array.indexOf(item);
     if (index > -1)
         array.splice(index, 1);
 }
 
-// Add an angle while normalizing output in the range 0...360
+/** Add an angle while normalizing output in the range 0...360
+ * @param  {number} angle Initial angle in degrees
+ * @param  {number} degrees Additional degrees to add to add onto the angle
+ */
 function AddAngle(angle:number, degrees:number) {
     angle += degrees;
     angle = angle % 360;
@@ -67,6 +72,7 @@ function AddAngle(angle:number, degrees:number) {
     return angle;
 }
 
+//TODO: Document
 function FindLineIntersection(start1:UTMPos, end1:UTMPos, start2:UTMPos, end2:UTMPos) {
     let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
     //  AB & CD are parallel
@@ -86,6 +92,7 @@ function FindLineIntersection(start1:UTMPos, end1:UTMPos, start2:UTMPos, end2:UT
     );
 }
 
+//TODO: Document
 function getPolyMinMax(utmpos:UTMPos[]) {
     if (utmpos.length == 0)
         return new Rect();
@@ -106,6 +113,7 @@ function getPolyMinMax(utmpos:UTMPos[]) {
     return new Rect(min_x, max_y, max_x - min_x, min_y - max_y);
 }
 
+//TODO: Document
 function PointInPolygon(p:UTMPos, poly:UTMPos[]) {
     let p1 = new UTMPos()
     let p2 = new UTMPos();
@@ -144,6 +152,7 @@ function PointInPolygon(p:UTMPos, poly:UTMPos[]) {
     return inside;
 }
 
+//TODO: Document
 function FindLineIntersectionExtension(start1:UTMPos, end1:UTMPos, start2:UTMPos, end2:UTMPos) {
     let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
     //  AB & CD are parallel
@@ -167,8 +176,8 @@ function FindLineIntersectionExtension(start1:UTMPos, end1:UTMPos, start2:UTMPos
     return result;
 }
 
-function findClosestPoint(start:UTMPos, list:UTMPos[])
-{
+//TODO: Document
+function findClosestPoint(start:UTMPos, list:UTMPos[]) {
     let answer = new UTMPos();
     let current_best = Number.MAX_VALUE;
 
@@ -184,6 +193,7 @@ function findClosestPoint(start:UTMPos, list:UTMPos[])
     return answer;
 }
 
+//TODO: Document
 function findClosestLine(start:UTMPos, list:UTMLine[], min_distance:number, angle:number):UTMLine {
     if (min_distance != 0) {
         // By now, just add 5.000 km to our lines so they are long enough to allow intersection
@@ -266,6 +276,7 @@ function findClosestLine(start:UTMPos, list:UTMLine[], min_distance:number, angl
     }
 }
 
+//TODO: Document
 export enum GridPointTags {
     START = "S",
     END = "E",
@@ -275,7 +286,7 @@ export enum GridPointTags {
 }
 
 const min_distance = 0.5;
-/**
+/** Creates listing of points that form a survey grid of a provided area
  * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
  * @param  {number} altitude altitude to map to the final points
  * @param  {number} distance distance between lines
@@ -553,8 +564,7 @@ export function CreateGrid(
     let ans:UTMPos[] = [];
     while (grid.length > 0) {
         // for each line, check which end of the line is the next closest
-        if (closest.p1.GetDistance2D(last_pnt) < closest.p2.GetDistance2D(last_pnt))
-        {
+        if (closest.p1.GetDistance2D(last_pnt) < closest.p2.GetDistance2D(last_pnt)) {
             let new_start = closest.p1.relative_point_from_dist_bearing(angle, -leadin);
             new_start.tag = GridPointTags.START;
             //UTMLine(new_start, "S");

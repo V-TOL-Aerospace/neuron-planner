@@ -54,7 +54,7 @@
 
 #### Defined in
 
-[neuron_interfaces.ts:25](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L25)
+[neuron_interfaces.ts:49](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L49)
 
 ## Properties
 
@@ -64,7 +64,7 @@
 
 #### Defined in
 
-[neuron_interfaces.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L19)
+[neuron_interfaces.ts:43](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L43)
 
 ___
 
@@ -74,7 +74,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L20)
+[neuron_interfaces.ts:44](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L44)
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L17)
+[neuron_interfaces.ts:41](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L41)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L18)
+[neuron_interfaces.ts:42](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L42)
 
 ___
 
@@ -104,7 +104,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L21)
+[neuron_interfaces.ts:45](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L45)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:23](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L23)
+[neuron_interfaces.ts:47](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L47)
 
 ## Methods
 
@@ -134,7 +134,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L37)
+[neuron_interfaces.ts:61](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L61)
 
 ___
 
@@ -155,7 +155,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:106](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L106)
+[neuron_interfaces.ts:130](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L130)
 
 ___
 
@@ -175,7 +175,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:118](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L118)
+[neuron_interfaces.ts:142](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L142)
 
 ___
 
@@ -195,7 +195,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:110](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L110)
+[neuron_interfaces.ts:134](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L134)
 
 ___
 
@@ -215,7 +215,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:114](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L114)
+[neuron_interfaces.ts:138](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L138)
 
 ___
 
@@ -235,7 +235,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:52](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L52)
+[neuron_interfaces.ts:76](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L76)
 
 ___
 
@@ -249,7 +249,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:87](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L87)
+[neuron_interfaces.ts:111](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L111)
 
 ___
 
@@ -263,7 +263,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:44](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L44)
+[neuron_interfaces.ts:68](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L68)
 
 ___
 
@@ -283,7 +283,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:56](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L56)
+[neuron_interfaces.ts:80](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L80)
 
 ___
 
@@ -303,7 +303,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:60](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L60)
+[neuron_interfaces.ts:84](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L84)
 
 ___
 
@@ -323,7 +323,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:74](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L74)
+[neuron_interfaces.ts:98](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L98)
 
 ___
 
@@ -343,7 +343,7 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:48](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L48)
+[neuron_interfaces.ts:72](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L72)
 
 ___
 
@@ -363,7 +363,7 @@ object is NeuronInterfacePointData
 
 #### Defined in
 
-[neuron_interfaces.ts:64](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L64)
+[neuron_interfaces.ts:88](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L88)
 
 ___
 
@@ -377,4 +377,4 @@ ___
 
 #### Defined in
 
-[neuron_interfaces.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_interfaces.ts#L33)
+[neuron_interfaces.ts:57](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_interfaces.ts#L57)

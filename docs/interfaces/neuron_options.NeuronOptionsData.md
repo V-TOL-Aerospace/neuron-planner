@@ -25,7 +25,7 @@
 
 #### Defined in
 
-[neuron_options.ts:27](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L27)
+[neuron_options.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L31)
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L29)
+[neuron_options.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L33)
 
 ___
 
@@ -45,7 +45,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:28](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L28)
+[neuron_options.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L32)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L32)
+[neuron_options.ts:36](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L36)
 
 ___
 
@@ -65,7 +65,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L31)
+[neuron_options.ts:35](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L35)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L30)
+[neuron_options.ts:34](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L34)
 
 ___
 
@@ -85,7 +85,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:26](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L26)
+[neuron_options.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L30)
 
 ___
 
@@ -95,4 +95,4 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:25](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L25)
+[neuron_options.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L29)

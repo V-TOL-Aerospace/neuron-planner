@@ -6,6 +6,7 @@ import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
 import { NeuronHelp } from "./neuron_help";
 
+//TODO: Document
 export interface NeuronFeatureSurveyData {
     version:string,
     type:string,
@@ -25,11 +26,13 @@ export interface NeuronFeatureSurveyData {
     label:string
 }
 
+//TODO: Document
 export interface NeuronFeatureSurveyLane {
     start:NeuronInterfacePoint,
     end:NeuronInterfacePoint
 }
 
+//TODO: Document
 export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     static override NAME = "Survey";
     static override TYPE = "NeuronFeatureSurvey";

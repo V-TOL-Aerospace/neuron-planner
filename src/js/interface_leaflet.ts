@@ -35,9 +35,14 @@ export { L };
 export class LeafletContextMenuItem {
     text:string = "";
     icon:NeuronIcons;
-    callback: (contextTarget:L.Marker) => null;
+    callback: (contextTarget:L.Marker) => void;
 
-    constructor(text:string = "", icon:NeuronIcons = null, callback:(contextTarget:L.Marker) => null = null) {
+    /** Creates a LeafletContextMenuItem object for use when creating consistent popup context menus
+     * @param  {string=} text Text to display on on the context menu item
+     * @param  {NeuronIcons} icon Icon to display next to the context menu item
+     * @param  {(contextTarget:L.Marker)=>null} callback Callback to run when the context menu item is clicked
+     */
+    constructor(text:string = "", icon:NeuronIcons = null, callback:(contextTarget:L.Marker) => void = null) {
         this.text = text;
         this.icon = icon;
 
@@ -46,6 +51,11 @@ export class LeafletContextMenuItem {
     }
 }
 
+/** Creates a consistent popup context menu for a leaflet marker
+ * @param  {string} popup_title Title to put at the top of the popup
+ * @param  {LeafletContextMenuItem[]} context_items List of context menu items to load in
+ * @param  {L.Marker} marker_context Marker context to use when calling the context menu item callbacks (passed as argument)
+ */
 export function create_popup_context_dom(popup_title:string = "Marker", context_items:LeafletContextMenuItem[] = [], marker_context:L.Marker = null) {
     let dom = document.createElement("div");
     dom.className = 'neuron-marker-popup';

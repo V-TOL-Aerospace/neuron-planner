@@ -1,11 +1,13 @@
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
 import { NeuronUID } from "./neuron_tools_common";
 
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsBoolean {
     SHOW_PATH,
 }
 
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsNumber {
     MISSION_SPEED,
@@ -16,11 +18,13 @@ export enum NeuronOptionsNumber {
     CAMERA_SENSOR_HEIGHT,
 }
 
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 export enum NeuronOptionsString {
     CAMERA_NAME,
 }
 
+//TODO: Document
 export interface NeuronOptionsData {
     SHOW_PATH:boolean,
     MISSION_SPEED:number,
@@ -32,6 +36,7 @@ export interface NeuronOptionsData {
     CAMERA_NAME:string,
 }
 
+//TODO: Document
 export class NeuronOptions {
     //XXX: Keys must be unique!
     static camera_preset_custom = new NeuronCameraSpecifications("Custom", 16, 23.50, 15.60, 6000, 4000);

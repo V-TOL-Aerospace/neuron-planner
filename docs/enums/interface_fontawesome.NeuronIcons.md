@@ -39,7 +39,7 @@
 
 #### Defined in
 
-[interface_fontawesome.ts:24](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L24)
+[interface_fontawesome.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L17)
 
 ___
 
@@ -49,7 +49,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:25](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L25)
+[interface_fontawesome.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L18)
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:26](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L26)
+[interface_fontawesome.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L19)
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:23](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L23)
+[interface_fontawesome.ts:16](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L16)
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:16](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L16)
+[interface_fontawesome.ts:9](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L9)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L18)
+[interface_fontawesome.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L11)
 
 ___
 
@@ -99,7 +99,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:27](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L27)
+[interface_fontawesome.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L20)
 
 ___
 
@@ -109,7 +109,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:22](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L22)
+[interface_fontawesome.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L15)
 
 ___
 
@@ -119,7 +119,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:35](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L35)
+[interface_fontawesome.ts:28](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L28)
 
 ___
 
@@ -129,7 +129,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L31)
+[interface_fontawesome.ts:24](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L24)
 
 ___
 
@@ -139,7 +139,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L20)
+[interface_fontawesome.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L13)
 
 ___
 
@@ -149,7 +149,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L30)
+[interface_fontawesome.ts:23](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L23)
 
 ___
 
@@ -159,7 +159,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:28](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L28)
+[interface_fontawesome.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L21)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:34](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L34)
+[interface_fontawesome.ts:27](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L27)
 
 ___
 
@@ -179,7 +179,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L14)
+[interface_fontawesome.ts:7](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L7)
 
 ___
 
@@ -189,7 +189,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L21)
+[interface_fontawesome.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L14)
 
 ___
 
@@ -199,7 +199,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L19)
+[interface_fontawesome.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L12)
 
 ___
 
@@ -209,7 +209,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L32)
+[interface_fontawesome.ts:25](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L25)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L33)
+[interface_fontawesome.ts:26](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L26)
 
 ___
 
@@ -229,7 +229,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L29)
+[interface_fontawesome.ts:22](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L22)
 
 ___
 
@@ -239,7 +239,7 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L15)
+[interface_fontawesome.ts:8](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L8)
 
 ___
 
@@ -249,4 +249,4 @@ ___
 
 #### Defined in
 
-[interface_fontawesome.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_fontawesome.ts#L17)
+[interface_fontawesome.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_fontawesome.ts#L10)

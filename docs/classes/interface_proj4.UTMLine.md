@@ -22,17 +22,19 @@
 
 • **new UTMLine**(`p1`, `p2`, `base_pnt`)
 
+Creates a UTMLine which is a representation of a line that connects two locations in a UTM zone. Includes an identifier for determining which point is the starting location.
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `p1` | [`UTMPos`](interface_proj4.UTMPos.md) |
-| `p2` | [`UTMPos`](interface_proj4.UTMPos.md) |
-| `base_pnt` | [`UTMPos`](interface_proj4.UTMPos.md) |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `p1` | [`UTMPos`](interface_proj4.UTMPos.md) | The first location of the line. |
+| `p2` | [`UTMPos`](interface_proj4.UTMPos.md) | The second location of the line. |
+| `base_pnt` | [`UTMPos`](interface_proj4.UTMPos.md) | Determines the starting point of the line |
 
 #### Defined in
 
-[interface_proj4.ts:116](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_proj4.ts#L116)
+[interface_proj4.ts:154](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_proj4.ts#L154)
 
 ## Properties
 
@@ -42,7 +44,7 @@
 
 #### Defined in
 
-[interface_proj4.ts:114](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_proj4.ts#L114)
+[interface_proj4.ts:147](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_proj4.ts#L147)
 
 ___
 
@@ -52,7 +54,7 @@ ___
 
 #### Defined in
 
-[interface_proj4.ts:110](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_proj4.ts#L110)
+[interface_proj4.ts:143](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_proj4.ts#L143)
 
 ___
 
@@ -62,4 +64,4 @@ ___
 
 #### Defined in
 
-[interface_proj4.ts:112](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_proj4.ts#L112)
+[interface_proj4.ts:145](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_proj4.ts#L145)

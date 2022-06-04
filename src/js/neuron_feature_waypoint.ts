@@ -5,6 +5,7 @@ import { NeuronHelp } from "./neuron_help";
 import { NeuronOptions, NeuronOptionsString } from "./neuron_options";
 import { NeuronIcons } from "./interface_fontawesome";
 
+//TODO: Document
 export interface NeuronFeaturePointData {
     version:string,
     type:string,
@@ -14,6 +15,7 @@ export interface NeuronFeaturePointData {
     ground_resolution:number,
 }
 
+//TODO: Document
 export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     static override NAME = "Waypoint";
     static override TYPE = "NeuronFeatureWaypoint";

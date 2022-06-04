@@ -30,7 +30,7 @@
 
 #### Defined in
 
-[neuron_tools_kml.ts:8](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L8)
+[neuron_tools_kml.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L10)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:178](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L178)
+[neuron_tools_kml.ts:188](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L188)
 
 ___
 
@@ -72,7 +72,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:204](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L204)
+[neuron_tools_kml.ts:215](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L215)
 
 ___
 
@@ -94,7 +94,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:146](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L146)
+[neuron_tools_kml.ts:153](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L153)
 
 ___
 
@@ -114,7 +114,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:63](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L63)
+[neuron_tools_kml.ts:68](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L68)
 
 ___
 
@@ -127,7 +127,7 @@ ___
 | Name | Type |
 | :------ | :------ |
 | `file` | `Blob` |
-| `cb_file_loaded` | `CallableFunction` |
+| `cb_file_loaded` | (`result`: [`NeuronKMLData`](../interfaces/neuron_tools_kml.NeuronKMLData.md)) => `void` |
 
 #### Returns
 
@@ -135,7 +135,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L18)
+[neuron_tools_kml.ts:22](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L22)
 
 ___
 
@@ -157,4 +157,4 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:157](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L157)
+[neuron_tools_kml.ts:165](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L165)

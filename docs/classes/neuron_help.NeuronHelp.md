@@ -37,7 +37,7 @@
 
 #### Defined in
 
-[neuron_help.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L15)
+[neuron_help.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L15)
 
 ## Properties
 
@@ -47,7 +47,7 @@
 
 #### Defined in
 
-[neuron_help.ts:3](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L3)
+[neuron_help.ts:3](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L3)
 
 ___
 
@@ -57,7 +57,7 @@ ___
 
 #### Defined in
 
-[neuron_help.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L13)
+[neuron_help.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L13)
 
 ___
 
@@ -67,7 +67,7 @@ ___
 
 #### Defined in
 
-[neuron_help.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L11)
+[neuron_help.ts:11](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L11)
 
 ___
 
@@ -77,7 +77,7 @@ ___
 
 #### Defined in
 
-[neuron_help.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L10)
+[neuron_help.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L10)
 
 ## Methods
 
@@ -91,7 +91,7 @@ ___
 
 #### Defined in
 
-[neuron_help.ts:55](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L55)
+[neuron_help.ts:55](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L55)
 
 ___
 
@@ -105,4 +105,4 @@ ___
 
 #### Defined in
 
-[neuron_help.ts:50](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_help.ts#L50)
+[neuron_help.ts:50](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_help.ts#L50)

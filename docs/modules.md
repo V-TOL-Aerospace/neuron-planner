@@ -22,6 +22,7 @@
 - [neuron\_map](modules/neuron_map.md)
 - [neuron\_options](modules/neuron_options.md)
 - [neuron\_planner](modules/neuron_planner.md)
+- [neuron\_settings](modules/neuron_settings.md)
 - [neuron\_statistics](modules/neuron_statistics.md)
 - [neuron\_tools\_common](modules/neuron_tools_common.md)
 - [neuron\_tools\_files](modules/neuron_tools_files.md)

@@ -45,7 +45,7 @@
 
 #### Defined in
 
-[neuron_options.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L37)
+[neuron_options.ts:42](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L42)
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L38)
+[neuron_options.ts:43](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L43)
 
 ## Methods
 
@@ -67,7 +67,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | `CallableFunction` |
+| `callback` | () => `void` |
 
 #### Returns
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:61](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L61)
+[neuron_options.ts:66](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L66)
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:132](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L132)
+[neuron_options.ts:137](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L137)
 
 ___
 
@@ -103,7 +103,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:121](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L121)
+[neuron_options.ts:126](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L126)
 
 ___
 
@@ -123,7 +123,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:109](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L109)
+[neuron_options.ts:114](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L114)
 
 ___
 
@@ -143,7 +143,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:113](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L113)
+[neuron_options.ts:118](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L118)
 
 ___
 
@@ -163,7 +163,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:117](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L117)
+[neuron_options.ts:122](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L122)
 
 ___
 
@@ -177,7 +177,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:51](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L51)
+[neuron_options.ts:56](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L56)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:145](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L145)
+[neuron_options.ts:150](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L150)
 
 ___
 
@@ -219,7 +219,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:98](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L98)
+[neuron_options.ts:103](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L103)
 
 ___
 
@@ -231,7 +231,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `callback` | `CallableFunction` |
+| `callback` | () => `void` |
 
 #### Returns
 
@@ -239,7 +239,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:57](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L57)
+[neuron_options.ts:62](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L62)
 
 ___
 
@@ -262,7 +262,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:83](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L83)
+[neuron_options.ts:88](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L88)
 
 ___
 
@@ -285,7 +285,7 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:88](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L88)
+[neuron_options.ts:93](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L93)
 
 ___
 
@@ -308,4 +308,4 @@ ___
 
 #### Defined in
 
-[neuron_options.ts:93](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L93)
+[neuron_options.ts:98](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L98)

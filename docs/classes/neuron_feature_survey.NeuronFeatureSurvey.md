@@ -112,6 +112,8 @@
 
 • **new NeuronFeatureSurvey**(`map`, `corners?`, `show_waypoints?`)
 
+Creates a DOM factory that can be used to generate consistent style elements
+
 #### Parameters
 
 | Name | Type | Default value |
@@ -126,7 +128,7 @@
 
 #### Defined in
 
-[neuron_feature_survey.ts:91](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L91)
+[neuron_feature_survey.ts:95](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L95)
 
 ## Properties
 
@@ -140,7 +142,7 @@
 
 #### Defined in
 
-[neuron_feature_survey.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L37)
+[neuron_feature_survey.ts:40](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L40)
 
 ___
 
@@ -154,7 +156,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L38)
+[neuron_feature_survey.ts:41](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L41)
 
 ___
 
@@ -168,7 +170,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:34](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L34)
+[neuron_feature_survey.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L37)
 
 ___
 
@@ -182,7 +184,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:35](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L35)
+[neuron_feature_survey.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L38)
 
 ___
 
@@ -196,7 +198,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:36](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L36)
+[neuron_feature_survey.ts:39](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L39)
 
 ___
 
@@ -210,7 +212,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L31)
+[neuron_feature_base.ts:33](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L33)
 
 ___
 
@@ -224,7 +226,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:34](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L34)
+[neuron_feature_base.ts:36](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L36)
 
 ___
 
@@ -234,7 +236,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:88](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L88)
+[neuron_feature_survey.ts:92](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L92)
 
 ___
 
@@ -244,7 +246,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:89](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L89)
+[neuron_feature_survey.ts:93](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L93)
 
 ## Methods
 
@@ -268,7 +270,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:58](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L58)
+[neuron_feature_base.ts:60](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L60)
 
 ___
 
@@ -276,12 +278,14 @@ ___
 
 ▸ **_create_dom_input_button**(`text`, `on_change`): `HTMLButtonElement`
 
+Creates a HTML button element
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `text` | `string` |
-| `on_change` | `any` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `text` | `string` | Label string to set for this element |
+| `on_change` | (`event`: `Event`) => `void` | Callback to be run when the element input is changed by the user |
 
 #### Returns
 
@@ -293,7 +297,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:55](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L55)
+[neuron_dom_factory.ts:66](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L66)
 
 ___
 
@@ -301,12 +305,14 @@ ___
 
 ▸ **_create_dom_input_checkbox**(`checked`, `on_change`): `HTMLInputElement`
 
+Creates a HTML checkbox element
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `checked` | `boolean` |
-| `on_change` | `any` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `checked` | `boolean` | Initial checked status of the checkbox |
+| `on_change` | (`event`: `Event`) => `void` | Callback to be run when the element input is changed by the user |
 
 #### Returns
 
@@ -318,7 +324,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:101](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L101)
+[neuron_dom_factory.ts:135](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L135)
 
 ___
 
@@ -326,12 +332,14 @@ ___
 
 ▸ **_create_dom_input_file**(`on_change`, `accepts?`): `HTMLInputElement`
 
+Creates a HTML file loader element
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `on_change` | `any` | `undefined` |
-| `accepts` | `string` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `on_change` | (`event`: `Event`) => `void` | `undefined` | Callback to be run when the element input is changed by the user |
+| `accepts` | `string` | `null` | Classifier to force the user to select specific file types |
 
 #### Returns
 
@@ -343,7 +351,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:45](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L45)
+[neuron_dom_factory.ts:51](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L51)
 
 ___
 
@@ -351,15 +359,17 @@ ___
 
 ▸ **_create_dom_input_number**(`value`, `on_change`, `min?`, `max?`, `step?`): `HTMLInputElement`
 
+Creates a HTML number scroll element
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `value` | `number` | `undefined` |
-| `on_change` | `any` | `undefined` |
-| `min` | `number` | `null` |
-| `max` | `number` | `null` |
-| `step` | `number` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `value` | `number` | `undefined` | Value to set for this element |
+| `on_change` | (`event`: `Event`) => `void` | `undefined` | Callback to be run when the element input is changed by the user |
+| `min` | `number` | `null` | Minimum value that can be input for this element. Set to null for no minimum. |
+| `max` | `number` | `null` | Maximum value that can be input for this element Set to null for no maximum. |
+| `step` | `number` | `null` | Step value for scrolling/toggling for this element. Set to null for default. |
 
 #### Returns
 
@@ -371,7 +381,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:72](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L72)
+[neuron_dom_factory.ts:94](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L94)
 
 ___
 
@@ -379,15 +389,17 @@ ___
 
 ▸ **_create_dom_input_range**(`value`, `on_change`, `min`, `max`, `step?`): `HTMLInputElement`
 
+Creates a HTML slider element
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `value` | `number` | `undefined` |
-| `on_change` | `any` | `undefined` |
-| `min` | `number` | `undefined` |
-| `max` | `number` | `undefined` |
-| `step` | `number` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `value` | `number` | `undefined` | Value to set for this element |
+| `on_change` | (`event`: `Event`) => `void` | `undefined` | Callback to be run when the element input is changed by the user |
+| `min` | `number` | `undefined` | Minimum value that can be input for this element. Set to null for no minimum. |
+| `max` | `number` | `undefined` | Maximum value that can be input for this element Set to null for no maximum. |
+| `step` | `number` | `null` | Step value for scrolling/toggling for this element. Set to null for default. |
 
 #### Returns
 
@@ -399,7 +411,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:87](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L87)
+[neuron_dom_factory.ts:117](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L117)
 
 ___
 
@@ -407,14 +419,16 @@ ___
 
 ▸ **_create_dom_input_select**(`options`, `labels`, `on_change`, `selected_option?`): `HTMLSelectElement`
 
+Creates a HTML dropdown selector element.
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `options` | `string`[] | `undefined` |
-| `labels` | `string`[] | `undefined` |
-| `on_change` | `any` | `undefined` |
-| `selected_option` | `string` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `options` | `string`[] | `undefined` | List of option values for the dropdown list to be used internally. |
+| `labels` | `string`[] | `undefined` | List of labels for the dropdown list to be shown to the user. |
+| `on_change` | (`event`: `Event`) => `void` | `undefined` | Callback to be run when the element input is changed by the user. |
+| `selected_option` | `string` | `null` | Initial option to be selected. Set to null to be unselected by default. |
 
 #### Returns
 
@@ -426,7 +440,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:110](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L110)
+[neuron_dom_factory.ts:150](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L150)
 
 ___
 
@@ -434,12 +448,14 @@ ___
 
 ▸ **_create_dom_input_textbox**(`value`, `on_change`): `HTMLInputElement`
 
+Creates a HTML textbox element
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `value` | `string` |
-| `on_change` | `any` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `value` | `string` | Label string to set for this element |
+| `on_change` | (`event`: `Event`) => `void` | Callback to be run when the element input is changed by the user |
 
 #### Returns
 
@@ -451,7 +467,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:63](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L63)
+[neuron_dom_factory.ts:78](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L78)
 
 ___
 
@@ -459,14 +475,16 @@ ___
 
 ▸ **_create_dom_label**(`text`, `input`, `description?`, `hide_label?`): `HTMLLabelElement`
 
+Creates a HTML label that is linked to a specific input/other DOM element
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `text` | `string` | `undefined` |
-| `input` | `HTMLInputElement` \| `HTMLSelectElement` \| `HTMLButtonElement` \| `HTMLOutputElement` | `undefined` |
-| `description` | `string` | `null` |
-| `hide_label` | `boolean` | `false` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `text` | `string` | `undefined` | Label text to show |
+| `input` | `HTMLInputElement` \| `HTMLSelectElement` \| `HTMLButtonElement` \| `HTMLOutputElement` | `undefined` | Input/other HTML element to link this label to |
+| `description` | `string` | `null` | Mouse-over description for this label item |
+| `hide_label` | `boolean` | `false` | Sets the visibility to hidden for this label if true (useful for building grid layouts with only one label but many inputs) |
 
 #### Returns
 
@@ -478,7 +496,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:10](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L10)
+[neuron_dom_factory.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L19)
 
 ___
 
@@ -486,11 +504,13 @@ ___
 
 ▸ **_create_dom_output**(`value?`): `HTMLOutputElement`
 
+Creates a HTML output element
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `value` | `string` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `value` | `string` | `null` | Value string to set for this element |
 
 #### Returns
 
@@ -502,7 +522,7 @@ ___
 
 #### Defined in
 
-[neuron_dom_factory.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_dom_factory.ts#L37)
+[neuron_dom_factory.ts:39](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_dom_factory.ts#L39)
 
 ___
 
@@ -526,7 +546,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:125](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L125)
+[neuron_feature_base.ts:127](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L127)
 
 ___
 
@@ -550,7 +570,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:80](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L80)
+[neuron_feature_base.ts:82](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L82)
 
 ___
 
@@ -562,7 +582,7 @@ ___
 
 | Name | Type | Default value |
 | :------ | :------ | :------ |
-| `on_change` | `CallableFunction` | `null` |
+| `on_change` | () => `void` | `null` |
 
 #### Returns
 
@@ -574,7 +594,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:86](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L86)
+[neuron_feature_polygon.ts:88](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L88)
 
 ___
 
@@ -592,7 +612,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:53](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L53)
+[neuron_feature_base.ts:55](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L55)
 
 ___
 
@@ -617,7 +637,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:148](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L148)
+[neuron_feature_polygon.ts:150](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L150)
 
 ___
 
@@ -641,7 +661,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:196](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L196)
+[neuron_feature_polygon.ts:199](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L199)
 
 ___
 
@@ -659,7 +679,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:239](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L239)
+[neuron_feature_polygon.ts:242](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L242)
 
 ___
 
@@ -677,7 +697,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:64](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L64)
+[neuron_feature_polygon.ts:66](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L66)
 
 ___
 
@@ -691,7 +711,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:283](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L283)
+[neuron_feature_survey.ts:289](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L289)
 
 ___
 
@@ -705,7 +725,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:295](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L295)
+[neuron_feature_survey.ts:301](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L301)
 
 ___
 
@@ -723,7 +743,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:204](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L204)
+[neuron_feature_polygon.ts:207](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L207)
 
 ___
 
@@ -741,7 +761,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:208](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L208)
+[neuron_feature_polygon.ts:211](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L211)
 
 ___
 
@@ -755,7 +775,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:287](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L287)
+[neuron_feature_survey.ts:293](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L293)
 
 ___
 
@@ -773,7 +793,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:526](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L526)
+[neuron_feature_survey.ts:532](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L532)
 
 ___
 
@@ -791,7 +811,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:270](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L270)
+[neuron_feature_base.ts:274](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L274)
 
 ___
 
@@ -805,7 +825,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:702](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L702)
+[neuron_feature_survey.ts:714](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L714)
 
 ___
 
@@ -819,7 +839,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:398](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L398)
+[neuron_feature_survey.ts:404](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L404)
 
 ___
 
@@ -837,7 +857,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:387](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L387)
+[neuron_feature_polygon.ts:390](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L390)
 
 ___
 
@@ -851,7 +871,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:498](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L498)
+[neuron_feature_survey.ts:504](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L504)
 
 ___
 
@@ -865,7 +885,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:315](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L315)
+[neuron_feature_survey.ts:321](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L321)
 
 ___
 
@@ -879,7 +899,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:311](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L311)
+[neuron_feature_survey.ts:317](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L317)
 
 ___
 
@@ -893,7 +913,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:698](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L698)
+[neuron_feature_survey.ts:710](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L710)
 
 ___
 
@@ -907,7 +927,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:299](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L299)
+[neuron_feature_survey.ts:305](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L305)
 
 ___
 
@@ -921,7 +941,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:303](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L303)
+[neuron_feature_survey.ts:309](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L309)
 
 ___
 
@@ -939,7 +959,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:493](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L493)
+[neuron_feature_survey.ts:499](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L499)
 
 ___
 
@@ -957,7 +977,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:144](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L144)
+[neuron_feature_polygon.ts:146](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L146)
 
 ___
 
@@ -971,7 +991,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:279](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L279)
+[neuron_feature_survey.ts:285](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L285)
 
 ___
 
@@ -985,7 +1005,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:694](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L694)
+[neuron_feature_survey.ts:706](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L706)
 
 ___
 
@@ -999,7 +1019,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:291](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L291)
+[neuron_feature_survey.ts:297](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L297)
 
 ___
 
@@ -1013,7 +1033,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:307](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L307)
+[neuron_feature_survey.ts:313](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L313)
 
 ___
 
@@ -1031,7 +1051,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:489](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L489)
+[neuron_feature_survey.ts:495](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L495)
 
 ___
 
@@ -1055,7 +1075,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:120](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L120)
+[neuron_feature_polygon.ts:122](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L122)
 
 ___
 
@@ -1079,7 +1099,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:109](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L109)
+[neuron_feature_polygon.ts:111](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L111)
 
 ___
 
@@ -1097,7 +1117,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:483](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L483)
+[neuron_feature_survey.ts:489](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L489)
 
 ___
 
@@ -1121,7 +1141,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:216](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L216)
+[neuron_feature_polygon.ts:219](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L219)
 
 ___
 
@@ -1145,7 +1165,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:130](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L130)
+[neuron_feature_polygon.ts:132](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L132)
 
 ___
 
@@ -1165,7 +1185,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:201](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L201)
+[neuron_feature_survey.ts:207](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L207)
 
 ___
 
@@ -1185,7 +1205,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:249](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L249)
+[neuron_feature_survey.ts:255](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L255)
 
 ___
 
@@ -1197,7 +1217,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `on_change` | `CallableFunction` |
+| `on_change` | (`feature`: [`NeuronFeatureBase`](neuron_feature_base.NeuronFeatureBase.md)) => `void` |
 
 #### Returns
 
@@ -1209,7 +1229,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:262](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L262)
+[neuron_feature_base.ts:266](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L266)
 
 ___
 
@@ -1229,7 +1249,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:221](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L221)
+[neuron_feature_survey.ts:227](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L227)
 
 ___
 
@@ -1249,7 +1269,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:721](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L721)
+[neuron_feature_survey.ts:733](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L733)
 
 ___
 
@@ -1274,7 +1294,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:391](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L391)
+[neuron_feature_polygon.ts:394](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L394)
 
 ___
 
@@ -1294,7 +1314,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:274](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L274)
+[neuron_feature_survey.ts:280](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L280)
 
 ___
 
@@ -1314,7 +1334,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:269](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L269)
+[neuron_feature_survey.ts:275](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L275)
 
 ___
 
@@ -1326,7 +1346,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `on_move` | `CallableFunction` |
+| `on_move` | () => `void` |
 
 #### Returns
 
@@ -1338,7 +1358,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:266](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L266)
+[neuron_feature_base.ts:270](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L270)
 
 ___
 
@@ -1352,7 +1372,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:158](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L158)
+[neuron_feature_survey.ts:164](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L164)
 
 ___
 
@@ -1372,7 +1392,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:716](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L716)
+[neuron_feature_survey.ts:728](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L728)
 
 ___
 
@@ -1392,7 +1412,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:254](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L254)
+[neuron_feature_survey.ts:260](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L260)
 
 ___
 
@@ -1412,7 +1432,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:259](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L259)
+[neuron_feature_survey.ts:265](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L265)
 
 ___
 
@@ -1436,7 +1456,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:82](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L82)
+[neuron_feature_polygon.ts:84](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L84)
 
 ___
 
@@ -1448,7 +1468,7 @@ ___
 
 | Name | Type |
 | :------ | :------ |
-| `on_remove` | `CallableFunction` |
+| `on_remove` | (`feature`: [`NeuronFeatureBase`](neuron_feature_base.NeuronFeatureBase.md)) => `void` |
 
 #### Returns
 
@@ -1460,7 +1480,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:258](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L258)
+[neuron_feature_base.ts:262](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L262)
 
 ___
 
@@ -1480,7 +1500,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:706](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L706)
+[neuron_feature_survey.ts:718](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L718)
 
 ___
 
@@ -1500,7 +1520,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:244](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L244)
+[neuron_feature_survey.ts:250](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L250)
 
 ___
 
@@ -1520,7 +1540,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:264](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L264)
+[neuron_feature_survey.ts:270](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L270)
 
 ___
 
@@ -1538,7 +1558,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:479](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L479)
+[neuron_feature_survey.ts:485](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L485)
 
 ___
 
@@ -1556,7 +1576,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:142](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L142)
+[neuron_feature_survey.ts:147](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L147)
 
 ___
 
@@ -1574,7 +1594,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:811](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L811)
+[neuron_feature_survey.ts:828](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L828)
 
 ___
 
@@ -1592,7 +1612,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:274](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L274)
+[neuron_feature_base.ts:278](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L278)
 
 ___
 
@@ -1610,7 +1630,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:252](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L252)
+[neuron_feature_polygon.ts:255](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L255)
 
 ___
 
@@ -1634,7 +1654,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_polygon.ts:68](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_polygon.ts#L68)
+[neuron_feature_polygon.ts:70](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_polygon.ts#L70)
 
 ___
 
@@ -1654,7 +1674,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:196](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L196)
+[neuron_feature_survey.ts:202](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L202)
 
 ___
 
@@ -1668,7 +1688,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:319](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L319)
+[neuron_feature_survey.ts:325](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L325)
 
 ___
 
@@ -1686,7 +1706,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_base.ts:296](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_base.ts#L296)
+[neuron_feature_base.ts:300](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_base.ts#L300)
 
 ___
 
@@ -1711,7 +1731,7 @@ ___
 
 #### Defined in
 
-[neuron_feature_survey.ts:785](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L785)
+[neuron_feature_survey.ts:802](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L802)
 
 ___
 
@@ -1735,4 +1755,4 @@ object is NeuronFeatureSurveyData
 
 #### Defined in
 
-[neuron_feature_survey.ts:777](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_feature_survey.ts#L777)
+[neuron_feature_survey.ts:794](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_feature_survey.ts#L794)

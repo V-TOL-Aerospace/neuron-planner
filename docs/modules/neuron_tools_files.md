@@ -15,12 +15,14 @@
 
 ▸ **download_file**(`filename`, `data`): `Promise`<`void`\>
 
+Initiates a file download for a given data blob
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `filename` | `string` |
-| `data` | `Blob` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `filename` | `string` | Filename preset of the downloaded file |
+| `data` | `Blob` | File data to be downloaded |
 
 #### Returns
 
@@ -28,7 +30,7 @@
 
 #### Defined in
 
-[neuron_tools_files.ts:5](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_files.ts#L5)
+[neuron_tools_files.ts:12](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_files.ts#L12)
 
 ___
 
@@ -36,11 +38,13 @@ ___
 
 ▸ **get_filename**(`ext`): `string`
 
+Generates a generic file name based on the current time and date
+
 #### Parameters
 
-| Name | Type |
-| :------ | :------ |
-| `ext` | `string` |
+| Name | Type | Description |
+| :------ | :------ | :------ |
+| `ext` | `string` | file extension to give the file |
 
 #### Returns
 
@@ -48,4 +52,4 @@ ___
 
 #### Defined in
 
-[neuron_tools_files.ts:1](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_files.ts#L1)
+[neuron_tools_files.ts:4](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_files.ts#L4)

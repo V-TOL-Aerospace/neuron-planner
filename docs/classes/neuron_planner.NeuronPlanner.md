@@ -55,7 +55,7 @@
 
 #### Defined in
 
-[neuron_planner.ts:61](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L61)
+[neuron_planner.ts:65](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L65)
 
 ## Properties
 
@@ -65,7 +65,7 @@
 
 #### Defined in
 
-[neuron_planner.ts:45](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L45)
+[neuron_planner.ts:49](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L49)
 
 ___
 
@@ -75,7 +75,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:46](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L46)
+[neuron_planner.ts:50](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L50)
 
 ## Methods
 
@@ -96,7 +96,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:360](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L360)
+[neuron_planner.ts:364](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L364)
 
 ___
 
@@ -117,7 +117,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:364](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L364)
+[neuron_planner.ts:368](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L368)
 
 ___
 
@@ -131,7 +131,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:393](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L393)
+[neuron_planner.ts:397](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L397)
 
 ___
 
@@ -145,7 +145,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:265](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L265)
+[neuron_planner.ts:269](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L269)
 
 ___
 
@@ -169,7 +169,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:218](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L218)
+[neuron_planner.ts:222](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L222)
 
 ___
 
@@ -183,7 +183,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:336](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L336)
+[neuron_planner.ts:340](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L340)
 
 ___
 
@@ -197,7 +197,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:86](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L86)
+[neuron_planner.ts:90](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L90)
 
 ___
 
@@ -211,7 +211,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:525](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L525)
+[neuron_planner.ts:529](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L529)
 
 ___
 
@@ -225,7 +225,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:82](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L82)
+[neuron_planner.ts:86](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L86)
 
 ___
 
@@ -245,7 +245,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:512](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L512)
+[neuron_planner.ts:516](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L516)
 
 ___
 
@@ -265,7 +265,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:506](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L506)
+[neuron_planner.ts:510](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L510)
 
 ___
 
@@ -285,27 +285,33 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:213](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L213)
+[neuron_planner.ts:217](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L217)
 
 ___
 
 ### on\_mission\_change
 
-▸ **on_mission_change**(`cb`): `CallableFunction`
+▸ **on_mission_change**(`cb`): () => `void`
 
 #### Parameters
 
 | Name | Type |
 | :------ | :------ |
-| `cb` | `CallableFunction` |
+| `cb` | () => `void` |
 
 #### Returns
 
-`CallableFunction`
+`fn`
+
+▸ (): `void`
+
+##### Returns
+
+`void`
 
 #### Defined in
 
-[neuron_planner.ts:293](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L293)
+[neuron_planner.ts:297](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L297)
 
 ___
 
@@ -325,7 +331,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:378](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L378)
+[neuron_planner.ts:382](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L382)
 
 ___
 
@@ -345,7 +351,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:484](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L484)
+[neuron_planner.ts:488](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L488)
 
 ___
 
@@ -365,7 +371,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:495](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L495)
+[neuron_planner.ts:499](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L499)
 
 ___
 
@@ -379,7 +385,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:516](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L516)
+[neuron_planner.ts:520](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L520)
 
 ___
 
@@ -393,7 +399,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:193](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L193)
+[neuron_planner.ts:197](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L197)
 
 ___
 
@@ -413,7 +419,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:279](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L279)
+[neuron_planner.ts:283](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L283)
 
 ___
 
@@ -433,7 +439,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:102](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L102)
+[neuron_planner.ts:106](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L106)
 
 ___
 
@@ -447,7 +453,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:404](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L404)
+[neuron_planner.ts:408](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L408)
 
 ___
 
@@ -467,4 +473,4 @@ object is NeuronPlannerMissionData
 
 #### Defined in
 
-[neuron_planner.ts:94](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L94)
+[neuron_planner.ts:98](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L98)

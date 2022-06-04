@@ -2,14 +2,13 @@ import { L } from "./interface_leaflet";
 import { Rect } from "./neuron_tools_survey";
 import { UTMPos } from "./interface_proj4";
 
-// @ts-ignore
-// import * as UTMConverter from "utm-latlng";
-
+//TODO: Document
 export enum InterfaceSummaryTabName {
     PLAN = 'tab-mission',
     OPTIONS = 'tab-options',
 }
 
+//TODO: Document
 export enum InterfaceAppElements {
     LOADER = 'loader',
     APP = 'app',
@@ -22,12 +21,13 @@ export enum InterfaceAppElements {
 
 }
 
-//All of our preset DOM IDs
+//Explicit sets of IDs that match DOM elements for the help page interaction
 export const app_element_prefix_help = 'help';
 export const app_elements_ignore_help_subs = [
     'fp-mission',
 ];
 
+//TODO: Document
 export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;
@@ -36,6 +36,7 @@ export interface NeuronInterfacePointData {
     tag:string;
 }
 
+//TODO: Document
 export class NeuronInterfacePoint {
     latitude: number;
     longitude: number;
@@ -152,6 +153,7 @@ export interface NeuronCameraSpecificationsData {
     image_height:number;    //px
 }
 
+//TODO: Document
 export class NeuronCameraSpecifications {
     static TYPE = "NeuronCameraSpecifications";
     static VERSION = 'c5a01d00-d4fa-11ec-95ac-1b0aaa4d0e1e';

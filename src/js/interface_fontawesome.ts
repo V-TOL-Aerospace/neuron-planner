@@ -1,15 +1,8 @@
-
-// import '@fortawesome/fontawesome-free/js/fontawesome'
-// import '@fortawesome/fontawesome-free/js/solid'
-
 import { icon, dom, library } from '@fortawesome/fontawesome-svg-core'
 import { faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faBars, faClose, faDrawPolygon, faEye, faEyeSlash, faFile, faFileExport, faFileImport, faFolderOpen, faLocationCrosshairs, faLocationDot, faMinimize, faMinus, faPlus, faQuestionCircle, faSave, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 
-// const faPlusIcon = icon(faFolderOpen)
-
-// // Get the first element out of the HTMLCollection
-// document.appendChild(faPlusIcon.node[0])
-
+/* Listing of common icons to use in the application
+ */
 export enum NeuronIcons {
     LOAD_PLAN,
     SAVE_PLAN,
@@ -34,7 +27,9 @@ export enum NeuronIcons {
     IMPORT_FILE,
     EXPORT_FILE,
 }
-
+/** Returns the corresponding FA icon from the NeuronIcon lookup
+ * @param  {NeuronIcons} neuron_icon Icon to get from the library
+ */
 function _neuron_get_icon_fa(neuron_icon:NeuronIcons) {
     let i = null;
 
@@ -134,7 +129,8 @@ function _neuron_get_icon_fa(neuron_icon:NeuronIcons) {
 
     return i;
 }
-
+/** Skims the DOM and loads any hard-linked FA icons
+ */
 export function neuron_load_dom_icons() {
     //Handle the DOM conversions for hard-coded icons
     for(const icon_name in NeuronIcons) {
@@ -149,7 +145,10 @@ export function neuron_load_dom_icons() {
 
     dom.i2svg();
 }
-
+/** Returns the FA icon for use or adding to the document.
+ * @param  {NeuronIcons} neuron_icon Icon to retrieve from the library
+ * @param  {boolean} is_small Modifier to retrieve a small-scale icon
+ */
 export function neuron_get_icon(neuron_icon:NeuronIcons, is_small:boolean = false) {
     let i = _neuron_get_icon_fa(neuron_icon);
     let opts = {

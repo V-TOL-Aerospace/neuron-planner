@@ -2,6 +2,7 @@ import { NeuronDOMFactory } from "./neuron_dom_factory";
 import { NeuronCameraSpecifications } from "./neuron_interfaces";
 import { NeuronOptionsBoolean, NeuronOptionsNumber, NeuronOptions } from "./neuron_options";
 
+//TODO: Document
 export class NeuronSettings extends NeuronDOMFactory {
     #element_name_options:string;
     #stats_options_element:HTMLElement;

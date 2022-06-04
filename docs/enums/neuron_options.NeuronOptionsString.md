@@ -18,4 +18,4 @@
 
 #### Defined in
 
-[neuron_options.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_options.ts#L21)
+[neuron_options.ts:24](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_options.ts#L24)

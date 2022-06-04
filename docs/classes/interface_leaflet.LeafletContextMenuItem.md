@@ -22,27 +22,29 @@
 
 • **new LeafletContextMenuItem**(`text?`, `icon?`, `callback?`)
 
+Creates a LeafletContextMenuItem object for use when creating consistent popup context menus
+
 #### Parameters
 
-| Name | Type | Default value |
-| :------ | :------ | :------ |
-| `text` | `string` | `""` |
-| `icon` | [`NeuronIcons`](../enums/interface_fontawesome.NeuronIcons.md) | `null` |
-| `callback` | (`contextTarget`: `Marker`<`any`\>) => ``null`` | `null` |
+| Name | Type | Default value | Description |
+| :------ | :------ | :------ | :------ |
+| `text` | `string` | `""` | Text to display on on the context menu item |
+| `icon` | [`NeuronIcons`](../enums/interface_fontawesome.NeuronIcons.md) | `null` | Icon to display next to the context menu item |
+| `callback` | (`contextTarget`: `Marker`<`any`\>) => `void` | `null` | Callback to run when the context menu item is clicked |
 
 #### Defined in
 
-[interface_leaflet.ts:40](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L40)
+[interface_leaflet.ts:45](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L45)
 
 ## Properties
 
 ### callback
 
-• **callback**: (`contextTarget`: `Marker`<`any`\>) => ``null``
+• **callback**: (`contextTarget`: `Marker`<`any`\>) => `void`
 
 #### Type declaration
 
-▸ (`contextTarget`): ``null``
+▸ (`contextTarget`): `void`
 
 ##### Parameters
 
@@ -52,11 +54,11 @@
 
 ##### Returns
 
-``null``
+`void`
 
 #### Defined in
 
-[interface_leaflet.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L38)
+[interface_leaflet.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L38)
 
 ___
 
@@ -66,7 +68,7 @@ ___
 
 #### Defined in
 
-[interface_leaflet.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L37)
+[interface_leaflet.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L37)
 
 ___
 
@@ -76,4 +78,4 @@ ___
 
 #### Defined in
 
-[interface_leaflet.ts:36](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/interface_leaflet.ts#L36)
+[interface_leaflet.ts:36](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/interface_leaflet.ts#L36)

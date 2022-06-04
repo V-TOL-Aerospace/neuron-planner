@@ -2,19 +2,23 @@ import { NeuronInterfacePoint } from "./neuron_interfaces";
 import { download_file, get_filename } from "./neuron_tools_files"
 import * as zip from "@zip.js/zip.js";
 
+//TODO: Document
 const type_kml = "application/vnd.google-earth.kml+xml";
 const type_kmz = "application/vnd.google-earth.kmz";
 
+//TODO: Document
 export function get_supported_kmx_types() {
     return [type_kml, type_kmz];
 }
 
+//TODO: Document
 export interface NeuronKMLData {
     markers:NeuronInterfacePoint[];
     paths:NeuronInterfacePoint[][];
     polygons:NeuronInterfacePoint[][];
 }
 
+//TODO: Document
 export async function kmx_load_file(file:Blob, cb_file_loaded:(result:NeuronKMLData)=>void) {
     let result = null;
     console.log(`Loaded file identified as "${file.type}" type`);
@@ -60,6 +64,7 @@ export async function kmx_load_file(file:Blob, cb_file_loaded:(result:NeuronKMLD
     cb_file_loaded(result);
 }
 
+//TODO: Document
 export async function kml_extract_features(kml_plain_text:string) {
     //XXX: Only supports google marks/placemarks and polygons
     let parser = new DOMParser();
@@ -130,6 +135,7 @@ export async function kml_extract_features(kml_plain_text:string) {
     return ret;
 }
 
+//TODO: Document
 function point_from_coord(coords:string[]) {
 
     let lat = coords.length >= 2 ? Number.parseFloat(coords[1]) : 0.0;
@@ -143,6 +149,7 @@ function point_from_coord(coords:string[]) {
     );
 }
 
+//TODO: Document
 export async function kml_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
     const textXML = await kml_data_from_neuron_data(markers, waypoints, polygons);
     const file = new Blob(
@@ -154,12 +161,14 @@ export async function kml_download_from_neuron_data(markers:NeuronInterfacePoint
     download_file(get_filename('kml'), file);
 }
 
+//TODO: Document
 export async function kmz_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
     const textXML = await kml_data_from_neuron_data(markers, waypoints, polygons);
     const kmz = await get_kmz_from_kml_data(textXML);
     download_file(get_filename('kmz'), kmz);
 }
 
+//TODO: Document
 async function get_kmz_from_kml_data(data:string) {
     // use a BlobWriter to store with a ZipWriter the zip into a Blob object
     const blobWriter = new zip.BlobWriter(type_kmz);
@@ -175,6 +184,7 @@ async function get_kmz_from_kml_data(data:string) {
     return blobWriter.getData();
 }
 
+//TODO: Document
 export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
     let xmlDocument = document.implementation.createDocument("", "", null);
     const kmlNode = xmlDocument.createElement('kml');
@@ -201,11 +211,13 @@ export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], 
     return kml_document_to_string(xmlDocument);
 }
 
+//TODO: Document
 export function kml_document_to_string(xmlDocument: XMLDocument) {
     let textXML = new XMLSerializer().serializeToString(xmlDocument);
     return '<?xml version="1.0" encoding="UTF-8"?>' + textXML;
 }
 
+//TODO: Document
 function kml_create_point_node(xmlDocument: XMLDocument, name:string, lat:number, lng:number) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');
@@ -221,6 +233,7 @@ function kml_create_point_node(xmlDocument: XMLDocument, name:string, lat:number
     return placemarkNode;
 }
 
+//TODO: Document
 function kml_create_path_node(xmlDocument: XMLDocument, name:string, coordinates:NeuronInterfacePoint[]) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');
@@ -237,6 +250,7 @@ function kml_create_path_node(xmlDocument: XMLDocument, name:string, coordinates
     return placemarkNode;
 }
 
+//TODO: Document
 function kml_create_polygon_node(xmlDocument: XMLDocument, name:string, coordinates:NeuronInterfacePoint[]) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');

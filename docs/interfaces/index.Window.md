@@ -12,7 +12,12 @@
 - [neuron\_help](index.Window.md#neuron_help)
 - [neuron\_map](index.Window.md#neuron_map)
 - [neuron\_planner](index.Window.md#neuron_planner)
+- [neuron\_settings](index.Window.md#neuron_settings)
 - [neuron\_statistics](index.Window.md#neuron_statistics)
+
+### Methods
+
+- [neuron\_set\_panel\_view](index.Window.md#neuron_set_panel_view)
 
 ## Properties
 
@@ -22,7 +27,7 @@
 
 #### Defined in
 
-[index.ts:30](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/index.ts#L30)
+[index.ts:19](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L19)
 
 ___
 
@@ -32,7 +37,7 @@ ___
 
 #### Defined in
 
-[index.ts:32](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/index.ts#L32)
+[index.ts:22](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L22)
 
 ___
 
@@ -42,7 +47,7 @@ ___
 
 #### Defined in
 
-[index.ts:29](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/index.ts#L29)
+[index.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L18)
 
 ___
 
@@ -52,7 +57,17 @@ ___
 
 #### Defined in
 
-[index.ts:28](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/index.ts#L28)
+[index.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L17)
+
+___
+
+### neuron\_settings
+
+• **neuron\_settings**: [`NeuronSettings`](../classes/neuron_settings.NeuronSettings.md)
+
+#### Defined in
+
+[index.ts:21](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L21)
 
 ___
 
@@ -62,4 +77,24 @@ ___
 
 #### Defined in
 
-[index.ts:31](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/index.ts#L31)
+[index.ts:20](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L20)
+
+## Methods
+
+### neuron\_set\_panel\_view
+
+▸ **neuron_set_panel_view**(`panel_name`): `void`
+
+#### Parameters
+
+| Name | Type |
+| :------ | :------ |
+| `panel_name` | [`InterfaceSummaryTabName`](../enums/neuron_interfaces.InterfaceSummaryTabName.md) |
+
+#### Returns
+
+`void`
+
+#### Defined in
+
+[index.ts:23](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/index.ts#L23)

@@ -22,7 +22,7 @@
 
 #### Defined in
 
-[neuron_planner.ts:39](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L39)
+[neuron_planner.ts:42](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L42)
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:38](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L38)
+[neuron_planner.ts:41](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L41)
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:41](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L41)
+[neuron_planner.ts:44](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L44)
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:40](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L40)
+[neuron_planner.ts:43](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L43)
 
 ___
 
@@ -62,4 +62,4 @@ ___
 
 #### Defined in
 
-[neuron_planner.ts:37](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_planner.ts#L37)
+[neuron_planner.ts:40](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_planner.ts#L40)

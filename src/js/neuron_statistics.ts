@@ -1,11 +1,10 @@
-import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
+import { flight_time_from_duration } from "./neuron_tools_common";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
-import { NeuronCameraSpecifications } from "./neuron_interfaces";
-import { NeuronOptionsBoolean, NeuronOptionsNumber, NeuronOptions } from "./neuron_options";
 import { NeuronBrief } from "./neuron_brief";
-import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
+import { NeuronOptions } from "./neuron_options";
 
+//TODO: Document
 export class NeuronStatistics extends NeuronDOMFactory {
     #planner:NeuronPlanner;
     #brief:NeuronBrief;

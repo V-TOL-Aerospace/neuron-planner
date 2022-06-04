@@ -6,6 +6,7 @@ import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";
 import { NeuronIcons } from "./interface_fontawesome";
 
+//TODO: Document
 export interface NeuronFeaturePolygonData {
     version:string;
     type:string;
@@ -13,6 +14,7 @@ export interface NeuronFeaturePolygonData {
     label:string;
 }
 
+//TODO: Document
 export class NeuronFeaturePolygon extends NeuronFeatureBase {
     static override NAME = "Polygon";
     static override TYPE = "NeuronFeaturePolygon";

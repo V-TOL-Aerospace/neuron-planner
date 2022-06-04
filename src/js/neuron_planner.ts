@@ -9,8 +9,8 @@ import { download_file, get_filename } from "./neuron_tools_files"
 import { L } from "./interface_leaflet"
 import { NeuronFeaturePoint } from "./neuron_feature_point";
 import { NeuronOptions, NeuronOptionsData } from "./neuron_options";
-// import { NeuronOptions } from "./neuron_options";
 
+//TODO: Document
 export type MissionFeatureData = (
     NeuronFeatureBaseData |
     NeuronFeaturePointData |
@@ -18,6 +18,7 @@ export type MissionFeatureData = (
     NeuronFeatureSurveyData
 );
 
+//TODO: Document
 export type MissionFeature = (
     NeuronFeatureBase |
     NeuronFeatureWaypoint |
@@ -25,6 +26,7 @@ export type MissionFeature = (
     NeuronFeatureSurvey
 );
 
+//TODO: Document
 export interface NeuronPlannerMissionData {
     version:string;
     type:string;
@@ -33,6 +35,7 @@ export interface NeuronPlannerMissionData {
     waypoints: NeuronInterfacePointData[];
 }
 
+//TODO: Document
 export interface MissionBrief {
     type:string,
     description:string,
@@ -41,6 +44,7 @@ export interface MissionBrief {
     time_duration:string
 }
 
+//TODO: Document
 export class NeuronPlanner {
     static TYPE = 'NeuronPlanner';
     static VERSION = '48a24a80-d243-11ec-918e-9fd28348efc7';

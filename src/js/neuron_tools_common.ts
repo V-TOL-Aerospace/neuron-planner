@@ -1,15 +1,19 @@
+//TODO: Document
 import { NeuronInterfacePoint } from "./neuron_interfaces";
 
+//TODO: Document
 export function zero_pad(num:number, places:number) {
     return String(num).padStart(places, '0');
 }
 
+//TODO: Document
 let lastId = 0;
 export function NeuronUID(prefix='nuid-') {
     lastId++;
     return `${prefix}${lastId}`;
 }
 
+//TODO: Document
 export function flight_distance_from_coords(coords:NeuronInterfacePoint[]) {
     //XXX:  Total distance calculated with the haversine method
     //      This is a shortcut and is probably ok for small distances
@@ -31,6 +35,7 @@ export function flight_distance_from_coords(coords:NeuronInterfacePoint[]) {
     return total_distance;
 }
 
+//TODO: Document
 export function flight_time_from_duration(duration:number) {
     const t_h = Math.floor(duration / 3600);
     const t_m = Math.floor(duration % 3600 / 60);
@@ -39,6 +44,7 @@ export function flight_time_from_duration(duration:number) {
     return `${zero_pad(t_h,2)}:${zero_pad(t_m,2)}:${zero_pad(t_s,2)}`;
 }
 
+//TODO: Document
 export function mm_to_px(mm:number) {
     const default_dpi = 96;
     return (mm / 25.4) * window.devicePixelRatio * default_dpi;

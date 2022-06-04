@@ -20,7 +20,7 @@
 
 #### Defined in
 
-[neuron_tools_kml.ts:13](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L13)
+[neuron_tools_kml.ts:16](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L16)
 
 ___
 
@@ -30,7 +30,7 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:14](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L14)
+[neuron_tools_kml.ts:17](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L17)
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 #### Defined in
 
-[neuron_tools_kml.ts:15](https://github.com/vtol-neuron/neuron-planner/blob/4fe8ba4/src/js/neuron_tools_kml.ts#L15)
+[neuron_tools_kml.ts:18](https://github.com/vtol-neuron/neuron-planner/blob/4c781e4/src/js/neuron_tools_kml.ts#L18)
