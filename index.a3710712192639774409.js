@@ -876,8 +876,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _neuron_tools_common__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./neuron_tools_common */ "./src/js/neuron_tools_common.ts");
 /* harmony import */ var _interface_fontawesome__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./interface_fontawesome */ "./src/js/interface_fontawesome.ts");
 /* harmony import */ var _neuron_tools_kml__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./neuron_tools_kml */ "./src/js/neuron_tools_kml.ts");
-/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
-/* harmony import */ var _neuron_settings__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./neuron_settings */ "./src/js/neuron_settings.ts");
+/* harmony import */ var _neuron_settings__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./neuron_settings */ "./src/js/neuron_settings.ts");
+/* harmony import */ var _css_index_css__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../css/index.css */ "./src/css/index.css");
 var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
     function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
     return new (P || (P = Promise))(function (resolve, reject) {
@@ -897,11 +897,6 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
-//TODO: https://www.skovy.dev/blog/tree-shaking-font-awesome?seed=tnv79i
-// import '@fortawesome/fontawesome-free/js/fontawesome'
-// import '@fortawesome/fontawesome-free/js/solid'
-// import '@fortawesome/fontawesome-free/js/regular'
-// import '@fortawesome/fontawesome-free/js/brands'
 
 
 console.log(`--== Neuron Planner by V-TOL Aerospace ==--`);
@@ -916,6 +911,7 @@ const print_size_with_margin_px = {
     width: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_7__.mm_to_px)(print_size_with_margin_mm.width),
     height: (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_7__.mm_to_px)(print_size_with_margin_mm.height)
 };
+//Application helpers
 window.neuron_set_panel_view = (tab) => {
     let el = document.getElementById(tab);
     if (el)
@@ -926,19 +922,28 @@ window.neuron_planner = new _neuron_planner__WEBPACK_IMPORTED_MODULE_2__.NeuronP
 window.neuron_map = new _neuron_map__WEBPACK_IMPORTED_MODULE_3__.NeuronMap(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.MAP, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.HELP, window.neuron_planner);
 window.neuron_brief = new _neuron_brief__WEBPACK_IMPORTED_MODULE_4__.NeuronBrief(window.neuron_planner, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.BRIEF);
 window.neuron_statistics = new _neuron_statistics__WEBPACK_IMPORTED_MODULE_5__.NeuronStatistics(window.neuron_planner, window.neuron_brief, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.STATS);
-window.neuron_settings = new _neuron_settings__WEBPACK_IMPORTED_MODULE_11__.NeuronSettings(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.OPTIONS);
+window.neuron_settings = new _neuron_settings__WEBPACK_IMPORTED_MODULE_10__.NeuronSettings(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.OPTIONS);
 window.neuron_help = new _neuron_help__WEBPACK_IMPORTED_MODULE_6__.NeuronHelp(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.app_element_prefix_help, _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.app_elements_ignore_help_subs);
+/** Toggles the initial application loading splash screen
+ * @param  {boolean} show Sets the application to show the loader splash screen if true.
+ */
 function show_loader(show) {
     const el_loader = document.getElementById(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.LOADER);
     const el_app = document.getElementById(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.APP);
     el_loader.style.display = show ? 'flex' : 'none';
     el_app.style.display = show ? 'none' : 'flex';
 }
+/**Handles the logic for dragging over files onto the application/map screen. This prevents the browser from doing something weird during drag.
+ * @param  {DragEvent} event event that triggered the drag-over
+ */
 function dragOverHandler(event) {
     // console.log('File(s) in drop zone');
     // Prevent default behavior (Prevent file from being opened)
     event.preventDefault();
 }
+/** Handles the logic for dragging and dropping files onto the application/map screen. This allows drag-drop import of mission and KMx files
+ * @param  {DragEvent} event event that triggered the drag-drop
+ */
 function dragDropHandler(event) {
     event.preventDefault();
     const kmx_types = (0,_neuron_tools_kml__WEBPACK_IMPORTED_MODULE_9__.get_supported_kmx_types)();
@@ -951,29 +956,35 @@ function dragDropHandler(event) {
         }
     }
 }
-let load_app_data = () => __awaiter(void 0, void 0, void 0, function* () {
-    //Do the FA switch-out for our DOM icons
-    (0,_interface_fontawesome__WEBPACK_IMPORTED_MODULE_8__.neuron_load_dom_icons)();
-    //Need to do this next, because many of the following need to known their final size on reset
-    show_loader(false);
-    window.neuron_planner.reset();
-    window.neuron_map.reset();
-    window.neuron_statistics.reset();
-    window.neuron_settings.reset();
-    window.neuron_brief.reset();
-    window.neuron_help.reset();
-    window.neuron_planner.set_map(window.neuron_map);
-    window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
-    let el_app = document.getElementById(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.MAP);
-    el_app.ondrop = dragDropHandler;
-    el_app.ondragover = dragOverHandler;
-    //Update the map location if we can get the user's current location
-    navigator.geolocation.getCurrentPosition((location) => __awaiter(void 0, void 0, void 0, function* () {
-        window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
-    }));
-});
-document.addEventListener('DOMContentLoaded', load_app_data, false);
-window.addEventListener('beforeprint', (event) => {
+/** Performs the initial load and setup of the application. This should be run after the document has been loaded.
+ */
+function load_app_data() {
+    return __awaiter(this, void 0, void 0, function* () {
+        //Do the FA switch-out for our DOM icons
+        (0,_interface_fontawesome__WEBPACK_IMPORTED_MODULE_8__.neuron_load_dom_icons)();
+        //Need to do this next, because many of the following need to known their final size on reset
+        show_loader(false);
+        window.neuron_planner.reset();
+        window.neuron_map.reset();
+        window.neuron_statistics.reset();
+        window.neuron_settings.reset();
+        window.neuron_brief.reset();
+        window.neuron_help.reset();
+        window.neuron_planner.set_map(window.neuron_map);
+        window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
+        let el_app = document.getElementById(_neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.InterfaceAppElements.MAP);
+        el_app.ondrop = dragDropHandler;
+        el_app.ondragover = dragOverHandler;
+        //Update the map location if we can get the user's current location
+        navigator.geolocation.getCurrentPosition((location) => __awaiter(this, void 0, void 0, function* () {
+            window.neuron_map.set_location(new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(location.coords.latitude, location.coords.longitude));
+        }));
+    });
+}
+/** Prepares the page layout to take a print-friendly form
+ * @param  {Event} event (unused)
+ */
+function handle_before_print(event) {
     //Turn off the map tools
     window.neuron_map.toggle_map_tools(false);
     //Turn off the map tools
@@ -1006,8 +1017,11 @@ window.addEventListener('beforeprint', (event) => {
     window.neuron_planner.fit_mission_on_map(true, pl, pt, pr, pb);
     //Generate the brief
     window.neuron_brief.update_mission_brief();
-});
-window.addEventListener('afterprint', (event) => {
+}
+/** Prepares the page layout to take the normal application form
+ * @param  {Event} event (unused)
+ */
+function handle_after_print(event) {
     //Turn off the map tools
     window.neuron_map.toggle_map_tools(true);
     //Set the size of the map, and reset it to fit the new size
@@ -1017,7 +1031,10 @@ window.addEventListener('afterprint', (event) => {
     window.neuron_map.reset();
     //Position all visible elements on the map
     // window.neuron_planner.fit_mission_on_map();
-});
+}
+document.addEventListener('DOMContentLoaded', load_app_data, false);
+window.addEventListener('beforeprint', handle_before_print);
+window.addEventListener('afterprint', handle_after_print);
 
 
 /***/ }),
@@ -1036,13 +1053,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */ });
 /* harmony import */ var _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @fortawesome/fontawesome-svg-core */ "./node_modules/@fortawesome/fontawesome-svg-core/index.es.js");
 /* harmony import */ var _fortawesome_free_solid_svg_icons__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @fortawesome/free-solid-svg-icons */ "./node_modules/@fortawesome/free-solid-svg-icons/index.es.js");
-// import '@fortawesome/fontawesome-free/js/fontawesome'
-// import '@fortawesome/fontawesome-free/js/solid'
 
 
-// const faPlusIcon = icon(faFolderOpen)
-// // Get the first element out of the HTMLCollection
-// document.appendChild(faPlusIcon.node[0])
+/* Listing of common icons to use in the application
+ */
 var NeuronIcons;
 (function (NeuronIcons) {
     NeuronIcons[NeuronIcons["LOAD_PLAN"] = 0] = "LOAD_PLAN";
@@ -1068,6 +1082,9 @@ var NeuronIcons;
     NeuronIcons[NeuronIcons["IMPORT_FILE"] = 20] = "IMPORT_FILE";
     NeuronIcons[NeuronIcons["EXPORT_FILE"] = 21] = "EXPORT_FILE";
 })(NeuronIcons || (NeuronIcons = {}));
+/** Returns the corresponding FA icon from the NeuronIcon lookup
+ * @param  {NeuronIcons} neuron_icon Icon to get from the library
+ */
 function _neuron_get_icon_fa(neuron_icon) {
     let i = null;
     switch (neuron_icon) {
@@ -1165,6 +1182,8 @@ function _neuron_get_icon_fa(neuron_icon) {
     }
     return i;
 }
+/** Skims the DOM and loads any hard-linked FA icons
+ */
 function neuron_load_dom_icons() {
     //Handle the DOM conversions for hard-coded icons
     for (const icon_name in NeuronIcons) {
@@ -1178,6 +1197,10 @@ function neuron_load_dom_icons() {
     }
     _fortawesome_fontawesome_svg_core__WEBPACK_IMPORTED_MODULE_0__.dom.i2svg();
 }
+/** Returns the FA icon for use or adding to the document.
+ * @param  {NeuronIcons} neuron_icon Icon to retrieve from the library
+ * @param  {boolean} is_small Modifier to retrieve a small-scale icon
+ */
 function neuron_get_icon(neuron_icon, is_small = false) {
     let i = _neuron_get_icon_fa(neuron_icon);
     let opts = {
@@ -1233,6 +1256,11 @@ function get_neuron_map_marker(class_name) {
 // const fl = FileLoader;
 
 class LeafletContextMenuItem {
+    /** Creates a LeafletContextMenuItem object for use when creating consistent popup context menus
+     * @param  {string=} text Text to display on on the context menu item
+     * @param  {NeuronIcons} icon Icon to display next to the context menu item
+     * @param  {(contextTarget:L.Marker)=>null} callback Callback to run when the context menu item is clicked
+     */
     constructor(text = "", icon = null, callback = null) {
         this.text = "";
         this.text = text;
@@ -1241,6 +1269,11 @@ class LeafletContextMenuItem {
             this.callback = callback;
     }
 }
+/** Creates a consistent popup context menu for a leaflet marker
+ * @param  {string} popup_title Title to put at the top of the popup
+ * @param  {LeafletContextMenuItem[]} context_items List of context menu items to load in
+ * @param  {L.Marker} marker_context Marker context to use when calling the context menu item callbacks (passed as argument)
+ */
 function create_popup_context_dom(popup_title = "Marker", context_items = [], marker_context = null) {
     let dom = document.createElement("div");
     dom.className = 'neuron-marker-popup';
@@ -1302,6 +1335,10 @@ __webpack_require__.r(__webpack_exports__);
 
 
 
+/** Get a EPSG code from a given UTM zone number.
+ * @param  {number} zone UTM zone.
+ * @param  {boolean} is_south Defines if the zone is north or south of the equator.
+ */
 function EPSG_code_from_utm_zone(zone, is_south) {
     const zf = Math.floor(zone);
     if (zf <= 0 || zf > 60)
@@ -1315,9 +1352,16 @@ for (let i = 1; i <= 60; i++) {
     proj4__WEBPACK_IMPORTED_MODULE_0__["default"].defs(EPSG_code_from_utm_zone(i, false), projection);
     proj4__WEBPACK_IMPORTED_MODULE_0__["default"].defs(EPSG_code_from_utm_zone(i, true), projection + " +south");
 }
+/** Determines if a given UTM number or latitude is for a southerly location.
+ * @param  {number} latitude_or_zone Latitude or UTM zone number to check.
+ */
 function get_UTM_is_south(latitude_or_zone) {
     return (latitude_or_zone < 0);
 }
+/** Get the UTM Zone number for a given combination of latitudes and longitudes.
+ * @param  {number} latitude Latitude of the location to determine.
+ * @param  {number} longitude Longitude of the location to determine.
+ */
 function get_UTM_zone(latitude, longitude) {
     let zone = Math.floor((longitude - -186.0) / 6.0);
     if (get_UTM_is_south(latitude))
@@ -1325,18 +1369,36 @@ function get_UTM_zone(latitude, longitude) {
     return zone;
 }
 class UTMPos {
+    /** Creates a UTMPos object that defines a location in the coordinate frame of a specific UTM zone.
+     * @param  {number} x Coordinate location in the x-axis of the UTM zone.
+     * @param  {number} y Coordinate location in the y-axis of the UTM zone.
+     * @param  {number} zone UTM zone to use as the reference origin.
+     * @param  {string} tag Additional tag metadata information to identify this position.
+     */
     constructor(x = 0.0, y = 0.0, zone = 0.0, tag = "") {
         this.x = x;
         this.y = y;
         this.zone = zone;
         this.tag = tag;
     }
+    /** Compares this UTMPos object with another object to assess if they represent the same location and same UTM zone.
+     * @param  {UTMPos} other The other UTM object to compare with in the assessment.
+     * @param  {boolean} match_tag Additional flag to consider if the tag metadata should also be matched. Tag data will be ignored if this is false.
+     */
     equals(other, match_tag = false) {
         return (this.x == other.x) && (this.y == other.y) && (this.zone == other.zone) && (!match_tag || (this.tag == other.tag));
     }
+    /** Create a deep copy of this UTMPos object.
+     * @param  {string} tag Additional tag metadata information to identify the new position
+     */
     copy(tag = null) {
         return new UTMPos(this.x, this.y, this.zone, tag ? tag : this.tag);
     }
+    /** Get a new UTMPos object that represents a position of relative bearing and distance from this UTMPos.
+     * @param  {number} bearing The bearing from north from this UTMPos to the new location.
+     * @param  {number} distance The distance from this UTMPos to the new location.
+     * @param  {string} tag Additional tag metadata information to identify the new position.
+     */
     relative_point_from_dist_bearing(bearing, distance, tag = "") {
         let degN = 90 - bearing;
         if (degN < 0)
@@ -1344,15 +1406,20 @@ class UTMPos {
         const deg2rad = Math.PI / 180.0;
         return new UTMPos(this.x + distance * Math.cos(degN * deg2rad), this.y + distance * Math.sin(degN * deg2rad), this.zone, tag);
     }
+    /** Get the 2D distance between this UTMPos and another location.
+     * @param  {UTMPos} b The other location to measure distance to.
+     */
     GetDistance2D(b) {
         return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
     }
+    /** Convert this UTMPos data into a new NeuronInterfacePoint that represents the same location. Tag metadata will also be included if it exists.
+     */
     to_NeuronInterfacePoint() {
         let p = (0,proj4__WEBPACK_IMPORTED_MODULE_0__["default"])(EPSG_code_from_utm_zone(Math.abs(this.zone), get_UTM_is_south(this.zone)), _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint.projection_code(), [this.x, this.y]);
         //p given as [lng, lat]
         return new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_1__.NeuronInterfacePoint(p[1], p[0], 0.0, 0.0, this.tag);
     }
-    /**
+    /** Converts NeuronInterfacePoint data into a new UTMPos that represents the same location. Tag metadata will also be included if it exists.
      * @param  {NeuronInterfacePoint} point Point to create the transformation from
      * @param  {number=null} zone Zone override to use during the projection
      * @param  {string=""} tag Additional tag information for this point
@@ -1366,6 +1433,11 @@ class UTMPos {
     }
 }
 class UTMLine {
+    /** Creates a UTMLine which is a representation of a line that connects two locations in a UTM zone. Includes an identifier for determining which point is the starting location.
+     * @param  {UTMPos} p1 The first location of the line.
+     * @param  {UTMPos} p2 The second location of the line.
+     * @param  {UTMPos} base_pnt Determines the starting point of the line
+     */
     constructor(p1, p2, base_pnt) {
         this.p1 = p1;
         this.p2 = p2;
@@ -1415,9 +1487,11 @@ var _NeuronBrief_planner, _NeuronBrief_brief_element, _NeuronBrief_brief_element
 
 
 class NeuronBrief {
+    /** Creates a NeuronBrief object that controls the generation of the mission brief functions of the app
+     * @param  {NeuronPlanner} planner NeuronPlanner to use for accessing the current mission plan
+     * @param  {string} brief_element_name Identifier for the document element to use when generating a brief
+     */
     constructor(planner, brief_element_name) {
-        // static TYPE = 'NeuronBrief';
-        // static VERSION = 'bb92b580-d319-11ec-8818-bfb4bc4aa250';
         _NeuronBrief_planner.set(this, void 0);
         _NeuronBrief_brief_element.set(this, void 0);
         _NeuronBrief_brief_element_name.set(this, void 0);
@@ -1457,19 +1531,12 @@ class NeuronBrief {
                 "",
                 "",
             ];
-            // let table = document.createElement('div');
-            // table.className = 'brief-table';
             for (const h of headings) {
                 let th = document.createElement('div');
                 th.className = 'brief-table-header';
                 th.appendChild(document.createTextNode(h));
                 table.appendChild(th);
             }
-            // for(let j = 0; j < row_step; j++) {
-            //     if(i + j >= rows.length)
-            //         break;
-            //     table.appendChild(rows[i + j]);
-            // }
             let count = 0;
             for (const item of notables) {
                 count++;
@@ -1539,11 +1606,6 @@ class NeuronBrief {
                 th.appendChild(document.createTextNode(h));
                 table.appendChild(th);
             }
-            // for(let j = 0; j < row_step; j++) {
-            //     if(i + j >= rows.length)
-            //         break;
-            //     table.appendChild(rows[i + j]);
-            // }
             let count = 0;
             for (const item of summary.brief) {
                 count++;
@@ -1597,6 +1659,9 @@ class NeuronBrief {
             __classPrivateFieldGet(this, _NeuronBrief_brief_element, "f").appendChild(td);
         }
     }
+    /** Breaks down a NeuronInterfacePoint location into set field components for the mission summary
+     * @param  {NeuronInterfacePoint} point Point to split into summary fields
+     */
     static get_components_from_point(point) {
         return {
             field1: point.toStringLatitude(),
@@ -1604,6 +1669,9 @@ class NeuronBrief {
             field3: point.toStringAltitude(),
         };
     }
+    /** Generates a list of mission brief items for non-flyable mission features
+     * @param  {MissionFeature[]} mission_features List of features to analyze.
+     */
     get_mission_notables(mission_features) {
         let notables = [];
         for (const item of mission_features) {
@@ -1641,6 +1709,9 @@ class NeuronBrief {
         }
         return notables;
     }
+    /** Generates a mission summary for a set of mission features
+     * @param  {MissionFeature[]} mission_features List of features to analyze.
+     */
     get_mission_summary(mission_features) {
         let summary = {
             brief: [],
@@ -1816,13 +1887,20 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
 var _NeuronDOMFactory_prefix;
 
 class NeuronDOMFactory {
+    /** Creates a DOM factory that can be used to generate consistent style elements
+     * @param  {string} css_prefix A CSS prefix to give any classes generated by this factory
+     */
     constructor(css_prefix) {
         _NeuronDOMFactory_prefix.set(this, void 0);
         __classPrivateFieldSet(this, _NeuronDOMFactory_prefix, css_prefix, "f");
     }
+    /** Creates a HTML label that is linked to a specific input/other DOM element
+     * @param  {string} text Label text to show
+     * @param  {(HTMLInputElement|HTMLSelectElement|HTMLButtonElement|HTMLOutputElement)} input Input/other HTML element to link this label to
+     * @param  {string} description Mouse-over description for this label item
+     * @param  {boolean} hide_label Sets the visibility to hidden for this label if true (useful for building grid layouts with only one label but many inputs)
+     */
     _create_dom_label(text, input, description = null, hide_label = false) {
-        // let dom = document.createElement("div");
-        // dom.className = `${this.#prefix}-content-item';
         if (!input.id)
             input.id = (0,_neuron_tools_common__WEBPACK_IMPORTED_MODULE_0__.NeuronUID)();
         let l = document.createElement("label");
@@ -1833,15 +1911,11 @@ class NeuronDOMFactory {
         if (hide_label)
             l.style.visibility = 'hidden';
         l.appendChild(document.createTextNode(text));
-        // if(label_first) {
-        //     dom.appendChild(l);
-        //     dom.appendChild(input);
-        // } else {
-        //     dom.appendChild(input);
-        //     dom.appendChild(l);
-        // }
         return l;
     }
+    /** Creates a HTML output element
+     * @param  {string} value Value string to set for this element
+     */
     _create_dom_output(value = null) {
         let dom = document.createElement("output");
         dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-right`;
@@ -1849,6 +1923,10 @@ class NeuronDOMFactory {
             dom.value = value;
         return dom;
     }
+    /**Creates a HTML file loader element
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     * @param  {string} accepts Classifier to force the user to select specific file types
+     */
     _create_dom_input_file(on_change, accepts = null) {
         let dom = document.createElement("input");
         dom.type = "file";
@@ -1858,6 +1936,10 @@ class NeuronDOMFactory {
         dom.onchange = on_change;
         return dom;
     }
+    /**Creates a HTML button element
+     * @param  {string} text Label string to set for this element
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     */
     _create_dom_input_button(text, on_change) {
         let dom = document.createElement("button");
         dom.className = `${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value ${__classPrivateFieldGet(this, _NeuronDOMFactory_prefix, "f")}-content-value-center`;
@@ -1865,6 +1947,10 @@ class NeuronDOMFactory {
         dom.appendChild(document.createTextNode(text));
         return dom;
     }
+    /**Creates a HTML textbox element
+     * @param  {string} value Label string to set for this element
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     */
     _create_dom_input_textbox(value, on_change) {
         let dom = document.createElement("input");
         dom.type = "text";
@@ -1873,6 +1959,13 @@ class NeuronDOMFactory {
         dom.onchange = on_change;
         return dom;
     }
+    /**Creates a HTML number scroll element
+     * @param  {number} value Value to set for this element
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     * @param  {number} min Minimum value that can be input for this element. Set to null for no minimum.
+     * @param  {number} max Maximum value that can be input for this element Set to null for no maximum.
+     * @param  {number} step Step value for scrolling/toggling for this element. Set to null for default.
+     */
     _create_dom_input_number(value, on_change, min = null, max = null, step = null) {
         let dom = document.createElement("input");
         dom.type = "number";
@@ -1887,6 +1980,13 @@ class NeuronDOMFactory {
         dom.onchange = on_change;
         return dom;
     }
+    /**Creates a HTML slider element
+     * @param  {number} value Value to set for this element
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     * @param  {number} min Minimum value that can be input for this element. Set to null for no minimum.
+     * @param  {number} max Maximum value that can be input for this element Set to null for no maximum.
+     * @param  {number} step Step value for scrolling/toggling for this element. Set to null for default.
+     */
     _create_dom_input_range(value, on_change, min, max, step = null) {
         let dom = document.createElement("input");
         dom.type = "range";
@@ -1900,6 +2000,10 @@ class NeuronDOMFactory {
         dom.onchange = on_change;
         return dom;
     }
+    /**Creates a HTML checkbox element
+     * @param  {boolean} checked Initial checked status of the checkbox
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user
+     */
     _create_dom_input_checkbox(checked, on_change) {
         let dom = document.createElement("input");
         dom.type = "checkbox";
@@ -1908,6 +2012,12 @@ class NeuronDOMFactory {
         dom.onchange = on_change;
         return dom;
     }
+    /**Creates a HTML dropdown selector element.
+     * @param  {string[]} options List of option values for the dropdown list to be used internally.
+     * @param  {string[]} labels List of labels for the dropdown list to be shown to the user.
+     * @param  {(event:Event)=>void} on_change Callback to be run when the element input is changed by the user.
+     * @param  {string} selected_option Initial option to be selected. Set to null to be unselected by default.
+     */
     _create_dom_input_select(options, labels, on_change, selected_option = null) {
         let dom = document.createElement("select");
         if (options.length != labels.length)
@@ -1963,6 +2073,7 @@ var _NeuronFeatureBase_instances, _NeuronFeatureBase_visible, _NeuronFeatureBase
 
 
 
+//TODO: Document
 class NeuronFeatureBase extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_2__.NeuronDOMFactory {
     constructor(map) {
         super('mission-feature');
@@ -2265,6 +2376,7 @@ var _NeuronFeaturePoint_instances, _NeuronFeaturePoint_planner, _NeuronFeaturePo
 
 
 
+//TODO: Document
 class NeuronFeaturePoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
     constructor(map, point = null, planner = null) {
         super(map);
@@ -2488,6 +2600,7 @@ var _NeuronFeaturePolygon_instances, _NeuronFeaturePolygon_show_corners, _Neuron
 
 
 
+//TODO: Document
 class NeuronFeaturePolygon extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
     constructor(map, corners = [], planner = null) {
         super(map);
@@ -2863,6 +2976,7 @@ var _NeuronFeatureSurvey_instances, _NeuronFeatureSurvey_waypoints, _NeuronFeatu
 
 
 
+//TODO: Document
 class NeuronFeatureSurvey extends _neuron_feature_polygon__WEBPACK_IMPORTED_MODULE_0__.NeuronFeaturePolygon {
     constructor(map, corners = [], show_waypoints = false) {
         super(map, corners);
@@ -3519,6 +3633,7 @@ var _NeuronFeatureWaypoint_instances, _NeuronFeatureWaypoint_marker, _NeuronFeat
 
 
 
+//TODO: Document
 class NeuronFeatureWaypoint extends _neuron_feature_base__WEBPACK_IMPORTED_MODULE_0__.NeuronFeatureBase {
     constructor(map, point = null) {
         super(map);
@@ -3832,6 +3947,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
     return kind === "m" ? f : kind === "a" ? f.call(receiver) : f ? f.value : state.get(receiver);
 };
 var _NeuronHelp_instances, _NeuronHelp_help_element_name, _NeuronHelp_help_element_ignore_subs, _NeuronHelp_controller, _NeuronHelp_add_hover, _NeuronHelp_remove_hover, _NeuronHelp_configure_linked_element_callbacks;
+//TODO: Document
 class NeuronHelp {
     constructor(help_element_name, ignore_sub_keys = []) {
         _NeuronHelp_instances.add(this);
@@ -3919,13 +4035,13 @@ var _NeuronInterfacePoint_instances, _NeuronInterfacePoint_value_as_DMS;
 
 
 
-// @ts-ignore
-// import * as UTMConverter from "utm-latlng";
+//TODO: Document
 var InterfaceSummaryTabName;
 (function (InterfaceSummaryTabName) {
     InterfaceSummaryTabName["PLAN"] = "tab-mission";
     InterfaceSummaryTabName["OPTIONS"] = "tab-options";
 })(InterfaceSummaryTabName || (InterfaceSummaryTabName = {}));
+//TODO: Document
 var InterfaceAppElements;
 (function (InterfaceAppElements) {
     InterfaceAppElements["LOADER"] = "loader";
@@ -3937,11 +4053,12 @@ var InterfaceAppElements;
     InterfaceAppElements["HELP"] = "fp-map-help";
     InterfaceAppElements["BRIEF"] = "print-section";
 })(InterfaceAppElements || (InterfaceAppElements = {}));
-//All of our preset DOM IDs
+//Explicit sets of IDs that match DOM elements for the help page interaction
 const app_element_prefix_help = 'help';
 const app_elements_ignore_help_subs = [
     'fp-mission',
 ];
+//TODO: Document
 class NeuronInterfacePoint {
     constructor(latitude = 0.0, longitude = 0.0, altitude = 0.0, heading = 0.0, tag = "") {
         _NeuronInterfacePoint_instances.add(this);
@@ -4017,6 +4134,7 @@ _NeuronInterfacePoint_instances = new WeakSet(), _NeuronInterfacePoint_value_as_
     return `${deg.toFixed(0)}° ${min.toFixed(0)}' ${sec.toFixed(2)}" ${dir}`;
 };
 NeuronInterfacePoint._altitude_ratio = 0.3048;
+//TODO: Document
 class NeuronCameraSpecifications {
     constructor(name = "Custom", focal_length = 0.0, sensor_width = 0.0, sensor_height = 0.0, image_width = 0, image_height = 0) {
         this.name = name;
@@ -4158,6 +4276,7 @@ var _NeuronMap_instances, _NeuronMap_planner, _NeuronMap_map, _NeuronMap_map_lay
 
 
 
+//TODO: Document
 class NeuronMap {
     constructor(map_element_name, help_element_name, planner) {
         _NeuronMap_instances.add(this);
@@ -4405,11 +4524,13 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
 var _a, _NeuronOptions_stat_options_boolean, _NeuronOptions_stat_options_number, _NeuronOptions_stat_options_string, _NeuronOptions_dom_callback, _NeuronOptions_general_callbacks, _NeuronOptions_remove_callback, _NeuronOptions_handle_callbacks;
 
 
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 var NeuronOptionsBoolean;
 (function (NeuronOptionsBoolean) {
     NeuronOptionsBoolean[NeuronOptionsBoolean["SHOW_PATH"] = 0] = "SHOW_PATH";
 })(NeuronOptionsBoolean || (NeuronOptionsBoolean = {}));
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 var NeuronOptionsNumber;
 (function (NeuronOptionsNumber) {
@@ -4420,11 +4541,13 @@ var NeuronOptionsNumber;
     NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_SENSOR_WIDTH"] = 4] = "CAMERA_SENSOR_WIDTH";
     NeuronOptionsNumber[NeuronOptionsNumber["CAMERA_SENSOR_HEIGHT"] = 5] = "CAMERA_SENSOR_HEIGHT";
 })(NeuronOptionsNumber || (NeuronOptionsNumber = {}));
+//TODO: Document
 //XXX: Keep in sync with NeuronStatistics NeuronOptionsData
 var NeuronOptionsString;
 (function (NeuronOptionsString) {
     NeuronOptionsString[NeuronOptionsString["CAMERA_NAME"] = 0] = "CAMERA_NAME";
 })(NeuronOptionsString || (NeuronOptionsString = {}));
+//TODO: Document
 class NeuronOptions {
     static init() {
         this.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, true, false, false);
@@ -4577,6 +4700,7 @@ var _NeuronPlanner_instances, _NeuronPlanner_map, _NeuronPlanner_plan_element, _
 
 
 
+//TODO: Document
 class NeuronPlanner {
     // #unsub_option_cb:()=>void;
     constructor(plan_element_name, map = null) {
@@ -5024,6 +5148,7 @@ var __classPrivateFieldGet = (undefined && undefined.__classPrivateFieldGet) || 
 var _NeuronSettings_instances, _NeuronSettings_element_name_options, _NeuronSettings_stats_options_element, _NeuronSettings_dom_option_show_path, _NeuronSettings_dom_option_speed, _NeuronSettings_dom_option_camera_name, _NeuronSettings_dom_option_camera_focal_length, _NeuronSettings_dom_option_camera_image_width, _NeuronSettings_dom_option_camera_image_height, _NeuronSettings_dom_option_camera_sensor_width, _NeuronSettings_dom_option_camera_sensor_height, _NeuronSettings_update_option_speed_dom, _NeuronSettings_update_option_show_path, _NeuronSettings_update_dom_from_options, _NeuronSettings_gen_dom, _NeuronSettings_set_camera_selector, _NeuronSettings_update_camera_from_dom, _NeuronSettings_update_camera_focal_length_from_dom, _NeuronSettings_update_camera_sensor_width_from_dom, _NeuronSettings_update_camera_sensor_height_from_dom, _NeuronSettings_update_camera_image_width_from_dom, _NeuronSettings_update_camera_image_height_from_dom;
 
 
+//TODO: Document
 class NeuronSettings extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_0__.NeuronDOMFactory {
     constructor(element_name_options) {
         super('fp-options');
@@ -5225,6 +5350,7 @@ var _NeuronStatistics_instances, _NeuronStatistics_planner, _NeuronStatistics_br
 
 
 
+//TODO: Document
 class NeuronStatistics extends _neuron_dom_factory__WEBPACK_IMPORTED_MODULE_1__.NeuronDOMFactory {
     constructor(planner, brief, element_name_stats) {
         super('fp-stats');
@@ -5283,7 +5409,6 @@ _NeuronStatistics_planner = new WeakMap(), _NeuronStatistics_brief = new WeakMap
     //Statistics
     __classPrivateFieldSet(this, _NeuronStatistics_stats_results_element, document.getElementById(__classPrivateFieldGet(this, _NeuronStatistics_stats_element_name_stats, "f")), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f").innerHTML = '';
-    console.log(__classPrivateFieldGet(this, _NeuronStatistics_stats_results_element, "f"));
     const t1 = "Total number of waypoints in the mission plan";
     __classPrivateFieldSet(this, _NeuronStatistics_dom_stat_waypoints, this._create_dom_output(), "f");
     __classPrivateFieldGet(this, _NeuronStatistics_dom_stat_waypoints, "f").title = t1;
@@ -5323,14 +5448,17 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "mm_to_px": () => (/* binding */ mm_to_px),
 /* harmony export */   "zero_pad": () => (/* binding */ zero_pad)
 /* harmony export */ });
+//TODO: Document
 function zero_pad(num, places) {
     return String(num).padStart(places, '0');
 }
+//TODO: Document
 let lastId = 0;
 function NeuronUID(prefix = 'nuid-') {
     lastId++;
     return `${prefix}${lastId}`;
 }
+//TODO: Document
 function flight_distance_from_coords(coords) {
     //XXX:  Total distance calculated with the haversine method
     //      This is a shortcut and is probably ok for small distances
@@ -5349,12 +5477,14 @@ function flight_distance_from_coords(coords) {
     }
     return total_distance;
 }
+//TODO: Document
 function flight_time_from_duration(duration) {
     const t_h = Math.floor(duration / 3600);
     const t_m = Math.floor(duration % 3600 / 60);
     const t_s = Math.floor(duration % 3600 % 60);
     return `${zero_pad(t_h, 2)}:${zero_pad(t_m, 2)}:${zero_pad(t_s, 2)}`;
 }
+//TODO: Document
 function mm_to_px(mm) {
     const default_dpi = 96;
     return (mm / 25.4) * window.devicePixelRatio * default_dpi;
@@ -5383,9 +5513,16 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
         step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
 };
+/** Generates a generic file name based on the current time and date
+ * @param  {string} ext file extension to give the file
+ */
 function get_filename(ext) {
     return `neuron-planner${Date.now()}.${ext}`;
 }
+/** Initiates a file download for a given data blob
+ * @param  {string} filename Filename preset of the downloaded file
+ * @param  {Blob} data File data to be downloaded
+ */
 function download_file(filename, data) {
     return __awaiter(this, void 0, void 0, function* () {
         var element = document.createElement('a');
@@ -5433,11 +5570,14 @@ var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _argume
 
 
 
+//TODO: Document
 const type_kml = "application/vnd.google-earth.kml+xml";
 const type_kmz = "application/vnd.google-earth.kmz";
+//TODO: Document
 function get_supported_kmx_types() {
     return [type_kml, type_kmz];
 }
+//TODO: Document
 function kmx_load_file(file, cb_file_loaded) {
     return __awaiter(this, void 0, void 0, function* () {
         let result = null;
@@ -5479,6 +5619,7 @@ function kmx_load_file(file, cb_file_loaded) {
         cb_file_loaded(result);
     });
 }
+//TODO: Document
 function kml_extract_features(kml_plain_text) {
     return __awaiter(this, void 0, void 0, function* () {
         //XXX: Only supports google marks/placemarks and polygons
@@ -5539,12 +5680,14 @@ function kml_extract_features(kml_plain_text) {
         return ret;
     });
 }
+//TODO: Document
 function point_from_coord(coords) {
     let lat = coords.length >= 2 ? Number.parseFloat(coords[1]) : 0.0;
     let lon = coords.length >= 1 ? Number.parseFloat(coords[0]) : 0.0;
     let alt = coords.length >= 3 ? Number.parseFloat(coords[2]) : 0.0;
     return new _neuron_interfaces__WEBPACK_IMPORTED_MODULE_0__.NeuronInterfacePoint(Number.isNaN(lat) ? 0.0 : lat, Number.isNaN(lon) ? 0.0 : lon, Number.isNaN(alt) ? 0.0 : alt);
 }
+//TODO: Document
 function kml_download_from_neuron_data(markers, waypoints, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_neuron_data(markers, waypoints, polygons);
@@ -5554,6 +5697,7 @@ function kml_download_from_neuron_data(markers, waypoints, polygons) {
         (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kml'), file);
     });
 }
+//TODO: Document
 function kmz_download_from_neuron_data(markers, waypoints, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
         const textXML = yield kml_data_from_neuron_data(markers, waypoints, polygons);
@@ -5561,6 +5705,7 @@ function kmz_download_from_neuron_data(markers, waypoints, polygons) {
         (0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.download_file)((0,_neuron_tools_files__WEBPACK_IMPORTED_MODULE_1__.get_filename)('kmz'), kmz);
     });
 }
+//TODO: Document
 function get_kmz_from_kml_data(data) {
     return __awaiter(this, void 0, void 0, function* () {
         // use a BlobWriter to store with a ZipWriter the zip into a Blob object
@@ -5574,6 +5719,7 @@ function get_kmz_from_kml_data(data) {
         return blobWriter.getData();
     });
 }
+//TODO: Document
 function kml_data_from_neuron_data(markers, waypoints, polygons) {
     return __awaiter(this, void 0, void 0, function* () {
         let xmlDocument = document.implementation.createDocument("", "", null);
@@ -5595,10 +5741,12 @@ function kml_data_from_neuron_data(markers, waypoints, polygons) {
         return kml_document_to_string(xmlDocument);
     });
 }
+//TODO: Document
 function kml_document_to_string(xmlDocument) {
     let textXML = new XMLSerializer().serializeToString(xmlDocument);
     return '<?xml version="1.0" encoding="UTF-8"?>' + textXML;
 }
+//TODO: Document
 function kml_create_point_node(xmlDocument, name, lat, lng) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');
@@ -5613,6 +5761,7 @@ function kml_create_point_node(xmlDocument, name, lat, lng) {
     pointNode.appendChild(coordinatesNode);
     return placemarkNode;
 }
+//TODO: Document
 function kml_create_path_node(xmlDocument, name, coordinates) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');
@@ -5628,6 +5777,7 @@ function kml_create_path_node(xmlDocument, name, coordinates) {
     lineStringNode.appendChild(coordinatesNode);
     return placemarkNode;
 }
+//TODO: Document
 function kml_create_polygon_node(xmlDocument, name, coordinates) {
     const placemarkNode = xmlDocument.createElement('Placemark');
     const nameNode = xmlDocument.createElement('name');
@@ -5668,6 +5818,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _interface_proj4__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./interface_proj4 */ "./src/js/interface_proj4.ts");
 
 
+//TODO: Document
 var StartPosition;
 (function (StartPosition) {
     // Home = 0,
@@ -5677,6 +5828,7 @@ var StartPosition;
     StartPosition[StartPosition["TopRight"] = 4] = "TopRight";
     // Point = 5
 })(StartPosition || (StartPosition = {}));
+//TODO: Document
 class Rect {
     constructor(Left = 0.0, Top = 0.0, Width = 0.0, Height = 0.0) {
         this.Left = Left;
@@ -5701,12 +5853,16 @@ class Rect {
         return Math.sqrt(Math.pow(this.Width(), 2) + Math.pow(this.Height(), 2));
     }
 }
+//TODO: Document
 function remove_item_from_array(array, item) {
     const index = array.indexOf(item);
     if (index > -1)
         array.splice(index, 1);
 }
-// Add an angle while normalizing output in the range 0...360
+/** Add an angle while normalizing output in the range 0...360
+ * @param  {number} angle Initial angle in degrees
+ * @param  {number} degrees Additional degrees to add to add onto the angle
+ */
 function AddAngle(angle, degrees) {
     angle += degrees;
     angle = angle % 360;
@@ -5714,6 +5870,7 @@ function AddAngle(angle, degrees) {
         angle += 360;
     return angle;
 }
+//TODO: Document
 function FindLineIntersection(start1, end1, start2, end2) {
     let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
     //  AB & CD are parallel
@@ -5728,6 +5885,7 @@ function FindLineIntersection(start1, end1, start2, end2) {
     // Find intersection point
     return new _interface_proj4__WEBPACK_IMPORTED_MODULE_1__.UTMPos(start1.x + (r * (end1.x - start1.x)), start1.y + (r * (end1.y - start1.y)), start1.zone);
 }
+//TODO: Document
 function getPolyMinMax(utmpos) {
     if (utmpos.length == 0)
         return new Rect();
@@ -5742,6 +5900,7 @@ function getPolyMinMax(utmpos) {
     }
     return new Rect(min_x, max_y, max_x - min_x, min_y - max_y);
 }
+//TODO: Document
 function PointInPolygon(p, poly) {
     let p1 = new _interface_proj4__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
     let p2 = new _interface_proj4__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
@@ -5769,6 +5928,7 @@ function PointInPolygon(p, poly) {
     }
     return inside;
 }
+//TODO: Document
 function FindLineIntersectionExtension(start1, end1, start2, end2) {
     let denom = ((end1.x - start1.x) * (end2.y - start2.y)) - ((end1.y - start1.y) * (end2.x - start2.x));
     //  AB & CD are parallel
@@ -5785,6 +5945,7 @@ function FindLineIntersectionExtension(start1, end1, start2, end2) {
     let result = new _interface_proj4__WEBPACK_IMPORTED_MODULE_1__.UTMPos(start1.x + (r * (end1.x - start1.x)), start1.y + (r * (end1.y - start1.y)), start1.zone);
     return result;
 }
+//TODO: Document
 function findClosestPoint(start, list) {
     let answer = new _interface_proj4__WEBPACK_IMPORTED_MODULE_1__.UTMPos();
     let current_best = Number.MAX_VALUE;
@@ -5797,6 +5958,7 @@ function findClosestPoint(start, list) {
     }
     return answer;
 }
+//TODO: Document
 function findClosestLine(start, list, min_distance, angle) {
     if (min_distance != 0) {
         // By now, just add 5.000 km to our lines so they are long enough to allow intersection
@@ -5865,6 +6027,7 @@ function findClosestLine(start, list, min_distance, angle) {
         return answer;
     }
 }
+//TODO: Document
 var GridPointTags;
 (function (GridPointTags) {
     GridPointTags["START"] = "S";
@@ -5874,7 +6037,7 @@ var GridPointTags;
     GridPointTags["MIDDLE_END"] = "ME";
 })(GridPointTags || (GridPointTags = {}));
 const min_distance = 0.5;
-/**
+/** Creates listing of points that form a survey grid of a provided area
  * @param  {NeuronInterfacePoint[]} polygon List of points that define the survey polygon
  * @param  {number} altitude altitude to map to the final points
  * @param  {number} distance distance between lines
@@ -6244,4 +6407,4 @@ module.exports = __webpack_require__.p + "img/a0c6cc1401c107b501ef.png";
 /******/ var __webpack_exports__ = __webpack_require__.O();
 /******/ }
 ]);
-//# sourceMappingURL=index.4ae9855af8fd6a2f3e20.js.map
+//# sourceMappingURL=index.a3710712192639774409.js.map
