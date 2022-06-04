@@ -1,0 +1,231 @@
+/* html {
+    height: 100%;
+} */
+
+.fp-user-buttons-frame {
+    display: flex;
+    flex: 0 1 1;
+    flex-direction: row;
+    background-color: var(--theme-bg-border);
+    padding: 0.1em;
+}
+
+.fp-user-buttons {
+    flex: 1 0 0;
+    margin: 0.1em;
+    padding: 0.5em;
+    border-radius: 0;
+}
+
+/* ========================== */
+/*          Main View         */
+/* ========================== */
+
+#fp-main {
+    display: flex;
+    flex-direction: row;
+    flex: 1 0 0;
+    overflow: hidden;
+}
+
+#fp-map {
+    flex: 1 0 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.fp-map-sub {
+    flex: 1 0 0;
+}
+
+#fp-map-help {
+    display: none;
+    overflow: scroll;
+    padding: 1em;
+}
+
+#fp-summary {
+    flex: auto;
+    flex-grow: 0;
+    width: 20em;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid black;
+}
+
+#fp-advanced {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Main container */
+/* https://codepen.io/CesarVMB/pen/kPOrQb */
+.tab-container {
+    /* width: 100%;*/
+    min-height: 0;
+    min-width: 0;
+    flex: 1 1 0;
+    display: grid;
+    /* grid-template-rows: auto auto auto; */
+    grid-template-columns: auto min-content;
+    background-color: var(--theme-bg-border);
+}
+
+/* Hide driving checkboxes */
+.tab-container > input {
+	/* height: 2.5em; */
+	display: none;
+}
+
+/* Tabs */
+.tab-container > label {
+	background: var(--theme-shadow);
+	/* color: var(--theme-primary); */
+    /* border-style: solid; */
+    /* border-left: solid 2px var(--theme-bg-border);
+    border-right: solid 2px var(--theme-bg-border);
+    border-top: solid 2px var(--theme-bg-border); */
+	cursor: pointer;
+	/* height: 2.5em; */
+	/* line-height: 2.5em; */
+	margin-top: 0.25em;
+	/* margin-right: .5em; */
+    margin-left: 0;
+	margin-bottom: 0.25em;
+	padding: 0.5em;
+	text-align: center;
+    font-weight: bold;
+    display: block;
+	/* height: 2.5em; */
+    writing-mode: vertical-rl;
+    text-orientation: upright;
+}
+
+/* Hover for the tabs */
+.tab-container > input:hover + label {
+	background: var(--theme-bg);
+    position: relative;
+}
+
+
+.tab-container > input:hover + label:before {
+    content : "";
+    position: absolute;
+    top    : 20%;
+    left    : 0px;
+    width  : 0.4em;
+    height   : 60%;
+    border-left: 0.2em solid var(--theme-highlight);
+    border-left-style: inset;
+}
+
+/* Selected Tab */
+.tab-container > input:checked + label {
+	background: var(--theme-bg);
+    position: relative;
+}
+
+.tab-container > input:checked + label:before {
+    content : "";
+    position: absolute;
+    top    : 20%;
+    left    : 0px;
+    width  : 0.4em;
+    height   : 60%;
+    border-left: 0.2em solid var(--theme-primary);
+    border-left-style: inset;
+}
+
+/* Main content internal area */
+.tab-content {
+	background: var(--theme-bg);
+	/* height: 100%; */
+	/* width: 100%; */
+    display: block;
+    grid-row: span 2/1;
+    grid-column: 1;
+    overflow: auto;
+    scroll-behavior: smooth;
+}
+
+/* All tab items */
+.tab-content > div {
+	display: none;
+	padding: 1em;
+}
+
+/* Shown content page */
+/* XXX: Add and remove tab IDs here */
+.tab-container input#tab-mission:checked ~ .tab-content #tab-item-mission,
+/* .tab-container input#tab-stats:checked ~ .tab-content #tab-item-stats, */
+.tab-container input#tab-options:checked ~ .tab-content #tab-item-options {
+    display: block;
+    /* flex: auto; */
+}
+
+/* ========================== */
+/*       Drawing Toolbar      */
+/* ========================== */
+/*
+#fp-draw {
+    display: flex;
+    flex: 1 0 0;
+    flex-direction: row;
+    background-color: black;
+    padding: 0.1em;
+}
+
+.fp-draw-buttons {
+    flex: 1 0 0;
+    margin: 0.1em;
+    border-radius: 0;
+}
+*/
+
+/* ========================== */
+/*     Management Toolbar     */
+/* ========================== */
+/*
+#fp-manage {
+    display: flex;
+    flex: auto;
+    flex-direction: row;
+    padding: 0.1em;
+    background-color: black;
+}
+
+.fp-manage-buttons {
+    flex: 1 0 0;
+    border-radius: 0;
+}
+*/
+
+.fp-long-name {
+    margin-left: 0.5em;
+}
+
+#print-section {
+    display: none;
+}
+
+body{counter-reset: section}
+h2{counter-reset: sub-section}
+h3{counter-reset: composite}
+h4{counter-reset: detail}
+
+h2:before{
+  counter-increment: section;
+  content: counter(section) ". ";
+}
+h3:before{
+  counter-increment: sub-section;
+  content: counter(section) "." counter(sub-section) ". ";
+}
+h4:before{
+  counter-increment: composite;
+  content: counter(section) "." counter(sub-section) "." counter(composite) ". ";
+}
+h5:before{
+  counter-increment: detail;
+  content: counter(section) "." counter(sub-section) "." counter(composite) "." counter(detail) ". ";
+}

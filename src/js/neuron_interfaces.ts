@@ -5,6 +5,29 @@ import { UTMPos } from "./interface_proj4";
 // @ts-ignore
 // import * as UTMConverter from "utm-latlng";
 
+export enum InterfaceSummaryTabName {
+    PLAN = 'tab-mission',
+    OPTIONS = 'tab-options',
+}
+
+export enum InterfaceAppElements {
+    LOADER = 'loader',
+    APP = 'app',
+    PLAN = 'fp-mission',
+    STATS = 'fp-stats',
+    OPTIONS = 'fp-options',
+    MAP = 'fp-map-interactive',
+    HELP = 'fp-map-help',
+    BRIEF = 'print-section',
+
+}
+
+//All of our preset DOM IDs
+export const app_element_prefix_help = 'help';
+export const app_elements_ignore_help_subs = [
+    'fp-mission',
+];
+
 export interface NeuronInterfacePointData {
     latitude: number;
     longitude: number;

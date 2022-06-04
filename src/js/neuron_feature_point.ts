@@ -1,5 +1,5 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
+import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
 import { NeuronHelp } from "./neuron_help";
 import { NeuronPlanner } from "./neuron_planner";
@@ -98,6 +98,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
     show_on_plan() {
         if(this.#dom) {
+            window.neuron_set_panel_view(InterfaceSummaryTabName.PLAN);
             this.#dom.scrollIntoView();
             this.#dom.classList.remove('mission-feature-highlight-remove');
             this.#dom.classList.add('mission-feature-highlight');

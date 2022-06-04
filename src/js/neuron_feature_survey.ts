@@ -1,5 +1,5 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
-import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
+import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
 import { L, create_popup_context_dom } from "./interface_leaflet";
 import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
@@ -79,10 +79,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_sidelap:HTMLInputElement;
     #dom_overlap:HTMLInputElement;
     #dom_ground_resolution:HTMLInputElement;
+    #dom_current_camera:HTMLButtonElement;
 
     #update_timer:NodeJS.Timeout;
     #update_interval:number;
-    #unsub_option_cb:CallableFunction;
+    #unsub_option_cb:()=>void;
 
 
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
@@ -117,6 +118,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom_sidelap = null;
         this.#dom_overlap = null;
         this.#dom_ground_resolution = null;
+        this.#dom_current_camera = null;
 
         this.#show_waypoints = show_waypoints;
         this.#altitude = 100;
@@ -141,6 +143,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     override show_on_plan() {
         if(this.#dom) {
+            window.neuron_set_panel_view(InterfaceSummaryTabName.PLAN);
             this.#dom.scrollIntoView();
             this.#dom.classList.remove('mission-feature-highlight-remove');
             this.#dom.classList.add('mission-feature-highlight');
@@ -580,6 +583,12 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(dom_break_label2);
             c.appendChild(dom_break2);
 
+            const t20 = "Camera for the mission as configured in the mission options";
+            this.#dom_current_camera = this._create_dom_input_button(NeuronOptions.camera_preset_custom.name, window.neuron_set_panel_view.bind(null, InterfaceSummaryTabName.OPTIONS));
+            this.#dom_current_camera.title = t20;
+            c.appendChild(this._create_dom_label("Camera:", this.#dom_current_camera, t20));
+            c.appendChild(this.#dom_current_camera);
+
             const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
             this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureSurvey._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);
             this.#dom_ground_resolution.title = t18;
@@ -744,6 +753,11 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #calculate_and_update_capture_variables() {
         let settings_changed = false;
         const camera = NeuronOptions.get_camera();
+
+        if(this.#dom_current_camera) {
+            this.#dom_current_camera.innerText = '';
+            this.#dom_current_camera.appendChild(document.createTextNode(camera.name));
+        }
 
         let altitude = camera.get_distance(this.get_ground_resolution());
 

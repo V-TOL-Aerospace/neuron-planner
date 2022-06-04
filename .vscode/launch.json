@@ -9,7 +9,7 @@
             "webRoot": "${workspaceFolder}",
             "pathMappings": [
                 {
-                    "url": "webpack://vtol-neuron/src",
+                    "url": "webpack://neuron-planner/src",
                     "path": "${workspaceFolder}/src"
                 }
             ]

@@ -1,5 +1,5 @@
 import { NeuronOptions } from './neuron_options';
-import { NeuronInterfacePoint } from './neuron_interfaces';
+import { app_elements_ignore_help_subs, app_element_prefix_help, InterfaceAppElements, InterfaceSummaryTabName, NeuronInterfacePoint } from './neuron_interfaces';
 import { NeuronPlanner } from './neuron_planner';
 import { NeuronMap } from './neuron_map';
 import { NeuronBrief } from './neuron_brief';
@@ -15,13 +15,8 @@ import { get_supported_kmx_types } from './neuron_tools_kml'
 // import '@fortawesome/fontawesome-free/js/regular'
 // import '@fortawesome/fontawesome-free/js/brands'
 
-// import "../css/theme.css";  //XXX: Loaded by minimal script in head
 import "../css/index.css";
-import "../css/map.css";
-import "../css/stats_options.css";
-import "../css/plan.css";
-import "../css/brief.css";
-import "../css/responsive.css"; //XXX: Load this last so it gets applied after all other definitions
+import { NeuronSettings } from './neuron_settings';
 
 declare global {
     interface Window {
@@ -29,29 +24,16 @@ declare global {
         neuron_map: NeuronMap;
         neuron_brief: NeuronBrief;
         neuron_statistics: NeuronStatistics;
+        neuron_settings:NeuronSettings;
         neuron_help: NeuronHelp;
+        neuron_set_panel_view: (panel_name:InterfaceSummaryTabName) => void;
     }
 }
 
-/// <reference types="webpack/module" />
-console.log(`Loaded V-TOL Neuron, packed with Webpack v${import.meta.webpack}`); // without reference declared above, TypeScript will throw an error
+console.log(`--== Neuron Planner by V-TOL Aerospace ==--`);
 
 //Initialize all of our options
 NeuronOptions.init();
-
-//All of our preset DOM IDs
-const element_name_loader = 'loader';
-const element_name_app = 'app';
-const element_name_plan = 'fp-mission';
-const element_name_stats = 'fp-stats';
-const element_name_options = 'fp-options';
-const element_name_map = 'fp-map-interactive';
-const element_name_help = 'fp-map-help';
-const element_name_brief = 'print-section';
-const element_prefix_help = 'help';
-const elements_ignore_help_subs = [
-    'fp-mission',
-];
 
 //Print-specific variables to store for later
 const print_size_with_margin_mm = {
@@ -63,16 +45,23 @@ const print_size_with_margin_px = {
     height: mm_to_px(print_size_with_margin_mm.height)
 }
 
+window.neuron_set_panel_view = (tab:InterfaceSummaryTabName) => {
+    let el = <HTMLInputElement>document.getElementById(tab);
+    if(el)
+        el.checked = true;
+}
+
 //Application variables
-window.neuron_planner = new NeuronPlanner(element_name_plan);
-window.neuron_map = new NeuronMap(element_name_map, element_name_help, window.neuron_planner);
-window.neuron_brief = new NeuronBrief(window.neuron_planner, element_name_brief);
-window.neuron_statistics = new NeuronStatistics(window.neuron_planner, window.neuron_brief, element_name_stats, element_name_options);
-window.neuron_help = new NeuronHelp(element_prefix_help, elements_ignore_help_subs);
+window.neuron_planner = new NeuronPlanner(InterfaceAppElements.PLAN);
+window.neuron_map = new NeuronMap(InterfaceAppElements.MAP, InterfaceAppElements.HELP, window.neuron_planner);
+window.neuron_brief = new NeuronBrief(window.neuron_planner, InterfaceAppElements.BRIEF);
+window.neuron_statistics = new NeuronStatistics(window.neuron_planner, window.neuron_brief, InterfaceAppElements.STATS);
+window.neuron_settings = new NeuronSettings(InterfaceAppElements.OPTIONS);
+window.neuron_help = new NeuronHelp(app_element_prefix_help, app_elements_ignore_help_subs);
 
 function show_loader(show:boolean) {
-    const el_loader = document.getElementById(element_name_loader);
-    const el_app = document.getElementById(element_name_app);
+    const el_loader = document.getElementById(InterfaceAppElements.LOADER);
+    const el_app = document.getElementById(InterfaceAppElements.APP);
     el_loader.style.display = show ? 'flex' : 'none';
     el_app.style.display = show ? 'none' : 'flex';
 }
@@ -106,13 +95,14 @@ let load_app_data = async () => {
     window.neuron_planner.reset();
     window.neuron_map.reset();
     window.neuron_statistics.reset();
+    window.neuron_settings.reset();
     window.neuron_brief.reset();
     window.neuron_help.reset();
 
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
 
-    let el_app = document.getElementById(element_name_map);
+    let el_app = document.getElementById(InterfaceAppElements.MAP);
     el_app.ondrop = dragDropHandler;
     el_app.ondragover = dragOverHandler;
 
@@ -129,7 +119,7 @@ window.addEventListener('beforeprint', (event) => {
     //Turn off the map tools
     window.neuron_map.show_map_help(false);
     //Set the size of the map, and reset it to fit the new size
-    const map = document.getElementById(element_name_map);
+    const map = document.getElementById(InterfaceAppElements.MAP);
     // map.style.width = `${print_size_with_margin_mm.width}mm`;
     // map.style.height = `${print_size_with_margin_mm.height}mm`;
     // window.neuron_map.reset();
@@ -164,7 +154,7 @@ window.addEventListener('afterprint', (event) => {
     //Turn off the map tools
     window.neuron_map.toggle_map_tools(true);
     //Set the size of the map, and reset it to fit the new size
-    const map = document.getElementById(element_name_map);
+    const map = document.getElementById(InterfaceAppElements.MAP);
     map.style.width = `auto`;
     map.style.height = `auto`;
     window.neuron_map.reset();

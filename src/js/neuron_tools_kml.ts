@@ -15,7 +15,7 @@ export interface NeuronKMLData {
     polygons:NeuronInterfacePoint[][];
 }
 
-export async function kmx_load_file(file:Blob, cb_file_loaded:CallableFunction) {
+export async function kmx_load_file(file:Blob, cb_file_loaded:(result:NeuronKMLData)=>void) {
     let result = null;
     console.log(`Loaded file identified as "${file.type}" type`);
     switch(file.type) {

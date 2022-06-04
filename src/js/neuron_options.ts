@@ -34,7 +34,7 @@ export interface NeuronOptionsData {
 
 export class NeuronOptions {
     //XXX: Keys must be unique!
-    static camera_preset_custom = new NeuronCameraSpecifications();
+    static camera_preset_custom = new NeuronCameraSpecifications("Custom", 16, 23.50, 15.60, 6000, 4000);
     static camera_presets:NeuronCameraSpecifications[]= [
         NeuronOptions.camera_preset_custom,
         new NeuronCameraSpecifications("A6000", 20, 23.50, 15.60, 6000, 4000),
@@ -45,8 +45,8 @@ export class NeuronOptions {
     static #stat_options_number:Map<NeuronOptionsNumber,number> = new Map();
     static #stat_options_string:Map<NeuronOptionsString,string> = new Map();
 
-    static #dom_callback:CallableFunction = null;
-    static #general_callbacks:Map<string,CallableFunction> = new Map();
+    static #dom_callback:()=>void = null;
+    static #general_callbacks:Map<string,()=>void> = new Map();
 
     static init() {
         this.set_option_boolean(NeuronOptionsBoolean.SHOW_PATH, true, false, false);
@@ -54,11 +54,11 @@ export class NeuronOptions {
         this.set_camera(NeuronOptions.camera_preset_custom, false, false)
     }
 
-    static set_dom_callback(callback:CallableFunction) {
+    static set_dom_callback(callback:()=>void) {
         this.#dom_callback = callback;
     }
 
-    static add_callback(callback:CallableFunction) {
+    static add_callback(callback:()=>void) {
         const id = NeuronUID('option');
         this.#general_callbacks.set(id, callback);
         return this.#remove_callback.bind(this, id);

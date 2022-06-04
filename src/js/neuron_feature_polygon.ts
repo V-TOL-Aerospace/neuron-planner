@@ -1,5 +1,5 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
+import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
 import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
@@ -26,7 +26,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #polygon:L.Polygon;
     #planner:NeuronPlanner;
     #selected_corner:number;
-    #on_change_internal:CallableFunction;
+    #on_change_internal:()=>void;
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
     #dom_show_corners:HTMLInputElement;
@@ -83,7 +83,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.#planner = planner;
     }
 
-    _set_on_change_internal(on_change:CallableFunction=null) {
+    _set_on_change_internal(on_change:()=>void=null) {
         this.#on_change_internal = on_change;
     }
 
@@ -179,6 +179,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
 
     show_on_plan() {
         if(this.#dom) {
+            window.neuron_set_panel_view(InterfaceSummaryTabName.PLAN);
             this.#dom.scrollIntoView();
             this.#dom.classList.remove('mission-feature-highlight-remove');
             this.#dom.classList.add('mission-feature-highlight');

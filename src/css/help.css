@@ -1,0 +1,11 @@
+.help-highlight {
+    background-color: var(--theme-highlight) !important;
+}
+
+/* .help-highlight > .tab-container {
+    background-color: var(--theme-highlight) !important;
+} */
+
+.help-highlight ~ .tab-content {
+    background-color: var(--theme-highlight) !important;
+}

@@ -1,7 +1,7 @@
 import { NeuronIcons, neuron_get_icon } from "./interface_fontawesome";
 import { L } from "./interface_leaflet";
 import { NeuronDOMFactory } from "./neuron_dom_factory";
-import { NeuronInterfacePoint} from "./neuron_interfaces";
+import { InterfaceSummaryTabName, NeuronInterfacePoint} from "./neuron_interfaces";
 import { NeuronUID } from "./neuron_tools_common";
 
 export interface NeuronFeatureBaseData {
@@ -21,9 +21,9 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     #map:L.Map;
     #features:L.Layer[];
     #hidden_features:L.Layer[];
-    #on_remove:CallableFunction;
-    #on_change:CallableFunction;
-    #on_move:CallableFunction;
+    #on_remove:(feature:NeuronFeatureBase)=>void;
+    #on_change:(feature:NeuronFeatureBase)=>void;
+    #on_move:(feature:NeuronFeatureBase, direction:number)=>void;
 
     #dom:HTMLDivElement;
     #dom_buttons_visibility:HTMLButtonElement[];
@@ -242,8 +242,10 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
 
             this.#on_move(this, direction);
 
-            if(this.#dom)
+            if(this.#dom) {
+                window.neuron_set_panel_view(InterfaceSummaryTabName.PLAN);
                 this.#dom.scrollIntoView();
+            }
         }
     }
 
@@ -255,15 +257,15 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
     //     }
     // }
 
-    set_remove_callback(on_remove:CallableFunction) {
+    set_remove_callback(on_remove:(feature:NeuronFeatureBase)=>void) {
         this.#on_remove = on_remove;
     }
 
-    set_change_callback(on_change:CallableFunction) {
+    set_change_callback(on_change:(feature:NeuronFeatureBase)=>void) {
         this.#on_change = on_change;
     }
 
-    set_move_callback(on_move:CallableFunction) {
+    set_move_callback(on_move:()=>void) {
         this.#on_move = on_move;
     }
 

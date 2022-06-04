@@ -15,9 +15,51 @@
         border-left: 0px;
         border-top: 2px solid black;
     }
+
+    .tab-container {
+        grid-template-columns: auto auto;
+        grid-template-rows: min-content auto;
+    }
+
+    .tab-content {
+        grid-column: span 2;
+        grid-row: 2;
+    }
+
+    .tab-container > label {
+        /* height: 2.5em; */
+        margin-top: 0;
+        margin-right: .25em;
+        margin-left: .25em;
+        margin-bottom: 0;
+        writing-mode: horizontal-tb;
+        /* text-orientation: mixed; */
+    }
+
+    .tab-container > input:hover + label:before {
+        top    : auto;
+        left    : 20%;
+        bottom  : 0;
+        height  : 0.4em;
+        width   : 60%;
+        border-bottom: 0.2em solid var(--theme-highlight);
+        border-bottom-style: inset;
+        border-left-style: none;
+    }
+
+    .tab-container > input:checked + label:before {
+        top    : auto;
+        left    : 20%;
+        bottom  : 0;
+        height  : 0.4em;
+        width   : 60%;
+        border-bottom: 0.2em solid var(--theme-primary);
+        border-bottom-style: inset;
+        border-left-style: none;
+    }
 }
 
-@media only screen and (max-width: 820px) {
+@media only screen and (max-width: 50em) {
     .fp-long-name {
         display: none;
     }
@@ -27,22 +69,23 @@
     }
 }
 
-@media only screen and ((orientation: portrait) or (max-height: 620px)) and (max-width: 800px) {
+@media (max-height: 40em) or (max-width: 50em) {
     .leaflet-control-attribution {
         display: none;
     }
 
     #fp-summary > * {
         font-size: x-small;
+        /* width: 25em; */
     }
 
-    .mission-feature-content-value {
+    /* .mission-feature-content-value {
         font-size: x-small;
     }
 
     .fp-stats-content-value {
         font-size: x-small;
-    }
+    } */
 
     .mission-feature-title-button {
         display: none;

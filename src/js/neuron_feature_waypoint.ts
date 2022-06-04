@@ -1,8 +1,8 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
-import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
+import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
 import { NeuronHelp } from "./neuron_help";
-import { NeuronOptions } from "./neuron_options";
+import { NeuronOptions, NeuronOptionsString } from "./neuron_options";
 import { NeuronIcons } from "./interface_fontawesome";
 
 export interface NeuronFeaturePointData {
@@ -31,12 +31,13 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     #dom_wait:HTMLInputElement;
     #dom_capture:HTMLInputElement;
     #dom_ground_resolution:HTMLInputElement;
+    #dom_current_camera:HTMLButtonElement;
 
     #wait_duration:number;
     #capture_image:boolean;
     #ground_resolution:number;
 
-    #unsub_option_cb:CallableFunction;
+    #unsub_option_cb:()=>void;
 
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
 
@@ -57,6 +58,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
         this.#wait_duration = 0;
         this.#capture_image = false;
         this.#ground_resolution = 0;
+        this.#dom_current_camera;
 
         if(point)
             this.set_point(point);
@@ -72,6 +74,11 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
     }
 
     #options_changed() {
+        if(this.#dom_current_camera) {
+            this.#dom_current_camera.innerText = '';
+            this.#dom_current_camera.appendChild(document.createTextNode(NeuronOptions.get_option_string(NeuronOptionsString.CAMERA_NAME)));
+        }
+
         //Give preference to update altitude from current ground resolution if we're capturing an image
         if(this.#capture_image) {
             this.set_ground_resolution(this.#ground_resolution);
@@ -125,6 +132,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
 
     show_on_plan() {
         if(this.#dom) {
+            window.neuron_set_panel_view(InterfaceSummaryTabName.PLAN);
             this.#dom.scrollIntoView();
             this.#dom.classList.remove('mission-feature-highlight-remove');
             this.#dom.classList.add('mission-feature-highlight');
@@ -307,6 +315,12 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             this.#dom_capture.title = t5;
             c.appendChild(this._create_dom_label("Capture:", this.#dom_capture, t5));
             c.appendChild(this.#dom_capture);
+
+            const t20 = "Camera for the mission as configured in the mission options";
+            this.#dom_current_camera = this._create_dom_input_button(NeuronOptions.camera_preset_custom.name, window.neuron_set_panel_view.bind(null, InterfaceSummaryTabName.OPTIONS));
+            this.#dom_current_camera.title = t20;
+            c.appendChild(this._create_dom_label("Camera:", this.#dom_current_camera, t20));
+            c.appendChild(this.#dom_current_camera);
 
             const t18 = "Ground sampling distance, or ground resolution, in centimeters per pixel";
             this.#dom_ground_resolution = this._create_dom_input_number(this.#ground_resolution / NeuronFeatureWaypoint._gsd_ratio, this.#update_ground_resolution_from_dom.bind(this), 0, null, 0.2);

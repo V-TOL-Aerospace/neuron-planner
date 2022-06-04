@@ -49,14 +49,14 @@ export class NeuronPlanner {
 
     #plan_element:HTMLElement;
     #mission_items:MissionFeature[];
-    #on_change_callbacks:Map<number,CallableFunction>;
+    #on_change_callbacks:Map<number,()=>void>;
     #last_callback_id:number;
     #clearing_mission:boolean;
 
     #last_mission_altitude:number;
 
     #plan_element_name:string;
-    // #unsub_option_cb:CallableFunction;
+    // #unsub_option_cb:()=>void;
 
     constructor(plan_element_name:string, map:NeuronMap = null) {
         this.#map = map;
@@ -290,7 +290,7 @@ export class NeuronPlanner {
             cb();
     }
 
-    on_mission_change(cb:CallableFunction): CallableFunction {
+    on_mission_change(cb:()=>void): ()=>void {
         const id = this.#last_callback_id++;
         this.#on_change_callbacks.set(id, cb);
 

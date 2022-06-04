@@ -24,7 +24,7 @@ export class NeuronMap {
     #map_element:HTMLElement;
     #help_element:HTMLElement;
     #map_layers:NeuronMapLayers;
-    #unsub_option_cb:CallableFunction;
+    #unsub_option_cb:()=>void;
 
     constructor(map_element_name:string, help_element_name:string, planner:NeuronPlanner) {
         this.#planner = planner;
