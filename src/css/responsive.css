@@ -79,6 +79,16 @@
         /* width: 25em; */
     }
 
+    .mission-features-dragdrop-content {
+        /* flex: auto; */
+        font-size:medium;
+        padding: 0.25em;
+    }
+
+    .mission-features-dragdrop-content-large {
+        font-size:large;
+    }
+
     /* .mission-feature-content-value {
         font-size: x-small;
     }

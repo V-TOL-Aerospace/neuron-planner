@@ -16,6 +16,7 @@ export enum InterfaceAppElements {
     STATS = 'fp-stats',
     OPTIONS = 'fp-options',
     MAP = 'fp-map-interactive',
+    DRAGDROP = 'mission-features-dragdrop',
     HELP = 'fp-map-help',
     BRIEF = 'print-section',
 

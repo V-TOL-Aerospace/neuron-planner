@@ -19,7 +19,7 @@
 }
 
 .neuron-marker-popup-item:hover {
-    background-color: #b0b0fd;
+    background-color: var(--theme-popup);
     text-decoration: underline;
     cursor: pointer;
 }

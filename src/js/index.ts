@@ -74,11 +74,37 @@ function dragOverHandler(event:DragEvent) {
     event.preventDefault();
 }
 
+let _dragdrop_counter = 0;
+/**Handles the logic for dragging over files onto the application/map screen. This reveals the drag-drop text overlay.
+ * @param  {DragEvent} event event that triggered the drag-over
+ */
+ function dragEnterHandler(event:DragEvent) {
+    let el = document.getElementById(InterfaceAppElements.DRAGDROP);
+    el.style.display = 'flex';
+    _dragdrop_counter++;
+}
+
+/**Handles the logic for dragging over files onto the application/map screen. This hides the drag-drop text overlay.
+ * @param  {DragEvent} event event that triggered the drag-over
+ */
+ function dragLeaveHandler(event:DragEvent) {
+    let el = document.getElementById(InterfaceAppElements.DRAGDROP);
+    _dragdrop_counter--;
+    if(_dragdrop_counter <= 0)
+        el.style.display = 'none';
+}
+
 /** Handles the logic for dragging and dropping files onto the application/map screen. This allows drag-drop import of mission and KMx files
  * @param  {DragEvent} event event that triggered the drag-drop
  */
 function dragDropHandler(event:DragEvent) {
     event.preventDefault();
+
+    let el = document.getElementById(InterfaceAppElements.DRAGDROP);
+    _dragdrop_counter--;
+    if(_dragdrop_counter <= 0)
+        el.style.display = 'none';
+
     const kmx_types = get_supported_kmx_types();
     for(const file of event.dataTransfer.items) {
         if(file.type == 'application/json') {
@@ -108,9 +134,11 @@ async function load_app_data() {
     window.neuron_planner.set_map(window.neuron_map);
     window.neuron_planner.on_mission_change(window.neuron_statistics.update_statistics.bind(window.neuron_statistics));
 
-    let el_app = document.getElementById(InterfaceAppElements.MAP);
+    let el_app = document.getElementById(InterfaceAppElements.APP);
     el_app.ondrop = dragDropHandler;
     el_app.ondragover = dragOverHandler;
+    el_app.ondragenter = dragEnterHandler;
+    el_app.ondragleave = dragLeaveHandler;
 
     //Update the map location if we can get the user's current location
     navigator.geolocation.getCurrentPosition( async (location) => {
