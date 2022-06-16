@@ -263,6 +263,8 @@ export class NeuronPlanner {
                         // console.log("No objects to zoom too!");
                         resolve(true);
                     }
+
+                    window.neuron_map.show_map_help(false);
                 } else {
                     resolve(false);
                 }

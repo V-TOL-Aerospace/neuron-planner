@@ -1,12 +1,32 @@
 {
+    "version": "0.2.0",
     "configurations": [
         {
+          "type": "pwa-msedge",
+          "request": "launch",
+          "name": "Launch Edge Debug",
+          "url": "http://localhost:5000",
+          "webRoot": "${workspaceFolder}/public",
+        },
+        {
+          "type": "pwa-chrome",
+          "request": "launch",
+          "name": "Launch Chrome Debug",
+          "url": "http://localhost:5000",
+          "webRoot": "${workspaceFolder}/public",
+        },
+        {
+            "name": "Launch Firefox Debug",
             "type": "firefox",
             "request": "launch",
             "reAttach": true,
-            "name": "Launch index.html",
-            "url": "http://localhost:9000/index.html",
-            "webRoot": "${workspaceFolder}",
+            "url": "http://localhost:5000",
+            "webRoot": "${workspaceFolder}/public",
+            "reloadOnChange": {
+                "watch": [
+                    "${workspaceFolder}/public/buildstamp.txt"
+                ]
+            },
             "pathMappings": [
                 {
                     "url": "webpack://neuron-planner/src",

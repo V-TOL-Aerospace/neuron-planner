@@ -304,6 +304,8 @@ export class NeuronFeatureBase extends NeuronDOMFactory {
         this.#map.fitBounds(group.getBounds(), {
             padding: [20, 20]
         });
+
+        window.neuron_map.show_map_help(false);
     }
 
 
