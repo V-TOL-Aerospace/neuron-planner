@@ -1,10 +1,11 @@
 import { NeuronFeatureBase } from "./neuron_feature_base";
 import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { L, create_popup_context_dom, LeafletContextMenuItem, get_neuron_map_marker } from "./interface_leaflet";
-import { kmz_download_from_neuron_data } from "./neuron_tools_kml";
+import { kml_download_from_neuron_data, kmz_download_from_neuron_data } from "./neuron_tools_kml";
 import { NeuronPlanner } from "./neuron_planner";
 import { NeuronHelp } from "./neuron_help";
 import { NeuronIcons } from "./interface_fontawesome";
+import { UTMPos } from "./interface_proj4";
 
 //TODO: Document
 export interface NeuronFeaturePolygonData {
@@ -31,6 +32,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #on_change_internal:()=>void;
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
+    #dom_perimeter:HTMLOutputElement;
+    #dom_area:HTMLOutputElement;
     #dom_show_corners:HTMLInputElement;
     #dom_label:HTMLInputElement;
     #dom_convert_survey:HTMLButtonElement;
@@ -41,6 +44,8 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         super(map);
         this.#on_change_internal = null;
         this.#dom = null;
+        this.#dom_perimeter = null;
+        this.#dom_area = null;
         this.#dom_corner_count = null;
         this.#dom_convert_survey = null;
         this.#dom_export_kml = null;
@@ -284,6 +289,40 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     #try_update_dom() {
         if(this.#dom_corner_count)
             this.#dom_corner_count.value = this.#corners.length.toFixed(0);
+
+        const points = this.get_corners_as_points();
+        let utm_points:UTMPos[] = [];
+        if(points.length > 2) {
+            const u1 = points[0].to_UTM();
+            utm_points = points.map(x => x.to_UTM(u1.zone));
+        }
+
+        if(this.#dom_perimeter) {
+            let perimeter = "---";
+            let length = 0;
+            if(utm_points.length > 1) {
+                for(let i = 0; i < utm_points.length; i++) {
+                    const p1 = utm_points[i];
+                    const p2 = i < (utm_points.length - 1) ? utm_points[i+1] : utm_points[0];
+                    length += p1.GetDistance2D(p2);
+                }
+
+                perimeter = (length * NeuronFeaturePolygon._distance_ratio).toFixed(3);
+            }
+
+            this.#dom_perimeter.value = perimeter;
+        }
+
+        if(this.#dom_area) {
+            let area = "---";
+            if(utm_points.length > 2) {
+                const u1 = points[0].to_UTM();
+                const utm_points = points.map(x => x.to_UTM(u1.zone));
+                const area_m = UTMPos.AreaOfPolygon(utm_points)
+                area = (area_m * NeuronFeaturePolygon._area_ratio).toFixed(3);
+            }
+            this.#dom_area.value = area;
+        }
     }
 
     #convert_to_survey() {
@@ -295,7 +334,7 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
     }
 
     #export_as_kml() {
-        kmz_download_from_neuron_data([], [], [this.get_corners_as_points()]);
+        kml_download_from_neuron_data([], [], [this.get_corners_as_points()]);
     }
 
     #export_as_kmz() {
@@ -335,6 +374,18 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             this.#dom_corner_count.title = t4;
             c.appendChild(this._create_dom_label("Corners:", this.#dom_corner_count, t4));
             c.appendChild(this.#dom_corner_count);
+
+            const t41 = "Perimeter of this polygon as defined by it's boundaries in kilometers";
+            this.#dom_perimeter = this._create_dom_output();
+            this.#dom_perimeter.title = t41;
+            c.appendChild(this._create_dom_label("Perimeter:", this.#dom_perimeter, t41));
+            c.appendChild(this.#dom_perimeter);
+
+            const t42 = "Area of this polygon as defined by it's boundaries in square kilometers";
+            this.#dom_area = this._create_dom_output();
+            this.#dom_area.title = t42;
+            c.appendChild(this._create_dom_label("Area:", this.#dom_area, t42));
+            c.appendChild(this.#dom_area);
 
             this.#try_update_dom();
 

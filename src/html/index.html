@@ -354,11 +354,18 @@
                                     <p>The imagery capture requirements mentioned above will be automatically updated if a valid camera is configured in <a href="#help-tab-label-options">Mission Options</a> and the waypoint properties are adjusted. Adjusting camera parameters will update ground resolution from current altitude if "Capture" is disabled, or will update altitude from current ground resolution if "Capture" is enabled. The ground resolution can be calculated by manually setting the altitude, and vice versa.</p>
                                     <p>The waypoint marker can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows for the waypoint removed entirely through the map.</p>
                                 </section>
+                                <section id="help-fp-mission-line">
+                                    <h4>Line</h4>
+                                    <p>The line feature is a non-flyable mission feature that could be used for measurements or as a visual aid to highlight mission-relevant features.</p>
+                                    <p>The line created on the screen can be adjusted by dragging the end markers.</p>
+                                    <p>The end markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific end to be removed entirely. The " Show ends" checkbox enables the display of the ends that define the line. Note that the shape of the line cannot be edited if the corners are not shown.</p>
+                                    <p>The line feature can be exported to other file types, such as KML or KMZ through its <a href="#help-fp-mission">Mission Plan</a> item.</p>
+                                </section>
                                 <section id="help-fp-mission-polygon">
                                     <h4>Polygon</h4>
                                     <p>The polygon feature is a non-flyable mission feature that can be converted into other mission features. It could also be used as a visual aid to highlight areas of interest or other mission-relevant features.</p>
-                                    <p>The polygon created on the screen can be adjusted by dragging the conner markers. Additional corner markers can be added by clicking in the shaded polygon area, where additional markers will be added "after" or "to the right" of the last corner marker the was interacted with (e.g. by clicking or dragging the marker).</p>
-                                    <p>The corner markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific corner to be adjusted in order (e.g. moved "forwards" or "backwards", and also allows it to be removed entirely. The " Show corners" checkbox enables the display of the corners that define the polygon. Note that the shape of the polygon that defines the survey cannot be edited if the corners are not shown.</p>
+                                    <p>The polygon created on the screen can be adjusted by dragging the corner markers. Additional corner markers can be added by clicking in the shaded polygon area, where additional markers will be added "after" or "to the right" of the last corner marker the was interacted with (e.g. by clicking or dragging the marker).</p>
+                                    <p>The corner markers can also be adjusted through the popup menu on the <a href="#help-fp-map-interactive">Interactive Map</a>. This allows a specific corner to be adjusted in order (e.g. moved "forwards" or "backwards", and also allows it to be removed entirely. The " Show corners" checkbox enables the display of the corners that define the polygon. Note that the shape of the polygon cannot be edited if the corners are not shown.</p>
                                     <p>The polygon feature can be exported to other file types, such as KML or KMZ through its <a href="#help-fp-mission">Mission Plan</a> item.</p>
                                 </section>
                                 <section id="help-fp-mission-survey">
@@ -464,10 +471,11 @@
         <div id="fp-draw" class="fp-user-buttons-frame">
             <button type="button" id="fp-draw-fit-mission" class="fp-user-buttons" onclick="window.neuron_planner.fit_mission_on_map()" title="Zoom To Fit"><i class="fas fa-minimize"></i><span class="fp-long-name">Zoom To Fit</span></button>
             <button type="button" id="fp-draw-create-point" class="fp-user-buttons" onclick="window.neuron_map.create_point_in_view()" title="Insert Point"><i class="fas fa-location-dot"></i><span class="fp-long-name">Create Point</span></button>
+            <button type="button" id="fp-draw-create-line" class="fp-user-buttons" onclick="window.neuron_map.create_line_in_view()" title="Create Line"><i class="fas fa-ruler"></i><span class="fp-long-name">Create Line</span></button>
             <button type="button" id="fp-draw-create-polygon" class="fp-user-buttons" onclick="window.neuron_map.create_polygon_in_view()" title="Create Polygon"><i class="fas fa-draw-polygon"></i><span class="fp-long-name">Create Polygon</span></button>
-            <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="" disabled>
+            <!-- <button type="button" id="fp-draw-create-survey" class="fp-user-buttons" onclick="window.neuron_map.create_survey_in_view()" title="" disabled> -->
                 <!-- <i class="fas fa-hashtag"></i><span class="fp-long-name">Create Survey</span> -->
-            </button>
+            <!-- </button> -->
             <!-- <button type="button" id="fp-draw-geofence" class="fp-user-buttons" disabled title="Create Geofence"><i class="fas fa-map"></i><span class="fp-long-name">Create Geofence</span></button> -->
             <button type="button" id="fp-draw-load-file" class="fp-user-buttons"  onclick="document.getElementById('fp-draw-load-file-sub').click();" title="Import File"><i class="fas fa-file-import"></i><span class="fp-long-name">Import File</span></button>
             <input type="file" style="display:none;" id="fp-draw-load-file-sub" onchange="window.neuron_planner.import_features_from_files(this.files)" multiple accept="application/vnd.google-earth.kml+xml, application/vnd.google-earth.kmz, .kml, .kmz"/>

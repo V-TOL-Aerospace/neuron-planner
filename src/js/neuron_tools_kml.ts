@@ -150,7 +150,7 @@ function point_from_coord(coords:string[]) {
 }
 
 //TODO: Document
-export async function kml_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+export async function kml_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[][], polygons:NeuronInterfacePoint[][]) {
     const textXML = await kml_data_from_neuron_data(markers, waypoints, polygons);
     const file = new Blob(
         [textXML],
@@ -162,7 +162,7 @@ export async function kml_download_from_neuron_data(markers:NeuronInterfacePoint
 }
 
 //TODO: Document
-export async function kmz_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+export async function kmz_download_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[][], polygons:NeuronInterfacePoint[][]) {
     const textXML = await kml_data_from_neuron_data(markers, waypoints, polygons);
     const kmz = await get_kmz_from_kml_data(textXML);
     download_file(get_filename('kmz'), kmz);
@@ -185,7 +185,7 @@ async function get_kmz_from_kml_data(data:string) {
 }
 
 //TODO: Document
-export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], waypoints:NeuronInterfacePoint[], polygons:NeuronInterfacePoint[][]) {
+export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], paths:NeuronInterfacePoint[][], polygons:NeuronInterfacePoint[][]) {
     let xmlDocument = document.implementation.createDocument("", "", null);
     const kmlNode = xmlDocument.createElement('kml');
     kmlNode.setAttribute('xmlns', 'http://www.opengis.net/kml/2.2');
@@ -201,7 +201,9 @@ export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], 
     }
 
     //Paths
-    documentNode.appendChild(kml_create_path_node(xmlDocument, "flight-path", waypoints));
+    for(let i=0; i<paths.length; i++) {
+        documentNode.appendChild(kml_create_path_node(xmlDocument, (i == 0) ? "flight-path" : `paths-${i+1}`, paths[i]));
+    }
 
     //Polygons
     for(let i=0; i<polygons.length; i++) {

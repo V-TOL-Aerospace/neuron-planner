@@ -8,6 +8,7 @@ import { L } from "./interface_leaflet";
 import { NeuronFeatureSurvey } from "./neuron_feature_survey";
 import { NeuronOptions, NeuronOptionsBoolean } from "./neuron_options";
 import { NeuronFeaturePoint } from "./neuron_feature_point";
+import { NeuronFeatureLine } from "./neuron_feature_line";
 
 //TODO: Document
 interface NeuronMapLayers {
@@ -142,6 +143,32 @@ export class NeuronMap {
             this.#planner.add_mission_item(p);
         }
     }
+
+    create_line_in_view() {
+        if(this.#map) {
+            const b = this.#map.getBounds();
+            const ne = b.getNorthEast();
+            const sw = b.getSouthWest();
+            const dx = ne.lng - sw.lng;
+            const dy = ne.lat - sw.lat;
+
+            const p = new NeuronFeatureLine(
+                this.#map,
+                new NeuronInterfacePoint(
+                    sw.lat + dy / 2,
+                    sw.lng + dx / 4,
+                    this.#planner.get_last_item_altitude()
+                ),
+                new NeuronInterfacePoint(
+                    sw.lat + dy / 2,
+                    sw.lng + 3 * dx / 4,
+                    this.#planner.get_last_item_altitude()
+                )
+            );
+            this.#planner.add_mission_item(p);
+        }
+    }
+
 
     #get_poly_bounds_from_view() {
         let bounds:NeuronInterfacePoint[] = [];

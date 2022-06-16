@@ -1,5 +1,6 @@
 import { NeuronFeatureBase, NeuronFeatureBaseData } from "./neuron_feature_base";
 import { NeuronFeatureWaypoint, NeuronFeaturePointData } from "./neuron_feature_waypoint";
+import { NeuronFeatureLine, NeuronFeatureLineData } from "./neuron_feature_line";
 import { NeuronFeaturePolygon, NeuronFeaturePolygonData } from "./neuron_feature_polygon";
 import { NeuronFeatureSurvey, NeuronFeatureSurveyData } from "./neuron_feature_survey";
 import { NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
@@ -14,6 +15,7 @@ import { NeuronOptions, NeuronOptionsData } from "./neuron_options";
 export type MissionFeatureData = (
     NeuronFeatureBaseData |
     NeuronFeaturePointData |
+    NeuronFeatureLineData |
     NeuronFeaturePolygonData |
     NeuronFeatureSurveyData
 );
@@ -21,7 +23,9 @@ export type MissionFeatureData = (
 //TODO: Document
 export type MissionFeature = (
     NeuronFeatureBase |
+    NeuronFeaturePoint |
     NeuronFeatureWaypoint |
+    NeuronFeatureLine |
     NeuronFeaturePolygon |
     NeuronFeatureSurvey
 );
@@ -134,6 +138,8 @@ export class NeuronPlanner {
                 feature = p;
             } else if(NeuronFeatureWaypoint.isObjectOfDataType(item)) {
                 feature = NeuronFeatureWaypoint.from_json(item, this.#map.get_leaflet_map());
+            } else if(NeuronFeatureLine.isObjectOfDataType(item)) {
+                feature = NeuronFeatureLine.from_json(item, this.#map.get_leaflet_map());
             } else if(NeuronFeaturePolygon.isObjectOfDataType(item)) {
                 let p = NeuronFeaturePolygon.from_json(item, this.#map.get_leaflet_map());
                 p.set_planner(this);
@@ -268,23 +274,26 @@ export class NeuronPlanner {
 
     export_mission_kml() {
         let markers:NeuronInterfacePoint[] = [];
+        let paths:NeuronInterfacePoint[][] = [this.get_mission_as_points()];
         let polygons:NeuronInterfacePoint[][] = [];
         for(const i of this.#mission_items) {
             if((i instanceof NeuronFeaturePoint)) {
                 markers.push(i.get_point());
+            } else if((i instanceof NeuronFeatureLine)) {
+                paths.push(i.get_ends_as_points());
             } else if((i instanceof NeuronFeaturePolygon) || (i instanceof NeuronFeatureSurvey)) {
                 polygons.push(i.get_corners_as_points());
             }
         }
 
-        kml_download_from_neuron_data(markers, this.get_mission_as_points(), polygons);
+        kml_download_from_neuron_data(markers, paths, polygons);
     }
 
     set_map(map:NeuronMap) {
         this.#map = map;
     }
 
-    #run_on_mission_change(){
+    #run_on_mission_change() {
         const coords = this.get_mission_as_points();
         this.#last_mission_altitude = coords.length ?
             coords[coords.length - 1].altitude :

@@ -101,6 +101,31 @@ export class UTMPos {
         return Math.sqrt(Math.pow(Math.abs(this.x - b.x), 2) + Math.pow(Math.abs(this.y - b.y), 2));
     }
 
+    /** Get the 2D angle of the line that forms between this UTMPos and another location, relative to x-axis and measured anti-clockwise in radians.
+     * @param  {UTMPos} b The other location to measure distance to.
+     */
+     GetAngle(b:UTMPos) {
+        return Math.atan2(b.y - this.y, b.x - this.x);
+    }
+    /** Calculates the area of a polygon defined by the list of polygons as provided
+     * @param  {UTMPos[]} vertices corner points of the polygon as defined in this area
+     */
+    static AreaOfPolygon(vertices:UTMPos[]) {
+        var total = 0;
+
+        for (var i = 0, l = vertices.length; i < l; i++) {
+          var addX = vertices[i].x;
+          var addY = vertices[i == vertices.length - 1 ? 0 : i + 1].y;
+          var subX = vertices[i == vertices.length - 1 ? 0 : i + 1].x;
+          var subY = vertices[i].y;
+
+          total += (addX * addY * 0.5);
+          total -= (subX * subY * 0.5);
+        }
+
+        return Math.abs(total);
+    }
+
     /** Convert this UTMPos data into a new NeuronInterfacePoint that represents the same location. Tag metadata will also be included if it exists.
      */
     to_NeuronInterfacePoint() {

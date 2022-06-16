@@ -1,5 +1,5 @@
 import { icon, dom, library } from '@fortawesome/fontawesome-svg-core'
-import { faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faBars, faClose, faDrawPolygon, faEye, faEyeSlash, faFile, faFileExport, faFileImport, faFolderOpen, faLocationCrosshairs, faLocationDot, faMinimize, faMinus, faPlus, faQuestionCircle, faSave, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
+import { faArrowDown, faArrowLeft, faArrowRight, faArrowUp, faBars, faClose, faRuler, faDrawPolygon, faEye, faEyeSlash, faFile, faFileExport, faFileImport, faFolderOpen, faLocationCrosshairs, faLocationDot, faMinimize, faMinus, faPlus, faQuestionCircle, faSave, faTrash, faUpload } from '@fortawesome/free-solid-svg-icons'
 
 /* Listing of common icons to use in the application
  */
@@ -24,6 +24,7 @@ export enum NeuronIcons {
     FIT_ZOOM,
     POINT,
     POLYGON,
+    RULER,
     IMPORT_FILE,
     EXPORT_FILE,
 }
@@ -112,6 +113,10 @@ function _neuron_get_icon_fa(neuron_icon:NeuronIcons) {
         }
         case NeuronIcons.POLYGON: {
             i = faDrawPolygon;
+            break;
+        }
+        case NeuronIcons.RULER: {
+            i = faRuler;
             break;
         }
         case NeuronIcons.IMPORT_FILE: {

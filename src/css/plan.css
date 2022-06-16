@@ -122,3 +122,11 @@
 .neuron-marker-waypoint {
     filter: hue-rotate(180deg);
 }
+
+.neuron-marker-line-start {
+    filter: hue-rotate(80deg);
+}
+
+.neuron-marker-line-end {
+    filter: hue-rotate(0deg);
+}
