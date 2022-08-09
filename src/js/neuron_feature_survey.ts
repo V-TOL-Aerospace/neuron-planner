@@ -1,10 +1,11 @@
 import { NeuronFeaturePolygon } from "./neuron_feature_polygon";
 import { InterfaceSummaryTabName, NeuronInterfacePoint, NeuronInterfacePointData } from "./neuron_interfaces";
 import { CreateGrid, GridPointTags, StartPosition } from "./neuron_tools_survey"
-import { L, create_popup_context_dom } from "./interface_leaflet";
+import { L, create_popup_context_dom, get_neuron_map_marker } from "./interface_leaflet";
 import { NeuronOptions, NeuronOptionsNumber } from "./neuron_options";
 import { flight_distance_from_coords, flight_time_from_duration } from "./neuron_tools_common";
 import { NeuronHelp } from "./neuron_help";
+import { UTMPos } from "./interface_proj4";
 
 //TODO: Document
 export interface NeuronFeatureSurveyData {
@@ -42,6 +43,9 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #waypoints:NeuronInterfacePoint[];
     #mappoints:L.Marker[];
+    #photos:NeuronInterfacePoint[];
+    #photopoints:L.Marker[];
+    #photobounds:L.Rectangle;
 
     #altitude:number;
     #distance:number;
@@ -58,6 +62,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #ground_resolution:number;
 
     #show_waypoints:boolean;
+    #show_photos:boolean;
 
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
@@ -65,6 +70,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #dom_segment_duration:HTMLOutputElement;
     #dom_photo_count:HTMLOutputElement;
     //Display parameters
+    #dom_show_photos:HTMLInputElement;
     #dom_show_waypoints:HTMLInputElement;
     #dom_show_corners:HTMLInputElement;
     //Survey parameters
@@ -94,10 +100,14 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     constructor(map:L.Map, corners:NeuronInterfacePoint[]=[], show_waypoints=false) {
         super(map, corners);
-        this.#waypoints = [];
-        this.#mappoints = [];
         this.#update_timer = null;
         this.#update_interval = 50; //ms
+
+        this.#waypoints = [];
+        this.#photos = [];
+        this.#photopoints = [];
+        this.#mappoints = [];
+        this.#photobounds = null;
 
         this.#dom = null;
         this.#dom_corner_count = null;
@@ -107,6 +117,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         this.#dom_show_corners = null;
         this.#dom_show_waypoints = null;
+        this.#dom_show_photos = null;
         this.#dom_altitude = null;
         this.#dom_distance = null;
         this.#dom_spacing = null;
@@ -124,6 +135,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#dom_current_camera = null;
 
         this.#show_waypoints = show_waypoints;
+        this.#show_photos = false;
         this.#altitude = 100;
         this.#distance = 50;
         this.#spacing = 0;
@@ -199,8 +211,61 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#waypoints.push(point);
     }
 
+    #show_photo_bounds(point:NeuronInterfacePoint) {
+        this.#clean_photobounds();
+
+        const projection = NeuronOptions.get_camera().get_projected_size(point.altitude);
+        if(projection) {
+            const uc = point.to_UTM();
+            const x_step = projection.Width()/2;
+            const y_step = projection.Height()/2;
+            const utl = new UTMPos(uc.x - x_step, uc.y + y_step, uc.zone);
+            const ubr = new UTMPos(uc.x + x_step, uc.y - y_step, uc.zone);
+            const ptl = utl.to_NeuronInterfacePoint();
+            const pbr = ubr.to_NeuronInterfacePoint();
+            this.#photobounds = new L.Rectangle([[ptl.latitude, ptl.longitude], [pbr.latitude, pbr.longitude]],
+                {
+                    color: '#20AA20',
+                    fillColor: '#20AA20'
+                });
+            this._add_layer_to_map(this.#photobounds);
+        }
+    }
+
+    #add_photo(point:NeuronInterfacePoint, name:string = "Survey Photo") {
+        if(this.#show_photos) {
+            let m = L.marker([point.latitude, point.longitude], {
+                // draggable: true,
+                autoPan: true,
+                icon: get_neuron_map_marker('neuron-marker-photo')
+            })
+
+            // const menu_items = [
+            //     new LeafletContextMenuItem("Move forward", "fa-arrow-left", this.move_corner_forwards.bind(this)),
+            //     new LeafletContextMenuItem("Move backward", "fa-arrow-right", this.move_corner_backwards.bind(this)),
+            //     null,
+            //     new LeafletContextMenuItem("Remove", "fa-trash", this.remove_point_by_corner.bind(this)),
+            // ]
+            m.bindPopup(create_popup_context_dom(name, [], m));
+
+            // m.on("drag", this.update_polygon.bind(this));
+            m.on("popupopen", this.#show_photo_bounds.bind(this, point));
+            m.on("popupclose", this.#clean_photobounds.bind(this));
+            // m.on("dblclick", this.#remove_point_by_event.bind(this));
+            this._add_layer_to_map(m);
+            this.#photopoints.push(m);
+        }
+
+        this.#photos.push(point);
+    }
+
     update_show_waypoints(show_waypoints:boolean) {
         this.#show_waypoints = show_waypoints;
+        this.update_survey();
+    }
+
+    update_show_photos(show_photos:boolean) {
+        this.#show_photos = show_photos;
         this.update_survey();
     }
 
@@ -286,6 +351,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return this.#show_waypoints;
     }
 
+    get_show_photos() {
+        return this.#show_photos;
+    }
+
     get_altitude() {
         return this.#altitude;
     }
@@ -328,6 +397,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         //Force clear the survey survey immediately for display
         this.#clean_waypoints();
+        this.#clean_photopoints();
+        this.#clean_photobounds();
 
         //Update survey with slight delay for processing
         this.#update_timer = setTimeout(this.#_update_survey.bind(this, true), this.#update_interval);
@@ -342,6 +413,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #_update_survey(fire_on_change:boolean = true) {
         this.#clean_waypoints();
+        this.#clean_photopoints();
+        this.#clean_photobounds();
 
         const corners = this.get_corners_as_points();
         const waypoints = (corners.length <= 2) ?
@@ -378,7 +451,25 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         this.#waypoints = [];
     }
 
+    #clean_photopoints() {
+        for(const m of this.#photopoints) {
+            this._remove_layer_from_map(m);
+        }
+
+        this.#photopoints = [];
+        this.#photos = [];
+    }
+
+    #clean_photobounds() {
+        if(this.#photobounds)
+            this._remove_layer_from_map(this.#photobounds);
+
+        this.#photobounds = null;
+    }
+
     #try_update_dom_stats() {
+        this.#clean_photopoints();
+        this.#clean_photobounds();
         const coords = this.get_path_coords();
 
         if(this.#dom_corner_count)
@@ -395,10 +486,52 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_segment_duration.value = flight_time_from_duration(duration);
         }
 
-        if(this.#dom_photo_count) {
-            let count = this.get_image_count();
-            this.#dom_photo_count.value = count > 0 ? count.toString() : "---";
+        let photo_count = 0;
+
+        if(this.#show_photos) {
+            const photos = this.get_image_locations();
+            for(let i = 0; i < photos.length; i++)
+                this.#add_photo(photos[i], `Survey Photo (#${i})`);
+
+            photo_count = photos.length;
+        } else {
+            //Use shorthand calc if we don't need to get the full listing
+            photo_count = this.get_image_count();
         }
+
+        if(this.#dom_photo_count) {
+            this.#dom_photo_count.value = photo_count > 0 ? photo_count.toString() : "---";
+        }
+    }
+
+    get_image_locations() {
+        let photos:NeuronInterfacePoint[] = [];
+        const alt = this.#altitude;
+        let projection = NeuronOptions.get_camera().get_projected_size(alt);
+
+        if(projection && (this.#overlap >= 0) && (this.#overlap <= 1)) {
+            const overlap_factor = 1 - this.#overlap;
+            const photo_distance = Math.abs(projection.Height())*overlap_factor;
+
+            for(const lane of this.get_lane_coords()) {
+                const ps = lane.start.to_UTM();
+                const pe = lane.end.to_UTM(ps.zone);
+
+                const lane_distance = ps.GetDistance2D(pe);
+                const lane_angle = ps.GetAngle(pe);
+                const steps = Math.ceil(lane_distance / photo_distance);
+
+                let p_last = ps;
+                for(let i = 0; i<steps; i++) {
+                    let point = p_last.to_NeuronInterfacePoint();
+                    point.altitude = alt;
+                    photos.push(point);
+                    p_last = p_last.relative_point_from_dist_angle(lane_angle, photo_distance);
+                }
+            }
+        }
+
+        return photos;
     }
 
     get_image_count() {
@@ -431,6 +564,10 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #update_show_waypoints_from_dom() {
         this.update_show_waypoints(this.#dom_show_waypoints.checked);
+    }
+
+    #update_show_photos_from_dom() {
+        this.update_show_photos(this.#dom_show_photos.checked);
     }
 
     #update_altitude_from_dom() {
@@ -488,6 +625,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     override remove_feature() {
         this.#clean_waypoints();
+        this.#clean_photopoints();
+        this.#clean_photobounds();
 
         super.remove_feature();
     }
@@ -573,6 +712,12 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             this.#dom_show_waypoints.title = t21;
             c.appendChild(this._create_dom_label("Show ends:", this.#dom_show_waypoints, t2));
             c.appendChild(this.#dom_show_waypoints);
+
+            const t22 = "Show the locations of the photos that will be taken throughout this survey";
+            this.#dom_show_photos = this._create_dom_input_checkbox(this.#show_photos, this.#update_show_photos_from_dom.bind(this));
+            this.#dom_show_photos.title = t22;
+            c.appendChild(this._create_dom_label("Show photos:", this.#dom_show_photos, t2));
+            c.appendChild(this.#dom_show_photos);
 
 
             //=====================================

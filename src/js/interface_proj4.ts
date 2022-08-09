@@ -79,16 +79,30 @@ export class UTMPos {
      * @param  {number} distance The distance from this UTMPos to the new location.
      * @param  {string} tag Additional tag metadata information to identify the new position.
      */
-    relative_point_from_dist_bearing(bearing:number, distance:number, tag:string = "") {
+     relative_point_from_dist_bearing(bearing:number, distance:number, tag:string = "") {
         let degN = 90 - bearing;
-        if (degN < 0)
-            degN += 360;
+        // if (degN < 0)
+        //     degN += 360;
 
         const deg2rad = Math.PI/180.0;
 
         return new UTMPos(
             this.x + distance * Math.cos(degN * deg2rad),
             this.y + distance * Math.sin(degN * deg2rad),
+            this.zone,
+            tag
+        );
+    }
+
+    /** Get a new UTMPos object that represents a position of relative bearing and distance from this UTMPos.
+     * @param  {number} angle The bearing from x-axis in radians from this UTMPos to the new location.
+     * @param  {number} distance The distance from this UTMPos to the new location.
+     * @param  {string} tag Additional tag metadata information to identify the new position.
+     */
+    relative_point_from_dist_angle(angle:number, distance:number, tag:string = "") {
+        return new UTMPos(
+            this.x + distance * Math.cos(angle),
+            this.y + distance * Math.sin(angle),
             this.zone,
             tag
         );
