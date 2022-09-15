@@ -276,8 +276,7 @@ export class NeuronMap {
 			this.#map = L.map(this.#map_element_name, {
                 doubleClickZoom: false,
                 layers: [
-                    tiles_grey,
-                    tiles_satellite
+                    tiles_grey
                 ],
                 zoomControl: false
             });
