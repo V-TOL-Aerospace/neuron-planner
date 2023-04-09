@@ -152,6 +152,18 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         return this.#polygon;
     }
 
+    #generate_popup(context:L.Marker) {
+        const menu_items = [
+            new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
+            null,
+            new LeafletContextMenuItem("Move forward", NeuronIcons.ARROW_LEFT, this.move_corner_forwards.bind(this)),
+            new LeafletContextMenuItem("Move backward", NeuronIcons.ARROW_RIGHT, this.move_corner_backwards.bind(this)),
+            null,
+            new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_corner.bind(this)),
+        ]
+        context.bindPopup(create_popup_context_dom(this.#label ? this.#label : "Polygon Corner", menu_items, context));
+    }
+
     add_corner(corner:NeuronInterfacePoint, update_polygon=true) {
         if(this.#selected_corner < 0 || this.#selected_corner >= this.#corners.length)
             this.#selected_corner = Math.min(this.#corners.length - 1, 0)
@@ -162,19 +174,10 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             icon: get_neuron_map_marker('neuron-marker-corner')
         })
 
-        const menu_items = [
-            new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
-            null,
-            new LeafletContextMenuItem("Move forward", NeuronIcons.ARROW_LEFT, this.move_corner_forwards.bind(this)),
-            new LeafletContextMenuItem("Move backward", NeuronIcons.ARROW_RIGHT, this.move_corner_backwards.bind(this)),
-            null,
-            new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_corner.bind(this)),
-        ]
-        m.bindPopup(create_popup_context_dom("Polygon Corner", menu_items, m));
-
         m.on("drag", this.update_polygon.bind(this));
         m.on("click", this.#select_corner_by_event.bind(this));
         m.on("dblclick", this.#remove_point_by_event.bind(this));
+        this.#generate_popup(m);
 
         this.#corners.splice(this.#selected_corner, 0, m);
         if(this.#show_corners)
@@ -446,6 +449,9 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.#label = label;
         if(this.#dom_label && update_dom)
             this.#dom_label.value = label;
+
+        for(let m of this.#corners)
+            this.#generate_popup(m);
     }
 
     static override isObjectOfDataType(object: any): object is NeuronFeaturePolygonData {

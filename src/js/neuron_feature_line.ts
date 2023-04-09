@@ -51,6 +51,15 @@ export class NeuronFeatureLine extends NeuronFeatureBase {
         //XXX: update_line() called by start and end
     }
 
+    #generate_popup(context:L.Marker) {
+        const menu_items = [
+            new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
+            null,
+            new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_feature.bind(this)),
+        ]
+        context.bindPopup(create_popup_context_dom(this.#label ? this.#label : "Line End", menu_items, context));
+    }
+
     set_start(point:NeuronInterfacePoint) {
         if(this.#start) {
             //Update the existing polygon
@@ -63,15 +72,9 @@ export class NeuronFeatureLine extends NeuronFeatureBase {
                 icon: get_neuron_map_marker('neuron-marker-line-start')
             })
 
-            const menu_items = [
-                new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
-                null,
-                new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_feature.bind(this)),
-            ]
-            m.bindPopup(create_popup_context_dom("Line End", menu_items, m));
-
             m.on("drag", this.update_line.bind(this));
             m.on("dblclick", this.#remove_by_event.bind(this));
+            this.#generate_popup(m);
 
             this.#start = m;
             if(this.#show_ends)
@@ -93,15 +96,9 @@ export class NeuronFeatureLine extends NeuronFeatureBase {
                 icon: get_neuron_map_marker('neuron-marker-line-end')
             })
 
-            const menu_items = [
-                new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
-                null,
-                new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_feature.bind(this)),
-            ]
-            m.bindPopup(create_popup_context_dom("Line End", menu_items, m));
-
             m.on("drag", this.update_line.bind(this));
             m.on("dblclick", this.#remove_by_event.bind(this));
+            this.#generate_popup(m);
 
             this.#end = m;
             if(this.#show_ends)
@@ -322,6 +319,11 @@ export class NeuronFeatureLine extends NeuronFeatureBase {
         this.#label = label;
         if(this.#dom_label && update_dom)
             this.#dom_label.value = label;
+
+        if(this.#start)
+            this.#generate_popup(this.#start);
+        if(this.#end)
+            this.#generate_popup(this.#end);
     }
 
     static override isObjectOfDataType(object: any): object is NeuronFeatureLineData {

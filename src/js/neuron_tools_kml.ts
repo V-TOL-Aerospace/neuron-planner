@@ -93,37 +93,79 @@ export async function kml_extract_features(kml_plain_text:string) {
             }
 
             /** MARKER PARSE **/
-            for (const marker of kml_markers) {
-                let point = marker.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
-                let p = point_from_coord(point.split(","));
-                p.tag = placeMarkName;
-                markers.push(p);
+            for (const [ind, marker] of kml_markers.entries()) {
+                let point = "";
+                try {
+                    point = marker.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
+                } catch(e) {
+                    console.warn("Unable to extract marker #" + (ind + 1).toString());
+                    if (e instanceof TypeError) {
+                        //Do nothing?
+                    } else {
+                        console.warn(e);
+                    }
+                }
+
+                if (point.length) {
+                    let p = point_from_coord(point.split(","));
+                    p.tag = placeMarkName;
+                    markers.push(p);
+                }
             }
 
             /** PATH PARSE **/
-            for (const path of kml_paths) {
-                let coords = path.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
-                let kml_points = coords.split(" ");
+            for (const [ind, path] of kml_paths.entries()) {
+                let coords = "";
 
-                let points:NeuronInterfacePoint[] = [];
-                for (const point of kml_points) {
-                    points.push(point_from_coord(point.split(",")));
+                try {
+                    coords = path.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
+                } catch(e) {
+                    console.warn("Unable to extract path #" + (ind + 1).toString());
+                    if (e instanceof TypeError) {
+                        //Do nothing?
+                    } else {
+                        console.warn(e);
+                    }
                 }
 
-                paths.push(points);
+                if(coords.length) {
+                    let kml_points = coords.split(" ");
+
+                    let points:NeuronInterfacePoint[] = [];
+                    for (const point of kml_points) {
+                        points.push(point_from_coord(point.split(",")));
+                    }
+
+                    paths.push(points);
+                }
             }
 
             /** POLYGONS PARSE **/
-            for (const polygon of kml_polygons) {
-                let coords = polygon.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
-                let kml_points = coords.split(" ");
+            for (const [ind, polygon] of kml_polygons.entries()) {
+                let coords = "";
 
-                let points:NeuronInterfacePoint[] = [];
-                for (const point of kml_points) {
-                    points.push(point_from_coord(point.split(",")));
+                try {
+                    coords = polygon.getElementsByTagName('coordinates')[0].childNodes[0].nodeValue.trim();
+                } catch(e) {
+                    console.warn("Unable to extract polygon #" + (ind + 1).toString());
+                    if (e instanceof TypeError) {
+                        //Do nothing?
+                    } else {
+                        console.warn(e);
+                    }
                 }
 
-                polygons.push(points);
+                if(coords.length) {
+
+                    let kml_points = coords.split(" ");
+
+                    let points:NeuronInterfacePoint[] = [];
+                    for (const point of kml_points) {
+                        points.push(point_from_coord(point.split(",")));
+                    }
+
+                    polygons.push(points);
+                }
             }
         }
 
@@ -202,12 +244,14 @@ export async function kml_data_from_neuron_data(markers:NeuronInterfacePoint[], 
 
     //Paths
     for(let i=0; i<paths.length; i++) {
-        documentNode.appendChild(kml_create_path_node(xmlDocument, (i == 0) ? "flight-path" : `paths-${i+1}`, paths[i]));
+        if(paths[i].length)
+            documentNode.appendChild(kml_create_path_node(xmlDocument, (i == 0) ? "flight-path" : `paths-${i+1}`, paths[i]));
     }
 
     //Polygons
     for(let i=0; i<polygons.length; i++) {
-        documentNode.appendChild(kml_create_polygon_node(xmlDocument, `polygon-${i+1}`, polygons[i]));
+        if(polygons[i].length)
+            documentNode.appendChild(kml_create_polygon_node(xmlDocument, `polygon-${i+1}`, polygons[i]));
     }
 
     return kml_document_to_string(xmlDocument);

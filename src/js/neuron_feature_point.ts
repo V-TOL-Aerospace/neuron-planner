@@ -74,6 +74,15 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         this.#internal_set_point(point);
     }
 
+    #generate_popup(context:L.Marker) {
+        const menu_items = [
+            new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
+            null,
+            new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_context.bind(this)),
+        ]
+        context.bindPopup(create_popup_context_dom(this.#point && this.#point.tag ? this.#point.tag : "Point", menu_items, context));
+    }
+
     set_point(point:NeuronInterfacePoint) {
         if(!this.#marker) {
             this.#marker = L.marker(point.to_leaflet(),{
@@ -84,13 +93,6 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
 
             this.#marker.on("drag", this.#update_position_from_event.bind(this));
             this.#marker.on("dblclick", this.#remove_point_by_event.bind(this));
-
-            const menu_items = [
-                new LeafletContextMenuItem("Show in plan", NeuronIcons.PLAN_LIST, this.show_on_plan.bind(this)),
-                null,
-                new LeafletContextMenuItem("Remove", NeuronIcons.DELETE, this.remove_point_by_context.bind(this)),
-            ]
-            this.#marker.bindPopup(create_popup_context_dom("Point", menu_items, this.#marker));
 
             this._add_layer_to_map(this.#marker);
         }
@@ -118,8 +120,10 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
     #internal_set_point(point:NeuronInterfacePoint, update_marker:boolean = true, update_dom:boolean=true) {
         this.#point = point;
 
-        if(update_marker && this.#marker)
+        if(update_marker && this.#marker) {
             this.#marker.setLatLng(point.to_leaflet());
+            this.#generate_popup(this.#marker);
+        }
 
         if(update_dom) {
             if(this.#dom_lat)
