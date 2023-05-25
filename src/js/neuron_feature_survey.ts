@@ -94,7 +94,6 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
     #update_interval:number;
     #unsub_option_cb:()=>void;
 
-
     static _gsd_ratio = 0.01;   //GSD = [DOM Value] * Ratio
     static _xlap_ratio = 0.01;   //Sidelap = [DOM Value] * Ratio
 
@@ -666,6 +665,14 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             console.warn("Unable to determine all lanes correctly!");
 
         return lanes;
+    }
+
+    override get_corners_as_points() {
+        let points = super.get_corners_as_points();
+        for(let p of points) {
+            p.altitude = this.#altitude;
+        }
+        return points;
     }
 
     override get_dom() {
