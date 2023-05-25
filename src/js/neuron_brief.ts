@@ -355,6 +355,9 @@ export class NeuronBrief {
                         summary.total_images += image_count;
                     } else if(item instanceof NeuronFeatureSurvey) {
                         let corners = item.get_corners_as_points();
+                        for(let p of corners) {
+                            p.altitude = item.get_altitude();
+                        }
                         const step_distance = flight_distance_from_coords(path);
                         const step_duration = "+" + flight_time_from_duration(step_distance/flight_speed);
                         step = {
