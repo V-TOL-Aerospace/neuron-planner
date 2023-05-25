@@ -667,7 +667,7 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         return lanes;
     }
 
-    override get_corners_as_points() {
+    get_corners_as_points() {
         let points = super.get_corners_as_points();
         for(let p of points) {
             p.altitude = this.get_altitude();
