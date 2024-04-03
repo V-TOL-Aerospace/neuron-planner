@@ -16,7 +16,7 @@ export class NeuronDOMFactory {
      * @param  {string} description Mouse-over description for this label item
      * @param  {boolean} hide_label Sets the visibility to hidden for this label if true (useful for building grid layouts with only one label but many inputs)
      */
-    _create_dom_label(text:string, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement|HTMLOutputElement), description:string = null, hide_label:boolean=false) {
+    _create_dom_label(text:string|HTMLElement, input:(HTMLInputElement|HTMLSelectElement|HTMLButtonElement|HTMLOutputElement), description:string = null, hide_label:boolean=false) {
         if (!input.id)
             input.id = NeuronUID();
 
@@ -28,7 +28,7 @@ export class NeuronDOMFactory {
         if(hide_label)
             l.style.visibility = 'hidden';
 
-        l.appendChild(document.createTextNode(text));
+        l.appendChild(text instanceof HTMLElement ? text : document.createTextNode(text));
 
         return l;
     }

@@ -297,7 +297,7 @@ export class NeuronFeatureWaypoint extends NeuronFeatureBase {
             const t2 = "Altitude for the waypoint in feet relative to take-off location ground level";
             this.#dom_alt = this._create_dom_input_number((this.#point ? this.#point.altitude : 0.0) / NeuronFeatureBase._altitude_ratio, this.#update_altitude_from_dom.bind(this));
             this.#dom_alt.title = t2;
-            c.appendChild(this._create_dom_label("Altitude:", this.#dom_alt, t2));
+            c.appendChild(this._create_dom_label("Altitude (ft):", this.#dom_alt, t2));
             c.appendChild(this.#dom_alt);
 
             const t3 = "Heading for the waypoint in degrees relative to North";

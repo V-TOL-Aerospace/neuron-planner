@@ -289,42 +289,52 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
         this.#try_update_dom();
     }
 
+    #get_corners_as_utm() {
+        const points = this.get_corners_as_points();
+
+        if(points.length <= 2)
+            return []
+
+        const u1 = points[0].to_UTM();
+        return points.map(x => x.to_UTM(u1.zone));
+    }
+
+    get_perimeter() {
+        const utm_points = this.#get_corners_as_utm();
+
+        if(utm_points.length <= 1)
+            return 0;
+
+        let length = 0;
+        for(let i = 0; i < utm_points.length; i++) {
+            const p1 = utm_points[i];
+            const p2 = i < (utm_points.length - 1) ? utm_points[i+1] : utm_points[0];
+            length += p1.GetDistance2D(p2);
+        }
+
+        return length * NeuronFeaturePolygon._distance_ratio;
+    }
+
+    get_area() {
+        const utm_points = this.#get_corners_as_utm();
+        if(utm_points.length <= 2)
+            return 0;
+
+        return UTMPos.AreaOfPolygon(utm_points) * NeuronFeaturePolygon._area_ratio;
+    }
+
     #try_update_dom() {
         if(this.#dom_corner_count)
             this.#dom_corner_count.value = this.#corners.length.toFixed(0);
 
-        const points = this.get_corners_as_points();
-        let utm_points:UTMPos[] = [];
-        if(points.length > 2) {
-            const u1 = points[0].to_UTM();
-            utm_points = points.map(x => x.to_UTM(u1.zone));
-        }
-
         if(this.#dom_perimeter) {
-            let perimeter = "---";
-            let length = 0;
-            if(utm_points.length > 1) {
-                for(let i = 0; i < utm_points.length; i++) {
-                    const p1 = utm_points[i];
-                    const p2 = i < (utm_points.length - 1) ? utm_points[i+1] : utm_points[0];
-                    length += p1.GetDistance2D(p2);
-                }
-
-                perimeter = (length * NeuronFeaturePolygon._distance_ratio).toFixed(3);
-            }
-
-            this.#dom_perimeter.value = perimeter;
+            const perimeter = this.get_perimeter();
+            this.#dom_perimeter.value = perimeter > 0 ? perimeter.toFixed(3) : "---";
         }
 
         if(this.#dom_area) {
-            let area = "---";
-            if(utm_points.length > 2) {
-                const u1 = points[0].to_UTM();
-                const utm_points = points.map(x => x.to_UTM(u1.zone));
-                const area_m = UTMPos.AreaOfPolygon(utm_points)
-                area = (area_m * NeuronFeaturePolygon._area_ratio).toFixed(3);
-            }
-            this.#dom_area.value = area;
+            const area = this.get_area();
+            this.#dom_area.value = area > 0 ? area.toFixed(3) : "---";
         }
     }
 
@@ -381,13 +391,19 @@ export class NeuronFeaturePolygon extends NeuronFeatureBase {
             const t41 = "Perimeter of this polygon as defined by it's boundaries in kilometers";
             this.#dom_perimeter = this._create_dom_output();
             this.#dom_perimeter.title = t41;
-            c.appendChild(this._create_dom_label("Perimeter:", this.#dom_perimeter, t41));
+            c.appendChild(this._create_dom_label("Perimeter (km):", this.#dom_perimeter, t41));
             c.appendChild(this.#dom_perimeter);
 
             const t42 = "Area of this polygon as defined by it's boundaries in square kilometers";
             this.#dom_area = this._create_dom_output();
             this.#dom_area.title = t42;
-            c.appendChild(this._create_dom_label("Area:", this.#dom_area, t42));
+            const t42_ld = document.createElement("span");
+            t42_ld.appendChild(document.createTextNode("Area (km"));
+            const t42_lds = document.createElement("sup");
+            t42_lds.appendChild(document.createTextNode("2"));
+            t42_ld.appendChild(t42_lds);
+            t42_ld.appendChild(document.createTextNode("):"));
+            c.appendChild(this._create_dom_label(t42_ld, this.#dom_area, t42));
             c.appendChild(this.#dom_area);
 
             this.#try_update_dom();

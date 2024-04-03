@@ -66,6 +66,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
     #dom:HTMLDivElement;
     #dom_corner_count:HTMLOutputElement;
+    #dom_perimeter:HTMLOutputElement;
+    #dom_area:HTMLOutputElement;
     #dom_waypoint_count:HTMLOutputElement;
     #dom_segment_duration:HTMLOutputElement;
     #dom_photo_count:HTMLOutputElement;
@@ -110,6 +112,8 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
 
         this.#dom = null;
         this.#dom_corner_count = null;
+        this.#dom_perimeter = null;
+        this.#dom_area = null;
         this.#dom_waypoint_count = null;
         this.#dom_segment_duration = null;
         this.#dom_photo_count = null;
@@ -474,6 +478,16 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
         if(this.#dom_corner_count)
             this.#dom_corner_count.value = this.get_corners().length.toFixed(0);
 
+        if(this.#dom_perimeter) {
+            const perimeter = this.get_perimeter();
+            this.#dom_perimeter.value = perimeter > 0 ? perimeter.toFixed(3) : "---";
+        }
+
+        if(this.#dom_area) {
+            const area = this.get_area();
+            this.#dom_area.value = area > 0 ? area.toFixed(3) : "---";
+        }
+
         if(this.#dom_waypoint_count)
             this.#dom_waypoint_count.value = coords.length.toFixed(0);
 
@@ -681,6 +695,24 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             c.appendChild(this._create_dom_label("Corners:", this.#dom_corner_count, t00));
             c.appendChild(this.#dom_corner_count);
 
+            const t001 = "Perimeter of this polygon as defined by it's boundaries in kilometers";
+            this.#dom_perimeter = this._create_dom_output();
+            this.#dom_perimeter.title = t001;
+            c.appendChild(this._create_dom_label("Perimeter (km):", this.#dom_perimeter, t001));
+            c.appendChild(this.#dom_perimeter);
+
+            const t002 = "Area of this polygon as defined by it's boundaries in square kilometers";
+            this.#dom_area = this._create_dom_output();
+            this.#dom_area.title = t002;
+            const t002_ld = document.createElement("span");
+            t002_ld.appendChild(document.createTextNode("Area (km"));
+            const t002_lds = document.createElement("sup");
+            t002_lds.appendChild(document.createTextNode("2"));
+            t002_ld.appendChild(t002_lds);
+            t002_ld.appendChild(document.createTextNode("):"));
+            c.appendChild(this._create_dom_label(t002_ld, this.#dom_area, t002));
+            c.appendChild(this.#dom_area);
+
             const t01 = "Number of waypoints that have been calculated to perform this survey";
             this.#dom_waypoint_count = this._create_dom_output();
             this.#dom_waypoint_count.title = t01;
@@ -769,13 +801,13 @@ export class NeuronFeatureSurvey extends NeuronFeaturePolygon {
             const t3 = "Altitude for the survey in feet relative to take-off location ground level";
             this.#dom_altitude = this._create_dom_input_number(this.#altitude / NeuronFeatureSurvey._altitude_ratio, this.#update_altitude_from_dom.bind(this));
             this.#dom_altitude.title = t3;
-            c.appendChild(this._create_dom_label("Altitude:", this.#dom_altitude, t3));
+            c.appendChild(this._create_dom_label("Altitude (ft):", this.#dom_altitude, t3));
             c.appendChild(this.#dom_altitude);
 
             const t4 = "Spacing between the individual lanes of the survey pattern in meters";
             this.#dom_distance = this._create_dom_input_number(this.#distance, this.#update_distance_from_dom.bind(this), 0.5);
             this.#dom_distance.title = t4;
-            c.appendChild(this._create_dom_label("Spacing:", this.#dom_distance, t4));
+            c.appendChild(this._create_dom_label("Spacing (m):", this.#dom_distance, t4));
             c.appendChild(this.#dom_distance);
 
             const t5 = "Entry location on the survey pattern relative to the most Northwestern point of the survey";
