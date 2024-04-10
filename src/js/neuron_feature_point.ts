@@ -88,7 +88,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
             this.#marker = L.marker(point.to_leaflet(),{
                 draggable: true,
                 autoPan: true,
-                icon: get_neuron_map_marker('neuron-marker-poi')
+                icon: get_neuron_map_marker('neuron-marker-poi', point.tag)
             })
 
             this.#marker.on("drag", this.#update_position_from_event.bind(this));
@@ -126,6 +126,7 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
         }
 
         if(update_dom) {
+            console.log(point.tag)
             if(this.#dom_lat)
                 this.#dom_lat.value = point.latitude.toString();
 
@@ -144,8 +145,12 @@ export class NeuronFeaturePoint extends NeuronFeatureBase {
     }
 
     #update_tag_from_dom() {
-        if(this.#point)
+        if(this.#point) {
             this.#point.tag = this.#dom_label.value;
+
+            if(this.#marker)
+                this.#marker.setIcon(get_neuron_map_marker('neuron-marker-poi', this.#point.tag));
+        }
 
         this.#internal_set_point(this.#point, true, false);
     }

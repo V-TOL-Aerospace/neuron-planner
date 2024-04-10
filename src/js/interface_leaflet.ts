@@ -17,10 +17,22 @@ const default_icon_options = {
 }
 L.Icon.Default.mergeOptions(default_icon_options);
 
-export function get_neuron_map_marker(class_name:string) {
-    return new L.Icon({
-        ...L.Icon.Default.prototype.options,
-        className: class_name
+export function get_neuron_map_icon_html(class_name:string, name?:string) {
+    return  `<div class="${class_name}-container"><img class="${class_name}-img" src="img/icons/poi-marker.png"/>` +
+            `<span class="${class_name}-txt">${name}</span><div>`;
+}
+
+export function get_neuron_map_marker(class_name:string, name?:string) {
+    if(!name) {
+        return new L.Icon({
+            ...L.Icon.Default.prototype.options,
+            className: class_name
+        });
+    }
+
+    return new L.DivIcon({
+        className: class_name,
+        html: get_neuron_map_icon_html(class_name, name),
     });
 }
 
