@@ -161,6 +161,7 @@
 .neuron-marker-poi-txt {
     background-color: white;
     border: black solid 2px;
+    border-radius: 0.7ex;
     padding: 0.5ex;
     white-space: nowrap;
 }
