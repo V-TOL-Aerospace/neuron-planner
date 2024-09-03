@@ -19,10 +19,29 @@ export interface NeuronKMLData {
 }
 
 //TODO: Document
-export async function kmx_load_file(file:Blob, cb_file_loaded:(result:NeuronKMLData)=>void) {
+export function get_file_type(file:Blob|File) {
+    if(file.type) {
+        return file.type;
+    }
+
+    if(file instanceof File) {
+        const parts = file.name.split('.');
+        const t = parts[parts.length-1];
+
+        switch(t) {
+            case "kml": return type_kml;
+            case "kmz": return type_kmz;
+        }
+    }
+    return "";
+}
+
+//TODO: Document
+export async function kmx_load_file(file:Blob|File, cb_file_loaded:(result:NeuronKMLData)=>void) {
     let result = null;
-    console.log(`Loaded file identified as "${file.type}" type`);
-    switch(file.type) {
+    let f_type = get_file_type(file);
+    console.log(`Loaded file identified as "${f_type}" type`);
+    switch(f_type) {
         case type_kml: {
             const text = await file.text();
             result = await kml_extract_features(text);
@@ -57,6 +76,10 @@ export async function kmx_load_file(file:Blob, cb_file_loaded:(result:NeuronKMLD
             }
 
             break;
+        }
+
+        default: {
+            console.warn(`File not supported: ${file}`);
         }
     }
 

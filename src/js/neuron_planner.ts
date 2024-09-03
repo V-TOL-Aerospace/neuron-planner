@@ -518,13 +518,13 @@ export class NeuronPlanner {
         }
     }
 
-    import_features_from_kmx_multiple(files:Blob[]) {
+    import_features_from_kmx_multiple(files:Blob[]|File[]) {
         for(const file of files) {
             this.import_features_from_kmx(file);
         }
     }
 
-    import_features_from_kmx(file:Blob) {
+    import_features_from_kmx(file:Blob|File) {
         kmx_load_file(file, this.#kml_loaded.bind(this));
     }
 
